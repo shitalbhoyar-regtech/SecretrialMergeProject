@@ -535,6 +535,192 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.xpath("//*[@id='panelbarEditDirector']/li[2]/div/div[2]/div/div/lable"));
 		return Secreterial;
 	}
+	public static WebElement InvalidMsg(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//div[@id='Remark_validationMessage']"));
+		return Secreterial;
+	}
+	public static WebElement DownloadIcon(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//a[@class='k-grid-d k-grid-download k-grid-button hoverCircle']"));
+		return Secreterial;
+	}
+	public static WebElement closeBtnEditTask(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='btnholidayclose']"));
+		return Secreterial;
+	}
+	public static WebElement DeleteIcon(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//a[@class='k-grid-Del k-grid-delete k-grid-button']"));
+		return Secreterial;
+	}
+	public static WebElement DeleteIconYes(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='yes']"));
+		
+		return Secreterial;
+	}
+	public static WebElement DeleteIconNo(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='no']"));
+		
+		return Secreterial;
+	}
+	public static WebElement Deletevalidmsg(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='wndDelete']/h5"));
+		return Secreterial;
+	}
+	public static WebElement Deletevalidmsg1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='divDeleteTaskMessage']/div/div/div/lable"));
+		return Secreterial;
+	}
+	public static WebElement closeIcon(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("/html/body/div[9]/div[1]/div/a"));
+		return Secreterial;
+	}
+	
+	public static WebElement MeetingCalender(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='myWorkspacemenu']/ul/li[7]/a/span")));
+		return Secreterial;
+	}
+	public static WebElement ValidMsg1(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='divgridNewMessage']/div/div/div/lable")));
+		return Secreterial;
+	}
+	public static WebElement NewBtn(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='customCommand1']")));
+		return Secreterial;
+	}
+	public static WebElement AddBtn(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='btn btn-primary'])[2]")));
+		return Secreterial;
+	}
+	public static WebElement Entity(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//span[@class='k-input'])[3]")));
+		return Secreterial;
+	}
+	public static WebElement SelectEntity(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='EntityId_listbox']/li[1]")));
+		return Secreterial;
+	}
+	public static WebElement ClickFY1(WebDriver driver)
+	{
+
+		Secreterial =driver.findElement(By.xpath("//*[@id='gridADDAnnualMeeting_active_cell']/span[1]/span/span[1]"));
+		return Secreterial;
+	}
+	public static WebElement ClickFY(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='gridADDAnnualMeeting_active_cell']"));
+		return Secreterial;
+	}
+	
+
+	public static WebElement SelectFY(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='FYID_listbox']/li[1]")));
+		return Secreterial;
+	}
+	public static WebElement ClickMeetingType(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='gridADDAnnualMeeting_active_cell']/span[1]/span/span[1]")));
+		return Secreterial;
+	}
+	public static WebElement SelectMeetingType(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='Id_listbox']/li")));
+		return Secreterial;
+	}
+	public static WebElement ClickMeetingNumber(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//input[@id='MeetingSrNumber']")));
+		return Secreterial;
+	}
+	public static WebElement MeetingDate(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='gridADDAnnualMeeting_active_cell']/span/span/span/span")));
+		return Secreterial;
+	}
+	public static WebElement StarDate(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='k-icon k-i-clock']")));
+		return Secreterial;
+	}
+	public static WebElement StarDateTime(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@class='k-item'])[64]")));
+		return Secreterial;
+	}
+	public static WebElement EndDate(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='k-icon k-i-clock'])[2]")));
+		return Secreterial;
+	}
+	public static WebElement EndDateTime(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@class='k-item'])[78]")));
+		return Secreterial;
+	}
+	public static WebElement savebtn(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='btnSaveAnnualMeeting']")));
+		return Secreterial;
+	}
+	public static WebElement ClickEntity(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//span[@class='k-input']"));
+		return Secreterial;
+	}
+	public static WebElement clearFilter(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='clearfillter']"));
+		return Secreterial;
+	}
+	public static WebElement mYMeeting(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='myWorkspacemenu']/ul/li[3]/a/span"));
+		return Secreterial;
+	}
+	
 	 static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {
 			
 			for(WebElement option:options) {

@@ -34,17 +34,6 @@ public class MyWorkspaceMethod
 		public static XSSFSheet sheet = null;		//Sheet variable
 		public static XSSFSheet sheet1 = null;		//Sheet variable
 
-	
-		
-		public static XSSFSheet ReadExcel() throws IOException
-		{
-			fis = new FileInputStream("E:\\Snehal\\ComplianceLatest\\Litigation-Project-main (1)\\Litigation-Project-main\\TestData\\LitigationSheet.xlsx");
-			
-			workbook = new XSSFWorkbook(fis);
-			sheet = workbook.getSheetAt(8);					//Retrieving second sheet of Workbook
-			return sheet;
-		}
-		
 		
 		public static void ClickMyWorkspace(WebDriver driver,ExtentTest test) throws InterruptedException
 		{
@@ -1734,15 +1723,419 @@ public class MyWorkspaceMethod
 				      test.log(LogStatus.FAIL, "User should not able to view 'Task Details'");
 			   }
 			   
-			   
-			 
-			   Thread.sleep(2000);
+			    Thread.sleep(2000);
 				 MyWorkspaceLocator.closeBtn(driver).click();
 				 
 				 Thread.sleep(4000);
 			     EntityLocator.ClickDashboard(driver).click();
 		
 		}
+		
+		public static void EditTask(WebDriver driver,ExtentTest test) throws InterruptedException
+		{
+			WebDriverWait wait=new WebDriverWait(driver, 20);
+		
+			Thread.sleep(2000);
+			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+			
+			  Thread.sleep(2000);
+			   MyWorkspaceLocator.clickMyTask(driver).click();
+			  
+			 
+			   Thread.sleep(2000);
+			   MyWorkspaceLocator.EditBtn(driver).click();
+			   
+			   Thread.sleep(2000);
+			   MyWorkspaceLocator.Status(driver).click();
+			   Thread.sleep(2000);
+			   MyWorkspaceLocator. Remark(driver).sendKeys("ok");
+			   Thread.sleep(2000);
+			   MyWorkspaceLocator. File(driver).sendKeys("C:\\Users\\Snehal Patil\\Downloads\\Management Personnel.pdf");
+			   Thread.sleep(2000);
+			   MyWorkspaceLocator.Savebtn(driver).click();
+			   Thread.sleep(2000);
+			  String msg= MyWorkspaceLocator.validMsg(driver).getText();
+			  
+			  if(MyWorkspaceLocator.validMsg(driver).isEnabled())
+			  {
+				  test.log(LogStatus.PASS, "Message displayed ="+msg);
+			  }
+			  else
+			  {
+				  test.log(LogStatus.FAIL, "Message displayed ="+msg);
+			  }
+			  
+			  Thread.sleep(2000);
+				 MyWorkspaceLocator.closeBtn(driver).click();
+				 
+				 Thread.sleep(4000);
+			     EntityLocator.ClickDashboard(driver).click();
+	   }
+			   
+		public static void EditTaskWithoutEnterData(WebDriver driver,ExtentTest test) throws InterruptedException
+		{
+			WebDriverWait wait=new WebDriverWait(driver, 20);
+		
+			Thread.sleep(2000);
+			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+			
+			  Thread.sleep(2000);
+			   MyWorkspaceLocator.clickMyTask(driver).click();
+			  
+			 
+			   Thread.sleep(2000);
+			   MyWorkspaceLocator.EditBtn(driver).click();
+			   
+			   Thread.sleep(2000);
+			   MyWorkspaceLocator. Remark(driver).clear();
+			   
+			   Thread.sleep(2000);
+			   MyWorkspaceLocator.Savebtn(driver).click();
+			   Thread.sleep(2000);
+			  String msg= MyWorkspaceLocator.InvalidMsg(driver).getText();
+			  
+			  if(MyWorkspaceLocator.InvalidMsg(driver).isEnabled())
+			  {
+				  test.log(LogStatus.PASS, "Message displayed ="+msg);
+			  }
+			  else
+			  {
+				  test.log(LogStatus.FAIL, "Message displayed ="+msg);
+			  }
+			  
+			  Thread.sleep(2000);
+				 MyWorkspaceLocator.closeBtn(driver).click();
+				 
+				 Thread.sleep(4000);
+			     EntityLocator.ClickDashboard(driver).click();
+	   }
+		
+		public static void DownloadDocument(WebDriver driver,ExtentTest test) throws InterruptedException
+		{
+			WebDriverWait wait=new WebDriverWait(driver, 20);
+		
+			Thread.sleep(2000);
+			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+			
+			  Thread.sleep(2000);
+			   MyWorkspaceLocator.clickMyTask(driver).click();
+			  
+			 
+			   Thread.sleep(2000);
+			   MyWorkspaceLocator.EditBtn(driver).click();
+			   
+			   Thread.sleep(2000);
+			   if( MyWorkspaceLocator.DownloadIcon(driver).isEnabled())
+			   {
+				   Thread.sleep(2000);
+			       MyWorkspaceLocator.DownloadIcon(driver).click();
+			       
+			       test.log(LogStatus.PASS, "User should able to download task document");
+			   }
+			   else
+			   {
+				   test.log(LogStatus.FAIL, "User should not able to download task document");
+			   }
+			   Thread.sleep(2000);
+				 MyWorkspaceLocator.closeBtn(driver).click();
+				 
+				 Thread.sleep(4000);
+			     EntityLocator.ClickDashboard(driver).click();
+			   
+			   
+		}
+		
+		public static void CloseBtn(WebDriver driver,ExtentTest test) throws InterruptedException
+		{
+			WebDriverWait wait=new WebDriverWait(driver, 20);
+		
+			Thread.sleep(2000);
+			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+			
+			  Thread.sleep(2000);
+			   MyWorkspaceLocator.clickMyTask(driver).click();
+			  
+			 
+			   Thread.sleep(2000);
+			   MyWorkspaceLocator.EditBtn(driver).click();
+
+               
+			   Thread.sleep(2000);
+			  if(MyWorkspaceLocator.closeBtnEditTask(driver).isEnabled())
+			  {
+				  MyWorkspaceLocator.closeBtnEditTask(driver).click();
+				  test.log(LogStatus.PASS, "Close button is clickable");
+			  }
+			  else
+			  {
+				  test.log(LogStatus.FAIL, "Close button is not clickable");
+			  }
+			   
+		}
+		
+		public static void DeleteBtn(WebDriver driver,ExtentTest test) throws InterruptedException
+		{
+			WebDriverWait wait=new WebDriverWait(driver, 20);
+		
+			Thread.sleep(2000);
+			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+			
+			  Thread.sleep(2000);
+			   MyWorkspaceLocator.clickMyTask(driver).click();
+			   
+			 
+			      Thread.sleep(5000);
+			      MyWorkspaceLocator.DeleteIcon(driver).click();
+			      
+			      Thread.sleep(2000);
+			    String msg=MyWorkspaceLocator. Deletevalidmsg(driver).getText();
+			    
+			    if(msg.equalsIgnoreCase(msg))
+			    {
+			    	test.log(LogStatus.PASS, "Message Dispalyed=" +msg);
+			    }
+			    else
+			    {
+			    	test.log(LogStatus.FAIL, "Message Dispalyed=" +msg);
+			    }
+		
+			      Thread.sleep(2000);
+			      MyWorkspaceLocator. DeleteIconYes(driver).click();
+			     
+			      
+			      Thread.sleep(2000);
+				    String msg1=MyWorkspaceLocator. Deletevalidmsg1(driver).getText();
+				    
+				    if(msg1.equalsIgnoreCase(msg1))
+				    	
+				    {
+				    	test.log(LogStatus.PASS, "Message Dispalyed=" +msg1);
+				    }
+				    else
+				    {
+				    	test.log(LogStatus.FAIL, "Message Dispalyed=" +msg1);
+				    }
+				    
+				    Thread.sleep(2000);
+				      MyWorkspaceLocator.closeIcon(driver).click();
+		}
+		
+		public static void DeleteBtnNo(WebDriver driver,ExtentTest test) throws InterruptedException
+		{
+			WebDriverWait wait=new WebDriverWait(driver, 20);
+		
+			Thread.sleep(2000);
+			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+			
+			  Thread.sleep(2000);
+			   MyWorkspaceLocator.clickMyTask(driver).click();
+			   
+			 
+			      Thread.sleep(5000);
+			      MyWorkspaceLocator.DeleteIcon(driver).click();
+			      
+			      Thread.sleep(2000);
+			    String msg=MyWorkspaceLocator. Deletevalidmsg(driver).getText();
+			    
+			    if(msg.equalsIgnoreCase(msg))
+			    {
+			    	test.log(LogStatus.PASS, "Message Dispalyed=" +msg);
+			    }
+			    else
+			    {
+			    	test.log(LogStatus.FAIL, "Message Dispalyed=" +msg);
+			    }
+		
+			    
+			    if( MyWorkspaceLocator. DeleteIconNo(driver).isEnabled())
+			    {
+			       Thread.sleep(2000);
+			       MyWorkspaceLocator. DeleteIconNo(driver).click();
+			       test.log(LogStatus.PASS, "The item should not be deleted");
+			    }
+			    else
+			    {
+			    	test.log(LogStatus.FAIL, "The item should  be deleted");
+			    }
+			      
+		}
+		
+		public static void MeetingCalender(WebDriver driver,ExtentTest test) throws InterruptedException
+		{
+			WebDriverWait wait=new WebDriverWait(driver, 20);
+		
+			Thread.sleep(2000);
+			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+			
+			Thread.sleep(2000);
+			if(MyWorkspaceLocator.MeetingCalender(driver).isEnabled())
+			{
+			   Thread.sleep(2000);
+			    MyWorkspaceLocator.MeetingCalender(driver).click();
+			    test.log(LogStatus.PASS, "User  redirected to the Meeting Calender page");
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, "User not redirected to the Meeting Calender page");
+			}
+			
+			
+		}
+		
+		public static void AddMeetingCalender(WebDriver driver,ExtentTest test) throws InterruptedException
+		{
+			WebDriverWait wait=new WebDriverWait(driver, 20);
+		
+			Thread.sleep(2000);
+			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+			  Thread.sleep(2000);
+			    MyWorkspaceLocator.MeetingCalender(driver).click();
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.NewBtn(driver).click();
+			    
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.AddBtn(driver).click();
+			    
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.Entity(driver).click();
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.SelectEntity(driver).click();
+//			    Thread.sleep(2000);
+//			    MyWorkspaceLocator.ClickFY(driver).click();
+//			    
+//			    Thread.sleep(2000);
+//			    MyWorkspaceLocator.ClickFY1(driver).click();
+//			    Thread.sleep(2000);
+//			    MyWorkspaceLocator. SelectFY(driver).click();
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.ClickMeetingType(driver).click();
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.SelectMeetingType(driver).click();
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.ClickMeetingNumber(driver).sendKeys("5");
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.MeetingDate(driver).click();
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.SelectDate(driver).click();
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator. StarDate(driver).click();
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.StarDateTime(driver).click();
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.EndDate(driver).click();
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator. EndDateTime(driver).click();
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.savebtn(driver).click();
+			    Thread.sleep(2000);
+			    String msg=  MyWorkspaceLocator. ValidMsg1(driver).getText();
+			   if(MyWorkspaceLocator. ValidMsg1(driver).isEnabled()) 
+			   {
+				  test.log(LogStatus.PASS, "Message Displayed =" +msg);
+				  
+			   }
+			   else
+			   {
+				   test.log(LogStatus.FAIL, "Message Displayed =" +msg);
+			   }
+			   
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.closeIcon(driver).click();
+			    
+			    Thread.sleep(4000);
+			     EntityLocator.ClickDashboard(driver).click();
+			    
+		}
+		
+		public static void MeetingCalenderWithoutEnterData(WebDriver driver,ExtentTest test) throws InterruptedException
+		{
+			WebDriverWait wait=new WebDriverWait(driver, 20);
+		
+			Thread.sleep(2000);
+			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+			  Thread.sleep(2000);
+			    MyWorkspaceLocator.MeetingCalender(driver).click();
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.NewBtn(driver).click();
+			    
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.AddBtn(driver).click();
+			    
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.savebtn(driver).click();
+			    Thread.sleep(2000);
+			    String msg=  MyWorkspaceLocator. ValidMsg1(driver).getText();
+			   if(msg.equalsIgnoreCase(msg)) 
+			   {
+				  test.log(LogStatus.FAIL, "Message Displayed =" +msg);
+				  
+			   }
+			   else
+			   {
+				   test.log(LogStatus.PASS, "Message Displayed =" +msg);
+			   }
+			   
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.closeIcon(driver).click();
+			    
+			    Thread.sleep(4000);
+			     EntityLocator.ClickDashboard(driver).click();
+			    
+		}
+		
+		public static void ClearBtn(WebDriver driver,ExtentTest test) throws InterruptedException
+		{
+			WebDriverWait wait=new WebDriverWait(driver, 20);
+		
+			Thread.sleep(2000);
+			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+			  Thread.sleep(2000);
+			    MyWorkspaceLocator.MeetingCalender(driver).click();
+			    
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.ClickEntity(driver).click();
+			    
+			    Thread.sleep(2000);
+				 List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='EntityID_listbox']/li"));
+				 selectOptionFromDropDown_bs(entitytype, "A LIMITED");
+				
+				 if( MyWorkspaceLocator.clearFilter(driver).isEnabled())
+				 {
+				   Thread.sleep(2000);
+			       MyWorkspaceLocator.clearFilter(driver).click();
+			       test.log(LogStatus.PASS, "Clear button is clickable");
+				 }
+				 else
+				 {
+					 test.log(LogStatus.FAIL, "Clear button is not clickable");
+				 }
+		}
+		
+		public static void MyMeeting(WebDriver driver,ExtentTest test) throws InterruptedException
+		{
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+			
+			Thread.sleep(2000);
+			if(MyWorkspaceLocator.mYMeeting(driver).isEnabled())
+			{
+				Thread.sleep(2000);
+				MyWorkspaceLocator.mYMeeting(driver).click();
+				test.log(LogStatus.PASS, "User redirected on 'My Meeting' page");
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, "User not redirected on 'My Meeting' page");
+			}
+		}
+			    
+			
+			     
+			    
+			   
+		
+		
 			   		
 			
 			

@@ -39,7 +39,7 @@ public class MyWorkspaceTestCases
 	public static XSSFSheet ReadExcel() throws IOException
 	{
 
-		fis = new FileInputStream("E:\\Snehal\\ComplianceLatest\\Secretarial-Project-main\\Secretarial-Project-main\\TestData\\SecreterialSheet3.xlsx");
+		fis = new FileInputStream("E:\\Secreterial Project Git Folder\\Avasec Merge\\Secreterial Project 26JULY23\\Secretarial-Project-26JULY23\\TestData\\SecreterialSheet3.xlsx");
 		
 		workbook = new XSSFWorkbook(fis);
 		sheet = workbook.getSheetAt(0);					//Retrieving second sheet of Workbook
@@ -616,13 +616,134 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority=49)
+		//@Test(priority=49)
 
 		  void TaskViewDeatiles() throws InterruptedException, IOException
 		  {
 			test = extent.startTest("My Workspace- My Task tab - Task View Detailes Tab Verification");
 			
 			MyWorkspaceMethod.TaskViewDeatiles(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		//@Test(priority=50)
+
+		  void EditTask() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- My Task tab - Edit Task Verification");
+			
+			MyWorkspaceMethod.EditTask(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		//@Test(priority=51)
+
+		  void EditTaskWithoutEnterData() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- My Task tab - Without Enter data edit task Verification");
+			
+			MyWorkspaceMethod.EditTaskWithoutEnterData(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		//@Test(priority=52)
+
+		  void DownloadDocument() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- My Task tab - Download Document Verification");
+			
+			MyWorkspaceMethod.DownloadDocument(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		//@Test(priority=53)
+
+		  void closeBtnEditTask() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- My Task tab - Close button Verification");
+			
+			MyWorkspaceMethod.CloseBtn(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		//@Test(priority=54)
+
+		  void DeleteBtn() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- My Task tab - Delete button -'Yes' button Verification");
+			
+			MyWorkspaceMethod.DeleteBtn(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		//@Test(priority=55)
+
+		  void DeleteBtnNo() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- My Task tab - Delete button -'No'button Verification");
+			
+			MyWorkspaceMethod.DeleteBtnNo(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		//@Test(priority=56)
+
+		  void MeetingCalender() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- Meeting Calender tab Verification");
+			
+			MyWorkspaceMethod.MeetingCalender(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		//@Test(priority=57)
+
+		  void AddMeetingCalender() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- Meeting Calender tab -Add Meeting Calender tab Verification");
+			
+			MyWorkspaceMethod.AddMeetingCalender(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		//@Test(priority=58)
+
+		  void MeetingCalenderWithoutEnterData() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- Meeting Calender tab -New button -Without Enter Data Verification");
+			
+			MyWorkspaceMethod.MeetingCalenderWithoutEnterData(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		@Test(priority=59)
+
+		  void ClearBtn() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- Meeting Calender tab -Clear button Verification");
+			
+			MyWorkspaceMethod.ClearBtn(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		@Test(priority=59)
+
+		  void MyMeeting() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- My Meeting  tab - Verification");
+			
+			MyWorkspaceMethod.MyMeeting(driver, test);
 			
 			extent.endTest(test);
 			extent.flush();
