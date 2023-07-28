@@ -726,7 +726,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority=59)
+		//@Test(priority=59)
 
 		  void ClearBtn() throws InterruptedException, IOException
 		  {
@@ -737,13 +737,57 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority=59)
+		//@Test(priority=60)
 
 		  void MyMeeting() throws InterruptedException, IOException
 		  {
 			test = extent.startTest("My Workspace- My Meeting  tab - Verification");
 			
 			MyWorkspaceMethod.MyMeeting(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		//@Test(priority=61)
+
+		  void NewRegularMeeting() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- My Meeting  tab -New button- Regular Meeting Verification");
+			
+			MyWorkspaceMethod.NewRegularMeeting(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		//@Test(priority=62)
+
+		  void NewShorterMeeting() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- My Meeting  tab -New button- Shorter Meeting Verification");
+			
+			MyWorkspaceMethod.NewShorterMeeting(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		@Test(priority=63)
+
+		  void NewEMeeting() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- My Meeting  tab -New button-  e-Meeting Verification");
+			
+			MyWorkspaceMethod.NewEMeeting(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		@Test(priority=64)
+
+		  void CircularMeeting() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- My Meeting  tab -New button- Circular Meeting Verification");
+			
+			MyWorkspaceMethod.CircularMeeting(driver, test);
 			
 			extent.endTest(test);
 			extent.flush();

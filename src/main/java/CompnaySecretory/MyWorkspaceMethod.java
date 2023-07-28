@@ -2129,9 +2129,212 @@ public class MyWorkspaceMethod
 				test.log(LogStatus.FAIL, "User not redirected on 'My Meeting' page");
 			}
 		}
-			    
+		public static void NewRegularMeeting(WebDriver driver,ExtentTest test) throws InterruptedException
+		{
 			
-			     
+			Thread.sleep(2000);
+			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.mYMeeting(driver).click();
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.AddRegularMeeting(driver).click();
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.clickEntity1(driver).click();
+			
+			Thread.sleep(2000);
+			 List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+				selectOptionFromDropDown_bs(entitytype, "CAM SERVICE LLP");
+				
+				Thread.sleep(2000);
+				MyWorkspaceLocator.clickType1(driver).click();
+			
+				
+				Thread.sleep(2000);
+				 List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+					selectOptionFromDropDown_bs(type, "Board");
+			
+				Thread.sleep(2000);
+				MyWorkspaceLocator.clickFY1(driver).click();
+					
+				Thread.sleep(2000);
+				List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+				selectOptionFromDropDown_bs(FY, "FY-2023-24");
+				
+				
+				Thread.sleep(2000);
+				if(MyWorkspaceLocator.clickSave1(driver).isEnabled())
+				{
+					Thread.sleep(2000);
+					MyWorkspaceLocator.clickSave1(driver).click();
+					test.log(LogStatus.PASS, "User redirected on 'Regular Meeting' page");
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "User not redirected on 'Regular Meeting' page");
+				}
+				Thread.sleep(2000);
+				MyWorkspaceLocator.close(driver).click();
+		}
+		public static void NewShorterMeeting(WebDriver driver,ExtentTest test) throws InterruptedException
+		{
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.mYMeeting(driver).click();
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.AddRegularMeeting(driver).click();
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.clickEntity1(driver).click();
+			
+			Thread.sleep(2000);
+			 List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+				selectOptionFromDropDown_bs(entitytype, "LACC LIMITED");
+				
+				Thread.sleep(2000);
+				MyWorkspaceLocator.clickType1(driver).click();
+			
+				
+				Thread.sleep(2000);
+				 List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+					selectOptionFromDropDown_bs(type, "Board");
+			
+				Thread.sleep(2000);
+				MyWorkspaceLocator.clickFY1(driver).click();
+					
+				Thread.sleep(2000);
+				List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+				selectOptionFromDropDown_bs(FY, "FY-2022-23");
+				
+				Thread.sleep(2000);
+				MyWorkspaceLocator.Shorter(driver).click();
+				
+				
+				Thread.sleep(2000);
+				if(MyWorkspaceLocator.clickSave1(driver).isEnabled())
+				{
+					Thread.sleep(2000);
+					MyWorkspaceLocator.clickSave1(driver).click();
+					test.log(LogStatus.PASS, "User redirected on 'Shorter Meeting' page");
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "User not redirected on 'Shorter Meeting' page");
+				}
+				Thread.sleep(2000);
+				MyWorkspaceLocator.close(driver).click();
+		}	    
+			
+		public static void NewEMeeting(WebDriver driver,ExtentTest test) throws InterruptedException
+		{
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.mYMeeting(driver).click();
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.AddRegularMeeting(driver).click();
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.clickEntity1(driver).click();
+			
+			Thread.sleep(2000);
+			 List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+				selectOptionFromDropDown_bs(entitytype, "LACC LIMITED");
+				
+				Thread.sleep(2000);
+				MyWorkspaceLocator.clickType1(driver).click();
+			
+				
+				Thread.sleep(2000);
+				 List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+					selectOptionFromDropDown_bs(type, "Board");
+			
+				Thread.sleep(2000);
+				MyWorkspaceLocator.clickFY1(driver).click();
+					
+				Thread.sleep(2000);
+				List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+				selectOptionFromDropDown_bs(FY, "FY-2022-23");
+				
+				Thread.sleep(2000);
+				MyWorkspaceLocator.eMetting(driver).click();
+				
+				
+				Thread.sleep(2000);
+				if(MyWorkspaceLocator.clickSave1(driver).isEnabled())
+				{
+					Thread.sleep(2000);
+					MyWorkspaceLocator.clickSave1(driver).click();
+					test.log(LogStatus.PASS, "User redirected on 'Regular e-Meeting' page");
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "User not redirected on 'Regular e-Meeting' page");
+				}
+				Thread.sleep(2000);
+				MyWorkspaceLocator.close(driver).click();
+		}	    
+		public static void CircularMeeting(WebDriver driver,ExtentTest test) throws InterruptedException
+		{
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.mYMeeting(driver).click();
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.AddRegularMeeting(driver).click();
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.circular(driver).click();
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.clickEntity1(driver).click();
+			
+			Thread.sleep(2000);
+			 List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+				selectOptionFromDropDown_bs(entitytype, "LACC LIMITED");
+				
+				Thread.sleep(2000);
+				MyWorkspaceLocator.clickType1(driver).click();
+			
+				
+				Thread.sleep(2000);
+				 List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+					selectOptionFromDropDown_bs(type, "Board");
+			
+				Thread.sleep(2000);
+				MyWorkspaceLocator.clickFY1(driver).click();
+					
+				Thread.sleep(2000);
+				List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+				selectOptionFromDropDown_bs(FY, "FY-2022-23");
+				
+			
+				Thread.sleep(2000);
+				if(MyWorkspaceLocator.clickSave1(driver).isEnabled())
+				{
+					Thread.sleep(2000);
+					MyWorkspaceLocator.clickSave1(driver).click();
+					test.log(LogStatus.PASS, "User redirected on 'Regular e-Meeting' page");
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "User not redirected on 'Regular Meeting' page");
+				}
+				Thread.sleep(2000);
+				MyWorkspaceLocator.close(driver).click();
+		}	     
 			    
 			   
 		

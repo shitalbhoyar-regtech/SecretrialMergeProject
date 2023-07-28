@@ -6,9 +6,9 @@
       <class name="CompanySecretoryTest.MyWorkspaceTestCases">
         <methods>
           <include name="Close"/>
+          <include name="NewShorterMeeting"/>
           <include name="setBrowser"/>
           <include name="Login"/>
-          <include name="AddMeetingCalender"/>
         </methods>
       </class> <!-- CompanySecretoryTest.MyWorkspaceTestCases -->
     </classes>

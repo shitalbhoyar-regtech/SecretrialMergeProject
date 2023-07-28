@@ -720,6 +720,60 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.xpath("//*[@id='myWorkspacemenu']/ul/li[3]/a/span"));
 		return Secreterial;
 	}
+	public static WebElement AddRegularMeeting(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//a[@title='Add New']"));
+		return Secreterial;
+	}
+	public static WebElement clickEntity1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//span[@class='k-input'])[16]"));
+		return Secreterial;
+	}
+	public static WebElement clickType1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//span[@class='k-input'])[17]"));
+		return Secreterial;
+	}
+	public static WebElement clickFY1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//span[@class='k-input'])[18]"));
+		return Secreterial;
+	}
+	public static WebElement clickSave1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='command_name']"));
+		return Secreterial;
+	}
+	public static WebElement close(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("/html/body/div[12]/div[1]/div/a"));
+		return Secreterial;
+	}
+	public static WebElement Shorter(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//span[@class='checkmark1'])[4]"));
+		return Secreterial;
+	}
+	public static WebElement eMetting(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//span[@class='checkmark1'])[5]"));
+		return Secreterial;
+	}
+	public static WebElement circular(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//span[@class='checkmark1'])[1]"));
+		return Secreterial;
+	}
 	
 	 static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {
 			
