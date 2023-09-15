@@ -6,10 +6,10 @@
       <class name="secretrialTestCase.MyReportsTest">
         <methods>
           <include name="browserClosing"/>
-          <include name="CompanyAllClickDD"/>
           <include name="setBrowser"/>
           <include name="Login"/>
           <include name="Closing"/>
+          <include name="UploadMSME"/>
         </methods>
       </class> <!-- secretrialTestCase.MyReportsTest -->
     </classes>
