@@ -2541,6 +2541,2081 @@ public class MyReportsMethods {
 		
 	}
 	
+	public static void UploadMSMEIE(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+		MyReportsLocators.MyReportsMenu(driver).click();
+		Thread.sleep(8000);
+		By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a/span");
+
+		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+		Thread.sleep(4000);
+		
+		WebElement ViewButton = driver.findElement(locator);	
+		Thread.sleep(4000);
+	JavascriptExecutor jse=(JavascriptExecutor)driver;
+	jse.executeScript("arguments[0].click();", ViewButton);
+		Thread.sleep(4000);
+	
+			MyReportsLocators.UploadBtn(driver).click();
+			Thread.sleep(3000);
+		
+			MyReportsLocators.Selectfile(driver).sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\4_28_2023 3_09_26 PM.zip");
+			Thread.sleep(3000);
+			MyReportsLocators.Upload(driver).click();
+			Thread.sleep(3000);
+			String text=MyReportsLocators.UploadVAl(driver).getText();
+			Thread.sleep(4000);
+			
+			
+				test.log(LogStatus.PASS, text);
+			
+		MyReportsLocators.UploadBtnClose(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void EditMSMEClick(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+		
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a/span");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+		
+			
+		if(MyReportsLocators.EditClick(driver).isEnabled()) {
+			MyReportsLocators.EditClick(driver).click();
+			Thread.sleep(3000);
+			test.log(LogStatus.PASS, "The 'MSME Details'  editing interface should open.");
+		}else {
+			test.log(LogStatus.FAIL, "The 'MSME Details' editing interface should not open,.");
+			
+		}
+		MyReportsLocators.AddNewClose(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void EditMSME(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a/span");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+		
+			MyReportsLocators.EditClick(driver).click();
+			Thread.sleep(5000);
+			
+			MyReportsLocators.DateOfReceiptOfData(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.DateOfReceiptOfData1(driver).click();
+			Thread.sleep(2000);
+			
+			MyReportsLocators.SaveBtn1(driver).click();
+			Thread.sleep(4000);
+			try {
+		String text=MyReportsLocators.SaveMsg(driver).getText();
+			Thread.sleep(4000);
+			if(text.equalsIgnoreCase("Record Updated Successfully")) {
+				test.log(LogStatus.PASS, text);
+			}else {
+				test.log(LogStatus.PASS, text);
+			}
+	}catch(Exception e) {
+		String text=MyReportsLocators.SaveMsgAE(driver).getText();
+		Thread.sleep(4000);
+		test.log(LogStatus.FAIL, text);
+	}
+			
+		MyReportsLocators.AddNewClose(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void  Reg26ofSEBILODR(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(4000);
+			 Actions act =new Actions(driver);
+	            act.sendKeys(Keys.PAGE_DOWN).build().perform();
+	            Thread.sleep(7000);
+
+		if(MyReportsLocators.MSMEReport(driver).isEnabled()) {
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			test.log(LogStatus.PASS, "User should be redirected to the 'Reg 26(3) of SEBI (LODR)' page.");
+		}else {
+			test.log(LogStatus.FAIL, " User should not redirected to the 'Reg 26(3) of SEBI (LODR)' page.");
+			
+		}
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void AddNewReg26ofSEBILODR(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+		
+			MyReportsLocators.AddNew(driver).click();
+			Thread.sleep(3000);
+			
+			MyReportsLocators.SelectCompany(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.SelectCompany1(driver).click();
+			Thread.sleep(2000);
+			
+			MyReportsLocators.SelectDirector(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.SelectDirector1(driver).click();
+			Thread.sleep(2000);
+			
+			MyReportsLocators.FinancialyearReg(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.FinancialyearReg1(driver).click();
+			Thread.sleep(2000);
+			
+			MyReportsLocators.SaveBtnReg(driver).click();
+			Thread.sleep(3000);
+			
+			try {
+				String text=MyReportsLocators.SaveMsg(driver).getText();
+					Thread.sleep(4000);
+					if(text.equalsIgnoreCase("Record Save Successfully")) {
+						test.log(LogStatus.PASS, text);
+					}else {
+						test.log(LogStatus.PASS, text);
+					}
+			}catch(Exception e) {
+				String text=MyReportsLocators.SaveMsgAEreg(driver).getText();
+				Thread.sleep(4000);
+				test.log(LogStatus.FAIL, text);
+			}
+					
+		
+		MyReportsLocators.AddNewClosereg(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void AddNewReg26ofSEBILODRAE(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+		
+			MyReportsLocators.AddNew(driver).click();
+			Thread.sleep(3000);
+			
+			
+			MyReportsLocators.SaveBtnReg(driver).click();
+			Thread.sleep(3000);
+			
+				String text=MyReportsLocators.SaveMsgAEreg(driver).getText();
+				Thread.sleep(4000);
+				test.log(LogStatus.FAIL, text);
+			
+					
+		
+		MyReportsLocators.AddNewClosereg(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void UploadReg(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+	
+			MyReportsLocators.UploadBtn(driver).click();
+			Thread.sleep(3000);
+			
+			MyReportsLocators.SampleReg(driver).click();
+			Thread.sleep(3000);
+			MyReportsLocators.Selectfile(driver).sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\Reg26SEBIReport.xlsx");
+			Thread.sleep(3000);
+			MyReportsLocators.Upload(driver).click();
+			Thread.sleep(4000);
+			try {
+			String text=MyReportsLocators.SaveMsg(driver).getText();
+			Thread.sleep(4000);
+			if(text.equalsIgnoreCase("Record Updated Successfully")) {
+				test.log(LogStatus.PASS, text);
+			}else {
+				test.log(LogStatus.FAIL, text);
+			}
+			}catch(Exception e) {
+				
+				String text=MyReportsLocators.UploadVAl(driver).getText();
+				Thread.sleep(4000);
+			
+					test.log(LogStatus.FAIL, text);
+			}
+		MyReportsLocators.UploadBtnClose1(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void UploadRegVal(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+			MyReportsLocators.UploadBtn(driver).click();
+			Thread.sleep(3000);
+			
+			MyReportsLocators.SampleReg(driver).click();
+			Thread.sleep(3000);
+			MyReportsLocators.Selectfile(driver).sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\Reg26SEBIReport (1).xlsx");
+			Thread.sleep(3000);
+			MyReportsLocators.Upload(driver).click();
+			Thread.sleep(4000);
+			try {
+			String text=MyReportsLocators.SaveMsg(driver).getText();
+			Thread.sleep(4000);
+			if(text.equalsIgnoreCase("Record Updated Successfully")) {
+				test.log(LogStatus.PASS, text);
+			}else {
+				test.log(LogStatus.FAIL, text);
+			}
+			}catch(Exception e) {
+				
+				String text=MyReportsLocators.UploadVAl(driver).getText();
+				Thread.sleep(4000);
+			
+					test.log(LogStatus.PASS, text);
+			}
+		MyReportsLocators.UploadBtnClose1(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void UploadRegVal1(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+			MyReportsLocators.UploadBtn(driver).click();
+			Thread.sleep(3000);
+			
+			MyReportsLocators.SampleReg(driver).click();
+			Thread.sleep(3000);
+			MyReportsLocators.Selectfile(driver).sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\Reg26SEBIReport (2).xlsx");
+			Thread.sleep(3000);
+			MyReportsLocators.Upload(driver).click();
+			Thread.sleep(4000);
+			try {
+			String text=MyReportsLocators.SaveMsg(driver).getText();
+			Thread.sleep(4000);
+			if(text.equalsIgnoreCase("Record Updated Successfully")) {
+				test.log(LogStatus.PASS, text);
+			}else {
+				test.log(LogStatus.FAIL, text);
+			}
+			}catch(Exception e) {
+				
+				String text=MyReportsLocators.UploadVAl(driver).getText();
+				Thread.sleep(4000);
+			
+					test.log(LogStatus.PASS, text);
+			}
+		MyReportsLocators.UploadBtnClose1(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void UploadRegValD1(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+			MyReportsLocators.UploadBtn(driver).click();
+			Thread.sleep(3000);
+			
+			MyReportsLocators.SampleReg(driver).click();
+			Thread.sleep(3000);
+			MyReportsLocators.Selectfile(driver).sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\Reg26SEBIReport (3).xlsx");
+			Thread.sleep(3000);
+			MyReportsLocators.Upload(driver).click();
+			Thread.sleep(4000);
+			try {
+			String text=MyReportsLocators.SaveMsg(driver).getText();
+			Thread.sleep(4000);
+			if(text.equalsIgnoreCase("Record Updated Successfully")) {
+				test.log(LogStatus.PASS, text);
+			}else {
+				test.log(LogStatus.FAIL, text);
+			}
+			}catch(Exception e) {
+				
+				String text=MyReportsLocators.UploadVAl(driver).getText();
+				Thread.sleep(4000);
+			
+					test.log(LogStatus.PASS, text);
+			}
+		MyReportsLocators.UploadBtnClose1(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void UploadRegValDE1(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+			MyReportsLocators.UploadBtn(driver).click();
+			Thread.sleep(3000);
+			
+			MyReportsLocators.SampleReg(driver).click();
+			Thread.sleep(3000);
+			MyReportsLocators.Selectfile(driver).sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\4_28_2023 3_09_26 PM.zip");
+			Thread.sleep(3000);
+			MyReportsLocators.Upload(driver).click();
+			Thread.sleep(4000);
+			try {
+			String text=MyReportsLocators.SaveMsg(driver).getText();
+			Thread.sleep(4000);
+			if(text.equalsIgnoreCase("Record Updated Successfully")) {
+				test.log(LogStatus.PASS, text);
+			}else {
+				test.log(LogStatus.FAIL, text);
+			}
+			}catch(Exception e) {
+				
+				String text=MyReportsLocators.UploadVAl(driver).getText();
+				Thread.sleep(4000);
+			
+					test.log(LogStatus.PASS, text);
+			}
+		MyReportsLocators.UploadBtnClose1(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void ExportReg(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (60));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+			
+			File dir = new File("C:\\Users\\Mayuri\\Downloads");
+			File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(4000);
+			MyReportsLocators.ExportBD(driver).click();		//Exporting (Downloading) file
+			
+			Thread.sleep(4000);
+			File dir1 = new File("C:\\Users\\Mayuri\\Downloads");
+			File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+			
+			Thread.sleep(3000);
+			if (dirContents.length < allFilesNew.length) {
+				test.log(LogStatus.PASS,  "On clicking on export button, Reg 26(3) of SEBI (LODR) Status Report should be downloaded");
+			} else {
+				test.log(LogStatus.FAIL, "File does not downloaded.");
+			}
+			
+			
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void EditReg(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+		
+			MyReportsLocators.EditClick(driver).click();
+			Thread.sleep(5000);
+			
+			MyReportsLocators.DateOfSubmission(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.DateOfSubmission1(driver).click();
+			Thread.sleep(2000);
+			
+			MyReportsLocators.SaveBtnreg(driver).click();
+			Thread.sleep(4000);
+			try {
+		String text=MyReportsLocators.SaveMsg(driver).getText();
+			Thread.sleep(4000);
+			if(text.equalsIgnoreCase("Record Updated Successfully")) {
+				test.log(LogStatus.PASS, text);
+			}else {
+				test.log(LogStatus.PASS, text);
+			}
+	}catch(Exception e) {
+		String text=MyReportsLocators.SaveMsgAE(driver).getText();
+		Thread.sleep(4000);
+		test.log(LogStatus.FAIL, text);
+	}
+			
+		MyReportsLocators.AddNewClosereg(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void EditRegUpload(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+		
+			MyReportsLocators.EditClick(driver).click();
+			Thread.sleep(5000);
+			
+			MyReportsLocators.Selectfile(driver).sendKeys("C:\\Users\\Mayuri\\Downloads\\Food Safety & Standard Rules 2011.pdf");
+			Thread.sleep(5000);
+			
+			MyReportsLocators.SaveBtnreg(driver).click();
+			Thread.sleep(4000);
+			try {
+		String text=MyReportsLocators.SaveMsg(driver).getText();
+			Thread.sleep(4000);
+			if(text.equalsIgnoreCase("Record Updated Successfully")) {
+				test.log(LogStatus.PASS, text);
+			}else {
+				test.log(LogStatus.PASS, text);
+			}
+	}catch(Exception e) {
+		String text=MyReportsLocators.SaveMsgAE(driver).getText();
+		Thread.sleep(4000);
+		test.log(LogStatus.FAIL, text);
+	}
+			
+		MyReportsLocators.AddNewClosereg(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void EditDraftDocument(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+		
+			MyReportsLocators.EditClick(driver).click();
+			Thread.sleep(5000);
+			
+			MyReportsLocators.Selectfile1(driver).sendKeys("C:\\Users\\Mayuri\\Downloads\\Food Safety & Standard Rules 2011.pdf");
+			Thread.sleep(5000);
+			
+			MyReportsLocators.SaveBtnreg(driver).click();
+			Thread.sleep(4000);
+			
+			File dir = new File("C:\\Users\\Mayuri\\Downloads");
+			File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(4000);
+			MyReportsLocators.DraftDocument(driver).click();		//Exporting (Downloading) file
+			
+			Thread.sleep(4000);
+			File dir1 = new File("C:\\Users\\Mayuri\\Downloads");
+			File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+			
+			Thread.sleep(3000);
+			if (dirContents.length < allFilesNew.length) {
+				test.log(LogStatus.PASS,  "Draft Document should be downloaded successfully");
+			} else {
+				test.log(LogStatus.FAIL, "File does not downloaded.");
+			}
+	
+			
+		MyReportsLocators.AddNewClosereg(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	
+	public static void View(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+		
+			MyReportsLocators.ViewReg(driver).click();
+			Thread.sleep(5000);
+			
+			MyReportsLocators.ViewRegClose(driver).click();
+			Thread.sleep(5000);
+			
+			
+				test.log(LogStatus.PASS,  "User should be redirected to the 'View' popup");
+			
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void ViewDownload(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+		
+			MyReportsLocators.ViewReg(driver).click();
+			Thread.sleep(5000);
+			
+			File dir = new File("C:\\Users\\Mayuri\\Downloads");
+			File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(4000);
+			MyReportsLocators.ViewRegDownload(driver).click();		//Exporting (Downloading) file
+			
+			Thread.sleep(4000);
+			File dir1 = new File("C:\\Users\\Mayuri\\Downloads");
+			File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+			
+			Thread.sleep(3000);
+			if (dirContents.length < allFilesNew.length) {
+				test.log(LogStatus.PASS,  "Use should able to download the document");
+			} else {
+				test.log(LogStatus.FAIL, "File does not downloaded.");
+			}
+			
+			
+			
+			MyReportsLocators.ViewRegClose(driver).click();
+			Thread.sleep(5000);
+			
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void ViewUploadDoc(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+		
+			MyReportsLocators.ViewReg(driver).click();
+			Thread.sleep(5000);
+			
+			MyReportsLocators.ViewReg1(driver).click();
+			Thread.sleep(5000);
+			
+			MyReportsLocators.ViewRegClose1(driver).click();
+			Thread.sleep(5000);
+			
+			
+			test.log(LogStatus.PASS,  "User should able to View the document");
+			
+			MyReportsLocators.ViewRegClose(driver).click();
+			Thread.sleep(5000);
+			
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void ViewUploadDocDelete(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			MyReportsLocators.ViewReg(driver).click();
+			Thread.sleep(5000);
+		
+By locator2 = By.xpath("(//*[@class='k-grid-Delete k-grid-delete k-grid-button'])[2]");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator2));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton2 = driver.findElement(locator2);	
+			Thread.sleep(4000);
+		jse.executeScript("arguments[0].click();", ViewButton2);
+			Thread.sleep(4000);
+			   String msg=MyReportsLocators.DeleteMsg(driver).getText();
+		         Thread.sleep(1000);
+	          	
+By locator1 = By.xpath("(//*[@class='btn btn-primary'])[4]");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator1));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton1 = driver.findElement(locator1);	
+			Thread.sleep(4000);
+		jse.executeScript("arguments[0].click();", ViewButton1);
+			Thread.sleep(4000);
+			
+			test.log(LogStatus.PASS,  "Message displayed :- "+msg);
+			
+			MyReportsLocators.ViewRegClose(driver).click();
+			Thread.sleep(5000);
+			
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void ViewUploadDocDeleteCan(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			MyReportsLocators.ViewReg(driver).click();
+			Thread.sleep(5000);
+		
+By locator2 = By.xpath("(//*[@class='k-grid-Delete k-grid-delete k-grid-button'])[2]");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator2));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton2 = driver.findElement(locator2);	
+			Thread.sleep(4000);
+		jse.executeScript("arguments[0].click();", ViewButton2);
+			Thread.sleep(4000);
+			   
+	          	
+By locator1 = By.xpath("(//*[@class='btn btn-primary'])[5]");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator1));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton1 = driver.findElement(locator1);	
+			Thread.sleep(4000);
+		jse.executeScript("arguments[0].click();", ViewButton1);
+			Thread.sleep(4000);
+			
+			test.log(LogStatus.PASS,  "The document should not deleted from the system");
+			
+			MyReportsLocators.ViewRegClose(driver).click();
+			Thread.sleep(5000);
+			
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void DeleteCan(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+		
+By locator2 = By.xpath("(//*[@class='k-grid-Delete k-grid-delete k-grid-button'])");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator2));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton2 = driver.findElement(locator2);	
+			Thread.sleep(4000);
+		jse.executeScript("arguments[0].click();", ViewButton2);
+			Thread.sleep(4000);
+			  
+	          	
+By locator1 = By.xpath("(//*[@class='btn btn-primary'])[5]");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator1));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton1 = driver.findElement(locator1);	
+			Thread.sleep(4000);
+		jse.executeScript("arguments[0].click();", ViewButton1);
+			Thread.sleep(4000);
+			
+			test.log(LogStatus.PASS,  "The document should not deleted from the system");
+			
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void Delete(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[12]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+		
+By locator2 = By.xpath("(//*[@class='k-grid-Delete k-grid-delete k-grid-button'])");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator2));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton2 = driver.findElement(locator2);	
+			Thread.sleep(4000);
+		jse.executeScript("arguments[0].click();", ViewButton2);
+			Thread.sleep(4000);
+			   String msg=MyReportsLocators.DeleteMsg(driver).getText();
+		         Thread.sleep(1000);
+	          	
+By locator1 = By.xpath("(//*[@class='btn btn-primary'])[4]");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator1));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton1 = driver.findElement(locator1);	
+			Thread.sleep(4000);
+		jse.executeScript("arguments[0].click();", ViewButton1);
+			Thread.sleep(4000);
+			
+			test.log(LogStatus.PASS,  "Message displayed :- "+msg);
+			
+			
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void  IndependenceDeclaration(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(4000);
+			 Actions act =new Actions(driver);
+	            act.sendKeys(Keys.PAGE_DOWN).build().perform();
+	            Thread.sleep(7000);
+
+		if(MyReportsLocators.MSMEReport(driver).isEnabled()) {
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			test.log(LogStatus.PASS, "User should be redirected to the Independance Decleration page.");
+		}else {
+			test.log(LogStatus.FAIL, "User should be redirected to the Independance Decleration page.");
+			
+		}
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void AddNewIndependenceDeclaration(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+		
+			MyReportsLocators.AddNew(driver).click();
+			Thread.sleep(3000);
+			
+			MyReportsLocators.SelectCompany(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.SelectCompany2(driver).click();
+			Thread.sleep(2000);
+			
+			MyReportsLocators.SelectDirector(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.SelectDirector1(driver).click();
+			Thread.sleep(2000);
+			
+			MyReportsLocators.FinancialyearReg(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.FinancialyearReg1(driver).click();
+			Thread.sleep(2000);
+			
+			MyReportsLocators.SaveBtnReg(driver).click();
+			Thread.sleep(3000);
+			
+			try {
+				String text=MyReportsLocators.SaveMsg(driver).getText();
+					Thread.sleep(4000);
+					if(text.equalsIgnoreCase("Record Save Successfully")) {
+						test.log(LogStatus.PASS, text);
+					}else {
+						test.log(LogStatus.PASS, text);
+					}
+			}catch(Exception e) {
+				String text=MyReportsLocators.SaveMsgAEreg(driver).getText();
+				Thread.sleep(4000);
+				test.log(LogStatus.FAIL, text);
+			}
+					
+		
+		MyReportsLocators.AddNewClosereg(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void AddNewIndependenceDeclarationWD(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+		
+			MyReportsLocators.AddNew(driver).click();
+			Thread.sleep(3000);
+			
+			
+			MyReportsLocators.SaveBtnReg(driver).click();
+			Thread.sleep(3000);
+			
+				String text=MyReportsLocators.SaveMsgAEreg(driver).getText();
+				Thread.sleep(4000);
+				test.log(LogStatus.FAIL, text);
+			
+					
+		
+		MyReportsLocators.AddNewClosereg(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void UploadID(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+	
+			MyReportsLocators.UploadBtn(driver).click();
+			Thread.sleep(3000);
+			
+			MyReportsLocators.SampleReg(driver).click();
+			Thread.sleep(3000);
+			MyReportsLocators.Selectfile(driver).sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\IndDecReport.xlsx");
+			Thread.sleep(3000);
+			MyReportsLocators.Upload(driver).click();
+			Thread.sleep(4000);
+			try {
+			String text=MyReportsLocators.SaveMsg(driver).getText();
+			Thread.sleep(4000);
+			if(text.equalsIgnoreCase("Record Updated Successfully")) {
+				test.log(LogStatus.PASS, text);
+			}else {
+				test.log(LogStatus.FAIL, text);
+			}
+			}catch(Exception e) {
+				
+				String text=MyReportsLocators.UploadVAl(driver).getText();
+				Thread.sleep(4000);
+			
+					test.log(LogStatus.FAIL, text);
+			}
+		MyReportsLocators.UploadBtnClose1(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void UploadIDVal(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+			MyReportsLocators.UploadBtn(driver).click();
+			Thread.sleep(3000);
+			
+			MyReportsLocators.SampleReg(driver).click();
+			Thread.sleep(3000);
+			MyReportsLocators.Selectfile(driver).sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\IndDecReport (1).xlsx");
+			Thread.sleep(3000);
+			MyReportsLocators.Upload(driver).click();
+			Thread.sleep(4000);
+			try {
+			String text=MyReportsLocators.SaveMsg(driver).getText();
+			Thread.sleep(4000);
+			if(text.equalsIgnoreCase("Record Updated Successfully")) {
+				test.log(LogStatus.PASS, text);
+			}else {
+				test.log(LogStatus.FAIL, text);
+			}
+			}catch(Exception e) {
+				
+				String text=MyReportsLocators.UploadVAl(driver).getText();
+				Thread.sleep(4000);
+			
+					test.log(LogStatus.PASS, text);
+			}
+		MyReportsLocators.UploadBtnClose1(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void UploadIDVal1(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+			MyReportsLocators.UploadBtn(driver).click();
+			Thread.sleep(3000);
+			
+			MyReportsLocators.SampleReg(driver).click();
+			Thread.sleep(3000);
+			MyReportsLocators.Selectfile(driver).sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\IndDecReport (2).xlsx");
+			Thread.sleep(3000);
+			MyReportsLocators.Upload(driver).click();
+			Thread.sleep(4000);
+			try {
+			String text=MyReportsLocators.SaveMsg(driver).getText();
+			Thread.sleep(4000);
+			if(text.equalsIgnoreCase("Record Updated Successfully")) {
+				test.log(LogStatus.PASS, text);
+			}else {
+				test.log(LogStatus.FAIL, text);
+			}
+			}catch(Exception e) {
+				
+				String text=MyReportsLocators.UploadVAl(driver).getText();
+				Thread.sleep(4000);
+			
+					test.log(LogStatus.PASS, text);
+			}
+		MyReportsLocators.UploadBtnClose1(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void UploadIDValD1(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+			MyReportsLocators.UploadBtn(driver).click();
+			Thread.sleep(3000);
+			
+			MyReportsLocators.SampleReg(driver).click();
+			Thread.sleep(3000);
+			MyReportsLocators.Selectfile(driver).sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\IndDecReport (3).xlsx");
+			Thread.sleep(3000);
+			MyReportsLocators.Upload(driver).click();
+			Thread.sleep(4000);
+			try {
+			String text=MyReportsLocators.SaveMsg(driver).getText();
+			Thread.sleep(4000);
+			if(text.equalsIgnoreCase("Record Updated Successfully")) {
+				test.log(LogStatus.PASS, text);
+			}else {
+				test.log(LogStatus.FAIL, text);
+			}
+			}catch(Exception e) {
+				
+				String text=MyReportsLocators.UploadVAl(driver).getText();
+				Thread.sleep(4000);
+			
+					test.log(LogStatus.PASS, text);
+			}
+		MyReportsLocators.UploadBtnClose1(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void UploadIDValDE1(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+			MyReportsLocators.UploadBtn(driver).click();
+			Thread.sleep(3000);
+			
+			MyReportsLocators.SampleReg(driver).click();
+			Thread.sleep(3000);
+			MyReportsLocators.Selectfile(driver).sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\4_28_2023 3_09_26 PM.zip");
+			Thread.sleep(3000);
+			MyReportsLocators.Upload(driver).click();
+			Thread.sleep(4000);
+			try {
+			String text=MyReportsLocators.SaveMsg(driver).getText();
+			Thread.sleep(4000);
+			if(text.equalsIgnoreCase("Record Updated Successfully")) {
+				test.log(LogStatus.PASS, text);
+			}else {
+				test.log(LogStatus.FAIL, text);
+			}
+			}catch(Exception e) {
+				
+				String text=MyReportsLocators.UploadVAl(driver).getText();
+				Thread.sleep(4000);
+			
+					test.log(LogStatus.PASS, text);
+			}
+		MyReportsLocators.UploadBtnClose1(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void ExportID(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (60));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+			
+			File dir = new File("C:\\Users\\Mayuri\\Downloads");
+			File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(4000);
+			MyReportsLocators.ExportBD(driver).click();		//Exporting (Downloading) file
+			
+			Thread.sleep(4000);
+			File dir1 = new File("C:\\Users\\Mayuri\\Downloads");
+			File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+			
+			Thread.sleep(3000);
+			if (dirContents.length < allFilesNew.length) {
+				test.log(LogStatus.PASS,  "On clicking on export button, Independance Decleration data should be downloaded");
+			} else {
+				test.log(LogStatus.FAIL, "File does not downloaded.");
+			}
+			
+			
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void EditID(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+		
+			MyReportsLocators.EditClick(driver).click();
+			Thread.sleep(5000);
+			
+			MyReportsLocators.DateOfSubmission(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.DateOfSubmission1(driver).click();
+			Thread.sleep(2000);
+			
+			MyReportsLocators.SaveBtnreg(driver).click();
+			Thread.sleep(4000);
+			try {
+		String text=MyReportsLocators.SaveMsg(driver).getText();
+			Thread.sleep(4000);
+			if(text.equalsIgnoreCase("Record Updated Successfully")) {
+				test.log(LogStatus.PASS, text);
+			}else {
+				test.log(LogStatus.PASS, text);
+			}
+	}catch(Exception e) {
+		String text=MyReportsLocators.SaveMsgAE(driver).getText();
+		Thread.sleep(4000);
+		test.log(LogStatus.FAIL, text);
+	}
+			
+		MyReportsLocators.AddNewClosereg(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void EditRegUploadID(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+		
+			MyReportsLocators.EditClick(driver).click();
+			Thread.sleep(5000);
+			
+			MyReportsLocators.Selectfile(driver).sendKeys("C:\\Users\\Mayuri\\Downloads\\Food Safety & Standard Rules 2011.pdf");
+			Thread.sleep(5000);
+			
+			MyReportsLocators.SaveBtnreg(driver).click();
+			Thread.sleep(4000);
+			try {
+		String text=MyReportsLocators.SaveMsg(driver).getText();
+			Thread.sleep(4000);
+			if(text.equalsIgnoreCase("Record Updated Successfully")) {
+				test.log(LogStatus.PASS, text);
+			}else {
+				test.log(LogStatus.PASS, text);
+			}
+	}catch(Exception e) {
+		String text=MyReportsLocators.SaveMsgAE(driver).getText();
+		Thread.sleep(4000);
+		test.log(LogStatus.FAIL, text);
+	}
+			
+		MyReportsLocators.AddNewClosereg(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void EditDraftDocumentID(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+		
+			MyReportsLocators.EditClick(driver).click();
+			Thread.sleep(5000);
+			
+			MyReportsLocators.Selectfile1(driver).sendKeys("C:\\Users\\Mayuri\\Downloads\\Food Safety & Standard Rules 2011.pdf");
+			Thread.sleep(5000);
+			
+			MyReportsLocators.SaveBtnreg(driver).click();
+			Thread.sleep(4000);
+			
+			File dir = new File("C:\\Users\\Mayuri\\Downloads");
+			File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(4000);
+			MyReportsLocators.DraftDocument(driver).click();		//Exporting (Downloading) file
+			
+			Thread.sleep(4000);
+			File dir1 = new File("C:\\Users\\Mayuri\\Downloads");
+			File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+			
+			Thread.sleep(3000);
+			if (dirContents.length < allFilesNew.length) {
+				test.log(LogStatus.PASS,  "Draft Document should be downloaded successfully");
+			} else {
+				test.log(LogStatus.FAIL, "File does not downloaded.");
+			}
+	
+			
+		MyReportsLocators.AddNewClosereg(driver).click();
+		Thread.sleep(3000);
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void ViewID(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+		
+			MyReportsLocators.ViewReg(driver).click();
+			Thread.sleep(5000);
+			
+			MyReportsLocators.ViewRegClose(driver).click();
+			Thread.sleep(5000);
+			
+			
+				test.log(LogStatus.PASS,  "User should be redirected to the 'View' popup");
+			
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void ViewDownloadID(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+		
+			MyReportsLocators.ViewReg(driver).click();
+			Thread.sleep(5000);
+			
+			File dir = new File("C:\\Users\\Mayuri\\Downloads");
+			File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(4000);
+			MyReportsLocators.ViewRegDownload(driver).click();		//Exporting (Downloading) file
+			
+			Thread.sleep(4000);
+			File dir1 = new File("C:\\Users\\Mayuri\\Downloads");
+			File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
+			
+			Thread.sleep(3000);
+			if (dirContents.length < allFilesNew.length) {
+				test.log(LogStatus.PASS,  "Use should able to download the document");
+			} else {
+				test.log(LogStatus.FAIL, "File does not downloaded.");
+			}
+			
+			
+			
+			MyReportsLocators.ViewRegClose(driver).click();
+			Thread.sleep(5000);
+			
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void ViewUploadDocID(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+		
+			MyReportsLocators.ViewReg(driver).click();
+			Thread.sleep(5000);
+			
+			MyReportsLocators.ViewReg1(driver).click();
+			Thread.sleep(5000);
+			
+			MyReportsLocators.ViewRegClose1(driver).click();
+			Thread.sleep(5000);
+			
+			
+			test.log(LogStatus.PASS,  "User should able to View the document");
+			
+			MyReportsLocators.ViewRegClose(driver).click();
+			Thread.sleep(5000);
+			
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void ViewUploadDocDeleteID(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			MyReportsLocators.ViewReg(driver).click();
+			Thread.sleep(5000);
+		
+By locator2 = By.xpath("(//*[@class='k-grid-Delete k-grid-delete k-grid-button'])[2]");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator2));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton2 = driver.findElement(locator2);	
+			Thread.sleep(4000);
+		jse.executeScript("arguments[0].click();", ViewButton2);
+			Thread.sleep(4000);
+			   String msg=MyReportsLocators.DeleteMsg(driver).getText();
+		         Thread.sleep(1000);
+	          	
+By locator1 = By.xpath("(//*[@class='btn btn-primary'])[4]");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator1));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton1 = driver.findElement(locator1);	
+			Thread.sleep(4000);
+		jse.executeScript("arguments[0].click();", ViewButton1);
+			Thread.sleep(4000);
+			
+			test.log(LogStatus.PASS,  "Message displayed :- "+msg);
+			try {
+				driver.switchTo().alert().accept();
+			}catch(Exception e) {
+				
+			}
+			
+			MyReportsLocators.ViewRegClose(driver).click();
+			Thread.sleep(5000);
+			
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void ViewUploadDocDeleteCanID(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			MyReportsLocators.ViewReg(driver).click();
+			Thread.sleep(5000);
+		
+By locator2 = By.xpath("(//*[@class='k-grid-Delete k-grid-delete k-grid-button'])[2]");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator2));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton2 = driver.findElement(locator2);	
+			Thread.sleep(4000);
+		jse.executeScript("arguments[0].click();", ViewButton2);
+			Thread.sleep(4000);
+			   
+	          	
+By locator1 = By.xpath("(//*[@class='btn btn-primary'])[5]");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator1));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton1 = driver.findElement(locator1);	
+			Thread.sleep(4000);
+		jse.executeScript("arguments[0].click();", ViewButton1);
+			Thread.sleep(4000);
+			
+			test.log(LogStatus.PASS,  "The document should not deleted from the system");
+			
+			MyReportsLocators.ViewRegClose(driver).click();
+			Thread.sleep(5000);
+			
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void DeleteCanID(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+		
+By locator2 = By.xpath("(//*[@class='k-grid-Delete k-grid-delete k-grid-button'])");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator2));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton2 = driver.findElement(locator2);	
+			Thread.sleep(4000);
+		jse.executeScript("arguments[0].click();", ViewButton2);
+			Thread.sleep(4000);
+			  
+	          	
+By locator1 = By.xpath("(//*[@class='btn btn-primary'])[5]");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator1));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton1 = driver.findElement(locator1);	
+			Thread.sleep(4000);
+		jse.executeScript("arguments[0].click();", ViewButton1);
+			Thread.sleep(4000);
+			
+			test.log(LogStatus.PASS,  "The document should not deleted from the system");
+			
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void DeleteID(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(8000);
+			By locator = By.xpath("//*[@id='myReportMenu']/ul/li[11]/a");
+
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+		
+By locator2 = By.xpath("(//*[@class='k-grid-Delete k-grid-delete k-grid-button'])");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator2));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton2 = driver.findElement(locator2);	
+			Thread.sleep(4000);
+		jse.executeScript("arguments[0].click();", ViewButton2);
+			Thread.sleep(4000);
+			   String msg=MyReportsLocators.DeleteMsg(driver).getText();
+		         Thread.sleep(1000);
+	          	
+By locator1 = By.xpath("(//*[@class='btn btn-primary'])[4]");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator1));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton1 = driver.findElement(locator1);	
+			Thread.sleep(4000);
+		jse.executeScript("arguments[0].click();", ViewButton1);
+			Thread.sleep(4000);
+			
+			test.log(LogStatus.PASS,  "Message displayed :- "+msg);
+			try {
+				driver.switchTo().alert().accept();
+			}catch(Exception e) {
+				
+			}
+			
+	
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	
+	
 	
 	
 	

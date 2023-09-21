@@ -719,7 +719,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-		@Test(priority = 59) 
+	//	@Test(priority = 59) 
 		void UploadMSMEE() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > MSME Report' :- Verify that the validation message is displayed when we upload empty excel file");
@@ -729,8 +729,458 @@ public class MyReportsTest {
 			extent.endTest(test);
 			extent.flush();
 		}
+		
+	//	@Test(priority = 60) 
+		void UploadMSMEIE() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > MSME Report' :- Verify that the validation message is displayed when we upload different extension file");
+			
+			MyReportsMethods.UploadMSMEIE(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
 	
+	//	@Test(priority = 61) 
+		void EditMSMEClick() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > MSME Report' :- Verify that clicking the 'Edit' button opens the 'MSME Details' editing interface.");
+			
+			MyReportsMethods.EditMSMEClick(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 62) 
+		void EditMSME() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > MSME Report' :- Verify that the 'Edit' button allows the user to edit relevant fields in the 'MSME' section");
+			
+			MyReportsMethods.EditMSME(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 63) 
+		void Reg26ofSEBILODR() throws InterruptedException, IOException
+		{
+			test = extent.startTest("To check whether the 'My Reports > Reg 26(3) of SEBI (LODR)' tab is clickable or not");
+			
+			MyReportsMethods.Reg26ofSEBILODR(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 64) 
+		void AddNewReg26ofSEBILODR() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the user is able to add 'New' Reg 26(3) of SEBI (LODR) details or not");
+			
+			MyReportsMethods.AddNewReg26ofSEBILODR(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
 	
+	//	@Test(priority = 65) 
+		void AddNewReg26ofSEBILODRAE() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- Verify that the validation message is displayed when we click on save button without selecting a data");
+			
+			MyReportsMethods.AddNewReg26ofSEBILODRAE(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 66) 
+		void UploadReg() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the user is able to upload the Reg 26(3) of SEBI (LODR) sample excel file with valid data");
+			
+			MyReportsMethods.UploadReg(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 67) 
+		void UploadRegVal() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- Verify that the validation message is displayed when we enter Invalid DIN number and upload it");
+			
+			MyReportsMethods.UploadRegVal(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 68) 
+		void UploadRegVal1() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- Verify that the validation message is displayed when we enter Invalid CIN number and upload it");
+			
+			MyReportsMethods.UploadRegVal1(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	
+	//	@Test(priority = 69) 
+		void UploadRegValD1() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- Verify that the validation message is displayed when we enter Invalid Date and upload it");
+			
+			MyReportsMethods.UploadRegValD1(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	
+	//	@Test(priority = 70) 
+		void UploadRegValDE1() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- Verify that the validation message is displayed when we upload different extension file");
+			
+			MyReportsMethods.UploadRegValDE1(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 71) 
+		void ExportReg() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the 'Export to Excel' functionality is working or not");
+			
+			MyReportsMethods.ExportReg(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 72) 
+		void EditReg() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the user is able to edit Reg 26(3) of SEBI (LODR) Report or not");
+			
+			MyReportsMethods.EditReg(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 73) 
+		void EditRegUpload() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the user is able to upload pdf file which is present under edit tab");
+			
+			MyReportsMethods.EditRegUpload(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 74) 
+		void EditDraftDocument() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the user is able to download 'Draft Document' which is present under edit tab");
+			
+			MyReportsMethods.EditDraftDocument(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 75) 
+		void View() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the 'View' button is clickable or not");
+			
+			MyReportsMethods.View(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+
+	//	@Test(priority = 76) 
+		void ViewDownload() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- View :- To check whether the user is able to download uploaded document or not");
+			
+			MyReportsMethods.ViewDownload(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 77) 
+		void ViewUploadDoc() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- View :- To check whether the user is able to View uploaded document or not");
+			
+			MyReportsMethods.ViewUploadDoc(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 78) 
+		void ViewUploadDocDelete() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- View :- To check whether the user is able to Delete uploaded document or not");
+			
+			MyReportsMethods.ViewUploadDocDelete(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 79) 
+		void ViewUploadDocDeleteCan() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- View :- To check whether the user is able to Delete - Cancels uploaded document or not");
+			
+			MyReportsMethods.ViewUploadDocDeleteCan(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 80) 
+		void Delete() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the user is able to Delete document or not");
+			
+			MyReportsMethods.Delete(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 81) 
+		void DeleteCan() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the user is able to Delete - Cancel document or not");
+			
+			MyReportsMethods.DeleteCan(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 82) 
+		void IndependenceDeclaration() throws InterruptedException, IOException
+		{
+			test = extent.startTest("To check whether the 'My Reports > Independance Decleration' tab is clickable or not");
+			
+			MyReportsMethods.IndependenceDeclaration(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 83) 
+		void AddNewIndependenceDeclaration() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration' :- To check whether the user is able to add 'New' Independance Decleration details or not ");
+			
+			MyReportsMethods.AddNewIndependenceDeclaration(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 84) 
+		void AddNewIndependenceDeclarationWD() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration' :- Verify that the validation message is displayed when we click on save button without selecting a data");
+			
+			MyReportsMethods.AddNewIndependenceDeclarationWD(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 85) 
+		void UploadID() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration' :- To check whether the user is able to upload the Independance Decleration sample excel file with valid data");
+			
+			MyReportsMethods.UploadID(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 86) 
+		void UploadIDVal() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration':- Verify that the validation message is displayed when we enter Invalid DIN number and upload it");
+			
+			MyReportsMethods.UploadIDVal(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 87) 
+		void UploadIDVal1() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration':- Verify that the validation message is displayed when we enter Invalid CIN number and upload it");
+			
+			MyReportsMethods.UploadIDVal1(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	
+	//	@Test(priority = 88) 
+		void UploadIDValD1() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration':- Verify that the validation message is displayed when we enter Invalid Date and upload it");
+			
+			MyReportsMethods.UploadIDValD1(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	
+	//	@Test(priority = 89) 
+		void UploadIDValDE1() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration':- Verify that the validation message is displayed when we upload different extension file");
+			
+			MyReportsMethods.UploadIDValDE1(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//@Test(priority = 90) 
+		void ExportID() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration':- To check whether the 'Export to Excel' functionality is working or not");
+			
+			MyReportsMethods.ExportID(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+		//@Test(priority = 91) 
+		void EditID() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration':- To check whether the user is able to edit Independance Decleration Report or not");
+			
+			MyReportsMethods.EditID(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 92) 
+		void EditRegUploadID() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration':- To check whether the user is able to upload pdf file which is present under edit tab");
+			
+			MyReportsMethods.EditRegUploadID(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 93) 
+		void EditDraftDocumentID() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration':- To check whether the user is able to download 'Draft Document' which is present under edit tab");
+			
+			MyReportsMethods.EditDraftDocumentID(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 94) 
+		void ViewID() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration':- To check whether the 'View' button is clickable or not");
+			
+			MyReportsMethods.ViewID(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+
+	//	@Test(priority = 95) 
+		void ViewDownloadID() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration':- View :- To check whether the user is able to download uploaded document or not");
+			
+			MyReportsMethods.ViewDownload(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 96) 
+		void ViewUploadDocID() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration':- View :- To check whether the user is able to View uploaded document or not");
+			
+			MyReportsMethods.ViewUploadDocID(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 97) 
+		void ViewUploadDocDeleteID() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration':- View :- To check whether the user is able to Delete uploaded document or not");
+			
+			MyReportsMethods.ViewUploadDocDeleteID(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 98) 
+		void ViewUploadDocDeleteCanID() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration':- View :- To check whether the user is able to Delete - Cancels uploaded document or not");
+			
+			MyReportsMethods.ViewUploadDocDeleteCanID(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 99) 
+		void DeleteID() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration':- To check whether the user is able to Delete document or not");
+			
+			MyReportsMethods.DeleteID(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 100) 
+		void DeleteCanID() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration':- To check whether the user is able to Delete - Cancel document or not");
+			
+			MyReportsMethods.DeleteCanID(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
 	@AfterMethod
   	void browserClosing() throws InterruptedException
   	{
