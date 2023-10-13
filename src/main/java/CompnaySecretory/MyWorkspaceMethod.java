@@ -19,12 +19,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
-
-
-
-
-
-
 public class MyWorkspaceMethod 
 {
 	
