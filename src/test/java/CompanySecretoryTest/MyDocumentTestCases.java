@@ -49,7 +49,7 @@ public class MyDocumentTestCases {
 	void setBrowser() throws Exception
 	{
 		String workingDir = System.getProperty("user.dir");
-		extent = new com.relevantcodes.extentreports.ExtentReports(workingDir+"//Reports//MyWorkspace.html",true);
+		extent = new com.relevantcodes.extentreports.ExtentReports(workingDir+"//Reports//MyDocument.html",true);
 		test = extent.startTest("Verify OpenBrowser");
 		
 		test.log(LogStatus.PASS, "Test Passed.");
