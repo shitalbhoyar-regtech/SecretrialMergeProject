@@ -20,7 +20,7 @@ private static WebElement secretrial = null;				//WebElement variable created fo
 	
 	public static WebElement ClickDashboard(WebDriver driver)		//Method for closing Message Popup
 	{
-		secretrial = driver.findElement(By.xpath("(//*[@id='leftdashboardmenu'])"));
+		secretrial = driver.findElement(By.xpath("(//*[@id='lefthomemenu']/a/i)[2]"));
 		return secretrial;
 	}
 	

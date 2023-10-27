@@ -454,7 +454,7 @@ public class LegalUpdatesTest {
 		extent.flush();
 	}
 	
-	@Test(priority = 34) 
+//	@Test(priority = 34) 
 	void CommitteeCompositionPlay() throws Exception
 	{
 		test = extent.startTest("'Help and Updates' :- 'Help Video' : 'Master' :'Committees and Committee Composition' :- Verify that the video starts playing when the play button is clicked, and it pauses when the pause button is clicked.");
@@ -492,6 +492,149 @@ public class LegalUpdatesTest {
 		extent.endTest(test);
 		extent.flush();
 	}
+	
+//	@Test(priority = 37) 
+	void Configuration() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Help and Updates' :- 'Help Video' :'Master' - To check whether the 'Configuration' tab is clickable or not");
+		
+		LegalUpdatesMethods.Configuration(driver,test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 38) 
+	void ConfigurationPlay() throws Exception
+	{
+		test = extent.startTest("'Help and Updates' :- 'Help Video' : 'Master' :'Configuration' :- Verify that the video starts playing when the play button is clicked, and it pauses when the pause button is clicked.");
+		MyScreenRecorder.startRecording("ConfigurationPlay");
+		
+		LegalUpdatesMethods.ConfigurationPlay(driver,test);
+		
+		MyScreenRecorder.stopRecording();
+  		Thread.sleep(1000);
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 39) 
+	void ComplianceAssignmenCC() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Help and Updates' :- 'Help Video' :'Master' - To check whether the 'Compliance Assignment and Compliance Closure' tab is clickable or not");
+		
+		LegalUpdatesMethods.ComplianceAssignmenCC(driver,test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 40) 
+	void ComplianceAssignmenCCPlay() throws Exception
+	{
+		test = extent.startTest("'Help and Updates' :- 'Help Video' : 'Master' :'Compliance Assignment and Compliance Closure' :- Verify that the video starts playing when the play button is clicked, and it pauses when the pause button is clicked.");
+		MyScreenRecorder.startRecording("Compliance Assignment and Compliance Closure");
+		
+		LegalUpdatesMethods.ComplianceAssignmenCCPlay(driver,test);
+		
+		MyScreenRecorder.stopRecording();
+  		Thread.sleep(1000);
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 41) 
+	void MYREPORTS() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Help and Updates' :- 'Help Video' : To check whether the 'MY REPORTS' tab is clickable or not");
+		
+		LegalUpdatesMethods.MYREPORTS(driver,test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 42) 
+	void ComplianceStatusReport() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Help and Updates' :- 'Help Video' :'MY REPORTS' - To check whether the 'Compliance Status Report' tab is clickable or not");
+		
+		LegalUpdatesMethods.ComplianceStatusReport(driver,test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 43) 
+	void ComplianceStatusReportPlay() throws Exception
+	{
+		test = extent.startTest("'Help and Updates' :- 'Help Video' : 'MY REPORTS' :'Compliance Status Report' :- Verify that the video starts playing when the play button is clicked, and it pauses when the pause button is clicked.");
+		MyScreenRecorder.startRecording("ComplianceStatusReportPlay");
+		LegalUpdatesMethods.ComplianceStatusReportPlay(driver,test);
+		MyScreenRecorder.stopRecording();
+  		Thread.sleep(1000);
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 44) 
+	void AttendanceReport() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Help and Updates' :- 'Help Video' :'MY REPORTS' - To check whether the 'Attendance Report' tab is clickable or not");
+		
+		LegalUpdatesMethods.AttendanceReport(driver,test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 45) 
+	void AttendanceReportPlay() throws Exception
+	{
+		test = extent.startTest("'Help and Updates' :- 'Help Video' : 'MY REPORTS' :'Attendance Report' :- Verify that the video starts playing when the play button is clicked, and it pauses when the pause button is clicked.");
+		MyScreenRecorder.startRecording("AttendanceReportPlay");
+		LegalUpdatesMethods.AttendanceReportPlay(driver,test);
+		MyScreenRecorder.stopRecording();
+  		Thread.sleep(1000);
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	//@Test(priority = 46) 
+	void MYFORMS() throws Exception
+	{
+		test = extent.startTest("'Help and Updates' :- 'Help Video' : To check whether the 'MY FORMS' tab is clickable or not.");
+		
+		LegalUpdatesMethods.MYFORMS(driver,test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	@Test(priority = 47) 
+	void Dpt3() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'Help and Updates' :- 'Help Video' :'MY FORMS' - To check whether the 'DPT-3' tab is clickable or not");
+		
+		LegalUpdatesMethods.Dpt3(driver,test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 48) 
+	void MyFormsPlay() throws Exception
+	{
+		test = extent.startTest("'Help and Updates' :- 'Help Video' : 'MY FORMS' :'DPT-3' :- Verify that the video starts playing when the play button is clicked, and it pauses when the pause button is clicked.");
+		MyScreenRecorder.startRecording("MyFormsPlay");
+		LegalUpdatesMethods.MyFormsPlay(driver,test);
+		MyScreenRecorder.stopRecording();
+  		Thread.sleep(1000);
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+	
 	
 	@AfterMethod
   	void browserClosing() throws Exception

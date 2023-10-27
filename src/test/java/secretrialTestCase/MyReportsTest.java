@@ -113,7 +113,30 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 4) 
+	//@Test(priority = 4) 
+	void CompanyAllClickCS() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Reports > Compliance Status Report':- To check whether the compliance 'Company - All' dropdown is Clickable or not");
+		
+		MyReportsMethods.CompanyAllClickCS(driver,test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+
+//	@Test(priority = 5) 
+	void CompanyAllFilterCS() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Reports > Compliance Status Report':- Verify that the user can able to select a specific company name option from 'Company - All' dropdown");
+		
+		MyReportsMethods.CompanyAllFilterCS(driver,test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 6) 
 	void StatusAll() throws InterruptedException, IOException
 	{
 		test = extent.startTest("To check whether the compliance 'Status-All' dropdown is working or not");
@@ -124,7 +147,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 5) 
+//	@Test(priority = 7) 
 	void StatusAllFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Verify that the user can able to select a specific compliance status option from 'Status-All' dropdown");
@@ -135,7 +158,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 6) 
+	//@Test(priority = 8) 
 	void ClearFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Verify that the 'Clear Filter' option clears all applied filters");
@@ -146,7 +169,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 7) 
+//	@Test(priority = 9) 
 	void ExportCSR() throws InterruptedException, IOException
 	{
 		test = extent.startTest("To check whether the 'Export to Excel' functionality is working or not");
@@ -157,7 +180,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 8) 
+	//@Test(priority = 10) 
 	void AttendanceReport() throws InterruptedException, IOException
 	{
 		test = extent.startTest("To check whether the 'My Reports > Attendance Report' tab is clickable or not");
@@ -168,7 +191,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 9) 
+	//@Test(priority = 11) 
 	void FinancialYearAllClick() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'My Reports > Attendance Report':- To check whether the compliance 'Financial Year-All' dropdown is Clickable or not");
@@ -179,7 +202,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 10) 
+//	@Test(priority = 12) 
 	void FinancialYearAllFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'My Reports > Attendance Report':- Verify that the user can able to select a specific financial year option from 'Financial year-All' dropdown");
@@ -190,7 +213,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 11) 
+//	@Test(priority = 13) 
 	void CompanyAllClick() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports > Attendance Report':- To check whether the compliance 'Company - All' dropdown is Clickable or not");
@@ -202,7 +225,7 @@ public class MyReportsTest {
 	}
 	
 
-//	@Test(priority = 12) 
+//	@Test(priority = 14) 
 	void CompanyAllFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports > Attendance Report':- Verify that the user can able to select a specific company name option from 'Company - All' dropdown");
@@ -213,7 +236,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 13) 
+//	@Test(priority = 15) 
 	void ExportAR() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports > Attendance Report':- To check whether the 'Export to Excel' functionality is working or not");
@@ -224,7 +247,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 14) 
+	//@Test(priority = 16) 
 	void AllFilters() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports > Attendance Report':- Verify whether the 'financial Year - All' and 'Company - All' dropdowns are working together.");
@@ -235,7 +258,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 15) 
+	//@Test(priority = 17) 
 	void ViewAR() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports > Attendance Report':- Verify that the 'View' functionality is working or not");
@@ -246,7 +269,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 16) 
+//	@Test(priority = 18) 
 	void ViewARDownload() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports > Attendance Report':-To check whether the 'Download' functionality is working or not which is present under 'View' option");
@@ -257,7 +280,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 17) 
+//	@Test(priority = 19) 
 	void ARDownload() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports > Attendance Report':-To check whether the 'Download' functionality is working or not which is present under Action column");
@@ -268,7 +291,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 18) 
+	//@Test(priority = 20) 
 	void AuditorDetails() throws InterruptedException, IOException
 	{
 		test = extent.startTest("To check whether the 'My Reports > Auditor Details' tab is clickable or not");
@@ -279,7 +302,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 19) 
+	//@Test(priority = 21) 
 	void CompanyAllClickAD() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'My Reports > Auditor Details' :- To check whether the compliance 'Company - All' dropdown is Clickable or not");
@@ -290,7 +313,18 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 20) 
+	//@Test(priority = 22) 
+	void CompanyAllFilterAD() throws InterruptedException, IOException
+	{
+		test = extent.startTest("My Reports > Auditor Details':- Verify that the user can able to select a specific company name option from 'Company - All' dropdown");
+		
+		MyReportsMethods.CompanyAllFilterAD(driver,test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 23) 
 	void ExportAD() throws InterruptedException, IOException
 	{
 		test = extent.startTest("To check whether the 'My Reports > Auditor Details' :- To check whether the 'Export to Excel' functionality is working or not");
@@ -301,7 +335,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 21) 
+//	@Test(priority = 24) 
 	void DirectorDetails() throws InterruptedException, IOException
 	{
 		test = extent.startTest("To check whether the 'My Reports > Director  Details' tab is clickable or not");
@@ -312,7 +346,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 22) 
+	//@Test(priority = 25) 
 	void CompanyAllClickDD() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports > Director Details':- To check whether the compliance 'Company - All' dropdown is Clickable or not");
@@ -323,7 +357,19 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 23) 
+
+//	@Test(priority = 26) 
+	void CompanyAllFilterDD() throws InterruptedException, IOException
+	{
+		test = extent.startTest("'My Reports > Director Details' :- Verify that the user can able to select a specific company name option from 'Company - All' dropdown");
+		
+		MyReportsMethods.CompanyAllFilterDD(driver,test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	
+//	@Test(priority = 27) 
 	void ExportDD() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" 'My Reports > Director Details' :- To check whether the 'Export to Excel' functionality is working or not");
@@ -334,7 +380,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 24) 
+//	@Test(priority = 28) 
 	void WordDocDD() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" 'My Reports > Director Details' :-To check whether the user is able to 'Generate Word' document or not");
@@ -345,7 +391,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 25) 
+	//@Test(priority = 29) 
 	void WordDocDDVal() throws InterruptedException, IOException
 	{
 		test = extent.startTest(" 'My Reports > Director Details' :-Verify that the validation message is displayed when we click on 'Generate' button without selecting data");
@@ -356,7 +402,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 26) 
+	//@Test(priority = 30) 
 		void BankDetails() throws InterruptedException, IOException
 		{
 			test = extent.startTest("To check whether the 'My Reports > Bank Details' tab is clickable or not");
@@ -367,7 +413,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 27) 
+	//	@Test(priority = 31) 
 		void CompanyAllClickBD() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Bank Details' :- To check whether the compliance 'Company - All' dropdown is Clickable or not");
@@ -377,8 +423,19 @@ public class MyReportsTest {
 			extent.endTest(test);
 			extent.flush();
 		}
+		
+	//	@Test(priority = 32) 
+		void CompanyAllFilterBD() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Bank Details' :- Verify that the user can able to select a specific company name option from 'Company - All' dropdown");
+			
+			MyReportsMethods.CompanyAllFilterBD(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
 	
-		//@Test(priority = 28) 
+		//@Test(priority = 33) 
 		void ExportBD() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Bank Details' :- To check whether the 'Export to Excel' functionality is working or not");
@@ -389,7 +446,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 	
-	//	@Test(priority = 29) 
+	//	@Test(priority = 34) 
 		void DIR3KYCDetails() throws InterruptedException, IOException
 		{
 			test = extent.startTest("To check whether the 'My Reports > DIR-3 KYC Details' tab is clickable or not");
@@ -400,7 +457,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-		//@Test(priority = 30) 
+		//@Test(priority = 35) 
 		void StatusAllClickKYC() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > DIR-3 KYC Details':- To check whether the Select-All dropdown is clickable or not");
@@ -411,7 +468,18 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 31) 
+		//@Test(priority = 36) 
+		void StatusAllFilterKYC() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > DIR-3 KYC Details' :- Verify that the user can able to select a specific compliance status option from 'Status-All' dropdown");
+			
+			MyReportsMethods.StatusAllFilterKYC(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 37) 
 		void FYClickKYC() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > DIR-3 KYC Details':- To check whether the Financial Year-All dropdown is working or not");
@@ -422,7 +490,18 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-		//@Test(priority = 32) 
+	//	@Test(priority = 38) 
+		void FYKYCFilter() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > DIR-3 KYC Details':- Verify that the user can able to select a specific financial year option from 'Financial year-All' dropdown");
+			
+			MyReportsMethods.FYKYCFilter(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+		//@Test(priority = 39) 
 		void ExportKYC() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > DIR-3 KYC Details':- To check whether the 'Export to Excel' functionality is working or not");
@@ -433,7 +512,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-		//@Test(priority = 33) 
+		//@Test(priority = 40) 
 		void AddNew() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > DIR-3 KYC Details':- To check whether the 'New' button is clickable or not");
@@ -444,7 +523,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-		//@Test(priority = 34) 
+		//@Test(priority = 41) 
 		void AddNewData() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > DIR-3 KYC Details':- To check whether the user is able to add new DIR-3 KYC details or not");
@@ -455,7 +534,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 	
-	//	@Test(priority = 35) 
+	//	@Test(priority = 42) 
 		void AddNewWithOutData() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > DIR-3 KYC Details':- Verify that the validation message is displayed when we click on 'Save' button without selecting data");
@@ -466,7 +545,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 36) 
+	//	@Test(priority = 43) 
 		void AddNewDataWD() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > DIR-3 KYC Details':- Verify that the validation message is displayed when we dont select director from dropdown and fill all remaining fields");
@@ -477,7 +556,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 37) 
+	//	@Test(priority = 44) 
 		void UploadBtn() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > DIR-3 KYC Details':- To check whether the 'Upload' button is clickable or not");
@@ -488,7 +567,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 38) 
+	//	@Test(priority = 45) 
 		void Upload() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > DIR-3 KYC Details':- To check whether the user is able to upload the 'DIR-3 KYC' form");
@@ -499,7 +578,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-		//@Test(priority = 39) 
+		//@Test(priority = 46) 
 		void UploadWD() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > DIR-3 KYC Details':- Verify that the validation message is displayed when we upload empty excel file");
@@ -510,7 +589,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 40) 
+	//	@Test(priority = 47) 
 		void UploadIE() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > DIR-3 KYC Details':- Verify that the validation message is displayed when we upload different extension file");
@@ -521,7 +600,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 41) 
+	//	@Test(priority = 48) 
 		void EditClick() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > DIR-3 KYC Details':- Verify that clicking the 'Edit' button opens the 'DIR-3 KYC Details' editing interface.");
@@ -532,7 +611,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-		//@Test(priority = 42) 
+		//@Test(priority = 49) 
 		void Edit() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > DIR-3 KYC Details':- Verify that the 'Edit' button allows the user to edit relevant fields in the 'DIR-3 KYC Details' section.");
@@ -543,7 +622,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 43) 
+	//	@Test(priority = 50) 
 		void AnnualFilingReport() throws InterruptedException, IOException
 		{
 			test = extent.startTest("To check whether the 'My Reports > Annual Filling Report' tab is clickable or not");
@@ -553,8 +632,19 @@ public class MyReportsTest {
 			extent.endTest(test);
 			extent.flush();
 		}
+
+		//	@Test(priority = 51) 
+			void CompanyAllClickAF() throws InterruptedException, IOException
+			{
+				test = extent.startTest("'My Reports > Annual Filling Report' :- To check whether the compliance 'Company - All' dropdown is Clickable or not");
+				
+				MyReportsMethods.CompanyAllClickAF(driver,test);
+				
+				extent.endTest(test);
+				extent.flush();
+			}
 		
-	//	@Test(priority = 44) 
+	//	@Test(priority = 52) 
 		void ExportAFR() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Annual Filling Report' :- To check whether the 'Export to Excel' functionality is working or not");
@@ -565,7 +655,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 	
-	//	@Test(priority = 45) 
+	//	@Test(priority = 53) 
 		void DPT3StatusReport() throws InterruptedException, IOException
 		{
 			test = extent.startTest("To check whether the 'My Reports > DPT-3 Status Report' tab is clickable or not");
@@ -575,8 +665,52 @@ public class MyReportsTest {
 			extent.endTest(test);
 			extent.flush();
 		}
+		
+	//	@Test(priority = 54) 
+		void CompanyAllClickDPT() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports >  DPT-3 Status Report' :- To check whether the compliance 'Company - All' dropdown is Clickable or not");
+			
+			MyReportsMethods.CompanyAllClickDPT(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 55) 
+		void CompanyAllFilterDPT() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > DPT-3 Status Report' :- Verify that the user can able to select a specific company name option from 'Company - All' dropdown");
+			
+			MyReportsMethods.CompanyAllFilterDPT(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 56) 
+		void FYDPT() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > DPT-3 Status Report':- To check whether the Financial Year-All dropdown is working or not");
+			
+			MyReportsMethods.FYDPT(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 57) 
+		void FYDPTFilter() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > DPT-3 Status Report':- Verify that the user can able to select a specific financial year option from 'Financial year-All' dropdown");
+			
+			MyReportsMethods.FYDPTFilter(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
 	
-	//	@Test(priority = 46) 
+	//	@Test(priority = 58) 
 		void ExportDPT() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" 'My Reports > DPT-3 Status Report' : - To check whether the 'Export to Excel' functionality is working or not");
@@ -587,7 +721,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 47) 
+	//	@Test(priority = 59) 
 		void AddNewDPT() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" 'My Reports > DPT-3 Status Report' : - To check whether the user is able to add new DPT-3 Status details or not");
@@ -598,7 +732,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 48) 
+	//	@Test(priority = 60) 
 		void DPT3StatusUpload() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" 'My Reports > DPT-3 Status Report' : - To check whether the 'Upload' button is clickable or not");
@@ -609,7 +743,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 49) 
+	//	@Test(priority = 61) 
 		void UploadDPT() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" 'My Reports > DPT-3 Status Report' : - To check whether the user is able to upload the ' DPT-3  Details' form");
@@ -620,7 +754,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 50) 
+	//	@Test(priority = 62) 
 		void UploadDPTE() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" 'My Reports > DPT-3 Status Report' : - Verify that the validation message is displayed when we upload empty excel file");
@@ -631,7 +765,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 51) 
+	//	@Test(priority = 63) 
 		void UploadDptIE() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" 'My Reports > DPT-3 Status Report' : - Verify that the validation message is displayed when we upload different extension file");
@@ -642,7 +776,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 52) 
+	//	@Test(priority = 64) 
 		void EditDPTClick() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" 'My Reports > DPT-3 Status Report' : - Verify that clicking the 'Edit' button opens the 'DPT-3 Details' editing interface.");
@@ -653,7 +787,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 53) 
+	//	@Test(priority = 65) 
 		void EditDPT() throws InterruptedException, IOException
 		{
 			test = extent.startTest(" 'My Reports > DPT-3 Status Report' : - Verify that the 'Edit' button allows the user to edit relevant fields in the 'DPT-3 Details' section");
@@ -664,7 +798,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 54) 
+	//	@Test(priority = 66) 
 		void MSMEReport() throws InterruptedException, IOException
 		{
 			test = extent.startTest("To check whether the 'My Reports > MSME Report' tab is clickable or not");
@@ -674,8 +808,52 @@ public class MyReportsTest {
 			extent.endTest(test);
 			extent.flush();
 		}
+		
+	//	@Test(priority = 67) 
+		void CompanyAllClickMSME() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports >   MSME Report' :- To check whether the compliance 'Company - All' dropdown is Clickable or not");
+			
+			MyReportsMethods.CompanyAllClickMSME(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 68) 
+		void CompanyAllFilterMSME() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports >  MSME Report' :- Verify that the user can able to select a specific company name option from 'Company - All' dropdown");
+			
+			MyReportsMethods.CompanyAllFilterMSME(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 69) 
+		void FYMSME() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > MSME Report':- To check whether the Financial Year-All dropdown is working or not");
+			
+			MyReportsMethods.FYMSME(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 70) 
+		void FYMSMEFilter() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > MSME Report':- Verify that the user can able to select a specific financial year option from 'Financial year-All' dropdown");
+			
+			MyReportsMethods.FYMSMEFilter(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
 	
-	//	@Test(priority = 55) 
+	//	@Test(priority = 71) 
 		void ExportMSME() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > MSME Report' :- To check whether the 'Export to Excel' functionality is working or not");
@@ -686,7 +864,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 56) 
+	//	@Test(priority = 72) 
 		void AddNewMSME() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > MSME Report' :- To check whether the user is able to add new MSME data or not");
@@ -697,7 +875,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 57) 
+	//	@Test(priority = 73) 
 		void MSMEUpload() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > MSME Report' :- To check whether the 'Upload' button is clickable or not");
@@ -708,7 +886,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 58) 
+	//	@Test(priority = 74) 
 		void UploadMSME() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > MSME Report' :- To check whether the user is able to upload the 'MSME' form");
@@ -719,7 +897,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 59) 
+	//	@Test(priority = 75) 
 		void UploadMSMEE() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > MSME Report' :- Verify that the validation message is displayed when we upload empty excel file");
@@ -730,7 +908,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 60) 
+	//	@Test(priority = 76) 
 		void UploadMSMEIE() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > MSME Report' :- Verify that the validation message is displayed when we upload different extension file");
@@ -741,7 +919,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 	
-	//	@Test(priority = 61) 
+	//	@Test(priority = 77) 
 		void EditMSMEClick() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > MSME Report' :- Verify that clicking the 'Edit' button opens the 'MSME Details' editing interface.");
@@ -752,7 +930,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 62) 
+	//	@Test(priority = 78) 
 		void EditMSME() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > MSME Report' :- Verify that the 'Edit' button allows the user to edit relevant fields in the 'MSME' section");
@@ -763,7 +941,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 63) 
+	//	@Test(priority = 79) 
 		void Reg26ofSEBILODR() throws InterruptedException, IOException
 		{
 			test = extent.startTest("To check whether the 'My Reports > Reg 26(3) of SEBI (LODR)' tab is clickable or not");
@@ -774,7 +952,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 64) 
+	//	@Test(priority = 80) 
 		void AddNewReg26ofSEBILODR() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the user is able to add 'New' Reg 26(3) of SEBI (LODR) details or not");
@@ -785,7 +963,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 	
-	//	@Test(priority = 65) 
+	//	@Test(priority = 81) 
 		void AddNewReg26ofSEBILODRAE() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- Verify that the validation message is displayed when we click on save button without selecting a data");
@@ -796,7 +974,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 66) 
+	//	@Test(priority = 82) 
 		void UploadReg() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the user is able to upload the Reg 26(3) of SEBI (LODR) sample excel file with valid data");
@@ -807,7 +985,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 67) 
+	//	@Test(priority = 83) 
 		void UploadRegVal() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- Verify that the validation message is displayed when we enter Invalid DIN number and upload it");
@@ -818,7 +996,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 68) 
+	//	@Test(priority = 84) 
 		void UploadRegVal1() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- Verify that the validation message is displayed when we enter Invalid CIN number and upload it");
@@ -829,7 +1007,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 	
-	//	@Test(priority = 69) 
+	//	@Test(priority = 85) 
 		void UploadRegValD1() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- Verify that the validation message is displayed when we enter Invalid Date and upload it");
@@ -840,7 +1018,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 	
-	//	@Test(priority = 70) 
+	//	@Test(priority = 86) 
 		void UploadRegValDE1() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- Verify that the validation message is displayed when we upload different extension file");
@@ -851,7 +1029,29 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 71) 
+	//	@Test(priority = 87) 
+		void CompanyAllClickReg() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports >  Reg 26(3) of SEBI (LODR)' :- To check whether the compliance 'Company - All' dropdown is Clickable or not");
+			
+			MyReportsMethods.CompanyAllClickReg(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 88) 
+		void CompanyAllFilterReg() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports >   Reg 26(3) of SEBI (LODR)' :- Verify that the user can able to select a specific company name option from 'Company - All' dropdown");
+			
+			MyReportsMethods.CompanyAllFilterReg(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 87) 
 		void ExportReg() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the 'Export to Excel' functionality is working or not");
@@ -862,7 +1062,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 72) 
+	//	@Test(priority = 88) 
 		void EditReg() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the user is able to edit Reg 26(3) of SEBI (LODR) Report or not");
@@ -873,7 +1073,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 73) 
+	//	@Test(priority = 89) 
 		void EditRegUpload() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the user is able to upload pdf file which is present under edit tab");
@@ -884,7 +1084,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 74) 
+	//	@Test(priority = 90) 
 		void EditDraftDocument() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the user is able to download 'Draft Document' which is present under edit tab");

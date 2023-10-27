@@ -1,33 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-10-20T20:01:49 IST" name="Default suite" finished-at="2023-10-20T20:03:21 IST" duration-ms="92246">
+  <suite started-at="2023-10-27T13:02:17 IST" name="Default suite" finished-at="2023-10-27T13:03:54 IST" duration-ms="97417">
     <groups>
     </groups>
-    <test started-at="2023-10-20T20:01:49 IST" name="Default test" finished-at="2023-10-20T20:03:21 IST" duration-ms="92246">
-      <class name="secretrialTestCase.LegalUpdatesTest">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:secretrialTestCase.LegalUpdatesTest@564fabc8]" started-at="2023-10-20T20:01:49 IST" name="setBrowser" finished-at="2023-10-20T20:01:51 IST" duration-ms="1887" status="PASS">
+    <test started-at="2023-10-27T13:02:17 IST" name="Default test" finished-at="2023-10-27T13:03:54 IST" duration-ms="97417">
+      <class name="secretrialTestCase.MyReportsTest">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:secretrialTestCase.MyReportsTest@79e2c065]" started-at="2023-10-27T13:02:17 IST" name="setBrowser" finished-at="2023-10-27T13:02:18 IST" duration-ms="748" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:secretrialTestCase.LegalUpdatesTest@564fabc8]" started-at="2023-10-20T20:01:51 IST" name="Login" finished-at="2023-10-20T20:02:22 IST" duration-ms="31431" status="PASS">
+        <test-method is-config="true" signature="Login()[pri:0, instance:secretrialTestCase.MyReportsTest@79e2c065]" started-at="2023-10-27T13:02:18 IST" name="Login" finished-at="2023-10-27T13:02:39 IST" duration-ms="21209" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="CommitteeCompositionPlay()[pri:34, instance:secretrialTestCase.LegalUpdatesTest@564fabc8]" started-at="2023-10-20T20:02:22 IST" name="CommitteeCompositionPlay" finished-at="2023-10-20T20:03:18 IST" duration-ms="55131" status="PASS">
+        <test-method signature="CompanyAllClickReg()[pri:87, instance:secretrialTestCase.MyReportsTest@79e2c065]" started-at="2023-10-27T13:02:39 IST" name="CompanyAllClickReg" finished-at="2023-10-27T13:03:02 IST" duration-ms="22712" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- CommitteeCompositionPlay -->
-        <test-method is-config="true" signature="browserClosing()[pri:0, instance:secretrialTestCase.LegalUpdatesTest@564fabc8]" started-at="2023-10-20T20:03:18 IST" name="browserClosing" finished-at="2023-10-20T20:03:21 IST" duration-ms="3662" status="PASS">
+        </test-method> <!-- CompanyAllClickReg -->
+        <test-method is-config="true" signature="browserClosing()[pri:0, instance:secretrialTestCase.MyReportsTest@79e2c065]" started-at="2023-10-27T13:03:02 IST" name="browserClosing" finished-at="2023-10-27T13:03:03 IST" duration-ms="1360" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- browserClosing -->
-        <test-method is-config="true" signature="Closing()[pri:0, instance:secretrialTestCase.LegalUpdatesTest@564fabc8]" started-at="2023-10-20T20:03:21 IST" name="Closing" finished-at="2023-10-20T20:03:21 IST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="Login()[pri:0, instance:secretrialTestCase.MyReportsTest@79e2c065]" started-at="2023-10-27T13:03:03 IST" name="Login" finished-at="2023-10-27T13:03:20 IST" duration-ms="16822" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Login -->
+        <test-method signature="CompanyAllFilterReg()[pri:88, instance:secretrialTestCase.MyReportsTest@79e2c065]" started-at="2023-10-27T13:03:20 IST" name="CompanyAllFilterReg" finished-at="2023-10-27T13:03:53 IST" duration-ms="33142" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- CompanyAllFilterReg -->
+        <test-method is-config="true" signature="browserClosing()[pri:0, instance:secretrialTestCase.MyReportsTest@79e2c065]" started-at="2023-10-27T13:03:53 IST" name="browserClosing" finished-at="2023-10-27T13:03:54 IST" duration-ms="1346" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- browserClosing -->
+        <test-method is-config="true" signature="Closing()[pri:0, instance:secretrialTestCase.MyReportsTest@79e2c065]" started-at="2023-10-27T13:03:54 IST" name="Closing" finished-at="2023-10-27T13:03:54 IST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Closing -->
-      </class> <!-- secretrialTestCase.LegalUpdatesTest -->
+      </class> <!-- secretrialTestCase.MyReportsTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

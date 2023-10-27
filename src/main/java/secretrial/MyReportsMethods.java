@@ -105,7 +105,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -132,7 +132,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -220,6 +220,137 @@ public class MyReportsMethods {
 				
 				
 				}
+			
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void CompanyAllClickCS (WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.ComplianceStatusReport(driver).click();
+			Thread.sleep(3000);
+			
+		if(MyReportsLocators.CompanyAllClick(driver).isEnabled()) {
+			MyReportsLocators.CompanyAllClick(driver).click();
+			Thread.sleep(3000);
+			test.log(LogStatus.PASS, "'Company - All' dropdown is Clickable.");
+		}else {
+			test.log(LogStatus.FAIL, " 'Company - All' dropdown is not Clickable .");
+			
+		}
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void CompanyAllFilterCS (WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.ComplianceStatusReport(driver).click();
+			Thread.sleep(3000);
+		
+			MyReportsLocators.CompanyAllClick(driver).click();
+			Thread.sleep(3000);
+		String cattext=	MyReportsLocators.AGDL(driver).getText();
+			Thread.sleep(3000);
+			MyReportsLocators.AGDL(driver).click();
+			Thread.sleep(4000);
+			MyReportsLocators.CompanyAllClick1(driver).click();
+			Thread.sleep(4000);
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,500)");
+			Thread.sleep(2000);
+			String GridText =	MyReportsLocators.Noitemstodisplay(driver).getText();
+			Thread.sleep(3000);
+		if(!GridText.equalsIgnoreCase("No items to display")) {
+			
+		        List<String> li=new ArrayList<String>();
+		        
+		        li.add(cattext);
+		       
+		        Thread.sleep(3000);
+		        
+				List<String> filter=new ArrayList<String>();	
+			
+				filter.add("company name");	
+			
+				 List<WebElement> Statuscol=driver.findElements(By.xpath("//*[@id='gridStatusReport']/div[2]/table/tbody/tr/td[2]")); //column list
+				 
+				Thread.sleep(2000);
+
+				for(int i=0; i<li.size(); i++){
+					
+					List<String> text= new ArrayList<String>();
+					HashSet<String> pass=new LinkedHashSet<>();
+					HashSet<String> fail=new LinkedHashSet<>();
+					List<WebElement> raw=new ArrayList<WebElement>();
+
+						if(i==0)
+						{
+							raw.addAll(Statuscol);
+						}
+						
+						
+					for(int k=0;k<raw.size();k++)
+						{
+							text.add(raw.get(k).getText());
+						}
+
+						for(int l=0;l<text.size();l++)
+							{
+						if(text.get(l).equals(li.get(i)))
+							{
+								pass.add(text.get(l));	
+								System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+							}
+						else
+						{
+							fail.add(text.get(l));		
+							System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+							System.out.println(i);
+
+						}
+						 }
+				 
+			for(String Fal : fail)
+				 {
+						test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+				 }	
+				 for(String Pas : pass)
+				 {
+					 test.log(LogStatus.PASS,  filter.get(i)+" displayed accourding to the selected company name from Company - All dropdown.");
+						test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+						System.out.println(filter.get(i)+" : "+Pas);
+			 }
+				 text.clear();
+				pass.clear();
+				fail.clear();
+				raw.clear();
+				
+				
+				}
+		}else {
+			test.log(LogStatus.PASS, "No items to display ");	
+		}
 			
 		Thread.sleep(3000);
 		DirectorLocator.ClickDashboard(driver).click();
@@ -885,7 +1016,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -918,7 +1049,7 @@ public class MyReportsMethods {
 			
 				filter.add("company name");	
 			
-				 List<WebElement> Statuscol=driver.findElements(By.xpath("//*[@id='gridReport']/div[2]/table/tbody/tr/td[2]")); //column list
+				 List<WebElement> Statuscol=driver.findElements(By.xpath("//*[@id='gridAuditorDetails']/div[2]/table/tbody/tr/td[1]")); //column list
 				 
 				Thread.sleep(2000);
 
@@ -1068,6 +1199,110 @@ public class MyReportsMethods {
 			test.log(LogStatus.FAIL, " 'Company - All' dropdown is not Clickable .");
 			
 		}
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void CompanyAllFilterDD(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.DirectorDetails(driver).click();
+			Thread.sleep(3000);
+		
+			MyReportsLocators.CompanyAllDD(driver).click();
+			Thread.sleep(3000);
+		String cattext=	MyReportsLocators.CompanyAllClickAD1(driver).getText();
+			Thread.sleep(3000);
+			MyReportsLocators.CompanyAllClickAD1(driver).click();
+			Thread.sleep(4000);
+			
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,300)");		
+			
+			Thread.sleep(4000);
+			String GridText =	MyReportsLocators.NoitemstodisplayDD(driver).getText();
+			Thread.sleep(3000);
+		if(!GridText.equalsIgnoreCase("No items to display")) {
+		
+		        List<String> li=new ArrayList<String>();
+		        
+		        li.add(cattext);
+		       
+		        Thread.sleep(3000);
+		        
+				List<String> filter=new ArrayList<String>();	
+			
+				filter.add("company name");	
+			
+				 List<WebElement> Statuscol=driver.findElements(By.xpath("//*[@id='gridDirectorDetails']/div[2]/table/tbody/tr/td[1]")); //column list
+				 
+				Thread.sleep(2000);
+
+				for(int i=0; i<li.size(); i++){
+					
+					List<String> text= new ArrayList<String>();
+					HashSet<String> pass=new LinkedHashSet<>();
+					HashSet<String> fail=new LinkedHashSet<>();
+					List<WebElement> raw=new ArrayList<WebElement>();
+
+						if(i==0)
+						{
+							raw.addAll(Statuscol);
+						}
+						
+						
+					for(int k=0;k<raw.size();k++)
+						{
+							text.add(raw.get(k).getText());
+						}
+
+						for(int l=0;l<text.size();l++)
+							{
+						if(text.get(l).equals(li.get(i)))
+							{
+								pass.add(text.get(l));	
+								System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+							}
+						else
+						{
+							fail.add(text.get(l));		
+							System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+							System.out.println(i);
+
+						}
+						 }
+				 
+			for(String Fal : fail)
+				 {
+						test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+				 }	
+				 for(String Pas : pass)
+				 {
+					 test.log(LogStatus.PASS,  filter.get(i)+" displayed accourding to the selected company name from Company - All dropdown.");
+						test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+						System.out.println(filter.get(i)+" : "+Pas);
+			 }
+				 text.clear();
+				pass.clear();
+				fail.clear();
+				raw.clear();
+				
+				
+				}
+		}else {
+			test.log(LogStatus.PASS, "No items to display ");	
+		}
+			
 		Thread.sleep(3000);
 		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
@@ -1248,6 +1483,138 @@ public class MyReportsMethods {
 		
 	}
 	
+	public static void CompanyAllClickAF (WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.AnnualFilingReport(driver).click();
+			Thread.sleep(5000);
+			
+		if(MyReportsLocators.CompanyAllAF(driver).isEnabled()) {
+			MyReportsLocators.CompanyAllAF(driver).click();
+			Thread.sleep(3000);
+			test.log(LogStatus.PASS, "'Company - All' dropdown is Clickable.");
+		}else {
+			test.log(LogStatus.FAIL, " 'Company - All' dropdown is not Clickable .");
+			
+		}
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void CompanyAllFilterBD(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.BankDetails(driver).click();
+			Thread.sleep(3000);
+		
+			MyReportsLocators.CompanyAllBD(driver).click();
+			Thread.sleep(3000);
+		String cattext=	MyReportsLocators.CompanyAllClickAD1(driver).getText();
+			Thread.sleep(3000);
+			MyReportsLocators.CompanyAllClickAD1(driver).click();
+			Thread.sleep(4000);
+			
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,300)");		
+			
+			Thread.sleep(4000);
+			String GridText =	MyReportsLocators.NoitemstodisplayBD(driver).getText();
+			Thread.sleep(3000);
+		if(!GridText.equalsIgnoreCase("No items to display")) {
+		
+		        List<String> li=new ArrayList<String>();
+		        
+		        li.add(cattext);
+		       
+		        Thread.sleep(3000);
+		        
+				List<String> filter=new ArrayList<String>();	
+			
+				filter.add("company name");	
+			
+				 List<WebElement> Statuscol=driver.findElements(By.xpath("//*[@id='gridBankDetails']/table/tbody/tr/td[1]")); //column list
+				 
+				Thread.sleep(2000);
+
+				for(int i=0; i<li.size(); i++){
+					
+					List<String> text= new ArrayList<String>();
+					HashSet<String> pass=new LinkedHashSet<>();
+					HashSet<String> fail=new LinkedHashSet<>();
+					List<WebElement> raw=new ArrayList<WebElement>();
+
+						if(i==0)
+						{
+							raw.addAll(Statuscol);
+						}
+						
+						
+					for(int k=0;k<raw.size();k++)
+						{
+							text.add(raw.get(k).getText());
+						}
+
+						for(int l=0;l<text.size();l++)
+							{
+						if(text.get(l).equals(li.get(i)))
+							{
+								pass.add(text.get(l));	
+								System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+							}
+						else
+						{
+							fail.add(text.get(l));		
+							System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+							System.out.println(i);
+
+						}
+						 }
+				 
+			for(String Fal : fail)
+				 {
+						test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+				 }	
+				 for(String Pas : pass)
+				 {
+					 test.log(LogStatus.PASS,  filter.get(i)+" displayed accourding to the selected company name from Company - All dropdown.");
+						test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+						System.out.println(filter.get(i)+" : "+Pas);
+			 }
+				 text.clear();
+				pass.clear();
+				fail.clear();
+				raw.clear();
+				
+				
+				}
+		}else {
+			test.log(LogStatus.PASS, "No items to display ");	
+		}
+			
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	
 	public static void ExportBD(WebDriver driver, ExtentTest test) throws InterruptedException
 	{
 		WebDriverWait wait = new WebDriverWait(driver, (60));
@@ -1338,6 +1705,111 @@ public class MyReportsMethods {
 		
 	}
 	
+	public static void StatusAllFilterKYC(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.DIR3KYCDetails(driver).click();
+			Thread.sleep(3000);
+		
+			MyReportsLocators.StatusAllKYC(driver).click();
+			Thread.sleep(3000);
+		String cattext=	MyReportsLocators.StatusAllKYC1(driver).getText();
+			Thread.sleep(3000);
+			MyReportsLocators.StatusAllKYC1(driver).click();
+			Thread.sleep(4000);
+			
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,300)");		
+			
+			Thread.sleep(4000);
+			String GridText =	MyReportsLocators.NoitemstodisplayBD(driver).getText();
+			Thread.sleep(3000);
+		if(!GridText.equalsIgnoreCase("No items to display")) {
+		
+		        List<String> li=new ArrayList<String>();
+		        
+		        li.add(cattext);
+		       
+		        Thread.sleep(3000);
+		        
+				List<String> filter=new ArrayList<String>();	
+			
+				filter.add("Status- All");	
+			
+				 List<WebElement> Statuscol=driver.findElements(By.xpath("//*[@id='gridDIR3KYC']/table/tbody/tr/td[1]")); //column list
+				 
+				Thread.sleep(2000);
+
+				for(int i=0; i<li.size(); i++){
+					
+					List<String> text= new ArrayList<String>();
+					HashSet<String> pass=new LinkedHashSet<>();
+					HashSet<String> fail=new LinkedHashSet<>();
+					List<WebElement> raw=new ArrayList<WebElement>();
+
+						if(i==0)
+						{
+							raw.addAll(Statuscol);
+						}
+						
+						
+					for(int k=0;k<raw.size();k++)
+						{
+							text.add(raw.get(k).getText());
+						}
+
+						for(int l=0;l<text.size();l++)
+							{
+						if(text.get(l).equalsIgnoreCase(li.get(i)))
+							{
+								pass.add(text.get(l));	
+								System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+							}
+						else
+						{
+							fail.add(text.get(l));		
+							System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+							System.out.println(i);
+
+						}
+						 }
+				 
+			for(String Fal : fail)
+				 {
+						test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+				 }	
+				 for(String Pas : pass)
+				 {
+					 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
+						test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+						System.out.println(filter.get(i)+" : "+Pas);
+			 }
+				 text.clear();
+				pass.clear();
+				fail.clear();
+				raw.clear();
+				
+				
+				}
+		}else {
+			test.log(LogStatus.PASS, "No items to display ");	
+		}
+			
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	
 	public static void FYClickKYC(WebDriver driver, ExtentTest test) throws InterruptedException
 	{
 		WebDriverWait wait = new WebDriverWait(driver, (40));
@@ -1359,6 +1831,110 @@ public class MyReportsMethods {
 			test.log(LogStatus.FAIL, " 'Financial Year - All' dropdown is not Clickable .");
 			
 		}
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void FYKYCFilter(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.DIR3KYCDetails(driver).click();
+			Thread.sleep(3000);
+		
+			MyReportsLocators.FYClickKYC(driver).click();
+			Thread.sleep(3000);
+		String cattext=	MyReportsLocators.FYClickKYC1(driver).getText();
+			Thread.sleep(3000);
+			MyReportsLocators.FYClickKYC1(driver).click();
+			Thread.sleep(4000);
+			
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,300)");		
+			
+			Thread.sleep(4000);
+			String GridText =	MyReportsLocators.NoitemstodisplayBD(driver).getText();
+			Thread.sleep(3000);
+		if(!GridText.equalsIgnoreCase("No items to display")) {
+		
+		        List<String> li=new ArrayList<String>();
+		        
+		        li.add(cattext);
+		       
+		        Thread.sleep(3000);
+		        
+				List<String> filter=new ArrayList<String>();	
+			
+				filter.add("Financial Year-All");	
+			
+				 List<WebElement> Statuscol=driver.findElements(By.xpath("//*[@id='gridDIR3KYC']/table/tbody/tr/td[3]")); //column list
+				 
+				Thread.sleep(2000);
+
+				for(int i=0; i<li.size(); i++){
+					
+					List<String> text= new ArrayList<String>();
+					HashSet<String> pass=new LinkedHashSet<>();
+					HashSet<String> fail=new LinkedHashSet<>();
+					List<WebElement> raw=new ArrayList<WebElement>();
+
+						if(i==0)
+						{
+							raw.addAll(Statuscol);
+						}
+						
+						
+					for(int k=0;k<raw.size();k++)
+						{
+							text.add(raw.get(k).getText());
+						}
+
+						for(int l=0;l<text.size();l++)
+							{
+						if(text.get(l).equalsIgnoreCase(li.get(i)))
+							{
+								pass.add(text.get(l));	
+								System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+							}
+						else
+						{
+							fail.add(text.get(l));		
+							System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+							System.out.println(i);
+
+						}
+						 }
+				 
+			for(String Fal : fail)
+				 {
+						test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+				 }	
+				 for(String Pas : pass)
+				 {
+					 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
+						test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+						System.out.println(filter.get(i)+" : "+Pas);
+			 }
+				 text.clear();
+				pass.clear();
+				fail.clear();
+				raw.clear();
+				
+				
+				}
+		}else {
+			test.log(LogStatus.PASS, "No items to display ");	
+		}
+			
 		Thread.sleep(3000);
 		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
@@ -1890,7 +2466,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -1903,6 +2479,268 @@ public class MyReportsMethods {
 			test.log(LogStatus.FAIL, " User should not redirected to the DPT-3 Status Report page.");
 			
 		}
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void CompanyAllClickDPT (WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.DPT3StatusReport(driver).click();
+			Thread.sleep(5000);
+			
+		if(MyReportsLocators.CompanyAllAF(driver).isEnabled()) {
+			MyReportsLocators.CompanyAllAF(driver).click();
+			Thread.sleep(3000);
+			test.log(LogStatus.PASS, "'Company - All' dropdown is Clickable.");
+		}else {
+			test.log(LogStatus.FAIL, " 'Company - All' dropdown is not Clickable .");
+			
+		}
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void CompanyAllFilterDPT(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.DPT3StatusReport(driver).click();
+			Thread.sleep(3000);
+		
+			MyReportsLocators.CompanyAllAF(driver).click();
+			Thread.sleep(3000);
+		String cattext=	MyReportsLocators.CompanyAllClickAD1(driver).getText();
+			Thread.sleep(3000);
+			MyReportsLocators.CompanyAllClickAD1(driver).click();
+			Thread.sleep(4000);
+			
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,300)");		
+			
+			Thread.sleep(4000);
+			String GridText =	MyReportsLocators.NoitemstodisplayBD(driver).getText();
+			Thread.sleep(3000);
+		if(!GridText.equalsIgnoreCase("No items to display")) {
+		
+		        List<String> li=new ArrayList<String>();
+		        
+		        li.add(cattext);
+		       
+		        Thread.sleep(3000);
+		        
+				List<String> filter=new ArrayList<String>();	
+			
+				filter.add("company name");	
+			
+				 List<WebElement> Statuscol=driver.findElements(By.xpath("//*[@id='gridDPT3Status']/table/tbody/tr/td[1]")); //column list
+				 
+				Thread.sleep(2000);
+
+				for(int i=0; i<li.size(); i++){
+					
+					List<String> text= new ArrayList<String>();
+					HashSet<String> pass=new LinkedHashSet<>();
+					HashSet<String> fail=new LinkedHashSet<>();
+					List<WebElement> raw=new ArrayList<WebElement>();
+
+						if(i==0)
+						{
+							raw.addAll(Statuscol);
+						}
+						
+						
+					for(int k=0;k<raw.size();k++)
+						{
+							text.add(raw.get(k).getText());
+						}
+
+						for(int l=0;l<text.size();l++)
+							{
+						if(text.get(l).equals(li.get(i)))
+							{
+								pass.add(text.get(l));	
+								System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+							}
+						else
+						{
+							fail.add(text.get(l));		
+							System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+							System.out.println(i);
+
+						}
+						 }
+				 
+			for(String Fal : fail)
+				 {
+						test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+				 }	
+				 for(String Pas : pass)
+				 {
+					 test.log(LogStatus.PASS,  filter.get(i)+" displayed accourding to the selected company name from Company - All dropdown.");
+						test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+						System.out.println(filter.get(i)+" : "+Pas);
+			 }
+				 text.clear();
+				pass.clear();
+				fail.clear();
+				raw.clear();
+				
+				
+				}
+		}else {
+			test.log(LogStatus.PASS, "No items to display ");	
+		}
+			
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void FYDPT(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.DPT3StatusReport(driver).click();
+			Thread.sleep(5000);
+			
+		if(MyReportsLocators.FYDPT(driver).isEnabled()) {
+			MyReportsLocators.FYDPT(driver).click();
+			Thread.sleep(3000);
+			test.log(LogStatus.PASS, "'Financial Year - All' dropdown is Clickable.");
+		}else {
+			test.log(LogStatus.FAIL, " 'Financial Year - All' dropdown is not Clickable .");
+			
+		}
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void FYDPTFilter(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.DPT3StatusReport(driver).click();
+			Thread.sleep(5000);
+		
+			MyReportsLocators.FYDPT(driver).click();
+			Thread.sleep(3000);
+		String cattext=	MyReportsLocators.FYDPT1(driver).getText();
+			Thread.sleep(3000);
+			MyReportsLocators.FYDPT1(driver).click();
+			Thread.sleep(4000);
+			
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,300)");		
+			
+			Thread.sleep(4000);
+			String GridText =	MyReportsLocators.NoitemstodisplayBD(driver).getText();
+			Thread.sleep(3000);
+		if(!GridText.equalsIgnoreCase("No items to display")) {
+		
+		        List<String> li=new ArrayList<String>();
+		        
+		        li.add(cattext);
+		       
+		        Thread.sleep(3000);
+		        
+				List<String> filter=new ArrayList<String>();	
+			
+				filter.add("Financial Year-All");	
+			
+				 List<WebElement> Statuscol=driver.findElements(By.xpath("//*[@id='gridDPT3Status']/table/tbody/tr/td[2]")); //column list
+				 
+				Thread.sleep(2000);
+
+				for(int i=0; i<li.size(); i++){
+					
+					List<String> text= new ArrayList<String>();
+					HashSet<String> pass=new LinkedHashSet<>();
+					HashSet<String> fail=new LinkedHashSet<>();
+					List<WebElement> raw=new ArrayList<WebElement>();
+
+						if(i==0)
+						{
+							raw.addAll(Statuscol);
+						}
+						
+						
+					for(int k=0;k<raw.size();k++)
+						{
+							text.add(raw.get(k).getText());
+						}
+
+						for(int l=0;l<text.size();l++)
+							{
+						if(text.get(l).equalsIgnoreCase(li.get(i)))
+							{
+								pass.add(text.get(l));	
+								System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+							}
+						else
+						{
+							fail.add(text.get(l));		
+							System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+							System.out.println(i);
+
+						}
+						 }
+				 
+			for(String Fal : fail)
+				 {
+						test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+				 }	
+				 for(String Pas : pass)
+				 {
+					 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
+						test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+						System.out.println(filter.get(i)+" : "+Pas);
+			 }
+				 text.clear();
+				pass.clear();
+				fail.clear();
+				raw.clear();
+				
+				
+				}
+		}else {
+			test.log(LogStatus.PASS, "No items to display ");	
+		}
+			
 		Thread.sleep(3000);
 		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
@@ -2249,7 +3087,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -2279,6 +3117,270 @@ public class MyReportsMethods {
 		Thread.sleep(2000);
 		
 	}
+	
+	public static void CompanyAllClickMSME (WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.MSMEReport(driver).click();
+			Thread.sleep(5000);
+			
+		if(MyReportsLocators.CompanyAllAF(driver).isEnabled()) {
+			MyReportsLocators.CompanyAllAF(driver).click();
+			Thread.sleep(3000);
+			test.log(LogStatus.PASS, "'Company - All' dropdown is Clickable.");
+		}else {
+			test.log(LogStatus.FAIL, " 'Company - All' dropdown is not Clickable .");
+			
+		}
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void CompanyAllFilterMSME(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.MSMEReport(driver).click();
+			Thread.sleep(3000);
+		
+			MyReportsLocators.CompanyAllAF(driver).click();
+			Thread.sleep(3000);
+		String cattext=	MyReportsLocators.CompanyAllClickAD2(driver).getText();
+			Thread.sleep(3000);
+			MyReportsLocators.CompanyAllClickAD2(driver).click();
+			Thread.sleep(4000);
+			
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,300)");		
+			
+			Thread.sleep(4000);
+			String GridText =	MyReportsLocators.NoitemstodisplayBD(driver).getText();
+			Thread.sleep(3000);
+		if(!GridText.equalsIgnoreCase("No items to display")) {
+		
+		        List<String> li=new ArrayList<String>();
+		        
+		        li.add(cattext);
+		       
+		        Thread.sleep(3000);
+		        
+				List<String> filter=new ArrayList<String>();	
+			
+				filter.add("company name");	
+			
+				 List<WebElement> Statuscol=driver.findElements(By.xpath("//*[@id='gridDPT3Status']/table/tbody/tr/td[1]")); //column list
+				 
+				Thread.sleep(2000);
+
+				for(int i=0; i<li.size(); i++){
+					
+					List<String> text= new ArrayList<String>();
+					HashSet<String> pass=new LinkedHashSet<>();
+					HashSet<String> fail=new LinkedHashSet<>();
+					List<WebElement> raw=new ArrayList<WebElement>();
+
+						if(i==0)
+						{
+							raw.addAll(Statuscol);
+						}
+						
+						
+					for(int k=0;k<raw.size();k++)
+						{
+							text.add(raw.get(k).getText());
+						}
+
+						for(int l=0;l<text.size();l++)
+							{
+						if(text.get(l).equals(li.get(i)))
+							{
+								pass.add(text.get(l));	
+								System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+							}
+						else
+						{
+							fail.add(text.get(l));		
+							System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+							System.out.println(i);
+
+						}
+						 }
+				 
+			for(String Fal : fail)
+				 {
+						test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+				 }	
+				 for(String Pas : pass)
+				 {
+					 test.log(LogStatus.PASS,  filter.get(i)+" displayed accourding to the selected company name from Company - All dropdown.");
+						test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+						System.out.println(filter.get(i)+" : "+Pas);
+			 }
+				 text.clear();
+				pass.clear();
+				fail.clear();
+				raw.clear();
+				
+				
+				}
+		}else {
+			test.log(LogStatus.PASS, "No items to display ");	
+		}
+			
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void FYMSME(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.MSMEReport(driver).click();
+			Thread.sleep(5000);
+			
+		if(MyReportsLocators.FYDPT(driver).isEnabled()) {
+			MyReportsLocators.FYDPT(driver).click();
+			Thread.sleep(3000);
+			test.log(LogStatus.PASS, "'Financial Year - All' dropdown is Clickable.");
+		}else {
+			test.log(LogStatus.FAIL, " 'Financial Year - All' dropdown is not Clickable .");
+			
+		}
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void FYMSMEFilter(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.MSMEReport(driver).click();
+			Thread.sleep(5000);
+		
+			MyReportsLocators.FYDPT(driver).click();
+			Thread.sleep(3000);
+		String cattext=	MyReportsLocators.FYDPT1(driver).getText();
+			Thread.sleep(3000);
+			MyReportsLocators.FYDPT1(driver).click();
+			Thread.sleep(4000);
+			
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,300)");		
+			
+			Thread.sleep(4000);
+			String GridText =	MyReportsLocators.NoitemstodisplayBD(driver).getText();
+			Thread.sleep(3000);
+		if(!GridText.equalsIgnoreCase("No items to display")) {
+		
+		        List<String> li=new ArrayList<String>();
+		        
+		        li.add(cattext);
+		       
+		        Thread.sleep(3000);
+		        
+				List<String> filter=new ArrayList<String>();	
+			
+				filter.add("Financial Year-All");	
+			
+				 List<WebElement> Statuscol=driver.findElements(By.xpath("//*[@id='gridDPT3Status']/table/tbody/tr/td[2]")); //column list
+				 
+				Thread.sleep(2000);
+
+				for(int i=0; i<li.size(); i++){
+					
+					List<String> text= new ArrayList<String>();
+					HashSet<String> pass=new LinkedHashSet<>();
+					HashSet<String> fail=new LinkedHashSet<>();
+					List<WebElement> raw=new ArrayList<WebElement>();
+
+						if(i==0)
+						{
+							raw.addAll(Statuscol);
+						}
+						
+						
+					for(int k=0;k<raw.size();k++)
+						{
+							text.add(raw.get(k).getText());
+						}
+
+						for(int l=0;l<text.size();l++)
+							{
+						if(text.get(l).equalsIgnoreCase(li.get(i)))
+							{
+								pass.add(text.get(l));	
+								System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+							}
+						else
+						{
+							fail.add(text.get(l));		
+							System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+							System.out.println(i);
+
+						}
+						 }
+				 
+			for(String Fal : fail)
+				 {
+						test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+				 }	
+				 for(String Pas : pass)
+				 {
+					 test.log(LogStatus.PASS,  filter.get(i)+" dropdown working properly.");
+						test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+						System.out.println(filter.get(i)+" : "+Pas);
+			 }
+				 text.clear();
+				pass.clear();
+				fail.clear();
+				raw.clear();
+				
+				
+				}
+		}else {
+			test.log(LogStatus.PASS, "No items to display ");	
+		}
+			
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	
 	
 	public static void ExportMSME(WebDriver driver, ExtentTest test) throws InterruptedException
 	{
@@ -3085,6 +4187,138 @@ public class MyReportsMethods {
 		Thread.sleep(2000);
 		
 	}
+	
+	public static void CompanyAllClickReg (WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.RegReport(driver).click();
+			Thread.sleep(5000);
+			
+		if(MyReportsLocators.CompanyAllAF(driver).isEnabled()) {
+			MyReportsLocators.CompanyAllAF(driver).click();
+			Thread.sleep(3000);
+			test.log(LogStatus.PASS, "'Company - All' dropdown is Clickable.");
+		}else {
+			test.log(LogStatus.FAIL, " 'Company - All' dropdown is not Clickable .");
+			
+		}
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
+	public static void CompanyAllFilterReg(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (40));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
+		Thread.sleep(1000);
+		
+			MyReportsLocators.MyReportsMenu(driver).click();
+			Thread.sleep(1000);
+			MyReportsLocators.RegReport(driver).click();
+			Thread.sleep(3000);
+		
+			MyReportsLocators.CompanyAllAF(driver).click();
+			Thread.sleep(3000);
+		String cattext=	MyReportsLocators.CompanyAllClickAD2(driver).getText();
+			Thread.sleep(3000);
+			MyReportsLocators.CompanyAllClickAD1(driver).click();
+			Thread.sleep(4000);
+			
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0,300)");		
+			
+			Thread.sleep(4000);
+			String GridText =	MyReportsLocators.NoitemstodisplayBD(driver).getText();
+			Thread.sleep(3000);
+		if(!GridText.equalsIgnoreCase("No items to display")) {
+		
+		        List<String> li=new ArrayList<String>();
+		        
+		        li.add(cattext);
+		       
+		        Thread.sleep(3000);
+		        
+				List<String> filter=new ArrayList<String>();	
+			
+				filter.add("company name");	
+			
+				 List<WebElement> Statuscol=driver.findElements(By.xpath("//*[@id='gridDPT3Status']/table/tbody/tr/td[1]")); //column list
+				 
+				Thread.sleep(2000);
+
+				for(int i=0; i<li.size(); i++){
+					
+					List<String> text= new ArrayList<String>();
+					HashSet<String> pass=new LinkedHashSet<>();
+					HashSet<String> fail=new LinkedHashSet<>();
+					List<WebElement> raw=new ArrayList<WebElement>();
+
+						if(i==0)
+						{
+							raw.addAll(Statuscol);
+						}
+						
+						
+					for(int k=0;k<raw.size();k++)
+						{
+							text.add(raw.get(k).getText());
+						}
+
+						for(int l=0;l<text.size();l++)
+							{
+						if(text.get(l).equals(li.get(i)))
+							{
+								pass.add(text.get(l));	
+								System.out.println("pass : "+text.get(l)+" : "+li.get(i));
+
+							}
+						else
+						{
+							fail.add(text.get(l));		
+							System.out.println("fail : "+text.get(l)+" : "+li.get(i));
+							System.out.println(i);
+
+						}
+						 }
+				 
+			for(String Fal : fail)
+				 {
+						test.log(LogStatus.FAIL, filter.get(i)+" column shows incorrect value : "+Fal);
+				 }	
+				 for(String Pas : pass)
+				 {
+					 test.log(LogStatus.PASS,  filter.get(i)+" displayed accourding to the selected company name from Company - All dropdown.");
+						test.log(LogStatus.PASS, filter.get(i)+" displayed : "+Pas);	
+						System.out.println(filter.get(i)+" : "+Pas);
+			 }
+				 text.clear();
+				pass.clear();
+				fail.clear();
+				raw.clear();
+				
+				
+				}
+		}else {
+			test.log(LogStatus.PASS, "No items to display ");	
+		}
+			
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
+		
+	}
+	
 	
 	public static void ExportReg(WebDriver driver, ExtentTest test) throws InterruptedException
 	{

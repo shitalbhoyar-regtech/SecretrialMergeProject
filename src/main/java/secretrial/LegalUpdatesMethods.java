@@ -1223,5 +1223,368 @@ public class LegalUpdatesMethods {
 		
 	}
 	
+	public static void Configuration(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (80));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[13]"))); 
+		Thread.sleep(1000);
+		
+		LegalUpdatesLocators.HelpUpdates(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.HelpVideos(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.MASTERS(driver).click();
+		Thread.sleep(3000);
+		
+			if(LegalUpdatesLocators.Configuration(driver).isEnabled()) {
+				LegalUpdatesLocators.Configuration(driver).click();
+				Thread.sleep(3000);
+				test.log(LogStatus.PASS, "User should able to redirected to the Configuration page");
+			}else {
+				test.log(LogStatus.FAIL, "User should not redirected to the Configuration page");
+				
+			}
+		
+		Thread.sleep(3000);
+	
+		
+	}
+	
+	public static void ConfigurationPlay(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (80));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[13]"))); 
+		Thread.sleep(1000);
+		
+		LegalUpdatesLocators.HelpUpdates(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.HelpVideos(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.MASTERS(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.Configuration(driver).click();
+		Thread.sleep(3000);
+		//play video
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("document.getElementById(\"videoHelpControl\").play()");
+		
+		Thread.sleep(3000);
+		//pause playing video 
+		 jse.executeScript("document.getElementById(\"videoHelpControl\").pause()");
+		 Thread.sleep(4000);
+		 
+		 jse.executeScript("document.getElementById(\"videoHelpControl\").play()");
+		 Thread.sleep(3000);
+		
+		 test.log(LogStatus.PASS, "Check Video file User should able to Play/Pause video ");
+		
+	}
+	
+	public static void ComplianceAssignmenCC(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (80));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[13]"))); 
+		Thread.sleep(1000);
+		
+		LegalUpdatesLocators.HelpUpdates(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.HelpVideos(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.MASTERS(driver).click();
+		Thread.sleep(3000);
+		
+			if(LegalUpdatesLocators.ComplianceAssignmenCC(driver).isEnabled()) {
+				LegalUpdatesLocators.ComplianceAssignmenCC(driver).click();
+				Thread.sleep(3000);
+				test.log(LogStatus.PASS, "User should able to redirected to the Compliance Assignment and Compliance Closure page");
+			}else {
+				test.log(LogStatus.FAIL, "User should not redirected to the Compliance Assignment and Compliance Closure page");
+				
+			}
+		
+		Thread.sleep(3000);
+	
+	}
+	
+	public static void ComplianceAssignmenCCPlay(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (80));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[13]"))); 
+		Thread.sleep(1000);
+		
+		LegalUpdatesLocators.HelpUpdates(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.HelpVideos(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.MASTERS(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.ComplianceAssignmenCC(driver).click();
+		Thread.sleep(3000);
+		//play video
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("document.getElementById(\"videoHelpControl\").play()");
+		
+		Thread.sleep(3000);
+		//pause playing video 
+		 jse.executeScript("document.getElementById(\"videoHelpControl\").pause()");
+		 Thread.sleep(4000);
+		 
+		 jse.executeScript("document.getElementById(\"videoHelpControl\").play()");
+		 Thread.sleep(3000);
+		
+		 test.log(LogStatus.PASS, "Check Video file User should able to Play/Pause video ");
+	
+	}
+	
+	public static void MYREPORTS(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (80));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[13]"))); 
+		Thread.sleep(1000);
+		
+		LegalUpdatesLocators.HelpUpdates(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.HelpVideos(driver).click();
+		Thread.sleep(3000);
+	
+			if(LegalUpdatesLocators.MYREPORTS(driver).isEnabled()) {
+				LegalUpdatesLocators.MYREPORTS(driver).click();
+				Thread.sleep(3000);
+				test.log(LogStatus.PASS, "'MY REPORTS' tab is clickable");
+			}else {
+				test.log(LogStatus.FAIL, "'MY REPORTS' tab is not clickable");
+				
+			}
+		
+		Thread.sleep(3000);
+		
+	}
+	
+	public static void ComplianceStatusReport(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (80));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[13]"))); 
+		Thread.sleep(1000);
+		
+		LegalUpdatesLocators.HelpUpdates(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.HelpVideos(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.MYREPORTS(driver).click();
+		Thread.sleep(3000);
+		
+			if(LegalUpdatesLocators.ComplianceStatusReport(driver).isEnabled()) {
+				LegalUpdatesLocators.ComplianceStatusReport(driver).click();
+				Thread.sleep(3000);
+				test.log(LogStatus.PASS, "User should able to redirected to the Compliance Status Report page");
+			}else {
+				test.log(LogStatus.FAIL, "User should not redirected to the Compliance Status Report page");
+				
+			}
+		
+		Thread.sleep(3000);
+	
+		
+	}
+	
+	public static void ComplianceStatusReportPlay(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (80));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[13]"))); 
+		Thread.sleep(1000);
+		
+		LegalUpdatesLocators.HelpUpdates(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.HelpVideos(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.MYREPORTS(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.ComplianceStatusReport(driver).click();
+		Thread.sleep(3000);
+		//play video
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("document.getElementById(\"videoHelpControl\").play()");
+		
+		Thread.sleep(3000);
+		//pause playing video 
+		 jse.executeScript("document.getElementById(\"videoHelpControl\").pause()");
+		 Thread.sleep(4000);
+		 
+		 jse.executeScript("document.getElementById(\"videoHelpControl\").play()");
+		 Thread.sleep(3000);
+		
+		 test.log(LogStatus.PASS, "Check Video file User should able to Play/Pause video ");
+	
+	
+		
+	}
+	
+	public static void AttendanceReport(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (80));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[13]"))); 
+		Thread.sleep(1000);
+		
+		LegalUpdatesLocators.HelpUpdates(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.HelpVideos(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.MYREPORTS(driver).click();
+		Thread.sleep(3000);
+		
+			if(LegalUpdatesLocators.AttendanceReport(driver).isEnabled()) {
+				LegalUpdatesLocators.AttendanceReport(driver).click();
+				Thread.sleep(3000);
+				test.log(LogStatus.PASS, "User should able to redirected to the Attendance Report page");
+			}else {
+				test.log(LogStatus.FAIL, "User should not redirected to the Attendance Report page");
+				
+			}
+		
+		Thread.sleep(3000);
+	
+		
+	}
+	
+	public static void AttendanceReportPlay(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (80));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[13]"))); 
+		Thread.sleep(1000);
+		
+		LegalUpdatesLocators.HelpUpdates(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.HelpVideos(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.MYREPORTS(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.AttendanceReport(driver).click();
+		Thread.sleep(3000);
+		//play video
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("document.getElementById(\"videoHelpControl\").play()");
+		
+		Thread.sleep(3000);
+		//pause playing video 
+		 jse.executeScript("document.getElementById(\"videoHelpControl\").pause()");
+		 Thread.sleep(4000);
+		 
+		 jse.executeScript("document.getElementById(\"videoHelpControl\").play()");
+		 Thread.sleep(3000);
+		
+		 test.log(LogStatus.PASS, "Check Video file User should able to Play/Pause video ");
+	
+	
+		
+	}
+	
+	public static void MYFORMS(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (80));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[13]"))); 
+		Thread.sleep(1000);
+		
+		LegalUpdatesLocators.HelpUpdates(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.HelpVideos(driver).click();
+		Thread.sleep(3000);
+	
+			if(LegalUpdatesLocators.MYFORMS(driver).isEnabled()) {
+				LegalUpdatesLocators.MYFORMS(driver).click();
+				Thread.sleep(3000);
+				test.log(LogStatus.PASS, "'MY FORMS' tab is clickable");
+			}else {
+				test.log(LogStatus.FAIL, "'MY FORMS' tab is not clickable");
+				
+			}
+		
+		Thread.sleep(3000);
+		
+	}
+	
+	public static void Dpt3(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (80));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[13]"))); 
+		Thread.sleep(1000);
+		
+		LegalUpdatesLocators.HelpUpdates(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.HelpVideos(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.MYFORMS(driver).click();
+		Thread.sleep(3000);
+		
+			if(LegalUpdatesLocators.Dpt3(driver).isEnabled()) {
+				LegalUpdatesLocators.Dpt3(driver).click();
+				Thread.sleep(3000);
+				test.log(LogStatus.PASS, "User should able to redirected to the DPT-3 page");
+			}else {
+				test.log(LogStatus.FAIL, "User should not redirected to the  DPT-3 page");
+				
+			}
+		
+		Thread.sleep(3000);
+	
+		
+	}
+	
+	public static void MyFormsPlay(WebDriver driver, ExtentTest test) throws InterruptedException
+	{
+		WebDriverWait wait = new WebDriverWait(driver, (80));
+		Thread.sleep(3000);
+		
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[13]"))); 
+		Thread.sleep(1000);
+		
+		LegalUpdatesLocators.HelpUpdates(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.HelpVideos(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.MYFORMS(driver).click();
+		Thread.sleep(3000);
+		LegalUpdatesLocators.Dpt3(driver).click();
+		Thread.sleep(3000);
+		//play video
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("document.getElementById(\"videoHelpControl\").play()");
+		
+		Thread.sleep(3000);
+		//pause playing video 
+		 jse.executeScript("document.getElementById(\"videoHelpControl\").pause()");
+		 Thread.sleep(4000);
+		 
+		 jse.executeScript("document.getElementById(\"videoHelpControl\").play()");
+		 Thread.sleep(3000);
+		
+		 test.log(LogStatus.PASS, "Check Video file User should able to Play/Pause video ");
+	
+	
+		
+	}
+	
+	
 	
 }

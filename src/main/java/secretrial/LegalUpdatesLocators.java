@@ -195,15 +195,51 @@ private static WebElement secretrial = null;				//WebElement variable created fo
 	
 	public static WebElement AuditorMaster(WebDriver driver)		//Method for closing Message Popup
 	{
-		secretrial = driver.findElement(By.xpath("//*[@id='panelbar']/li[3]/ul/li[3]/a"));
+		secretrial = driver.findElement(By.xpath("//*[@id='panelbar']/li[3]/ul/li[4]/a"));
 		return secretrial;
 	}
 	
+	public static WebElement Configuration(WebDriver driver)		//Method for closing Message Popup
+	{
+		secretrial = driver.findElement(By.xpath("//*[@id='panelbar']/li[3]/ul/li[5]/a"));
+		return secretrial;
+	}
 	
+	public static WebElement ComplianceAssignmenCC(WebDriver driver)		//Method for closing Message Popup
+	{
+		secretrial = driver.findElement(By.xpath("//*[@id='panelbar']/li[3]/ul/li[6]/a"));
+		return secretrial;
+	}
 	
+	public static WebElement MYREPORTS(WebDriver driver)		//Method for closing Message Popup
+	{
+		secretrial = driver.findElement(By.xpath("//*[@id='panelbar']/li[4]/span"));
+		return secretrial;
+	}
 	
+	public static WebElement ComplianceStatusReport(WebDriver driver)		//Method for closing Message Popup
+	{
+		secretrial = driver.findElement(By.xpath("//*[@id='panelbar']/li[4]/ul/li[1]/a"));
+		return secretrial;
+	}
 	
+	public static WebElement AttendanceReport(WebDriver driver)		//Method for closing Message Popup
+	{
+		secretrial = driver.findElement(By.xpath("//*[@id='panelbar']/li[4]/ul/li[2]/a"));
+		return secretrial;
+	}
 	
+	public static WebElement MYFORMS(WebDriver driver)		//Method for closing Message Popup
+	{
+		secretrial = driver.findElement(By.xpath("//*[@id='panelbar']/li[5]/span"));
+		return secretrial;
+	}
+	
+	public static WebElement Dpt3(WebDriver driver)		//Method for closing Message Popup
+	{
+		secretrial = driver.findElement(By.xpath("//*[@id='panelbar']/li[5]/ul/li/a"));
+		return secretrial;
+	}
 	
 	
 	
