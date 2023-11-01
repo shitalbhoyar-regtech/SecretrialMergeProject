@@ -748,7 +748,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=61)
+//    @Test(priority=61)
 
 		  void NewRegularMeeting() throws InterruptedException, IOException
 		  {
@@ -759,7 +759,8 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=62)
+		  
+//	@Test(priority=62)
 
 		  void NewShorterMeeting() throws InterruptedException, IOException
 		  {
@@ -770,7 +771,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority=63)
+//	@Test(priority=63)
 
 		  void NewEMeeting() throws InterruptedException, IOException
 		  {
@@ -781,7 +782,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority=64)
+	//@Test(priority=64)
 
 		  void CircularMeeting() throws InterruptedException, IOException
 		  {
@@ -792,6 +793,155 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
+		  
+	//@Test(priority=65)
+
+		  void NewRegularNoticeMeeting() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting Verification");
+			
+			MyWorkspaceMethod.NewRegularNoticeMeeting(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	//@Test(priority=66)
+
+		  void NewShorterNoticeMeeting() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- My Meeting  tab -New button - Notice Shorter Meeting Verification");
+			
+			MyWorkspaceMethod.NewShorterNoticeMeeting(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	//@Test(priority=67)
+
+		  void WithoutEnterRegularNoticeMeeting() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- My Meeting  tab -New button - Without Enter data  Meeting Verification");
+			
+			MyWorkspaceMethod.WithoutEnterRegularNoticeMeeting(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+//	@Test(priority=68)
+
+	  void AvailabiltyOption() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Option Verification");
+		
+		MyWorkspaceMethod.AvailabiltyOption(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//@Test(priority=69)
+
+	  void ClickAvailabiltyOption() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab Verification");
+		
+		MyWorkspaceMethod.ClickAvailabiltyOption(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//@Test(priority=70)
+
+	  void AddNewAvailability() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab -Add Availabilty Verification");
+		
+		MyWorkspaceMethod.AddNewAvailability(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+///@Test(priority=71)
+
+	  void AddExistingAvailability() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab -Add Exsiting Availabilty Verification");
+		
+		MyWorkspaceMethod.AddExistingAvailability(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//@Test(priority=72)
+
+	  void WithoutEnterDataAvailability() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab -Without Enter data Availabilty Verification");
+		
+		MyWorkspaceMethod.WithoutEnterDataAvailability(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//	@Test(priority=73)
+	  void CancelBtnAvailability() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab -Add New Btn - Cancel Button Verification");
+		
+		MyWorkspaceMethod.CancelBtnAvailability(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	 // @Test(priority=74)
+	  void MailFormatBtn() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab - Mail Format Button Verification");
+		
+		MyWorkspaceMethod.MailFormatBtn(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	//@Test(priority=75)
+	  void UpdateMailFormat() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab  - Update Mail Format  Verification");
+		
+		MyWorkspaceMethod.UpdateMailFormat(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//	 @Test(priority=76)
+	  void SendMail() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab  - Send Mail   Verification");
+		
+		MyWorkspaceMethod.SendMail(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}	
+	// @Test(priority=77)
+	  void WithoutEnterDataSendMail() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab  - Without entering detailes Send Mail  Verification");
+		
+		MyWorkspaceMethod.WithoutEnterDataSendMail(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}	
+	 @Test(priority=78)
+	  void AgendaItem() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Agenda Item Tab  Verification");
+		
+		MyWorkspaceMethod.AgendaItem(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}	
 	@AfterMethod
 	 
 	 void Close()

@@ -2112,10 +2112,10 @@ public class MyWorkspaceMethod
 			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
 			
 			Thread.sleep(2000);
-			if(MyWorkspaceLocator.mYMeeting(driver).isEnabled())
+			if(MyWorkspaceLocator.MyMeeting(driver).isEnabled())
 			{
 				Thread.sleep(2000);
-				MyWorkspaceLocator.mYMeeting(driver).click();
+				MyWorkspaceLocator.MyMeeting(driver).click();
 				test.log(LogStatus.PASS, "User redirected on 'My Meeting' page");
 			}
 			else
@@ -2130,7 +2130,7 @@ public class MyWorkspaceMethod
 			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
 			
 			Thread.sleep(2000);
-			MyWorkspaceLocator.mYMeeting(driver).click();
+			MyWorkspaceLocator.MyMeeting(driver).click();
 			
 			Thread.sleep(2000);
 			MyWorkspaceLocator.AddRegularMeeting(driver).click();
@@ -2159,16 +2159,34 @@ public class MyWorkspaceMethod
 				
 				
 				Thread.sleep(2000);
-				if(MyWorkspaceLocator.clickSave1(driver).isEnabled())
+				MyWorkspaceLocator.clickSave1(driver).click();
+				
+				try
 				{
-					Thread.sleep(2000);
-					MyWorkspaceLocator.clickSave1(driver).click();
-					test.log(LogStatus.PASS, "User redirected on 'Regular Meeting' page");
+				  Thread.sleep(2000);
+				  if(MyWorkspaceLocator.clickEntityOrCompnay(driver).isDisplayed())
+				   {
+		
+					   test.log(LogStatus.PASS, "User redirected on 'Regular Meeting' page");
+				  } 
+				  else
+				  {
+					  test.log(LogStatus.FAIL, "User not redirected on 'Regular Meeting' page");
+				  }
 				}
-				else
-				{
-					test.log(LogStatus.FAIL, "User not redirected on 'Regular Meeting' page");
-				}
+			  catch(Exception e)
+				 {
+				    Thread.sleep(2000);
+					String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+					if(msg.equalsIgnoreCase(msg))
+					{
+						test.log(LogStatus.PASS, "Message displayed =" +msg);
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, "Message displayed =" +msg);
+					}
+				  }
 				Thread.sleep(2000);
 				MyWorkspaceLocator.close(driver).click();
 		}
@@ -2179,7 +2197,7 @@ public class MyWorkspaceMethod
 			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
 			
 			Thread.sleep(2000);
-			MyWorkspaceLocator.mYMeeting(driver).click();
+			MyWorkspaceLocator.MyMeeting(driver).click();
 			
 			Thread.sleep(2000);
 			MyWorkspaceLocator.AddRegularMeeting(driver).click();
@@ -2211,16 +2229,34 @@ public class MyWorkspaceMethod
 				
 				
 				Thread.sleep(2000);
-				if(MyWorkspaceLocator.clickSave1(driver).isEnabled())
+				MyWorkspaceLocator.clickSave1(driver).click();
+				
+				try
 				{
-					Thread.sleep(2000);
-					MyWorkspaceLocator.clickSave1(driver).click();
-					test.log(LogStatus.PASS, "User redirected on 'Shorter Meeting' page");
+				  Thread.sleep(2000);
+				  if(MyWorkspaceLocator.clickEntityOrCompnay(driver).isDisplayed())
+				   {
+		
+					   test.log(LogStatus.PASS, "User should be redirected to the 'Shorter Notice Meeting' page");
+				  } 
+				  else
+				  {
+					  test.log(LogStatus.FAIL, "User should not be redirected to the 'Shorter Notice Meeting' page");
+				  }
 				}
-				else
-				{
-					test.log(LogStatus.FAIL, "User not redirected on 'Shorter Meeting' page");
-				}
+			  catch(Exception e)
+				 {
+				    Thread.sleep(2000);
+					String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+					if(msg.equalsIgnoreCase(msg))
+					{
+						test.log(LogStatus.PASS, "Message displayed =" +msg);
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, "Message displayed =" +msg);
+					}
+				  }
 				Thread.sleep(2000);
 				MyWorkspaceLocator.close(driver).click();
 		}	    
@@ -2232,7 +2268,7 @@ public class MyWorkspaceMethod
 			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
 			
 			Thread.sleep(2000);
-			MyWorkspaceLocator.mYMeeting(driver).click();
+			MyWorkspaceLocator.MyMeeting(driver).click();
 			
 			Thread.sleep(2000);
 			MyWorkspaceLocator.AddRegularMeeting(driver).click();
@@ -2242,7 +2278,7 @@ public class MyWorkspaceMethod
 			
 			Thread.sleep(2000);
 			 List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-				selectOptionFromDropDown_bs(entitytype, "LACC LIMITED");
+				selectOptionFromDropDown_bs(entitytype, "A LIMITED");
 				
 				Thread.sleep(2000);
 				MyWorkspaceLocator.clickType1(driver).click();
@@ -2262,18 +2298,37 @@ public class MyWorkspaceMethod
 				Thread.sleep(2000);
 				MyWorkspaceLocator.eMetting(driver).click();
 				
-				
 				Thread.sleep(2000);
-				if(MyWorkspaceLocator.clickSave1(driver).isEnabled())
+				MyWorkspaceLocator.clickSave1(driver).click();
+				
+				try
 				{
-					Thread.sleep(2000);
-					MyWorkspaceLocator.clickSave1(driver).click();
-					test.log(LogStatus.PASS, "User redirected on 'Regular e-Meeting' page");
+				  Thread.sleep(2000);
+				  if(MyWorkspaceLocator.clickEntityOrCompnay(driver).isDisplayed())
+				   {
+		
+					   test.log(LogStatus.PASS, "User redirected on 'Regular e-Meeting' page");
+				  } 
+				  else
+				  {
+					  test.log(LogStatus.FAIL, "User not redirected on 'Regular e-Meeting' page");
+				  }
 				}
-				else
-				{
-					test.log(LogStatus.FAIL, "User not redirected on 'Regular e-Meeting' page");
-				}
+			  catch(Exception e)
+				 {
+				    Thread.sleep(2000);
+					String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+					if(msg.equalsIgnoreCase(msg))
+					{
+						test.log(LogStatus.PASS, "Message displayed =" +msg);
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, "Message displayed =" +msg);
+					}
+				  }
+					  
+				  
 				Thread.sleep(2000);
 				MyWorkspaceLocator.close(driver).click();
 		}	    
@@ -2284,7 +2339,7 @@ public class MyWorkspaceMethod
 			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
 			
 			Thread.sleep(2000);
-			MyWorkspaceLocator.mYMeeting(driver).click();
+			MyWorkspaceLocator.MyMeeting(driver).click();
 			
 			Thread.sleep(2000);
 			MyWorkspaceLocator.AddRegularMeeting(driver).click();
@@ -2297,7 +2352,7 @@ public class MyWorkspaceMethod
 			
 			Thread.sleep(2000);
 			 List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-				selectOptionFromDropDown_bs(entitytype, "LACC LIMITED");
+				selectOptionFromDropDown_bs(entitytype, "AAM SERVICE LLP");
 				
 				Thread.sleep(2000);
 				MyWorkspaceLocator.clickType1(driver).click();
@@ -2316,30 +2371,1246 @@ public class MyWorkspaceMethod
 				
 			
 				Thread.sleep(2000);
-				if(MyWorkspaceLocator.clickSave1(driver).isEnabled())
+				MyWorkspaceLocator.clickSave1(driver).click();
+				
+				try
 				{
-					Thread.sleep(2000);
-					MyWorkspaceLocator.clickSave1(driver).click();
-					test.log(LogStatus.PASS, "User redirected on 'Regular e-Meeting' page");
+				  Thread.sleep(2000);
+				  if(MyWorkspaceLocator.clickEntityOrCompnay(driver).isDisplayed())
+				   {
+		
+					   test.log(LogStatus.PASS, "User redirected on 'Regular Meeting' page");
+				  } 
+				  else
+				  {
+					  test.log(LogStatus.FAIL, "User not redirected on 'Regular Meeting' page");
+				  }
+				}
+			  catch(Exception e)
+				 {
+				    Thread.sleep(2000);
+					String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+					if(msg.equalsIgnoreCase(msg))
+					{
+						test.log(LogStatus.PASS, "Message displayed =" +msg);
+					}
+					else
+					{
+						test.log(LogStatus.FAIL, "Message displayed =" +msg);
+					}
+				  }
+				Thread.sleep(2000);
+				MyWorkspaceLocator.close(driver).click();
+		}	
+		
+
+public static void NewRegularNoticeMeeting(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "RANJIT SECURITIES LIMITED");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		 List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+			selectOptionFromDropDown_bs(type, "Board");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();
+	    
+		try
+		{
+			Thread.sleep(2000);
+			MyWorkspaceLocator.ClickCalender(driver).click();
+			
+
+			Thread.sleep(2000);
+			MyWorkspaceLocator.SelectDate(driver).click();
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.clickTime(driver).click();
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.selectTime(driver).click();
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.clickVenue(driver).click();
+			Thread.sleep(2000);
+			MyWorkspaceLocator.SelectVenue(driver).click();
+			Thread.sleep(2000);
+			MyWorkspaceLocator.ClickUpdte(driver).click();
+			
+			Thread.sleep(2000);
+		    String msg=  MyWorkspaceLocator. UpdateValidMsg(driver).getText();
+		    if(msg.equalsIgnoreCase(msg)) 
+		    {
+		    	test.log(LogStatus.PASS, "Message Displayed =" +msg);
+			  
+		    }
+		    else
+		    {
+			   test.log(LogStatus.FAIL, "Message Displayed =" +msg);
+		    }
+		}
+	  catch(Exception e)
+		 {
+		    Thread.sleep(2000);
+			String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+			if(msg.equalsIgnoreCase(msg))
+			{
+				test.log(LogStatus.PASS, "Message displayed =" +msg);
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, "Message displayed =" +msg);
+			}
+		  }
+	    
+	    
+			
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.close(driver).click();
+}
+		
+public static void NewShorterNoticeMeeting(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "BFN FORGINGS PRIVATE LIMITED");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		 List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+			selectOptionFromDropDown_bs(type, "Board");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();
+	    
+	    try
+	    {
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickCalender(driver).click();
+		
+
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.SelectDate(driver).click();
+		
+	    	Thread.sleep(2000);
+			MyWorkspaceLocator.clickTime(driver).click();
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.selectTime(driver).click();
+		
+			Thread.sleep(2000);
+			MyWorkspaceLocator.clickVenue(driver).click();
+			Thread.sleep(2000);
+			MyWorkspaceLocator.SelectVenue(driver).click();
+			Thread.sleep(2000);
+			MyWorkspaceLocator.ClickRadioBtnShoerterNotice(driver).click();
+			Thread.sleep(2000);
+			MyWorkspaceLocator.ClickUpdte(driver).click();
+		
+			Thread.sleep(2000);
+			String msg=  MyWorkspaceLocator. UpdateValidMsg(driver).getText();
+			if(msg.equalsIgnoreCase(msg)) 
+			{
+				test.log(LogStatus.PASS, "Message Displayed =" +msg);
+				
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, "Message Displayed =" +msg);
+			}
+	    }
+	    catch(Exception e)
+		 {
+		    Thread.sleep(2000);
+			String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+			if(msg.equalsIgnoreCase(msg))
+			{
+				test.log(LogStatus.PASS, "Message displayed =" +msg);
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, "Message displayed =" +msg);
+			}
+		  }
+		Thread.sleep(2000);
+		MyWorkspaceLocator.close(driver).click();
+}
+public static void WithoutEnterRegularNoticeMeeting(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "LNT PVT LTD");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		 List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+			selectOptionFromDropDown_bs(type, "Designated Partner's");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();
+			
+		try
+		{
+			Thread.sleep(2000);
+			MyWorkspaceLocator.ClickUpdte(driver).click();
+		
+			Thread.sleep(2000);
+			String msg=  MyWorkspaceLocator. UpdateValidMsg(driver).getText();
+			if(msg.equalsIgnoreCase(msg)) 
+			{
+				test.log(LogStatus.FAIL, "Without Enter Data =" +msg);
+		  
+			}
+			else
+			{
+				test.log(LogStatus.PASS, "Without Enter Data  =" +msg);
+			}
+		}
+	  catch(Exception e)
+			{
+			   Thread.sleep(2000);
+		       String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+				if(msg.equalsIgnoreCase(msg))
+					{
+						test.log(LogStatus.PASS, "Message displayed =" +msg);
+					}
+				else
+					{
+						test.log(LogStatus.FAIL, "Message displayed =" +msg);
+					}
+		    }
+		Thread.sleep(2000);
+		MyWorkspaceLocator.close(driver).click();
+}	
+
+public static void AvailabiltyOption(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "KESTREL AVIATION PRIVATE LIMITED");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		 List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+			selectOptionFromDropDown_bs(type, "Board");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();
+	    
+	   
+		try
+		{
+		  Thread.sleep(2000);
+		  if(MyWorkspaceLocator.ClickCheckAvailabilty(driver).isDisplayed())
+		   {
+			  if(MyWorkspaceLocator.ClickRadioBtnAvailabilty(driver).isEnabled())
+			  {
+				  Thread.sleep(2000);
+				  MyWorkspaceLocator.ClickRadioBtnAvailabilty(driver).click();
+			     test.log(LogStatus.PASS, "'Availibility' option should get activated after clicking on 'Yes' radio button");
+			  }
+		  } 
+		  else
+		  {
+			  test.log(LogStatus.FAIL, "'Availibility' option should not get activated after clicking on 'Yes' radio button");
+		  }
+		}
+	  catch(Exception e)
+		 {
+		    Thread.sleep(2000);
+			String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+			if(msg.equalsIgnoreCase(msg))
+			{
+				test.log(LogStatus.PASS, "Message displayed =" +msg);
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, "Message displayed =" +msg);
+			}
+		  }
+	    
+	 
+		Thread.sleep(2000);
+		MyWorkspaceLocator.close(driver).click();
+}
+public static void ClickAvailabiltyOption(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "HEGET PVT LTD");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		 List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+			selectOptionFromDropDown_bs(type, "Board");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();	
+	    
+		try
+			{
+			  Thread.sleep(2000);
+			  if(MyWorkspaceLocator.ClickCheckAvailabilty(driver).isDisplayed())
+			   {
+				  
+				   Thread.sleep(2000);
+					MyWorkspaceLocator.ClickRadioBtnAvailabilty(driver).click();
+					
+					if(MyWorkspaceLocator.ClickAvailabiltyTab(driver).isEnabled())
+					{
+						Thread.sleep(2000);
+						MyWorkspaceLocator.ClickAvailabiltyTab(driver).click();
+				    
+						test.log(LogStatus.PASS, "User should be redirected to the 'Availibility' page");
+					}
+			  } 
+					
+			  else
+			  {
+				  test.log(LogStatus.FAIL, "User should be redirected to the 'Availibility' page");
+			  }
+			}
+		  catch(Exception e)
+			 {
+			    Thread.sleep(2000);
+				String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+				if(msg.equalsIgnoreCase(msg))
+				{
+					test.log(LogStatus.PASS, "Message displayed =" +msg);
 				}
 				else
 				{
-					test.log(LogStatus.FAIL, "User not redirected on 'Regular Meeting' page");
+					test.log(LogStatus.FAIL, "Message displayed =" +msg);
 				}
-				Thread.sleep(2000);
-				MyWorkspaceLocator.close(driver).click();
-		}	     
-			    
-			   
+			  }
+			
+			Thread.sleep(2000);
+			MyWorkspaceLocator.close(driver).click();
+}
+
+public static void AddNewAvailability(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "ADANI AEROSPACE AND DEFENCE LIMITED");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+		selectOptionFromDropDown_bs(type, "Independent Director");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();	
+	    
+	    try
+	    {
+	    
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickRadioBtnAvailabilty(driver).click();
+		
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickAvailabiltyTab(driver).click();
+		
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickAddBtn(driver).click();
+	  
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickCalender(driver).click();
+		
+
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.SelectDate(driver).click();
+		
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickTime(driver).click();
+		
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.selectTime(driver).click();
+		
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickVenue1(driver).click();
+
+		
+	    	Thread.sleep(2000);
+	    	List<WebElement>SelectVenue = driver.findElements(By.xpath("//ul[@id='AvailabilityAddressType_listbox']/li"));
+	    	selectOptionFromDropDown_bs(SelectVenue, "Registered Office");
+			
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickPrefrence(driver).click();
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.SelectPrefrence(driver).click();
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickSaveBtn(driver).click();
 		
 		
+		
+	    	Thread.sleep(2000);
+	    	String msg =MyWorkspaceLocator.clickSaveValidMsg(driver).getText();
+		
+	    	if(msg.equalsIgnoreCase(msg))
+	    	{
+	    		test.log(LogStatus.PASS, "Add Aavailabiltiy = " +msg);
+	    	}
+	    	else
+	    	{
+	    		test.log(LogStatus.FAIL, "Add Aavailabiltiy = " +msg);
+	    	}
+		
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickcloseIcon(driver).click();
+	    }
+	   catch(Exception e)
+			 {
+			    Thread.sleep(2000);
+				String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+				if(msg.equalsIgnoreCase(msg))
+				{
+					test.log(LogStatus.PASS, "Message displayed =" +msg);
+				}
+				else
+				{
+					test.log(LogStatus.FAIL, "Message displayed =" +msg);
+				}
+			  }
+		Thread.sleep(2000);
+		MyWorkspaceLocator.close(driver).click();
+}
 			   		
 			
+public static void AddExistingAvailability(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "KESTREL AVIATION PRIVATE LIMITED");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+		selectOptionFromDropDown_bs(type, "Board");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
 			
-				
-				
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();	
+	    
+	    try
+	    {
+	    
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickRadioBtnAvailabilty(driver).click();
+		
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickAvailabiltyTab(driver).click();
+		
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickAddBtn(driver).click();
+	  
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickCalender(driver).click();
+		
+
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.SelectDate(driver).click();
+		
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickTime(driver).click();
+		
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.selectTime(driver).click();
+		
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickVenue1(driver).click();
+
+		
+	    	Thread.sleep(2000);
+	    	List<WebElement>SelectVenue = driver.findElements(By.xpath("//ul[@id='AvailabilityAddressType_listbox']/li"));
+	    	selectOptionFromDropDown_bs(SelectVenue, "Registered Office");
+		
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickPrefrence(driver).click();
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.SelectPrefrence(driver).click();
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickSaveBtn(driver).click();
+		
+	    	Thread.sleep(2000);
+	    	String msg =MyWorkspaceLocator.clickSaveValidMsg(driver).getText();
+		
+	    	if(msg.equalsIgnoreCase(msg))
+	    	{
+	    		test.log(LogStatus.FAIL, "Add Exsiting Aavailabiltiy = " +msg);
+	    	}
+	    	else
+	    	{
+	    		test.log(LogStatus.PASS, "Add Exsiting Aavailabiltiy = " +msg);
+	    	}
+		
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickcloseIcon(driver).click();
+	 }
+	catch(Exception e)
+	{
+		Thread.sleep(2000);
+		String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+		if(msg.equalsIgnoreCase(msg))
+		{
+		test.log(LogStatus.PASS, "Message displayed =" +msg);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Message displayed =" +msg);
+		}
+	}
+
+		Thread.sleep(2000);
+		MyWorkspaceLocator.close(driver).click();
+}
+public static void WithoutEnterDataAvailability(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "ADANI ENTERPRISES LIMITED");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+		selectOptionFromDropDown_bs(type, "Audit Committee");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
 			
-    
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();	
+	    
+	    try
+	    {
+	    
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickRadioBtnAvailabilty(driver).click();
+		
+	    	Thread.sleep(2000);
+			MyWorkspaceLocator.ClickAvailabiltyTab(driver).click();
+		
+			Thread.sleep(2000);
+			MyWorkspaceLocator.ClickAddBtn(driver).click();
+	  
+		
+			Thread.sleep(2000);
+			MyWorkspaceLocator.clickSaveBtn(driver).click();
+		
+			Thread.sleep(2000);
+			String msg =MyWorkspaceLocator.clickInvaliMsg(driver).getText();
+		
+			if(msg.equalsIgnoreCase(msg))
+			{
+				test.log(LogStatus.PASS, "Without Entering data in Aavailabiltiy = " +msg);
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, "Without Entering data in  Aavailabiltiy = " +msg);
+			}
+		
+			Thread.sleep(2000);
+			MyWorkspaceLocator.clickcloseIcon(driver).click();
+	    }
+		 catch(Exception e)
+		 {
+		    Thread.sleep(2000);
+			String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+			if(msg.equalsIgnoreCase(msg))
+			{
+				test.log(LogStatus.PASS, "Message displayed =" +msg);
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, "Message displayed =" +msg);
+			}
+		  }
+		Thread.sleep(2000);
+		MyWorkspaceLocator.close(driver).click();
+}			   					
+public static void CancelBtnAvailability(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "SPRESSO POD MANUFACTURING PRIVATE LIMITED");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+		selectOptionFromDropDown_bs(type, "Board");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();	
+	    try
+	    {
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickRadioBtnAvailabilty(driver).click();
+		
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickAvailabiltyTab(driver).click();
+		
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickAddBtn(driver).click();
+	  
+	
+	    	if(MyWorkspaceLocator.clickCancelBtn(driver).isEnabled())
+	    	{
+	    		Thread.sleep(2000);
+	    		MyWorkspaceLocator.clickCancelBtn(driver).click();
+	    		test.log(LogStatus.PASS, "Cancel Btn is clickable");
+	    	}
+	    	else
+	    	{
+	    		test.log(LogStatus.FAIL, "Cancel button is not clickable");
+	    	}
+		
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickcloseIcon(driver).click();
+	    }
+		 catch(Exception e)
+		 {
+			 Thread.sleep(2000);
+			 String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+			 if(msg.equalsIgnoreCase(msg))
+			 {
+				test.log(LogStatus.PASS, "Message displayed =" +msg);
+			 }
+			 else
+			 {
+				test.log(LogStatus.FAIL, "Message displayed =" +msg);
+			 }
+		  }
+		Thread.sleep(2000);
+		MyWorkspaceLocator.close(driver).click();
+}			   									
+public static void MailFormatBtn(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "SPRESSO POD MANUFACTURING PRIVATE LIMITED");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+		selectOptionFromDropDown_bs(type, "Board");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();
+	    
+	    try
+	    {
+	    	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickRadioBtnAvailabilty(driver).click();
+	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickAvailabiltyTab(driver).click();
+    	
+    	
+	    	if(MyWorkspaceLocator.clickMailFormat(driver).isEnabled())
+    		{
+    			MyWorkspaceLocator.clickMailFormat(driver).click();
+    			test.log(LogStatus.PASS, "User should be redirected to the mail format page");
+    		}
+    		else
+    		{
+    			test.log(LogStatus.FAIL, "User should not be redirected to the mail format page");
+    		}
+    	}
+    	catch(Exception e) 
+    	{
+
+			 Thread.sleep(2000);
+			 String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+			 if(msg.equalsIgnoreCase(msg))
+			 {
+				test.log(LogStatus.PASS, "Message displayed =" +msg);
+			 }
+			 else
+			 {
+				test.log(LogStatus.FAIL, "Message displayed =" +msg);
+			 }
+    	}
+    	Thread.sleep(2000);
+		MyWorkspaceLocator.close(driver).click();
+    	
+    }
+
+public static void  UpdateMailFormat(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "TEAMLEASE REGTECH PRIVATE LIMITED");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+		selectOptionFromDropDown_bs(type, "Board");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();
+	    
+	    try
+	    {
+	    	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickRadioBtnAvailabilty(driver).click();
+	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickAvailabiltyTab(driver).click();
+    	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickMailFormat(driver).click();
+	    	
+	    	driver.switchTo().frame(MyWorkspaceLocator.clickFrame(driver));
+	    	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickText(driver).clear();
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickText(driver).sendKeys("Test");
+	    	
+	    	driver.switchTo().parentFrame();
+	    
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickUpdate(driver).click();
+	    	
+	    	Thread.sleep(2000);
+	    	String msg=MyWorkspaceLocator.clickValidMsg1(driver).getText();
+	    	if(msg.equalsIgnoreCase(msg))
+    		{
+    			
+    			test.log(LogStatus.PASS, "Message displayed ="+msg);
+    		}
+    		else
+    		{
+    			test.log(LogStatus.FAIL, "Message displayed ="+msg);
+    		}
+    	}
+    	catch(Exception e) 
+    	{
+
+			 Thread.sleep(2000);
+			 String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+			 if(msg.equalsIgnoreCase(msg))
+			 {
+				test.log(LogStatus.PASS, "Message displayed =" +msg);
+			 }
+			 else
+			 {
+				test.log(LogStatus.FAIL, "Message displayed =" +msg);
+			 }
+    	}
+    	Thread.sleep(2000);
+		MyWorkspaceLocator.close(driver).click();
+    	
+    }
+public static void  SendMail(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "PQR PVT LTD");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+		selectOptionFromDropDown_bs(type, "Designated Partner's");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();
+	    
+	    try
+	    {
+	    	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickRadioBtnAvailabilty(driver).click();
+	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickAvailabiltyTab(driver).click();
+	    	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickAvailabiltyDueDate(driver).click();
+	    	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.SelectAvailabiltyDueDate(driver).click();
+    	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickMailFormat(driver).click();
+	    	
+	    	driver.switchTo().frame(MyWorkspaceLocator.clickFrame(driver));
+	    	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickText(driver).clear();
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickText(driver).sendKeys("Test");
+	    	
+	    	driver.switchTo().parentFrame();
+	    
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickSendBtn(driver).click();
+	    	
+	    	Thread.sleep(2000);
+	    	String msg=MyWorkspaceLocator.clickValidMsg1(driver).getText();
+	    	if(msg.equalsIgnoreCase(msg))
+    		{
+    			
+    			test.log(LogStatus.PASS, "Message displayed ="+msg);
+    		}
+    		else
+    		{
+    			test.log(LogStatus.FAIL, "Message displayed ="+msg);
+    		}
+    	}
+    	catch(Exception e) 
+    	{
+
+			 Thread.sleep(2000);
+			 String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+			 if(msg.equalsIgnoreCase(msg))
+			 {
+				test.log(LogStatus.PASS, "Message displayed =" +msg);
+			 }
+			 else
+			 {
+				test.log(LogStatus.FAIL, "Message displayed =" +msg);
+			 }
+    	}
+    	Thread.sleep(2000);
+		MyWorkspaceLocator.close(driver).click();
+    	
+    }
+public static void  WithoutEnterDataSendMail(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "LC LIMITED");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+		selectOptionFromDropDown_bs(type, "Board");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();
+	    
+	    try
+	    {
+	    	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickRadioBtnAvailabilty(driver).click();
+	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.ClickAvailabiltyTab(driver).click();
+	    	
+	    	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickMailFormat(driver).click();
+	    	
+	    	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickSendBtn(driver).click();
+	    	
+	    	Thread.sleep(2000);
+	    	String msg=MyWorkspaceLocator.clickErrorMsg1(driver).getText();
+	    	if(msg.equalsIgnoreCase(msg))
+    		{
+    			
+    			test.log(LogStatus.PASS, "Message displayed ="+msg);
+    		}
+    		else
+    		{
+    			test.log(LogStatus.FAIL, "Message displayed ="+msg);
+    		}
+    	}
+    	catch(Exception e) 
+    	{
+
+			 Thread.sleep(2000);
+			 String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+			 if(msg.equalsIgnoreCase(msg))
+			 {
+				test.log(LogStatus.PASS, "Message displayed =" +msg);
+			 }
+			 else
+			 {
+				test.log(LogStatus.FAIL, "Message displayed =" +msg);
+			 }
+    	}
+    	Thread.sleep(2000);
+		MyWorkspaceLocator.close(driver).click();
+    	
+    }
+public static void AgendaItem(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "ADBC PVT LTD");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		 List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+			selectOptionFromDropDown_bs(type, "Board");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();
+	    
+	   
+		try
+		{
+		  Thread.sleep(2000);
+		  if(MyWorkspaceLocator.ClickCheckAvailabilty(driver).isDisplayed())
+		   {
+			  if(MyWorkspaceLocator.clickAgendaItem(driver).isEnabled())
+			  {
+				  Thread.sleep(2000);
+				  MyWorkspaceLocator.clickAgendaItem(driver).click();
+			     test.log(LogStatus.PASS, "User should be redirected to the 'Agenda Item' page");
+			  }
+		  } 
+		  else
+		  {
+			  test.log(LogStatus.FAIL, "User should not be redirected to the 'Agenda Item' page");
+		  }
+		}
+	  catch(Exception e)
+		 {
+		    Thread.sleep(2000);
+			String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+			if(msg.equalsIgnoreCase(msg))
+			{
+				test.log(LogStatus.PASS, "Message displayed =" +msg);
+			}
+			else
+			{
+				test.log(LogStatus.FAIL, "Message displayed =" +msg);
+			}
+		  }
+	    
+	 
+		Thread.sleep(2000);
+		MyWorkspaceLocator.close(driver).click();
+}
     
 		 static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {
 				

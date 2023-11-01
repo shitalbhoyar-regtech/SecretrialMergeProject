@@ -18,7 +18,7 @@ public class MyWorkspaceLocator
 	public static WebElement MyWorkspaceimg(WebDriver driver)
 	{
 		WebDriverWait wait= new WebDriverWait(driver,30);
-		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[@class='k-link k-header'])[6]")));
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@id='lefthomemenu']/a/i)[7]")));
 		return Secreterial;
 	}
 	
@@ -714,10 +714,10 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.xpath("//button[@id='clearfillter']"));
 		return Secreterial;
 	}
-	public static WebElement mYMeeting(WebDriver driver)
+	public static WebElement MyMeeting(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//*[@id='myWorkspacemenu']/ul/li[3]/a/span"));
+		Secreterial =driver.findElement(By.xpath("(//*[@id='lefthomemenu']/ul/li[3]/a/span)[5]"));
 		return Secreterial;
 	}
 	public static WebElement AddRegularMeeting(WebDriver driver)
@@ -750,6 +750,18 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.xpath("//button[@id='command_name']"));
 		return Secreterial;
 	}
+	public static WebElement clickErrorMsg(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//lable[@id='lblerrormsgI']"));
+		return Secreterial;
+	}
+	public static WebElement clickEntityOrCompnay(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//label[@class='control-label']"));
+		return Secreterial;
+	}
 	public static WebElement close(WebDriver driver)
 	{
 		
@@ -771,10 +783,190 @@ public class MyWorkspaceLocator
 	public static WebElement circular(WebDriver driver)
 	{
 		
+		Secreterial =driver.findElement(By.xpath("(//span[@class='checkmark1'])[2]"));
+		return Secreterial;
+	}
+	public static WebElement clickTime(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//span[@class='k-icon k-i-clock']"));
+		return Secreterial;
+	}
+	public static WebElement selectTime(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//li[normalize-space()='09:30 AM']"));
+		return Secreterial;
+	}
+	public static WebElement clickVenue(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//span[contains(text(),'Select')]"));
+		return Secreterial;
+	}
+	public static WebElement clickVenue1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//span[@class='k-input'][normalize-space()='Select'])[1]"));
+		return Secreterial;
+	}
+	public static WebElement SelectVenue(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//li[normalize-space()='Registered Office']"));
+		return Secreterial;
+	}
+	public static WebElement SelectVenue1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//*[@id='AvailabilityAddressType_listbox']/li[1])[5]"));
+		return Secreterial;
+	}
+	public static WebElement ClickUpdte(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='btnUpdateMeeting']"));
+		return Secreterial;
+	}
+	public static WebElement UpdateValidMsg(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//lable[@id='lblsuccessI']"));
+		return Secreterial;
+	}
+	public static WebElement ClickRadioBtnShoerterNotice(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//label[normalize-space()='Shorter']"));
+		return Secreterial;
+	}
+	public static WebElement ClickRadioBtnAvailabilty(WebDriver driver)
+	{
+		
 		Secreterial =driver.findElement(By.xpath("(//span[@class='checkmark1'])[1]"));
 		return Secreterial;
 	}
-	
+	public static WebElement ClickCheckAvailabilty(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='divIsSeekAvailabilityRadio']/label[1]"));
+		return Secreterial;
+	}
+	public static WebElement ClickAvailabiltyTab(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//a[@id='mytabSA']"));
+		return Secreterial;
+	}
+	public static WebElement ClickAddBtn(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[normalize-space()='Add New']"));
+		return Secreterial;
+	}
+	public static WebElement ClickPrefrence(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='divAvailabilityCtrl']/div/div[5]/div[2]/span[2]/span/span[1]"));
+		return Secreterial;
+	}
+	public static WebElement SelectPrefrence(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//li[@class='k-item'][normalize-space()='1']"));
+		return Secreterial;
+	}
+	public static WebElement clickSaveBtn(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@value='Save']"));
+		return Secreterial;
+	}
+	public static WebElement clickSaveValidMsg(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//lable[@id='lblsuccessI_sub']"));
+		return Secreterial;
+	}
+	public static WebElement clickcloseIcon(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@aria-label='Close'])[1]"));
+		return Secreterial;
+	}
+	public static WebElement clickInvaliMsg(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='lblerrormsgI_sub']"));
+		return Secreterial;
+	}
+	public static WebElement clickCancelBtn(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@value='Cancel']"));
+		return Secreterial;
+	}
+	public static WebElement clickMailFormat(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@id='mytab2_sub'])[2]"));
+		return Secreterial;
+	}
+	public static WebElement clickFrame(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//iframe[@title='Editable area. Press F10 for toolbar.']"));
+		return Secreterial;
+	}
+
+	public static WebElement clickText(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.cssSelector("body > h1:nth-child(1) > strong:nth-child(1)"));
+		return Secreterial;
+	}
+	public static WebElement clickUpdate(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='command_name']"));
+		return Secreterial;
+	}
+	public static WebElement clickValidMsg1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//lable[@id='lblsuccessI']"));
+		return Secreterial;
+	}
+	public static WebElement clickAvailabiltyDueDate(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//span[@aria-controls='SeekAvailability_DueDate_dateview'])[1]"));
+		return Secreterial;
+	}
+	public static WebElement SelectAvailabiltyDueDate(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.linkText("31"));
+		return Secreterial;
+	}
+	public static WebElement clickSendBtn(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//button[@id='command_name'])[2]"));
+		return Secreterial;
+	}
+	public static WebElement clickErrorMsg1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//lable[@id='lblerrormsgI']"));
+		return Secreterial;
+	}
+	public static WebElement clickAgendaItem(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//a[@id='mytab2']"));
+		return Secreterial;
+	}
 	 static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {
 			
 			for(WebElement option:options) {
