@@ -3611,7 +3611,331 @@ public static void AgendaItem(WebDriver driver,ExtentTest test) throws Interrupt
 		Thread.sleep(2000);
 		MyWorkspaceLocator.close(driver).click();
 }
-    
+
+public static void NotingAgenda(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  if(MyWorkspaceLocator.clickNotingAgenda(driver).isEnabled())
+		  	{
+			  Thread.sleep(2000);
+			  MyWorkspaceLocator.clickNotingAgenda(driver).click();
+			  test.log(LogStatus.PASS, "User should be redirected to the Noting Agenda window");
+		  	}
+	  
+		  else
+		  	{
+			  test.log(LogStatus.FAIL, "User should not be redirected to the Noting Agenda window");
+		  	}
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCloseNotingAgendaPopup(driver).click();
+}
+public static void AddNotingAgenda(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickNotingAgenda(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCheckboxNotingAgenda(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickSaveBtn1(driver).click();
+		  
+		  Thread.sleep(2000);
+		  String msg =MyWorkspaceLocator.clickValidMsg3(driver).getText();
+		  
+		  if(msg.equalsIgnoreCase(msg))
+		  {
+			  test.log(LogStatus.PASS, "Message displayed =" +msg);
+		  }
+		  else
+		  {
+			  test.log(LogStatus.FAIL, "Message displayed =" +msg);
+		  }
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCloseNotingAgendaPopup(driver).click();
+		  
+		  
+}
+
+public static void AddMultipleNotingAgenda(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickNotingAgenda(driver).click();
+		 
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCheckboxNotingAgenda1(driver).click();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCheckboxNotingAgenda2(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCheckboxNotingAgenda3(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickSaveBtn1(driver).click();
+		  
+		  Thread.sleep(2000);
+		  String msg =MyWorkspaceLocator.clickValidMsg3(driver).getText();
+		  
+		  if(msg.equalsIgnoreCase(msg))
+		  {
+			  test.log(LogStatus.PASS, "Message displayed =" +msg);
+		  }
+		  else
+		  {
+			  test.log(LogStatus.FAIL, "Message displayed =" +msg);
+		  }
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCloseNotingAgendaPopup(driver).click();
+		  
+		  
+}
+
+public static void  AgendaItemInformation(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickNotingAgenda(driver).click();
+		
+		  Thread.sleep(2000);
+		  if( MyWorkspaceLocator.clickIicon(driver).isEnabled())
+		  {
+			  Thread.sleep(2000);
+			  MyWorkspaceLocator.clickIicon(driver).click();
+			  test.log(LogStatus.PASS, "User should able to see agenda information after clicking on the 'i' button ");
+		  }
+		  else
+		  {
+			  test.log(LogStatus.FAIL, "User should not able to see agenda information after clicking on the 'i' button ");
+		  }
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItemInfo(driver).click();
+		  
+}
+
+public static void VotingAgenda(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  if(MyWorkspaceLocator.clickVottingAgenda(driver).isEnabled())
+		  	{
+			  Thread.sleep(2000);
+			  MyWorkspaceLocator.clickVottingAgenda(driver).click();
+			  test.log(LogStatus.PASS, "User should be redirected to the Voting Agenda window");
+		  	}
+	  
+		  else
+		  	{
+			  test.log(LogStatus.FAIL, "User should not be redirected to the Voting Agenda window");
+		  	}
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCloseNotingAgendaPopup(driver).click();
+}
+
+public static void AddVotingAgenda(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickVottingAgenda(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCheckboxNotingAgenda(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickSaveBtn1(driver).click();
+		  
+		  Thread.sleep(2000);
+		  String msg =MyWorkspaceLocator.clickValidMsg3(driver).getText();
+		  
+		  if(msg.equalsIgnoreCase(msg))
+		  {
+			  test.log(LogStatus.PASS, "Message displayed =" +msg);
+		  }
+		  else
+		  {
+			  test.log(LogStatus.FAIL, "Message displayed =" +msg);
+		  }
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCloseNotingAgendaPopup(driver).click();
+		  
+		  
+}
+public static void AddMultipleVotingAgenda(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickVottingAgenda(driver).click();
+		 
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCheckboxNotingAgenda1(driver).click();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCheckboxNotingAgenda2(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCheckboxNotingAgenda3(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickSaveBtn1(driver).click();
+		  
+		  Thread.sleep(2000);
+		  String msg =MyWorkspaceLocator.clickValidMsg3(driver).getText();
+		  
+		  if(msg.equalsIgnoreCase(msg))
+		  {
+			  test.log(LogStatus.PASS, "Message displayed =" +msg);
+		  }
+		  else
+		  {
+			  test.log(LogStatus.FAIL, "Message displayed =" +msg);
+		  }
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCloseNotingAgendaPopup(driver).click();
+		  
+		  
+}
+public static void  VotingAgendaItemInformation(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickVottingAgenda(driver).click();
+		
+		  Thread.sleep(2000);
+		  if( MyWorkspaceLocator.clickIicon1(driver).isEnabled())
+		  {
+			  Thread.sleep(2000);
+			  MyWorkspaceLocator.clickIicon1(driver).click();
+			  test.log(LogStatus.PASS, "User should able to see agenda information after clicking on the 'i' button ");
+		  }
+		  else
+		  {
+			  test.log(LogStatus.FAIL, "User should not able to see agenda information after clicking on the 'i' button ");
+		  }
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItemInfo(driver).click();
+		  
+}
+
+public static void NewAgenda(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  Thread.sleep(2000);
+		  if(MyWorkspaceLocator.clickNewAgenda(driver).isEnabled())
+		  	{
+			  Thread.sleep(2000);
+			  MyWorkspaceLocator.clickNewAgenda(driver).click();
+			  test.log(LogStatus.PASS, "User should be redirected to the New Agenda window");
+		  	}
+	  
+		  else
+		  	{
+			  test.log(LogStatus.FAIL, "User should not be redirected to the New Agenda window");
+		  	}
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickNewAgendaCloseBtn(driver).click();
+}
 		 static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {
 				
 				for(WebElement option:options) {

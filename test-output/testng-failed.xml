@@ -7,8 +7,8 @@
         <methods>
           <include name="Close"/>
           <include name="setBrowser"/>
-          <include name="AgendaItem"/>
           <include name="Login"/>
+          <include name="NewAgenda"/>
         </methods>
       </class> <!-- CompanySecretoryTest.MyWorkspaceTestCases -->
     </classes>

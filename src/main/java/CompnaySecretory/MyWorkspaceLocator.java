@@ -967,6 +967,96 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.xpath("//a[@id='mytab2']"));
 		return Secreterial;
 	}
+	public static WebElement clickEditIcon(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//a[@class='k-grid-Edit k-grid-edit hoverCircle k-grid-button']"));
+		return Secreterial;
+	}
+	public static WebElement clickNotingAgenda(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//input[@id='btnAddNewSubAgendaItemA']"));
+		return Secreterial;
+	}
+	public static WebElement clickCloseNotingAgendaPopup(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath(" (//a[@aria-label='Close'])[41]"));
+		return Secreterial;
+	}
+	public static WebElement clickValidMsg3(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='divgridAgendaSelectMessage']/div/div/div/lable"));
+		return Secreterial;
+	}
+	public static WebElement clickSaveBtn1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='btnSaveAgendaItemSelected']"));
+		return Secreterial;
+	}
+	public static WebElement clickCheckboxNotingAgenda(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//input[@type='checkbox'])[1]"));
+		return Secreterial;
+	}
+	public static WebElement clickCheckboxNotingAgenda1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//input[@type='checkbox'])[4]"));
+		return Secreterial;
+	}
+	public static WebElement clickCheckboxNotingAgenda2(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//input[@type='checkbox'])[5]"));
+		return Secreterial;
+	}
+	public static WebElement clickCheckboxNotingAgenda3(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//input[@type='checkbox'])[6]"));
+		return Secreterial;
+	}
+	public static WebElement clickIicon(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@class='k-grid-i k-grid-ainfo'])[6]"));
+		return Secreterial;
+	}
+	public static WebElement clickIicon1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@class='k-grid-i k-grid-ainfo'])[8]"));
+		return Secreterial;
+	}
+	public static WebElement clickAgendaItemInfo(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@aria-label='Close'])[14]"));
+		return Secreterial;
+	}
+	public static WebElement clickVottingAgenda(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//input[@id='btnAddNewSubAgendaItem']"));
+		return Secreterial;
+	}
+	public static WebElement clickNewAgenda(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//input[@id='btnAddNewAgendaItem']"));
+		return Secreterial;
+	}
+	public static WebElement clickNewAgendaCloseBtn(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='btnclose2']"));
+		return Secreterial;
+	}
 	 static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {
 			
 			for(WebElement option:options) {
