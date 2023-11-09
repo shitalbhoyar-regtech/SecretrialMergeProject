@@ -19,6 +19,9 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
+
 public class MyWorkspaceMethod 
 {
 	
@@ -1472,10 +1475,10 @@ public class MyWorkspaceMethod
 		
 		}
 		
-		public static void AddMyTaskAgenda(WebDriver driver,ExtentTest test,XSSFWorkbook workbook) throws InterruptedException
+		public static void AddMyTaskAgenda(WebDriver driver,ExtentTest test,XSSFWorkbook workbook,XSSFSheet sheet) throws InterruptedException
 		{
 			WebDriverWait wait=new WebDriverWait(driver, 20);
-			sheet=workbook.getSheetAt(0);
+			//sheet=workbook.getSheetAt(0);
 			Thread.sleep(2000);
 			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
 			
@@ -3936,6 +3939,684 @@ public static void NewAgenda(WebDriver driver,ExtentTest test) throws Interrupte
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator.clickNewAgendaCloseBtn(driver).click();
 }
+public static void AddNewVotingAgenda(WebDriver driver,ExtentTest test,XSSFWorkbook workbook,XSSFSheet sheet) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickNewAgenda(driver).click();
+		  
+		  
+		  Thread.sleep(2000);
+		  Row row = sheet.getRow(85);												//Selected 1st index row (Second row)
+		  org.apache.poi.ss.usermodel.Cell c = row.getCell(1);						//Selected cell (1 row,1 column)
+	      String agendaItem = c.getStringCellValue();								//Got the URL stored at position 1,1
+		  MyWorkspaceLocator.clickAgendaItem1(driver).sendKeys(agendaItem );
+		  
+		  Thread.sleep(2000);
+		  Row row1 = sheet.getRow(86);													//Selected 1st index row (Second row)
+		  org.apache.poi.ss.usermodel.Cell c1 = row1.getCell(1);						//Selected cell (1 row,1 column)
+	      String agendaHeading = c1.getStringCellValue();								//Got the URL stored at position 1,1
+		  MyWorkspaceLocator.clickAgendaHeading(driver).sendKeys(agendaHeading );
+		  
+		  
+		   Thread.sleep(2000);
+		  MyWorkspaceLocator.clickVoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  driver.switchTo().frame(MyWorkspaceLocator.clickFrameAgendaTemplte(driver));
+		  
+		  
+		  Thread.sleep(2000);
+		  Row row2 = sheet.getRow(87);													//Selected 1st index row (Second row)
+		  org.apache.poi.ss.usermodel.Cell c2 = row2.getCell(1);						//Selected cell (1 row,1 column)
+	      String AgendaTemplate = c2.getStringCellValue();								//Got the URL stored at position 1,1
+		  MyWorkspaceLocator.clickTextAgendaTemplte(driver).sendKeys(AgendaTemplate );
+		  
+		  driver.switchTo().parentFrame();
+		  
+		  Thread.sleep(2000);					
+		  MyWorkspaceLocator.clickResolutionTemplte(driver).click();
+		  
+		  Thread.sleep(2000);
+		  driver.switchTo().frame(MyWorkspaceLocator.clickFrameResolutionTemplte(driver));
+		  
+		  Thread.sleep(2000);
+		  Row row3 = sheet.getRow(88);													//Selected 1st index row (Second row)
+		  org.apache.poi.ss.usermodel.Cell c3 = row3.getCell(1);						//Selected cell (1 row,1 column)
+	      String ResolutionTemplate = c3.getStringCellValue();								//Got the URL stored at position 1,1
+		  MyWorkspaceLocator.clickTextAgendaTemplte(driver).sendKeys(ResolutionTemplate );
+		  
+		  driver.switchTo().parentFrame();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickMinuteTemplte(driver).click();
+		  
+		  Thread.sleep(2000);
+		  Row row4 = sheet.getRow(89);													//Selected 1st index row (Second row)
+		  org.apache.poi.ss.usermodel.Cell c4 = row4.getCell(1);						//Selected cell (1 row,1 column)
+	      String MinutesTemplate = c4.getStringCellValue();								//Got the URL stored at position 1,1
+		  MyWorkspaceLocator.clickMinutesTemplteHeading(driver).sendKeys(MinutesTemplate );
+		  
+		  Thread.sleep(2000);
+		  driver.switchTo().frame(MyWorkspaceLocator.clickApproveRecommended(driver));
+		  
+		  Thread.sleep(2000);
+		  Row row5 = sheet.getRow(90);													//Selected 1st index row (Second row)
+		  org.apache.poi.ss.usermodel.Cell c5 = row5.getCell(1);						//Selected cell (1 row,1 column)
+	      String ApproveRecommended = c5.getStringCellValue();								//Got the URL stored at position 1,1
+		  MyWorkspaceLocator.clickTextAgendaTemplte(driver).sendKeys(ApproveRecommended );
+		  
+		  driver.switchTo().parentFrame();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickDisapproveNonRecommended(driver).click();
+		  
+		  Thread.sleep(2000);
+		  driver.switchTo().frame(MyWorkspaceLocator.clickFrameDisapproveNonRecommended(driver));
+		  
+		  Thread.sleep(2000);
+		  Row row6 = sheet.getRow(91);													//Selected 1st index row (Second row)
+		  org.apache.poi.ss.usermodel.Cell c6 = row6.getCell(1);						//Selected cell (1 row,1 column)
+	      String DisapproveNonRecommended = c6.getStringCellValue();								//Got the URL stored at position 1,1
+		  MyWorkspaceLocator.clickTextAgendaTemplte(driver).sendKeys(DisapproveNonRecommended );
+		  
+		  driver.switchTo().parentFrame();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickDefer(driver).click();
+		  Thread.sleep(2000);
+		  driver.switchTo().frame(MyWorkspaceLocator.clickFrameDefer(driver));
+		  
+		  Thread.sleep(2000);
+		  Row row7 = sheet.getRow(92);													//Selected 1st index row (Second row)
+		  org.apache.poi.ss.usermodel.Cell c7 = row7.getCell(1);						//Selected cell (1 row,1 column)
+	      String Defer = c7.getStringCellValue();								//Got the URL stored at position 1,1
+		  MyWorkspaceLocator.clickTextAgendaTemplte(driver).sendKeys(Defer );
+		  
+		  driver.switchTo().parentFrame();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickSaveButton(driver).click();
+		  
+		  Thread.sleep(2000);
+		  String msg =MyWorkspaceLocator.clickvalidmsg(driver).getText();
+		  if(msg.equalsIgnoreCase(msg))
+		  {
+			  test.log(LogStatus.PASS, "Message displayed =" +msg);
+		  }
+		  else
+		  {
+
+			  test.log(LogStatus.FAIL, "Message displayed =" +msg);
+		  }
+		  
+}
+public static void AddNewNotingAgenda(WebDriver driver,ExtentTest test,XSSFWorkbook workbook,XSSFSheet sheet) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickNewAgenda(driver).click();
+		  
+		  
+		  Thread.sleep(2000);
+		  Row row = sheet.getRow(85);												//Selected 1st index row (Second row)
+		  org.apache.poi.ss.usermodel.Cell c = row.getCell(1);						//Selected cell (1 row,1 column)
+	      String agendaItem = c.getStringCellValue();								//Got the URL stored at position 1,1
+		  MyWorkspaceLocator.clickAgendaItem1(driver).sendKeys(agendaItem );
+		  
+		  Thread.sleep(2000);
+		  Row row1 = sheet.getRow(86);													//Selected 1st index row (Second row)
+		  org.apache.poi.ss.usermodel.Cell c1 = row1.getCell(1);						//Selected cell (1 row,1 column)
+	      String agendaHeading = c1.getStringCellValue();								//Got the URL stored at position 1,1
+		  MyWorkspaceLocator.clickAgendaHeading(driver).sendKeys(agendaHeading );
+		  
+		  
+		  Thread.sleep(2000);
+		  driver.switchTo().frame(MyWorkspaceLocator.clickFrameAgendaTemplte(driver));
+		  
+		  
+		  Thread.sleep(2000);
+		  Row row2 = sheet.getRow(87);													//Selected 1st index row (Second row)
+		  org.apache.poi.ss.usermodel.Cell c2 = row2.getCell(1);						//Selected cell (1 row,1 column)
+	      String AgendaTemplate = c2.getStringCellValue();								//Got the URL stored at position 1,1
+		  MyWorkspaceLocator.clickTextAgendaTemplte(driver).sendKeys(AgendaTemplate );
+		  
+		  driver.switchTo().parentFrame();
+		  
+		  Thread.sleep(2000);					
+		  MyWorkspaceLocator.clickResolutionTemplte(driver).click();
+		  
+		  Thread.sleep(2000);
+		  driver.switchTo().frame(MyWorkspaceLocator.clickFrameResolutionTemplte(driver));
+		  
+		  Thread.sleep(2000);
+		  Row row3 = sheet.getRow(88);													//Selected 1st index row (Second row)
+		  org.apache.poi.ss.usermodel.Cell c3 = row3.getCell(1);						//Selected cell (1 row,1 column)
+	      String ResolutionTemplate = c3.getStringCellValue();								//Got the URL stored at position 1,1
+		  MyWorkspaceLocator.clickTextAgendaTemplte(driver).sendKeys(ResolutionTemplate );
+		  
+		  driver.switchTo().parentFrame();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickMinuteTemplte(driver).click();
+		  
+		  Thread.sleep(2000);
+		  Row row4 = sheet.getRow(89);													//Selected 1st index row (Second row)
+		  org.apache.poi.ss.usermodel.Cell c4 = row4.getCell(1);						//Selected cell (1 row,1 column)
+	      String MinutesTemplate = c4.getStringCellValue();								//Got the URL stored at position 1,1
+		  MyWorkspaceLocator.clickMinutesTemplteHeading(driver).sendKeys(MinutesTemplate );
+		  
+		  Thread.sleep(2000);
+		  driver.switchTo().frame(MyWorkspaceLocator.clickApproveRecommended(driver));
+		  
+		  Thread.sleep(2000);
+		  Row row5 = sheet.getRow(90);													//Selected 1st index row (Second row)
+		  org.apache.poi.ss.usermodel.Cell c5 = row5.getCell(1);						//Selected cell (1 row,1 column)
+	      String ApproveRecommended = c5.getStringCellValue();								//Got the URL stored at position 1,1
+		  MyWorkspaceLocator.clickTextAgendaTemplte(driver).sendKeys(ApproveRecommended );
+		  
+		  driver.switchTo().parentFrame();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickDisapproveNonRecommended(driver).click();
+		  
+		  Thread.sleep(2000);
+		  driver.switchTo().frame(MyWorkspaceLocator.clickFrameDisapproveNonRecommended(driver));
+		  
+		  Thread.sleep(2000);
+		  Row row6 = sheet.getRow(91);													//Selected 1st index row (Second row)
+		  org.apache.poi.ss.usermodel.Cell c6 = row6.getCell(1);						//Selected cell (1 row,1 column)
+	      String DisapproveNonRecommended = c6.getStringCellValue();								//Got the URL stored at position 1,1
+		  MyWorkspaceLocator.clickTextAgendaTemplte(driver).sendKeys(DisapproveNonRecommended );
+		  
+		  driver.switchTo().parentFrame();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickDefer(driver).click();
+		  Thread.sleep(2000);
+		  driver.switchTo().frame(MyWorkspaceLocator.clickFrameDefer(driver));
+		  
+		  Thread.sleep(2000);
+		  Row row7 = sheet.getRow(92);													//Selected 1st index row (Second row)
+		  org.apache.poi.ss.usermodel.Cell c7 = row7.getCell(1);						//Selected cell (1 row,1 column)
+	      String Defer = c7.getStringCellValue();								//Got the URL stored at position 1,1
+		  MyWorkspaceLocator.clickTextAgendaTemplte(driver).sendKeys(Defer );
+		  
+		  driver.switchTo().parentFrame();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickSaveButton(driver).click();
+		  
+		  Thread.sleep(2000);
+		  String msg =MyWorkspaceLocator.clickvalidmsg(driver).getText();
+		  if(msg.equalsIgnoreCase(msg))
+		  {
+			  test.log(LogStatus.PASS, "Message displayed =" +msg);
+		  }
+		  else
+		  {
+
+			  test.log(LogStatus.FAIL, "Message displayed =" +msg);
+		  }
+		  
+}
+public static void WithoutEnteringData(WebDriver driver,ExtentTest test,XSSFWorkbook workbook,XSSFSheet sheet) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickNewAgenda(driver).click();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickSaveButton(driver).click();
+		  
+		  Thread.sleep(2000);
+		  String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+		  if(msg.equalsIgnoreCase(msg))
+		  {
+			  test.log(LogStatus.PASS, "Message displayed =" +msg);
+		  }
+		  else
+		  {
+
+			  test.log(LogStatus.FAIL, "Message displayed =" +msg);
+		  }
+		  
+
+}
+public static void CloseButton(WebDriver driver,ExtentTest test,XSSFWorkbook workbook,XSSFSheet sheet) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickNewAgenda(driver).click();
+		 
+		  Thread.sleep(2000);
+		  if(MyWorkspaceLocator.clickCloseButton(driver).isEnabled())
+		  {
+			  Thread.sleep(2000);
+			  MyWorkspaceLocator.clickCloseButton(driver).click();
+			  test.log(LogStatus.PASS, "Page should be closed without saving data and the user should be redirected to the previous page.");
+		  }
+		  else
+		  {
+
+			  test.log(LogStatus.FAIL, "Page should not be closed without saving data and the user should be redirected to the previous page.");
+		  }
+		  
+
+}	
+
+public static void AgendaSequence(WebDriver driver,ExtentTest test,XSSFWorkbook workbook,XSSFSheet sheet) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		 
+		 
+		  Thread.sleep(2000);
+		  if(MyWorkspaceLocator.clickAgendaSequence(driver).isEnabled())
+		  {
+			  Thread.sleep(2000);
+			  MyWorkspaceLocator.clickAgendaSequence(driver).click();
+			  test.log(LogStatus.PASS, "Agenda Sequence  tab is clickable");
+		  }
+		  else
+		  {
+
+			  test.log(LogStatus.FAIL, "Agenda Sequence  tab is not clickable");
+		  }
+		  
+		Thread.sleep(3000);
+		 MyWorkspaceLocator.clickAgendaSequenceCloseBtn(driver).click();
+}
+
+public static void AddAgendaSequence(WebDriver driver,ExtentTest test,XSSFWorkbook workbook,XSSFSheet sheet) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaSequence(driver).click();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCheckboxAgendaSequnce(driver).clear();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCheckboxAgendaSequnce(driver).sendKeys("1");
+		  
+		  Thread.sleep(2000);
+		  Actions a = new Actions(driver);
+		  //scroll down a page
+		  a.sendKeys(Keys.PAGE_DOWN).build().perform();
+		  a.sendKeys(Keys.PAGE_DOWN).build().perform();
+		  
+		  Thread.sleep(3000);
+		  MyWorkspaceLocator.clickAgendaSequenceSubmitBtn(driver).click();
+		  
+		  Thread.sleep(2000);
+		  Actions a1 = new Actions(driver);
+		  //scroll down a page
+		  a1.sendKeys(Keys.PAGE_UP).build().perform();
+		  a1.sendKeys(Keys.PAGE_UP).build().perform();
+		  
+		  try
+		  {
+			  Thread.sleep(2000);
+			  String msg =MyWorkspaceLocator.clickValidationOfAgendaSequence(driver).getText();
+			  if(msg.equalsIgnoreCase(msg))
+			  {
+				  test.log(LogStatus.PASS, "Message Displayed :- "+msg);
+			  }
+			  else
+			  {
+				  test.log(LogStatus.FAIL, "Message Displayed :- "+msg);
+			  }	 
+		  }
+		  catch(Exception e)
+		  {
+			  	Thread.sleep(5000);
+			    // Switching to Alert        
+		        Alert alert1 = driver.switchTo().alert();		
+		        		
+		        // Capturing alert message.    
+		        String alertMessage1= driver.switchTo().alert().getText();	
+		        
+		        
+		        test.log(LogStatus.PASS, alertMessage1);
+		        		
+		        // Displaying alert message		
+		        System.out.println(alertMessage1);
+		        
+		     // Accepting alert		
+		        alert1.accept();	
+		  }
+		  
+		  Thread.sleep(3000);
+		  MyWorkspaceLocator.clickAgendaSequenceCloseBtn(driver).click();
+
+		  Thread.sleep(3000);
+		  MyWorkspaceLocator.clickCloseMeetignBorad(driver).click();
+    }
+		 
+public static void DuplicateAgendaSequence(WebDriver driver,ExtentTest test,XSSFWorkbook workbook,XSSFSheet sheet) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaSequence(driver).click();
+		 
+		  
+		  Thread.sleep(2000);
+		  Actions a = new Actions(driver);
+		  //scroll down a page
+		  a.sendKeys(Keys.PAGE_DOWN).build().perform();
+		  a.sendKeys(Keys.PAGE_DOWN).build().perform();
+		  
+		  Thread.sleep(3000);
+		  MyWorkspaceLocator.clickAgendaSequenceSubmitBtn(driver).click();
+		  
+		  Thread.sleep(2000);
+		  Actions a1 = new Actions(driver);
+		  //scroll down a page
+		  a1.sendKeys(Keys.PAGE_UP).build().perform();
+		  a1.sendKeys(Keys.PAGE_UP).build().perform();
+		  
+		  try
+		  {
+		  
+			 	Thread.sleep(5000);
+			    // Switching to Alert        
+		        Alert alert1 = driver.switchTo().alert();		
+		        		
+		        // Capturing alert message.    
+		        String alertMessage1= driver.switchTo().alert().getText();	
+		        
+		        
+		        test.log(LogStatus.PASS, alertMessage1);
+		        		
+		        // Displaying alert message		
+		        System.out.println(alertMessage1);
+		        
+		     // Accepting alert		
+		        alert1.accept();	
+		  }
+		  catch(Exception e)
+		  {
+			  test.log(LogStatus.FAIL, "Validation Message  not displayed");
+		  }
+		  
+		  Thread.sleep(3000);
+		  MyWorkspaceLocator.clickAgendaSequenceCloseBtn(driver).click();
+		  
+		  Thread.sleep(3000);
+		  MyWorkspaceLocator.clickCloseMeetignBorad(driver).click();
+		 
+		  
+    }
+
+public static void WithoutEnterDataAgendaSequence(WebDriver driver,ExtentTest test,XSSFWorkbook workbook,XSSFSheet sheet) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaSequence(driver).click();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCheckboxAgendaSequnce(driver).clear();
+		    
+		  Thread.sleep(2000);
+		  Actions a = new Actions(driver);
+		  //scroll down a page
+		  a.sendKeys(Keys.PAGE_DOWN).build().perform();
+		  a.sendKeys(Keys.PAGE_DOWN).build().perform();
+		  
+		  Thread.sleep(3000);
+		  MyWorkspaceLocator.clickAgendaSequenceSubmitBtn(driver).click();
+		  
+		
+		
+		  try
+		  {
+		        Thread.sleep(5000);
+			    // Switching to Alert        
+		        Alert alert1 = driver.switchTo().alert();		
+		        		
+		        // Capturing alert message.    
+		        String alertMessage1= driver.switchTo().alert().getText();	
+		        
+		        
+		        test.log(LogStatus.PASS, alertMessage1);
+		        		
+		        // Displaying alert message		
+		        System.out.println(alertMessage1);
+		        
+		     // Accepting alert		
+		        alert1.accept();	
+		  }
+		  catch(Exception e)
+		  {
+			  test.log(LogStatus.FAIL, "Validation Message  not displayed");
+		  }
+
+		  Thread.sleep(3000);
+		  MyWorkspaceLocator.clickAgendaSequenceCloseBtn(driver).click();
+		  
+		  Thread.sleep(3000);
+		  MyWorkspaceLocator.clickCloseMeetignBorad(driver).click();
+		  
+    }
+
+public static void SigningAuthority(WebDriver driver,ExtentTest test,XSSFWorkbook workbook,XSSFSheet sheet) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		 
+		 
+		  Thread.sleep(2000);
+		  if(MyWorkspaceLocator.clickSigningAuthority(driver).isEnabled())
+		  {
+			  Thread.sleep(2000);
+			  MyWorkspaceLocator.clickSigningAuthority(driver).click();
+			  test.log(LogStatus.PASS, "Signing Authority  tab is clickable");
+		  }
+		  else
+		  {
+
+			  test.log(LogStatus.FAIL, "Signing Authority  tab is not clickable");
+		  }
+		  
+		Thread.sleep(3000);
+		 MyWorkspaceLocator.clickCloseSigningAuthority(driver).click();
+}
+
+public static void AddSigningAuthority(WebDriver driver,ExtentTest test,XSSFWorkbook workbook,XSSFSheet sheet) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickSigningAuthority(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. ClickNameSigningAuthority(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.SelectNameSigningAuthority(driver).click();
+		  
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickUpload(driver).click();     //click save Signing authority
+				 
+		  Thread.sleep(2000);
+		 String msg= MyWorkspaceLocator.clickvalidmsg(driver).getText();
+		 
+		 if(msg.equalsIgnoreCase(msg))
+		 {
+			 test.log(LogStatus.PASS,"Message displayed =" +msg);
+		 }
+		 else
+		 {
+			 test.log(LogStatus.FAIL,"Message displayed =" +msg);
+		 }
+}
+
+public static void CopyMeeting(WebDriver driver,ExtentTest test,XSSFWorkbook workbook,XSSFSheet sheet) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		 
+		 
+		  Thread.sleep(2000);
+		  if(MyWorkspaceLocator.clickCopyMeeting(driver).isEnabled())
+		  {
+			  Thread.sleep(2000);
+			  MyWorkspaceLocator.clickCopyMeeting(driver).click();
+			  test.log(LogStatus.PASS, "Copy Meeting  tab is clickable");
+		  }
+		  else
+		  {
+
+			  test.log(LogStatus.FAIL, "Copy Meeting  tab is not clickable");
+		  }
+		  
+		Thread.sleep(3000);
+		 MyWorkspaceLocator.clickCloseCopyMeeting(driver).click();
+}
+
+
 		 static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {
 				
 				for(WebElement option:options) {

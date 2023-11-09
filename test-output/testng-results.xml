@@ -2,24 +2,24 @@
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-01T16:38:36 IST" name="Default suite" finished-at="2023-11-01T16:39:17 IST" duration-ms="40798">
+  <suite started-at="2023-11-09T16:02:33 IST" name="Default suite" finished-at="2023-11-09T16:03:21 IST" duration-ms="48209">
     <groups>
     </groups>
-    <test started-at="2023-11-01T16:38:36 IST" name="Default test" finished-at="2023-11-01T16:39:17 IST" duration-ms="40798">
+    <test started-at="2023-11-09T16:02:33 IST" name="Default test" finished-at="2023-11-09T16:03:21 IST" duration-ms="48209">
       <class name="CompanySecretoryTest.MyWorkspaceTestCases">
-        <test-method is-config="true" signature="setBrowser()[pri:0, instance:CompanySecretoryTest.MyWorkspaceTestCases@4ec4f3a0]" started-at="2023-11-01T16:38:36 IST" name="setBrowser" finished-at="2023-11-01T16:38:37 IST" duration-ms="1130" status="PASS">
+        <test-method is-config="true" signature="setBrowser()[pri:0, instance:CompanySecretoryTest.MyWorkspaceTestCases@4ec4f3a0]" started-at="2023-11-09T16:02:33 IST" name="setBrowser" finished-at="2023-11-09T16:02:34 IST" duration-ms="1032" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setBrowser -->
-        <test-method is-config="true" signature="Login()[pri:0, instance:CompanySecretoryTest.MyWorkspaceTestCases@4ec4f3a0]" started-at="2023-11-01T16:38:37 IST" name="Login" finished-at="2023-11-01T16:38:55 IST" duration-ms="17709" status="PASS">
+        <test-method is-config="true" signature="Login()[pri:0, instance:CompanySecretoryTest.MyWorkspaceTestCases@4ec4f3a0]" started-at="2023-11-09T16:02:34 IST" name="Login" finished-at="2023-11-09T16:02:55 IST" duration-ms="20577" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Login -->
-        <test-method signature="NewAgenda()[pri:87, instance:CompanySecretoryTest.MyWorkspaceTestCases@4ec4f3a0]" started-at="2023-11-01T16:38:55 IST" name="NewAgenda" finished-at="2023-11-01T16:39:16 IST" duration-ms="21521" status="PASS">
+        <test-method signature="CopyMeeting()[pri:98, instance:CompanySecretoryTest.MyWorkspaceTestCases@4ec4f3a0]" started-at="2023-11-09T16:02:55 IST" name="CopyMeeting" finished-at="2023-11-09T16:03:20 IST" duration-ms="25543" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- NewAgenda -->
-        <test-method is-config="true" signature="Close()[pri:0, instance:CompanySecretoryTest.MyWorkspaceTestCases@4ec4f3a0]" started-at="2023-11-01T16:39:16 IST" name="Close" finished-at="2023-11-01T16:39:17 IST" duration-ms="354" status="PASS">
+        </test-method> <!-- CopyMeeting -->
+        <test-method is-config="true" signature="Close()[pri:0, instance:CompanySecretoryTest.MyWorkspaceTestCases@4ec4f3a0]" started-at="2023-11-09T16:03:20 IST" name="Close" finished-at="2023-11-09T16:03:21 IST" duration-ms="945" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Close -->

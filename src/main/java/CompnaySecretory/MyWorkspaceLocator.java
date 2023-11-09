@@ -1057,6 +1057,187 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.xpath("//button[@id='btnclose2']"));
 		return Secreterial;
 	}
+	public static WebElement clickAgendaItem1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//input[@id='AgendaHeading']"));
+		return Secreterial;
+	}
+	public static WebElement clickAgendaHeading(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//textarea[@id='Agenda']"));
+		return Secreterial;
+	}
+	public static WebElement clickVoting(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//input[@id='IsVoting']"));
+		return Secreterial;
+	}
+	public static WebElement clickFrameAgendaTemplte(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//iframe[@title='Editable area. Press F10 for toolbar.'])[8]"));
+		return Secreterial;
+	}
+	public static WebElement clickTextAgendaTemplte(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//body[@autocorrect='off']"));
+		return Secreterial;
+	}
+	public static WebElement clickResolutionTemplte(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@id='mytab2'])[2]"));
+		return Secreterial;
+	}
+	public static WebElement clickFrameResolutionTemplte(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//iframe[@title='Editable area. Press F10 for toolbar.'])[9]"));
+		return Secreterial;
+	}
+	public static WebElement clickMinuteTemplte(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@id='mytab3'])[2]"));
+		return Secreterial;
+	}
+	public static WebElement clickMinutesTemplteHeading(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//textarea[@id='MinutesFormatHeading']"));
+		return Secreterial;
+	}
+	public static WebElement clickApproveRecommended(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//iframe[@title='Editable area. Press F10 for toolbar.'])[10]"));
+		return Secreterial;
+	}
+	public static WebElement clickDisapproveNonRecommended(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//a[@id='mytabM2']"));
+		return Secreterial;
+	}
+	public static WebElement clickFrameDisapproveNonRecommended(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//iframe[@title='Editable area. Press F10 for toolbar.'])[11]"));
+		return Secreterial;
+	}
+	public static WebElement clickDefer(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//a[@id='mytabM3']"));
+		return Secreterial;
+	}
+	public static WebElement clickFrameDefer(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//iframe[@title='Editable area. Press F10 for toolbar.'])[12]"));
+		return Secreterial;
+	}
+	public static WebElement clickSaveButton(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//button[@id='command_name'])[3]"));
+		return Secreterial;
+	}
+	public static WebElement clickCloseButton(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='btnclose2']"));
+		return Secreterial;
+	}
+	public static WebElement clickAgendaSequence(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//input[@id='btnChangeAgendaNo']"));
+		return Secreterial;
+	}
+	public static WebElement clickAgendaSequenceCloseBtn(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@aria-label='Close'])[20]"));
+		return Secreterial;
+	}
+	public static WebElement clickAgendaSequenceSubmitBtn(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='btnSaveAgendaItemNumber']"));
+		return Secreterial;
+	}
+	public static WebElement clickEntityfilter(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//span[contains(text(),'Entity-All')]"));
+		return Secreterial;
+	}
+	public static WebElement selectEntityfilter(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//li[normalize-space()='A LIMITED']"));
+		
+		return Secreterial;
+	}
+	public static WebElement clickCheckboxAgendaSequnce(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//input[@class='k-textbox k-valid']"));
+		return Secreterial;
+	}
+	public static WebElement clickValidationOfAgendaSequence(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='divgridAgendaItemNumberMsg']/div/div/div/lable"));
+		return Secreterial;
+	}
+	public static WebElement clickCloseMeetignBorad(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@aria-label='Close'])[4]"));
+		return Secreterial;
+	}
+	public static WebElement clickSigningAuthority(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//input[@id='btnSetSigningAuthority']"));
+		return Secreterial;
+	}
+	public static WebElement clickCloseSigningAuthority(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@aria-label='Close'])[24]"));
+		return Secreterial;
+	}
+	public static WebElement SelectNameSigningAuthority(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='SigningAuthorityId_listbox']/li[2]"));
+		return Secreterial;
+	}
+	public static WebElement ClickNameSigningAuthority(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.cssSelector("#frmAddEditMeetingOtherDetails > div.row.colpadding0 > div > div > span.k-widget.k-dropdown.k-header > span > span.k-input"));
+		return Secreterial;
+	}
+	public static WebElement clickCopyMeeting(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//input[@id='btnCopyMeetingcmd']"));
+		return Secreterial;
+	}
+	public static WebElement clickCloseCopyMeeting(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='btnCloseCopyMeetingWnd']"));
+		return Secreterial;
+	}
 	 static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {
 			
 			for(WebElement option:options) {
