@@ -8,7 +8,9 @@
           <include name="Close"/>
           <include name="setBrowser"/>
           <include name="Login"/>
-          <include name="AddSigningAuthority"/>
+          <include name="AgendaVersion"/>
+          <include name="PreviewAgenda"/>
+          <include name="DownloadAgenda"/>
         </methods>
       </class> <!-- CompanySecretoryTest.MyWorkspaceTestCases -->
     </classes>

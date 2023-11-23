@@ -1238,6 +1238,175 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.xpath("//button[@id='btnCloseCopyMeetingWnd']"));
 		return Secreterial;
 	}
+	public static WebElement clickEntityCopyMeeting(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//div[@class='k-multiselect-wrap k-floatwrap']"));
+		return Secreterial;
+	}
+	public static WebElement selectEntityCopyMeeting(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='lstEntityId_listbox']/li[1]"));
+		return Secreterial;
+	}
+	public static WebElement selectEntityCopyMeeting1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='lstEntityId_listbox']/li[3]"));
+		return Secreterial;
+	}
+	public static WebElement ValidMsgCopyMeeting(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='divCopyMeetingMessage']/div/div/div/lable"));
+		return Secreterial;
+	}
+	public static WebElement SaveCopyMeeting(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='btnSaveAgendaItemSelected']"));
+		return Secreterial;
+	}
+	public static WebElement ClickOpenAgenda(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='btnAddPendingAgendaItem']"));
+		return Secreterial;
+	}
+	public static WebElement ClickCheckbox(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//input[@type='checkbox'])[1]"));
+		return Secreterial;
+	}
+	public static WebElement ClickCheckbox1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//input[@type='checkbox'])[2]"));
+		return Secreterial;
+	}
+	public static WebElement ClickOpenAgendaInfo(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@class='k-grid-i k-grid-ainfo'])[4]"));
+		return Secreterial;
+	}
+	public static WebElement ClickOpenAgendaSearchFilter(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//input[@id='filterAgendaItem']"));
+		return Secreterial;
+	}
+	public static WebElement ClickOpenAgendaCheckbox(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//input[@class='chkbxCopyAgenda']"));
+		return Secreterial;
+	}
+	public static WebElement CloseBtnCopyMeeting(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='btnCloseCopyMeetingWnd']"));
+		return Secreterial;
+	}
+	public static WebElement ClickLogDetailes(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//span[@class='k-link k-header'])[3]"));
+		return Secreterial;
+	}
+	public static WebElement ClickCloseLogDetailesCopyMeeting(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@aria-label='Close'])[33]"));
+		return Secreterial;
+	}
+	public static WebElement ClickDeleteLogDetailesCopyMeeting(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@class='k-grid-Delete k-grid-delete k-grid-button'])[2]"));
+		return Secreterial;
+	}
+	public static WebElement ClickYesDeleteLogDetailesCopyMeeting(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//button[@type='Submit'])[7]"));
+		return Secreterial;
+	}
+	
+	public static WebElement ClickValidMsg(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='lblsuccessI']"));
+		return Secreterial;
+	}
+	public static WebElement ClickNoBtnLogDetailes(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='btnCloseDeleteAgendaItem']"));
+		return Secreterial;
+	}
+	public static WebElement ClickCloseLogDetailesCopyMeeting1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='btnCloseDeleteAgendaItem']"));
+		return Secreterial;
+	}
+	public static WebElement ClickAgendaPreperation(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='btnAgendaPreparation']"));
+		return Secreterial;
+	}
+	public static WebElement ClickAgendaPreperationcloseBtn(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("/html/body/div[43]/div[1]/div/a"));
+		return Secreterial;
+	}
+	public static WebElement ClickAgendaPreperationMsg(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='agendaprocessMsg']/lable"));
+		return Secreterial;
+	}
+	public static WebElement ClickRefreshBtn(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='btnRefreshForm']"));
+		return Secreterial;
+	}
+	public static WebElement ClickDownloadAgenda(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='lnkDownloadDocPortrait']/span"));
+		return Secreterial;
+	}
+	public static WebElement ClickPreviewAgenda(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='lnkPreviewAgenda']/span"));
+		return Secreterial;
+	}
+	public static WebElement ClickClosePopupPreviewAgenda(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("/html/body/div[37]/div[1]/div/a"));
+		return Secreterial;
+	}
+	public static WebElement ClickAgendaVersion(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='lnkPreviewAgendaVersion']/span"));
+		return Secreterial;
+	}
+	public static WebElement ClickCloseAgendaVersion(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("/html/body/div[42]/div[1]/div/a"));
+		return Secreterial;
+	}
 	 static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {
 			
 			for(WebElement option:options) {
