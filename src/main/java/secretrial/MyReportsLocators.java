@@ -738,11 +738,48 @@ private static WebElement secretrial = null;				//WebElement variable created fo
 		return secretrial;
 	}
 	
+	public static WebElement DirectorAll(WebDriver driver)		//Method for closing Message Popup
+	{
+		secretrial = driver.findElement(By.xpath("//*[@id='childrow']/div/div[1]/div/div/div/div/div[2]/span/span/span[2]"));
+		return secretrial;
+	}
 	
+	public static WebElement DirectorAllIn(WebDriver driver)		//Method for closing Message Popup
+	{
+		secretrial = driver.findElement(By.xpath("//*[@id='childrow']/div/div[1]/div/div/div/div/div[3]/span/span/span[2]"));
+		return secretrial;
+	}
 	
+
+	public static WebElement DirectorAll1(WebDriver driver)		//Method for closing Message Popup
+	{
+		secretrial = driver.findElement(By.xpath("//*[@id='ddldirectorFilter_listbox']/li[1]"));
+		return secretrial;
+	}
 	
+	public static WebElement FinancialYearAllREg(WebDriver driver)		//Method for closing Message Popup
+	{
+		secretrial = driver.findElement(By.xpath("//*[@id='childrow']/div/div[1]/div/div/div/div/div[3]/span/span/span[2]"));
+		return secretrial;
+	}
 	
+	public static WebElement FinancialYearAllIn(WebDriver driver)		//Method for closing Message Popup
+	{
+		secretrial = driver.findElement(By.xpath("//*[@id='childrow']/div/div[1]/div/div/div/div/div[2]/span/span/span[2]"));
+		return secretrial;
+	}
 	
+	public static WebElement FinancialYearAllREg1(WebDriver driver)		//Method for closing Message Popup
+	{
+		secretrial = driver.findElement(By.xpath("//*[@id='ddlfyFilter_listbox']/li[2]"));
+		return secretrial;
+	}
+	
+	public static WebElement IndependenceDeclaration(WebDriver driver)		//Method for closing Message Popup
+	{
+		secretrial = driver.findElement(By.xpath("//*[@id='lefthomemenu']/ul/li[13]/a/span"));
+		return secretrial;
+	}
 	
 	
 	

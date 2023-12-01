@@ -1051,7 +1051,51 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 87) 
+	//	@Test(priority = 89) 
+		void DirectorAllClickReg() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports >  Reg 26(3) of SEBI (LODR)' :- To check whether the Director-All dropdown is working or not");
+			
+			MyReportsMethods.DirectorAllClickReg(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 90) 
+		void DirectorAllFilterReg() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports >   Reg 26(3) of SEBI (LODR)' :- Verify that the user can able to select a specific Dirctor option from Director-All dropdown");
+			
+			MyReportsMethods.DirectorAllFilterReg(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 91) 
+		void FinancialYearAllReg() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports >  Reg 26(3) of SEBI (LODR)' :- To check whether the 'Financial Year-All' dropdown is working or not");
+			
+			MyReportsMethods.FinancialYearAllReg(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 92) 
+		void FinancialYearAllFilterReg() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports >   Reg 26(3) of SEBI (LODR)' :- Verify that the user can able to select a specific financial year option from 'Financial year-All' dropdown");
+			
+			MyReportsMethods.FinancialYearAllFilterReg(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 93) 
 		void ExportReg() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the 'Export to Excel' functionality is working or not");
@@ -1062,7 +1106,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 88) 
+	//	@Test(priority = 94) 
 		void EditReg() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the user is able to edit Reg 26(3) of SEBI (LODR) Report or not");
@@ -1073,7 +1117,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 89) 
+	//	@Test(priority = 96) 
 		void EditRegUpload() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the user is able to upload pdf file which is present under edit tab");
@@ -1084,7 +1128,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 90) 
+	//	@Test(priority = 96) 
 		void EditDraftDocument() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the user is able to download 'Draft Document' which is present under edit tab");
@@ -1095,7 +1139,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 75) 
+	//	@Test(priority = 97) 
 		void View() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the 'View' button is clickable or not");
@@ -1106,7 +1150,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 
-	//	@Test(priority = 76) 
+	//	@Test(priority = 98) 
 		void ViewDownload() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- View :- To check whether the user is able to download uploaded document or not");
@@ -1117,7 +1161,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 77) 
+	//	@Test(priority = 99) 
 		void ViewUploadDoc() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- View :- To check whether the user is able to View uploaded document or not");
@@ -1128,7 +1172,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 78) 
+	//	@Test(priority = 100) 
 		void ViewUploadDocDelete() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- View :- To check whether the user is able to Delete uploaded document or not");
@@ -1139,7 +1183,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 79) 
+	//	@Test(priority = 101) 
 		void ViewUploadDocDeleteCan() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- View :- To check whether the user is able to Delete - Cancels uploaded document or not");
@@ -1150,7 +1194,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 80) 
+	//	@Test(priority = 102) 
 		void Delete() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the user is able to Delete document or not");
@@ -1161,7 +1205,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 81) 
+	//	@Test(priority = 103) 
 		void DeleteCan() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Reg 26(3) of SEBI (LODR)':- To check whether the user is able to Delete - Cancel document or not");
@@ -1172,7 +1216,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 82) 
+	//	@Test(priority = 104) 
 		void IndependenceDeclaration() throws InterruptedException, IOException
 		{
 			test = extent.startTest("To check whether the 'My Reports > Independance Decleration' tab is clickable or not");
@@ -1183,7 +1227,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 83) 
+	//	@Test(priority = 105) 
 		void AddNewIndependenceDeclaration() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Independance Decleration' :- To check whether the user is able to add 'New' Independance Decleration details or not ");
@@ -1194,7 +1238,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 84) 
+	//	@Test(priority = 106) 
 		void AddNewIndependenceDeclarationWD() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Independance Decleration' :- Verify that the validation message is displayed when we click on save button without selecting a data");
@@ -1205,7 +1249,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 85) 
+	//	@Test(priority = 107) 
 		void UploadID() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Independance Decleration' :- To check whether the user is able to upload the Independance Decleration sample excel file with valid data");
@@ -1216,7 +1260,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 86) 
+	//	@Test(priority = 108) 
 		void UploadIDVal() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Independance Decleration':- Verify that the validation message is displayed when we enter Invalid DIN number and upload it");
@@ -1227,7 +1271,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 87) 
+	//	@Test(priority = 109) 
 		void UploadIDVal1() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Independance Decleration':- Verify that the validation message is displayed when we enter Invalid CIN number and upload it");
@@ -1238,7 +1282,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 	
-	//	@Test(priority = 88) 
+	//	@Test(priority = 110) 
 		void UploadIDValD1() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Independance Decleration':- Verify that the validation message is displayed when we enter Invalid Date and upload it");
@@ -1249,7 +1293,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 	
-	//	@Test(priority = 89) 
+	//	@Test(priority = 111) 
 		void UploadIDValDE1() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Independance Decleration':- Verify that the validation message is displayed when we upload different extension file");
@@ -1259,8 +1303,74 @@ public class MyReportsTest {
 			extent.endTest(test);
 			extent.flush();
 		}
+	
+	//	@Test(priority = 112) 
+		void CompanyAllClickIn() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration' :- To check whether the compliance 'Company - All' dropdown is Clickable or not");
+			
+			MyReportsMethods.CompanyAllClickIn(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
 		
-	//@Test(priority = 90) 
+	//	@Test(priority = 113) 
+		void CompanyAllFilterIn() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration' :- Verify that the user can able to select a specific company name option from 'Company - All' dropdown");
+			
+			MyReportsMethods.CompanyAllFilterIn(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 114) 
+		void DirectorAllClickIn() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration' :- To check whether the Director-All dropdown is working or not");
+			
+			MyReportsMethods.DirectorAllClickIn(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 115) 
+		void DirectorAllFilterIn() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration' :- Verify that the user can able to select a specific Dirctor option from Director-All dropdown");
+			
+			MyReportsMethods.DirectorAllFilterIn(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 116) 
+		void FinancialYearAllIn() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration' :- To check whether the 'Financial Year-All' dropdown is working or not");
+			
+			MyReportsMethods.FinancialYearAllIn(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//	@Test(priority = 117) 
+		void FinancialYearAllFilterIn() throws InterruptedException, IOException
+		{
+			test = extent.startTest("'My Reports > Independance Decleration' :- Verify that the user can able to select a specific financial year option from 'Financial year-All' dropdown");
+			
+			MyReportsMethods.FinancialYearAllFilterIn(driver,test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+	//@Test(priority = 118) 
 		void ExportID() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Independance Decleration':- To check whether the 'Export to Excel' functionality is working or not");
@@ -1271,7 +1381,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-		//@Test(priority = 91) 
+		//@Test(priority = 119) 
 		void EditID() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Independance Decleration':- To check whether the user is able to edit Independance Decleration Report or not");
@@ -1282,7 +1392,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 92) 
+	//	@Test(priority = 120) 
 		void EditRegUploadID() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Independance Decleration':- To check whether the user is able to upload pdf file which is present under edit tab");
@@ -1293,7 +1403,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 93) 
+	//	@Test(priority = 121) 
 		void EditDraftDocumentID() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Independance Decleration':- To check whether the user is able to download 'Draft Document' which is present under edit tab");
@@ -1304,7 +1414,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 94) 
+	//	@Test(priority = 122) 
 		void ViewID() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Independance Decleration':- To check whether the 'View' button is clickable or not");
@@ -1315,7 +1425,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 
-	//	@Test(priority = 95) 
+	//	@Test(priority = 123) 
 		void ViewDownloadID() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Independance Decleration':- View :- To check whether the user is able to download uploaded document or not");
@@ -1326,7 +1436,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 96) 
+	//	@Test(priority = 124) 
 		void ViewUploadDocID() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Independance Decleration':- View :- To check whether the user is able to View uploaded document or not");
@@ -1337,7 +1447,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 97) 
+	//	@Test(priority = 125) 
 		void ViewUploadDocDeleteID() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Independance Decleration':- View :- To check whether the user is able to Delete uploaded document or not");
@@ -1348,7 +1458,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 98) 
+	//	@Test(priority = 126) 
 		void ViewUploadDocDeleteCanID() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Independance Decleration':- View :- To check whether the user is able to Delete - Cancels uploaded document or not");
@@ -1359,7 +1469,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 99) 
+	//	@Test(priority = 127) 
 		void DeleteID() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Independance Decleration':- To check whether the user is able to Delete document or not");
@@ -1370,7 +1480,7 @@ public class MyReportsTest {
 			extent.flush();
 		}
 		
-	//	@Test(priority = 100) 
+	//	@Test(priority = 128) 
 		void DeleteCanID() throws InterruptedException, IOException
 		{
 			test = extent.startTest("'My Reports > Independance Decleration':- To check whether the user is able to Delete - Cancel document or not");

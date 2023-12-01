@@ -566,7 +566,7 @@ public class MyWorkspaceTestCases
 		  {
 			test = extent.startTest("My Workspace- My Task tab - Add Task- Agenda Type Verification");
 			
-			MyWorkspaceMethod.AddMyTaskAgenda(driver, test,workbook);
+			MyWorkspaceMethod.AddMyTaskAgenda(driver, test,workbook,sheet);
 			
 			extent.endTest(test);
 			extent.flush();
@@ -748,7 +748,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=61)
+//    @Test(priority=61)
 
 		  void NewRegularMeeting() throws InterruptedException, IOException
 		  {
@@ -759,7 +759,8 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=62)
+		  
+//	@Test(priority=62)
 
 		  void NewShorterMeeting() throws InterruptedException, IOException
 		  {
@@ -770,7 +771,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority=63)
+//	@Test(priority=63)
 
 		  void NewEMeeting() throws InterruptedException, IOException
 		  {
@@ -781,7 +782,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		@Test(priority=64)
+	//@Test(priority=64)
 
 		  void CircularMeeting() throws InterruptedException, IOException
 		  {
@@ -792,6 +793,539 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
+		  
+	//@Test(priority=65)
+
+		  void NewRegularNoticeMeeting() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting Verification");
+			
+			MyWorkspaceMethod.NewRegularNoticeMeeting(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	//@Test(priority=66)
+
+		  void NewShorterNoticeMeeting() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- My Meeting  tab -New button - Notice Shorter Meeting Verification");
+			
+			MyWorkspaceMethod.NewShorterNoticeMeeting(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+	//@Test(priority=67)
+
+		  void WithoutEnterRegularNoticeMeeting() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- My Meeting  tab -New button - Without Enter data  Meeting Verification");
+			
+			MyWorkspaceMethod.WithoutEnterRegularNoticeMeeting(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+//	@Test(priority=68)
+
+	  void AvailabiltyOption() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Option Verification");
+		
+		MyWorkspaceMethod.AvailabiltyOption(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//@Test(priority=69)
+
+	  void ClickAvailabiltyOption() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab Verification");
+		
+		MyWorkspaceMethod.ClickAvailabiltyOption(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//@Test(priority=70)
+
+	  void AddNewAvailability() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab -Add Availabilty Verification");
+		
+		MyWorkspaceMethod.AddNewAvailability(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+///@Test(priority=71)
+
+	  void AddExistingAvailability() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab -Add Exsiting Availabilty Verification");
+		
+		MyWorkspaceMethod.AddExistingAvailability(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//@Test(priority=72)
+
+	  void WithoutEnterDataAvailability() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab -Without Enter data Availabilty Verification");
+		
+		MyWorkspaceMethod.WithoutEnterDataAvailability(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//	@Test(priority=73)
+	  void CancelBtnAvailability() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab -Add New Btn - Cancel Button Verification");
+		
+		MyWorkspaceMethod.CancelBtnAvailability(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	 // @Test(priority=74)
+	  void MailFormatBtn() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab - Mail Format Button Verification");
+		
+		MyWorkspaceMethod.MailFormatBtn(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+	//@Test(priority=75)
+	  void UpdateMailFormat() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab  - Update Mail Format  Verification");
+		
+		MyWorkspaceMethod.UpdateMailFormat(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}
+//	 @Test(priority=76)
+	  void SendMail() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab  - Send Mail   Verification");
+		
+		MyWorkspaceMethod.SendMail(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}	
+	// @Test(priority=77)
+	  void WithoutEnterDataSendMail() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab  - Without entering detailes Send Mail  Verification");
+		
+		MyWorkspaceMethod.WithoutEnterDataSendMail(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}	
+ //@Test(priority=78)
+	  void AgendaItem() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Agenda Item Tab  Verification");
+		
+		MyWorkspaceMethod.AgendaItem(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}	
+//@Test(priority=79)
+	  void OpenAgenda() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Open Agenda Tab  Verification");
+		
+		MyWorkspaceMethod.OpenAgenda(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}	  
+//@Test(priority=80)
+void AddOpenAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Add Open Agenda Tab  Verification");
+	
+	MyWorkspaceMethod.AddOpenAgenda(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}		  
+//@Test(priority=81)
+void AddMultipleOpenAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Add Multiple Open Agenda Tab  Verification");
+	
+	MyWorkspaceMethod.AddMultipleOpenAgenda(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}		  
+//@Test(priority=82)
+void OpenAgendaInfo() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Open Agenda Info Tab  Verification");
+	
+	MyWorkspaceMethod.OpenAgendaInfo(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}		  	 	  
+	  
+	  
+//@Test(priority=79)
+	  void NotingAgenda() throws InterruptedException, IOException
+	  {
+		test = extent.startTest("My Workspace- My Meeting  tab  - Edit icon - Agenda Item -Noting agenda Tab  Verification");
+		
+		MyWorkspaceMethod.NotingAgenda(driver, test);
+		
+		extent.endTest(test);
+		extent.flush();
+	}	
+//@Test(priority=80)
+void AddNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab  - Edit icon - Agenda Item - Noting Agenda -Add Noting agenda Tab  Verification");
+	
+	MyWorkspaceMethod.AddNotingAgenda(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+//@Test(priority=81)
+void AddMultipleNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab  - Edit icon - Agenda Item - Noting Agenda-Add Multiple Noting agenda Tab  Verification");
+	
+	MyWorkspaceMethod.AddMultipleNotingAgenda(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+//@Test(priority=82)
+void AgendaItemInformation() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab  - Edit icon - Agenda Item - Noting Agenda-View Agenda Item Information Verification");
+	
+	MyWorkspaceMethod.AgendaItemInformation(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+//@Test(priority=83)
+void VotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item -Voting agenda Tab  Verification");
+	
+	MyWorkspaceMethod.VotingAgenda(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=84)
+void AddVotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab  - Edit icon - Agenda Item - Voting Agenda-Add Voting agenda Tab  Verification");
+	
+	MyWorkspaceMethod.AddVotingAgenda(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+
+//@Test(priority=85)
+void AddMultipleVotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab  - Edit icon - Agenda Item -Voting Agenda- Add Multiple Voting agenda Tab  Verification");
+	
+	MyWorkspaceMethod.AddMultipleVotingAgenda(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+//@Test(priority=86)
+void VotingAgendaItemInformation() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab  - Edit icon - Agenda Item - Voting Agenda - View Agenda Item Information Verification");
+	
+	MyWorkspaceMethod.VotingAgendaItemInformation(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+
+//@Test(priority=87)
+void NewAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab  -  Edit icon - Agenda Item -New agenda Tab  Verification");
+	
+	MyWorkspaceMethod.NewAgenda(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=88)
+void AddNewVotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab  -  Edit icon - Agenda Item -Add New Voting agenda   Verification");
+	
+	MyWorkspaceMethod.AddNewVotingAgenda(driver, test,workbook,sheet);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=89)
+void AddNewNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab  -  Edit icon - Agenda Item -Add New Voting agenda   Verification");
+	
+	MyWorkspaceMethod.AddNewNotingAgenda(driver, test,workbook,sheet);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=90)
+void WithoutEnteringData() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab  -  Edit icon - Agenda Item -Without entering agenda   Verification");
+	
+	MyWorkspaceMethod.WithoutEnteringData(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=91)
+void CloseButton() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item -Close Button  Verification");
+	
+	MyWorkspaceMethod.CloseButton(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=92)
+void AgendaSequence() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item -Agenda Sequence  Verification");
+	
+	MyWorkspaceMethod.AgendaSequence(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=93)
+void AddAgendaSequence() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Add Agenda Sequence  Verification");
+	
+	MyWorkspaceMethod.AddAgendaSequence(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=94)
+void DuplicateAgendaSequence() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Dupliacte Agenda Sequence  Verification");
+	
+	MyWorkspaceMethod.DuplicateAgendaSequence(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=95)
+void WithoutEnterDataAgendaSequence() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Without enter sequence Agenda Sequence  Verification");
+	
+	MyWorkspaceMethod.WithoutEnterDataAgendaSequence(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=96)
+void SigningAuthority() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Signing Authority Tab Verification");
+	
+	MyWorkspaceMethod.SigningAuthority(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=97)
+void AddSigningAuthority() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Add Signing Authority Tab Verification");
+	
+	MyWorkspaceMethod.AddSigningAuthority(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=98)
+void CopyMeeting() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Copy Meeting Tab Verification");
+	
+	MyWorkspaceMethod.CopyMeeting(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=99)
+void CopyMeetingSelectEntity() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Copy Meeting Tab -Select Entity Verification");
+	
+	MyWorkspaceMethod.CopyMeetingSelectEntity(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=100)
+void CopyMeetingSelectMultipleEntity() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Copy Meeting Tab -Select Multiple Entity Verification");
+	
+	MyWorkspaceMethod.CopyMeetingSelectMultipleEntity(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=101)
+void AddCopyMeeting() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Add Copy Meeting Tab Verification");
+	
+	MyWorkspaceMethod.AddCopyMeeting(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=102)
+void CloseBtnCopyMeeting() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Close Button Copy Meeting Tab Verification");
+	
+	MyWorkspaceMethod.CloseBtnCopyMeeting(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=103)
+void WithoutEnteringCopyMeeting() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Without entering data in Copy Meeting  Verification");
+	
+	MyWorkspaceMethod.WithoutEnteringCopyMeeting(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=104)
+void LogDetailesCopyMeeting() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item -  Copy Meeting  -Log Detailes Verification");
+	
+	MyWorkspaceMethod.LogDetailesCopyMeeting(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=105)
+void CancelLogDetailesCopyMeeting() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Copy Meeting -Cancel Log Detailes Verification");
+	
+	MyWorkspaceMethod.CancelLogDetailesCopyMeeting(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=106)
+void DleteLogDetailesCopyMeeting() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Copy Meeting -Delete Log Detailes Verification");
+	
+	MyWorkspaceMethod.DelteLogDetailesCopyMeeting(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=107)
+void AgendaPrepration() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Agenda Preperation Verification");
+	
+	MyWorkspaceMethod.AgendaPrepration(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=108)
+void AgendaPreprationClosePopupMessage() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Agenda Preperation -Close Popup Message Verification");
+	
+	MyWorkspaceMethod.AgendaPreprationClosePopupMessage(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=109)
+void AgendaPreprationRefreshBtn() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Refresh Button Verification");
+	
+	MyWorkspaceMethod.AgendaPreprationRefreshBtn(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+@Test(priority=110)
+void DownloadAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Download Agenda Verification");
+	
+	MyWorkspaceMethod.DownloadAgenda(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+@Test(priority=111)
+void PreviewAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Preview  Agenda Verification");
+	
+	MyWorkspaceMethod.PreviewAgenda(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+@Test(priority=112)
+void AgendaVersion() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Agenda Version Verification");
+	
+	MyWorkspaceMethod.AgendaVersion(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
 	@AfterMethod
 	 
 	 void Close()

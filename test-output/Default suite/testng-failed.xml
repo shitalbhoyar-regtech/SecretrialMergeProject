@@ -3,15 +3,25 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="secretrialTestCase.MyReportsTest">
+      <class name="CompanySecretoryTest.MyWorkspaceTestCases">
         <methods>
+<<<<<<< HEAD
           <include name="browserClosing"/>
+          <include name="FinancialYearAllReg"/>
           <include name="setBrowser"/>
-          <include name="FYDPTFilter"/>
           <include name="Closing"/>
           <include name="Login"/>
+          <include name="FinancialYearAllFilterReg"/>
+=======
+          <include name="Close"/>
+          <include name="setBrowser"/>
+          <include name="Login"/>
+          <include name="AgendaVersion"/>
+          <include name="PreviewAgenda"/>
+          <include name="DownloadAgenda"/>
+>>>>>>> 1faab3057e19fe01faee947988cdfa35c74aceab
         </methods>
-      </class> <!-- secretrialTestCase.MyReportsTest -->
+      </class> <!-- CompanySecretoryTest.MyWorkspaceTestCases -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
