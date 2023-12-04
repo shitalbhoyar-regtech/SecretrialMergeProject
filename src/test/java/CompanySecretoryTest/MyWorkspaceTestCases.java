@@ -1296,7 +1296,7 @@ void AgendaPreprationRefreshBtn() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 }
-@Test(priority=110)
+//@Test(priority=110)
 void DownloadAgenda() throws InterruptedException, IOException
 {
 	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Download Agenda Verification");
@@ -1306,7 +1306,7 @@ void DownloadAgenda() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 }
-@Test(priority=111)
+//@Test(priority=111)
 void PreviewAgenda() throws InterruptedException, IOException
 {
 	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Preview  Agenda Verification");
@@ -1316,7 +1316,7 @@ void PreviewAgenda() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 }
-@Test(priority=112)
+//@Test(priority=112)
 void AgendaVersion() throws InterruptedException, IOException
 {
 	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - Agenda Version Verification");
@@ -1326,6 +1326,52 @@ void AgendaVersion() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 }
+
+//@Test(priority=113)
+void AgendaVersionInfo() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item - To verify whether the user can view the selected open agenda item in the \"Voting/Noting Agenda Item\" field and View the corresponding information.");
+	
+	MyWorkspaceMethod.AgendaVersionInfo(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+
+//@Test(priority=114)
+void Template() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item -Voting/Noting Agenda -Verify that the user is able to close the template UI form or not ");
+	
+	MyWorkspaceMethod.Template(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+
+@Test(priority=115)
+void VotingAgendaDelete() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item -Voting/Noting Agenda - To check whether the user is able to delete the open agenda or not");
+	
+	MyWorkspaceMethod.VotingAgendaDelete(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+
+@Test(priority=116)
+void VotingAgendaDeleteCan() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item -Voting/Noting Agenda - To check whether the user is able to cancel delete agenda or not");
+	
+	MyWorkspaceMethod.VotingAgendaDeleteCan(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+
+
 	@AfterMethod
 	 
 	 void Close()
