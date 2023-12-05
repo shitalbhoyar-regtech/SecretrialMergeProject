@@ -5392,6 +5392,57 @@ public static void AgendaVersion(WebDriver driver,ExtentTest test) throws Interr
 			MyWorkspaceLocator.ClickCloseAgendaVersion(driver).click();
 }
 
+public static void TemplateField(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. ClickTemplateFiled(driver).click();
+		   
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickCalender(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.SelectDate(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickSave(driver).click();
+		  
+		  Thread.sleep(2000);
+		 String msg= MyWorkspaceLocator.ClickSaveMsg(driver).getText();
+		 
+		 if(msg.equalsIgnoreCase(msg))
+		 {
+			test.log(LogStatus.PASS,"Message Displayed =" +msg);
+		 }
+		 else
+		 {
+			 test.log(LogStatus.FAIL,"Message Displayed =" +msg);
+		 }
+
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickClosebtn(driver).click();
+}
+
+
 		  
 		  
 		  

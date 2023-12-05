@@ -1407,6 +1407,36 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.xpath("/html/body/div[42]/div[1]/div/a"));
 		return Secreterial;
 	}
+	public static WebElement ClickTemplateFiled(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.cssSelector("tbody tr[role='row'] td[id='gridAgendaItemA_active_cell'] a:nth-child(1) span:nth-child(1) img:nth-child(1)"));
+		return Secreterial;
+	}
+	public static WebElement ClickNoting(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.cssSelector(".k-link.k-header.k-state-selected"));
+		return Secreterial;
+	}
+	public static WebElement ClickSave(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@type='submit'][normalize-space()='Save']"));
+		return Secreterial;
+	}
+	public static WebElement ClickSaveMsg(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.cssSelector("#lblsuccessI"));
+		return Secreterial;
+	}
+	public static WebElement ClickClosebtn(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@onclick='closeUIFormWindow()']"));
+		return Secreterial;
+	}
 	 static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {
 			
 			for(WebElement option:options) {
