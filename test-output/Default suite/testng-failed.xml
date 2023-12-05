@@ -5,30 +5,14 @@
     <classes>
       <class name="CompanySecretoryTest.MyWorkspaceTestCases">
         <methods>
-<<<<<<< HEAD
-<<<<<<< HEAD
-          <include name="browserClosing"/>
-          <include name="FinancialYearAllReg"/>
-          <include name="setBrowser"/>
-          <include name="Closing"/>
-          <include name="Login"/>
-          <include name="FinancialYearAllFilterReg"/>
-=======
           <include name="Close"/>
           <include name="setBrowser"/>
           <include name="Login"/>
           <include name="AgendaVersion"/>
           <include name="PreviewAgenda"/>
+          <include name="TemplateFields"/>
+          <include name="EditTemplateFields"/>
           <include name="DownloadAgenda"/>
->>>>>>> 1faab3057e19fe01faee947988cdfa35c74aceab
-=======
-          <include name="Close"/>
-          <include name="setBrowser"/>
-          <include name="Login"/>
-          <include name="AgendaVersion"/>
-          <include name="PreviewAgenda"/>
-          <include name="DownloadAgenda"/>
->>>>>>> 1faab3057e19fe01faee947988cdfa35c74aceab
         </methods>
       </class> <!-- CompanySecretoryTest.MyWorkspaceTestCases -->
     </classes>

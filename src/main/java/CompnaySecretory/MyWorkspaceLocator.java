@@ -970,7 +970,7 @@ public class MyWorkspaceLocator
 	public static WebElement clickEditIcon(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//a[@class='k-grid-Edit k-grid-edit hoverCircle k-grid-button']"));
+		Secreterial =driver.findElement(By.cssSelector(".k-grid-Edit.k-grid-edit.hoverCircle.k-grid-button"));
 		return Secreterial;
 	}
 	public static WebElement clickNotingAgenda(WebDriver driver)
@@ -1407,7 +1407,7 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.xpath("/html/body/div[42]/div[1]/div/a"));
 		return Secreterial;
 	}
-<<<<<<< HEAD
+
 	public static WebElement ClickTemplateFiled(WebDriver driver)
 	{
 		
@@ -1417,7 +1417,7 @@ public class MyWorkspaceLocator
 	public static WebElement ClickNoting(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.cssSelector(".k-link.k-header.k-state-selected"));
+		Secreterial =driver.findElement(By.xpath("//span[normalize-space()='Agenda Items - Noting Agenda']"));
 		return Secreterial;
 	}
 	public static WebElement ClickSave(WebDriver driver)
@@ -1438,7 +1438,7 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.xpath("//button[@onclick='closeUIFormWindow()']"));
 		return Secreterial;
 	}
-=======
+
 	
 	public static WebElement Votinginfo(WebDriver driver)
 	{
@@ -1504,9 +1504,31 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.xpath("//*[@id='btnCloseDeleteAgendaItem']"));
 		return Secreterial;
 	}
-	
-	
->>>>>>> 798322d15262a5766923f092c639f8366b2ec986
+	public static WebElement EditTemplate(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='gridAgendaItemA_active_cell']/a[2]/span/img"));
+		return Secreterial;
+	}
+	public static WebElement clickUpdateTemplate(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@value='update']"));
+		return Secreterial;
+	}
+	public static WebElement clickUpdateTemplateValidMsg(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//lable[@id='lblsuccessI_sub']"));
+		return Secreterial;
+	}
+	public static WebElement clickClosebtnUpdateTemplate(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@aria-label='Close'])[41]"));
+		return Secreterial;
+	}
+
 	 static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {
 			
 			for(WebElement option:options) {

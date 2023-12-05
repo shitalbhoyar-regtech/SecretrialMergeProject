@@ -5392,11 +5392,7 @@ public static void AgendaVersion(WebDriver driver,ExtentTest test) throws Interr
 			MyWorkspaceLocator.ClickCloseAgendaVersion(driver).click();
 }
 
-<<<<<<< HEAD
-public static void TemplateField(WebDriver driver,ExtentTest test) throws InterruptedException
-=======
-public static void AgendaVersionInfo(WebDriver driver,ExtentTest test) throws InterruptedException
->>>>>>> 798322d15262a5766923f092c639f8366b2ec986
+public static void TemplateFields(WebDriver driver,ExtentTest test) throws InterruptedException
 {
 	
 		Thread.sleep(2000);
@@ -5414,7 +5410,6 @@ public static void AgendaVersionInfo(WebDriver driver,ExtentTest test) throws In
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
-<<<<<<< HEAD
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator.ClickNoting(driver).click();
@@ -5446,23 +5441,7 @@ public static void AgendaVersionInfo(WebDriver driver,ExtentTest test) throws In
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator.ClickClosebtn(driver).click();
 }
-
-
-=======
-		  Thread.sleep(2000);
-		  MyWorkspaceLocator.Votinginfo(driver).click();
-		  Thread.sleep(3000);
-			  
-		  MyWorkspaceLocator.VotinginfoClose(driver).click();
-		  Thread.sleep(3000);
-			  
-					 test.log(LogStatus.PASS, "User should able to see agenda information after clicking on the 'Info' button");
-				 
-			Thread.sleep(3000);
-			MyWorkspaceLocator.ClickCloseAgendaVersion(driver).click();
-}
-
-public static void Template(WebDriver driver,ExtentTest test) throws InterruptedException
+public static void EditTemplateFields(WebDriver driver,ExtentTest test) throws InterruptedException
 {
 	
 		Thread.sleep(2000);
@@ -5480,109 +5459,43 @@ public static void Template(WebDriver driver,ExtentTest test) throws Interrupted
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
-		  Thread.sleep(2000);
->>>>>>> 798322d15262a5766923f092c639f8366b2ec986
 		  
-		  MyWorkspaceLocator.Template(driver).click();
 		  Thread.sleep(2000);
-			  if(MyWorkspaceLocator. TemplateClose(driver).isEnabled())
-				 {
-					 Thread.sleep(3000);
-					 MyWorkspaceLocator. TemplateClose(driver).click();
-					 test.log(LogStatus.PASS, "Template UI form should be closed without saving the data");
-				 }
-				 else
-				 {
-					 test.log(LogStatus.FAIL, "Template UI form should be closed without saving the data");
-				 }
-				  
-			Thread.sleep(3000);
-			
-}
-
-public static void VotingAgendaDelete(WebDriver driver,ExtentTest test) throws InterruptedException
-{
-	
-		Thread.sleep(2000);
-		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
-	
-		Thread.sleep(2000);
-		MyWorkspaceLocator.MyMeeting(driver).click();
-		
-		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEntityfilter(driver).click();
-		Thread.sleep(2000);
-		MyWorkspaceLocator.selectEntityfilter(driver).click();
-		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon(driver).click();
-		
-		 Thread.sleep(2000);
-		  MyWorkspaceLocator.clickAgendaItem(driver).click();
-		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
-		  MyWorkspaceLocator.Delete(driver).click();
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.DeleteYes(driver).click();
-		  Thread.sleep(2000);
+		  MyWorkspaceLocator. EditTemplate(driver).click();
 		  
-	String text  =	  MyWorkspaceLocator.DeleteText(driver).getText();
-			  if(text.equalsIgnoreCase("Agenda Item Deleted Successfully."))
-				 {
-					
-					 test.log(LogStatus.PASS, "Message Displayed :-"+text);
-				 }
-				 else
-				 {
-					 test.log(LogStatus.FAIL, "Message Displayed :-"+text);
-				 }
-			  
-			  MyWorkspaceLocator.DeleteClose(driver).click();
-			  Thread.sleep(2000);
-			  
-			Thread.sleep(3000);
-			
-}
-
-public static void VotingAgendaDeleteCan(WebDriver driver,ExtentTest test) throws InterruptedException
-{
-	
-		Thread.sleep(2000);
-		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
-	
-		Thread.sleep(2000);
-		MyWorkspaceLocator.MyMeeting(driver).click();
-		
-		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEntityfilter(driver).click();
-		Thread.sleep(2000);
-		MyWorkspaceLocator.selectEntityfilter(driver).click();
-		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon(driver).click();
-		
-		 Thread.sleep(2000);
-		  MyWorkspaceLocator.clickAgendaItem(driver).click();
-		  Thread.sleep(2000);
-		  
-		  MyWorkspaceLocator.Delete(driver).click();
-		  Thread.sleep(2000);
-	
-		  if(MyWorkspaceLocator. DeleteNo(driver).isEnabled())
-			 {
-				 Thread.sleep(3000);
-				 MyWorkspaceLocator. DeleteNo(driver).click();
-				 test.log(LogStatus.PASS, " user is able to cancel delete agenda ");
-			 }
-			 else
-			 {
-				 test.log(LogStatus.FAIL, "user not able to cancel delete agenda ");
-			 }
-			
-			  
-			Thread.sleep(3000);
-			
-}
-
-	  
+		  driver.switchTo().frame(MyWorkspaceLocator.clickFrame(driver));
+	    	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickText(driver).clear();
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickText(driver).sendKeys("Test");
+	    	
+	    	driver.switchTo().parentFrame();
+	    	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickUpdateTemplate(driver).click();
+	    	
+	    	String msg = 	MyWorkspaceLocator.clickUpdateTemplateValidMsg(driver).getText();
+	    	
+	    	if(msg.equalsIgnoreCase(msg))
+	    	{
+	    		test.log(LogStatus.PASS,"Message Displayed ="+msg);
+	    	}
+	    	else
+	    	{
+	    		test.log(LogStatus.FAIL,"Message Displayed ="+msg);
+	    	}
+	    	
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickClosebtnUpdateTemplate(driver).click();
+	    	
+	    	 Thread.sleep(5000);
+			  MyWorkspaceLocator.close(driver).click();
+		}
+	    
 		  
 		  
 		  
