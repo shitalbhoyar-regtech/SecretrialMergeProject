@@ -1407,6 +1407,7 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.xpath("/html/body/div[42]/div[1]/div/a"));
 		return Secreterial;
 	}
+<<<<<<< HEAD
 	public static WebElement ClickTemplateFiled(WebDriver driver)
 	{
 		
@@ -1437,6 +1438,75 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.xpath("//button[@onclick='closeUIFormWindow()']"));
 		return Secreterial;
 	}
+=======
+	
+	public static WebElement Votinginfo(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='gridAgendaItem_active_cell']/a/span/img"));
+		return Secreterial;
+	}
+	
+	public static WebElement VotinginfoClose(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//*[@class='k-button k-bare k-button-icon k-window-action'])[14]"));
+		return Secreterial;
+	}
+	
+	
+	public static WebElement Template(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='gridAgendaItem_active_cell']/a[1]/span/img"));
+		return Secreterial;
+	}
+	
+	public static WebElement TemplateClose(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='frmUpdatestatutoryAuditor']/div[9]/button[2]"));
+		return Secreterial;
+	}
+	
+	
+	public static WebElement Delete(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='gridAgendaItem_active_cell']/a[3]/span/img"));
+		return Secreterial;
+	}
+	
+	public static WebElement DeleteText(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='lblsuccessI']"));
+		return Secreterial;
+	}
+	
+	public static WebElement DeleteYes(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='frmDeleteAgendaItem']/div[2]/button[1]"));
+		return Secreterial;
+	}
+	
+	public static WebElement DeleteClose(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='btnCloseDeleteAgendaItem']"));
+		return Secreterial;
+	}
+	
+	public static WebElement DeleteNo(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='btnCloseDeleteAgendaItem']"));
+		return Secreterial;
+	}
+	
+	
+>>>>>>> 798322d15262a5766923f092c639f8366b2ec986
 	 static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {
 			
 			for(WebElement option:options) {
