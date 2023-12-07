@@ -965,7 +965,7 @@ void AddOpenAgenda() throws InterruptedException, IOException
 //@Test(priority=81)
 void AddMultipleOpenAgenda() throws InterruptedException, IOException
 {
-	test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Add Multiple Open Agenda Tab  Verification");
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Add Multiple Open Agenda Tab  Verification");
 	
 	MyWorkspaceMethod.AddMultipleOpenAgenda(driver, test);
 	
@@ -975,7 +975,7 @@ void AddMultipleOpenAgenda() throws InterruptedException, IOException
 //@Test(priority=82)
 void OpenAgendaInfo() throws InterruptedException, IOException
 {
-	test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Open Agenda Info Tab  Verification");
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda Info Tab  Verification");
 	
 	MyWorkspaceMethod.OpenAgendaInfo(driver, test);
 	
@@ -983,27 +983,220 @@ void OpenAgendaInfo() throws InterruptedException, IOException
 	extent.flush();
 }	
 
-@Test(priority=82)
+//@Test(priority=82)
+void ViewAgendaItemInfo() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab  - Edit icon - Agenda Item - Noting Agenda-Noting Agenda Info Verification");
+	
+	MyWorkspaceMethod.NotingAgendaInfo(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+
+//@Test(priority=82)
 void TemplateFields() throws InterruptedException, IOException
 {
-	test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - Template field Verification");
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - Template field Verification");
 	
 	MyWorkspaceMethod.TemplateFields(driver, test);
 	
 	extent.endTest(test);
 	extent.flush();
 }	
-@Test(priority=83)
+//@Test(priority=82)
+void CloseTemplateFields() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - Close Button Template field Verification");
+	
+	MyWorkspaceMethod.CloseTemplateFields(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+
+//@Test(priority=83)
 void EditTemplateFields() throws InterruptedException, IOException
 {
-	test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - Edit Template field Verification");
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - Edit Template field Verification");
 	
 	MyWorkspaceMethod.EditTemplateFields(driver, test);
 	
 	extent.endTest(test);
 	extent.flush();
-}		  
-	  
+}	
+
+@Test(priority=115)
+void AgendaDelete() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - To check whether the user is able to delete the open agenda or not");
+	
+	MyWorkspaceMethod.NotingAgendaDelete(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+
+@Test(priority=116)
+void AgendaDeleteCan() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item -Voting/Noting Agenda - To check whether the user is able to cancel delete agenda or not");
+	
+	MyWorkspaceMethod.NotingAgendaDelete(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=83)
+void MoreAction() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - More Action  Verification");
+	
+	MyWorkspaceMethod.MoreAction(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}		
+//@Test(priority=84)
+void IntrestedParties() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - More Actions -Intrested Parties Verification");
+	
+	MyWorkspaceMethod.IntrestedParties(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}		
+//@Test(priority=85)
+void AddIntrestedParties() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - More Actions -Add Intrested Parties Verification");
+	
+	MyWorkspaceMethod.AddIntrestedParties(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}		
+//@Test(priority=86)
+void CloseBtnIntrestedParties() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - More Actions -Closed Button  Intrested Parties Verification");
+	
+	MyWorkspaceMethod.CloseBtnIntrestedParties(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}			
+//@Test(priority=86)
+void DocumentTab() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - More Actions -Document Tab Verification");
+	
+	MyWorkspaceMethod.DocumentTab(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}		
+@Test(priority=87)
+void UploadDocument() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - More Actions -Document Tab -Upload Document Verification");
+	
+	MyWorkspaceMethod.UploadDocument(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}		
+@Test(priority=88)
+void UploadMultipleDocument() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - More Actions -Document Tab - Upload Multiple Document Verification");
+	
+	MyWorkspaceMethod.UploadMultipleDocument(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+@Test(priority=89)
+void WithoutPDFUploadMultipleDocument() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - More Actions -Document Tab - Without PDF file Upload Multiple Document Verification");
+	
+	MyWorkspaceMethod.WithoutPDFUploadMultipleDocument(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+@Test(priority=90)
+void WithoutUploadDocument() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - More Actions -Document Tab - Without  Upload  Document Verification");
+	
+	MyWorkspaceMethod.WithoutUploadDocument(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+@Test(priority=91)
+void DocumentSequenceNumber() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - More Actions -Document Tab - Sequence Number Document Verification");
+	
+	MyWorkspaceMethod.DocumentSequenceNumber(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+@Test(priority=92)
+void DocumentDuplicateSequenceNumber() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - More Actions -Document Tab - Duplicate Sequence Number Document Verification");
+	
+	MyWorkspaceMethod.DocumentDuplicateSequenceNumber(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+@Test(priority=93)
+void WithoutSequenceNumber() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - More Actions -Document Tab - Without Sequence Number  Verification");
+	
+	MyWorkspaceMethod.WithoutSequenceNumber(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+@Test(priority=94)
+void ViewDocument() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - More Actions -Document Tab - View Document  Verification");
+	
+	MyWorkspaceMethod.ViewDocument(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+@Test(priority=95)
+void DownloadDocumentOpenAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - More Actions -Document Tab - Download Document  Verification");
+	
+	MyWorkspaceMethod.DownloadDocumentOpenAgenda(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+//@Test(priority=96)
+void DeleteDocumentOpenAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - More Actions -Document Tab - Delete Document  Verification");
+	
+	MyWorkspaceMethod.DeleteDocumentOpenAgenda(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
 //@Test(priority=79)
 	  void NotingAgenda() throws InterruptedException, IOException
 	  {
@@ -1044,6 +1237,223 @@ void AgendaItemInformation() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 }	
+//@Test(priority=82)
+void NotingAgendaInfo() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab  - Edit icon - Agenda Item - Noting Agenda-Noting Agenda Info Verification");
+	
+	MyWorkspaceMethod.NotingAgendaInfo(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+
+//@Test(priority=82)
+void TemplateFieldsNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Noting Agenda  Tab -Noting Agenda Item - Template field Verification");
+	
+	MyWorkspaceMethod.TemplateFields(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+
+//@Test(priority=82)
+void CloseTemplateFieldsNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Open Agenda  Tab -Noting Agenda Item - Close Button Template field Verification");
+	
+	MyWorkspaceMethod.CloseTemplateFields(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=83)
+void EditTemplateFieldsNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Noting Agenda  Tab -Noting Agenda Item - Edit Template field Verification");
+	
+	MyWorkspaceMethod.EditTemplateFields(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+
+@Test(priority=115)
+void NotingAgendaDelete() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item -Noting Agenda Tab -Noting Agenda Item - To check whether the user is able to delete the open agenda or not");
+	
+	MyWorkspaceMethod.NotingAgendaDelete(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+
+@Test(priority=116)
+void NotingAgendaDeleteCan() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -  Edit icon - Agenda Item -Noting Agenda Tab -Noting Agenda Item - To check whether the user is able to cancel delete agenda or not");
+	
+	MyWorkspaceMethod.NotingAgendaDelete(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+//@Test(priority=83)
+void MoreActionNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Noting Agenda  Tab -Noting Agenda Item - More Action  Verification");
+	
+	MyWorkspaceMethod.MoreAction(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}		
+//@Test(priority=84)
+void IntrestedPartiesNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Noting Agenda  Tab -Noting Agenda Item - More Actions -Intrested Parties Verification");
+	
+	MyWorkspaceMethod.IntrestedParties(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}		
+//@Test(priority=85)
+void AddIntrestedPartiesNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Noting Agenda  Tab -Noting Agenda Item - More Actions -Add Intrested Parties Verification");
+	
+	MyWorkspaceMethod.AddIntrestedParties(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}		
+//@Test(priority=86)
+void CloseBtnIntrestedPartiesNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Noting Agenda  Tab -Noting Agenda Item - More Actions -Closed Button  Intrested Parties Verification");
+	
+	MyWorkspaceMethod.CloseBtnIntrestedParties(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}			
+//@Test(priority=86)
+void DocumentTabNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Noting Agenda  Tab -Noting Agenda Item - More Actions -Document Tab Verification");
+	
+	MyWorkspaceMethod.DocumentTab(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}		
+@Test(priority=87)
+void UploadDocumentNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Noting Agenda  Tab -Noting Agenda Item - More Actions -Document Tab -Upload Document Verification");
+	
+	MyWorkspaceMethod.UploadDocument(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}		
+@Test(priority=88)
+void UploadMultipleDocumentNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Noting Agenda  Tab -Noting Agenda Item - More Actions -Document Tab - Upload Multiple Document Verification");
+	
+	MyWorkspaceMethod.UploadMultipleDocument(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}
+@Test(priority=89)
+void WithoutPDFUploadMultipleDocumentNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Noting Agenda  Tab -Noting Agenda Item - More Actions -Document Tab - Without PDF file Upload Multiple Document Verification");
+	
+	MyWorkspaceMethod.WithoutPDFUploadMultipleDocument(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+@Test(priority=90)
+void WithoutUploadDocumentNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Noting Agenda  Tab -Noting Agenda Item - More Actions -Document Tab - Without  Upload  Document Verification");
+	
+	MyWorkspaceMethod.WithoutUploadDocument(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+@Test(priority=91)
+void DocumentSequenceNumberNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Noting Agenda  Tab -Noting Agenda Item - More Actions -Document Tab - Sequence Number Document Verification");
+	
+	MyWorkspaceMethod.DocumentSequenceNumber(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+@Test(priority=92)
+void DocumentDuplicateSequenceNumberNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Noting Agenda  Tab -Noting Agenda Item - More Actions -Document Tab - Duplicate Sequence Number Document Verification");
+	
+	MyWorkspaceMethod.DocumentDuplicateSequenceNumber(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+@Test(priority=93)
+void WithoutSequenceNumberNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Noting Agenda  Tab -Noting Agenda Item - More Actions -Document Tab - Without Sequence Number  Verification");
+	
+	MyWorkspaceMethod.WithoutSequenceNumber(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+@Test(priority=94)
+void ViewDocumentNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Noting Agenda  Tab -Noting Agenda Item - More Actions -Document Tab - View Document  Verification");
+	
+	MyWorkspaceMethod.ViewDocument(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+@Test(priority=95)
+void DownloadDocumentOpenAgendaNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Noting Agenda  Tab -Noting Agenda Item - More Actions -Document Tab - Download Document  Verification");
+	
+	MyWorkspaceMethod.DownloadDocumentOpenAgenda(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+//@Test(priority=96)
+void DeleteDocumentOpenAgendaNotingAgenda() throws InterruptedException, IOException
+{
+	test = extent.startTest("My Workspace- My Meeting  tab -Edit Icon - Regular Meeting  -Noting Agenda  Tab -Noting Agenda Item - More Actions -Document Tab - Delete Document  Verification");
+	
+	MyWorkspaceMethod.DeleteDocumentOpenAgenda(driver, test);
+	
+	extent.endTest(test);
+	extent.flush();
+}	
+
+
+
 //@Test(priority=83)
 void VotingAgenda() throws InterruptedException, IOException
 {

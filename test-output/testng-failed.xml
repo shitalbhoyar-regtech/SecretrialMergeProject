@@ -5,13 +5,32 @@
     <classes>
       <class name="CompanySecretoryTest.MyWorkspaceTestCases">
         <methods>
-          <include name="Close"/>
-          <include name="setBrowser"/>
+          <include name="WithoutPDFUploadMultipleDocument"/>
+          <include name="WithoutUploadDocumentNotingAgenda"/>
+          <include name="AgendaDeleteCan"/>
           <include name="Login"/>
+          <include name="WithoutUploadDocument"/>
+          <include name="DocumentDuplicateSequenceNumber"/>
+          <include name="DocumentDuplicateSequenceNumberNotingAgenda"/>
+          <include name="Close"/>
+          <include name="ViewDocument"/>
+          <include name="DownloadDocumentOpenAgendaNotingAgenda"/>
+          <include name="UploadDocumentNotingAgenda"/>
+          <include name="NotingAgendaDelete"/>
+          <include name="WithoutPDFUploadMultipleDocumentNotingAgenda"/>
           <include name="AgendaVersion"/>
+          <include name="AgendaDelete"/>
+          <include name="WithoutSequenceNumberNotingAgenda"/>
+          <include name="ViewDocumentNotingAgenda"/>
           <include name="PreviewAgenda"/>
-          <include name="TemplateFields"/>
-          <include name="EditTemplateFields"/>
+          <include name="UploadMultipleDocument"/>
+          <include name="UploadMultipleDocumentNotingAgenda"/>
+          <include name="NotingAgendaDeleteCan"/>
+          <include name="setBrowser"/>
+          <include name="DownloadDocumentOpenAgenda"/>
+          <include name="DocumentSequenceNumberNotingAgenda"/>
+          <include name="DocumentSequenceNumber"/>
+          <include name="WithoutSequenceNumber"/>
           <include name="DownloadAgenda"/>
         </methods>
       </class> <!-- CompanySecretoryTest.MyWorkspaceTestCases -->

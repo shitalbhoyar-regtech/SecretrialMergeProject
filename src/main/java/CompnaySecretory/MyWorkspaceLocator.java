@@ -1439,22 +1439,7 @@ public class MyWorkspaceLocator
 		return Secreterial;
 	}
 
-	
-	public static WebElement Votinginfo(WebDriver driver)
-	{
-		
-		Secreterial =driver.findElement(By.xpath("//*[@id='gridAgendaItem_active_cell']/a/span/img"));
-		return Secreterial;
-	}
-	
-	public static WebElement VotinginfoClose(WebDriver driver)
-	{
-		
-		Secreterial =driver.findElement(By.xpath("(//*[@class='k-button k-bare k-button-icon k-window-action'])[14]"));
-		return Secreterial;
-	}
-	
-	
+
 	public static WebElement Template(WebDriver driver)
 	{
 		
@@ -1528,7 +1513,154 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.xpath("(//a[@aria-label='Close'])[41]"));
 		return Secreterial;
 	}
-
+	public static WebElement clickMoreAction(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//span[@class='k-input'])[12]"));
+		return Secreterial;
+	}
+	public static WebElement clickIntrestedParties(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//ul[@id='gridDDLAgendaActionMenu_listbox']/li/span)[9]"));
+		return Secreterial;
+	}
+	public static WebElement clickDocuments(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//ul[@id='gridDDLAgendaActionMenu_listbox']/li/span)[10]"));
+		return Secreterial;
+	}
+	public static WebElement clickCloseIntrestedParties(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='btncloseTemplate']"));
+		return Secreterial;
+	}
+	public static WebElement clickAddNewBtn(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//a[normalize-space()='Add New']"));
+		return Secreterial;
+	}
+	public static WebElement clickDropdown(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.cssSelector("td[class='k-edit-cell'] span[class='k-input']"));
+		return Secreterial;
+	}
+	public static WebElement selectValuesDropdown(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//li[normalize-space()='Ms. XX Y Z']"));
+		return Secreterial;
+	}
+	public static WebElement clickSaveBtnIntrestedParties(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='btnIntParties']"));
+		return Secreterial;
+	}
+	public static WebElement clickDeleteBtnIntrestedParties(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@class='k-grid-delete k-grid-button'])[2]"));
+		return Secreterial;
+	}
+	
+	public static WebElement clickCloseDocumentPopup(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@aria-label='Close'])[3]"));
+		return Secreterial;
+	}
+	public static WebElement clickUploadBtn(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[normalize-space()='Upload']"));
+		return Secreterial;
+	}
+	public static WebElement clickUploadDocumentValidMsg(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']"));
+		return Secreterial;
+	}
+	public static WebElement clickUploadDocumentInValidMsg(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//span[@class='k-file-validation-message']"));
+		return Secreterial;
+	}
+	
+	public static WebElement clickUploadDocumentInValidMsg1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='frmAgendaDocumentUpload']/div[1]/div/div/lable"));
+		return Secreterial;
+	}
+	public static WebElement clickSequenceNumber(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//input[@onchange='setDocFileSrNoNumber(this);']"));
+		return Secreterial;
+	}
+	public static WebElement clickSequenceNumber1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//input[@onchange='setDocFileSrNoNumber(this);'])[2]"));
+		return Secreterial;
+	}
+	public static WebElement clickDocumentSaveBtn(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='btnSaveDocItemOrder']"));
+		return Secreterial;
+	}
+	public static WebElement clickViewDocument(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//a[@class='k-grid-View k-grid-view k-grid-button hoverCircle']"));
+		return Secreterial;
+	}
+	public static WebElement clickViewCloseBtnDocument(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@aria-label='Close'])[54]"));
+		return Secreterial;
+	}
+	public static WebElement clickDownloadDocument(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//a[@class='k-grid-Download k-grid-download k-grid-button hoverCircle']"));
+		return Secreterial;
+	}
+	public static WebElement clickDeleteDocument(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@id='Documentdelete'])[1]"));
+		return Secreterial;
+	}
+	public static WebElement clickDeleteValidMsg(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='divAgendaDocsDeleteMsg']/div/div/div/lable"));
+		return Secreterial;
+	}
+	public static WebElement clickNotingAgendaInfo(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.cssSelector("td[id='gridAgendaItem_active_cell'] img"));
+		return Secreterial;
+	}
+	public static WebElement clickClosePopupNotingAgendaInfo(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@class='k-button k-bare k-button-icon k-window-action'])[14]"));
+		return Secreterial;
+	}
+	
+	
 	 static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {
 			
 			for(WebElement option:options) {

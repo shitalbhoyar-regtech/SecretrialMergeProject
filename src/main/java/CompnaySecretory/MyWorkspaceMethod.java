@@ -2,10 +2,7 @@ package CompnaySecretory;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
+
 import java.util.List;
 
 import org.apache.poi.ss.usermodel.Row;
@@ -21,7 +18,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
-
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 
@@ -5441,6 +5437,48 @@ public static void TemplateFields(WebDriver driver,ExtentTest test) throws Inter
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator.ClickClosebtn(driver).click();
 }
+
+public static void CloseTemplateFields(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. ClickTemplateFiled(driver).click();
+		  
+		  
+		  if( MyWorkspaceLocator.ClickClosebtn(driver).isEnabled())
+		  {
+			  Thread.sleep(2000);
+			  MyWorkspaceLocator.ClickClosebtn(driver).click();
+			  test.log(LogStatus.PASS,"Template UI form should be closed without saving the data");
+		  }
+		  else
+		  {
+			  test.log(LogStatus.FAIL,"Template UI form should not be closed without saving the data");
+		  }
+}
+
+
+
+
 public static void EditTemplateFields(WebDriver driver,ExtentTest test) throws InterruptedException
 {
 	
@@ -5495,9 +5533,1058 @@ public static void EditTemplateFields(WebDriver driver,ExtentTest test) throws I
 	    	 Thread.sleep(5000);
 			  MyWorkspaceLocator.close(driver).click();
 		}
-	    
+
+public static void IntrestedParties(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickMoreAction(driver).click();
+		  Thread.sleep(2000);
+		  if(MyWorkspaceLocator.clickIntrestedParties(driver).isEnabled())
+		  {
+			  
+			  Thread.sleep(2000);
+			   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
+				selectOptionFromDropDown_bs(entitytype, "Interested Parties");
+		   
+		       test.log(LogStatus.PASS,"User should be redirected to the Intrested Parties page");
+		  }
+		  else
+		  {
+			  test.log(LogStatus.FAIL,"User should not be redirected to the Intrested Parties page");
+		  }
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCloseIntrestedParties(driver).click();
+		  Thread.sleep(5000);
+		  MyWorkspaceLocator.close(driver).click();
+	}
+
+
+public static void MoreAction(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  if(MyWorkspaceLocator.clickMoreAction(driver).isEnabled())
+		  {
+		      Thread.sleep(2000);
+		       MyWorkspaceLocator. clickMoreAction(driver).click();
+		       test.log(LogStatus.PASS,"User should be redirected to the More Action Button");
+		  }
+		  else
+		  {
+			  test.log(LogStatus.FAIL,"User should not be redirected to the More Action Button");
+		  }
+		  Thread.sleep(5000);
+		  MyWorkspaceLocator.close(driver).click();
+	}
+
+
+public static void AddIntrestedParties(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickMoreAction(driver).click();
+		  
+		   Thread.sleep(2000);
+		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
+			selectOptionFromDropDown_bs(entitytype, "Interested Parties");
+	       
+	       Thread.sleep(2000);
+	       MyWorkspaceLocator. clickAddNewBtn(driver).click();
+	       
+	       Thread.sleep(2000);
+	       MyWorkspaceLocator. clickDropdown(driver).click();
+	       
+	       Thread.sleep(2000);
+	       MyWorkspaceLocator. selectValuesDropdown(driver).click();
+	       
+	       Thread.sleep(2000);
+	       MyWorkspaceLocator. clickSaveBtnIntrestedParties(driver).click();
+	       
+	        test.log(LogStatus.FAIL, " Validation message not displayed");
+	        
+	        
+	        Thread.sleep(2000);
+		    MyWorkspaceLocator. clickDeleteBtnIntrestedParties(driver).click();
+		    
+		    Thread.sleep(5000);
+		    // Switching to Alert        
+	        Alert alert1 = driver.switchTo().alert();		
+	        		
+	        // Capturing alert message.    
+	        String alertMessage1= driver.switchTo().alert().getText();	
+	        
+	        
+	        test.log(LogStatus.PASS, alertMessage1);
+	        		
+	        // Displaying alert message		
+	        System.out.println(alertMessage1);
+	        
+	     // Accepting alert		
+	        alert1.accept();	
+	      
+	      
+           Thread.sleep(2000);
+	       MyWorkspaceLocator.clickCloseIntrestedParties(driver).click();
+	       Thread.sleep(5000);
+		    MyWorkspaceLocator.close(driver).click();
+}
+
+public static void CloseBtnIntrestedParties(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickMoreAction(driver).click();
+		  
+		   Thread.sleep(2000);
+		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
+			selectOptionFromDropDown_bs(entitytype, "Interested Parties");
+	       
+	       Thread.sleep(2000);
+	       MyWorkspaceLocator. clickAddNewBtn(driver).click();
+	       
+	       
+	       if( MyWorkspaceLocator.clickCloseIntrestedParties(driver).isEnabled())
+	       {
+	    	   
+	    	   Thread.sleep(2000);
+	    	   MyWorkspaceLocator.clickCloseIntrestedParties(driver).click();
+	    	   
+	    	   test.log(LogStatus.PASS, "The Page 'Intrested Parties' should be closed after click on close button");
+	       }
+	       else
+	       {
+	    	   test.log(LogStatus.PASS, "The Page 'Intrested Parties' should not be closed after click on close button");
+	       }
+
+            Thread.sleep(5000);
+		    MyWorkspaceLocator.close(driver).click();
+}
+
+public static void DocumentTab(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickMoreAction(driver).click();
+		  Thread.sleep(2000);
+		  if(MyWorkspaceLocator.clickDocuments(driver).isEnabled())
+		  {
+			  
+			  Thread.sleep(2000);
+			  MyWorkspaceLocator.clickDocuments(driver).click();
+		   
+		       test.log(LogStatus.PASS,"User should be redirected to the  Documents page");
+		  }
+		  else
+		  {
+			  test.log(LogStatus.FAIL,"User should not be redirected to the  Documents page");
+		  }
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCloseDocumentPopup(driver).click();
+		  Thread.sleep(5000);
+		  MyWorkspaceLocator.close(driver).click();
+	}
+
+public static void UploadDocument(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickMoreAction(driver).click();
+		  
+		  Thread.sleep(2000);
+		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
+			selectOptionFromDropDown_bs(entitytype, "Documents");
+	       
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.selectFile(driver).sendKeys("C:\\Users\\snehalp\\Downloads\\sample.pdf");
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickUploadBtn(driver).click();
+		  
+		  Thread.sleep(2000);
+		 String msg = MyWorkspaceLocator.clickUploadDocumentValidMsg(driver).getText();
+		  
+		  if(msg.equalsIgnoreCase(msg))
+		  {
+			  test.log(LogStatus.PASS,"Message Displayed= " +msg);
+		  }
+		  else
+		  {
+			  test.log(LogStatus.FAIL,"Message Displayed= " +msg);
+		  }
+		  
+		  Actions a = new Actions(driver);
+		 //scroll down a page
+		 //a.sendKeys(Keys.PAGE_DOWN).build().perform();
+		 //scroll up a page
+		 a.sendKeys(Keys.PAGE_UP).build().perform();
+		  
+			
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCloseDocumentPopup(driver).click();
+		  Thread.sleep(5000);
+		  MyWorkspaceLocator.close(driver).click();
+	}
+	       
+public static void UploadMultipleDocument(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickMoreAction(driver).click();
+		  
+		  Thread.sleep(2000);
+		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
+			selectOptionFromDropDown_bs(entitytype, "Documents");
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.selectFile(driver).sendKeys("C:\\Users\\snehalp\\Downloads\\sample.pdf");
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.selectFile(driver).sendKeys("C:\\Users\\snehalp\\Downloads\\Free_Test_Data_100KB_PDF.pdf");
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickUploadBtn(driver).click();
+		  
+		  Thread.sleep(2000);
+		 String msg = MyWorkspaceLocator.clickUploadDocumentValidMsg(driver).getText();
+		  
+		  if(msg.equalsIgnoreCase(msg))
+		  {
+			  test.log(LogStatus.PASS,"Message Displayed= " +msg);
+		  }
+		  else
+		  {
+			  test.log(LogStatus.FAIL,"Message Displayed= " +msg);
+		  }
+		  
+		  Actions a = new Actions(driver);
+			 //scroll down a page
+			 //a.sendKeys(Keys.PAGE_DOWN).build().perform();
+			 //scroll up a page
+			 a.sendKeys(Keys.PAGE_UP).build().perform();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCloseDocumentPopup(driver).click();
+		  Thread.sleep(5000);
+		  MyWorkspaceLocator.close(driver).click();
+	}
+	       	  
+public static void WithoutPDFUploadMultipleDocument(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickMoreAction(driver).click();
+		  
+		  Thread.sleep(2000);
+		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
+			selectOptionFromDropDown_bs(entitytype, "Documents");
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.selectFile(driver).sendKeys("E:\\Test Cases\\Approver Test Case.xlsx");
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.selectFile(driver).sendKeys("E:\\Test Cases\\Approver Test Case.xlsx");
+		
+		  
+		  Thread.sleep(2000);
+		 String msg = MyWorkspaceLocator.clickUploadDocumentInValidMsg(driver).getText();
+		  
+		  if(msg.equalsIgnoreCase(msg))
+		  {
+			  test.log(LogStatus.PASS,"Message Displayed= " +msg);
+		  }
+		  else
+		  {
+			  test.log(LogStatus.FAIL,"Message Displayed= " +msg);
+		  }
+		  
+		  Actions a = new Actions(driver);
+			 //scroll down a page
+			 //a.sendKeys(Keys.PAGE_DOWN).build().perform();
+			 //scroll up a page
+			 a.sendKeys(Keys.PAGE_UP).build().perform();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCloseDocumentPopup(driver).click();
+		  Thread.sleep(5000);
+		  MyWorkspaceLocator.close(driver).click();
+	}
+
+public static void WithoutUploadDocument(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickMoreAction(driver).click();
+		  
+		  Thread.sleep(2000);
+		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
+			selectOptionFromDropDown_bs(entitytype, "Documents");
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickUploadBtn(driver).click();
+		  
+		  Thread.sleep(2000);
+		 String msg = MyWorkspaceLocator.clickUploadDocumentInValidMsg1(driver).getText();
+		  
+		  if(msg.equalsIgnoreCase(msg))
+		  {
+			  test.log(LogStatus.PASS,"Message Displayed= " +msg);
+		  }
+		  else
+		  {
+			  test.log(LogStatus.FAIL,"Message Displayed= " +msg);
+		  }
+		  
+		  Actions a = new Actions(driver);
+			 //scroll down a page
+			 //a.sendKeys(Keys.PAGE_DOWN).build().perform();
+			 //scroll up a page
+			 a.sendKeys(Keys.PAGE_UP).build().perform();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCloseDocumentPopup(driver).click();
+		  Thread.sleep(5000);
+		  MyWorkspaceLocator.close(driver).click();
+	}
+
+public static void DocumentSequenceNumber(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickMoreAction(driver).click();
+		  
+		  Thread.sleep(2000);
+		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
+			selectOptionFromDropDown_bs(entitytype, "Documents");
+		 
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickSequenceNumber(driver).sendKeys("1");
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickSequenceNumber1(driver).sendKeys("2");
+		  
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(500,0)");
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickDocumentSaveBtn(driver).click();
+
+		    Thread.sleep(5000);
+		    // Switching to Alert        
+	        Alert alert1 = driver.switchTo().alert();		
+	        		
+	        // Capturing alert message.    
+	        String alertMessage1= driver.switchTo().alert().getText();	
+	        
+	        
+	        test.log(LogStatus.PASS, alertMessage1);
+	        		
+	        // Displaying alert message		
+	        System.out.println(alertMessage1);
+	        
+	     // Accepting alert		
+	        alert1.accept();
+	        
+	        
+			  Actions a = new Actions(driver);
+				 //scroll down a page
+				a.sendKeys(Keys.PAGE_DOWN).build().perform();
+				 //scroll up a page
+				 a.sendKeys(Keys.PAGE_UP).build().perform();
+	        
+	        Thread.sleep(2000);
+			  MyWorkspaceLocator.clickCloseDocumentPopup(driver).click();
+			  Thread.sleep(5000);
+			  MyWorkspaceLocator.close(driver).click();
+		}
+	        
+public static void DocumentDuplicateSequenceNumber(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickMoreAction(driver).click();
+		  
+		  Thread.sleep(2000);
+		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
+			selectOptionFromDropDown_bs(entitytype, "Documents");
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickSequenceNumber(driver).sendKeys("1");
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickSequenceNumber1(driver).sendKeys("1");
+		  
+		  JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(500,0)");
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickDocumentSaveBtn(driver).click();
+
+		    Thread.sleep(5000);
+		    // Switching to Alert        
+	        Alert alert1 = driver.switchTo().alert();		
+	        		
+	        // Capturing alert message.    
+	        String alertMessage1= driver.switchTo().alert().getText();	
+	        
+	        
+	        test.log(LogStatus.PASS, alertMessage1);
+	        		
+	        // Displaying alert message		
+	        System.out.println(alertMessage1);
+	        
+	     // Accepting alert		
+	        alert1.accept();	
+	        
+	        Actions a = new Actions(driver);
+			 //scroll down a page
+			a.sendKeys(Keys.PAGE_DOWN).build().perform();
+			 //scroll up a page
+			 a.sendKeys(Keys.PAGE_UP).build().perform();
+	        
+	        Thread.sleep(2000);
+			  MyWorkspaceLocator.clickCloseDocumentPopup(driver).click();
+			  Thread.sleep(5000);
+			  MyWorkspaceLocator.close(driver).click();
+		}
+	        
+public static void WithoutSequenceNumber(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickMoreAction(driver).click();
+		  
+		  Thread.sleep(2000);
+		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
+			selectOptionFromDropDown_bs(entitytype, "Documents");
+		  
+		  JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(500,0)");
 		  
 		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickDocumentSaveBtn(driver).click();
+
+		    Thread.sleep(5000);
+		    // Switching to Alert        
+	        Alert alert1 = driver.switchTo().alert();		
+	        		
+	        // Capturing alert message.    
+	        String alertMessage1= driver.switchTo().alert().getText();	
+	        
+	        
+	        test.log(LogStatus.PASS, alertMessage1);
+	        		
+	        // Displaying alert message		
+	        System.out.println(alertMessage1);
+	        
+	     // Accepting alert		
+	        alert1.accept();	
+	        
+	        Actions a = new Actions(driver);
+			 //scroll down a page
+			a.sendKeys(Keys.PAGE_DOWN).build().perform();
+			 //scroll up a page
+			 a.sendKeys(Keys.PAGE_UP).build().perform();
+	        
+	        Thread.sleep(2000);
+			  MyWorkspaceLocator.clickCloseDocumentPopup(driver).click();
+			  Thread.sleep(5000);
+			  MyWorkspaceLocator.close(driver).click();
+		}
+
+public static void ViewDocument(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickMoreAction(driver).click();
+		  
+		  Thread.sleep(2000);
+		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
+			selectOptionFromDropDown_bs(entitytype, "Documents");
+		  
+		  
+		  if(MyWorkspaceLocator.clickViewDocument(driver).isEnabled())
+		  {
+		     Thread.sleep(2000);
+		     MyWorkspaceLocator.clickViewDocument(driver).click();
+		     test.log(LogStatus.PASS, "User should able to view uploaded documents");
+		  }
+		  else
+		  {
+			  test.log(LogStatus.FAIL, "User should not be able to view uploaded documents");
+		  }
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickViewCloseBtnDocument(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCloseDocumentPopup(driver).click();
+		  Thread.sleep(5000);
+		  MyWorkspaceLocator.close(driver).click();
+	}
+
+public static void DownloadDocumentOpenAgenda(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickMoreAction(driver).click();
+		 
+		  Thread.sleep(2000);
+		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
+			selectOptionFromDropDown_bs(entitytype, "Documents");
+		  
+		  File dir2 = new File("C:\\Users\\snehalp\\Downloads");
+			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
+			
+			Thread.sleep(3000);
+			MyWorkspaceLocator.clickDownloadDocument(driver).click();
+			
+		 	Thread.sleep(6000);
+			File dir3 = new File("C:\\Users\\snehalp\\Downloads");
+			File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
+			
+			Thread.sleep(3000);
+		   if (dirContents1.length < allFilesNew1.length) {
+				test.log(LogStatus.PASS,  "User should able to download the document ");
+			}
+		   else
+		   {
+				test.log(LogStatus.FAIL, "User should not able to download the document ");
+			}
+		   
+		   Thread.sleep(2000);
+			  MyWorkspaceLocator.clickCloseDocumentPopup(driver).click();
+			  Thread.sleep(5000);
+			  MyWorkspaceLocator.close(driver).click();
+		}
+
+public static void DeleteDocumentOpenAgenda(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickMoreAction(driver).click();
+		  
+		  Thread.sleep(2000);
+		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
+			selectOptionFromDropDown_bs(entitytype, "Documents");
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickDeleteDocument(driver).click();
+		  
+		    Thread.sleep(5000);
+		    // Switching to Alert        
+	        Alert alert1 = driver.switchTo().alert();		
+	        		
+	        // Capturing alert message.    
+	        String alertMessage1= driver.switchTo().alert().getText();	
+	        
+	        
+	        test.log(LogStatus.PASS, alertMessage1);
+	        		
+	        // Displaying alert message		
+	        System.out.println(alertMessage1);
+	        
+	     // Accepting alert		
+	        alert1.accept();	
+	        
+	        
+	        Thread.sleep(2000);
+			 String msg = MyWorkspaceLocator.clickDeleteValidMsg(driver).getText();
+			  
+			  if(msg.equalsIgnoreCase(msg))
+			  {
+				  test.log(LogStatus.PASS,"Message Displayed=" +msg);
+			  }
+			  else
+			  {
+				  test.log(LogStatus.FAIL,"Message Displayed=" +msg);
+			  }
+	        
+	        Thread.sleep(2000);
+			  MyWorkspaceLocator.clickCloseDocumentPopup(driver).click();
+			  Thread.sleep(5000);
+			  MyWorkspaceLocator.close(driver).click();
+		}
+
+public static void CancelDeleteDocumentOpenAgenda(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickMoreAction(driver).click();
+		  
+		  Thread.sleep(2000);
+		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
+			selectOptionFromDropDown_bs(entitytype, "Documents");
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickDeleteDocument(driver).click();
+		  
+		  Thread.sleep(5000);
+		    // Switching to Alert        
+	        Alert alert1 = driver.switchTo().alert();		
+	        		
+	        // Capturing alert message.    
+	        String alertMessage1= driver.switchTo().alert().getText();	
+	        
+	        
+	        test.log(LogStatus.PASS, alertMessage1);
+	        		
+	        // Displaying alert message		
+	        System.out.println(alertMessage1);
+	        
+	     // Accepting alert		
+	        alert1.dismiss();
+	        
+	       
+	        test.log(LogStatus.FAIL, "The file should be deleted from the system.");
+	       
+	        Thread.sleep(2000);
+		    MyWorkspaceLocator.clickCloseDocumentPopup(driver).click();
+			  Thread.sleep(5000);
+			  MyWorkspaceLocator.close(driver).click();
+		}
+
+public static void NotingAgendaInfo(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
+		  Thread.sleep(2000);
+		  if(MyWorkspaceLocator.clickNotingAgendaInfo(driver).isEnabled())
+		  {
+			  Thread.sleep(2000);
+			  MyWorkspaceLocator.clickNotingAgendaInfo(driver).click();
+			  
+			  test.log(LogStatus.PASS, "User should able to see agenda information after clicking on the 'Info' button");
+		  }
+		  else
+		  {
+			  test.log(LogStatus.PASS, "User should not able to see agenda information after clicking on the 'Info' button");
+		  }
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickClosePopupNotingAgendaInfo(driver).click();
+		  Thread.sleep(5000);
+		  MyWorkspaceLocator.close(driver).click();
+	}
+
+public static void NotingAgendaDelete(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  Thread.sleep(2000);
+		  
+		  MyWorkspaceLocator.Delete(driver).click();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.DeleteYes(driver).click();
+		  Thread.sleep(2000);
+		  
+	String text  =	  MyWorkspaceLocator.DeleteText(driver).getText();
+			  if(text.equalsIgnoreCase("Agenda Item Deleted Successfully."))
+				 {
+					
+					 test.log(LogStatus.PASS, "Message Displayed :-"+text);
+				 }
+				 else
+				 {
+					 test.log(LogStatus.FAIL, "Message Displayed :-"+text);
+				 }
+			  
+			  MyWorkspaceLocator.DeleteClose(driver).click();
+			  Thread.sleep(2000);
+			  
+			Thread.sleep(3000);
+			
+}
+
+public static void NotingAgendaDeleteCan(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.MyMeeting(driver).click();
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
+		 Thread.sleep(2000);
+		  MyWorkspaceLocator.clickAgendaItem(driver).click();
+		  Thread.sleep(2000);
+		  
+		  MyWorkspaceLocator.Delete(driver).click();
+		  Thread.sleep(2000);
+	
+		  if(MyWorkspaceLocator. DeleteNo(driver).isEnabled())
+			 {
+				 Thread.sleep(3000);
+				 MyWorkspaceLocator. DeleteNo(driver).click();
+				 test.log(LogStatus.PASS, " user is able to cancel delete agenda ");
+			 }
+			 else
+			 {
+				 test.log(LogStatus.FAIL, "user not able to cancel delete agenda ");
+			 }
+			
+			  
+			Thread.sleep(3000);
+			
+}
+
+		  
+		  
+		  
+		  
+
+
+
+		  
+		  
+		  
+	        
+		  
+
+		  
+		  
+
+		  
+	        	  	  
+		  
+		  
+
+	       	  		  
 		  
 
 		 static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {
