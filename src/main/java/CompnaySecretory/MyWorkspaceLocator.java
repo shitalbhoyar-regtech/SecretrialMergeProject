@@ -922,7 +922,8 @@ public class MyWorkspaceLocator
 	public static WebElement clickText(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.cssSelector("body > h1:nth-child(1) > strong:nth-child(1)"));
+		Secreterial =driver.findElement(By.xpath("//body[@autocorrect='off']"));
+		//body > h1:nth-child(1) > strong:nth-child(1)
 		return Secreterial;
 	}
 	public static WebElement clickUpdate(WebDriver driver)
@@ -1025,6 +1026,12 @@ public class MyWorkspaceLocator
 	{
 		
 		Secreterial =driver.findElement(By.xpath("(//a[@class='k-grid-i k-grid-ainfo'])[6]"));
+		return Secreterial;
+	}
+	public static WebElement clickInfoIiconVotingAgenda(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@class='k-grid-i k-grid-ainfo'])[7]"));
 		return Secreterial;
 	}
 	public static WebElement clickIicon1(WebDriver driver)
@@ -1492,7 +1499,7 @@ public class MyWorkspaceLocator
 	public static WebElement EditTemplate(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//*[@id='gridAgendaItemA_active_cell']/a[2]/span/img"));
+		Secreterial =driver.findElement(By.xpath("(//a[@class='k-grid-Edit k-grid-edit k-grid-button'])[3]"));
 		return Secreterial;
 	}
 	public static WebElement clickUpdateTemplate(WebDriver driver)
@@ -1525,10 +1532,22 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.xpath("(//ul[@id='gridDDLAgendaActionMenu_listbox']/li/span)[9]"));
 		return Secreterial;
 	}
+	public static WebElement clickIntrestedPartiesVotingAgenda(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//*[@id='gridDDLAgendaActionMenu_listbox']/li[1]/span)[7]"));
+		return Secreterial;
+	}
 	public static WebElement clickDocuments(WebDriver driver)
 	{
 		
 		Secreterial =driver.findElement(By.xpath("(//ul[@id='gridDDLAgendaActionMenu_listbox']/li/span)[10]"));
+		return Secreterial;
+	}
+	public static WebElement clickDocumentsVotingAgenda(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//*[@id='gridDDLAgendaActionMenu_listbox']/li/span)[11]"));
 		return Secreterial;
 	}
 	public static WebElement clickCloseIntrestedParties(WebDriver driver)
@@ -1583,7 +1602,7 @@ public class MyWorkspaceLocator
 	public static WebElement clickUploadDocumentValidMsg(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//div[@class='alert alert-success alert-dismissible']"));
+		Secreterial =driver.findElement(By.xpath("//*[@id='frmAgendaDocumentUpload']/div[1]/div/div/label"));
 		return Secreterial;
 	}
 	public static WebElement clickUploadDocumentInValidMsg(WebDriver driver)
@@ -1660,7 +1679,52 @@ public class MyWorkspaceLocator
 		return Secreterial;
 	}
 	
+	public static WebElement ClickAlterClause(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//input[@id='lstControls_0__TemplateValue']"));
+		return Secreterial;
+	}
+	public static WebElement SaveAlterClause(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//button[@id='btnSaveAgendaItemTemplate']"));
+		return Secreterial;
+	}
+	public static WebElement CloseTemlateFields(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@aria-label='Close'])[43]"));
+		return Secreterial;
+	}
 	
+	public static WebElement ClickVotingAgendaTemplateFiled(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@class='k-grid-T k-grid-t'])[6]"));
+		return Secreterial;
+	}
+	
+	public static WebElement EditTemplateVotingAgenda(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@class='k-grid-Edit k-grid-edit k-grid-button'])[8]"));
+		return Secreterial;
+	}
+	
+	public static WebElement VotingAgendaDelete(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//a[@class='k-grid-G k-grid-delete k-grid-button'])[7]"));
+		return Secreterial;
+	}
+	
+	public static WebElement clickVotingAgendaMoreAction(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("(//span[@class='k-input'])[16]"));
+		return Secreterial;
+	}
 	 static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {
 			
 			for(WebElement option:options) {
