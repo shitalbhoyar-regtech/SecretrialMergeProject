@@ -29,7 +29,7 @@ public class MasterMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(1000);
@@ -73,7 +73,7 @@ public class MasterMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(1000);
@@ -124,7 +124,7 @@ public class MasterMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(1000);
@@ -164,7 +164,7 @@ public class MasterMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(1000);
@@ -200,17 +200,16 @@ public class MasterMethod {
 
 	public static void UserEntityAssignmentMaster(WebDriver driver, ExtentTest test) throws InterruptedException
 	{
-		WebDriverWait wait = new WebDriverWait(driver, (40));
+		//WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
-		Thread.sleep(2000);
-		Locator.Master(driver).click();
-		Thread.sleep(1000);
-		Locator.MasterMenu(driver).click();
-		Thread.sleep(4000);
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+//		Thread.sleep(1000);
+//		Locator.Master(driver).click();
+//		Thread.sleep(1000);
+//		Locator.MasterMenu(driver).click();
 		
-		//EntityLocator.selectImg(driver).click();
+		EntityLocator.selectImg(driver).click();
 //	    Thread.sleep(2000);
 //	    EntityLocator.selectMaster(driver).click();
 		
@@ -240,8 +239,7 @@ public class MasterMethod {
 		Locator.closepopup(driver).click();
 		Thread.sleep(2000);
 		
-		DirectorLocator.ClickDashboard(driver).click();
-		Thread.sleep(2000);
+		Locator.ClickDashboard(driver).click();
 	}
 
 	public static void UEAMUpdate(WebDriver driver, ExtentTest test) throws InterruptedException
@@ -249,7 +247,7 @@ public class MasterMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(1000);
@@ -277,16 +275,15 @@ public class MasterMethod {
 		Locator.closepopup(driver).click();
 		Thread.sleep(2000);
 		
-		DirectorLocator.ClickDashboard(driver).click();
-		Thread.sleep(2000);
-		}
+		Locator.ClickDashboard(driver).click();
+	}
 	
 	public static void UEAMassignment(WebDriver driver, ExtentTest test) throws InterruptedException
 	{
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(1000);
@@ -313,8 +310,7 @@ public class MasterMethod {
 		Locator.closepopup(driver).click();
 		Thread.sleep(2000);
 		
-		DirectorLocator.ClickDashboard(driver).click();
-		Thread.sleep(2000);
+		Locator.ClickDashboard(driver).click();
 	}
 
 	public static void UEADelete(WebDriver driver, ExtentTest test) throws InterruptedException
@@ -322,7 +318,7 @@ public class MasterMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(1000);
@@ -330,20 +326,10 @@ public class MasterMethod {
 		Thread.sleep(1000);
 		Locator.UserEntityAssignmenMaster(driver).click();
 		Thread.sleep(3000);
-	//	Locator.ClickAssignment(driver).click();
-	//	Thread.sleep(2000);
-		By locator = By.xpath("//img[contains(@src, 'NewUi_Images/delete.svg')]");
-		
-		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-		Thread.sleep(4000);
-		
-		WebElement ViewButton = driver.findElement(locator);	
-		Thread.sleep(4000);
-	JavascriptExecutor jse=(JavascriptExecutor)driver;
-	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
-	//	Locator.delete(driver).click();
-	//	Thread.sleep(2000);
+		Locator.ClickAssignment(driver).click();
+		Thread.sleep(1000);
+		Locator.delete(driver).click();
+		Thread.sleep(2000);
 		Locator.YesUE(driver).click();
 		Thread.sleep(1000);
 		String text=driver.switchTo().alert().getText();
@@ -351,8 +337,7 @@ public class MasterMethod {
 		driver.switchTo().alert().accept();
 Thread.sleep(2000);
 		
-DirectorLocator.ClickDashboard(driver).click();
-Thread.sleep(2000);
+		Locator.ClickDashboard(driver).click();
 	}
 	
 	public static void Notes(WebDriver driver, ExtentTest test) throws InterruptedException
@@ -360,16 +345,14 @@ Thread.sleep(2000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(1000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		Locator.Note(driver).click();
-		Thread.sleep(4000);
-		//Locator.Notes(driver).click();
-		//Thread.sleep(3000);
+		Locator.Notes(driver).click();
+		Thread.sleep(3000);
 		driver.switchTo().frame(0);
 		Thread.sleep(2000);
 		Locator.TextArea(driver).clear();
@@ -385,8 +368,7 @@ Thread.sleep(2000);
 		
        Thread.sleep(2000);
 		
-       DirectorLocator.ClickDashboard(driver).click();
-		Thread.sleep(2000);
+		Locator.ClickDashboard(driver).click();
 	}
 
 }

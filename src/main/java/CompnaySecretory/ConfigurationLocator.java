@@ -36,7 +36,7 @@ public class ConfigurationLocator
 	public static WebElement ClickNewBtn(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//button[@id='btnCreateNewEmail']"));
+		Secreterial =driver.findElement(By.xpath("//*[@id='btnCreateNewEmail']"));
 		return Secreterial;
 	}
 	public static WebElement ClickCheckBox(WebDriver driver)
@@ -48,14 +48,25 @@ public class ConfigurationLocator
 	public static WebElement ClickTextBox(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//*[@autocorrect='off']"));
+		Secreterial =driver.findElement(By.xpath("//div[@id='PageHeaderFormat_rte-edit-view']//p"));
 		return Secreterial;
 	}
-	
+	public static WebElement ClickTextBox1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@id='PageFooterFormat_rte-edit-view']/p"));
+		return Secreterial;
+	}
 	public static WebElement ClickSaveBtn(WebDriver driver)
 	{
 		
 		Secreterial =driver.findElement(By.xpath("//button[@value='save']"));
+		return Secreterial;
+	}
+	public static WebElement ClickCloseBtn(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//*[@class=\"btn CloseButton\"]"));
 		return Secreterial;
 	}
 	public static WebElement ClickValidationMsg(WebDriver driver)
@@ -80,7 +91,7 @@ public class ConfigurationLocator
 	public static WebElement ClickEditIcon(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//a[@class='k-grid-Edit k-grid-edit k-grid-button']"));
+		Secreterial =driver.findElement(By.xpath("//*[@class=\"k-button-icontext k-grid-Edit k-grid-edit\"]"));
 		return Secreterial;
 	}
 	public static WebElement ClickCloseIcon(WebDriver driver)

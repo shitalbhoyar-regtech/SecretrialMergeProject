@@ -83,27 +83,24 @@ public class Login
 		LoginPOM.clickSubmit(driver).click();				//Clicked on Sign-in button
 		
 		
-	Thread.sleep(2000);
+	/*	Thread.sleep(500);
 		if(!username.equalsIgnoreCase("performer@avantis.info"))
 		{
-		/*	try
-			{
-				Thread.sleep(500);
-				wait1.until(ExpectedConditions.visibilityOf(LoginPOM.clickQALink(driver)));
-				wait1.until(ExpectedConditions.elementToBeClickable(LoginPOM.clickQALink(driver)));
-				LoginPOM.clickQALink(driver).click();				//Clicking on QA Link instead of OTP.
-				
-				//----------------------------------------------------------------------------//
-				
-				wait1.until(ExpectedConditions.invisibilityOf(LoginPOM.clickQALink(driver)));
-			}
-			catch(Exception e)
-			{
-				
-			}
-	*/
-
-		/*
+//			try
+//			{
+//				Thread.sleep(500);
+//				wait1.until(ExpectedConditions.visibilityOf(LoginPOM.clickQALink(driver)));
+//				wait1.until(ExpectedConditions.elementToBeClickable(LoginPOM.clickQALink(driver)));
+//				LoginPOM.clickQALink(driver).click();				//Clicking on QA Link instead of OTP.
+//				
+//				//----------------------------------------------------------------------------//
+//				
+//				wait1.until(ExpectedConditions.invisibilityOf(LoginPOM.clickQALink(driver)));
+//			}
+//			catch(Exception e)
+//			{
+//				
+//			}
 			
 			Thread.sleep(1000);
 			wait1.until(ExpectedConditions.visibilityOf(LoginPOM.Question1(driver)));
@@ -219,20 +216,23 @@ public class Login
 			}
 			
 			
-		/*	try
-			{
-				Thread.sleep(500);
-				if(OverduePOM.closeMessage(driver).isDisplayed())	//If Compliance Updation message popped up,
-				{
-					wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.closeMessage(driver)));
-					OverduePOM.closeMessage(driver).click();		//then close the message.
-				}
-			}
-			catch(Exception e)
-			{
-				
-			} */	
-		}	
+//		/*	try
+//			{
+//				Thread.sleep(500);
+//				if(OverduePOM.closeMessage(driver).isDisplayed())	//If Compliance Updation message popped up,
+//				{
+//					wait.until(ExpectedConditions.elementToBeClickable(OverduePOM.closeMessage(driver)));
+//					OverduePOM.closeMessage(driver).click();		//then close the message.
+//				}
+//			}
+//			catch(Exception e)
+//			{
+//				
+//			} 	
+		}*/	
+		
+//		Thread.sleep(500);
+//		LoginPOM.clickSecreterial(driver).click();			//Clicking on Litigation Image.
 		return driver; 
 	}
 	

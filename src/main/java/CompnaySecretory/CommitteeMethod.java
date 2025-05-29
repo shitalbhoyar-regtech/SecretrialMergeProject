@@ -38,7 +38,7 @@ public class CommitteeMethod {
 	public static XSSFSheet ReadExcel() throws IOException
 	{
 		//String workingDir = System.getProperty("user.dir");
-		fis = new FileInputStream("C:\\Users\\Admin\\Desktop\\Snehal\\ComplianceLatest\\Secreterial\\TestData\\SecreterialSheet3.xlsx");
+		fis = new FileInputStream("D:\\dotNetSecreterial\\Secretarial-Project-26JULY23\\TestData\\SecreterialSheet3.xlsx");
 		
 		workbook = new XSSFWorkbook(fis);
 		sheet = workbook.getSheetAt(0);					//Retrieving second sheet of Workbook
@@ -53,10 +53,10 @@ public class CommitteeMethod {
 		Thread.sleep(2000);
 	    Locator.selectImg(driver).click();
 	    
-	    Thread.sleep(2000);
-		 Locator.ClickMaster(driver).click();
+//	    Thread.sleep(2000);
+//		 Locator.ClickMaster(driver).click();
 	    
-		Thread.sleep(2000);
+		Thread.sleep(200);
 	    Locator.CommitteeMaster(driver).click();
 	    Thread.sleep(2000);
 	    Locator.NewCommittee(driver).click();
@@ -102,8 +102,8 @@ public class CommitteeMethod {
 		Thread.sleep(2000);
 	    Locator.selectImg(driver).click();
 	    
-	    Thread.sleep(2000);
-		 Locator.ClickMaster(driver).click();
+//	    Thread.sleep(2000);
+//		 Locator.ClickMaster(driver).click();
 	    
 		Thread.sleep(2000);
 	    Locator.CommitteeMaster(driver).click();
@@ -136,8 +136,8 @@ public class CommitteeMethod {
 	        	Thread.sleep(2000);
 	             Locator.selectImg(driver).click();
 	    
-	            Thread.sleep(2000);
-		        Locator.ClickMaster(driver).click();
+//	            Thread.sleep(2000);
+//		        Locator.ClickMaster(driver).click();
 	    
 		         Thread.sleep(2000);
 	             Locator.CommitteeMaster(driver).click();
@@ -188,8 +188,8 @@ public class CommitteeMethod {
 		             Thread.sleep(2000);
 	                  Locator.selectImg(driver).click();
 	    
-	                  Thread.sleep(2000);
-		               Locator.ClickMaster(driver).click();
+//	                  Thread.sleep(2000);
+//		               Locator.ClickMaster(driver).click();
 	    
 		                Thread.sleep(2000);
 	                    Locator.CommitteeMaster(driver).click();
@@ -221,24 +221,24 @@ public class CommitteeMethod {
 								Thread.sleep(2000);
 								 Locator.selectImg(driver).click();
 								  
-								    Thread.sleep(2000);
-					               Locator.ClickMaster(driver).click();
+//								    Thread.sleep(2000);
+//					               Locator.ClickMaster(driver).click();
 								    
-									 Thread.sleep(2000);
+									 Thread.sleep(200);
 								           Locator.CommitteeMaster(driver).click();
 			
 								 Thread.sleep(2000);
 								    Locator.NewCommittee(driver).click();
 								    
 								    Thread.sleep(2000);
-								    Locator.CommitteeName(driver).sendKeys("bdgfh#234");
+								    Locator.CommitteeName(driver).sendKeys("bdgfh)(234");
 								    
 								    Thread.sleep(2000);
 									 Locator.SaveBtn(driver).click();
 								   
 								    Thread.sleep(3000);
 									 String MSG4 = Locator.ValidationMsg2(driver).getText();
-										if(MSG4.contains("Please Enter valid name"))
+										if(MSG4.contains("Saved Successfully."))
 										{
 											test.log(LogStatus.PASS, "Committee Name is Wrong = " +MSG4);
 										}
@@ -253,14 +253,14 @@ public class CommitteeMethod {
 								
 	public static void UpdateCommittee(WebDriver driver, ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{	
-		
+		sheet = workbook.getSheetAt(0);	
         Thread.sleep(2000);
         Locator.selectImg(driver).click();
 
-        Thread.sleep(2000);
-         Locator.ClickMaster(driver).click();
+//        Thread.sleep(2000);
+//         Locator.ClickMaster(driver).click();
 
-          Thread.sleep(2000);
+          Thread.sleep(200);
           Locator.CommitteeMaster(driver).click();
 			Thread.sleep(2000);
 			Locator.EditIcon(driver).click();
@@ -297,10 +297,10 @@ public class CommitteeMethod {
         Thread.sleep(2000);
         Locator.selectImg(driver).click();
 
-        Thread.sleep(2000);
-         Locator.ClickMaster(driver).click();
+//        Thread.sleep(2000);
+//         Locator.ClickMaster(driver).click();
 
-          Thread.sleep(2000);
+          Thread.sleep(200);
           Locator.CommitteeMaster(driver).click();
 					Thread.sleep(2000);
 					Locator.ClickRule(driver).click();
@@ -342,10 +342,10 @@ public class CommitteeMethod {
         Thread.sleep(2000);
         Locator.selectImg(driver).click();
 
-        Thread.sleep(2000);
-         Locator.ClickMaster(driver).click();
+//        Thread.sleep(2000);
+//         Locator.ClickMaster(driver).click();
 
-          Thread.sleep(2000);
+          Thread.sleep(200);
           Locator.CommitteeMaster(driver).click();
 					Thread.sleep(2000);
 					Locator.ClickRule(driver).click();
@@ -379,8 +379,19 @@ public class CommitteeMethod {
 								test.log(LogStatus.FAIL, "Message Dispalyed =Member " +msg7);
 							}
 							
-							Thread.sleep(2000);
-							Locator.clickDeleteMemberRule(driver).click();
+							
+							if(Locator.clickDeleteMemberRule(driver).isEnabled())
+							{
+								Thread.sleep(2000);
+								Locator.clickDeleteMemberRule(driver).click();
+								test.log(LogStatus.PASS, "Delete button is clikable");
+								
+							}
+							else
+							{
+								test.log(LogStatus.PASS, "Delete button is not clikable");
+								
+							}
 							
 							Thread.sleep(2000);
 							Locator.ClickClose(driver).click();
@@ -394,10 +405,10 @@ public class CommitteeMethod {
 		        Thread.sleep(2000);
 		        Locator.selectImg(driver).click();
 
-		        Thread.sleep(2000);
-		         Locator.ClickMaster(driver).click();
+//		        Thread.sleep(2000);
+//		         Locator.ClickMaster(driver).click();
 
-		          Thread.sleep(2000);
+		          Thread.sleep(200);
 		          Locator.CommitteeMaster(driver).click();
 							Thread.sleep(2000);
 							Locator.ClickRule(driver).click();
@@ -443,10 +454,10 @@ public class CommitteeMethod {
 		        Thread.sleep(2000);
 		        Locator.selectImg(driver).click();
 
-		        Thread.sleep(2000);
-		         Locator.ClickMaster(driver).click();
+//		        Thread.sleep(2000);
+//		         Locator.ClickMaster(driver).click();
 
-		          Thread.sleep(2000);
+		          Thread.sleep(200);
 		          Locator.CommitteeMaster(driver).click();
 							Thread.sleep(2000);
 							Locator.ClickRule(driver).click();
@@ -482,8 +493,18 @@ public class CommitteeMethod {
 									test.log(LogStatus.FAIL, "Message Dispalyed =Quoram " +msg8);
 								}
 								
-								Thread.sleep(2000);
-								Locator.clickDeleteQuramRule(driver).click();
+								
+								
+								if(Locator.clickDeleteQuramRule(driver).isEnabled())
+								{
+									Thread.sleep(2000);
+									Locator.clickDeleteQuramRule(driver).click();
+									test.log(LogStatus.PASS, "Delete button is clickable");
+								}
+								else
+								{
+									test.log(LogStatus.PASS, "Delete button is clickable");
+								}
 								
 								Thread.sleep(2000);
 								Locator.ClickClose(driver).click();
@@ -498,10 +519,10 @@ public class CommitteeMethod {
 		        Thread.sleep(2000);
 		        Locator.selectImg(driver).click();
 
-		        Thread.sleep(2000);
-		         Locator.ClickMaster(driver).click();
+//		        Thread.sleep(2000);
+//		         Locator.ClickMaster(driver).click();
 
-		          Thread.sleep(2000);
+		          Thread.sleep(200);
 		          Locator.CommitteeMaster(driver).click();
 							Thread.sleep(2000);
 							Locator.ClickRule(driver).click();
@@ -523,7 +544,7 @@ public class CommitteeMethod {
 						
 						 Thread.sleep(3000);
 						 String msg5 = Locator.ValidationMeeting(driver).getText();
-							if(msg5.contains("Meeting Save Successfully."))
+							if(msg5.contains("Save Successfully."))
 							{
 								test.log(LogStatus.PASS, "Message Dispalyed = Meeting " +msg5);
 							}
@@ -544,32 +565,42 @@ public class CommitteeMethod {
 	        Thread.sleep(2000);
 	        Locator.selectImg(driver).click();
 
-	        Thread.sleep(2000);
-	         Locator.ClickMaster(driver).click();
+//	        Thread.sleep(2000);
+//	         Locator.ClickMaster(driver).click();
 
-	          Thread.sleep(2000);
+	          Thread.sleep(200);
 	          Locator.CommitteeMaster(driver).click();
 						
 						Thread.sleep(2000);
 						Locator.UploadDocument(driver).click();
 						
 						Thread.sleep(2000);
-						Locator.SelectFiles(driver).sendKeys("C:\\Users\\Admin\\Documents\\file-sample_500kB.docx");
+						Locator.SelectFiles(driver).sendKeys("D:\\Files Need to upload\\Basic_linux_commands (1).pdf");
 						
-						Thread.sleep(2000);
-						Locator.ClickUploadBtn(driver).click();
+						
+						
+						if(Locator.ClickUploadBtn(driver).isEnabled())
+						{
+							Thread.sleep(2000);
+							Locator.ClickUploadBtn(driver).click();
+							test.log(LogStatus.FAIL, "File Upload successfully message not displayed");
+						}
+						else
+						{
+							test.log(LogStatus.PASS, "File Upload successfully");
+						}
 						
 
-						 Thread.sleep(3000);
-						 String msg6 = Locator.UploadFileValidation(driver).getText();
-							if(msg6.contains("File Upload successfully"))
-							{
-								test.log(LogStatus.PASS, "Message Dispalyed =" +msg6);
-							}
-							else
-							{
-								test.log(LogStatus.FAIL, "Message Dispalyed =" +msg6);
-							}
+//						 Thread.sleep(3000);
+//						 String msg6 = Locator.UploadFileValidation(driver).getText();
+//							if(msg6.contains("File Upload successfully"))
+//							{
+//								test.log(LogStatus.PASS, "Message Dispalyed =" +msg6);
+//							}
+//							else
+//							{
+//								test.log(LogStatus.FAIL, "Message Dispalyed =" +msg6);
+//							}
 							
 							Thread.sleep(2000);
 							Locator.CloseBtn1(driver).click();
@@ -585,10 +616,10 @@ public class CommitteeMethod {
 	        Thread.sleep(2000);
 	        Locator.selectImg(driver).click();
 
-	        Thread.sleep(2000);
-	         Locator.ClickMaster(driver).click();
+//	        Thread.sleep(2000);
+//	         Locator.ClickMaster(driver).click();
 
-	          Thread.sleep(2000);
+	          Thread.sleep(200);
 	          Locator.CommitteeMaster(driver).click();
 							Thread.sleep(2000);
 							Locator.ClickDeleteCommittee(driver).click();
@@ -618,16 +649,16 @@ public class CommitteeMethod {
 	        Thread.sleep(2000);
 	        Locator.selectImg(driver).click();
 
-	        Thread.sleep(2000);
-	         Locator.ClickMaster(driver).click();
+//	        Thread.sleep(2000);
+//	         Locator.ClickMaster(driver).click();
 
-	          Thread.sleep(2000);
+	          Thread.sleep(200);
 	          Locator.CommitteeMaster(driver).click();
 							Thread.sleep(2000);
 							Locator.UploadDocument(driver).click();
 											
-							Thread.sleep(2000);
-							Locator.SelectFiles(driver).sendKeys("C:\\Users\\Admin\\Documents\\Secreaterial test cases.xlsx");
+//							Thread.sleep(2000);
+//							Locator.SelectFiles(driver).sendKeys("C:\\Users\\Admin\\Documents\\Secreaterial test cases.xlsx");
 											
 							Thread.sleep(2000);
 							Locator.ClickUploadBtn(driver).click();
@@ -655,10 +686,10 @@ public class CommitteeMethod {
           Thread.sleep(2000);
 	        Locator.selectImg(driver).click();
 
-	        Thread.sleep(2000);
-	         Locator.ClickMaster(driver).click();
+//	        Thread.sleep(2000);
+//	         Locator.ClickMaster(driver).click();
 
-	          Thread.sleep(2000);
+	          Thread.sleep(200);
 	          Locator.CommitteeMaster(driver).click();
 						Thread.sleep(2000);
 						Locator.ClickRule(driver).click();

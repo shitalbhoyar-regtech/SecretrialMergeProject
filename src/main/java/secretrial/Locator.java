@@ -17,7 +17,7 @@ private static WebElement secretrial = null;				//WebElement variable created fo
 
 	public static WebElement Master(WebDriver driver)		//Method for closing Message Popup
 	{
-		secretrial = driver.findElement(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"));
+		secretrial = driver.findElement(By.xpath("//*[@id='Mastermenu']/a/img"));
 		return secretrial;
 	}
 	
@@ -833,20 +833,9 @@ private static WebElement secretrial = null;				//WebElement variable created fo
 	
 	public static WebElement  MasterMenu(WebDriver driver)		
 	{
-		secretrial = driver.findElement(By.xpath("(//span[.='Masters'])[2]"));
+		secretrial = driver.findElement(By.xpath("//*[@id='Mastermenu']"));
 		return secretrial;
 	}
-	public static WebElement  ComplianceAssignment(WebDriver driver)		
-	{
-		secretrial = driver.findElement(By.xpath("//span[@class='fly-out-top-item-name SubSmallMenunameStyle' and .='Compliance Assignment']"));
-		return secretrial;
-	}
-	public static WebElement  Note(WebDriver driver)		
-	{
-		secretrial = driver.findElement(By.xpath("//span[@class='fly-out-top-item-name SubSmallMenunameStyle' and .='Notes']"));
-		return secretrial;
-	}
-	
 	
 	public static WebElement  SelectRole(WebDriver driver)		//Method for closing Message Popup
 	{
@@ -910,7 +899,7 @@ private static WebElement secretrial = null;				//WebElement variable created fo
 	
 	public static WebElement  UserEntityAssignmenMaster(WebDriver driver)		//Method for closing Message Popup
 	{
-		secretrial = driver.findElement(By.xpath("//span[@class='fly-out-top-item-name SubSmallMenunameStyle' and .='User-Entity Assignment']"));
+		secretrial = driver.findElement(By.xpath("//*[@id='Mastermenu']/ul/li[10]"));
 		return secretrial;
 	}
 	
@@ -988,7 +977,7 @@ private static WebElement secretrial = null;				//WebElement variable created fo
 	
 	public static WebElement  delete(WebDriver driver)		//Method for closing Message Popup
 	{
-		secretrial = driver.findElement(By.xpath("//img[contains(@src, 'NewUi_Images/delete.svg')]"));
+		secretrial = driver.findElement(By.xpath("//*[@class='k-grid-delete k-grid-button']"));
 		return secretrial;
 	}
 	
@@ -1007,23 +996,12 @@ private static WebElement secretrial = null;				//WebElement variable created fo
 	public static WebElement  TextArea(WebDriver driver)		//Method for closing Message Popup
 	{
 		secretrial = driver.findElement(By.xpath("//*[@autocorrect='off']"));
-		//secretrial = driver.findElement(By.xpath("(//div[@id='NotesFormat_rte-edit-view'])[1]"));
-
 		return secretrial;
 	}
-	public static WebElement  Frame(WebDriver driver)		//Method for closing Message Popup
-	{
-		secretrial = driver.findElement(By.xpath("//iframe[@title='Editable area. Press F10 for toolbar.']"));
-
-		return secretrial;
-	}
-	
 	
 	public static WebElement  SaveNotes(WebDriver driver)		//Method for closing Message Popup
 	{
-	//	secretrial = driver.findElement(By.xpath("//*[@id='frmNotesFormate']/div[4]/div/button"));
-		secretrial = driver.findElement(By.xpath("//button[@class='btn defaultButtonmain']"));
-
+		secretrial = driver.findElement(By.xpath("//*[@id='frmNotesFormate']/div[4]/div/button"));
 		return secretrial;
 	}
 	

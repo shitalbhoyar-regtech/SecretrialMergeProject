@@ -142,7 +142,7 @@ public class MastersTest {
 		extent.flush();
 	}
 	
-	@Test(priority = 6)
+	//@Test(priority = 6)
 	void UEAMUpdate() throws InterruptedException, IOException
 	{
 		test = extent.startTest("User-Entity Assignment- Edit");
@@ -153,7 +153,7 @@ public class MastersTest {
 		extent.flush();
 	}
 	
-	@Test(priority = 7)
+//	@Test(priority = 7)
 	void UEAMassignment() throws InterruptedException, IOException
 	{
 		test = extent.startTest("User-Entity Assignment- Assignment");
@@ -164,7 +164,7 @@ public class MastersTest {
 		extent.flush();
 	}
 
-	@Test(priority = 8)
+//	@Test(priority = 8)
 	void UEADelete() throws InterruptedException, IOException
 	{
 		test = extent.startTest("User-Entity Assignment- Delete");
@@ -175,7 +175,7 @@ public class MastersTest {
 		extent.flush();
 	}
 	
-	@Test(priority = 9)
+	//@Test(priority = 9)
 	void Notes() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Notes");

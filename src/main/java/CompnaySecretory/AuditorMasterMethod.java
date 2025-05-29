@@ -109,8 +109,8 @@ public class AuditorMasterMethod
      //Create New and Create from Existing Button is working or not
 		Thread.sleep(2000);
 	    Locator.selectImg(driver).click();
-	    Thread.sleep(2000);
-	    Locator.ClickMaster(driver).click();
+//	    Thread.sleep(2000);
+//	    Locator.ClickMaster(driver).click();
 	    Thread.sleep(2000);
 	    Locator.clickAuditor(driver).click();
 	    Thread.sleep(2000);
@@ -162,7 +162,7 @@ public class AuditorMasterMethod
 			Locator.clickAuditorEmail(driver).sendKeys("sders@gmail.com");
 			
 			Thread.sleep(2000);
-			Locator.clickRegistrationNo(driver).sendKeys("3423545");
+			Locator.clickRegstrationNo(driver).sendKeys("3423545");
 			
 			Thread.sleep(2000);
 			Locator.clickAddressLine(driver).sendKeys("pune");
@@ -212,7 +212,7 @@ public class AuditorMasterMethod
 				Locator.clickAuditorName(driver).sendKeys("Sneha$345");
 				Locator.clickAuditorEmail(driver).sendKeys("rajdeep@%gmail.com");
 				Thread.sleep(2000);
-				Locator.clickRegistrationNo(driver).sendKeys("3423asd545");
+				Locator.clickRegstrationNo(driver).sendKeys("3423asd545");
 				Thread.sleep(2000);
 				Locator.clickAddressLine(driver).sendKeys("pu45ne");
 				
@@ -243,8 +243,8 @@ public class AuditorMasterMethod
 				
 				   Thread.sleep(2000);
 				    Locator.selectImg(driver).click();
-				    Thread.sleep(2000);
-				    Locator.ClickMaster(driver).click();
+//				    Thread.sleep(2000);
+//				    Locator.ClickMaster(driver).click();
 				    Thread.sleep(2000);
 				    Locator.clickAuditor(driver).click();
 				   Thread.sleep(2000);
@@ -275,8 +275,8 @@ public class AuditorMasterMethod
 
 		   Thread.sleep(2000);
 		    Locator.selectImg(driver).click();
-		    Thread.sleep(2000);
-		    Locator.ClickMaster(driver).click();
+//		    Thread.sleep(2000);
+//		    Locator.ClickMaster(driver).click();
 		    Thread.sleep(2000);
 		    Locator.clickAuditor(driver).click();
 						
@@ -284,29 +284,34 @@ public class AuditorMasterMethod
 					     Locator.clickAuditorNew(driver).click();
 					     Thread.sleep(2000);
 					     Locator.clickAuditorCreateNew(driver).click();
+
 					     Thread.sleep(2000);
 					     Locator.clickAuditorType(driver).click();
 					     Thread.sleep(2000);
-					     selectOptionFromDropDown_bs( Locator.SelectAuditorTypeDropDown6(driver), "Secretarial Auditor");
+					     selectOptionFromDropDown_bs( Locator.SelectAuditorTypeDropDown6(driver), "CA");
 					     Thread.sleep(2000);
 					     Locator.clickCategoryOfAuditor(driver).click();
 					     Thread.sleep(2000);
-					     selectOptionFromDropDown_bs( Locator.SelectCategoryOfAuditor5(driver), "Individual");
+					     selectOptionFromDropDown_bs( Locator.SelectCategoryOfAuditor5(driver), "Individual");					     
 					     Thread.sleep(2000);
-						 Locator.clickMobileNo(driver).sendKeys("3456253121");
+						 Locator.clickMobileNo(driver).sendKeys("3456093121");
 						 Thread.sleep(2000);
-						 Locator.clickPANno(driver).sendKeys("ALSHC3599G");
+						 Locator.clickPANno(driver).sendKeys("ALSHC3769G");
 						 Thread.sleep(2000);
 						 Locator.clickAuditorName(driver).sendKeys("erws");
 						 Locator.clickAuditorEmail(driver).sendKeys("ewqwese@gmail.com");
 						 Thread.sleep(2000);
-						 Locator.clickRegistrationNo(driver).sendKeys("3423a@sd545");
+						 Locator.clickRegstrationNo(driver).sendKeys("3409a@sd545");
+						 Locator.clickMembershipNo(driver).clear();
+							Thread.sleep(2000);
+							Locator.clickMembershipNo(driver).sendKeys("3403545");
 						 Thread.sleep(2000);
-						 Locator.clickAddressLine(driver).sendKeys("35/2pune@43");
+						 Locator.clickAddressLine(driver).sendKeys("35/3pune@43");
+						 
+						 
 						 Thread.sleep(2000);
 						 Locator.clickSaveBtn(driver).click();
-									
-						
+							
 			         
 						 
 						  Thread.sleep(3000);
@@ -331,7 +336,7 @@ public class AuditorMasterMethod
 								catch(Exception e)
 							{
 									String msg1 = Locator.clickValidMsgAuditor(driver).getText();
-									test.log(LogStatus.PASS, "PAN No Accpet alpha numeric characters =" +msg1);
+									test.log(LogStatus.PASS, "PAN No  Accpet alpha numeric characters =" +msg1);
 							} 
 							 
 							 Thread.sleep(3000);
@@ -343,10 +348,10 @@ public class AuditorMasterMethod
 								catch(Exception e)
 							{
 									String msg1 = Locator.clickValidMsgAuditor(driver).getText();
-									test.log(LogStatus.PASS, "Address Line Accept Alpha numeric and special Character =" +msg1);
+									test.log(LogStatus.PASS, "Address Line  Accept Alpha numeric and special Character =" +msg1);
 							} 
 							 
-							 
+			
 			 
 							 Thread.sleep(2000);
 							 Locator.clickCloseBtn(driver).click();
@@ -362,8 +367,8 @@ public class AuditorMasterMethod
 		      		//Close button clickable or not
 							   Thread.sleep(2000);
 							    Locator.selectImg(driver).click();
-							    Thread.sleep(2000);
-							    Locator.ClickMaster(driver).click();
+//							    Thread.sleep(2000);
+//							    Locator.ClickMaster(driver).click();
 							    Thread.sleep(2000);
 							    Locator.clickAuditor(driver).click();
 							Thread.sleep(4000);
@@ -388,8 +393,8 @@ public class AuditorMasterMethod
 							 //Save button clickable or not
 							   Thread.sleep(2000);
 							    Locator.selectImg(driver).click();
-							    Thread.sleep(2000);
-							    Locator.ClickMaster(driver).click();
+//							    Thread.sleep(2000);
+//							    Locator.ClickMaster(driver).click();
 							    Thread.sleep(2000);
 							    Locator.clickAuditor(driver).click();
 						   Thread.sleep(4000);
@@ -414,8 +419,8 @@ public class AuditorMasterMethod
 							
 							   Thread.sleep(2000);
 							    Locator.selectImg(driver).click();
-							    Thread.sleep(2000);
-							    Locator.ClickMaster(driver).click();
+//							    Thread.sleep(2000);
+//							    Locator.ClickMaster(driver).click();
 							    Thread.sleep(2000);
 							    Locator.clickAuditor(driver).click();
 									  
@@ -442,8 +447,8 @@ public class AuditorMasterMethod
 		sheet = workbook.getSheetAt(0);	
 		Thread.sleep(2000);
 	    Locator.selectImg(driver).click();
-	    Thread.sleep(2000);
-	    Locator.ClickMaster(driver).click();
+//	    Thread.sleep(2000);
+//	    Locator.ClickMaster(driver).click();
 	    Thread.sleep(2000);
 	    Locator.clickAuditor(driver).click();
 	    
@@ -475,7 +480,7 @@ public class AuditorMasterMethod
 		Locator.clickAuditorEmail(driver).sendKeys(email);
 		
 		Thread.sleep(2000);
-		Locator.clickRegistrationNo(driver).sendKeys("342345");
+		Locator.clickRegstrationNo(driver).sendKeys("342345");
 		
 		Thread.sleep(2000);
 		Row row2 = sheet.getRow(18);						//Selected 1st index row (Second row)
@@ -558,7 +563,7 @@ public class AuditorMasterMethod
 				Locator.clickAuditorEmail(driver).sendKeys(email1);
 				
 				Thread.sleep(2000);
-				Locator.clickRegistrationNo(driver).sendKeys("342345");
+				Locator.clickRegstrationNo(driver).sendKeys("342345");
 				
 				Thread.sleep(2000);
 				Row row5 = sheet.getRow(24);						//Selected 1st index row (Second row)
@@ -625,7 +630,7 @@ public class AuditorMasterMethod
 						Locator.clickAuditorEmail(driver).sendKeys(email12);
 						
 						Thread.sleep(2000);
-						Locator.clickRegistrationNo(driver).sendKeys("342345");
+						Locator.clickRegstrationNo(driver).sendKeys("342345");
 						
 						Thread.sleep(2000);
 						Row row8 = sheet.getRow(29);						//Selected 1st index row (Second row)
@@ -689,7 +694,7 @@ public class AuditorMasterMethod
 						Locator.clickAuditorEmail(driver).sendKeys(email3);
 															
 						Thread.sleep(2000);
-						Locator.clickRegistrationNo(driver).sendKeys("342345");
+						Locator.clickRegstrationNo(driver).sendKeys("342345");
 															
 						Thread.sleep(2000);
 						Row row11 = sheet.getRow(34);						//Selected 1st index row (Second row)
@@ -723,11 +728,11 @@ public class AuditorMasterMethod
 								
 		public static void EditAuditor(WebDriver driver,ExtentTest test, XSSFWorkbook workbook) throws InterruptedException
 		{
-
+			sheet = workbook.getSheetAt(0);
 			   Thread.sleep(2000);
 			    Locator.selectImg(driver).click();
-			    Thread.sleep(2000);
-			    Locator.ClickMaster(driver).click();
+//			    Thread.sleep(2000);
+//			    Locator.ClickMaster(driver).click();
 			    Thread.sleep(2000);
 			    Locator.clickAuditor(driver).click();
 			
@@ -750,6 +755,17 @@ public class AuditorMasterMethod
 					        Thread.sleep(2000);
 							Locator.clickSaveBtn(driver).click();
 							
+							 Thread.sleep(2000);
+							String msg=	Locator.UpdateMsg(driver).getText();
+							if(msg.equalsIgnoreCase("Server error occurred"))
+							{
+								test.log(LogStatus.FAIL, "Message dispalyed:-" +msg);
+							}
+							else
+							{
+								test.log(LogStatus.PASS, "Message dispalyed:-" +msg);
+							}
+							
 							Thread.sleep(2000);
 							Locator.clickCloseBtn(driver).click();
 							 
@@ -761,8 +777,8 @@ public class AuditorMasterMethod
 				
 			   Thread.sleep(2000);
 			    Locator.selectImg(driver).click();
-			    Thread.sleep(2000);
-			    Locator.ClickMaster(driver).click();
+//			    Thread.sleep(2000);
+//			    Locator.ClickMaster(driver).click();
 			    Thread.sleep(2000);
 			    Locator.clickAuditor(driver).click();
 			//Upload  File   
@@ -771,7 +787,7 @@ public class AuditorMasterMethod
 			Locator.clickUploadBtn(driver).click();
 			
 			Thread.sleep(3000);
-			Locator.clickChooseFile(driver).sendKeys("C:\\Users\\Admin\\Documents\\Auditor.xlsx");
+			Locator.clickChooseFile(driver).sendKeys("D:\\Secretarial-Project-26JULY23\\Auditor.xlsx");
 
 
 			Thread.sleep(2000);
@@ -800,8 +816,8 @@ public class AuditorMasterMethod
 		{				
 			   Thread.sleep(2000);
 			    Locator.selectImg(driver).click();
-			    Thread.sleep(2000);
-			    Locator.ClickMaster(driver).click();
+//			    Thread.sleep(2000);
+//			    Locator.ClickMaster(driver).click();
 			    Thread.sleep(2000);
 			    Locator.clickAuditor(driver).click();
 		
@@ -837,44 +853,59 @@ public class AuditorMasterMethod
 						
 			   Thread.sleep(2000);
 			    Locator.selectImg(driver).click();
-			    Thread.sleep(2000);
-			    Locator.ClickMaster(driver).click();
-			    Thread.sleep(2000);
+//			    Thread.sleep(2000);
+//			    Locator.ClickMaster(driver).click();
+//			    Thread.sleep(2000);
 			    Locator.clickAuditor(driver).click();
 					    Thread.sleep(2000);
 					     Locator.clickAuditorNew(driver).click();
 					     Thread.sleep(2000);
 					     Locator.clickAuditorDropdown(driver).click();
 					     Thread.sleep(2000);
-					     selectOptionFromDropDown_bs(Locator.selectAuditorDropdown4(driver), "SECRETARY & ASSOCIATES");
+					     selectOptionFromDropDown_bs(Locator.selectAuditorDropdown4(driver), "ABC");
 					     Thread.sleep(2000);
 					     Locator.clickAuditorType(driver).click();
 					     Thread.sleep(2000);
-					     selectOptionFromDropDown_bs(Locator.SelectAuditorTypeDropDown6(driver), "Secretarial Auditor");
-					     Locator.clickAuditorName(driver).clear();
+					     selectOptionFromDropDown_bs( Locator.SelectAuditorTypeDropDown6(driver), "CA");
 					     Thread.sleep(2000);
-						 Locator.clickAuditorName(driver).sendKeys("gfder");
+					     Locator.clickCategoryOfAuditor(driver).click();
+					     Thread.sleep(2000);
+					     selectOptionFromDropDown_bs( Locator.SelectCategoryOfAuditor5(driver), "Individual");	
+					     Locator.clickMobileNo(driver).clear();
+					     Thread.sleep(2000);
+						 Locator.clickMobileNo(driver).sendKeys("3456003121");
+						 Locator.clickPANno(driver).clear();
 						 Thread.sleep(2000);
+						 Locator.clickPANno(driver).sendKeys("ALSHC3069G");
+						 Locator.clickAuditorName(driver).clear();
+						 Thread.sleep(2000);
+						 Locator.clickAuditorName(driver).sendKeys("erws");
 						 Locator.clickAuditorEmail(driver).clear();
-						 Locator.clickAuditorEmail(driver).sendKeys("sderd@gmail.com");
+						 Locator.clickAuditorEmail(driver).sendKeys("abc@gmail.com");
+						 Locator.clickRegstrationNo(driver).clear();
+						 Thread.sleep(2000);
+						 Locator.clickRegstrationNo(driver).sendKeys("3409a@sd545");
+						 Locator.clickMembershipNo(driver).clear();
+							Thread.sleep(2000);
+							Locator.clickMembershipNo(driver).sendKeys("3403545");
+						 Thread.sleep(2000);
+						 Locator.clickAddressLine(driver).sendKeys("35/3pune43");
 					     Thread.sleep(2000);
 					     Locator.clickSaveBtn(driver).click();
 					    
-							 Thread.sleep(3000);
+							
 							 try
 							 {
+								 Thread.sleep(2000);
 							    String msg1 = Locator.clickValidMsg(driver).getText();
 								test.log(LogStatus.PASS, "Create From Existing tab  =" +msg1);
 							 }
 								catch(Exception e)
 							{
+									 Thread.sleep(2000);
 									String msg1 = Locator.clickValidMsgAuditor(driver).getText();
 									test.log(LogStatus.PASS, "Create From Existing tab =" +msg1);
 							} 
-							
-							
-							
-							
 							
 							Thread.sleep(2000);
 							Locator.clickCloseBtn(driver).click();
@@ -888,43 +919,49 @@ public class AuditorMasterMethod
 					
 					   Thread.sleep(2000);
 					    Locator.selectImg(driver).click();
-					    Thread.sleep(2000);
-					    Locator.ClickMaster(driver).click();
-					    Thread.sleep(2000);
+//					    Thread.sleep(2000);
+//					    Locator.ClickMaster(driver).click();
+					    Thread.sleep(200);
 					    Locator.clickAuditor(driver).click();
 					Thread.sleep(2000);
 					 Locator.clickAuditorNew(driver).click();
 				     Thread.sleep(2000);
 				     Locator.clickAuditorDropdown(driver).click();
 				     Thread.sleep(2000);
-				     selectOptionFromDropDown_bs(Locator.selectAuditorDropdown4(driver), "SECRETARY & ASSOCIATES");
+				     selectOptionFromDropDown_bs(Locator.selectAuditorDropdown4(driver), "ABC");
 				     Thread.sleep(2000);
 				     Locator.clickAuditorType(driver).click();
 				     Thread.sleep(2000);
-				     selectOptionFromDropDown_bs( Locator.SelectAuditorTypeDropDown6(driver), "Secretarial Auditor");
+				     selectOptionFromDropDown_bs( Locator.SelectAuditorTypeDropDown6(driver), "CA");
 				     Thread.sleep(2000);
 				     Locator.clickCategoryOfAuditor(driver).click();
 				     Thread.sleep(2000);
 				     selectOptionFromDropDown_bs( Locator.SelectCategoryOfAuditor5(driver), "Individual");
 				    
 					    Thread.sleep(2000);
-				     Locator.clickAuditorName(driver).clear();
-				     Locator.clickAuditorName(driver).sendKeys("jhytg");
+					     Locator.clickAuditorName(driver).clear();
+					     Locator.clickAuditorName(driver).sendKeys("jhytg");
 						Locator.clickAuditorEmail(driver).clear();
 						Locator.clickAuditorEmail(driver).sendKeys("fdds@itc.com");
-						Locator.clickRegistrationNo(driver).clear();
+						Locator.clickMembershipNo(driver).clear();
 						Thread.sleep(2000);
-						Locator.clickRegistrationNo(driver).sendKeys("3423545");
+						Locator.clickMembershipNo(driver).sendKeys("3423545");
+						Locator.clickRegstrationNo(driver).clear();
+						Thread.sleep(2000);
+						Locator.clickRegstrationNo(driver).sendKeys("3423545");
+						
 						Locator.clickAddressLine(driver).clear();
 						Thread.sleep(2000);
 						Locator.clickAddressLine(driver).sendKeys("pune");
+						Thread.sleep(2000);
+						Locator.clickCountry(driver).click();
+						Thread.sleep(2000);
+					     selectOptionFromDropDown_bs( Locator.selectCountry(driver), "India");
+						
 						
 						Thread.sleep(2000);
 						Locator.clickSaveBtn(driver).click();
 						
-					
-							
-							
 							 Thread.sleep(3000);
 							 try
 							 {
@@ -951,42 +988,44 @@ public class AuditorMasterMethod
 							
 							   Thread.sleep(2000);
 							    Locator.selectImg(driver).click();
-							    Thread.sleep(2000);
-							    Locator.ClickMaster(driver).click();
+//							    Thread.sleep(2000);
+//							    Locator.ClickMaster(driver).click();
 							    Thread.sleep(2000);
 							    Locator.clickAuditor(driver).click();
 							
-							  Thread.sleep(2000);
-							   Locator.clickAuditorNew(driver).click();
-							   Thread.sleep(2000);
-							   Locator.clickAuditorDropdown(driver).click();
-							   Thread.sleep(2000);
-							   selectOptionFromDropDown_bs( Locator.selectAuditorDropdown4(driver), "SECRETARY & ASSOCIATES");
-							   Thread.sleep(2000);
+								  Thread.sleep(2000);
+								   Locator.clickAuditorNew(driver).click();
+								   Thread.sleep(2000);
+								   Locator.clickAuditorDropdown(driver).click();
+								   Thread.sleep(2000);
+								   selectOptionFromDropDown_bs( Locator.selectAuditorDropdown4(driver), "ABC");
+								   Thread.sleep(2000);
 							     Locator.clickAuditorCreateNew(driver).click();
 							     Thread.sleep(2000);
 							     Locator.clickAuditorType(driver).click();
 							     Thread.sleep(2000);
-							     selectOptionFromDropDown_bs( Locator.SelectAuditorTypeDropDown6(driver), "Secretarial Auditor");
+							     selectOptionFromDropDown_bs( Locator.SelectAuditorTypeDropDown6(driver), "CA");
 							     Thread.sleep(2000);
 							     Locator.clickCategoryOfAuditor(driver).click();
 							     Thread.sleep(2000);
 							     selectOptionFromDropDown_bs( Locator.SelectCategoryOfAuditor5(driver), "Individual");
-							    Thread.sleep(2000);
-							    Locator.clickMobileNo(driver).clear();
-							     Thread.sleep(2000);
-								Locator.clickMobileNo(driver).sendKeys("3456253");
-								Locator.clickPANno(driver).clear();
-								Thread.sleep(2000);
-								Locator.clickPANno(driver).sendKeys("64563");
+						
 								Locator.clickAuditorName(driver).clear();
 							    Thread.sleep(2000);
 								Locator.clickAuditorName(driver).sendKeys("Sneha$345");
 								Locator.clickAuditorEmail(driver).clear();
 								Locator.clickAuditorEmail(driver).sendKeys("rajdeep@%gmail.com");
-								Locator.clickRegistrationNo(driver).clear();
+								Locator.clickRegstrationNo(driver).clear();
 								Thread.sleep(2000);
-								Locator.clickRegistrationNo(driver).sendKeys("3423asd545");
+								Locator.clickRegstrationNo(driver).sendKeys("3423asd545");
+								
+								 Thread.sleep(2000);
+								    Locator.clickMobileNo(driver).clear();
+								    Thread.sleep(2000);
+									Locator.clickMobileNo(driver).sendKeys("3456253");
+									Locator.clickPANno(driver).clear();
+									Thread.sleep(2000);
+									Locator.clickPANno(driver).sendKeys("64563");
 								Locator.clickAddressLine(driver).clear();
 								Thread.sleep(2000);
 								Locator.clickAddressLine(driver).sendKeys("pu45ne");
@@ -999,7 +1038,7 @@ public class AuditorMasterMethod
 								//String MSG10= Locator.clickValidMsg2(driver).getText();
 								//String MSG11= Locator.clickValidMsg3(driver).getText();
 								String MSG12= Locator.clickValidMsg4(driver).getText();
-								// String MSG13= Locator.clickValidMsg5(driver).getText();
+								 //String MSG13= Locator.clickValidMsg5(driver).getText();
 								// String MSG14= Locator.clickValidMsg6(driver).getText();
 								 String MSG15=Locator.clickValidMsg7(driver).getText();
 								String MSG16=Locator.clickValidMsg8(driver).getText();
@@ -1017,8 +1056,8 @@ public class AuditorMasterMethod
 							      //Without entering Data
 								   Thread.sleep(2000);
 								    Locator.selectImg(driver).click();
-								    Thread.sleep(2000);
-								    Locator.ClickMaster(driver).click();
+//								    Thread.sleep(2000);
+//								    Locator.ClickMaster(driver).click();
 								    Thread.sleep(2000);
 								    Locator.clickAuditor(driver).click();
 								
@@ -1027,7 +1066,7 @@ public class AuditorMasterMethod
 								     Thread.sleep(2000);
 								     Locator.clickAuditorDropdown(driver).click();
 								     Thread.sleep(2000);
-								     selectOptionFromDropDown_bs( Locator.selectAuditorDropdown4(driver), "SECRETARY & ASSOCIATES");
+								     selectOptionFromDropDown_bs( Locator.selectAuditorDropdown4(driver), "ABC");
 								     Thread.sleep(2000);
 								     Locator.clickMobileNo(driver).clear();
 								     Thread.sleep(2000);
@@ -1037,7 +1076,7 @@ public class AuditorMasterMethod
 								     Thread.sleep(2000);
 								     Locator.clickAuditorEmail(driver).clear();
 								     Thread.sleep(2000);
-								     Locator.clickRegistrationNo(driver).clear();
+								     Locator.clickRegstrationNo(driver).clear();
 								     Thread.sleep(2000);
 								     Locator.clickAddressLine(driver).clear();
 								     Thread.sleep(2000);
@@ -1063,8 +1102,8 @@ public class AuditorMasterMethod
 						
 						Thread.sleep(2000);
 					    Locator.selectImg(driver).click();
-					    Thread.sleep(2000);
-					    Locator.ClickMaster(driver).click();
+//					    Thread.sleep(2000);
+//					    Locator.ClickMaster(driver).click();
 					    Thread.sleep(2000);
 					    Locator.clickAuditor(driver).click();	
 						
@@ -1073,7 +1112,7 @@ public class AuditorMasterMethod
 					     Thread.sleep(2000);
 					     Locator.clickAuditorDropdown(driver).click();
 					     Thread.sleep(2000);
-					     selectOptionFromDropDown_bs( Locator.selectAuditorDropdown4(driver), "SECRETARY & ASSOCIATES");
+					     selectOptionFromDropDown_bs( Locator.selectAuditorDropdown4(driver), "ABC");
 					     Thread.sleep(2000);
 					     Locator.clickAuditorType(driver).click();
 					     Thread.sleep(2000);
@@ -1089,9 +1128,9 @@ public class AuditorMasterMethod
 						 Locator.clickAuditorName(driver).sendKeys("ewserf");
 						 Locator.clickAuditorEmail(driver).clear();
 						 Locator.clickAuditorEmail(driver).sendKeys("dfer@gmail.com");
-						 Locator.clickRegistrationNo(driver).clear();
+						 Locator.clickRegstrationNo(driver).clear();
 						 Thread.sleep(2000);
-						 Locator.clickRegistrationNo(driver).sendKeys("3423a@sd545");
+						 Locator.clickRegstrationNo(driver).sendKeys("3423a@sd545");
 						 Locator.clickAddressLine(driver).clear();
 						 Thread.sleep(2000);
 						 Locator.clickAddressLine(driver).sendKeys("35/2pune@43");
@@ -1165,8 +1204,8 @@ public class AuditorMasterMethod
 					 
 					   Thread.sleep(2000);
 					    Locator.selectImg(driver).click();
-					    Thread.sleep(2000);
-					    Locator.ClickMaster(driver).click();
+//					    Thread.sleep(2000);
+//					    Locator.ClickMaster(driver).click();
 					    Thread.sleep(2000);
 					    Locator.clickAuditor(driver).click();
 						Thread.sleep(4000);
@@ -1193,8 +1232,8 @@ public class AuditorMasterMethod
 						
 						   Thread.sleep(2000);
 						    Locator.selectImg(driver).click();
-						    Thread.sleep(2000);
-						    Locator.ClickMaster(driver).click();
+//						    Thread.sleep(2000);
+//						    Locator.ClickMaster(driver).click();
 						    Thread.sleep(2000);
 						    Locator.clickAuditor(driver).click();
 					   Thread.sleep(4000);
@@ -1218,8 +1257,8 @@ public class AuditorMasterMethod
 		                //Country is clickable or not
 						   Thread.sleep(2000);
 						    Locator.selectImg(driver).click();
-						    Thread.sleep(2000);
-						    Locator.ClickMaster(driver).click();
+//						    Thread.sleep(2000);
+//						    Locator.ClickMaster(driver).click();
 						    Thread.sleep(2000);
 						    Locator.clickAuditor(driver).click();
 								  
@@ -1246,30 +1285,31 @@ public class AuditorMasterMethod
 								
 			   Thread.sleep(2000);
 			    Locator.selectImg(driver).click();
-			    Thread.sleep(2000);
-			    Locator.ClickMaster(driver).click();
+//			    Thread.sleep(2000);
+//			    Locator.ClickMaster(driver).click();
 			    Thread.sleep(2000);
 			    Locator.clickAuditor(driver).click();
 								Thread.sleep(2000);
 								Locator.clickUploadBtn(driver).click();
 								
 								Thread.sleep(3000);
-								Locator.clickChooseFile(driver).sendKeys("C:\\Users\\Admin\\Desktop\\Snehal\\ComplianceLatest\\Secreterial\\TestData\\Auditor.xlsx");
+								Locator.clickChooseFile(driver).sendKeys("D:\\Secretarial-Project-26JULY23\\Auditor (1).xlsx");
 				    
 			
 								Thread.sleep(2000);
 								Locator.clickUploadFile(driver).click();
 								
+								
+								
 								Thread.sleep(3000);
-								String msg7 = Locator.clickUploadValidMsg(driver).getText();
-								if(msg7.contains("Input string was not in a correct format.."))
-								{
-									test.log(LogStatus.PASS, "Enter Invalid Data in Upload file =" +msg7);
-								}
-								else
-								{
-									test.log(LogStatus.FAIL, "Enter Invalid Data in Upload file =" +msg7);
-								}
+								String msg =Locator.clickInvalidValidMsg(driver).getText();
+								Thread.sleep(3000);
+								String msg1 =Locator.clickInvalidValidMsg1(driver).getText();
+								Thread.sleep(3000);
+								String msg2 =Locator.clickInvalidValidMsg2(driver).getText();
+								
+									test.log(LogStatus.PASS, "Enter Invalid Data in Upload file =" +msg+ "," +msg1+ "," +msg2);
+							
 									
 								Thread.sleep(2000);
 								Locator.clickClosebtn(driver).click();
@@ -1283,15 +1323,15 @@ public class AuditorMasterMethod
 								//Upload File Without Enter Data
 								   Thread.sleep(2000);
 								    Locator.selectImg(driver).click();
-								    Thread.sleep(2000);
-								    Locator.ClickMaster(driver).click();
+//								    Thread.sleep(2000);
+//								    Locator.ClickMaster(driver).click();
 								    Thread.sleep(2000);
 								    Locator.clickAuditor(driver).click();
 								Thread.sleep(2000);
 								Locator.clickUploadBtn(driver).click();
 								
 								Thread.sleep(3000);
-								Locator.clickChooseFile(driver).sendKeys("C:\\Users\\Admin\\Desktop\\Auditor.xlsx");
+								Locator.clickChooseFile(driver).sendKeys("D:\\Secretarial-Project-26JULY23\\Auditor (2).xlsx");
 				    
 			
 								Thread.sleep(2000);

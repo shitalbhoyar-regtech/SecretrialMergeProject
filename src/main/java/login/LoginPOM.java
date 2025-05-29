@@ -19,19 +19,19 @@ public class LoginPOM
 	
 	public static WebElement setUname(WebDriver driver)		//Method for searching Username input
 	{
-		uname = driver.findElement(By.xpath("//input[@name='username']"));
+		uname = driver.findElement(By.xpath("//*[@type=\"email\"]"));
 		return uname;
 	}
 	
 	public static WebElement setPassword(WebDriver driver)	//Method for searching Password input
 	{
-		pass =driver.findElement(By.xpath("//input[@name='password']"));
+		pass =driver.findElement(By.xpath("//*[@type=\"password\"]"));
 		return pass;
 	}
 	
 	public static WebElement clickSubmit(WebDriver driver)	//Method for searching button for Save/Sign-in
 	{
-		submit = driver.findElement(By.xpath("//button[@class='btn btn-primary submitBtn']"));
+		submit = driver.findElement(By.xpath("//*[@type=\"submit\"]"));
 		return submit;
 	}
 	
@@ -43,30 +43,33 @@ public class LoginPOM
 	
 	public static WebElement Answer1(WebDriver driver)		//Method for searching input box of first answer
 	{
-		ans1 = driver.findElement(By.id("Answer1"));
+		ans1 = driver.findElement(By.xpath("//*[@id=\"Answer1\"]"));
 		return ans1;
 	}
 	
 	public static WebElement Answer2(WebDriver driver)		//Method for searching input box of second answer
 	{
-		ans2 = driver.findElement(By.id("Answer2"));
+		ans2 = driver.findElement(By.xpath("//*[@id=\"Answer2\"]"));
 		return ans2;
 	}
 	public static WebElement Question1(WebDriver driver)	//Method for searching first Question 
 	{
-		question1 = driver.findElement(By.xpath("//h3[normalize-space()='What is your favorite pet?' or normalize-space()='Your left eye power?' or //h3[normalize-space()='Which vegetable you hate the most?']]"));
+		question1 = driver.findElement(By.xpath("/html/body/div[1]/form/div[2]/div/h3[1]"));
+		//span[@id='lblQuestion1']
+		
 		return question1;
 	}
 	
 	public static WebElement Question2(WebDriver driver)	//Method for searching second Question
 	{
-		question2 = driver.findElement(By.xpath("//h3[normalize-space()='What is your favorite pet?' or normalize-space()='Your left eye power?' or //h3[normalize-space()='Which vegetable you hate the most?']]"));
+		question2 = driver.findElement(By.xpath("/html/body/div[1]/form/div[2]/div/h3[2]"));
+		//span[@id='lblQuestion2']
 		return question2;
 	}
 	
 	public static WebElement SubmitAnswer(WebDriver driver)	//Method for searching button to submit answers
 	{
-		validate = driver.findElement(By.id("validateButton"));
+		validate = driver.findElement(By.xpath("//*[@id=\"validateButton\"]"));
 		return validate;
 	}
 	

@@ -196,7 +196,7 @@ public class EntityLocator
 	}
 	public static WebElement ClickDashboard(WebDriver driver)		//Method for closing Message Popup
 	{
-		Secreterial = driver.findElement(By.xpath("(//*[@id='lefthomemenu']/a/span)[2]"));
+		Secreterial = driver.findElement(By.xpath("//*[@id='lefthomemenu']/span/span[1]"));
 		return Secreterial;                 
 	}
 	public static WebElement InValidDate(WebDriver driver)		//Method for closing Message Popup

@@ -1,6 +1,7 @@
 package CompnaySecretory;
 
 import java.io.FileInputStream;
+import java.util.List;
 
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -26,11 +27,19 @@ public class ConfigurationMethod
 	public static void ClickConfigurationTab(WebDriver driver,ExtentTest test) throws InterruptedException
 			{
 				
-			
-				if(ConfigurationLocator.ClickConfiguration(driver).isEnabled())
+	    	WebDriverWait wait=new WebDriverWait(driver,20);		    
+					    //Meeting Numbering pattern
+	    	
+	    	Thread.sleep(2000);
+	        Locator.selectImg(driver).click();
+	//        Thread.sleep(2000);
+	//        Locator.ClickMaster(driver).click();
+	        
+		
+				if(Locator.ClickConfiguration(driver).isEnabled())
 				{
 					Thread.sleep(2000);
-					ConfigurationLocator.ClickConfiguration(driver).click();
+					Locator.ClickConfiguration(driver).click();
 					test.log(LogStatus.PASS ,"Configuration  tab is clickable");
 				}
 			   else
@@ -43,13 +52,29 @@ public class ConfigurationMethod
 			
 	public static void ClickConfigurationDropdown(WebDriver driver,ExtentTest test) throws InterruptedException
 			{
-	             	Thread.sleep(2000);
-		            ConfigurationLocator.ClickConfiguration(driver).click();
+		
+		
+	    
+				  //Add Button Working or not
+		      WebDriverWait wait=new WebDriverWait(driver,20);		    
+	
+		       Thread.sleep(2000);
+		       Locator.selectImg(driver).click();
+		
+		       Thread.sleep(2000);
+		       Locator.ClickConfiguration(driver).click();
+		       
+//		       Thread.sleep(2000);
+//		       Locator.ClickEntity1(driver).click();
+//		       Thread.sleep(2000);
+//		       selectOptionFromDropDown_bs( Locator.SelectEntity1(driver), "Financial Year Configuration");
+//	             	Thread.sleep(2000);
+//		            ConfigurationLocator.ClickConfiguration(driver).click();
 			
-				if(ConfigurationLocator.ClickConfigurationDropdown(driver).isEnabled())
+				if(Locator.ClickEntity1(driver).isEnabled())
 				{
 					Thread.sleep(2000);
-					ConfigurationLocator.ClickConfigurationDropdown(driver).click();
+					Locator.ClickEntity1(driver).click();
 					
 					test.log(LogStatus.PASS ,"Configuration  Dropdown is clickable");
 				}
@@ -65,23 +90,31 @@ public class ConfigurationMethod
 	
 	public static void SelectLetterHeadConfiguration(WebDriver driver,ExtentTest test) throws InterruptedException
 	{
-         	Thread.sleep(2000);
-            ConfigurationLocator.ClickConfiguration(driver).click();
-            Thread.sleep(2000);
-			ConfigurationLocator.ClickConfigurationDropdown(driver).click();
-            
+		
+		
+	      WebDriverWait wait=new WebDriverWait(driver,20);		    
+	  	
+	       Thread.sleep(2000);
+	       Locator.selectImg(driver).click();
 	
-		if(ConfigurationLocator.SelectConfigurationDropdown(driver).isEnabled())
-		{
-			Thread.sleep(2000);
-			ConfigurationLocator.SelectConfigurationDropdown(driver).click();
-			
-			test.log(LogStatus.PASS ,"Letter head Configuration option selected");
-		}
-	   else
-		{
-		    	 test.log(LogStatus.FAIL, "Letter head Configuration option not selected");
-	    } 
+	       Thread.sleep(2000);
+	       Locator.ClickConfiguration(driver).click();
+	       
+	       try {
+	       Thread.sleep(2000);
+	       Locator.ClickEntity1(driver).click();
+	       Thread.sleep(2000);
+	       selectOptionFromDropDown_bs( Locator.SelectEntity1(driver), "Letter Head Configuration");
+            	Thread.sleep(2000);
+	            ConfigurationLocator.ClickConfiguration(driver).click();
+	            test.log(LogStatus.PASS ,"Letter head Configuration option selected");
+	       }
+	       catch(Exception e)
+	       {
+	    	   test.log(LogStatus.FAIL, "Letter head Configuration option not selected");
+	       }
+       
+           
 		Thread.sleep(2000);
 	     EntityLocator.ClickDashboard(driver).click();
 	}
@@ -89,14 +122,20 @@ public class ConfigurationMethod
 	{
          	 
 		
-		    Thread.sleep(2000);
-            ConfigurationLocator.ClickConfiguration(driver).click();
-	        
-            Thread.sleep(2000);
-			ConfigurationLocator.ClickConfigurationDropdown(driver).click();
-			
-			Thread.sleep(2000);
-			ConfigurationLocator.SelectConfigurationDropdown(driver).click();
+		 WebDriverWait wait=new WebDriverWait(driver,20);		    
+		  	
+	       Thread.sleep(2000);
+	       Locator.selectImg(driver).click();
+	
+	       Thread.sleep(2000);
+	       Locator.ClickConfiguration(driver).click();
+	       
+	       
+	       Thread.sleep(2000);
+	       Locator.ClickEntity1(driver).click();
+	       Thread.sleep(2000);
+	       selectOptionFromDropDown_bs( Locator.SelectEntity1(driver), "Letter Head Configuration");
+          	
 			
 			Thread.sleep(2000);
 			ConfigurationLocator.ClickNewBtn(driver).click();
@@ -104,7 +143,7 @@ public class ConfigurationMethod
 			Thread.sleep(2000);
 			ConfigurationLocator.ClickCheckBox(driver).click();
 			
-			driver.switchTo().frame(ConfigurationLocator.ClickiFrame(driver));
+			//driver.switchTo().frame(ConfigurationLocator.ClickiFrame(driver));
 
 			
 			Thread.sleep(2000);
@@ -112,17 +151,17 @@ public class ConfigurationMethod
 			Thread.sleep(2000);
 			ConfigurationLocator.ClickTextBox(driver).sendKeys("Test");
 			
-			driver.switchTo().parentFrame();
-			
-			driver.switchTo().frame(ConfigurationLocator.ClickiFrame1(driver));
+//			driver.switchTo().parentFrame();
+//			
+//			driver.switchTo().frame(ConfigurationLocator.ClickiFrame1(driver));
 			
 	
 			Thread.sleep(2000);
-			ConfigurationLocator.ClickTextBox(driver).clear();
+			ConfigurationLocator.ClickTextBox1(driver).clear();
 			Thread.sleep(2000);
-			ConfigurationLocator.ClickTextBox(driver).sendKeys("Test");
+			ConfigurationLocator.ClickTextBox1(driver).sendKeys("Test");
 			
-			driver.switchTo().parentFrame();
+//			driver.switchTo().parentFrame();
 			Thread.sleep(2000);
 			ConfigurationLocator.ClickSaveBtn(driver).click();
 			
@@ -130,7 +169,7 @@ public class ConfigurationMethod
 			Thread.sleep(2000);
 			String msg=ConfigurationLocator.ClickValidationMsg(driver).getText();
 			
-			if(msg.equalsIgnoreCase(msg))
+			if(msg.equalsIgnoreCase("Record Updated Successfully"))
 			{
 				
 				test.log(LogStatus.PASS ,"Message displayd="+msg);
@@ -139,6 +178,9 @@ public class ConfigurationMethod
 			{
 			   test.log(LogStatus.FAIL ,"Message displayd="+msg);
 		    }  
+			
+			Thread.sleep(2000);
+			ConfigurationLocator.ClickCloseBtn(driver).click();
 			Thread.sleep(2000);
 		     EntityLocator.ClickDashboard(driver).click();
 		
@@ -148,17 +190,24 @@ public class ConfigurationMethod
 	{
          	 
 		
-		    Thread.sleep(2000);
-            ConfigurationLocator.ClickConfiguration(driver).click();
-	        
-            Thread.sleep(2000);
-			ConfigurationLocator.ClickConfigurationDropdown(driver).click();
-			
-			Thread.sleep(2000);
-			ConfigurationLocator.SelectConfigurationDropdown(driver).click();
+		 WebDriverWait wait=new WebDriverWait(driver,20);		    
+		  	
+	       Thread.sleep(2000);
+	       Locator.selectImg(driver).click();
+	
+	       Thread.sleep(2000);
+	       Locator.ClickConfiguration(driver).click();
+	       
+	       
+	       Thread.sleep(2000);
+	       Locator.ClickEntity1(driver).click();
+	       Thread.sleep(2000);
+	       selectOptionFromDropDown_bs( Locator.SelectEntity1(driver), "Letter Head Configuration");
+        	
 			
 			Thread.sleep(2000);
 			ConfigurationLocator.ClickNewBtn(driver).click();
+			
 			
 			Thread.sleep(2000);
 	         ConfigurationLocator.ClickSaveBtn(driver).click();
@@ -177,6 +226,8 @@ public class ConfigurationMethod
 			   test.log(LogStatus.PASS ,"Message displayd="+msg);
 		    }  
 			Thread.sleep(2000);
+			ConfigurationLocator.ClickCloseBtn(driver).click();
+			Thread.sleep(2000);
 		     EntityLocator.ClickDashboard(driver).click();
 	}
 	
@@ -184,14 +235,20 @@ public class ConfigurationMethod
 	{
          	 
 		
-		    Thread.sleep(2000);
-            ConfigurationLocator.ClickConfiguration(driver).click();
-	        
-            Thread.sleep(2000);
-			ConfigurationLocator.ClickConfigurationDropdown(driver).click();
-			
-			Thread.sleep(2000);
-			ConfigurationLocator.SelectConfigurationDropdown(driver).click();
+		 WebDriverWait wait=new WebDriverWait(driver,20);		    
+		  	
+	       Thread.sleep(2000);
+	       Locator.selectImg(driver).click();
+	
+	       Thread.sleep(2000);
+	       Locator.ClickConfiguration(driver).click();
+	       
+	       
+	       Thread.sleep(2000);
+	       Locator.ClickEntity1(driver).click();
+	       Thread.sleep(2000);
+	       selectOptionFromDropDown_bs( Locator.SelectEntity1(driver), "Letter Head Configuration");
+      	
 			Thread.sleep(2000);
 			if(ConfigurationLocator.ClickEditIcon(driver).isEnabled())
 			{
@@ -204,8 +261,10 @@ public class ConfigurationMethod
 			    	 test.log(LogStatus.FAIL, "Edit Icon is not clickable");
 		    } 
 			
+//			Thread.sleep(2000);
+//			ConfigurationLocator.ClickCloseIcon(driver).click();
 			Thread.sleep(2000);
-			ConfigurationLocator.ClickCloseIcon(driver).click();
+			ConfigurationLocator.ClickCloseBtn(driver).click();
 			Thread.sleep(2000);
 		     EntityLocator.ClickDashboard(driver).click();
 		}
@@ -213,23 +272,26 @@ public class ConfigurationMethod
 	public static void UpdateLetterheadconfiguration(WebDriver driver,ExtentTest test) throws InterruptedException
 	{
          	 
-		
-		    Thread.sleep(2000);
-            ConfigurationLocator.ClickConfiguration(driver).click();
-	        
-            Thread.sleep(2000);
-			ConfigurationLocator.ClickConfigurationDropdown(driver).click();
-			
-			Thread.sleep(2000);
-			ConfigurationLocator.SelectConfigurationDropdown(driver).click();
-			
-			Thread.sleep(2000);
-			ConfigurationLocator.ClickNewBtn(driver).click();
+		 WebDriverWait wait=new WebDriverWait(driver,20);		    
+		  	
+	       Thread.sleep(2000);
+	       Locator.selectImg(driver).click();
+	
+	       Thread.sleep(2000);
+	       Locator.ClickConfiguration(driver).click();
+	       
+	       
+	       Thread.sleep(2000);
+	       Locator.ClickEntity1(driver).click();
+	       Thread.sleep(2000);
+	       selectOptionFromDropDown_bs( Locator.SelectEntity1(driver), "Letter Head Configuration");
+	       Thread.sleep(2000);
+			ConfigurationLocator.ClickEditIcon(driver).click();
 			
 			Thread.sleep(2000);
 			ConfigurationLocator.ClickCheckBox(driver).click();
 			
-			driver.switchTo().frame(ConfigurationLocator.ClickiFrame(driver));
+			//driver.switchTo().frame(ConfigurationLocator.ClickiFrame(driver));
 
 			
 			Thread.sleep(2000);
@@ -237,9 +299,9 @@ public class ConfigurationMethod
 			Thread.sleep(2000);
 			ConfigurationLocator.ClickTextBox(driver).sendKeys("Test");
 			
-			driver.switchTo().parentFrame();
-			
-			driver.switchTo().frame(ConfigurationLocator.ClickiFrame1(driver));
+//			driver.switchTo().parentFrame();
+//			
+//			driver.switchTo().frame(ConfigurationLocator.ClickiFrame1(driver));
 			
 	
 			Thread.sleep(2000);
@@ -247,7 +309,7 @@ public class ConfigurationMethod
 			Thread.sleep(2000);
 			ConfigurationLocator.ClickTextBox(driver).sendKeys("Test");
 			
-			driver.switchTo().parentFrame();
+			//driver.switchTo().parentFrame();
 			Thread.sleep(2000);
 			ConfigurationLocator.ClickSaveBtn(driver).click();
 			
@@ -264,6 +326,9 @@ public class ConfigurationMethod
 			{
 			   test.log(LogStatus.FAIL ,"Message displayd="+msg);
 		    }  
+			
+			Thread.sleep(2000);
+			ConfigurationLocator.ClickCloseBtn(driver).click();
 			Thread.sleep(2000);
 		     EntityLocator.ClickDashboard(driver).click();
 	}
@@ -271,20 +336,25 @@ public class ConfigurationMethod
 
 	public static void SelectFontConfiguration(WebDriver driver,ExtentTest test) throws InterruptedException
 	{
-         	Thread.sleep(2000);
-            ConfigurationLocator.ClickConfiguration(driver).click();
-            Thread.sleep(2000);
-			ConfigurationLocator.ClickConfigurationDropdown(driver).click();
-            
-			Thread.sleep(2000);
-		if(ConfigurationLocator.ClickFontConfiguration(driver).isEnabled())
-		{
-			Thread.sleep(2000);
-			ConfigurationLocator.ClickFontConfiguration(driver).click();
+		WebDriverWait wait=new WebDriverWait(driver,20);		    
+	  	
+	       Thread.sleep(2000);
+	       Locator.selectImg(driver).click();
+	
+	       Thread.sleep(2000);
+	       Locator.ClickConfiguration(driver).click();
+	       
+	      try 
+	      { 
+	       Thread.sleep(2000);
+	       Locator.ClickEntity1(driver).click();
+	       Thread.sleep(2000);
+	       selectOptionFromDropDown_bs( Locator.SelectEntity1(driver), "Font Configuration");
+       
 			
 			test.log(LogStatus.PASS ,"Font Configuration option selected");
-		}
-	   else
+			}
+		catch(Exception e)
 		{
 		    	 test.log(LogStatus.FAIL, "Font Configuration option not selected");
 	    } 
@@ -505,6 +575,15 @@ public class ConfigurationMethod
 		     EntityLocator.ClickDashboard(driver).click();
 			
 	}
+	 public static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {
+			
+			for(WebElement option:options) {
+				if(option.getText().equals(value)) {
+					option.click();
+					break;
+				}
+			}
+		 }
 			
 
 }

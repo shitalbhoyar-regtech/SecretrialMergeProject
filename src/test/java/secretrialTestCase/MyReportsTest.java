@@ -36,7 +36,7 @@ public class MyReportsTest {
 	public static XSSFSheet ReadExcel() throws IOException
 	{
 		
-		fis = new FileInputStream("D:\\AvaSec26\\Avsec26July2023\\Secretarial-Project-26JULY23\\TestData\\Scretrial.xlsx");
+		fis = new FileInputStream("D:\\dotNetSecreterial\\Secretarial-Project-26JULY23\\TestData\\Scretrial.xlsx");
 		
 		workbook = new XSSFWorkbook(fis);
 		sheet = workbook.getSheetAt(0);					//Retrieving second sheet of Workbook
@@ -48,7 +48,7 @@ public class MyReportsTest {
 	void setBrowser() throws Exception
 	{
 		
-		extent = new com.relevantcodes.extentreports.ExtentReports("D:\\AvaSec26\\Avsec26July2023\\Secretarial-Project-26JULY23\\Report\\Secretrial.html",true);
+		extent = new com.relevantcodes.extentreports.ExtentReports("D:\\dotNetSecreterial\\Secretarial-Project-26JULY23\\Report\\Secretrial.html",true);
 		test = extent.startTest("Verify OpenBrowser");
 		
 		test.log(LogStatus.PASS, "Test Passed.");
@@ -80,7 +80,7 @@ public class MyReportsTest {
 		
 	}
 	
-//	@Test(priority = 1) 
+	@Test(priority = 1) 
 	void ReportsClick() throws InterruptedException, IOException
 	{
 		test = extent.startTest("To check whether the 'My Report' tab is clickable or not  ");
@@ -91,7 +91,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 2) 
+	@Test(priority = 2) 
 	void ComplianceStatusReport() throws InterruptedException, IOException
 	{
 		test = extent.startTest("To check whether the 'My Reports > Compliance Status Report' tab is clickable or not");
@@ -102,7 +102,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 3) 
+	@Test(priority = 3) 
 	void ComplianceStatusReportTypeAll() throws InterruptedException, IOException
 	{
 		test = extent.startTest("To check whether the Type-All dropdown is working or not");
@@ -113,7 +113,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 4) 
+	@Test(priority = 4) 
 	void CompanyAllClickCS() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports > Compliance Status Report':- To check whether the compliance 'Company - All' dropdown is Clickable or not");
@@ -125,7 +125,7 @@ public class MyReportsTest {
 	}
 	
 
-//	@Test(priority = 5) 
+	@Test(priority = 5) 
 	void CompanyAllFilterCS() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports > Compliance Status Report':- Verify that the user can able to select a specific company name option from 'Company - All' dropdown");
@@ -136,7 +136,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 6) 
+	@Test(priority = 6) 
 	void StatusAll() throws InterruptedException, IOException
 	{
 		test = extent.startTest("To check whether the compliance 'Status-All' dropdown is working or not");
@@ -147,7 +147,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 7) 
+	@Test(priority = 7) 
 	void StatusAllFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Verify that the user can able to select a specific compliance status option from 'Status-All' dropdown");
@@ -158,7 +158,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 8) 
+	//@Test(priority = 8) //Test Case not available
 	void ClearFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Verify that the 'Clear Filter' option clears all applied filters");
@@ -169,7 +169,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 9) 
+	@Test(priority = 9) 
 	void ExportCSR() throws InterruptedException, IOException
 	{
 		test = extent.startTest("To check whether the 'Export to Excel' functionality is working or not");
@@ -180,7 +180,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 10) 
+	@Test(priority = 10) 
 	void AttendanceReport() throws InterruptedException, IOException
 	{
 		test = extent.startTest("To check whether the 'My Reports > Attendance Report' tab is clickable or not");
@@ -191,7 +191,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 11) 
+	@Test(priority = 11) 
 	void FinancialYearAllClick() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'My Reports > Attendance Report':- To check whether the compliance 'Financial Year-All' dropdown is Clickable or not");
@@ -202,7 +202,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 12) 
+@Test(priority = 12) 
 	void FinancialYearAllFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'My Reports > Attendance Report':- Verify that the user can able to select a specific financial year option from 'Financial year-All' dropdown");
@@ -213,7 +213,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 13) 
+	@Test(priority = 13) 
 	void CompanyAllClick() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports > Attendance Report':- To check whether the compliance 'Company - All' dropdown is Clickable or not");
@@ -225,7 +225,7 @@ public class MyReportsTest {
 	}
 	
 
-//	@Test(priority = 14) 
+	@Test(priority = 14) //not run
 	void CompanyAllFilter() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports > Attendance Report':- Verify that the user can able to select a specific company name option from 'Company - All' dropdown");
@@ -236,7 +236,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 15) 
+	@Test(priority = 15) 
 	void ExportAR() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports > Attendance Report':- To check whether the 'Export to Excel' functionality is working or not");
@@ -247,7 +247,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 16) 
+	@Test(priority = 16) //not run
 	void AllFilters() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports > Attendance Report':- Verify whether the 'financial Year - All' and 'Company - All' dropdowns are working together.");
@@ -258,7 +258,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 17) 
+	@Test(priority = 17) 
 	void ViewAR() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports > Attendance Report':- Verify that the 'View' functionality is working or not");
@@ -269,7 +269,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 18) 
+	@Test(priority = 18) 
 	void ViewARDownload() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports > Attendance Report':-To check whether the 'Download' functionality is working or not which is present under 'View' option");
@@ -280,7 +280,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 19) 
+	@Test(priority = 19) 
 	void ARDownload() throws InterruptedException, IOException
 	{
 		test = extent.startTest("My Reports > Attendance Report':-To check whether the 'Download' functionality is working or not which is present under Action column");
@@ -291,7 +291,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 20) 
+	@Test(priority = 20) 
 	void AuditorDetails() throws InterruptedException, IOException
 	{
 		test = extent.startTest("To check whether the 'My Reports > Auditor Details' tab is clickable or not");
@@ -302,7 +302,7 @@ public class MyReportsTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 21) 
+	@Test(priority = 21) 
 	void CompanyAllClickAD() throws InterruptedException, IOException
 	{
 		test = extent.startTest("'My Reports > Auditor Details' :- To check whether the compliance 'Company - All' dropdown is Clickable or not");
