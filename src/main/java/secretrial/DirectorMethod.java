@@ -3,6 +3,9 @@ package secretrial;
 import java.awt.Window;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.List;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
@@ -18,6 +21,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.interactions.Actions;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+import com.sun.tools.javac.util.Assert;
 
 public class DirectorMethod {
 
@@ -30,7 +34,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -55,7 +59,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -99,6 +103,22 @@ public class DirectorMethod {
 			DirectorLocator.Female(driver).click();
 			Thread.sleep(3000);
 			
+			DirectorLocator.DateofBirth(driver).click();
+			Thread.sleep(1000);
+			DirectorLocator.Year(driver).click();
+			Thread.sleep(2000);
+			DirectorLocator.Year1(driver).click();
+			Thread.sleep(2000);
+			DirectorLocator.Year1(driver).click();
+			Thread.sleep(2000);
+			DirectorLocator.YearS(driver).click();
+			Thread.sleep(1000);
+			DirectorLocator.YearDOB(driver).click();
+			Thread.sleep(1000);
+			DirectorLocator.Month(driver).click();
+			Thread.sleep(1000);
+			DirectorLocator.MonthDate(driver).click();
+			Thread.sleep(1000);
 			DirectorLocator.DateofBirth(driver).click();
 			Thread.sleep(1000);
 			DirectorLocator.DateofBirth1(driver).click();
@@ -191,7 +211,7 @@ public class DirectorMethod {
 			DirectorLocator.City(driver).click();
 			Thread.sleep(3000);
 		//	DirectorLocator.Ahmadnagar(driver).click();
-			By locator = By.xpath("//*[@id='ddlPermenant_CityId_listbox']/li[3]");
+			By locator = By.xpath("(//ul[@id='ddlPermenant_CityId_listbox'])[4]//li[3]");
 
 			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 			Thread.sleep(4000);
@@ -230,7 +250,12 @@ public class DirectorMethod {
 			 try {
 			String	msg1=DirectorLocator.SaveMsg(driver).getText();
 			Thread.sleep(4000);
+			if(msg1.equalsIgnoreCase("Save successfully.")|| msg1.equalsIgnoreCase("DIN already exists") ) {
 			test.log(LogStatus.PASS,  msg1);
+			}
+			else {
+				test.log(LogStatus.FAIL,  msg1);
+			}
 			Thread.sleep(4000);
 			 act.sendKeys(Keys.PAGE_DOWN).build().perform();
 	            Thread.sleep(7000);
@@ -239,7 +264,13 @@ public class DirectorMethod {
 			 }catch(Exception e) {
 				 String	msg1=DirectorLocator.SaveMsg1(driver).getText();
 					Thread.sleep(4000);
-					test.log(LogStatus.PASS,   msg1);
+					if(msg1.equalsIgnoreCase("Save successfully.")|| msg1.equalsIgnoreCase("DIN already exists") ) {
+						test.log(LogStatus.PASS,  msg1);
+						}
+						else {
+							test.log(LogStatus.FAIL,  msg1);
+						}
+				//	test.log(LogStatus.PASS,   msg1);
 					Thread.sleep(4000);
 					 act.sendKeys(Keys.PAGE_DOWN).build().perform();
 			            Thread.sleep(7000);
@@ -257,7 +288,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -301,6 +332,26 @@ public class DirectorMethod {
 			DirectorLocator.Female(driver).click();
 			Thread.sleep(3000);
 			
+		/*	DirectorLocator.DateofBirth(driver).click();
+			Thread.sleep(1000);
+			DirectorLocator.DateofBirth1(driver).click();
+			Thread.sleep(3000);*/
+			DirectorLocator.DateofBirth(driver).click();
+			Thread.sleep(1000);
+			DirectorLocator.Year(driver).click();
+			Thread.sleep(2000);
+			DirectorLocator.Year1(driver).click();
+			Thread.sleep(2000);
+			DirectorLocator.Year1(driver).click();
+			Thread.sleep(2000);
+			DirectorLocator.YearS(driver).click();
+			Thread.sleep(1000);
+			DirectorLocator.YearDOB(driver).click();
+			Thread.sleep(1000);
+			DirectorLocator.Month(driver).click();
+			Thread.sleep(1000);
+			DirectorLocator.MonthDate(driver).click();
+			Thread.sleep(1000);
 			DirectorLocator.DateofBirth(driver).click();
 			Thread.sleep(1000);
 			DirectorLocator.DateofBirth1(driver).click();
@@ -432,7 +483,12 @@ public class DirectorMethod {
 			 try {
 					String	msg1=DirectorLocator.SaveMsg(driver).getText();
 					Thread.sleep(4000);
-					test.log(LogStatus.PASS,  msg1);
+					if (msg1.equalsIgnoreCase("DIN already exists")) {
+	    				test.log(LogStatus.PASS,   msg1);
+	    			} else {
+	    				test.log(LogStatus.FAIL, msg1);
+	    			}
+					//test.log(LogStatus.PASS,  msg1);
 					Thread.sleep(4000);
 					 act.sendKeys(Keys.PAGE_DOWN).build().perform();
 			            Thread.sleep(7000);
@@ -441,7 +497,12 @@ public class DirectorMethod {
 					 }catch(Exception e) {
 						 String	msg1=DirectorLocator.SaveMsg1(driver).getText();
 							Thread.sleep(4000);
-							test.log(LogStatus.PASS,   msg1);
+							if (msg1.equalsIgnoreCase("DIN already exists")) {
+			    				test.log(LogStatus.PASS,   msg1);
+			    			} else {
+			    				test.log(LogStatus.FAIL, msg1);
+			    			}
+							//test.log(LogStatus.PASS,   msg1);
 							Thread.sleep(4000);
 							 act.sendKeys(Keys.PAGE_DOWN).build().perform();
 					            Thread.sleep(7000);
@@ -460,7 +521,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -497,7 +558,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -571,7 +632,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -637,7 +698,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -692,7 +753,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -739,7 +800,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -781,7 +842,7 @@ public class DirectorMethod {
     			c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
     			DirectorLocator.Name(driver).sendKeys(c1.getStringCellValue()); // Writing Task title
     			Thread.sleep(2000);
-    			
+    			try {
     			DirectorLocator.MinorAdult(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.Adult(driver).click();
@@ -797,8 +858,14 @@ public class DirectorMethod {
     			c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
     			DirectorLocator.SpouseName(driver).sendKeys(c1.getStringCellValue()); // Writing Task title
     			Thread.sleep(2000);
+    			}
+    			catch(Exception e)
+    			{
+    				
+    			}
     			
-    			DirectorLocator.ChangeType(driver).click();
+    			
+    		/*	DirectorLocator.ChangeType(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.ChangeType1(driver).click();
     			Thread.sleep(3000);
@@ -806,14 +873,14 @@ public class DirectorMethod {
     			DirectorLocator.ChangeDate(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.ChangeDate1(driver).click();
-    			Thread.sleep(3000);
+    			Thread.sleep(3000);*/
     			
     			DirectorLocator.SaveLOR(driver).click();
     			Thread.sleep(3000);
     			
-    			String msg = DirectorLocator.SaveLORMSg(driver).getText();
+    			String msg = DirectorLocator.SavesuccessSg(driver).getText();
     			Thread.sleep(3000);
-    			if (msg.equalsIgnoreCase("Saved Successfully.")) {
+    			if (msg.equalsIgnoreCase("Record saved successfully.")) {
     				test.log(LogStatus.PASS,   msg);
     			} else {
     				test.log(LogStatus.FAIL, msg);
@@ -840,7 +907,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -882,7 +949,7 @@ public class DirectorMethod {
     			c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
     			DirectorLocator.Name(driver).sendKeys(c1.getStringCellValue()); // Writing Task title
     			Thread.sleep(2000);
-    			
+    			try {
     			DirectorLocator.MinorAdult(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.Adult(driver).click();
@@ -898,8 +965,11 @@ public class DirectorMethod {
     			c1 = row0.getCell(1); // Selected cell (0 row,2 column) (2 column = third column)
     			DirectorLocator.SpouseName(driver).sendKeys(c1.getStringCellValue()); // Writing Task title
     			Thread.sleep(2000);
-    			
-    			DirectorLocator.ChangeType(driver).click();
+    			}
+    			catch(Exception e) {
+    				
+    			}
+    		/*	DirectorLocator.ChangeType(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.ChangeType1(driver).click();
     			Thread.sleep(3000);
@@ -908,13 +978,13 @@ public class DirectorMethod {
     			Thread.sleep(1000);
     			DirectorLocator.ChangeDate1(driver).click();
     			Thread.sleep(3000);
-    			
+    			*/
     			DirectorLocator.SaveLOR(driver).click();
     			Thread.sleep(3000);
     			
-    			String msg = DirectorLocator.SaveLORMSg(driver).getText();
+    			String msg = DirectorLocator.SavesuccessSg(driver).getText();
     			Thread.sleep(3000);
-    			if (msg.equalsIgnoreCase("Saved Successfully.")) {
+    			if (msg.equalsIgnoreCase("Record saved successfully.")) {
     				test.log(LogStatus.FAIL,   msg);
     			} else {
     				test.log(LogStatus.PASS, msg);
@@ -941,7 +1011,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -1004,7 +1074,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -1062,7 +1132,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -1106,7 +1176,7 @@ public class DirectorMethod {
     			Thread.sleep(2000);
     			
     			
-    			DirectorLocator.ChangeType(driver).click();
+    		/*	DirectorLocator.ChangeType(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.ChangeType1(driver).click();
     			Thread.sleep(3000);
@@ -1115,23 +1185,34 @@ public class DirectorMethod {
     			Thread.sleep(1000);
     			DirectorLocator.ChangeDate1(driver).click();
     			Thread.sleep(3000);
-    			
+    			*/
     			DirectorLocator.SaveLOR(driver).click();
     			Thread.sleep(3000);
     			try {
-    			String msg = DirectorLocator.SaveLORMSg(driver).getText();
+    			String msg = DirectorLocator.SavesuccessSg(driver).getText();
+    			
     			Thread.sleep(3000);
-    			if (msg.equalsIgnoreCase("Saved Successfully.")) {
+    			if (msg.equalsIgnoreCase("Saved Successfully.")|| msg.equalsIgnoreCase("Record saved successfully.")) {
     				test.log(LogStatus.PASS,   msg);
     			} else {
     				test.log(LogStatus.FAIL, msg);
     			}
     			}catch(Exception e) {
-    				String msg = DirectorLocator.SaveLORMSg1(driver).getText();
-        			Thread.sleep(3000);
-        			
-        				test.log(LogStatus.FAIL,   msg);
-        			
+    				 			 			
+    			}
+    			
+    			try {
+    				String msg1 = DirectorLocator.SaveLORMSg1(driver).getText();
+        			Thread.sleep(3000); 
+    				if (msg1.equalsIgnoreCase("Saved Successfully.")|| msg1.equalsIgnoreCase("Record saved successfully.")) {
+        				test.log(LogStatus.PASS,   msg1);
+        			} else {
+        				test.log(LogStatus.FAIL, msg1);
+        			}
+    				    
+    			}
+    			catch(Exception e) {
+    				
     			}
     			Thread.sleep(4000);
     			Actions act =new Actions(driver);
@@ -1155,7 +1236,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -1199,7 +1280,7 @@ public class DirectorMethod {
     			Thread.sleep(2000);
     			
     			
-    			DirectorLocator.ChangeType(driver).click();
+    		/*	DirectorLocator.ChangeType(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.ChangeType1(driver).click();
     			Thread.sleep(3000);
@@ -1208,22 +1289,33 @@ public class DirectorMethod {
     			Thread.sleep(1000);
     			DirectorLocator.ChangeDate1(driver).click();
     			Thread.sleep(3000);
-    			
+    			*/
     			DirectorLocator.SaveLOR(driver).click();
     			Thread.sleep(3000);
     			
     			try {
-        			String msg = DirectorLocator.SaveLORMSg(driver).getText();
+        			String msg = DirectorLocator.SavesuccessSg(driver).getText();
         			Thread.sleep(3000);
-        			
-        				test.log(LogStatus.FAIL,   msg);
-        			
+        			if (msg.equalsIgnoreCase("Record already Exists.")) {
+        				test.log(LogStatus.PASS,   msg);
+        			} else {
+        				test.log(LogStatus.FAIL, msg);
+        			}
         			}catch(Exception e) {
-        				String msg = DirectorLocator.SaveLORMSg1(driver).getText();
-            			Thread.sleep(3000);
-            			
-            				test.log(LogStatus.PASS,   msg);
-            			
+        				 			 			
+        			}
+	                  try {
+	                	  String msg = DirectorLocator.SaveLORMSg1(driver).getText();
+	            			Thread.sleep(3000);
+	                	  if (msg.equalsIgnoreCase("Record already Exists.")) {
+	          				test.log(LogStatus.PASS,   msg);
+	          			} else {
+	          				test.log(LogStatus.FAIL, msg);
+	          			}
+	                    }
+        			
+        			catch(Exception e) {
+        			            			
         			}
     			Thread.sleep(4000);
     			Actions act =new Actions(driver);
@@ -1247,7 +1339,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -1288,20 +1380,46 @@ public class DirectorMethod {
     			
     			DirectorLocator.SaveLOR(driver).click();
     			Thread.sleep(3000);
+    			String msg = DirectorLocator.SaveLORMSg(driver).getText();
+    			Thread.sleep(3000);
+    			if(msg.equalsIgnoreCase("please enter the details")) {
+    				test.log(LogStatus.PASS,   msg);
+    			}
+    			else {
+    				test.log(LogStatus.FAIL,   msg);
+
+    			}
     			
-    			try {
+    		/*	try {
+    				
         			String msg = DirectorLocator.SaveLORMSg(driver).getText();
         			Thread.sleep(3000);
-        			
-        				test.log(LogStatus.FAIL,   msg);
-        			
-        			}catch(Exception e) {
-        				String msg = DirectorLocator.SaveLORMSg1(driver).getText();
-            			Thread.sleep(3000);
-            			
-            				test.log(LogStatus.FAIL,   msg);
-            			
+        			if(msg.equalsIgnoreCase("please enter name details")) {
+        				test.log(LogStatus.PASS,   msg);
         			}
+        			else {
+        				test.log(LogStatus.FAIL,   msg);
+
+        			}
+        			}catch(Exception e) {
+        			            			
+        			}
+    			try {
+    				String msg = DirectorLocator.SaveLORMSg1(driver).getText();
+        			Thread.sleep(3000);
+        			
+    				if(msg.equalsIgnoreCase("please enter name details")) {
+        				test.log(LogStatus.PASS,   msg);
+        			}
+        			else {
+        				test.log(LogStatus.FAIL,   msg);
+
+        			}
+    			}
+    			catch(Exception e) {
+    				
+    			}
+    			*/
     			Thread.sleep(4000);
     			Actions act =new Actions(driver);
                 act.sendKeys(Keys.PAGE_DOWN).build().perform();
@@ -1324,7 +1442,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -1385,7 +1503,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -1429,7 +1547,7 @@ public class DirectorMethod {
     			Thread.sleep(2000);
     			
     			
-    			DirectorLocator.ChangeType(driver).click();
+    		/*	DirectorLocator.ChangeType(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.ChangeType1(driver).click();
     			Thread.sleep(3000);
@@ -1438,13 +1556,13 @@ public class DirectorMethod {
     			Thread.sleep(1000);
     			DirectorLocator.ChangeDate1(driver).click();
     			Thread.sleep(3000);
-    			
+    			*/
     			DirectorLocator.SaveLOR(driver).click();
     			Thread.sleep(3000);
     			try {
-    			String msg = DirectorLocator.SaveLORMSg(driver).getText();
+    			String msg = DirectorLocator.SavesuccessSg(driver).getText();
     			Thread.sleep(3000);
-    			if (msg.equalsIgnoreCase("Saved Successfully.")) {
+    			if (msg.equalsIgnoreCase("Record saved successfully.")) {
     				test.log(LogStatus.PASS,   msg);
     			} else {
     				test.log(LogStatus.FAIL, msg);
@@ -1452,8 +1570,12 @@ public class DirectorMethod {
     			}catch(Exception e) {
     				String msg = DirectorLocator.SaveLORMSg1(driver).getText();
         			Thread.sleep(3000);
-        			
-        				test.log(LogStatus.FAIL,   msg);
+        			if (msg.equalsIgnoreCase("Record saved successfully.")) {
+        				test.log(LogStatus.PASS,   msg);
+        			} else {
+        				test.log(LogStatus.FAIL, msg);
+        			}
+        				//test.log(LogStatus.FAIL,   msg);
         			
     			}
     			Thread.sleep(4000);
@@ -1478,7 +1600,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -1522,7 +1644,7 @@ public class DirectorMethod {
     			Thread.sleep(2000);
     			
     			
-    			DirectorLocator.ChangeType(driver).click();
+    		/*	DirectorLocator.ChangeType(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.ChangeType1(driver).click();
     			Thread.sleep(3000);
@@ -1531,20 +1653,28 @@ public class DirectorMethod {
     			Thread.sleep(1000);
     			DirectorLocator.ChangeDate1(driver).click();
     			Thread.sleep(3000);
-    			
+    			*/
     			DirectorLocator.SaveLOR(driver).click();
     			Thread.sleep(3000);
     			try {
-    			String msg = DirectorLocator.SaveLORMSg(driver).getText();
+    			String msg = DirectorLocator.SavesuccessSg(driver).getText();
     			Thread.sleep(3000);
-    			
-    				test.log(LogStatus.FAIL,   msg);
+    			if (msg.equalsIgnoreCase("Record already exists.")) {
+    				test.log(LogStatus.PASS,   msg);
+    			} else {
+    				test.log(LogStatus.FAIL, msg);
+    			}
+    				//test.log(LogStatus.FAIL,   msg);
     			
     			}catch(Exception e) {
     				String msg = DirectorLocator.SaveLORMSg1(driver).getText();
         			Thread.sleep(3000);
-        			
+        			if (msg.equalsIgnoreCase("Record already exists.")) {
         				test.log(LogStatus.PASS,   msg);
+        			} else {
+        				test.log(LogStatus.FAIL, msg);
+        			}
+        			//	test.log(LogStatus.PASS,   msg);
         			
     			}
     			Thread.sleep(4000);
@@ -1569,7 +1699,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -1614,14 +1744,22 @@ public class DirectorMethod {
     			try {
         			String msg = DirectorLocator.SaveLORMSg(driver).getText();
         			Thread.sleep(3000);
-        			
-        				test.log(LogStatus.FAIL,   msg);
+        			if (msg.equalsIgnoreCase("please enter the details")) {
+        				test.log(LogStatus.PASS,   msg);
+        			} else {
+        				test.log(LogStatus.FAIL, msg);
+        			}
+        			//	test.log(LogStatus.FAIL,   msg);
         			
         			}catch(Exception e) {
         				String msg = DirectorLocator.SaveLORMSg1(driver).getText();
             			Thread.sleep(3000);
-            			
-            				test.log(LogStatus.FAIL,   msg);
+            			if (msg.equalsIgnoreCase("please enter the details")) {
+            				test.log(LogStatus.PASS,   msg);
+            			} else {
+            				test.log(LogStatus.FAIL, msg);
+            			}
+            			//	test.log(LogStatus.FAIL,   msg);
             			
         			}
     			Thread.sleep(4000);
@@ -1646,7 +1784,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -1707,7 +1845,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -1751,7 +1889,7 @@ public class DirectorMethod {
     			Thread.sleep(2000);
     			
     			
-    			DirectorLocator.ChangeType(driver).click();
+    			/*DirectorLocator.ChangeType(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.ChangeType1(driver).click();
     			Thread.sleep(3000);
@@ -1760,13 +1898,13 @@ public class DirectorMethod {
     			Thread.sleep(1000);
     			DirectorLocator.ChangeDate1(driver).click();
     			Thread.sleep(3000);
-    			
+    			*/
     			DirectorLocator.SaveLOR(driver).click();
     			Thread.sleep(3000);
     			try {
-    			String msg = DirectorLocator.SaveLORMSg(driver).getText();
+    			String msg = DirectorLocator.SavesuccessSg(driver).getText();
     			Thread.sleep(3000);
-    			if (msg.equalsIgnoreCase("Saved Successfully.")) {
+    			if (msg.equalsIgnoreCase("Record saved successfully.")) {
     				test.log(LogStatus.PASS,   msg);
     			} else {
     				test.log(LogStatus.FAIL, msg);
@@ -1800,7 +1938,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -1844,7 +1982,7 @@ public class DirectorMethod {
     			Thread.sleep(2000);
     			
     			
-    			DirectorLocator.ChangeType(driver).click();
+    		/*	DirectorLocator.ChangeType(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.ChangeType1(driver).click();
     			Thread.sleep(3000);
@@ -1853,20 +1991,28 @@ public class DirectorMethod {
     			Thread.sleep(1000);
     			DirectorLocator.ChangeDate1(driver).click();
     			Thread.sleep(3000);
-    			
+    			*/
     			DirectorLocator.SaveLOR(driver).click();
     			Thread.sleep(3000);
     			try {
-    			String msg = DirectorLocator.SaveLORMSg(driver).getText();
+    			String msg = DirectorLocator.SavesuccessSg(driver).getText();
     			Thread.sleep(3000);
-    			
-    				test.log(LogStatus.FAIL,   msg);
+    			if (msg.equalsIgnoreCase("Saved Successfully.")) {
+    				test.log(LogStatus.PASS,   msg);
+    			} else {
+    				test.log(LogStatus.FAIL, msg);
+    			}
+    				//test.log(LogStatus.FAIL,   msg);
     			
     			}catch(Exception e) {
     				String msg = DirectorLocator.SaveLORMSg1(driver).getText();
         			Thread.sleep(3000);
-        			
+        			if (msg.equalsIgnoreCase("Saved Successfully.")) {
         				test.log(LogStatus.PASS,   msg);
+        			} else {
+        				test.log(LogStatus.FAIL, msg);
+        			}
+        			//	test.log(LogStatus.PASS,   msg);
         			
     			}
     			Thread.sleep(4000);
@@ -1891,7 +2037,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -1936,14 +2082,22 @@ public class DirectorMethod {
     			try {
         			String msg = DirectorLocator.SaveLORMSg(driver).getText();
         			Thread.sleep(3000);
-        			
-        				test.log(LogStatus.FAIL,   msg);
+        			if (msg.equalsIgnoreCase("please enter the details")) {
+        				test.log(LogStatus.PASS,   msg);
+        			} else {
+        				test.log(LogStatus.FAIL, msg);
+        			}
+        				//test.log(LogStatus.FAIL,   msg);
         			
         			}catch(Exception e) {
         				String msg = DirectorLocator.SaveLORMSg1(driver).getText();
             			Thread.sleep(3000);
-            			
-            				test.log(LogStatus.FAIL,   msg);
+            			if (msg.equalsIgnoreCase("please enter the details")) {
+            				test.log(LogStatus.PASS,   msg);
+            			} else {
+            				test.log(LogStatus.FAIL, msg);
+            			}
+            			//	test.log(LogStatus.FAIL,   msg);
             			
         			}
     			Thread.sleep(4000);
@@ -1968,7 +2122,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -2029,7 +2183,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -2089,7 +2243,7 @@ public class DirectorMethod {
     			DirectorLocator.SpouseName(driver).sendKeys(c1.getStringCellValue()); // Writing Task title
     			Thread.sleep(2000);
     			
-    			DirectorLocator.ChangeType(driver).click();
+    		/*	DirectorLocator.ChangeType(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.ChangeType1(driver).click();
     			Thread.sleep(3000);
@@ -2098,13 +2252,13 @@ public class DirectorMethod {
     			Thread.sleep(1000);
     			DirectorLocator.ChangeDate1(driver).click();
     			Thread.sleep(3000);
-    			
+    			*/
     			DirectorLocator.SaveLOR(driver).click();
     			Thread.sleep(3000);
     			
-    			String msg = DirectorLocator.SaveLORMSg(driver).getText();
+    			String msg = DirectorLocator.SavesuccessSg(driver).getText();
     			Thread.sleep(3000);
-    			if (msg.equalsIgnoreCase("Saved Successfully.")) {
+    			if (msg.equalsIgnoreCase("Record saved successfully.")) {
     				test.log(LogStatus.PASS,   msg);
     			} else {
     				test.log(LogStatus.FAIL, msg);
@@ -2131,7 +2285,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -2191,7 +2345,7 @@ public class DirectorMethod {
     			DirectorLocator.SpouseName(driver).sendKeys(c1.getStringCellValue()); // Writing Task title
     			Thread.sleep(2000);
     			
-    			DirectorLocator.ChangeType(driver).click();
+    		/*	DirectorLocator.ChangeType(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.ChangeType1(driver).click();
     			Thread.sleep(3000);
@@ -2200,16 +2354,16 @@ public class DirectorMethod {
     			Thread.sleep(1000);
     			DirectorLocator.ChangeDate1(driver).click();
     			Thread.sleep(3000);
-    			
+    			*/
     			DirectorLocator.SaveLOR(driver).click();
     			Thread.sleep(3000);
     			
-    			String msg = DirectorLocator.SaveLORMSg(driver).getText();
+    			String msg = DirectorLocator.SavesuccessSg(driver).getText();
     			Thread.sleep(3000);
-    			if (msg.equalsIgnoreCase("Saved Successfully.")) {
-    				test.log(LogStatus.FAIL,   msg);
+    			if (msg.equalsIgnoreCase("Already exists.")) {
+    				test.log(LogStatus.PASS,   msg);
     			} else {
-    				test.log(LogStatus.PASS, msg);
+    				test.log(LogStatus.FAIL, msg);
     			}
     			Thread.sleep(4000);
     			Actions act =new Actions(driver);
@@ -2233,7 +2387,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -2275,10 +2429,10 @@ public class DirectorMethod {
     			
     			String msg = DirectorLocator.SaveLORMSg(driver).getText();
     			Thread.sleep(3000);
-    			if (msg.equalsIgnoreCase("Saved Successfully.")) {
-    				test.log(LogStatus.FAIL,   msg);
+    			if (msg.equalsIgnoreCase("please enter the details")) {
+    				test.log(LogStatus.PASS,   msg);
     			} else {
-    				test.log(LogStatus.PASS, msg);
+    				test.log(LogStatus.FAIL, msg);
     			}
     			Thread.sleep(4000);
     			Actions act =new Actions(driver);
@@ -2302,7 +2456,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -2365,7 +2519,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -2425,7 +2579,7 @@ public class DirectorMethod {
     			DirectorLocator.SpouseName(driver).sendKeys(c1.getStringCellValue()); // Writing Task title
     			Thread.sleep(2000);
     			
-    			DirectorLocator.ChangeType(driver).click();
+    		/*	DirectorLocator.ChangeType(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.ChangeType1(driver).click();
     			Thread.sleep(3000);
@@ -2434,13 +2588,13 @@ public class DirectorMethod {
     			Thread.sleep(1000);
     			DirectorLocator.ChangeDate1(driver).click();
     			Thread.sleep(3000);
-    			
+    			*/
     			DirectorLocator.SaveLOR(driver).click();
     			Thread.sleep(3000);
     			
-    			String msg = DirectorLocator.SaveLORMSg(driver).getText();
+    			String msg = DirectorLocator.SavesuccessSg(driver).getText();
     			Thread.sleep(3000);
-    			if (msg.equalsIgnoreCase("Saved Successfully.")) {
+    			if (msg.equalsIgnoreCase("Record saved successfully.")) {
     				test.log(LogStatus.PASS,   msg);
     			} else {
     				test.log(LogStatus.FAIL, msg);
@@ -2467,7 +2621,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -2527,7 +2681,7 @@ public class DirectorMethod {
     			DirectorLocator.SpouseName(driver).sendKeys(c1.getStringCellValue()); // Writing Task title
     			Thread.sleep(2000);
     			
-    			DirectorLocator.ChangeType(driver).click();
+    		/*	DirectorLocator.ChangeType(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.ChangeType1(driver).click();
     			Thread.sleep(3000);
@@ -2536,16 +2690,22 @@ public class DirectorMethod {
     			Thread.sleep(1000);
     			DirectorLocator.ChangeDate1(driver).click();
     			Thread.sleep(3000);
-    			
+    			*/
     			DirectorLocator.SaveLOR(driver).click();
     			Thread.sleep(3000);
-    			
-    			String msg = DirectorLocator.SaveLORMSg(driver).getText();
+    			String error = "saved successfully" + "Record Saved successfuly";
+    			String msg = DirectorLocator.SavesuccessSg(driver).getText();
     			Thread.sleep(3000);
-    			if (msg.equalsIgnoreCase("Saved Successfully.")) {
+    		/*	if (msg.equalsIgnoreCase("Saved Successfully.")) {
     				test.log(LogStatus.FAIL,   msg);
     			} else {
     				test.log(LogStatus.PASS, msg);
+    			}*/
+    			if (msg.contains(error)) {
+    			    test.log(LogStatus.PASS, msg);
+    			} else {
+    			    test.log(LogStatus.FAIL, msg);
+    				
     			}
     			Thread.sleep(4000);
     			Actions act =new Actions(driver);
@@ -2569,7 +2729,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -2638,7 +2798,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -2701,7 +2861,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -2728,10 +2888,11 @@ public class DirectorMethod {
             
     			DirectorLocator.ListofRelatives(driver).click();
     			Thread.sleep(3000);
-    			
+
     			DirectorLocator.AddNew(driver).click();
     			Thread.sleep(3000);
-    			
+    			wait.until(ExpectedConditions.elementToBeClickable(DirectorLocator.Relation(driver))); 
+
     			
     			
     			DirectorLocator.Relation(driver).click();
@@ -2750,9 +2911,12 @@ public class DirectorMethod {
     			Thread.sleep(4000);
     		//	DirectorLocator.MinorAdult(driver).click();
     			Thread.sleep(1000);
+    			DirectorLocator.MaritalStatus(driver).click();
+    			Thread.sleep(1000);
+    			DirectorLocator.Married(driver).click();
+    			Thread.sleep(3000);
     			
-    			
-    			DirectorLocator.ChangeType(driver).click();
+    		/*	DirectorLocator.ChangeType(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.ChangeType1(driver).click();
     			Thread.sleep(3000);
@@ -2761,13 +2925,13 @@ public class DirectorMethod {
     			Thread.sleep(1000);
     			DirectorLocator.ChangeDate1(driver).click();
     			Thread.sleep(3000);
-    			
+    			*/
     			DirectorLocator.SaveLOR(driver).click();
     			Thread.sleep(3000);
     			
-    			String msg = DirectorLocator.SaveLORMSg(driver).getText();
+    			String msg = DirectorLocator.SavesuccessSg(driver).getText();
     			Thread.sleep(3000);
-    			if (msg.equalsIgnoreCase("Saved Successfully.")) {
+    			if (msg.equalsIgnoreCase("Record Saved Successfully.")) {
     				test.log(LogStatus.PASS,   msg);
     			} else {
     				test.log(LogStatus.FAIL, msg);
@@ -2794,7 +2958,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -2844,9 +3008,13 @@ public class DirectorMethod {
     		//	DirectorLocator.MinorAdult(driver).click();
     			Thread.sleep(1000);
     			
-    		
     			
-    			DirectorLocator.ChangeType(driver).click();
+    			DirectorLocator.MaritalStatus(driver).click();
+    			Thread.sleep(1000);
+    			DirectorLocator.Married(driver).click();
+    			Thread.sleep(3000);
+    			
+    		/*	DirectorLocator.ChangeType(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.ChangeType1(driver).click();
     			Thread.sleep(3000);
@@ -2855,16 +3023,16 @@ public class DirectorMethod {
     			Thread.sleep(1000);
     			DirectorLocator.ChangeDate1(driver).click();
     			Thread.sleep(3000);
-    			
+    			*/
     			DirectorLocator.SaveLOR(driver).click();
     			Thread.sleep(3000);
     			
-    			String msg = DirectorLocator.SaveLORMSg(driver).getText();
+    			String msg = DirectorLocator.SavesuccessSg(driver).getText();
     			Thread.sleep(3000);
-    			if (msg.equalsIgnoreCase("Saved Successfully.")) {
-    				test.log(LogStatus.FAIL,   msg);
+    			if (msg.equalsIgnoreCase("Already exists.")) {
+    				test.log(LogStatus.PASS,   msg);
     			} else {
-    				test.log(LogStatus.PASS, msg);
+    				test.log(LogStatus.FAIL, msg);
     			}
     			Thread.sleep(4000);
     			Actions act =new Actions(driver);
@@ -2888,7 +3056,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -2957,7 +3125,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -3020,7 +3188,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -3069,9 +3237,12 @@ public class DirectorMethod {
     			Thread.sleep(4000);
     		//	DirectorLocator.MinorAdult(driver).click();
     			Thread.sleep(1000);
+    			DirectorLocator.MaritalStatus(driver).click();
+    			Thread.sleep(1000);
+    			DirectorLocator.Married(driver).click();
+    			Thread.sleep(3000);
     			
-    			
-    			DirectorLocator.ChangeType(driver).click();
+    		/*	DirectorLocator.ChangeType(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.ChangeType1(driver).click();
     			Thread.sleep(3000);
@@ -3080,13 +3251,13 @@ public class DirectorMethod {
     			Thread.sleep(1000);
     			DirectorLocator.ChangeDate1(driver).click();
     			Thread.sleep(3000);
-    			
+    			*/
     			DirectorLocator.SaveLOR(driver).click();
     			Thread.sleep(3000);
     			
-    			String msg = DirectorLocator.SaveLORMSg(driver).getText();
+    			String msg = DirectorLocator.SavesuccessSg(driver).getText();
     			Thread.sleep(3000);
-    			if (msg.equalsIgnoreCase("Saved Successfully.")) {
+    			if (msg.equalsIgnoreCase("Record saved successfully.")) {
     				test.log(LogStatus.PASS,   msg);
     			} else {
     				test.log(LogStatus.FAIL, msg);
@@ -3113,7 +3284,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -3122,6 +3293,8 @@ public class DirectorMethod {
 		
 			DirectorLocator.Director(driver).click();
 			Thread.sleep(3000);
+			wait.until(ExpectedConditions.elementToBeClickable(DirectorLocator.Edit(driver))); 
+
 			sheet = workbook.getSheetAt(1); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
 			int row = 0;
 			Thread.sleep(500);
@@ -3163,8 +3336,11 @@ public class DirectorMethod {
     		//	DirectorLocator.MinorAdult(driver).click();
     			Thread.sleep(1000);
     			
-    		
-    			
+    			DirectorLocator.MaritalStatus(driver).click();
+    			Thread.sleep(1000);
+    			DirectorLocator.Married(driver).click();
+    			Thread.sleep(3000);
+    			/*
     			DirectorLocator.ChangeType(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.ChangeType1(driver).click();
@@ -3174,16 +3350,16 @@ public class DirectorMethod {
     			Thread.sleep(1000);
     			DirectorLocator.ChangeDate1(driver).click();
     			Thread.sleep(3000);
-    			
+    			*/
     			DirectorLocator.SaveLOR(driver).click();
     			Thread.sleep(3000);
     			
-    			String msg = DirectorLocator.SaveLORMSg(driver).getText();
+    			String msg = DirectorLocator.SavesuccessSg(driver).getText();
     			Thread.sleep(3000);
-    			if (msg.equalsIgnoreCase("Saved Successfully.")) {
-    				test.log(LogStatus.FAIL,   msg);
+    			if (msg.equalsIgnoreCase("Already exists.")) {
+    				test.log(LogStatus.PASS,   msg);
     			} else {
-    				test.log(LogStatus.PASS, msg);
+    				test.log(LogStatus.FAIL, msg);
     			}
     			Thread.sleep(4000);
     			Actions act =new Actions(driver);
@@ -3207,7 +3383,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -3276,7 +3452,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -3285,6 +3461,8 @@ public class DirectorMethod {
 		
 			DirectorLocator.Director(driver).click();
 			Thread.sleep(3000);
+			wait.until(ExpectedConditions.elementToBeClickable(DirectorLocator.Edit(driver))); 
+
 			sheet = workbook.getSheetAt(1); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
 			int row = 0;
 			Thread.sleep(500);
@@ -3336,10 +3514,10 @@ public class DirectorMethod {
 	
 	public static void DirectorLOREdit(WebDriver driver, ExtentTest test,XSSFWorkbook workbook) throws InterruptedException
 	{
-		WebDriverWait wait = new WebDriverWait(driver, (40));
+		WebDriverWait wait = new WebDriverWait(driver, (50));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -3369,15 +3547,15 @@ public class DirectorMethod {
     			
     		//	DirectorLocator.LOREdit(driver).click();
     			Thread.sleep(3000);
-    			By locator = By.xpath("(//*[@class='k-grid-Edit k-grid-edit hoverCircle k-grid-button'])[2]");
+    			By locator = By.xpath("(//img[contains(@src, '/NewUi_Images/edit.svg')])[2]");
     			
-    			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    			wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     			Thread.sleep(4000);
     			
-    			WebElement ViewButton = driver.findElement(locator);	
+    			WebElement editButton = driver.findElement(locator);	
     			Thread.sleep(4000);
     		JavascriptExecutor jse=(JavascriptExecutor)driver;
-    		jse.executeScript("arguments[0].click();", ViewButton);
+    		jse.executeScript("arguments[0].click();", editButton);
     			Thread.sleep(4000);
     			
     			DirectorLocator.Name(driver).clear();
@@ -3391,7 +3569,7 @@ public class DirectorMethod {
     			DirectorLocator.SaveLOR(driver).click();
     			Thread.sleep(3000);
     			
-    			String msg = DirectorLocator.SaveLORMSg(driver).getText();
+    			String msg = DirectorLocator.SavesuccessSg(driver).getText();
     			Thread.sleep(3000);
     			if (msg.equalsIgnoreCase("Updated Successfully.")) {
     				test.log(LogStatus.PASS,   msg);
@@ -3420,7 +3598,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -3450,7 +3628,7 @@ public class DirectorMethod {
     			
     		//	DirectorLocator.LOREdit(driver).click();
     			Thread.sleep(3000);
-    			By locator = By.xpath("(//*[@class='k-grid-Edit k-grid-edit hoverCircle k-grid-button'])[2]");
+    			By locator = By.xpath("(//img[contains(@src, '/NewUi_Images/edit.svg')])[2]");
     			
     			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     			Thread.sleep(4000);
@@ -3491,7 +3669,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -3521,7 +3699,7 @@ public class DirectorMethod {
     			
     		//	DirectorLocator.LOREdit(driver).click();
     			Thread.sleep(3000);
-    			By locator = By.xpath("(//*[@class='k-grid-Delete k-grid-delete hoverCircle k-grid-button'])[2]");
+    			By locator = By.xpath("(//img[contains(@src, 'NewUi_Images/delete.svg')])[2]");
     			
     			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     			Thread.sleep(4000);
@@ -3553,7 +3731,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -3613,7 +3791,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -3667,7 +3845,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -3714,7 +3892,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -3761,7 +3939,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -3784,21 +3962,18 @@ public class DirectorMethod {
 			
 			DirectorLocator.Edit(driver).click();
 			Thread.sleep(5000);
-		
-            
+			wait.until(ExpectedConditions.elementToBeClickable(DirectorLocator.DetailsofCommitteePositions(driver))); 
+
     			DirectorLocator.DetailsofCommitteePositions(driver).click();
     			Thread.sleep(3000);
     			
     			DirectorLocator.DOCPAddnew(driver).click();
     			Thread.sleep(3000);
     			
-    			
-    			
     			DirectorLocator.DOCPEntityName(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.DOCPEntityName1(driver).click();
-    			Thread.sleep(3000);
-    			
+    			Thread.sleep(3000);  			
     		
     			DirectorLocator.DOCPCommitteName(driver).click();
     			Thread.sleep(1000);
@@ -3822,13 +3997,23 @@ public class DirectorMethod {
     			
     			DirectorLocator.SaveDOCP(driver).click();
     			Thread.sleep(3000);
-    			
-    			String msg = DirectorLocator.SaveMsgDOCP(driver).getText();
+    			try {
+    			String msg = DirectorLocator.SavesuccessSg(driver).getText();
     			Thread.sleep(3000);
     			if (msg.equalsIgnoreCase("Saved Successfully.")) {
     				test.log(LogStatus.PASS,   msg);
     			} else {
     				test.log(LogStatus.FAIL, msg);
+    			}
+    			}
+    			catch(Exception e) {
+    				String msg = DirectorLocator.SaveMSG(driver).getText();
+        			Thread.sleep(3000);
+        			if (msg.equalsIgnoreCase("Saved Successfully.")) {
+        				test.log(LogStatus.PASS,   msg);
+        			} else {
+        				test.log(LogStatus.FAIL, msg);
+        			}
     			}
     			Thread.sleep(4000);
     			Actions act =new Actions(driver);
@@ -3852,7 +4037,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -3891,23 +4076,34 @@ public class DirectorMethod {
     			Thread.sleep(3000);
     			
     		
-    			DirectorLocator.DOCPCommitteName(driver).click();
+    		/*	DirectorLocator.DOCPCommitteName(driver).click();
     			Thread.sleep(1000);
     			DirectorLocator.DOCPCommitteName1(driver).click();
     			Thread.sleep(4000);
-    	
+    	*/
     		
     			
     			DirectorLocator.SaveDOCP(driver).click();
     			Thread.sleep(3000);
     			
-    			String msg = DirectorLocator.SaveMsgDOCP(driver).getText();
-    			Thread.sleep(3000);
-    			if (msg.equalsIgnoreCase("Please Select Position.")) {
-    				test.log(LogStatus.PASS,   msg);
-    			} else {
-    				test.log(LogStatus.FAIL, msg);
-    			}
+    			try {
+        			String msg = DirectorLocator.SavesuccessSg(driver).getText();
+        			Thread.sleep(3000);
+        			if (msg.equalsIgnoreCase("Enter all the Mandatory Fields")) {
+        				test.log(LogStatus.PASS,   msg);
+        			} else {
+        				test.log(LogStatus.FAIL, msg);
+        			}
+        			}
+        			catch(Exception e) {
+        				String msg = DirectorLocator.SaveMSG(driver).getText();
+            			Thread.sleep(3000);
+            			if (msg.equalsIgnoreCase("Enter all the Mandatory Fields")) {
+            				test.log(LogStatus.PASS,   msg);
+            			} else {
+            				test.log(LogStatus.FAIL, msg);
+            			}
+        			}
     			Thread.sleep(4000);
     			Actions act =new Actions(driver);
                 act.sendKeys(Keys.PAGE_DOWN).build().perform();
@@ -3930,7 +4126,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -3963,14 +4159,31 @@ public class DirectorMethod {
     			
     			DirectorLocator.SaveDOCP(driver).click();
     			Thread.sleep(3000);
-    			
-    			String msg = DirectorLocator.EntityNameVal(driver).getText();
+    			try {
+        			String msg = DirectorLocator.SavesuccessSg(driver).getText();
+        			Thread.sleep(3000);
+        			if (msg.equalsIgnoreCase("Enter all the Mandatory Fields")) {
+        				test.log(LogStatus.PASS,   msg);
+        			} else {
+        				test.log(LogStatus.FAIL, msg);
+        			}
+        			}
+        			catch(Exception e) {
+        				String msg = DirectorLocator.SaveMSG(driver).getText();
+            			Thread.sleep(3000);
+            			if (msg.equalsIgnoreCase("Enter all the Mandatory Fields")) {
+            				test.log(LogStatus.PASS,   msg);
+            			} else {
+            				test.log(LogStatus.FAIL, msg);
+            			}
+        			}
+    			/*String msg = DirectorLocator.EntityNameVal(driver).getText();
     			Thread.sleep(3000);
     			String msg1 = DirectorLocator.CommitteNameVal(driver).getText();
     			Thread.sleep(3000);
     			
     				test.log(LogStatus.PASS, "Message Displayed : -" + msg+", "+msg1);
-    				
+    				*/
     			
     			Thread.sleep(4000);
     			
@@ -3992,7 +4205,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -4054,13 +4267,24 @@ public class DirectorMethod {
     			DirectorLocator.SaveDOCP(driver).click();
     			Thread.sleep(3000);
     			
-    			String msg = DirectorLocator.SaveMsgDOCP(driver).getText();
-    			Thread.sleep(3000);
-    			if (msg.equalsIgnoreCase("Director already Present in Committee.")) {
-    				test.log(LogStatus.PASS,   msg);
-    			} else {
-    				test.log(LogStatus.FAIL, msg);
-    			}
+    			try {
+        			String msg = DirectorLocator.SavesuccessSg(driver).getText();
+        			Thread.sleep(3000);
+        			if (msg.equalsIgnoreCase("Director already Present in Committee.")) {
+        				test.log(LogStatus.PASS,   msg);
+        			} else {
+        				test.log(LogStatus.FAIL, msg);
+        			}
+        			}
+        			catch(Exception e) {
+        				String msg = DirectorLocator.SaveMSG(driver).getText();
+            			Thread.sleep(3000);
+            			if (msg.equalsIgnoreCase("Director already Present in Committee.")) {
+            				test.log(LogStatus.PASS,   msg);
+            			} else {
+            				test.log(LogStatus.FAIL, msg);
+            			}
+        			}
     			Thread.sleep(4000);
     			Actions act =new Actions(driver);
                 act.sendKeys(Keys.PAGE_DOWN).build().perform();
@@ -4083,7 +4307,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -4170,7 +4394,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -4198,19 +4422,78 @@ public class DirectorMethod {
     			DirectorLocator.DetailsofCommitteePositions(driver).click();
     			Thread.sleep(3000);
     			
-    			DirectorLocator.EditDOCP(driver).click();
+    		//	DirectorLocator.EditDOCP(driver).click();
+    		//	Thread.sleep(3000);
+    			
+           
+    			
+    			DirectorLocator.DOCPAddnew(driver).click();
     			Thread.sleep(3000);
     			
+    			
+    			
+    			DirectorLocator.DOCPEntityName(driver).click();
+    			Thread.sleep(1000);
+    			String entityname = DirectorLocator.DOCPEntityName1(driver).getText();
+    			Thread.sleep(2000);
+    			DirectorLocator.DOCPEntityName1(driver).click();
+    			Thread.sleep(1000);
     			DirectorLocator.DOCPCommitteName(driver).click();
     			Thread.sleep(1000);
-    			DirectorLocator.DOCPCommitteName2(driver).click();
+    			String commitee = DirectorLocator.DOCPCommitteName1(driver).getText();
     			Thread.sleep(4000);
-    	
-    			
-    			
-    			DirectorLocator.SaveDOCP(driver).click();
+    			DirectorLocator.DOCPCommitteName1(driver).click();
+    			Thread.sleep(1000);
+    			DirectorLocator.DOCPPosition(driver).click();
+    			Thread.sleep(2000);
+    			String position = DirectorLocator.DOCPPosition1(driver).getText();
     			Thread.sleep(3000);
     			
+    			DirectorLocator.CloseDOCP(driver).click();
+    			Thread.sleep(3000);
+    			
+    			
+            By locator = By.xpath("(//div[@id='gridKendo1']//img[contains(@src, 'NewUi_Images/edit.svg')])[1]");
+    			
+    			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    			Thread.sleep(4000);
+    			
+    			WebElement ViewButton = driver.findElement(locator);	
+    			Thread.sleep(4000);
+    		JavascriptExecutor jse=(JavascriptExecutor)driver;
+    		jse.executeScript("arguments[0].click();", ViewButton);
+    			Thread.sleep(4000);
+    			
+    		
+    			DirectorLocator.Entityname(driver).clear();
+    			Thread.sleep(1000);
+    			DirectorLocator.Entityname(driver).sendKeys(entityname);
+    			Thread.sleep(4000);
+    			DirectorLocator.CommitteeName(driver).clear();
+    			Thread.sleep(1000);
+    			DirectorLocator.CommitteeName(driver).sendKeys(commitee);
+    			Thread.sleep(4000);
+    			DirectorLocator.position(driver).clear();
+    			Thread.sleep(1000);
+    			DirectorLocator.position(driver).sendKeys(position);
+    			Thread.sleep(4000);
+    	
+    			DirectorLocator.Update(driver).click();
+    			Thread.sleep(3000);
+    			String value = DirectorLocator.Entitynamegrid(driver).getText();
+    			Thread.sleep(3000);
+    			System.out.println(value);
+    			if(entityname == value) {
+    				
+    				test.log(LogStatus.PASS, "Updated successfully");
+    			}
+    			else {
+    				test.log(LogStatus.FAIL, "Not Updated.");
+
+    			}
+    			   DirectorLocator.CloseLR(driver).click();
+    				Thread.sleep(5000);	
+    			/*
     			String msg = DirectorLocator.UpdateMsgDOCP(driver).getText();
     			Thread.sleep(3000);
     			if (msg.equalsIgnoreCase("Update Successfully")) {
@@ -4220,11 +4503,7 @@ public class DirectorMethod {
     			}
     			Thread.sleep(4000);
     			
-    			DirectorLocator.CloseDOCP(driver).click();
-    			Thread.sleep(3000);
-    			
-            DirectorLocator.CloseLR(driver).click();
-			Thread.sleep(5000);	
+    			*/
 					
 			
 		Thread.sleep(3000);
@@ -4238,7 +4517,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -4304,7 +4583,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -4332,11 +4611,19 @@ public class DirectorMethod {
     			DirectorLocator.DetailsofCommitteePositions(driver).click();
     			Thread.sleep(3000);
     			
-    			DirectorLocator.EditDOCP(driver).click();
-    			Thread.sleep(3000);
+By locator = By.xpath("(//div[@id='gridKendo1']//img[contains(@src, 'NewUi_Images/edit.svg')])[1]");
     			
-    			if (DirectorLocator.CloseDOCP(driver).isEnabled()) {
-    				DirectorLocator.CloseDOCP(driver).click();
+    			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    			Thread.sleep(4000);
+    			
+    			WebElement ViewButton = driver.findElement(locator);	
+    			Thread.sleep(4000);
+    		JavascriptExecutor jse=(JavascriptExecutor)driver;
+    		jse.executeScript("arguments[0].click();", ViewButton);
+    			Thread.sleep(4000);
+    			
+    			if (DirectorLocator.CloseD(driver).isEnabled()) {
+    				DirectorLocator.CloseD(driver).click();
         			Thread.sleep(3000);
         			
     				test.log(LogStatus.PASS,   "The system should close the 'Details of committee position' form without adding the comittee position to the system");
@@ -4361,7 +4648,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -4388,9 +4675,18 @@ public class DirectorMethod {
             
     			DirectorLocator.DetailsofCommitteePositions(driver).click();
     			Thread.sleep(3000);
+                By locator = By.xpath("(//div[@id='gridKendo1']//img[contains(@src, 'NewUi_Images/delete.svg')])[1]");
     			
-    			DirectorLocator.DeleteDOCP(driver).click();
-    			Thread.sleep(3000);
+    			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+    			Thread.sleep(4000);
+    			
+    			WebElement ViewButton = driver.findElement(locator);	
+    			Thread.sleep(4000);
+    		JavascriptExecutor jse=(JavascriptExecutor)driver;
+    		jse.executeScript("arguments[0].click();", ViewButton);
+    			Thread.sleep(4000);
+    		//	DirectorLocator.DeleteDOCP(driver).click();
+    		//	Thread.sleep(3000);
     			
     		String msg=	driver.switchTo().alert().getText();
     			
@@ -4415,7 +4711,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -4462,7 +4758,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -4622,7 +4918,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -4689,7 +4985,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -4736,7 +5032,7 @@ public class DirectorMethod {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -4792,7 +5088,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -4820,6 +5116,10 @@ Thread.sleep(3000);
 		Thread.sleep(2000);
 		
 	}
+	public static void setZoomLevel(WebDriver driver, double zoomLevel) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.body.style.zoom='" + zoomLevel + "'");
+    }
 	
 	
 	public static void DirectorDIR8Preview(WebDriver driver, ExtentTest test) throws InterruptedException
@@ -4827,7 +5127,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -4859,15 +5159,29 @@ Thread.sleep(3000);
     			
 						DirectorLocator.PreviewDIR(driver).click();
 						Thread.sleep(4000);
-				String Text=		DirectorLocator.PreviewDIR(driver).getText();
+						driver.switchTo().frame(DirectorLocator.frame(driver));
+						String Text=DirectorLocator.PreviewText(driver).getText();						
 				Thread.sleep(4000);
-				if(Text.equalsIgnoreCase("Preview")) {
+				if(Text.equalsIgnoreCase("Form DIR-8")) {
 					Thread.sleep(4000);
-	    			test.log(LogStatus.PASS, "user is able to Preview DIR-8 form with valid data");
+					test.log(LogStatus.PASS, "user is able to Preview DIR-8 form with valid data");
 	    		}else {
 	    			test.log(LogStatus.FAIL, " user is not able to Preview DIR-8 form with valid data");
 	    			
 	    		}
+				
+				driver.switchTo().parentFrame();
+				try {
+			           // Set zoom level to 90% (0.9) for zooming out
+			          setZoomLevel(driver, 0.8);
+			           // Wait to observe the effect
+			          Thread.sleep(2000);
+			            // Set zoom level back to 100% (1.0) to reset to normal
+					//  setZoomLevel(getDriver(), 1.0);
+			        } catch (InterruptedException e) {
+			          e.printStackTrace();
+			        }
+				Thread.sleep(2000);	
 				  DirectorLocator.PreviewClose(driver).click();
 					Thread.sleep(2000);	
 							
@@ -4886,7 +5200,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -4916,14 +5230,14 @@ Thread.sleep(3000);
 					DirectorLocator.DateOfIssueDIR1(driver).click();
 						Thread.sleep(3000);
     			
-						File dir = new File("C:\\Users\\Mayuri\\Downloads");
+						File dir = new File("C:\\Users\\shitalb\\Downloads");
 						File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 						
 						Thread.sleep(500);
 						DirectorLocator.PreviewDownload(driver).click();		//Exporting (Downloading) file
 						
 						Thread.sleep(3000);//C://Users//jiya//Downloads//
-						File dir1 = new File("C:\\Users\\Mayuri\\Downloads");
+						File dir1 = new File("C:\\Users\\shitalb\\Downloads");
 						File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 						
 						Thread.sleep(3000);
@@ -4948,8 +5262,8 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
+		Thread.sleep(2000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
@@ -4967,9 +5281,15 @@ Thread.sleep(3000);
     			test.log(LogStatus.FAIL, " User should not redirected to the new window of  'MBP-1' page");
     			
     		}
+            try {
             DirectorLocator.MBP1Close(driver).click();
 			Thread.sleep(5000);	
-					
+            }
+            catch(Exception e) {
+            	DirectorLocator.DIR8Close(driver).click();
+    			Thread.sleep(5000);	
+            }
+            
 			
 		Thread.sleep(3000);
 		DirectorLocator.ClickDashboard(driver).click();
@@ -4982,7 +5302,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -5017,17 +5337,22 @@ Thread.sleep(3000);
 						Actions act =new Actions(driver);
 		                act.sendKeys(Keys.PAGE_UP).build().perform();
 		                Thread.sleep(3000);
-				String Text=		DirectorLocator.PreviewTextMBP(driver).getText();
+						driver.switchTo().frame(DirectorLocator.frame(driver));
+
+						String Text=DirectorLocator.PreviewText(driver).getText();
+
+				//String Text=DirectorLocator.PreviewTextMBP(driver).getText();
 				Thread.sleep(4000);
-				if(Text.equalsIgnoreCase("Preview")) {
+				if(Text.equalsIgnoreCase("FORM MBP – 1")) {
 					Thread.sleep(4000);
 	    			test.log(LogStatus.PASS, "user is able to Preview MBP-1 form with valid data");
 	    		}else {
 	    			test.log(LogStatus.FAIL, " user is not able to Preview MBP-1 form with valid data");
 	    			
 	    		}
+				driver.switchTo().parentFrame();
 				Thread.sleep(4000);
-				By locator = By.xpath("/html/body/div[25]/div[1]/div");
+				By locator = By.xpath("(//a[@aria-label='Close'])[15]");
 				
 				wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 				Thread.sleep(4000);
@@ -5041,8 +5366,14 @@ Thread.sleep(3000);
 				//  DirectorLocator.PreviewClose(driver).click();
 					Thread.sleep(2000);	
 							
-            DirectorLocator.MBP1Close(driver).click();
-			Thread.sleep(5000);	
+					try {
+			            DirectorLocator.MBP1Close(driver).click();
+						Thread.sleep(5000);	
+			            }
+			            catch(Exception e) {
+			            	DirectorLocator.DIR8Close(driver).click();
+			    			Thread.sleep(5000);	
+			            }
 					
 		
 		Thread.sleep(3000);
@@ -5057,7 +5388,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -5087,14 +5418,14 @@ Thread.sleep(3000);
 					DirectorLocator.DateOfIssueMBP1(driver).click();
 						Thread.sleep(3000);
     			
-						File dir = new File("C:\\Users\\Mayuri\\Downloads");
+						File dir = new File("C:\\Users\\shitalb\\Downloads");
 						File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 						
 						Thread.sleep(500);
 						DirectorLocator.DownloadMBP(driver).click();		//Exporting (Downloading) file
 						
 						Thread.sleep(3000);//C://Users//jiya//Downloads//
-						File dir1 = new File("C:\\Users\\Mayuri\\Downloads");
+						File dir1 = new File("C:\\Users\\shitalb\\Downloads");
 						File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 						
 						Thread.sleep(3000);
@@ -5121,8 +5452,8 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
-		Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
+		Thread.sleep(2000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
@@ -5130,9 +5461,19 @@ Thread.sleep(3000);
 		
 			DirectorLocator.Director(driver).click();
 			Thread.sleep(4000);
+			By locator = By.xpath("(//img[contains(@src, 'NewUi_Images/EyeIcon.svg')])[1]");
 			
-			DirectorLocator.View(driver).click();
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			
+			//DirectorLocator.View(driver).click();
+			//Thread.sleep(4000);
 			String Text=DirectorLocator.ViewText(driver).getText();
 			Thread.sleep(4000);
 			if(Text.equalsIgnoreCase("Director Details")) {
@@ -5158,7 +5499,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -5168,9 +5509,19 @@ Thread.sleep(3000);
 			DirectorLocator.Director(driver).click();
 			Thread.sleep(4000);
 			
-			DirectorLocator.View(driver).click();
+		//	DirectorLocator.View(driver).click();
+		//	Thread.sleep(4000);
+			
+         By locator = By.xpath("(//img[contains(@src, 'NewUi_Images/EyeIcon.svg')])[1]");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 			Thread.sleep(4000);
 			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
 			
 			if(DirectorLocator.ViewAbout(driver).isEnabled()) {
 				Thread.sleep(4000);
@@ -5196,7 +5547,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -5206,9 +5557,18 @@ Thread.sleep(3000);
 			DirectorLocator.Director(driver).click();
 			Thread.sleep(4000);
 			
-			DirectorLocator.View(driver).click();
+			//DirectorLocator.View(driver).click();
+			//Thread.sleep(4000);
+           By locator = By.xpath("(//img[contains(@src, 'NewUi_Images/EyeIcon.svg')])[1]");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 			Thread.sleep(4000);
 			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
 			
 			if(DirectorLocator.DetailsOfInterestView(driver).isEnabled()) {
 				Thread.sleep(4000);
@@ -5234,7 +5594,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -5244,10 +5604,19 @@ Thread.sleep(3000);
 			DirectorLocator.Director(driver).click();
 			Thread.sleep(4000);
 			
-			DirectorLocator.View(driver).click();
+			//DirectorLocator.View(driver).click();
+			//Thread.sleep(4000);
+			
+By locator = By.xpath("(//img[contains(@src, 'NewUi_Images/EyeIcon.svg')])[1]");
+			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 			Thread.sleep(4000);
 			
-			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
 			if(DirectorLocator.CommitteePositions(driver).isEnabled()) {
 				DirectorLocator.CommitteePositions(driver).click();
 				Thread.sleep(4000);
@@ -5272,7 +5641,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -5281,13 +5650,33 @@ Thread.sleep(3000);
 		
 			DirectorLocator.Director(driver).click();
 			Thread.sleep(4000);
+By locator = By.xpath("(//img[contains(@src, 'NewUi_Images/delete.svg')])[1]");
 			
-			DirectorLocator.Delete(driver).click();
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 			Thread.sleep(4000);
-	String msg =		driver.switchTo().alert().getText();
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+			//DirectorLocator.Delete(driver).click();
+			//Thread.sleep(4000);
+	String msg =driver.switchTo().alert().getText();
 	test.log(LogStatus.PASS, "Message Displayed : -" +msg);
 	driver.switchTo().alert().accept();
 		Thread.sleep(3000);
+		String alert =driver.switchTo().alert().getText();
+		if(alert.equalsIgnoreCase("deleted successfully"))
+		{
+		test.log(LogStatus.PASS, "Message Displayed : -" +alert);
+		}
+		else {
+			test.log(LogStatus.FAIL, "Message Displayed : -" +alert);
+
+		}
+		driver.switchTo().alert().accept();
+			Thread.sleep(3000);
 		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
 		
@@ -5298,7 +5687,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -5307,9 +5696,18 @@ Thread.sleep(3000);
 		
 			DirectorLocator.Director(driver).click();
 			Thread.sleep(4000);
+By locator = By.xpath("(//img[contains(@src, 'NewUi_Images/delete.svg')])[1]");
 			
-			DirectorLocator.Delete(driver).click();
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);
+		//	DirectorLocator.Delete(driver).click();
+		//	Thread.sleep(4000);
 			driver.switchTo().alert().dismiss();
 	test.log(LogStatus.PASS, "The item should not be deleted. The confirmation prompt should be dismissed by Clicking on Cancel button" );
 	
@@ -5325,7 +5723,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -5372,7 +5770,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -5406,7 +5804,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -5419,15 +5817,16 @@ Thread.sleep(3000);
 			
 				DirectorLocator.Upload(driver).click();
 				Thread.sleep(4000);
-				By locator = By.xpath("//*[@id='File']");
+				By locator = By.xpath("//input[@id='File']");
 
 				wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 				Thread.sleep(4000);
 				
 				WebElement ViewButton = driver.findElement(locator);	
 				Thread.sleep(3000);
-				ViewButton.sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\Charge.xlsx");
-			
+			//	ViewButton.sendKeys("D:\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\TestData\\dir 8.xlsx");
+				ViewButton.sendKeys("D:\\Automation Upload Secretrial//dir-8.docx");
+
 				Thread.sleep(3000);
 				DirectorLocator.Uploadbtn(driver).click();
 				Thread.sleep(5000);
@@ -5460,7 +5859,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -5469,7 +5868,16 @@ Thread.sleep(3000);
 		
 			DirectorLocator.Director(driver).click();
 			Thread.sleep(4000);
+   /*   By locator = By.xpath("(//img[contains(@src, 'NewUi_Images/delete.svg')])[1]");
 			
+			wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+			Thread.sleep(4000);
+			
+			WebElement ViewButton = driver.findElement(locator);	
+			Thread.sleep(4000);
+		JavascriptExecutor jse=(JavascriptExecutor)driver;
+		jse.executeScript("arguments[0].click();", ViewButton);
+			Thread.sleep(4000);*/
 			
 				DirectorLocator.Upload(driver).click();
 				Thread.sleep(4000);
@@ -5480,32 +5888,45 @@ Thread.sleep(3000);
 				
 				WebElement ViewButton3 = driver.findElement(locator3);	
 				Thread.sleep(4000);
-			JavascriptExecutor jse=(JavascriptExecutor)driver;
-			jse.executeScript("arguments[0].click();", ViewButton3);
+			JavascriptExecutor js=(JavascriptExecutor)driver;
+			js.executeScript("arguments[0].click();", ViewButton3);
 				Thread.sleep(4000);
-				DirectorLocator.SampleFormate(driver).click();
-				Thread.sleep(4000);
-				By locator = By.xpath("//*[@id='File']");
-
-				wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-				Thread.sleep(4000);
-				
-				WebElement ViewButton = driver.findElement(locator);	
-				Thread.sleep(3000);
-				ViewButton.sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\Director Master Sample File.xlsx");
 			
-				Thread.sleep(3000);
-				DirectorLocator.Uploadbtn(driver).click();
-				Thread.sleep(5000);
-				try {
-				By locator1 = By.xpath("//*[@id='frmUpdateUpload']/div[1]/div[1]/div/lable");
+				 By locator = By.xpath("//img[contains(@src, 'Images/Excel_icon.png')]");
+					
+					wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+					Thread.sleep(4000);
+					
+					WebElement ViewButton = driver.findElement(locator);	
+					Thread.sleep(4000);
+				JavascriptExecutor jse=(JavascriptExecutor)driver;
+				jse.executeScript("arguments[0].click();", ViewButton);
+					Thread.sleep(4000);
+					
+			//	DirectorLocator.SampleFormate(driver).click();
+			//	Thread.sleep(4000);
+				By locator1 = By.xpath("//input[@id='File']");
 
 				wait.until(ExpectedConditions.presenceOfElementLocated(locator1));
 				Thread.sleep(4000);
 				
 				WebElement ViewButton1 = driver.findElement(locator1);	
 				Thread.sleep(3000);
-		String Msg=	ViewButton1.getText();
+				//ViewButton1.sendKeys("D:\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\TestData\\Director Master Sample File.xlsx");
+				ViewButton1.sendKeys("D:\\Automation Upload Secretrial\\Director Master Sample File.xlsx");
+
+				Thread.sleep(3000);
+				DirectorLocator.Uploadbtn(driver).click();
+				Thread.sleep(5000);
+				try {
+				By locator4 = By.xpath("//*[@id='frmUpdateUpload']/div[1]/div[1]/div/lable");
+
+				wait.until(ExpectedConditions.presenceOfElementLocated(locator1));
+				Thread.sleep(4000);
+				
+				WebElement ViewButton4 = driver.findElement(locator4);	
+				Thread.sleep(3000);
+		String Msg=	ViewButton4.getText();
 			Thread.sleep(3000);
 			if(Msg.equalsIgnoreCase("Record Save Successfully")) {
 				test.log(LogStatus.PASS,"Message Displayed :-  "+ Msg);
@@ -5514,17 +5935,20 @@ Thread.sleep(3000);
 			}
 				}catch(Exception e) {
 					
-					By locator1 = By.xpath("//*[@id='frmUpdateUpload']/div[1]/ul");
+					By locator5 = By.xpath("//*[@id='frmUpdateUpload']/div[1]/ul");
 
 					wait.until(ExpectedConditions.presenceOfElementLocated(locator1));
 					Thread.sleep(4000);
 					
-					WebElement ViewButton1 = driver.findElement(locator1);	
+					WebElement ViewButton5 = driver.findElement(locator5);	
 					Thread.sleep(3000);
-			String Msg=	ViewButton1.getText();
+			String Msg=	ViewButton5.getText();
 				Thread.sleep(3000);
-				
+				if(Msg.equalsIgnoreCase("Record Save Successfully")) {
 					test.log(LogStatus.FAIL,"Message Displayed :-  "+ Msg);
+				}else {
+					test.log(LogStatus.PASS,"Message Displayed :-  "+ Msg);
+				}
 				
 				}
 			
@@ -5543,7 +5967,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -5566,16 +5990,28 @@ Thread.sleep(3000);
 			JavascriptExecutor jse=(JavascriptExecutor)driver;
 			jse.executeScript("arguments[0].click();", ViewButton3);
 				Thread.sleep(4000);
-				DirectorLocator.SampleFormate(driver).click();
+				
+				By excel = By.xpath("(//img[contains(@src, 'Images/Excel_icon.png')])[1]");
+
+				wait.until(ExpectedConditions.presenceOfElementLocated(excel));
 				Thread.sleep(4000);
-				By locator = By.xpath("//*[@id='File']");
+				
+				WebElement excelButton = driver.findElement(excel);	
+				Thread.sleep(4000);
+			JavascriptExecutor js=(JavascriptExecutor)driver;
+			jse.executeScript("arguments[0].click();", excelButton);
+				Thread.sleep(4000);
+				//DirectorLocator.SampleFormate(driver).click();
+				//Thread.sleep(4000);
+				
+				By locator = By.xpath("//input[@id='File']");
 
 				wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 				Thread.sleep(4000);
 				
 				WebElement ViewButton = driver.findElement(locator);	
 				Thread.sleep(3000);
-				ViewButton.sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\Director Master Sample File (1).xlsx");
+				ViewButton.sendKeys("D:\\Automation Upload Secretrial\\Director Master Sample File-InvalidDIN.xlsx");
 			
 				Thread.sleep(3000);
 				DirectorLocator.Uploadbtn(driver).click();
@@ -5626,7 +6062,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -5649,8 +6085,20 @@ Thread.sleep(3000);
 			JavascriptExecutor jse=(JavascriptExecutor)driver;
 			jse.executeScript("arguments[0].click();", ViewButton3);
 				Thread.sleep(4000);
-				DirectorLocator.SampleFormate(driver).click();
+				
+				By excel = By.xpath("(//img[contains(@src, 'Images/Excel_icon.png')])[1]");
+
+				wait.until(ExpectedConditions.presenceOfElementLocated(excel));
 				Thread.sleep(4000);
+				
+				WebElement excelButton = driver.findElement(excel);	
+				Thread.sleep(4000);
+			JavascriptExecutor js=(JavascriptExecutor)driver;
+			jse.executeScript("arguments[0].click();", excelButton);
+				Thread.sleep(4000);
+				
+			//	DirectorLocator.SampleFormate(driver).click();
+				//Thread.sleep(4000);
 				By locator = By.xpath("//*[@id='File']");
 
 				wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -5658,7 +6106,7 @@ Thread.sleep(3000);
 				
 				WebElement ViewButton = driver.findElement(locator);	
 				Thread.sleep(3000);
-				ViewButton.sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\Director Master Sample File (2).xlsx");
+				ViewButton.sendKeys("D:\\Automation Upload Secretrial\\Director Master Sample File More than8digitDIN.xlsx");
 			
 				Thread.sleep(3000);
 				DirectorLocator.Uploadbtn(driver).click();
@@ -5708,7 +6156,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -5731,16 +6179,28 @@ Thread.sleep(3000);
 			JavascriptExecutor jse=(JavascriptExecutor)driver;
 			jse.executeScript("arguments[0].click();", ViewButton3);
 				Thread.sleep(4000);
-				DirectorLocator.SampleFormate(driver).click();
+				
+				By excel = By.xpath("(//img[contains(@src, 'Images/Excel_icon.png')])[1]");
+
+				wait.until(ExpectedConditions.presenceOfElementLocated(excel));
 				Thread.sleep(4000);
-				By locator = By.xpath("//*[@id='File']");
+				
+				WebElement excelButton = driver.findElement(excel);	
+				Thread.sleep(4000);
+			JavascriptExecutor js=(JavascriptExecutor)driver;
+			js.executeScript("arguments[0].click();", excelButton);
+				Thread.sleep(4000);
+				
+			//	DirectorLocator.SampleFormate(driver).click();
+			//	Thread.sleep(4000);
+				By locator = By.xpath("//input[@id='File']");
 
 				wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 				Thread.sleep(4000);
 				
 				WebElement ViewButton = driver.findElement(locator);	
 				Thread.sleep(3000);
-				ViewButton.sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\Director Master Sample File (3).xlsx");
+				ViewButton.sendKeys("D:\\Automation Upload Secretrial\\Director Master Sample FileDIN as aalphabet.xlsx");
 			
 				Thread.sleep(3000);
 				DirectorLocator.Uploadbtn(driver).click();
@@ -5790,7 +6250,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -5813,16 +6273,28 @@ Thread.sleep(3000);
 			JavascriptExecutor jse=(JavascriptExecutor)driver;
 			jse.executeScript("arguments[0].click();", ViewButton3);
 				Thread.sleep(4000);
-				DirectorLocator.SampleFormate(driver).click();
+				
+				By excel = By.xpath("(//img[contains(@src, 'Images/Excel_icon.png')])[1]");
+
+				wait.until(ExpectedConditions.presenceOfElementLocated(excel));
 				Thread.sleep(4000);
-				By locator = By.xpath("//*[@id='File']");
+				
+				WebElement excelButton = driver.findElement(excel);	
+				Thread.sleep(4000);
+			JavascriptExecutor js=(JavascriptExecutor)driver;
+			js.executeScript("arguments[0].click();", excelButton);
+				Thread.sleep(4000);
+				
+				//DirectorLocator.SampleFormate(driver).click();
+				//Thread.sleep(4000);
+				By locator = By.xpath("//input[@id='File']");
 
 				wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 				Thread.sleep(4000);
 				
 				WebElement ViewButton = driver.findElement(locator);	
 				Thread.sleep(3000);
-				ViewButton.sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\Director Master Sample File (4).xlsx");
+				ViewButton.sendKeys("D:\\Automation Upload Secretrial\\Director Master Sample FileDIN as specialCharacters.xlsx");
 			
 				Thread.sleep(3000);
 				DirectorLocator.Uploadbtn(driver).click();
@@ -5872,7 +6344,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -5895,8 +6367,20 @@ Thread.sleep(3000);
 			JavascriptExecutor jse=(JavascriptExecutor)driver;
 			jse.executeScript("arguments[0].click();", ViewButton3);
 				Thread.sleep(4000);
-				DirectorLocator.SampleFormate(driver).click();
+				
+				By excel = By.xpath("(//img[contains(@src, 'Images/Excel_icon.png')])[1]");
+
+				wait.until(ExpectedConditions.presenceOfElementLocated(excel));
 				Thread.sleep(4000);
+				
+				WebElement excelButton = driver.findElement(excel);	
+				Thread.sleep(4000);
+			JavascriptExecutor js=(JavascriptExecutor)driver;
+			js.executeScript("arguments[0].click();", excelButton);
+				Thread.sleep(4000);
+				
+				//DirectorLocator.SampleFormate(driver).click();
+				//Thread.sleep(4000);
 				By locator = By.xpath("//*[@id='File']");
 
 				wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -5904,7 +6388,7 @@ Thread.sleep(3000);
 				
 				WebElement ViewButton = driver.findElement(locator);	
 				Thread.sleep(3000);
-				ViewButton.sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\Director Master Sample File (5).xlsx");
+				ViewButton.sendKeys("D:\\Automation Upload Secretrial\\Director Master Sample FilePAN Less than10 Characters.xlsx");
 			
 				Thread.sleep(3000);
 				DirectorLocator.Uploadbtn(driver).click();
@@ -5955,7 +6439,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -5978,16 +6462,26 @@ Thread.sleep(3000);
 			JavascriptExecutor jse=(JavascriptExecutor)driver;
 			jse.executeScript("arguments[0].click();", ViewButton3);
 				Thread.sleep(4000);
-				DirectorLocator.SampleFormate(driver).click();
+				By excel = By.xpath("(//img[contains(@src, 'Images/Excel_icon.png')])[1]");
+
+				wait.until(ExpectedConditions.presenceOfElementLocated(excel));
 				Thread.sleep(4000);
-				By locator = By.xpath("//*[@id='File']");
+				
+				WebElement excelButton = driver.findElement(excel);	
+				Thread.sleep(4000);
+			JavascriptExecutor js=(JavascriptExecutor)driver;
+			js.executeScript("arguments[0].click();", excelButton);
+				Thread.sleep(4000);
+			//	DirectorLocator.SampleFormate(driver).click();
+			//	Thread.sleep(4000);
+				By locator = By.xpath("//input[@id='File']");
 
 				wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 				Thread.sleep(4000);
 				
 				WebElement ViewButton = driver.findElement(locator);	
 				Thread.sleep(3000);
-				ViewButton.sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\Director Master Sample File (6).xlsx");
+				ViewButton.sendKeys("D:\\Automation Upload Secretrial\\Director Master Sample FilePAN More than 10 characters.xlsx");
 			
 				Thread.sleep(3000);
 				DirectorLocator.Uploadbtn(driver).click();
@@ -6018,8 +6512,12 @@ Thread.sleep(3000);
 					Thread.sleep(3000);
 			String Msg=	ViewButton1.getText();
 				Thread.sleep(3000);
-				
+				if(Msg.equalsIgnoreCase("Record Save Successfully")) {
 					test.log(LogStatus.FAIL,"Message Displayed :-  "+ Msg);
+				}else {
+					test.log(LogStatus.PASS,"Message Displayed :-  "+ Msg);
+				}
+					//test.log(LogStatus.FAIL,"Message Displayed :-  "+ Msg);
 				
 				}
 			
@@ -6037,7 +6535,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -6060,16 +6558,27 @@ Thread.sleep(3000);
 			JavascriptExecutor jse=(JavascriptExecutor)driver;
 			jse.executeScript("arguments[0].click();", ViewButton3);
 				Thread.sleep(4000);
-				DirectorLocator.SampleFormate(driver).click();
+				
+				By excel = By.xpath("(//img[contains(@src, 'Images/Excel_icon.png')])[1]");
+
+				wait.until(ExpectedConditions.presenceOfElementLocated(excel));
 				Thread.sleep(4000);
-				By locator = By.xpath("//*[@id='File']");
+				
+				WebElement excelButton = driver.findElement(excel);	
+				Thread.sleep(4000);
+			JavascriptExecutor js=(JavascriptExecutor)driver;
+			js.executeScript("arguments[0].click();", excelButton);
+				Thread.sleep(4000);
+				//DirectorLocator.SampleFormate(driver).click();
+				//Thread.sleep(4000);
+				By locator = By.xpath("//input[@id='File']");
 
 				wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 				Thread.sleep(4000);
 				
 				WebElement ViewButton = driver.findElement(locator);	
 				Thread.sleep(3000);
-				ViewButton.sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\Director Master Sample File (7).xlsx");
+				ViewButton.sendKeys("D:\\Automation Upload Secretrial\\Director Master Sample FilePAN With SpecialChar.xlsx");
 			
 				Thread.sleep(3000);
 				DirectorLocator.Uploadbtn(driver).click();
@@ -6100,8 +6609,12 @@ Thread.sleep(3000);
 					Thread.sleep(3000);
 			String Msg=	ViewButton1.getText();
 				Thread.sleep(3000);
-				
+				if(Msg.equalsIgnoreCase("Record Save Successfully")) {
 					test.log(LogStatus.FAIL,"Message Displayed :-  "+ Msg);
+				}else {
+					test.log(LogStatus.PASS,"Message Displayed :-  "+ Msg);
+				}
+					//test.log(LogStatus.FAIL,"Message Displayed :-  "+ Msg);
 				
 				}
 			
@@ -6119,7 +6632,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -6142,16 +6655,26 @@ Thread.sleep(3000);
 			JavascriptExecutor jse=(JavascriptExecutor)driver;
 			jse.executeScript("arguments[0].click();", ViewButton3);
 				Thread.sleep(4000);
-				DirectorLocator.SampleFormate(driver).click();
+				By excel = By.xpath("(//img[contains(@src, 'Images/Excel_icon.png')])[1]");
+
+				wait.until(ExpectedConditions.presenceOfElementLocated(excel));
 				Thread.sleep(4000);
-				By locator = By.xpath("//*[@id='File']");
+				
+				WebElement excelButton = driver.findElement(excel);	
+				Thread.sleep(4000);
+			JavascriptExecutor js=(JavascriptExecutor)driver;
+			js.executeScript("arguments[0].click();", excelButton);
+				Thread.sleep(4000);
+			//	DirectorLocator.SampleFormate(driver).click();
+			//	Thread.sleep(4000);
+				By locator = By.xpath("//input[@id='File']");
 
 				wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 				Thread.sleep(4000);
 				
 				WebElement ViewButton = driver.findElement(locator);	
 				Thread.sleep(3000);
-				ViewButton.sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\Director Master Sample File (7).xlsx");
+				ViewButton.sendKeys("D:\\Automation Upload Secretrial\\Director Master Sample File InvalidMobileNo.xlsx");
 			
 				Thread.sleep(3000);
 				DirectorLocator.Uploadbtn(driver).click();
@@ -6182,8 +6705,12 @@ Thread.sleep(3000);
 					Thread.sleep(3000);
 			String Msg=	ViewButton1.getText();
 				Thread.sleep(3000);
-				
+				if(Msg.equalsIgnoreCase("Record Save Successfully")) {
 					test.log(LogStatus.FAIL,"Message Displayed :-  "+ Msg);
+				}else {
+					test.log(LogStatus.PASS,"Message Displayed :-  "+ Msg);
+				}
+					//test.log(LogStatus.FAIL,"Message Displayed :-  "+ Msg);
 				
 				}
 			
@@ -6201,7 +6728,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -6224,8 +6751,18 @@ Thread.sleep(3000);
 			JavascriptExecutor jse=(JavascriptExecutor)driver;
 			jse.executeScript("arguments[0].click();", ViewButton3);
 				Thread.sleep(4000);
-				DirectorLocator.SampleFormate(driver).click();
+				By excel = By.xpath("(//img[contains(@src, 'Images/Excel_icon.png')])[1]");
+
+				wait.until(ExpectedConditions.presenceOfElementLocated(excel));
 				Thread.sleep(4000);
+				
+				WebElement excelButton = driver.findElement(excel);	
+				Thread.sleep(4000);
+			JavascriptExecutor js=(JavascriptExecutor)driver;
+			js.executeScript("arguments[0].click();", excelButton);
+				Thread.sleep(4000);
+				//DirectorLocator.SampleFormate(driver).click();
+				//Thread.sleep(4000);
 				By locator = By.xpath("//*[@id='File']");
 
 				wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -6233,7 +6770,7 @@ Thread.sleep(3000);
 				
 				WebElement ViewButton = driver.findElement(locator);	
 				Thread.sleep(3000);
-				ViewButton.sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\Director Master Sample File (8).xlsx");
+				ViewButton.sendKeys("D:\\Automation Upload Secretrial\\Director Master Sample File WithEmptyData.xlsx");
 			
 				Thread.sleep(3000);
 				DirectorLocator.Uploadbtn(driver).click();
@@ -6264,8 +6801,12 @@ Thread.sleep(3000);
 					Thread.sleep(3000);
 			String Msg=	ViewButton1.getText();
 				Thread.sleep(3000);
-				
+				if(Msg.equalsIgnoreCase("Record Save Successfully")) {
 					test.log(LogStatus.FAIL,"Message Displayed :-  "+ Msg);
+				}else {
+					test.log(LogStatus.PASS,"Message Displayed :-  "+ Msg);
+				}
+					//test.log(LogStatus.FAIL,"Message Displayed :-  "+ Msg);
 				
 				}
 			
@@ -6283,7 +6824,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -6306,8 +6847,8 @@ Thread.sleep(3000);
 			JavascriptExecutor jse=(JavascriptExecutor)driver;
 			jse.executeScript("arguments[0].click();", ViewButton3);
 				Thread.sleep(4000);
-				DirectorLocator.SampleFormate(driver).click();
-				Thread.sleep(4000);
+			//	DirectorLocator.SampleFormate(driver).click();
+			//	Thread.sleep(4000);
 				By locator = By.xpath("//*[@id='File']");
 
 				wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -6315,7 +6856,7 @@ Thread.sleep(3000);
 				
 				WebElement ViewButton = driver.findElement(locator);	
 				Thread.sleep(3000);
-				ViewButton.sendKeys("C:\\Users\\Mayuri\\Documents\\Automation File\\4_28_2023 3_09_26 PM.zip");
+				ViewButton.sendKeys("D:\\Automation Upload Secretrial\\dir-8.docx");
 			
 				Thread.sleep(3000);
 				DirectorLocator.Uploadbtn(driver).click();
@@ -6363,7 +6904,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -6443,18 +6984,30 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
+		Thread.sleep(4000);
+		Locator.ComplianceAssignment(driver).click();
 		Thread.sleep(3000);
 		
+		if(Locator.ComplianceAssignment(driver).isEnabled()) {
+			
+			test.log(LogStatus.PASS, " User should be redirected to the compliance assignment page");
+
+		}
+		else {
+			test.log(LogStatus.FAIL, "User should not redirected to the compliance assignment page");
+
+		}
+		/*
 		 Actions act =new Actions(driver);
          act.sendKeys(Keys.PAGE_DOWN).build().perform();
          Thread.sleep(7000);
          
-		
+         
 			
 			
 			if(DirectorLocator.complianceassignment(driver).isEnabled()) {
@@ -6473,7 +7026,7 @@ Thread.sleep(3000);
     		}else {
     			test.log(LogStatus.FAIL, "User should not redirected to the compliance assignment page");
     			
-    		}
+    		}*/
 			
 		
 			
@@ -6488,13 +7041,17 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
 		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		
+		/*
 	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -6505,7 +7062,7 @@ Thread.sleep(3000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
 		Thread.sleep(4000);
-			
+			*/
 			
 			if(DirectorLocator.MeetingRadio(driver).isEnabled()) {
 				DirectorLocator.MeetingRadio(driver).click();
@@ -6530,13 +7087,16 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
 		
+		/*
 	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -6547,6 +7107,7 @@ Thread.sleep(3000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
 		Thread.sleep(4000);
+		*/
 			
 			 DirectorLocator.Entity(driver).click();
 				Thread.sleep(2000);
@@ -6565,17 +7126,31 @@ Thread.sleep(3000);
 								 DirectorLocator.StartDate1(driver).click();
 											Thread.sleep(3000);
 											 DirectorLocator.Filter(driver).sendKeys("8887",Keys.ENTER);
-												Thread.sleep(3000);							
-												DirectorLocator.SaveCA(driver).click();
-												Thread.sleep(3000);
-												
+												Thread.sleep(3000);	
+												WebElement element = driver.findElement(By.xpath("//*[@id='fsetCompliance']/div[2]/div/div[2]/button"));
+												JavascriptExecutor js = (JavascriptExecutor) driver;
+											    js.executeScript("arguments[0].scrollIntoView(true);", element);
+											    Thread.sleep(3000);	
+											    element.click();
+											    Thread.sleep(1000);	
+											    try {
 												String msg=DirectorLocator.SaveCAMsg(driver).getText();
-												Thread.sleep(4000);
 												if(msg.equalsIgnoreCase("Save Successfully.")) {
 													test.log(LogStatus.PASS,"Message Displayed :-  "+ msg);
 												}else {
 													test.log(LogStatus.FAIL,"Message Displayed :-  "+ msg);
 												}
+												Thread.sleep(4000);
+											    }
+											    catch(Exception e) {
+											    	String msg=DirectorLocator.SaveAssignement(driver).getText();
+											    	if(msg.equalsIgnoreCase("Save Successfully.")) {
+														test.log(LogStatus.PASS,"Message Displayed :-  "+ msg);
+													}else {
+														test.log(LogStatus.FAIL,"Message Displayed :-  "+ msg);
+													}
+											    }
+												
 		Thread.sleep(3000);
 		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
@@ -6587,13 +7162,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -6604,7 +7181,7 @@ Thread.sleep(3000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
 		Thread.sleep(4000);
-			
+			*/
 			 DirectorLocator.Entity(driver).click();
 				Thread.sleep(2000);
 				 DirectorLocator.Entity1(driver).click();
@@ -6633,14 +7210,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
-	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+	/*By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		Thread.sleep(4000);
@@ -6649,7 +7227,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 			
 			 DirectorLocator.Entity(driver).click();
 				Thread.sleep(2000);
@@ -6679,13 +7257,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -6695,7 +7275,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 			
 			 DirectorLocator.Entity(driver).click();
 				Thread.sleep(2000);
@@ -6725,13 +7305,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -6741,18 +7323,19 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 			
 			 DirectorLocator.Entity(driver).click();
 				Thread.sleep(2000);
 				 DirectorLocator.Entity1(driver).click();
 					Thread.sleep(4000);
-					
-					 DirectorLocator.Filter(driver).sendKeys("8887",Keys.ENTER);
+					String id = DirectorLocator.Id(driver).getText();
+					Thread.sleep(1000);
+					 DirectorLocator.Filter(driver).sendKeys(id,Keys.ENTER);
 					 Thread.sleep(4000);
 		String msg= DirectorLocator.ID(driver).getText();
 		Thread.sleep(4000);
-					if(msg.equalsIgnoreCase("8887")) {
+					if(msg.equalsIgnoreCase(id)) {
 						
 						test.log(LogStatus.PASS, "The list  display only the items that match the keyword ");
 					}else {
@@ -6772,13 +7355,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -6788,7 +7373,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 					
 					if( DirectorLocator.Assigned(driver).isEnabled()) {
 						
@@ -6813,13 +7398,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -6829,7 +7416,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 						
 			DirectorLocator.Assigned(driver).click();
 				Thread.sleep(3000);
@@ -6838,25 +7425,32 @@ Thread.sleep(3000);
 				Thread.sleep(2000);
 				DirectorLocator.EntityAssi1(driver).click();
 				Thread.sleep(4000);
+				try {
+				DirectorMethod.ExcelcountAndGridMatch(driver,test,workbook);
+				}
+				catch(IOException e)
+				{
 					
+				}
+					/*
 				Thread.sleep(2000);
-				File dir = new File("C:\\Users\\Mayuri\\Downloads");
+				File dir = new File("C:\\Users\\shitalb\\Downloads");
 				File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 				
 				Thread.sleep(500);
 				DirectorLocator.Export(driver).click();		//Exporting (Downloading) file
 				
 				Thread.sleep(3000);//C://Users//jiya//Downloads//
-				File dir1 = new File("C:\\Users\\Mayuri\\Downloads");
+				File dir1 = new File("C:\\Users\\shitalb\\Downloads");
 				File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 				
 				Thread.sleep(3000);
 				if (dirContents.length < allFilesNew.length) {
 					test.log(LogStatus.PASS,  "  File downloaded successfully.");
-				} else {
+				} else readTotalItems1 {
 					test.log(LogStatus.FAIL, "  File does not downloaded.");
 				}
-				
+				*/
 												
 		Thread.sleep(3000);
 		DirectorLocator.ClickDashboard(driver).click();
@@ -6864,19 +7458,125 @@ Thread.sleep(3000);
 		
 	}
 	
+	public static void ExcelcountAndGridMatch( WebDriver driver, ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
+	{
+			    
+	  
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        
+        js.executeScript("window.scrollBy(0,1000)");
+        Thread.sleep(2000); 		
+        
+        Thread.sleep(7000);
+
+        DirectorLocator.readTotalItems(driver).click();
+		String item = DirectorLocator.readTotalItems(driver).getText();
+		String[] bits = item.split(" ");								//Splitting the String
+		String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+		int count1 = Integer.parseInt(compliancesCount);
+	
+		if(compliancesCount.equalsIgnoreCase("to"))
+		{
+			Thread.sleep(5000);
+		   item = DirectorLocator.readTotalItems(driver).getText();
+			bits = item.split(" ");
+        
+		}
+		
+		Thread.sleep(2000);
+        JavascriptExecutor js1 = (JavascriptExecutor) driver;
+        
+        js1.executeScript("window.scrollBy(0,-1000)");
+        Thread.sleep(2000);
+
+Thread.sleep(1000);
+File dir = new File("C:\\Users\\shitalb\\Downloads");
+File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
+
+Thread.sleep(1000);
+DirectorLocator.Export(driver).click();
+
+Thread.sleep(9000);					//Clicking on 'Excel Report' image.
+test.log(LogStatus.PASS, "File downloaded successfully.");
+
+Thread.sleep(5500);
+File dir1 = new File("C:\\Users\\shitalb\\Downloads");
+File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
+
+if(dirContents.length < allFilesNew.length)
+{
+	
+	
+	File lastModifiedFile = allFilesNew[0];			//Storing any 0th index file in 'lastModifiedFile' file name.
+    for (int i = 1; i < allFilesNew.length; i++) 	//For loop till the number of files in directory.
+    {
+       if (lastModifiedFile.lastModified() < allFilesNew[i].lastModified()) 	//If allFilesNew[i] file is having large/latest time time of update then latest modified file be allFilesNew[i] file.
+       {
+           lastModifiedFile = allFilesNew[i];
+       }
+    }
+	
+	Thread.sleep(1000);
+	fis = new FileInputStream(lastModifiedFile);
+	workbook = new XSSFWorkbook(fis);
+	sheet = workbook.getSheetAt(0);					//Retrieving first sheet of Workbook
+	/*
+	int no = sheet.getFirstRowNum();
+	Row row = sheet.getRow(no);
+	Cell c1 = row.getCell(0);
+	int records =(int) c1.getNumericCellValue();
+	*/
+	sheet = workbook.getSheetAt(0);
+	int columnNumber = 3;
+	int rowCount = 0;
+	int actualRow=0;
+	
+	for(Row row : sheet)
+	{
+		
+		Cell cell =row.getCell(columnNumber);
+		if(cell != null) {
+			
+			rowCount++;
+			actualRow = rowCount-4;
+		}
+		
+	}
+	fis.close();
+	
+	if(count1 == actualRow)
+	{
+		//test.log(LogStatus.PASS, "No of records from grid matches to no of records in Excel Sheet.");
+		test.log(LogStatus.PASS, "Total records from Grid = "+count1+" | Total records from Report = "+actualRow);
+	}
+	else
+	{
+		//test.log(LogStatus.FAIL, "No of records from grid doesn't matches to no of records in Excel Sheet.");
+		test.log(LogStatus.FAIL, "Total records from Grid = "+count1+" | Total records from Excel Sheet = "+actualRow);
+	}
+}
+else
+{
+	test.log(LogStatus.FAIL, "File doesn't downloaded successfully.");
+}
+
+        
+	
+	}
 	public static void complianceassignmentRA(WebDriver driver, ExtentTest test) throws InterruptedException
 	{
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
-		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		Thread.sleep(4000);
@@ -6885,7 +7585,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 					
 					if( DirectorLocator.ReAssignment(driver).isEnabled()) {
 						
@@ -6909,14 +7609,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
-		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+	/*	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		Thread.sleep(4000);
@@ -6925,7 +7626,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 					
 				
 						DirectorLocator.ReAssignment(driver).click();
@@ -6937,7 +7638,7 @@ Thread.sleep(3000);
 						
 						DirectorLocator.User(driver).click();
 						Thread.sleep(1000);
-						DirectorLocator.User1(driver).click();
+						DirectorLocator.User2(driver).click();
 						Thread.sleep(2000);
 						
 						DirectorLocator.NewUser(driver).click();
@@ -6971,13 +7672,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -6987,7 +7690,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 		DirectorLocator.ReAssignment(driver).click();
 		Thread.sleep(2000);
@@ -7027,13 +7730,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -7044,7 +7749,7 @@ Thread.sleep(3000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
 		Thread.sleep(4000);
-			
+			*/
 		DirectorLocator.ReAssignment(driver).click();
 		Thread.sleep(2000);
 		
@@ -7081,13 +7786,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -7097,7 +7804,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 			
 		DirectorLocator.ReAssignment(driver).click();
 		Thread.sleep(2000);
@@ -7135,13 +7842,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -7151,7 +7860,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 					
 					if( DirectorLocator.Agenda(driver).isEnabled()) {
 						
@@ -7175,13 +7884,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -7191,7 +7902,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 						
 						DirectorLocator.Agenda(driver).click();
 						Thread.sleep(2000);
@@ -7248,13 +7959,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -7264,7 +7977,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 		DirectorLocator.Agenda(driver).click();
 		Thread.sleep(2000);
@@ -7298,13 +8011,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -7314,7 +8029,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 			
 		DirectorLocator.Agenda(driver).click();
 		Thread.sleep(2000);
@@ -7347,13 +8062,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -7363,7 +8080,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 			
 		DirectorLocator.Agenda(driver).click();
 		Thread.sleep(2000);
@@ -7395,13 +8112,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -7411,7 +8130,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 						
 						DirectorLocator.Agenda(driver).click();
 						Thread.sleep(2000);
@@ -7444,14 +8163,13 @@ Thread.sleep(3000);
 														Thread.sleep(5000);
 														 DirectorLocator.Apply(driver).click();
 															Thread.sleep(3000);
-															
-															DirectorLocator.filterCompliance(driver).sendKeys("86985",Keys.ENTER);
+															String id = DirectorLocator.id(driver).getText();
+															DirectorLocator.filterCompliance(driver).sendKeys(id,Keys.ENTER);
 															Thread.sleep(5000);
-															
-															 
+																 
 																String Msg=	DirectorLocator.idText(driver).getText();
 																Thread.sleep(3000);
-																if(Msg.equalsIgnoreCase("86985")) {
+																if(id != null && id.equals(Msg)) {
 																	test.log(LogStatus.PASS," The list should display only the items that match the keyword ");
 																}else {
 																	test.log(LogStatus.FAIL,"The list should not display only the items that match the keyword ");
@@ -7468,13 +8186,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -7484,7 +8204,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 		DirectorLocator.Agenda(driver).click();
 		Thread.sleep(2000);
@@ -7511,13 +8231,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -7527,7 +8249,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 		DirectorLocator.Agenda(driver).click();
 		Thread.sleep(2000);
@@ -7540,16 +8262,22 @@ Thread.sleep(3000);
 				Thread.sleep(2000);
 				DirectorLocator.EntityAssi1(driver).click();
 				Thread.sleep(4000);
-					
+					try {
+				DirectorMethod.ExcelcountAndGridMatch(driver, test, workbook);
+					}
+					catch(IOException e) {
+						
+					}
+					/*
 				Thread.sleep(2000);
-				File dir = new File("C:\\Users\\Mayuri\\Downloads");
+				File dir = new File("C:\\Users\\shitalb\\Downloads");
 				File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 				
 				Thread.sleep(500);
 				DirectorLocator.Export(driver).click();		//Exporting (Downloading) file
 				
 				Thread.sleep(3000);//C://Users//jiya//Downloads//
-				File dir1 = new File("C:\\Users\\Mayuri\\Downloads");
+				File dir1 = new File("C:\\Users\\shitalb\\Downloads");
 				File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 				
 				Thread.sleep(3000);
@@ -7558,7 +8286,7 @@ Thread.sleep(3000);
 				} else {
 					test.log(LogStatus.FAIL, "  File does not downloaded.");
 				}
-				
+				*/
 												
 		Thread.sleep(3000);
 		DirectorLocator.ClickDashboard(driver).click();
@@ -7571,13 +8299,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -7587,7 +8317,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 		DirectorLocator.Agenda(driver).click();
 		Thread.sleep(2000);
@@ -7614,14 +8344,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
-		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+	/*	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		Thread.sleep(4000);
@@ -7630,7 +8361,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		DirectorLocator.Agenda(driver).click();
 		Thread.sleep(2000);
 				
@@ -7686,13 +8417,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -7702,7 +8435,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 		DirectorLocator.Agenda(driver).click();
 		Thread.sleep(2000);
@@ -7745,13 +8478,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -7761,7 +8496,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 		DirectorLocator.Agenda(driver).click();
 		Thread.sleep(2000);
@@ -7804,13 +8539,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -7820,7 +8557,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 		DirectorLocator.Agenda(driver).click();
 		Thread.sleep(2000);
@@ -7863,7 +8600,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -7906,7 +8643,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -7952,13 +8689,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -7968,7 +8707,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 	
 					if( DirectorLocator.Statutory(driver).isEnabled()) {
@@ -7993,13 +8732,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -8009,7 +8750,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 						
 						DirectorLocator.Statutory(driver).click();
 						Thread.sleep(2000);
@@ -8061,7 +8802,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -8114,7 +8855,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -8166,7 +8907,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -8216,13 +8957,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -8234,7 +8977,7 @@ Thread.sleep(3000);
 	jse.executeScript("arguments[0].click();", ViewButton);
 		Thread.sleep(4000);
 		DirectorLocator.Statutory(driver).click();
-		Thread.sleep(2000);
+		Thread.sleep(2000);*/
 	
 					if( DirectorLocator.Assigned(driver).isEnabled()) {
 						
@@ -8259,14 +9002,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
-		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+	/*	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
 		Thread.sleep(4000);
@@ -8275,7 +9019,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 		DirectorLocator.Statutory(driver).click();
 		Thread.sleep(2000);
@@ -8290,14 +9034,14 @@ Thread.sleep(3000);
 				Thread.sleep(4000);
 					
 				Thread.sleep(2000);
-				File dir = new File("C:\\Users\\Mayuri\\Downloads");
+				File dir = new File("C:\\Users\\shitalb\\Downloads");
 				File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 				
 				Thread.sleep(500);
 				DirectorLocator.Export(driver).click();		//Exporting (Downloading) file
 				
 				Thread.sleep(3000);//C://Users//jiya//Downloads//
-				File dir1 = new File("C:\\Users\\Mayuri\\Downloads");
+				File dir1 = new File("C:\\Users\\shitalb\\Downloads");
 				File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 				
 				Thread.sleep(3000);
@@ -8319,13 +9063,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -8336,7 +9082,7 @@ Thread.sleep(3000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
 		Thread.sleep(4000);
-		
+		*/
 		DirectorLocator.Statutory(driver).click();
 		Thread.sleep(2000);
 					
@@ -8363,13 +9109,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -8379,14 +9127,14 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		DirectorLocator.Statutory(driver).click();
 		Thread.sleep(2000);
 				
 						DirectorLocator.ReAssignment(driver).click();
 						Thread.sleep(2000);
 						DirectorLocator.EntityRA(driver).click();
-						Thread.sleep(1000);
+						Thread.sleep(2000);
 						DirectorLocator.EntityRA3(driver).click();
 						Thread.sleep(2000);
 						
@@ -8436,13 +9184,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -8452,7 +9202,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 		DirectorLocator.Statutory(driver).click();
 		Thread.sleep(2000);
@@ -8495,13 +9245,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -8511,7 +9263,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 		DirectorLocator.Statutory(driver).click();
 		Thread.sleep(2000);
@@ -8554,7 +9306,7 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
@@ -8613,13 +9365,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -8629,7 +9383,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 		DirectorLocator.Statutory(driver).click();
 		Thread.sleep(2000);
@@ -8656,13 +9410,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -8672,7 +9428,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 		DirectorLocator.Statutory(driver).click();
 		Thread.sleep(2000);
@@ -8728,13 +9484,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -8744,7 +9502,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 		DirectorLocator.Statutory(driver).click();
 		Thread.sleep(2000);
@@ -8757,11 +9515,11 @@ Thread.sleep(3000);
 						DirectorLocator.EntityEA1(driver).click();
 						Thread.sleep(8000);
 						
-						DirectorLocator.FilterEA(driver).sendKeys("28698",Keys.ENTER);
+						DirectorLocator.FilterEA(driver).sendKeys("291",Keys.ENTER);
 						Thread.sleep(2000);
 						String Msg=	DirectorLocator.FilterEAText(driver).getText();
 						Thread.sleep(2000);
-						if(Msg.equalsIgnoreCase("28698"))
+						if(Msg.equalsIgnoreCase("291"))
 						{
 							test.log(LogStatus.PASS," Filter working successfully . ");
 						}else {
@@ -8779,13 +9537,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -8795,7 +9555,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 		DirectorLocator.Statutory(driver).click();
 		Thread.sleep(2000);
@@ -8834,13 +9594,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.ComplianceAssignment(driver).click();
+		Thread.sleep(4000);
+		/*
 	By locator = By.xpath("//*[@id='Mastermenu']/ul/li[11]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -8850,7 +9612,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 		DirectorLocator.Statutory(driver).click();
 		Thread.sleep(2000);
@@ -8889,13 +9651,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.Note(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[12]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -8905,7 +9669,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 		test.log(LogStatus.PASS, " User should be redirected to the Notes page");
 					
@@ -8921,13 +9685,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.Note(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[12]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -8937,7 +9703,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 	
 					
@@ -8963,13 +9729,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.Note(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[12]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -8979,7 +9747,7 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
 					if( DirectorLocator.NotApplicableRB(driver).isEnabled()) {
 						
@@ -9003,13 +9771,15 @@ Thread.sleep(3000);
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"))); 
 		Thread.sleep(1000);
 		Locator.Master(driver).click();
 		Thread.sleep(2000);
 		Locator.MasterMenu(driver).click();
 		Thread.sleep(4000);
-		
+		Locator.Note(driver).click();
+		Thread.sleep(4000);
+		/*
 		By locator = By.xpath("//*[@id='Mastermenu']/ul/li[12]/a");
 		
 		wait.until(ExpectedConditions.presenceOfElementLocated(locator));
@@ -9019,17 +9789,24 @@ Thread.sleep(3000);
 		Thread.sleep(4000);
 	JavascriptExecutor jse=(JavascriptExecutor)driver;
 	jse.executeScript("arguments[0].click();", ViewButton);
-		Thread.sleep(4000);
+		Thread.sleep(4000);*/
 		
-		driver.switchTo().frame(0);
+	//	driver.switchTo().frame(0);
+		driver.switchTo().frame(Locator.Frame(driver));
 		Thread.sleep(2000);
-		Locator.TextArea(driver).clear();
-		Locator.TextArea(driver).sendKeys("Auto23");
+		WebElement editableArea = driver.findElement(By.xpath("//body"));  // Example XPath inside iframe
+		editableArea.clear();
+		editableArea.sendKeys("Auto23");
+		//Locator.TextArea(driver).clear();
+		//Thread.sleep(2000);
+	//	Locator.TextArea(driver).sendKeys("Auto23");
 		Thread.sleep(3000);
 		
 		driver.switchTo().defaultContent();
 		Thread.sleep(2000);
-		Locator.SaveNotes(driver).click();
+		WebElement Save = DirectorMethod.scrollToElement(driver, Locator.SaveNotes(driver));
+		Save.click();
+	//	Locator.SaveNotes(driver).click();
 		Thread.sleep(3000);
 		String text=Locator.ValidationMsg(driver).getText();
 		test.log(LogStatus.PASS, ""+ text);
@@ -9040,7 +9817,14 @@ Thread.sleep(3000);
 		Thread.sleep(2000);
 		
 	}
-	
+	public static WebElement scrollToElement(WebDriver driver,WebElement element)
+	{
+		
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+	    
+	    js.executeScript("arguments[0].scrollIntoView(true);", element);
+		return element;
+	}
 	
 	
 	

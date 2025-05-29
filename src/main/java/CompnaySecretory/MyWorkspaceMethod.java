@@ -2,23 +2,36 @@ package CompnaySecretory;
 
 import java.io.File;
 import java.io.FileInputStream;
-
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.format.TextStyle;
 import java.util.List;
+import java.util.Locale;
 
+import javax.xml.datatype.Duration;
+
+import org.apache.poi.ss.usermodel.CellType;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import com.google.common.collect.Table.Cell;
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+
+import cfo.CFOcountPOM;
+import secretrial.DirectorLocator;
+
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.Point;
 import org.openqa.selenium.interactions.Actions;
 
 public class MyWorkspaceMethod 
@@ -30,6 +43,17 @@ public class MyWorkspaceMethod
 		public static XSSFSheet sheet = null;		//Sheet variable
 		public static XSSFSheet sheet1 = null;		//Sheet variable
 
+		
+		public static XSSFSheet ReadExcel() throws IOException
+		{
+
+			fis = new FileInputStream("D:\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\TestData\\SecreterialSheet3.xlsx");
+			
+			workbook = new XSSFWorkbook(fis);
+			sheet = workbook.getSheetAt(0);					//Retrieving second sheet of Workbook
+			return sheet;
+		}
+		
 		
 		public static void ClickMyWorkspace(WebDriver driver,ExtentTest test) throws InterruptedException
 		{
@@ -46,6 +70,11 @@ public class MyWorkspaceMethod
 			    	 test.log(LogStatus.FAIL, "My workspace tab is not clickable");
 		    }    
 		}
+		
+		public static void setZoomLevel(WebDriver driver, double zoomLevel) {
+	        JavascriptExecutor js = (JavascriptExecutor) driver;
+	        js.executeScript("document.body.style.zoom='" + zoomLevel + "'");
+	    }
 		public static void ClickConcludedMeeting(WebDriver driver,ExtentTest test) throws InterruptedException
 		{
 			
@@ -1335,7 +1364,7 @@ public class MyWorkspaceMethod
 				
 				Thread.sleep(2000);
 				MyWorkspaceLocator.MyWorkspaceimg(driver).click();
-				
+				Thread.sleep(2000);
 				if(MyWorkspaceLocator.clickMyCompliance(driver).isEnabled())
 				{
 					Thread.sleep(2000);
@@ -1347,8 +1376,8 @@ public class MyWorkspaceMethod
 				    	 test.log(LogStatus.FAIL, "User should not be redirected to the My Compliances page'");
 			    }
 				 Thread.sleep(4000);
-			     EntityLocator.ClickDashboard(driver).click();
-				    
+				 DirectorLocator.ClickDashboard(driver).click();
+					Thread.sleep(2000);				    
 	    	}
 			
 			public static void ClickMyComplianceEditBtn(WebDriver driver,ExtentTest test) throws InterruptedException
@@ -1375,10 +1404,94 @@ public class MyWorkspaceMethod
 				 Thread.sleep(4000);
 				 MyWorkspaceLocator.clickCloseIcon9(driver).click();
 				 Thread.sleep(4000);
-			     EntityLocator.ClickDashboard(driver).click();
-				    
+				 DirectorLocator.ClickDashboard(driver).click();
+					Thread.sleep(2000);				    
 		}
 			
+			public static void MyCompliances(WebDriver driver,ExtentTest test) throws InterruptedException
+			{
+				
+				Thread.sleep(2000);
+				MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+				
+				Thread.sleep(2000);
+				MyWorkspaceLocator.clickMyCompliance(driver).click();
+				WebDriverWait wait=new WebDriverWait(driver, 50);
+				By locator = By.xpath("//img[contains(@src, 'NewUi_Images/edit.svg')]");
+				 
+				   wait.until(ExpectedConditions.presenceOfElementLocated(locator));
+				   Thread.sleep(4000);
+				Thread.sleep(2000);
+				MyWorkspaceLocator.clickMyComplianceEdit(driver).click();
+						
+				 Thread.sleep(4000);
+				 if( DirectorLocator.status(driver).isEnabled()) {
+				 try {
+					 DirectorLocator.status(driver).click();
+					 Thread.sleep(2000);
+					 DirectorLocator.statusValue(driver).click();
+					 Thread.sleep(2000);
+					
+					 DirectorLocator.compliancedoc(driver).sendKeys("D:\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\SamplePastDirectorUpload.xlsx");
+					 Thread.sleep(2000);
+					 
+					 DirectorLocator.workdoc(driver).sendKeys("D:\\Secretarial-Project-26JULY23\\Director Master Sample File.xlsx");
+					 Thread.sleep(2000);
+					 
+					 DirectorLocator.Date(driver).click();
+					 Thread.sleep(2000);
+					 DirectorLocator.Dateselect(driver).click();
+					 Thread.sleep(2000);
+					 WebElement element = MyWorkspaceLocator.Remarks(driver);
+					 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+					 Thread.sleep(3000);
+					 element.sendKeys("Nill");
+					 Thread.sleep(4000);
+					 
+					 DirectorLocator.Savebtn(driver).click();
+					 Thread.sleep(2000);
+					 String msg = DirectorLocator.SaveMessage(driver).getText();
+					 Thread.sleep(2000);
+					 if(msg.equalsIgnoreCase("Save Successfully.")) {
+					test.log(LogStatus.PASS, msg);
+					 }
+					 else {
+							test.log(LogStatus.PASS, msg);
+					 }
+
+					 DirectorLocator.Closepopup(driver).click();
+					 Thread.sleep(2000);
+				 	 
+				 }
+				 catch(Exception e) {
+						
+				 }
+				 }
+				 else {
+					 WebElement element = MyWorkspaceLocator.Remarks(driver);
+					 ((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+					 Thread.sleep(3000);
+					 element.sendKeys("Nill");
+					 Thread.sleep(4000);
+					 DirectorLocator.NotApplicable(driver).click();
+					 Thread.sleep(2000);
+					 String msg = DirectorLocator.SaveMessage(driver).getText();
+					 Thread.sleep(2000);
+					 if(msg.equalsIgnoreCase("Save Successfully.")) {
+					test.log(LogStatus.PASS, msg);
+					 }
+					 else {
+							test.log(LogStatus.PASS, msg);
+					 }
+
+					 DirectorLocator.Closepopup(driver).click();
+					 Thread.sleep(2000);
+					//	sheet=workbook.getSheetAt(0);
+						Thread.sleep(2000);
+				 }
+				 DirectorLocator.ClickDashboard(driver).click();
+				 Thread.sleep(2000);				    
+		}
 		public static void ClickMyTask(WebDriver driver,ExtentTest test) throws InterruptedException
 			{
 				
@@ -1400,7 +1513,7 @@ public class MyWorkspaceMethod
 		
 		public static void AddMyTaskMetting(WebDriver driver,ExtentTest test,XSSFWorkbook workbook) throws InterruptedException
 		{
-			WebDriverWait wait=new WebDriverWait(driver, 20);
+			WebDriverWait wait=new WebDriverWait(driver, 50);
 			sheet=workbook.getSheetAt(0);
 			Thread.sleep(2000);
 			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
@@ -1432,16 +1545,21 @@ public class MyWorkspaceMethod
 				   
 				
 				   Thread.sleep(2000);
-				     List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='EntityId_listbox']/li"));
-					selectOptionFromDropDown_bs(entitytype, "A LIMITED");
+				   MyWorkspaceLocator.EntityValue(driver).click();
 				   
+				//     List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='EntityId_listbox']/li"));
+				//	selectOptionFromDropDown_bs(entitytype, "A LIMITED");
+				   
+				   MyWorkspaceLocator.ClickTaskTitle(driver).click();
 				   Thread.sleep(2000);
-				    Row row = sheet.getRow(81);						//Selected 1st index row (Second row)
-				    org.apache.poi.ss.usermodel.Cell c = row.getCell(1);						//Selected cell (1 row,1 column)
+				   
+				    Row row = sheet.getRow(93);						//Selected 1st index row (Second row)
+				   org.apache.poi.ss.usermodel.Cell c = row.getCell(1);						//Selected cell (1 row,1 column)
 					String TaskTitle = c.getStringCellValue();	//Got the URL stored at position 1,1
 					MyWorkspaceLocator.ClickTaskTitle(driver).sendKeys(TaskTitle );
-					
 					 Thread.sleep(2000);
+					
+					 
 					 Row row1 = sheet.getRow(82);						//Selected 1st index row (Second row)
 					 org.apache.poi.ss.usermodel.Cell c1 = row1.getCell(1);						//Selected cell (1 row,1 column)
 					 String TaskDesciption= c1.getStringCellValue();	//Got the URL stored at position 1,1
@@ -1453,11 +1571,16 @@ public class MyWorkspaceMethod
 					 MyWorkspaceLocator.SelectDate(driver).click();
 					 
 					 Thread.sleep(2000);
-					 MyWorkspaceLocator.selectFile(driver).sendKeys("C:\\Users\\Snehal Patil\\Downloads\\Management Personnel.pdf");
+					 MyWorkspaceLocator.SelectUser(driver).click();
+					 Thread.sleep(2000);
+					 MyWorkspaceLocator.SelectUserValue(driver).click();
+					 
+					 Thread.sleep(2000);
+					 MyWorkspaceLocator.selectFile(driver).sendKeys("D:\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\TestData\\SamplePDFFile_5mb.pdf");
 	
 					 Thread.sleep(2000);
 					 MyWorkspaceLocator.Save(driver).click();
-					 Thread.sleep(2000);
+					 Thread.sleep(7000);
 					 String msg= MyWorkspaceLocator.ValidMsg(driver).getText();
 					 
 					 if(msg.equalsIgnoreCase(msg))
@@ -1476,7 +1599,7 @@ public class MyWorkspaceMethod
 		
 		public static void AddMyTaskAgenda(WebDriver driver,ExtentTest test,XSSFWorkbook workbook,XSSFSheet sheet) throws InterruptedException
 		{
-			WebDriverWait wait=new WebDriverWait(driver, 20);
+			WebDriverWait wait=new WebDriverWait(driver, 60);
 			//sheet=workbook.getSheetAt(0);
 			Thread.sleep(2000);
 			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
@@ -1525,14 +1648,26 @@ public class MyWorkspaceMethod
 					 Thread.sleep(2000);
 					 MyWorkspaceLocator.SelectDate(driver).click();
 					 
+					 
 					 Thread.sleep(2000);
-					 MyWorkspaceLocator.selectFile(driver).sendKeys("C:\\Users\\Snehal Patil\\Downloads\\Management Personnel.pdf");
+					 MyWorkspaceLocator.SelectUser(driver).click();
+					 Thread.sleep(2000);
+					 MyWorkspaceLocator.SelectUserValue(driver).click();
+					 
+					 Thread.sleep(2000);
+					 MyWorkspaceLocator.selectFile(driver).sendKeys("D:\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\TestData\\SamplePDFFile_5mb.pdf");
 	
 					 Thread.sleep(2000);
 					 MyWorkspaceLocator.Save(driver).click();
 					 Thread.sleep(2000);
-					 String msg= MyWorkspaceLocator.ValidMsg(driver).getText();
+				//	 MyWorkspaceLocator.Save(driver).click();
+					// Thread.sleep(2000);
+					 By locator1 = By.xpath("//*[@id='DivTask']/div/div/div[1]/div/div/lable");
 					 
+					   wait.until(ExpectedConditions.presenceOfElementLocated(locator1));
+					   Thread.sleep(1000);
+					 String msg= MyWorkspaceLocator.ValidMsg(driver).getText();
+					 Thread.sleep(1000);
 					 if(msg.equalsIgnoreCase(msg))
 					 {
 						 test.log(LogStatus.PASS, "Message displsyed ="+msg);
@@ -1548,7 +1683,7 @@ public class MyWorkspaceMethod
 		}
 		public static void AddMyTaskOther(WebDriver driver,ExtentTest test,XSSFWorkbook workbook) throws InterruptedException
 		{
-			WebDriverWait wait=new WebDriverWait(driver, 20);
+			WebDriverWait wait=new WebDriverWait(driver, 90);
 			sheet=workbook.getSheetAt(0);
 			Thread.sleep(2000);
 			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
@@ -1585,11 +1720,15 @@ public class MyWorkspaceMethod
 					 MyWorkspaceLocator.SelectDate(driver).click();
 					 
 					 Thread.sleep(2000);
-					 MyWorkspaceLocator.selectFile(driver).sendKeys("C:\\Users\\Snehal Patil\\Downloads\\Management Personnel.pdf");
+					 MyWorkspaceLocator.selectFile(driver).sendKeys("D:\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\TestData\\SamplePDFFile_5mb.pdf");
 	
 					 Thread.sleep(2000);
 					 MyWorkspaceLocator.Save(driver).click();
 					 Thread.sleep(2000);
+					 By locator1 = By.xpath("//div[@class='alert alert-success alert-dismissible']//lable");
+					 
+					   wait.until(ExpectedConditions.presenceOfElementLocated(locator1));
+					   Thread.sleep(4000);
 					 String msg= MyWorkspaceLocator.ValidMsg(driver).getText();
 					 
 					 if(msg.equalsIgnoreCase(msg))
@@ -1622,6 +1761,10 @@ public class MyWorkspaceMethod
 				 Thread.sleep(2000);
 				 MyWorkspaceLocator.Save(driver).click();
 				 Thread.sleep(2000);
+				/* By locator1 = By.xpath("//*[@id='DivTask']/div/div/div[1]/div/div/lable");
+				 
+				   wait.until(ExpectedConditions.presenceOfElementLocated(locator1));
+				   Thread.sleep(2000);*/
 				 String msg= MyWorkspaceLocator.ValidMsg(driver).getText();
 				 
 				 if(msg.equalsIgnoreCase(msg))
@@ -1688,8 +1831,8 @@ public class MyWorkspaceMethod
 				 MyWorkspaceLocator.closeBtn(driver).click();
 				 
 				 Thread.sleep(4000);
-			     EntityLocator.ClickDashboard(driver).click();
-		
+				 DirectorLocator.ClickDashboard(driver).click();
+					Thread.sleep(2000);		
 		}
 			   
 		public static void TaskViewDeatiles(WebDriver driver,ExtentTest test) throws InterruptedException
@@ -1723,8 +1866,8 @@ public class MyWorkspaceMethod
 				 MyWorkspaceLocator.closeBtn(driver).click();
 				 
 				 Thread.sleep(4000);
-			     EntityLocator.ClickDashboard(driver).click();
-		
+				 DirectorLocator.ClickDashboard(driver).click();
+					Thread.sleep(2000);		
 		}
 		
 		public static void EditTask(WebDriver driver,ExtentTest test) throws InterruptedException
@@ -1765,8 +1908,9 @@ public class MyWorkspaceMethod
 				 MyWorkspaceLocator.closeBtn(driver).click();
 				 
 				 Thread.sleep(4000);
-			     EntityLocator.ClickDashboard(driver).click();
-	   }
+				 DirectorLocator.ClickDashboard(driver).click();
+					Thread.sleep(2000);
+					}
 			   
 		public static void EditTaskWithoutEnterData(WebDriver driver,ExtentTest test) throws InterruptedException
 		{
@@ -1803,8 +1947,9 @@ public class MyWorkspaceMethod
 				 MyWorkspaceLocator.closeBtn(driver).click();
 				 
 				 Thread.sleep(4000);
-			     EntityLocator.ClickDashboard(driver).click();
-	   }
+				 DirectorLocator.ClickDashboard(driver).click();
+					Thread.sleep(2000);
+					}
 		
 		public static void DownloadDocument(WebDriver driver,ExtentTest test) throws InterruptedException
 		{
@@ -1836,8 +1981,8 @@ public class MyWorkspaceMethod
 				 MyWorkspaceLocator.closeBtn(driver).click();
 				 
 				 Thread.sleep(4000);
-			     EntityLocator.ClickDashboard(driver).click();
-			   
+				 DirectorLocator.ClickDashboard(driver).click();
+					Thread.sleep(2000);			   
 			   
 		}
 		
@@ -1996,15 +2141,17 @@ public class MyWorkspaceMethod
 			    MyWorkspaceLocator.Entity(driver).click();
 			    Thread.sleep(2000);
 			    MyWorkspaceLocator.SelectEntity(driver).click();
-//			    Thread.sleep(2000);
-//			    MyWorkspaceLocator.ClickFY(driver).click();
-//			    
-//			    Thread.sleep(2000);
-//			    MyWorkspaceLocator.ClickFY1(driver).click();
-//			    Thread.sleep(2000);
-//			    MyWorkspaceLocator. SelectFY(driver).click();
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.ClickFY(driver).click();
+			    
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.ClickFY1(driver).click();
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator. SelectFY(driver).click();
 			    Thread.sleep(2000);
 			    MyWorkspaceLocator.ClickMeetingType(driver).click();
+			    Thread.sleep(2000);
+			    MyWorkspaceLocator.ClickMeetingType1(driver).click();
 			    Thread.sleep(2000);
 			    MyWorkspaceLocator.SelectMeetingType(driver).click();
 			    Thread.sleep(2000);
@@ -2039,8 +2186,8 @@ public class MyWorkspaceMethod
 			    MyWorkspaceLocator.closeIcon(driver).click();
 			    
 			    Thread.sleep(4000);
-			     EntityLocator.ClickDashboard(driver).click();
-			    
+			    DirectorLocator.ClickDashboard(driver).click();
+				Thread.sleep(2000);			    
 		}
 		
 		public static void MeetingCalenderWithoutEnterData(WebDriver driver,ExtentTest test) throws InterruptedException
@@ -2075,8 +2222,8 @@ public class MyWorkspaceMethod
 			    MyWorkspaceLocator.closeIcon(driver).click();
 			    
 			    Thread.sleep(4000);
-			     EntityLocator.ClickDashboard(driver).click();
-			    
+			    DirectorLocator.ClickDashboard(driver).click();
+				Thread.sleep(2000);			    
 		}
 		
 		public static void ClearBtn(WebDriver driver,ExtentTest test) throws InterruptedException
@@ -7758,28 +7905,2028 @@ public static void CancelDeleteDocumentVotingAgenda(WebDriver driver,ExtentTest 
 
 		  
 		  		  
+public static void EntityBox(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	WebDriverWait wait = new WebDriverWait(driver, (120));
+	Thread.sleep(7000);
+	wait.until(ExpectedConditions.visibilityOf(MyWorkspaceLocator.Entitydashboard(driver)));
+
+int open = Integer.parseInt(MyWorkspaceLocator.Entitydashboard(driver).getText());
+
+	MyWorkspaceLocator.Entitydashboard(driver).click();
+	  Thread.sleep(2000);
+	    
+	  Thread.sleep(2000);
+			
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    
+	    js.executeScript("window.scrollBy(0,1000)");
+	    Thread.sleep(2000);
+	   
+		String item = MyWorkspaceLocator.EntityGrid(driver).getText();
+
+		 if(!item.equalsIgnoreCase("No items to display")) {
+				Thread.sleep(5000);
+				//String item = Locator2.UpcomingCountGrid().getText();
+
+				String[] bits = item.split(" ");								//Splitting the String
+				String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+				int count1 = Integer.parseInt(compliancesCount);
+				
+				if(open == count1)
+					
+				{
+								
+				//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+								
+				test.log(LogStatus.PASS, "Dashboard Count = "+open+" | Displayed records from grid = "+count1);
+							
+				}
+							
+				else
+							
+				{
+								
+				//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+								
+				test.log(LogStatus.FAIL, "Dashboard Count = "+open+" | Displayed records from grid = "+count1);
+							
+				}
+		 }
+				else {
+					//String item = MyWorkspaceLocator.EntityGrid(driver).getText();
+
+					test.log(LogStatus.PASS, item);
+
+				}
+		 DirectorLocator.ClickDashboard(driver).click();
+		  Thread.sleep(2000);
+		  DirectorLocator.dashboardtab(driver).click();
+		  Thread.sleep(2000);
 		  
+}
 		  
 		  
 
+public static void DirectorskpmBox(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	WebDriverWait wait = new WebDriverWait(driver, (120));
+	Thread.sleep(7000);
+	wait.until(ExpectedConditions.visibilityOf(MyWorkspaceLocator.Directordashboard(driver)));
 
+int open = Integer.parseInt(MyWorkspaceLocator.Directordashboard(driver).getText());
 
-		  
-		  
-		  
-	        
-		  
+	MyWorkspaceLocator.Directordashboard(driver).click();
+	  Thread.sleep(2000);
+	    
+	  Thread.sleep(2000);
+			
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    
+	    js.executeScript("window.scrollBy(0,1000)");
+	    Thread.sleep(2000);
+	   
+		String item = MyWorkspaceLocator.EntityGrid(driver).getText();
 
-		  
-		  
+		 if(!item.equalsIgnoreCase("No items to display")) {
+				Thread.sleep(5000);
+				//String item = Locator2.UpcomingCountGrid().getText();
 
+				String[] bits = item.split(" ");								//Splitting the String
+				String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+				int count1 = Integer.parseInt(compliancesCount);
+				
+				if(open == count1)
+					
+				{
+								
+				//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+								
+				test.log(LogStatus.PASS, "Dashboard Count = "+open+" | Displayed records from grid = "+count1);
+							
+				}
+							
+				else
+							
+				{
+								
+				//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+								
+				test.log(LogStatus.FAIL, "Dashboard Count = "+open+" | Displayed records from grid = "+count1);
+							
+				}
+		 }
+				else {
+					//String item = MyWorkspaceLocator.EntityGrid(driver).getText();
+
+					test.log(LogStatus.PASS, item);
+
+				}
+		 DirectorLocator.ClickDashboard(driver).click();
+		  Thread.sleep(2000);
+		  DirectorLocator.dashboardtab(driver).click();
+		  Thread.sleep(2000);
+}
 		  
+public static void MeetingsBox(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	WebDriverWait wait = new WebDriverWait(driver, (120));
+	Thread.sleep(7000);
+	wait.until(ExpectedConditions.visibilityOf(MyWorkspaceLocator.Meetingdashboard(driver)));
+
+int open = Integer.parseInt(MyWorkspaceLocator.Meetingdashboard(driver).getText());
+
+	MyWorkspaceLocator.Meetingdashboard(driver).click();
+	  Thread.sleep(2000);
+	    
+	  Thread.sleep(2000);
+			
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    
+	    js.executeScript("window.scrollBy(0,1000)");
+	    Thread.sleep(2000);
+	   
+		String item = MyWorkspaceLocator.EntityGrid(driver).getText();
+
+		 if(!item.equalsIgnoreCase("No items to display")) {
+				Thread.sleep(5000);
+				//String item = Locator2.UpcomingCountGrid().getText();
+
+				String[] bits = item.split(" ");								//Splitting the String
+				String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+				int count1 = Integer.parseInt(compliancesCount);
+				
+				if(open == count1)
+					
+				{
+								
+				//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+								
+				test.log(LogStatus.PASS, "Dashboard Count = "+open+" | Displayed records from grid = "+count1);
+							
+				}
+							
+				else
+							
+				{
+								
+				//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+								
+				test.log(LogStatus.FAIL, "Dashboard Count = "+open+" | Displayed records from grid = "+count1);
+							
+				}
+		 }
+				else {
+					//String item = MyWorkspaceLocator.EntityGrid(driver).getText();
+
+					test.log(LogStatus.PASS, item);
+
+				}
+		 DirectorLocator.ClickDashboard(driver).click();
+		  Thread.sleep(2000);
+		  DirectorLocator.dashboardtab(driver).click();
+		  Thread.sleep(2000);
+}
+
+public static void AgendasBox(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	WebDriverWait wait = new WebDriverWait(driver, (120));
+	Thread.sleep(7000);
+	wait.until(ExpectedConditions.visibilityOf(MyWorkspaceLocator.Agendasdashboard(driver)));
+
+int open = Integer.parseInt(MyWorkspaceLocator.Agendasdashboard(driver).getText());
+
+	MyWorkspaceLocator.Agendasdashboard(driver).click();
+	  Thread.sleep(2000);
+	    
+	  Thread.sleep(2000);
+			
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    
+	    js.executeScript("window.scrollBy(0,1000)");
+	    Thread.sleep(2000);
+	   
+		String item = MyWorkspaceLocator.EntityGrid(driver).getText();
+
+		 if(!item.equalsIgnoreCase("No items to display")) {
+				Thread.sleep(5000);
+				//String item = Locator2.UpcomingCountGrid().getText();
+
+				String[] bits = item.split(" ");								//Splitting the String
+				String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+				int count1 = Integer.parseInt(compliancesCount);
+				
+				if(open == count1)
+					
+				{
+								
+				//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+								
+				test.log(LogStatus.PASS, "Dashboard Count = "+open+" | Displayed records from grid = "+count1);
+							
+				}
+							
+				else
+							
+				{
+								
+				//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+								
+				test.log(LogStatus.FAIL, "Dashboard Count = "+open+" | Displayed records from grid = "+count1);
+							
+				}
+		 }
+				else {
+					//String item = MyWorkspaceLocator.EntityGrid(driver).getText();
+
+					test.log(LogStatus.PASS, item);
+
+				}
+		 DirectorLocator.ClickDashboard(driver).click();
+		  Thread.sleep(2000);
+		  DirectorLocator.dashboardtab(driver).click();
+		  Thread.sleep(2000);
+}
+		  
+public static void DraftMinutesBox(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	WebDriverWait wait = new WebDriverWait(driver, (120));
+	Thread.sleep(7000);
+	wait.until(ExpectedConditions.visibilityOf(MyWorkspaceLocator.DraftMinutesdashboard(driver)));
+
+int open = Integer.parseInt(MyWorkspaceLocator.DraftMinutesdashboard(driver).getText());
+
+	MyWorkspaceLocator.DraftMinutesdashboard(driver).click();
+	  Thread.sleep(2000);
+	    
+	  Thread.sleep(2000);
+			
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    
+	    js.executeScript("window.scrollBy(0,1000)");
+	    Thread.sleep(2000);
+	   
+		String item = MyWorkspaceLocator.EntityGrid(driver).getText();
+
+		 if(!item.equalsIgnoreCase("No items to display")) {
+				Thread.sleep(5000);
+				//String item = Locator2.UpcomingCountGrid().getText();
+
+				String[] bits = item.split(" ");								//Splitting the String
+				String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+				int count1 = Integer.parseInt(compliancesCount);
+				
+				if(open == count1)
+					
+				{
+								
+				//test.log(LogStatus.PASS, type+" count matches to number of records displayed.");
+								
+				test.log(LogStatus.PASS, "Dashboard Count = "+open+" | Displayed records from grid = "+count1);
+							
+				}
+							
+				else
+							
+				{
+								
+				//test.log(LogStatus.FAIL, type+" count doesn't matches to number of records displayed.");
+								
+				test.log(LogStatus.FAIL, "Dashboard Count = "+open+" | Displayed records from grid = "+count1);
+							
+				}
+		 }
+				else {
+					//String item = MyWorkspaceLocator.EntityGrid(driver).getText();
+
+					test.log(LogStatus.PASS, item);
+
+				}
+		 DirectorLocator.ClickDashboard(driver).click();
+		  Thread.sleep(2000);
+		  DirectorLocator.dashboardtab(driver).click();
+		  Thread.sleep(2000);
+}
+public static int TooltipCount(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	
+	String text = DirectorLocator.CBySumOverdue(driver).getText();
+	Thread.sleep(1000);
+	// Use regular expression to extract digits
+    String HighCount = text.replaceAll("[^0-9]", ""); // removes non-digits
+
+    // Convert to integer
+    int High = Integer.parseInt(HighCount);
+
+    System.out.println("Extracted count: " + High); // Output: 62
+	return High;
+}
+		  
+public static void ComByComOverdue(WebDriver driver,ExtentTest test, String risk) throws InterruptedException
+{
+	WebDriverWait wait = new WebDriverWait(driver, (120));
+	Thread.sleep(7000);
+	DirectorLocator.EntityDropdown(driver).click();
+	  Thread.sleep(2000);
+	  DirectorLocator.EntityCheckbox(driver).click();
+	  Thread.sleep(2000);
+	  DirectorLocator.ComplianceStatus(driver).click();
+	  Thread.sleep(2000);
+	  DirectorLocator.ComplianceStatusValue(driver).click();
+	  Thread.sleep(2000);
+	  DirectorLocator.ComplianceType(driver).click();
+	  Thread.sleep(2000);
+	  DirectorLocator.ComplianceTypeValue(driver).click();
+	  Thread.sleep(2000);
+	  
+	wait.until(ExpectedConditions.visibilityOf(DirectorLocator.OverallCompletionOverdue(driver)));
+	Actions action = new Actions(driver);
+	int overdue = Integer.parseInt(DirectorLocator.OverallCompletionOverdue(driver).getText());
+	
+		action.moveToElement(DirectorLocator.High(driver)).build().perform();	//Clicking on Dashboard
+		String text = DirectorLocator.CBySumOverdueCount(driver).getText();
+		Thread.sleep(1000);
+		// Use regular expression to extract digits
+	    String HighCount = text.replaceAll("[^0-9]", ""); // removes non-digits
+	    // Convert to integer
+	    int High = Integer.parseInt(HighCount);
+	    System.out.println("Extracted count: " + High); // Output: 62
+	    Thread.sleep(1000);
+		action.moveToElement(DirectorLocator.High(driver)).click().build().perform();	//Clicking on Dashboard
+		Thread.sleep(2000);				//Clicking on Critical value of Pie Chart of 'Not Completed'.
+	
+		action.moveToElement(DirectorLocator.Medium(driver)).build().perform();	//Clicking on Dashboard
+	    String medium = DirectorLocator.CBySumOverdueCount(driver).getText();
+		Thread.sleep(1000);
+		// Use regular expression to extract digits
+	    String mediumcount = medium.replaceAll("[^0-9]", ""); // removes non-digits
+	    // Convert to integer
+	    int Medium = Integer.parseInt(mediumcount);
+	    System.out.println("Extracted count: " + Medium); // Output: 62		
+	    action.moveToElement(DirectorLocator.Medium(driver)).click().build().perform();	//Clicking on Dashboard
+		Thread.sleep(1000);	
+	
+		action.moveToElement(DirectorLocator.Low(driver)).build().perform();	//Clicking on Dashboard
+	    String low = DirectorLocator.CBySumOverdueCount(driver).getText();
+		Thread.sleep(1000);
+		// Use regular expression to extract digits
+	    String lowcount = low.replaceAll("[^0-9]", ""); // removes non-digits
+	    // Convert to integer
+	    int Low = Integer.parseInt(lowcount);
+	    System.out.println("Extracted count: " + Low); // Output: 62
+	    action.moveToElement(DirectorLocator.Low(driver)).click().build().perform();	//Clicking on Dashboard
+		Thread.sleep(1000);	
+	
+	int Total = High+Medium+Low;
+
+	if(overdue == Total)
+		
+	{
+					
+	test.log(LogStatus.PASS, "Overall Completion Status = Overdue count "+overdue+" | Overdue Compliances by Company - Overdue - Risk wise count = "+Total);
+				
+	}
+				
+	else
+				
+	{
+					
+					
+	test.log(LogStatus.FAIL, "Dashboard Count = "+overdue+" | Displayed records from grid = "+Total);
+				
+	}
+	    
+	  Thread.sleep(2000);
+		String item = MyWorkspaceLocator.ReadcountfromGrid(driver).getText();
+		if(risk.equalsIgnoreCase("High"))
+		{
+			if(!item.equalsIgnoreCase("No items to display")) {
+				Thread.sleep(5000);
+				//String item = Locator2.UpcomingCountGrid().getText();
+				String[] bits = item.split(" ");								//Splitting the String
+				String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+				int count1 = Integer.parseInt(compliancesCount);				
+				if(High == count1)					
+				{								
+				test.log(LogStatus.PASS, "Dashboard Count = "+High+" | Displayed records from grid = "+count1);							
+				}							
+				else							
+				{							
+				test.log(LogStatus.FAIL, "Dashboard Count = "+High+" | Displayed records from grid = "+count1);						
+				}
+				}
+				else {
+					test.log(LogStatus.PASS, item);
+				}		}
+		else if(risk.equalsIgnoreCase("Medium"))
+		{
+			if(!item.equalsIgnoreCase("No items to display")) {
+				Thread.sleep(5000);
+				//String item = Locator2.UpcomingCountGrid().getText();
+				String[] bits = item.split(" ");								//Splitting the String
+				String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+				int count1 = Integer.parseInt(compliancesCount);				
+				if(Medium == count1)					
+				{								
+				test.log(LogStatus.PASS, "Dashboard Count = "+Medium+" | Displayed records from grid = "+count1);							
+				}							
+				else							
+				{							
+				test.log(LogStatus.FAIL, "Dashboard Count = "+Medium+" | Displayed records from grid = "+count1);						
+				}
+				}
+				else {
+					test.log(LogStatus.PASS, item);
+				}		}
+		else if(risk.equalsIgnoreCase("Low"))
+		{
+			if(!item.equalsIgnoreCase("No items to display")) {
+				Thread.sleep(5000);
+				//String item = Locator2.UpcomingCountGrid().getText();
+				String[] bits = item.split(" ");								//Splitting the String
+				String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+				int count1 = Integer.parseInt(compliancesCount);				
+				if(Low == count1)					
+				{								
+				test.log(LogStatus.PASS, "Dashboard Count = "+Low+" | Displayed records from grid = "+count1);							
+				}							
+				else							
+				{							
+				test.log(LogStatus.FAIL, "Dashboard Count = "+Low+" | Displayed records from grid = "+count1);						
+				}
+				}
+				else {
+					test.log(LogStatus.PASS, item);
+				}		}
+		 
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.CompanyAllDropdown(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.CompanyAllDropdownValue(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.FinancialYear(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.FinancialYearValue(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.Statusongraph(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.StatusongraphValue(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.RiskAll(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.RiskAllValue(driver).click();	
+		 Thread.sleep(2000);
+		 if(MyWorkspaceLocator.ClearBtn(driver).isEnabled())
+			{
+				
+				Thread.sleep(2000);
+				MyWorkspaceLocator.ClearBtn(driver).click();
+				test.log(LogStatus.PASS, " Clear button working properly " );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
+				
+			}
+		 Thread.sleep(2000);
+		 JavascriptExecutor js = (JavascriptExecutor) driver;
+		    
+		    js.executeScript("window.scrollBy(0,-200)");
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.ClosePopup(driver).click();	
+ 		 Thread.sleep(2000);
+		
+}
+		  
+public static void ComByComClosedTimely(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	WebDriverWait wait = new WebDriverWait(driver, (120));
+	Thread.sleep(7000);
+	wait.until(ExpectedConditions.visibilityOf(DirectorLocator.OverallComStaClosedTimely(driver)));
+	Actions action = new Actions(driver);
+	action.moveToElement(DirectorLocator.OverallComStaClosedTimely(driver)).build().perform();	//Clicking on Dashboard
+	Thread.sleep(1000);
+	String text = DirectorLocator.CBySumOverdueCount(driver).getText();
+	Thread.sleep(1000);
+	// Use regular expression to extract digits
+    String numberOnly = text.replaceAll("[^0-9]", ""); // removes non-digits
+
+    // Convert to integer
+    int count = Integer.parseInt(numberOnly);
+
+    System.out.println("Extracted count: " + count); // Output: 62
+	action.moveToElement(DirectorLocator.OverallComStaClosedTimely(driver)).click().build().perform();	//Clicking on Dashboard
+	Thread.sleep(1000);
+	    
+	  Thread.sleep(2000);
+			
+	  /*  JavascriptExecutor js = (JavascriptExecutor) driver;
+	    
+	    js.executeScript("window.scrollBy(0,1000)");
+	    Thread.sleep(2000);*/
+	   
+		String item = MyWorkspaceLocator.ReadcountfromGrid(driver).getText();
+
+		 if(!item.equalsIgnoreCase("No items to display")) {
+				Thread.sleep(5000);
+				//String item = Locator2.UpcomingCountGrid().getText();
+
+				String[] bits = item.split(" ");								//Splitting the String
+				String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+				int count1 = Integer.parseInt(compliancesCount);
+				
+				if(count == count1)
+					
+				{
+								
+								
+				test.log(LogStatus.PASS, "Dashboard Count = "+count+" | Displayed records from grid = "+count1);
+							
+				}
+							
+				else
+							
+				{
+								
+								
+				test.log(LogStatus.FAIL, "Dashboard Count = "+count+" | Displayed records from grid = "+count1);
+							
+				}
+		 }
+				else {
+
+					test.log(LogStatus.PASS, item);
+
+				}
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.CompanyAllDropdown(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.CompanyAllDropdownValue(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.FinancialYear(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.FinancialYearValue(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.Statusongraph(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.StatusongraphValue(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.RiskAll(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.RiskAllValue(driver).click();	
+		 Thread.sleep(2000);
+		 if(MyWorkspaceLocator.ClearBtn(driver).isEnabled())
+			{
+				
+				Thread.sleep(2000);
+				MyWorkspaceLocator.ClearBtn(driver).click();
+				test.log(LogStatus.PASS, " Clear button working properly " );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
+				
+			}
+		 Thread.sleep(2000);
+		 
+	 /*          // Set zoom level to 50% (0.5) for zooming out
+	          setZoomLevel(driver, 0.9);
+	           // Wait to observe the effect
+	          Thread.sleep(2000);
+	          MyWorkspaceLocator.ClosePopup(driver).click();	
+	 		 Thread.sleep(2000);
+	            // Set zoom level back to 100% (1.0) to reset to normal        
+			  setZoomLevel(driver, 1.0);
+*/
+		 JavascriptExecutor js = (JavascriptExecutor) driver;
+		    
+		    js.executeScript("window.scrollBy(0,-200)");
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.ClosePopup(driver).click();	
+ 		 Thread.sleep(2000);
+		/* DirectorLocator.ClickDashboard(driver).click();
+		  Thread.sleep(2000);
+		  DirectorLocator.dashboardtab(driver).click();
+		  Thread.sleep(2000);*/
+}
+		      
+public static void OverallComplStatusOverdue(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	WebDriverWait wait = new WebDriverWait(driver, (120));
+	Thread.sleep(7000);
+	JavascriptExecutor js1 = (JavascriptExecutor) driver;
+    
+    js1.executeScript("window.scrollBy(0,200)");
+    Thread.sleep(3000);
+   
+	wait.until(ExpectedConditions.visibilityOf(MyWorkspaceLocator.OverallComStaOverdue(driver)));
+	Actions action = new Actions(driver);
+	action.moveToElement(MyWorkspaceLocator.OverallComStaOverdue(driver)).build().perform();	//Clicking on Dashboard
+	Thread.sleep(4000);
+	WebElement t=driver.findElement(By.xpath("(//*[@fill='#4CAF50'])[1]"));
+	JavascriptExecutor js = (JavascriptExecutor) driver;
+	js.executeScript("arguments[0].style.display='none';", t);
+	action.moveToElement(MyWorkspaceLocator.OverallComStaOverdue(driver)).click().build().perform();	//Clicking on Dashboard
+	Thread.sleep(4000);
+	
+
+	String text = MyWorkspaceLocator.CBySumOverdueCount(driver).getText();
+	Thread.sleep(1000);
+	// Use regular expression to extract digits
+    String numberOnly = text.replaceAll("[^0-9]", ""); // removes non-digits
+
+    // Convert to integer
+    int count = Integer.parseInt(numberOnly);
+
+    System.out.println("Extracted count: " + count); // Output: 62
+	action.moveToElement(DirectorLocator.OverallComStaOverdue(driver)).click().build().perform();	//Clicking on Dashboard
+	Thread.sleep(1000);
+	    
+	  Thread.sleep(2000);
+			
+	  
+	   
+		String item = MyWorkspaceLocator.ReadcountfromGrid(driver).getText();
+
+		 if(!item.equalsIgnoreCase("No items to display")) {
+				Thread.sleep(5000);
+				//String item = Locator2.UpcomingCountGrid().getText();
+
+				String[] bits = item.split(" ");								//Splitting the String
+				String compliancesCount = bits[bits.length - 2];				//Getting the second last word (total number of users)
+				int count1 = Integer.parseInt(compliancesCount);
+				
+				if(count == count1)
+					
+				{
+								
+								
+				test.log(LogStatus.PASS, "Dashboard Count = "+count+" | Displayed records from grid = "+count1);
+							
+				}
+							
+				else
+							
+				{
+								
+								
+				test.log(LogStatus.FAIL, "Dashboard Count = "+count+" | Displayed records from grid = "+count1);
+							
+				}
+		 }
+				else {
+
+					test.log(LogStatus.PASS, item);
+
+				}
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.CompanyAllDropdown(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.CompanyAllDropdownValue(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.FinancialYear(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.FinancialYearValue(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.Statusongraph(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.StatusongraphValue(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.RiskAll(driver).click();	
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.RiskAllValue(driver).click();	
+		 Thread.sleep(2000);
+		 if(MyWorkspaceLocator.ClearBtn(driver).isEnabled())
+			{
+				
+				Thread.sleep(2000);
+				MyWorkspaceLocator.ClearBtn(driver).click();
+				test.log(LogStatus.PASS, " Clear button working properly " );
+				
+			}
+			
+			else
+			{
+				test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
+				
+			}
+		 Thread.sleep(2000);
+	
+		    
+		    js.executeScript("window.scrollBy(0,-200)");
+		 Thread.sleep(2000);
+		 MyWorkspaceLocator.ClosePopup(driver).click();	
+ 		 Thread.sleep(2000);
+		/* DirectorLocator.ClickDashboard(driver).click();
+		  Thread.sleep(2000);
+		  DirectorLocator.dashboardtab(driver).click();
+		  Thread.sleep(2000);*/
+}
+		      
+
+public static void DashboardClear(WebDriver driver,ExtentTest test) throws InterruptedException
+{
+	WebDriverWait wait = new WebDriverWait(driver, (120));
+	Thread.sleep(7000);
+	wait.until(ExpectedConditions.visibilityOf(DirectorLocator.EntityDropdown(driver)));
+	DirectorLocator.EntityDropdown(driver).click();
+	  Thread.sleep(2000);
+	  DirectorLocator.EntityCheckbox(driver).click();
+	  Thread.sleep(2000);
+	  DirectorLocator.Financialyeardropdown(driver).click();
+	  Thread.sleep(2000);
+	  DirectorLocator.FinancialyeardropdownDD(driver).click();
+	  Thread.sleep(2000);
+	  
+	  if(DirectorLocator.Clearbutton(driver).isEnabled())
+		{
+			
+			Thread.sleep(2000);
+			DirectorLocator.Clearbutton(driver).click();
+			test.log(LogStatus.PASS, " Clear button working properly " );
+			
+		}
+		
+		else
+		{
+			test.log(LogStatus.FAIL, "  Clear button does not working properly "  );
+			
+		}
+	  Thread.sleep(2000);
+	  DirectorLocator.ClickDashboard(driver).click();
+	  Thread.sleep(2000);
+	  DirectorLocator.dashboardtab(driver).click();
+	  Thread.sleep(2000);
+	  
+}
+		 
+public static void OverduecountMatchRiskWise(WebDriver driver, ExtentTest test) throws InterruptedException {
+    WebDriverWait wait = new WebDriverWait(driver, (120));
+    Thread.sleep(7000);
+
+    // Initial dropdown selections
+    DirectorLocator.EntityDropdown(driver).click();
+    Thread.sleep(2000);
+    String entity=DirectorLocator.EntityCheckbox(driver).getText();
+    Thread.sleep(2000);
+    DirectorLocator.EntityCheckbox(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceStatus(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceStatusValue(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceType(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceTypeValue(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.Financialyeardropdown(driver).click();
+	  Thread.sleep(2000);
+	  DirectorLocator.FinancialyeardropdownDD(driver).click();
+	  Thread.sleep(2000);
+
+    wait.until(ExpectedConditions.visibilityOf(DirectorLocator.OverallCompletionOverdue(driver)));
+    int overdue = Integer.parseInt(DirectorLocator.OverallCompletionOverdue(driver).getText());
+
+    Actions action = new Actions(driver);
+
+    // Helper method to extract count from each risk level and click only once per risk level
+	action.moveToElement(DirectorLocator.High(driver)).build().perform();	//Clicking on Dashboard
+	Thread.sleep(2000);
+	String text = DirectorLocator.CBySumOverdueCount(driver).getText();
+    Thread.sleep(1000);
+    String countStr = text.replaceAll("[^0-9]", "");
+    int High = Integer.parseInt(countStr);
+    System.out.println("Extracted count: " + High);
+    Thread.sleep(1000);
+    
+	action.moveToElement(DirectorLocator.Medium(driver)).build().perform();	//Clicking on Dashboard
+	String Mediumtext = DirectorLocator.CBySumOverdueCount(driver).getText();
+    Thread.sleep(1000);
+    String mediumtext = Mediumtext.replaceAll("[^0-9]", "");
+    int medium = Integer.parseInt(mediumtext);
+    System.out.println("Extracted count: " + medium);
+    Thread.sleep(1000);
+	
+    action.moveToElement(DirectorLocator.Low(driver)).build().perform();	//Clicking on Dashboard
+	Thread.sleep(2000);
+	String Lowtext = DirectorLocator.CBySumOverdueCount(driver).getText();
+    Thread.sleep(1000);
+    String lowtext = Lowtext.replaceAll("[^0-9]", "");
+    int low = Integer.parseInt(lowtext);
+    System.out.println("Extracted count: " + low);
+    Thread.sleep(1000);
+	
+
+    int total = High + medium + low;
+
+    if (overdue == total) {
+        test.log(LogStatus.PASS, entity + "- Overall Completion Status = Overdue count " + overdue +
+        		" | Overdue Compliances by Company - Overdue - Risk wise count = " + total);
+    } else {
+        test.log(LogStatus.FAIL, entity + "- Dashboard Count = " + overdue + " | Displayed records from grid = " + total);
+    }
+}
 	        	  	  
+public static void EventCheckOverdueRiskWise(WebDriver driver, ExtentTest test, String risk) throws InterruptedException {
+    WebDriverWait wait = new WebDriverWait(driver, (120));
+    Thread.sleep(7000);
+
+    // Initial dropdown selections
+    DirectorLocator.EntityDropdown(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.EntityCheckbox(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceStatus(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceStatusValue(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceType(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.Eventchecklist(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.Financialyeardropdown(driver).click();
+	  Thread.sleep(2000);
+	  DirectorLocator.FinancialyeardropdownDD(driver).click();
+	  Thread.sleep(2000);
+
+    wait.until(ExpectedConditions.visibilityOf(DirectorLocator.Medium(driver)));
+    if(risk.equalsIgnoreCase("High")) {
+    	High(driver,test);
+    	
+    }
+    else if(risk.equalsIgnoreCase("Medium")) {
+    	Medium(driver,test);
+    }
+    else if(risk.equalsIgnoreCase("Low")) {
+    	Low(driver,test);
+}
+    
+    
+    // Reset dropdowns and clear filters
+    Thread.sleep(2000);
+    MyWorkspaceLocator.CompanyAllDropdown(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.CompanyAllDropdownValue(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.FinancialYear(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.FinancialYearValue(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.Statusongraph(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.StatusongraphValue(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.RiskAll(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.RiskAllValue(driver).click();
+    Thread.sleep(2000);
+
+    
+    Thread.sleep(2000);
+   
+    if (MyWorkspaceLocator.ClearBtn(driver).isEnabled()) {
+        Thread.sleep(2000);
+        MyWorkspaceLocator.ClearBtn(driver).click();
+        test.log(LogStatus.PASS, "Clear button working properly");
+    } else {
+        test.log(LogStatus.FAIL, "Clear button does not work properly");
+    }
+
+    Thread.sleep(2000);
+    ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-200)");
+    Thread.sleep(2000);
+    MyWorkspaceLocator.ClosePopup(driver).click();
+    Thread.sleep(2000);
+    driver.navigate().refresh();
+    Thread.sleep(2000);
+}
+
+public static void StatCheckOverdueRiskWise(WebDriver driver, ExtentTest test, String risk) throws InterruptedException {
+    WebDriverWait wait = new WebDriverWait(driver, (120));
+    Thread.sleep(7000);
+
+    // Initial dropdown selections
+    DirectorLocator.EntityDropdown(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.EntityCheckbox(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceStatus(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceStatusValue(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceType(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceTypeValue(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.Financialyeardropdown(driver).click();
+	  Thread.sleep(2000);
+	  DirectorLocator.FinancialyeardropdownDD(driver).click();
+	  Thread.sleep(2000);
+    wait.until(ExpectedConditions.visibilityOf(DirectorLocator.High(driver)));
+    if(risk.equalsIgnoreCase("High")) {
+    	High(driver,test);
+    	
+    }
+    else if(risk.equalsIgnoreCase("Medium")) {
+    	Medium(driver,test);
+    }
+    else if(risk.equalsIgnoreCase("Low")) {
+    	Low(driver,test);
+}
+    
+    
+    // Reset dropdowns and clear filters
+    Thread.sleep(2000);
+    MyWorkspaceLocator.CompanyAllDropdown(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.CompanyAllDropdownValue(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.FinancialYear(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.FinancialYearValue(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.Statusongraph(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.StatusongraphValue(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.RiskAll(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.RiskAllValue(driver).click();
+    Thread.sleep(2000);
+
+    
+    Thread.sleep(2000);
+   
+    if (MyWorkspaceLocator.ClearBtn(driver).isEnabled()) {
+        Thread.sleep(2000);
+        MyWorkspaceLocator.ClearBtn(driver).click();
+        test.log(LogStatus.PASS, "Clear button working properly");
+    } else {
+        test.log(LogStatus.FAIL, "Clear button does not work properly");
+    }
+
+    Thread.sleep(2000);
+    ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-200)");
+    Thread.sleep(2000);
+    MyWorkspaceLocator.ClosePopup(driver).click();
+    Thread.sleep(2000);
+    driver.navigate().refresh();
+    Thread.sleep(2000);
+}
+
+
+public static void StatFuncOverdueRiskWise(WebDriver driver, ExtentTest test, String risk) throws InterruptedException {
+    WebDriverWait wait = new WebDriverWait(driver, (120));
+    Thread.sleep(7000);
+
+    // Initial dropdown selections
+    DirectorLocator.EntityDropdown(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.EntityCheckbox(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceStatus(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceStatusValue(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceType(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.StatutoryFunction(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.Financialyeardropdown(driver).click();
+	  Thread.sleep(2000);
+	  DirectorLocator.FinancialyeardropdownDD(driver).click();
+	  Thread.sleep(2000);
+    wait.until(ExpectedConditions.visibilityOf(DirectorLocator.High(driver)));
+    ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,200)");
+    Thread.sleep(2000);
+    if(risk.equalsIgnoreCase("High")) {
+    	High(driver,test);
+    	
+    }
+    else if(risk.equalsIgnoreCase("Medium")) {
+    	Medium(driver,test);
+    }
+    else if(risk.equalsIgnoreCase("Low")) {
+    	Low(driver,test);
+}
+    
+    
+    // Reset dropdowns and clear filters
+    Thread.sleep(2000);
+    MyWorkspaceLocator.CompanyAllDropdown(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.CompanyAllDropdownValue(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.FinancialYear(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.FinancialYearValue(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.Statusongraph(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.StatusongraphValue(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.RiskAll(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.RiskAllValue(driver).click();
+    Thread.sleep(2000);
+
+    
+    Thread.sleep(2000);
+   
+    if (MyWorkspaceLocator.ClearBtn(driver).isEnabled()) {
+        Thread.sleep(2000);
+        MyWorkspaceLocator.ClearBtn(driver).click();
+        test.log(LogStatus.PASS, "Clear button working properly");
+    } else {
+        test.log(LogStatus.FAIL, "Clear button does not work properly");
+    }
+
+    Thread.sleep(2000);
+    ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-200)");
+    Thread.sleep(2000);
+    MyWorkspaceLocator.ClosePopup(driver).click();
+    Thread.sleep(2000);
+    driver.navigate().refresh();
+    Thread.sleep(2000);
+}
+
+public static void EventFuncOverdueRiskWise(WebDriver driver, ExtentTest test, String risk) throws InterruptedException {
+    WebDriverWait wait = new WebDriverWait(driver, (120));
+    Thread.sleep(7000);
+
+    // Initial dropdown selections
+    DirectorLocator.EntityDropdown(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.EntityCheckbox(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceStatus(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceStatusValue(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceType(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.EventFunction(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.Financialyeardropdown(driver).click();
+	  Thread.sleep(2000);
+	  DirectorLocator.FinancialyeardropdownDD(driver).click();
+	  Thread.sleep(2000);
+    wait.until(ExpectedConditions.visibilityOf(DirectorLocator.High(driver)));
+    ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,200)");
+    Thread.sleep(2000);
+    if(risk.equalsIgnoreCase("High")) {
+    	High(driver,test);
+    	
+    }
+    else if(risk.equalsIgnoreCase("Medium")) {
+    	Medium(driver,test);
+    }
+    else if(risk.equalsIgnoreCase("Low")) {
+    	Low(driver,test);
+}
+    
+    
+    // Reset dropdowns and clear filters
+    Thread.sleep(2000);
+    MyWorkspaceLocator.CompanyAllDropdown(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.CompanyAllDropdownValue(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.FinancialYear(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.FinancialYearValue(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.Statusongraph(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.StatusongraphValue(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.RiskAll(driver).click();
+    Thread.sleep(2000);
+    MyWorkspaceLocator.RiskAllValue(driver).click();
+    Thread.sleep(2000);
+
+    
+    Thread.sleep(2000);
+   
+    if (MyWorkspaceLocator.ClearBtn(driver).isEnabled()) {
+        Thread.sleep(2000);
+        MyWorkspaceLocator.ClearBtn(driver).click();
+        test.log(LogStatus.PASS, "Clear button working properly");
+    } else {
+        test.log(LogStatus.FAIL, "Clear button does not work properly");
+    }
+
+    Thread.sleep(2000);
+    ((JavascriptExecutor) driver).executeScript("window.scrollBy(0,-200)");
+    Thread.sleep(2000);
+    MyWorkspaceLocator.ClosePopup(driver).click();
+    Thread.sleep(2000);
+    driver.navigate().refresh();
+    Thread.sleep(2000);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public static void High(WebDriver driver, ExtentTest test) throws InterruptedException {
+    WebDriverWait wait = new WebDriverWait(driver, (120));
+    Thread.sleep(7000);
+wait.until(ExpectedConditions.visibilityOf(DirectorLocator.High(driver)));
+    
+    Actions action = new Actions(driver);
+	action.moveToElement(DirectorLocator.High(driver)).build().perform();	//Clicking on Dashboard
+	Thread.sleep(2000);
+	String text = DirectorLocator.CBySumOverdueCount(driver).getText();
+    Thread.sleep(1000);
+    String countStr = text.replaceAll("[^0-9]", "");
+    int High = Integer.parseInt(countStr);
+    System.out.println("Extracted count: " + High);
+    Thread.sleep(3000);
+	action.moveToElement(DirectorLocator.High(driver)).click().build().perform();	//Clicking on Dashboard
+    Thread.sleep(2000);
+
+	
+    Thread.sleep(2000);
+    String item = MyWorkspaceLocator.ReadcountfromGrid(driver).getText();
+
+    if (!item.equalsIgnoreCase("No items to display")) {
+        Thread.sleep(5000);
+        String[] bits = item.split(" ");
+        String compliancesCount = bits[bits.length - 2];
+        int count1 = Integer.parseInt(compliancesCount);
+
+        if (High== count1) {
+            test.log(LogStatus.PASS, "High - Dashboard Count = " + High + " | Displayed records from grid = " + count1);
+        } else {
+            test.log(LogStatus.FAIL, "High - Dashboard Count = " + High + " | Displayed records from grid = " + count1);
+        }
+    } else {
+        test.log(LogStatus.PASS, item);
+    }
+
 		  
+}
+
+public static void Medium(WebDriver driver, ExtentTest test) throws InterruptedException {
+    WebDriverWait wait = new WebDriverWait(driver, (120));
+    Thread.sleep(7000);
+wait.until(ExpectedConditions.visibilityOf(DirectorLocator.Medium(driver)));
+    
+    Actions action = new Actions(driver);
+	action.moveToElement(DirectorLocator.Medium(driver)).build().perform();	//Clicking on Dashboard
+	Thread.sleep(2000);
+	String text = DirectorLocator.CBySumOverdueCount(driver).getText();
+    Thread.sleep(1000);
+    String countStr = text.replaceAll("[^0-9]", "");
+    int Medium = Integer.parseInt(countStr);
+    System.out.println("Extracted count: " + Medium);
+    Thread.sleep(1000);
+	action.moveToElement(DirectorLocator.Medium(driver)).click().build().perform();	//Clicking on Dashboard
+    Thread.sleep(2000);
+
+	
+    Thread.sleep(2000);
+    String item = MyWorkspaceLocator.ReadcountfromGrid(driver).getText();
+
+    if (!item.equalsIgnoreCase("No items to display")) {
+        Thread.sleep(5000);
+        String[] bits = item.split(" ");
+        String compliancesCount = bits[bits.length - 2];
+        int count1 = Integer.parseInt(compliancesCount);
+
+        if (Medium== count1) {
+            test.log(LogStatus.PASS, "Medium - Dashboard Count = " + Medium + " | Displayed records from grid = " + count1);
+        } else {
+            test.log(LogStatus.FAIL, "Medium - Dashboard Count = " + Medium + " | Displayed records from grid = " + count1);
+        }
+    } else {
+        test.log(LogStatus.PASS, item);
+    }
+
+		  
+}
+
+public static void Low(WebDriver driver, ExtentTest test) throws InterruptedException {
+    WebDriverWait wait = new WebDriverWait(driver, (120));
+    Thread.sleep(7000);
+wait.until(ExpectedConditions.visibilityOf(DirectorLocator.Low(driver)));
+    
+    Actions action = new Actions(driver);
+	action.moveToElement(DirectorLocator.Low(driver)).build().perform();	//Clicking on Dashboard
+	Thread.sleep(2000);
+	String text = DirectorLocator.CBySumOverdueCount(driver).getText();
+    Thread.sleep(1000);
+    String countStr = text.replaceAll("[^0-9]", "");
+    int Low = Integer.parseInt(countStr);
+    System.out.println("Extracted count: " + Low);
+    Thread.sleep(1000);
+	action.moveToElement(DirectorLocator.Low(driver)).click().build().perform();	//Clicking on Dashboard
+    Thread.sleep(2000);
+
+	
+    Thread.sleep(2000);
+    String item = MyWorkspaceLocator.ReadcountfromGrid(driver).getText();
+
+    if (!item.equalsIgnoreCase("No items to display")) {
+        Thread.sleep(5000);
+        String[] bits = item.split(" ");
+        String compliancesCount = bits[bits.length - 2];
+        int count1 = Integer.parseInt(compliancesCount);
+
+        if (Low == count1) {
+            test.log(LogStatus.PASS, "Low - Dashboard Count = " + Low + " | Displayed records from grid = " + count1);
+        } else {
+            test.log(LogStatus.FAIL, "Low - Dashboard Count = " + Low + " | Displayed records from grid = " + count1);
+        }
+    } else {
+        test.log(LogStatus.PASS, item);
+    }
+
+		  
+}
+	       	  	
+public static void OverduecountMatchRiskWiseEventFun(WebDriver driver, ExtentTest test) throws InterruptedException {
+    WebDriverWait wait = new WebDriverWait(driver, (120));
+    Thread.sleep(7000);
+
+    // Initial dropdown selections
+    DirectorLocator.EntityDropdown(driver).click();
+    Thread.sleep(2000);
+    String entity=DirectorLocator.EntityCheckbox(driver).getText();
+    Thread.sleep(2000);
+    DirectorLocator.EntityCheckbox(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceStatus(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceStatusValue(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceType(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.EventFunction(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.Financialyeardropdown(driver).click();
+	  Thread.sleep(2000);
+	  DirectorLocator.FinancialyeardropdownDD(driver).click();
+	  Thread.sleep(2000);
+
+    wait.until(ExpectedConditions.visibilityOf(DirectorLocator.OverallCompletionOverdue(driver)));
+    int overdue = Integer.parseInt(DirectorLocator.OverallCompletionOverdue(driver).getText());
+
+    Actions action = new Actions(driver);
+
+ /*   action.moveToElement(DirectorLocator.High(driver)).build().perform();	//Clicking on Dashboard
+	Thread.sleep(2000);
+	String text = DirectorLocator.CBySumOverdueCount(driver).getText();
+    Thread.sleep(1000);
+    String countStr = text.replaceAll("[^0-9]", "");
+    int High = Integer.parseInt(countStr);
+    System.out.println("Extracted count: " + High);
+    Thread.sleep(1000);*/
+    
+    // Helper method to extract count from each risk level and click only once per risk level
+	action.moveToElement(DirectorLocator.High(driver)).build().perform();	//Clicking on Dashboard
+	Thread.sleep(2000);
+	String text = DirectorLocator.CBySumOverdueCount(driver).getText();
+    Thread.sleep(1000);
+    String countStr = text.replaceAll("[^0-9]", "");
+    int High = Integer.parseInt(countStr);
+    System.out.println("Extracted count: " + High);
+    Thread.sleep(1000);
+    
+/*	action.moveToElement(DirectorLocator.Medium(driver)).build().perform();	//Clicking on Dashboard
+	String Mediumtext = DirectorLocator.CBySumOverdueCount(driver).getText();
+    Thread.sleep(1000);
+    String mediumtext = Mediumtext.replaceAll("[^0-9]", "");
+    int medium = Integer.parseInt(mediumtext);
+    System.out.println("Extracted count: " + medium);
+    Thread.sleep(1000);*/
+	
+    action.moveToElement(DirectorLocator.Low(driver)).build().perform();	//Clicking on Dashboard
+	Thread.sleep(2000);
+	String Lowtext = DirectorLocator.CBySumOverdueCount(driver).getText();
+    Thread.sleep(1000);
+    String lowtext = Lowtext.replaceAll("[^0-9]", "");
+    int low = Integer.parseInt(lowtext);
+    System.out.println("Extracted count: " + low);
+    Thread.sleep(1000);
+	
+
+   // int total = High + medium + low;
+    int total = High  + low;
+
+    if (overdue == total) {
+        test.log(LogStatus.PASS, entity + "- Overall Completion Status = Overdue count " + overdue +
+        		" | Overdue Compliances by Company - Overdue - Risk wise count = " + total);
+    } else {
+        test.log(LogStatus.FAIL, entity + "- Dashboard Count = " + overdue + " | Displayed records from grid = " + total);
+    }
+}
 		  
 
-	       	  		  
-		  
+public static void OverduecountMatchRiskWiseStatutryFun(WebDriver driver, ExtentTest test) throws InterruptedException {
+    WebDriverWait wait = new WebDriverWait(driver, (120));
+    Thread.sleep(7000);
+
+    // Initial dropdown selections
+    DirectorLocator.EntityDropdown(driver).click();
+    Thread.sleep(2000);
+    String entity=DirectorLocator.EntityCheckbox(driver).getText();
+    Thread.sleep(2000);
+    DirectorLocator.EntityCheckbox(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceStatus(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceStatusValue(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceType(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.StatutoryFunction(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.Financialyeardropdown(driver).click();
+	  Thread.sleep(2000);
+	  DirectorLocator.FinancialyeardropdownDD(driver).click();
+	  Thread.sleep(2000);
+
+    wait.until(ExpectedConditions.visibilityOf(DirectorLocator.OverallCompletionOverdue(driver)));
+    int overdue = Integer.parseInt(DirectorLocator.OverallCompletionOverdue(driver).getText());
+
+    Actions action = new Actions(driver);
+
+ /*   action.moveToElement(DirectorLocator.High(driver)).build().perform();	//Clicking on Dashboard
+	Thread.sleep(2000);
+	String text = DirectorLocator.CBySumOverdueCount(driver).getText();
+    Thread.sleep(1000);
+    String countStr = text.replaceAll("[^0-9]", "");
+    int High = Integer.parseInt(countStr);
+    System.out.println("Extracted count: " + High);
+    Thread.sleep(1000);*/
+    
+    // Helper method to extract count from each risk level and click only once per risk level
+	action.moveToElement(DirectorLocator.High(driver)).build().perform();	//Clicking on Dashboard
+	Thread.sleep(2000);
+	String text = DirectorLocator.CBySumOverdueCount(driver).getText();
+    Thread.sleep(1000);
+    String countStr = text.replaceAll("[^0-9]", "");
+    int High = Integer.parseInt(countStr);
+    System.out.println("Extracted count: " + High);
+    Thread.sleep(1000);
+    
+	action.moveToElement(DirectorLocator.Medium(driver)).build().perform();	//Clicking on Dashboard
+	String Mediumtext = DirectorLocator.CBySumOverdueCount(driver).getText();
+    Thread.sleep(1000);
+    String mediumtext = Mediumtext.replaceAll("[^0-9]", "");
+    int medium = Integer.parseInt(mediumtext);
+    System.out.println("Extracted count: " + medium);
+    Thread.sleep(1000);
+	
+    action.moveToElement(DirectorLocator.Low(driver)).build().perform();	//Clicking on Dashboard
+	Thread.sleep(2000);
+	String Lowtext = DirectorLocator.CBySumOverdueCount(driver).getText();
+    Thread.sleep(1000);
+    String lowtext = Lowtext.replaceAll("[^0-9]", "");
+    int low = Integer.parseInt(lowtext);
+    System.out.println("Extracted count: " + low);
+    Thread.sleep(1000);
+	
+
+    int total = High + medium + low;
+    //int total = High  + low;
+
+    if (overdue == total) {
+        test.log(LogStatus.PASS, entity + "- Overall Completion Status = Overdue count " + overdue +
+        		" | Overdue Compliances by Company - Overdue - Risk wise count = " + total);
+    } else {
+        test.log(LogStatus.FAIL, entity + "- Dashboard Count = " + overdue + " | Displayed records from grid = " + total);
+    }
+}
+
+public static void OverduecountMatchRiskWiseEvenChec(WebDriver driver, ExtentTest test) throws InterruptedException {
+    WebDriverWait wait = new WebDriverWait(driver, (120));
+    Thread.sleep(7000);
+
+    // Initial dropdown selections
+    DirectorLocator.EntityDropdown(driver).click();
+    Thread.sleep(2000);
+    String entity=DirectorLocator.EntityCheckbox(driver).getText();
+    Thread.sleep(2000);
+    DirectorLocator.EntityCheckbox(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceStatus(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceStatusValue(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.ComplianceType(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.Eventchecklist(driver).click();
+    Thread.sleep(2000);
+    DirectorLocator.Financialyeardropdown(driver).click();
+	  Thread.sleep(2000);
+	  DirectorLocator.FinancialyeardropdownDD(driver).click();
+	  Thread.sleep(2000);
+
+    wait.until(ExpectedConditions.visibilityOf(DirectorLocator.OverallCompletionOverdue(driver)));
+    int overdue = Integer.parseInt(DirectorLocator.OverallCompletionOverdue(driver).getText());
+
+    Actions action = new Actions(driver);
+
+ /*   action.moveToElement(DirectorLocator.High(driver)).build().perform();	//Clicking on Dashboard
+	Thread.sleep(2000);
+	String text = DirectorLocator.CBySumOverdueCount(driver).getText();
+    Thread.sleep(1000);
+    String countStr = text.replaceAll("[^0-9]", "");
+    int High = Integer.parseInt(countStr);
+    System.out.println("Extracted count: " + High);
+    Thread.sleep(1000);*/
+    
+    // Helper method to extract count from each risk level and click only once per risk level
+/*	action.moveToElement(DirectorLocator.High(driver)).build().perform();	//Clicking on Dashboard
+	Thread.sleep(2000);
+	String text = DirectorLocator.CBySumOverdueCount(driver).getText();
+    Thread.sleep(1000);
+    String countStr = text.replaceAll("[^0-9]", "");
+    int High = Integer.parseInt(countStr);
+    System.out.println("Extracted count: " + High);
+    Thread.sleep(1000);
+    */
+	action.moveToElement(DirectorLocator.Medium(driver)).build().perform();	//Clicking on Dashboard
+	String Mediumtext = DirectorLocator.CBySumOverdueCount(driver).getText();
+    Thread.sleep(1000);
+    String mediumtext = Mediumtext.replaceAll("[^0-9]", "");
+    int medium = Integer.parseInt(mediumtext);
+    System.out.println("Extracted count: " + medium);
+    Thread.sleep(1000);
+	
+ /*   action.moveToElement(DirectorLocator.Low(driver)).build().perform();	//Clicking on Dashboard
+	Thread.sleep(2000);
+	String Lowtext = DirectorLocator.CBySumOverdueCount(driver).getText();
+    Thread.sleep(1000);
+    String lowtext = Lowtext.replaceAll("[^0-9]", "");
+    int low = Integer.parseInt(lowtext);
+    System.out.println("Extracted count: " + low);
+    Thread.sleep(1000);*/
+	
+    int total =  medium ;
+   // int total = High + medium + low;
+    //int total = High  + low;
+
+    if (overdue == total) {
+        test.log(LogStatus.PASS, entity + "- Overall Completion Status = Overdue count " + overdue +
+        		" | Overdue Compliances by Company - Overdue - Risk wise count = " + total);
+    } else {
+        test.log(LogStatus.FAIL, entity + "- Dashboard Count = " + overdue + " | Displayed records from grid = " + total);
+    }
+}
+
+
+public static void MyCalender(WebDriver driver, ExtentTest test) throws InterruptedException 
+{
+    WebDriverWait wait = new WebDriverWait(driver, (120));
+    Thread.sleep(7000);
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+    js.executeScript("window.scrollBy(0,300)");
+WebElement calendar = MyWorkspaceLocator.MyCalender(driver);
+Thread.sleep(2000); // Wait briefly after scrolling
+
+if (calendar.isDisplayed()) {
+    test.log(LogStatus.PASS,  "Calendar is visible on the dashboard.");
+} else {
+    test.log(LogStatus.PASS,  "Calendar is not visible.");
+}
+
+// Get current month and year
+LocalDate currentDate = LocalDate.now();
+String expectedMonth = currentDate.getMonth().getDisplayName(TextStyle.FULL, Locale.ENGLISH);
+String expectedYear = String.valueOf(currentDate.getYear());
+
+// Get the displayed month and year from the calendar
+String actualMonth = MyWorkspaceLocator.Month(driver).getText().trim();
+String actualYear = MyWorkspaceLocator.Year(driver).getText().trim();
+
+// Validate
+if (actualMonth.equalsIgnoreCase(expectedMonth) && actualYear.equals(expectedYear)) {
+	test.log(LogStatus.PASS,  "Calendar displays the correct current month and year: " + actualMonth + " " + actualYear);
+   // System.out.println("Calendar displays the correct current month and year: " + actualMonth + " " + actualYear);
+} else {
+	test.log(LogStatus.PASS,  "Calendar displays incorrect date. Found: " + actualMonth + " " + actualYear + ", Expected: " + expectedMonth + " " + expectedYear);
+}
+  //  System.out.println("Calendar displays incorrect date. Found: " + actualMonth + " " + actualYear + ", Expected: " + expectedMonth + " " + expectedYear);
+}
+
+
+
+
+public static void MyCalendercount(WebDriver driver, ExtentTest test) throws InterruptedException 
+{
+    WebDriverWait wait = new WebDriverWait(driver, (120));
+    Thread.sleep(7000);
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+    js.executeScript("window.scrollBy(0,500)");
+WebElement calendar = MyWorkspaceLocator.MyCalender(driver);
+Thread.sleep(2000); // Wait briefly after scrolling
+int calendarOverdueCount = Integer.parseInt(MyWorkspaceLocator.CalenderOverdueCount(driver).getText().trim());
+Thread.sleep(2000); 
+MyWorkspaceLocator.compliOverdueCount1(driver).click();
+Thread.sleep(2000);
+int complianceOverdueCount = Integer.parseInt(MyWorkspaceLocator.compliOverdueCount(driver).getText().trim());
+Thread.sleep(2000); 
+
+if (calendarOverdueCount == complianceOverdueCount) {
+	test.log(LogStatus.PASS,  "Calender Overdue Calender Count ="+calendarOverdueCount+ "| Compliance Overdue count = "+complianceOverdueCount);
+} else {
+	test.log(LogStatus.FAIL,  "Calender Overdue Calender Count ="+calendarOverdueCount+ "| Compliance Overdue count = "+complianceOverdueCount);
+}
+
+
+
+
+
+}
+
+public static void ActionTakenReportStatus(WebDriver driver, ExtentTest test) throws InterruptedException 
+{
+    WebDriverWait wait = new WebDriverWait(driver, (120));
+    Thread.sleep(7000);
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+    js.executeScript("window.scrollBy(0,1000)");
+WebElement calendar = MyWorkspaceLocator.ActionTakenReport(driver);
+Thread.sleep(2000); // Wait briefly after scrolling
+
+if (calendar.isDisplayed()) {
+    test.log(LogStatus.PASS,  "Action Taken Report is visible on the dashboard.");
+} else {
+    test.log(LogStatus.PASS,  "Action Taken Report is not visible.");
+}
+
+}
+
+public static void ActionTakenReportStatusShowAll(WebDriver driver, ExtentTest test) throws InterruptedException 
+{
+    WebDriverWait wait = new WebDriverWait(driver, (120));
+    Thread.sleep(7000);
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+    js.executeScript("window.scrollBy(0,1000)");
+WebElement showAllLink = MyWorkspaceLocator.ShowAll(driver);
+Thread.sleep(2000); // Wait briefly after scrolling
+
+if (showAllLink.isDisplayed()) {
+    test.log(LogStatus.PASS,  "The 'Show All' link under Action Taken Report is visible on the dashboard.");
+} else {
+    test.log(LogStatus.PASS,  "The 'Show All' link under Action Taken Report is not visible on the dashboard.");
+}
+Thread.sleep(2000);
+showAllLink.click();
+Thread.sleep(2000);
+WebElement myTaskSection = MyWorkspaceLocator.MyTask(driver);
+if (myTaskSection.isDisplayed()) {
+    test.log(LogStatus.PASS,  "Successfully navigated to the 'My Task' page after clicking the 'Show All' link.");
+} else {
+    test.log(LogStatus.PASS,  "Failed to navigate to the 'My Task' page after clicking the 'Show All' link.");
+}
+
+}
+
+
+
+
+public static void UpcomingMeetings(WebDriver driver, ExtentTest test) throws InterruptedException 
+{
+    WebDriverWait wait = new WebDriverWait(driver, (120));
+    Thread.sleep(7000);
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+    js.executeScript("window.scrollBy(0,1000)");
+WebElement calendar = MyWorkspaceLocator.UpcomingMeeting(driver);
+Thread.sleep(2000); // Wait briefly after scrolling
+
+if (calendar.isDisplayed()) {
+    test.log(LogStatus.PASS,  "Upcoming Meetings is visible on the dashboard.");
+} else {
+    test.log(LogStatus.PASS,  "Upcoming Meetings is not visible.");
+}
+
+}
+
+public static void UpcomingMeetingsShowAll(WebDriver driver, ExtentTest test) throws InterruptedException 
+{
+    WebDriverWait wait = new WebDriverWait(driver, (120));
+    Thread.sleep(7000);
+    JavascriptExecutor js = (JavascriptExecutor) driver;
+    js.executeScript("window.scrollBy(0,1000)");
+WebElement showAllLink = MyWorkspaceLocator.UpcomingMeetingShowAll(driver);
+Thread.sleep(2000); // Wait briefly after scrolling
+
+if (showAllLink.isDisplayed()) {
+    test.log(LogStatus.PASS,  "The 'Show All' link under Upcoming Meetings is visible on the dashboard.");
+} else {
+    test.log(LogStatus.PASS,  "The 'Show All' link under Upcoming Meetings is not visible on the dashboard.");
+}
+Thread.sleep(2000);
+showAllLink.click();
+Thread.sleep(2000);
+WebElement MeetingsSection = MyWorkspaceLocator.Meetings(driver);
+if (MeetingsSection.isDisplayed()) {
+    test.log(LogStatus.PASS,  "Successfully navigated to the 'My Task' page after clicking the 'Show All' link.");
+} else {
+    test.log(LogStatus.PASS,  "Failed to navigate to the 'My Task' page after clicking the 'Show All' link.");
+}
+
+}
+
+
+public static void Dashboard(WebDriver driver, ExtentTest test) throws InterruptedException 
+{
+
+	WebDriverWait wait = new WebDriverWait(driver, (120));
+	Thread.sleep(3000);
+	
+//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[contains(@src,'NewUi_Images/Dashboard.svg')])[2]"))); 
+	Thread.sleep(2000);
+	DirectorLocator.ClickDashboard(driver).click();
+	  Thread.sleep(2000);
+if(DirectorLocator.dashboardtab(driver).isDisplayed()&&MyWorkspaceLocator.Overview(driver).isDisplayed()) {
+	 Thread.sleep(2000);
+		test.log(LogStatus.PASS, "The Overview and Dashboard tabs should be displayed within the Dashboard section.");
+	}else {
+		
+		test.log(LogStatus.FAIL, "The Overview and Dashboard tabs should not be shown under the Dashboard section.");
+		
+	}
+      DirectorLocator.dashboardtab(driver).click();
+      Thread.sleep(2000);
+
+
+	
+}
+
+public static void OverviewMaster(WebDriver driver, ExtentTest test) throws InterruptedException 
+{
+
+	WebDriverWait wait = new WebDriverWait(driver, (120));
+	Thread.sleep(3000);
+	
+//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[contains(@src,'NewUi_Images/Dashboard.svg')])[2]"))); 
+	Thread.sleep(2000);
+	DirectorLocator.ClickDashboard(driver).click();
+	Thread.sleep(2000);
+	MyWorkspaceLocator.Overview(driver).click();
+	Thread.sleep(2000);
+	MyWorkspaceLocator.SelEntity(driver).click();
+	Thread.sleep(2000);
+	MyWorkspaceLocator.SelEntityValue(driver).click();
+	Thread.sleep(2000);
+	MyWorkspaceLocator.MasterTab(driver).click();
+	Thread.sleep(2000);
+	if(MyWorkspaceLocator.BasicDetails(driver).isDisplayed()&&MyWorkspaceLocator.BusinessActivity(driver).isDisplayed()) {
+		 Thread.sleep(2000);
+			test.log(LogStatus.PASS, "The Basic Details and Business Activity tabs should be displayed within the Dashboard section.");
+		}else {
+			
+			test.log(LogStatus.FAIL, "The Basic Details and Business Activity tabs should not be shown under the Dashboard section.");
+			
+		}
+	
+	
+}
+
+
+public static void BasicDetails(WebDriver driver, ExtentTest test) throws InterruptedException 
+{
+
+	WebDriverWait wait = new WebDriverWait(driver, (120));
+	Thread.sleep(3000);
+	
+//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[contains(@src,'NewUi_Images/Dashboard.svg')])[2]"))); 
+	Thread.sleep(2000);	
+	 wait.until(ExpectedConditions.elementToBeClickable(DirectorLocator.ClickDashboard(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.Overview(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.SelEntity(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.SelEntityValue(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.MasterTab(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.BasicDetails(driver))).click();
+	
+	
+	WebElement table = driver.findElement(By.xpath("//table[@class='table table-bordered']"));
+    if(table.isDisplayed()) {
+		 Thread.sleep(2000);
+			test.log(LogStatus.PASS, "The Basic Details table is displayed successfully.");
+		}else {
+			
+			test.log(LogStatus.FAIL, "The Basic Details table is not displayed.");
+			
+		}
+	
+	
+}
+public static void BusinessActivity(WebDriver driver, ExtentTest test) throws InterruptedException 
+{
+
+	WebDriverWait wait = new WebDriverWait(driver, (120));
+	Thread.sleep(3000);
+	
+//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[contains(@src,'NewUi_Images/Dashboard.svg')])[2]"))); 
+	Thread.sleep(2000);	
+	 wait.until(ExpectedConditions.elementToBeClickable(DirectorLocator.ClickDashboard(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.Overview(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.SelEntity(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.SelEntityValue(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.MasterTab(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.BusinessActivity(driver))).click();
+     Thread.sleep(3000);
+     String t=DirectorLocator.MainActivity(driver).getText();
+     
+     System.out.println(t);
+     Thread.sleep(3000);
+     
+     
+     if(DirectorLocator.MainActivity(driver).isDisplayed()&&DirectorLocator.BusinessActivity(driver).isDisplayed()&&DirectorLocator.Turnover(driver).isDisplayed()) {
+		 Thread.sleep(2000);
+			test.log(LogStatus.PASS, "The Basic Details, Business Activity and turnover column are displayed within the Business Activity details tab.");
+		}else {
+			
+			test.log(LogStatus.FAIL, "The Basic Details, Business Activity and turnover column are not displayed within the Business Activity details tab.");
+			
+		}
+	
+	
+	
+	
+}
+
+
+
+public static void DirectorPrfl(WebDriver driver, ExtentTest test) throws InterruptedException 
+{
+
+	WebDriverWait wait = new WebDriverWait(driver, (120));
+	Thread.sleep(3000);
+	
+//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[contains(@src,'NewUi_Images/Dashboard.svg')])[2]"))); 
+	Thread.sleep(2000);	
+	 wait.until(ExpectedConditions.elementToBeClickable(DirectorLocator.ClickDashboard(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.Overview(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.SelEntity(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.SelEntityValue1(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.DirectorTab(driver))).click();
+    // wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.BusinessActivity(driver))).click();
+     Thread.sleep(3000);     
+     
+     if(MyWorkspaceLocator.Directorprofile(driver).isDisplayed()) {
+		 Thread.sleep(2000);
+			test.log(LogStatus.PASS, "The director profile are displayed within the Director's details tab.");
+		}else {
+			
+			test.log(LogStatus.FAIL, "The director profile are not displayed within the Director's details tab.");
+			
+		}
+}
+
+
+public static void Commitee(WebDriver driver, ExtentTest test) throws InterruptedException 
+{
+
+	WebDriverWait wait = new WebDriverWait(driver, (120));
+	Thread.sleep(3000);
+	
+//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[contains(@src,'NewUi_Images/Dashboard.svg')])[2]"))); 
+	Thread.sleep(2000);	
+	 wait.until(ExpectedConditions.elementToBeClickable(DirectorLocator.ClickDashboard(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.Overview(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.SelEntity(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.SelEntityValue(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.Commitee(driver))).click();
+    // wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.BusinessActivity(driver))).click();
+     Thread.sleep(3000);     
+     
+     if(MyWorkspaceLocator.CommiteeColumn(driver).isDisplayed()) {
+		 Thread.sleep(2000);
+			test.log(LogStatus.PASS, "The Committee column is displayed within the Committee tab.");
+			
+			wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.CommiteeListExpand(driver))).click();
+		     Thread.sleep(2000);  
+		     if(MyWorkspaceLocator.Directorprofile(driver).isDisplayed()) {
+				 Thread.sleep(2000);
+					test.log(LogStatus.PASS, "The Committee profile is displayed within the Committee list.");
+				}else {
+					
+					test.log(LogStatus.FAIL, "The Committee profile is not displayed within the Committee list.");
+				}
+		}else {
+			
+			test.log(LogStatus.FAIL, "The Committee column is not displayed within the Committee tab for the selected entity.");
+		}
+     
+
+     
+     
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+public static void BasicDetails1(WebDriver driver, ExtentTest test) {
+    WebDriverWait wait = new WebDriverWait(driver, (90));
+
+    try {
+        // Navigation
+        wait.until(ExpectedConditions.elementToBeClickable(DirectorLocator.ClickDashboard(driver))).click();
+        wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.Overview(driver))).click();
+        wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.SelEntity(driver))).click();
+        wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.SelEntityValue(driver))).click();
+        wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.MasterTab(driver))).click();
+        wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.BasicDetails(driver))).click();
+
+        Thread.sleep(2000);
+
+        // Wait for table visibility
+        WebElement table = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//table[@class='table table-bordered']//tr")));
+        List<WebElement> rows = table.findElements(By.tagName("th[1]"));
+
+        String[] expectedLabels = {
+            "CIN", "Company Name", "ROC Code", "Email", "Registration Number", "Company Category",
+            "Company SubCategory", "Class of Company", "Registered Address", "Date of Incorporation",
+            "Date of Last AGM", "Date of Last Balance Sheet Filed", "Name of Contact Person", "Contact Number"
+        };
+
+        boolean allPass = true;
+        StringBuilder failLog = new StringBuilder();
+
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+
+        for (int i = 0; i < expectedLabels.length; i++) {
+            try {
+                List<WebElement> columns = rows.get(i).findElements(By.tagName("td"));
+
+                if (columns.size() >= 2) {
+                    WebElement label = columns.get(0);
+                    WebElement value = columns.get(1);
+
+                    // Scroll to element
+                    js.executeScript("window.scrollBy(0,1000)");
+                    Thread.sleep(300);  // slight pause after scroll
+
+                    if (!label.isDisplayed() || !value.isDisplayed()) {
+                        allPass = false;
+                        failLog.append(expectedLabels[i]).append(" not displayed, ");
+                    } else {
+                        test.log(LogStatus.INFO, expectedLabels[i] + ": " + value.getText());
+                    }
+                } else {
+                    allPass = false;
+                    failLog.append(expectedLabels[i]).append(" missing columns, ");
+                }
+
+            } catch (Exception e) {
+                allPass = false;
+                failLog.append(expectedLabels[i]).append(" error fetching, ");
+            }
+        }
+
+        if (allPass) {
+            test.log(LogStatus.PASS, "All Basic Details fields are displayed correctly.");
+        } else {
+            test.log(LogStatus.FAIL, "Some fields missing or not visible: " + failLog.toString());
+        }
+
+    } catch (Exception e) {
+        test.log(LogStatus.ERROR, "Exception while checking Basic Details: " + e.getMessage());
+    }
+}
+
+
+public static void Shareholder(WebDriver driver, ExtentTest test) throws InterruptedException 
+{
+
+	WebDriverWait wait = new WebDriverWait(driver, (120));
+	Thread.sleep(3000);
+	
+//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[contains(@src,'NewUi_Images/Dashboard.svg')])[2]"))); 
+	Thread.sleep(2000);	
+	 wait.until(ExpectedConditions.elementToBeClickable(DirectorLocator.ClickDashboard(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.Overview(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.SelEntity(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.SelEntityValue(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.Shareholding(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.ShareholdingPattern(driver))).click();
+     Thread.sleep(3000);     
+     
+     if(MyWorkspaceLocator.ShareholdingPattern(driver).isEnabled()) {
+		 Thread.sleep(2000);
+			test.log(LogStatus.PASS, "The Shareholding button is clickable.");
+			if(MyWorkspaceLocator.ShareCategory(driver).isDisplayed()&&MyWorkspaceLocator.ShareHistory(driver).isDisplayed()) {
+				 Thread.sleep(2000);
+					test.log(LogStatus.PASS, "Both tabs under Shareholding—'Shareholding Category' and 'Shareholding History'—are displayed.");
+				}else {
+					
+					test.log(LogStatus.FAIL, "One or both tabs under Shareholding—'Shareholding Category' and 'Shareholding History'—are not displayed.");		
+				}
+		}else {
+			
+			test.log(LogStatus.FAIL, "The Shareholding button is not clickable.");		
+		}    
+     
+}
+
+public static void ShareholdingCategory(WebDriver driver, ExtentTest test) throws InterruptedException 
+{
+
+	WebDriverWait wait = new WebDriverWait(driver, (120));
+	Thread.sleep(3000);
+	
+//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[contains(@src,'NewUi_Images/Dashboard.svg')])[2]"))); 
+	Thread.sleep(2000);	
+	 wait.until(ExpectedConditions.elementToBeClickable(DirectorLocator.ClickDashboard(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.Overview(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.SelEntity(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.SelEntityValue(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.Shareholding(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.ShareholdingPattern(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.ShareCategory(driver))).click();
+     Thread.sleep(3000);     
+     
+     if(MyWorkspaceLocator.ShareholdingCatTable(driver).isEnabled()) {
+		 Thread.sleep(2000);
+			test.log(LogStatus.PASS, "The Shareholding category table is displayed.");
+			
+		}else {
+			
+			test.log(LogStatus.FAIL, "The Shareholding category table is not displayed.");		
+		}
+}
+
+public static void ShareholdingCategory(WebDriver driver, ExtentTest test) throws InterruptedException 
+{
+
+	WebDriverWait wait = new WebDriverWait(driver, (120));
+	Thread.sleep(3000);
+	
+//	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[contains(@src,'NewUi_Images/Dashboard.svg')])[2]"))); 
+	Thread.sleep(2000);	
+	 wait.until(ExpectedConditions.elementToBeClickable(DirectorLocator.ClickDashboard(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.Overview(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.SelEntity(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.SelEntityValue(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.Shareholding(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.ShareholdingPattern(driver))).click();
+     wait.until(ExpectedConditions.elementToBeClickable(MyWorkspaceLocator.ShareCategory(driver))).click();
+     Thread.sleep(3000);     
+     
+     if(MyWorkspaceLocator.ShareholdingCatTable(driver).isEnabled()) {
+		 Thread.sleep(2000);
+			test.log(LogStatus.PASS, "The Shareholding category table is displayed.");
+			
+		}else {
+			
+			test.log(LogStatus.FAIL, "The Shareholding category table is not displayed.");		
+		}
+}
+
+
+
+
+
+
+
+
+
+
 
 		 static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {
 				

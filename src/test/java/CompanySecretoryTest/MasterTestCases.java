@@ -668,6 +668,7 @@ void AddButtonConfiguration() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 }
+
 @Test(priority = 54)
 
 void UserMaster() throws InterruptedException, IOException

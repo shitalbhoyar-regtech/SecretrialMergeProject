@@ -39,7 +39,7 @@ public class MyWorkspaceTestCases
 	public static XSSFSheet ReadExcel() throws IOException
 	{
 
-		fis = new FileInputStream("E:\\Secreterial Project Git Folder\\Avasec Merge\\Secreterial Project 26JULY23\\Secretarial-Project-26JULY23\\TestData\\SecreterialSheet3.xlsx");
+		fis = new FileInputStream("D:\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\TestData\\SecreterialSheet3.xlsx");
 		
 		workbook = new XSSFWorkbook(fis);
 		sheet = workbook.getSheetAt(0);					//Retrieving second sheet of Workbook
@@ -515,7 +515,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=40)
+		@Test(priority=40)//done
 
 		  void ClickMyCompliance() throws InterruptedException, IOException
 		  {
@@ -527,7 +527,7 @@ public class MyWorkspaceTestCases
 			extent.flush();
 		}
 		
-		//@Test(priority=41)
+		@Test(priority=41)//done
 
 		  void ClickMyComplianceEditBtn() throws InterruptedException, IOException
 		  {
@@ -538,7 +538,24 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=42)
+		
+		@Test(priority=41)//done
+
+		  void MyCompliances() throws InterruptedException, IOException
+		  {
+			test = extent.startTest("My Workspace- My Compliance tab - Update compliance status Verification");
+			
+			MyWorkspaceMethod.MyCompliances(driver, test);
+			
+			extent.endTest(test);
+			extent.flush();
+		}
+		
+		
+		
+		
+		
+		@Test(priority=42)//done
 
 		  void ClickMyTask() throws InterruptedException, IOException
 		  {
@@ -549,7 +566,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=43)
+		@Test(priority=43)//done
 
 		  void AddTask() throws InterruptedException, IOException
 		  {
@@ -560,7 +577,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-	//	@Test(priority=44)
+		@Test(priority=44)//done
 
 		  void AddMyTaskAgenda() throws InterruptedException, IOException
 		  {
@@ -571,7 +588,9 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=45)
+		
+		
+		@Test(priority=45)//done
 
 		  void AddMyTaskOther() throws InterruptedException, IOException
 		  {
@@ -583,7 +602,7 @@ public class MyWorkspaceTestCases
 			extent.flush();
 		}
 		
-		//@Test(priority=46)
+		@Test(priority=46)//done
 
 		  void WithoutEnterDataTask() throws InterruptedException, IOException
 		  {
@@ -594,7 +613,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=47)
+		@Test(priority=47)//done 13-05-2025
 
 		  void AddMyTaskCloseBtn() throws InterruptedException, IOException
 		  {
@@ -605,7 +624,9 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=48)
+		
+		
+		@Test(priority=48)//done
 
 		  void EditBtn() throws InterruptedException, IOException
 		  {
@@ -616,7 +637,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=49)
+		@Test(priority=49)//done
 
 		  void TaskViewDeatiles() throws InterruptedException, IOException
 		  {
@@ -627,7 +648,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=50)
+		@Test(priority=50)//done
 
 		  void EditTask() throws InterruptedException, IOException
 		  {
@@ -638,7 +659,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=51)
+		@Test(priority=51)//done
 
 		  void EditTaskWithoutEnterData() throws InterruptedException, IOException
 		  {
@@ -649,7 +670,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=52)
+		@Test(priority=52)//done
 
 		  void DownloadDocument() throws InterruptedException, IOException
 		  {
@@ -660,7 +681,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=53)
+		@Test(priority=53)//d
 
 		  void closeBtnEditTask() throws InterruptedException, IOException
 		  {
@@ -671,7 +692,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=54)
+		@Test(priority=54)//d
 
 		  void DeleteBtn() throws InterruptedException, IOException
 		  {
@@ -682,7 +703,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=55)
+		@Test(priority=55)//d
 
 		  void DeleteBtnNo() throws InterruptedException, IOException
 		  {
@@ -693,7 +714,8 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=56)
+		
+		@Test(priority=56)//done
 
 		  void MeetingCalender() throws InterruptedException, IOException
 		  {
@@ -704,7 +726,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=57)
+		@Test(priority=57)//d
 
 		  void AddMeetingCalender() throws InterruptedException, IOException
 		  {
@@ -715,7 +737,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=58)
+		@Test(priority=58)//d
 
 		  void MeetingCalenderWithoutEnterData() throws InterruptedException, IOException
 		  {
@@ -726,7 +748,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=59)
+		@Test(priority=59)//d
 
 		  void ClearBtn() throws InterruptedException, IOException
 		  {
@@ -737,7 +759,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-		//@Test(priority=60)
+		@Test(priority=60)
 
 		  void MyMeeting() throws InterruptedException, IOException
 		  {
@@ -748,7 +770,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-//    @Test(priority=61)
+    @Test(priority=61)
 
 		  void NewRegularMeeting() throws InterruptedException, IOException
 		  {
@@ -760,7 +782,7 @@ public class MyWorkspaceTestCases
 			extent.flush();
 		}
 		  
-//	@Test(priority=62)
+	@Test(priority=62)
 
 		  void NewShorterMeeting() throws InterruptedException, IOException
 		  {
@@ -771,7 +793,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-//	@Test(priority=63)
+	@Test(priority=63)
 
 		  void NewEMeeting() throws InterruptedException, IOException
 		  {
@@ -782,7 +804,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-	//@Test(priority=64)
+	@Test(priority=64)
 
 		  void CircularMeeting() throws InterruptedException, IOException
 		  {
@@ -794,7 +816,7 @@ public class MyWorkspaceTestCases
 			extent.flush();
 		}
 		  
-	//@Test(priority=65)
+	@Test(priority=65)
 
 		  void NewRegularNoticeMeeting() throws InterruptedException, IOException
 		  {
@@ -805,7 +827,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-	//@Test(priority=66)
+	@Test(priority=66)
 
 		  void NewShorterNoticeMeeting() throws InterruptedException, IOException
 		  {
@@ -816,7 +838,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-	//@Test(priority=67)
+	@Test(priority=67)
 
 		  void WithoutEnterRegularNoticeMeeting() throws InterruptedException, IOException
 		  {
@@ -827,7 +849,7 @@ public class MyWorkspaceTestCases
 			extent.endTest(test);
 			extent.flush();
 		}
-//	@Test(priority=68)
+	@Test(priority=68)
 
 	  void AvailabiltyOption() throws InterruptedException, IOException
 	  {
@@ -838,7 +860,7 @@ public class MyWorkspaceTestCases
 		extent.endTest(test);
 		extent.flush();
 	}
-//@Test(priority=69)
+@Test(priority=69)
 
 	  void ClickAvailabiltyOption() throws InterruptedException, IOException
 	  {
@@ -849,7 +871,7 @@ public class MyWorkspaceTestCases
 		extent.endTest(test);
 		extent.flush();
 	}
-//@Test(priority=70)
+@Test(priority=70)
 
 	  void AddNewAvailability() throws InterruptedException, IOException
 	  {
@@ -860,7 +882,7 @@ public class MyWorkspaceTestCases
 		extent.endTest(test);
 		extent.flush();
 	}
-///@Test(priority=71)
+@Test(priority=71)
 
 	  void AddExistingAvailability() throws InterruptedException, IOException
 	  {
@@ -871,7 +893,7 @@ public class MyWorkspaceTestCases
 		extent.endTest(test);
 		extent.flush();
 	}
-//@Test(priority=72)
+@Test(priority=72)
 
 	  void WithoutEnterDataAvailability() throws InterruptedException, IOException
 	  {
@@ -882,7 +904,7 @@ public class MyWorkspaceTestCases
 		extent.endTest(test);
 		extent.flush();
 	}
-//	@Test(priority=73)
+	@Test(priority=73)
 	  void CancelBtnAvailability() throws InterruptedException, IOException
 	  {
 		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab -Add New Btn - Cancel Button Verification");
@@ -892,7 +914,7 @@ public class MyWorkspaceTestCases
 		extent.endTest(test);
 		extent.flush();
 	}
-	 // @Test(priority=74)
+	  @Test(priority=74)
 	  void MailFormatBtn() throws InterruptedException, IOException
 	  {
 		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab - Mail Format Button Verification");
@@ -902,7 +924,7 @@ public class MyWorkspaceTestCases
 		extent.endTest(test);
 		extent.flush();
 	}
-	//@Test(priority=75)
+	@Test(priority=75)
 	  void UpdateMailFormat() throws InterruptedException, IOException
 	  {
 		test = extent.startTest("My Workspace- My Meeting  tab -New button - Regular Meeting  -Availabilty Tab  - Update Mail Format  Verification");

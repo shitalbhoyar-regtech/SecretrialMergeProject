@@ -3,22 +3,13 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="CompanySecretoryTest.MyWorkspaceTestCases">
+      <class name="secretrialTestCase.Dashboard">
         <methods>
-          <include name="Close"/>
-          <include name="NotingAgendaDeleteCan"/>
-          <include name="setBrowser"/>
-          <include name="CancelDeleteDocumentVotingAgenda"/>
-          <include name="AgendaDeleteCan"/>
           <include name="Login"/>
-          <include name="AgendaVersion"/>
-          <include name="AgendaDelete"/>
-          <include name="PreviewAgenda"/>
-          <include name="NotingAgendaDelete"/>
-          <include name="DownloadAgenda"/>
-          <include name="DeleteDocumentVotingAgenda"/>
+          <include name="setBrowser"/>
+          <include name="Shareholder"/>
         </methods>
-      </class> <!-- CompanySecretoryTest.MyWorkspaceTestCases -->
+      </class> <!-- secretrialTestCase.Dashboard -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

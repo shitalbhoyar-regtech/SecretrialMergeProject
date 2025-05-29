@@ -8,12 +8,16 @@ import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
+
+import secretrial.DirectorLocator;
 
 public class UserMasterMethod 
 {
@@ -30,22 +34,30 @@ private static List<WebElement> elementsList = null;
 	public static XSSFSheet ReadExcel() throws IOException
 	{
 		//String workingDir = System.getProperty("user.dir");
-		fis = new FileInputStream("C:\\Users\\Admin\\Desktop\\Snehal\\ComplianceLatest\\Secreterial\\TestData\\SecreterialSheet3.xlsx");
+		fis = new FileInputStream("D:\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\TestData\\SecreterialSheet3.xlsx");
 		
 		workbook = new XSSFWorkbook(fis);
 		sheet = workbook.getSheetAt(0);					//Retrieving second sheet of Workbook
 		return sheet;
 	}
 	
+	public static void setZoomLevel(WebDriver driver, double zoomLevel) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("document.body.style.zoom='" + zoomLevel + "'");
+    }
+	
 	public static void AddUser(WebDriver driver,ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
+
+
 		sheet = workbook.getSheetAt(0);	
 		//JavascriptExecutor js = (JavascriptExecutor) driver;
-		Thread.sleep(2000);
-	    Locator.selectImg(driver).click();
+		//Thread.sleep(2000);
+	   // Locator.selectImg(driver).click();
 		Thread.sleep(2000);
 	     Locator.ClickMaster(driver).click();
 	    
+	     
 		//js.executeScript("window.scrollBy(0,500)");
 		//js.executeScript("document.querySelector("div[id='ascrail2001'] div").scrollLeft=5000");
 	  
@@ -94,7 +106,7 @@ private static List<WebElement> elementsList = null;
 		
 		 Thread.sleep(3000);
 		 String msg1 = Locator.ValidationUserMsg1(driver).getText();
-			if(msg1.contains("Saved Successfully"))
+			if(msg1.contains("Saved Successfully") ||msg1.contains("User with Same Email already Exists.") )
 			{
 				test.log(LogStatus.PASS, "Message Dispalyed = User " +msg1);
 			}
@@ -103,25 +115,40 @@ private static List<WebElement> elementsList = null;
 				test.log(LogStatus.FAIL, "Message Dispalyed =" +msg1);
 			}
 			
-			Thread.sleep(4000);
+			Thread.sleep(5000);
+			try {
+		           // Set zoom level to 90% (0.9) for zooming out
+		          setZoomLevel(driver, 0.8);
+		           // Wait to observe the effect
+		          Thread.sleep(2000);
+		            // Set zoom level back to 100% (1.0) to reset to normal
+				//  setZoomLevel(getDriver(), 1.0);
+		        } catch (InterruptedException e) {
+		          e.printStackTrace();
+		        }
+			Thread.sleep(5000);
 			Locator.CloseUserPopup(driver).click();
 			Thread.sleep(4000);
-			  EntityLocator.ClickDashboard(driver).click();
+			DirectorLocator.ClickDashboard(driver).click();
+			Thread.sleep(2000);
 	}
 	public static void UpdateUser(WebDriver driver,ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{
 		
-		Thread.sleep(2000);
-	    Locator.selectImg(driver).click();
+		sheet = workbook.getSheetAt(0);	
+		//JavascriptExecutor js = (JavascriptExecutor) driver;
+		//Thread.sleep(2000);
+	   // Locator.selectImg(driver).click();
 		Thread.sleep(2000);
 	     Locator.ClickMaster(driver).click();
 	    
+	     
 		//js.executeScript("window.scrollBy(0,500)");
 		//js.executeScript("document.querySelector("div[id='ascrail2001'] div").scrollLeft=5000");
 	  
 		Thread.sleep(3000);
 	    Locator.clickUser(driver).click();
-			
+
 			Thread.sleep(2000);
 			Locator.ClickEditUser(driver).click();
 			
@@ -149,30 +176,35 @@ private static List<WebElement> elementsList = null;
 				Thread.sleep(2000);
 				Locator.CloseUserPopup(driver).click();
 				Thread.sleep(4000);
-				  EntityLocator.ClickDashboard(driver).click();
+				DirectorLocator.ClickDashboard(driver).click();
+				Thread.sleep(2000);
 	}
 				
 
 				
 	public static void FilterUser(WebDriver driver,ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{	
-		
-		Thread.sleep(2000);
-	    Locator.selectImg(driver).click();
+		sheet = workbook.getSheetAt(0);	
+		//JavascriptExecutor js = (JavascriptExecutor) driver;
+		//Thread.sleep(2000);
+	   // Locator.selectImg(driver).click();
 		Thread.sleep(2000);
 	     Locator.ClickMaster(driver).click();
 	    
+	     
 		//js.executeScript("window.scrollBy(0,500)");
 		//js.executeScript("document.querySelector("div[id='ascrail2001'] div").scrollLeft=5000");
 	  
 		Thread.sleep(3000);
-	    Locator.clickUser(driver).click();		
-		Thread.sleep(2000);
-		Locator.ClickFilter(driver).sendKeys("Director");
+	    Locator.clickUser(driver).click();
+	    Thread.sleep(2000);
+	    String t=Locator.Cell(driver).getText();
+	    Thread.sleep(2000);
+		Locator.ClickFilter(driver).sendKeys(t);
+		 String gridValue=Locator.Cell1(driver).getText();
+	//	String msg=t;
 				
-		String msg="Director";
-				
-		if(msg.equalsIgnoreCase(msg))
+		if(t.equalsIgnoreCase(gridValue))
 		{
 			test.log(LogStatus.PASS, "Filter Work Successfully");
 		}
@@ -181,21 +213,27 @@ private static List<WebElement> elementsList = null;
 		    test.log(LogStatus.FAIL, "Filter Dose not Work Successfully");
 		}
 		Thread.sleep(4000);
-		EntityLocator.ClickDashboard(driver).click();
+		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(2000);
 	}
 	public static void WithoutEnteringDataUser(WebDriver driver,ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{		
 				//Without Entering data 
-		Thread.sleep(2000);
-	    Locator.selectImg(driver).click();
+		sheet = workbook.getSheetAt(0);	
+		//JavascriptExecutor js = (JavascriptExecutor) driver;
+		//Thread.sleep(2000);
+	   // Locator.selectImg(driver).click();
 		Thread.sleep(2000);
 	     Locator.ClickMaster(driver).click();
 	    
+	     
 		//js.executeScript("window.scrollBy(0,500)");
 		//js.executeScript("document.querySelector("div[id='ascrail2001'] div").scrollLeft=5000");
 	  
 		Thread.sleep(3000);
-	    Locator.clickUser(driver).click();	
+	    Locator.clickUser(driver).click();
+	    Thread.sleep(2000);
+	    
 				Thread.sleep(2000);
 			    Locator.clickNewUser(driver).click();
 			    
@@ -212,22 +250,27 @@ private static List<WebElement> elementsList = null;
 				   Thread.sleep(4000);
 					Locator.CloseUserPopup(driver).click();
 					Thread.sleep(4000);
-					EntityLocator.ClickDashboard(driver).click();
-	}
+					DirectorLocator.ClickDashboard(driver).click();
+					Thread.sleep(2000);
+					}
 					
 					
 	public static void EnterInvalidDataUser(WebDriver driver,ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{				
-					//Enter invalid data
-	               Thread.sleep(2000);
-                    Locator.selectImg(driver).click();
-	               Thread.sleep(2000);
-                   Locator.ClickMaster(driver).click();
-    
-	
-  
-	                  Thread.sleep(3000);
-                      Locator.clickUser(driver).click();	
+		sheet = workbook.getSheetAt(0);	
+		//JavascriptExecutor js = (JavascriptExecutor) driver;
+		//Thread.sleep(2000);
+	   // Locator.selectImg(driver).click();
+		Thread.sleep(2000);
+	     Locator.ClickMaster(driver).click();
+	    
+	     
+		//js.executeScript("window.scrollBy(0,500)");
+		//js.executeScript("document.querySelector("div[id='ascrail2001'] div").scrollLeft=5000");
+	  
+		Thread.sleep(3000);
+	    Locator.clickUser(driver).click();
+	    Thread.sleep(2000);
 					Thread.sleep(2000);
 				    Locator.clickNewUser(driver).click();
 				    Thread.sleep(2000);
@@ -256,16 +299,30 @@ private static List<WebElement> elementsList = null;
 					 Thread.sleep(4000);
 						Locator.CloseUserPopup(driver).click();
 						Thread.sleep(4000);
-						EntityLocator.ClickDashboard(driver).click();
+						DirectorLocator.ClickDashboard(driver).click();
+						Thread.sleep(2000);
 	}
 						
 	public static void EnterValidDataUser(WebDriver driver,ExtentTest test, XSSFWorkbook workbook) throws InterruptedException, IOException
 	{					
 						// valid Data Accept 
 						
-						Thread.sleep(2000);
-					    Locator.clickNewUser(driver).click();
-					    Thread.sleep(2000);
+		sheet = workbook.getSheetAt(0);	
+		//JavascriptExecutor js = (JavascriptExecutor) driver;
+		//Thread.sleep(2000);
+	   // Locator.selectImg(driver).click();
+		Thread.sleep(2000);
+	     Locator.ClickMaster(driver).click();
+	    
+	     
+		//js.executeScript("window.scrollBy(0,500)");
+		//js.executeScript("document.querySelector("div[id='ascrail2001'] div").scrollLeft=5000");
+	  
+		Thread.sleep(3000);
+	    Locator.clickUser(driver).click();
+	    Thread.sleep(2000);
+	    Locator.clickNewUser(driver).click();
+	    Thread.sleep(2000);
 						Locator.clickFirstName(driver).sendKeys("Sneha");
 						Thread.sleep(2000);
 						Locator.clickLastName(driver).sendKeys("Patil");
@@ -281,21 +338,22 @@ private static List<WebElement> elementsList = null;
 						
 						
 						 Thread.sleep(3000);
-						 String msg13 = Locator.ValidationUserMsg1(driver).getText();
-							if(msg13.contains("Saved Successfully"))
+						 String msg2 = Locator.ValidationUserMsg1(driver).getText();
+							if(msg2.contains("Saved Successfully"))
 							{
-								test.log(LogStatus.PASS, "Enter Valid Data= User " +msg13);
+								test.log(LogStatus.PASS, "Enter Valid Data= User " +msg2);
 							}
 							else
 							{
-								test.log(LogStatus.FAIL, "Enter Valid Data =" +msg13);
+								test.log(LogStatus.FAIL, "Enter Valid Data =" +msg2);
 							}
 						
 							 Thread.sleep(4000);
 								Locator.CloseUserPopup(driver).click();
 								Thread.sleep(4000);
-								EntityLocator.ClickDashboard(driver).click();
-	}
+								DirectorLocator.ClickDashboard(driver).click();
+								Thread.sleep(2000);
+								}
 						
 						
 		

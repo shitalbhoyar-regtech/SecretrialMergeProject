@@ -19,7 +19,7 @@ public class Locator {
 	public static WebElement selectImg(WebDriver driver)
 	{
 		WebDriverWait wait= new WebDriverWait(driver,30);
-		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='Mastermenu']/a/img")));
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)")));
 		return Secreterial;
 	}
 	public static WebElement selectMaster(WebDriver driver)
@@ -323,7 +323,7 @@ public class Locator {
 	public static WebElement clickUser(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//*[@id='Mastermenu']/ul/li[9]"));
+		Secreterial =driver.findElement(By.xpath("//span[@class='fly-out-top-item-name SubSmallMenunameStyle' and .='User']"));
 		return Secreterial;
 	}
 	public static WebElement clickNewUser(WebDriver driver)
@@ -365,7 +365,7 @@ public class Locator {
 	public static WebElement clickSecreterialRole(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//*[@id='divAddUser']/fieldset/div[6]/div/div[2]/span[1]/span/span[1]"));
+		Secreterial =driver.findElement(By.xpath("(//div[@id='divAddUser']//span[@class='k-select'])[1]"));
 		return Secreterial;
 	}
 	public static WebElement SelectSecreterialRole(WebDriver driver)
@@ -383,7 +383,7 @@ public class Locator {
 	public static WebElement ClickMaster(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//*[@id='Mastermenu']/span"));
+		Secreterial =driver.findElement(By.cssSelector("body > div:nth-child(1) > section:nth-child(1) > aside:nth-child(1) > div:nth-child(7) > div:nth-child(2) > ul:nth-child(1) > li:nth-child(3) > a:nth-child(1)"));
 		return Secreterial;
 	}
 	public static WebElement ValidationUserMsg(WebDriver driver)
@@ -395,13 +395,31 @@ public class Locator {
 	public static WebElement CloseUserPopup(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("/html/body/div[9]/div[1]/div/a"));
+		//Secreterial =driver.findElement(By.xpath("/html/body/div[9]/div[1]/div/a"));
+		Secreterial =driver.findElement(By.xpath("(//div[@class='k-widget k-window']//div//a[@class='k-button k-bare k-button-icon k-window-action'])[1]"));
+
 		return Secreterial;
 	}
+	
+	public static WebElement Cell(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//table[@role='grid']//tr[3]//td[1]"));
+		return Secreterial;
+	}
+	public static WebElement Cell1(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//table[@role='grid']//td[1]"));
+		return Secreterial;
+	}
+	
+
+	
 	public static WebElement ClickEditUser(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("(//a[@class='k-grid-Edit k-grid-edit k-grid-button'])[1]"));
+		Secreterial =driver.findElement(By.xpath("//img[contains(@src, 'NewUi_Images/edit.svg')]"));
 		return Secreterial;
 	}
 	public static WebElement ValidationUserMsg1(WebDriver driver)

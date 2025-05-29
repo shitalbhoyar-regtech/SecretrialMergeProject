@@ -33,7 +33,7 @@ public class MastersTest {
 	public static XSSFSheet ReadExcel() throws IOException
 	{
 		//String workingDir = System.getProperty("user.dir");
-		fis = new FileInputStream("C:\\Users\\Mayuri\\Desktop\\AvaSec\\Secretarial-Project\\TestData\\Scretrial.xlsx");
+		fis = new FileInputStream("D:\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\TestData\\Scretrial.xlsx");
 		
 		workbook = new XSSFWorkbook(fis);
 		sheet = workbook.getSheetAt(0);					//Retrieving second sheet of Workbook
@@ -45,7 +45,7 @@ public class MastersTest {
 	void setBrowser() throws Exception
 	{
 		
-		extent = new com.relevantcodes.extentreports.ExtentReports("C:\\Users\\Mayuri\\Desktop\\AvaSec\\Secretarial-Project\\Report\\Secretrial.html",true);
+		extent = new com.relevantcodes.extentreports.ExtentReports("D:\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Report\\Secretrial.html",true);
 		test = extent.startTest("Verify OpenBrowser");
 		
 		
@@ -131,7 +131,7 @@ public class MastersTest {
 	
 	
 	
-//	@Test(priority = 5)
+	@Test(priority = 0)
 	void UserEntityAssignmentMaster() throws InterruptedException, IOException
 	{
 		test = extent.startTest("User-Entity Assignment- Add New");
@@ -142,7 +142,7 @@ public class MastersTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 6)
+	@Test(priority = 6)
 	void UEAMUpdate() throws InterruptedException, IOException
 	{
 		test = extent.startTest("User-Entity Assignment- Edit");
@@ -153,7 +153,7 @@ public class MastersTest {
 		extent.flush();
 	}
 	
-//	@Test(priority = 7)
+	@Test(priority = 7)
 	void UEAMassignment() throws InterruptedException, IOException
 	{
 		test = extent.startTest("User-Entity Assignment- Assignment");
@@ -164,7 +164,7 @@ public class MastersTest {
 		extent.flush();
 	}
 
-//	@Test(priority = 8)
+	@Test(priority = 8)
 	void UEADelete() throws InterruptedException, IOException
 	{
 		test = extent.startTest("User-Entity Assignment- Delete");
@@ -175,7 +175,7 @@ public class MastersTest {
 		extent.flush();
 	}
 	
-	//@Test(priority = 9)
+	@Test(priority = 9)
 	void Notes() throws InterruptedException, IOException
 	{
 		test = extent.startTest("Notes");

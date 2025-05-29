@@ -18,7 +18,7 @@ public class MyWorkspaceLocator
 	public static WebElement MyWorkspaceimg(WebDriver driver)
 	{
 		WebDriverWait wait= new WebDriverWait(driver,30);
-		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@id='lefthomemenu']/a/i)[7]")));
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//li[@id='lefthomemenu'])[11]")));
 		return Secreterial;
 	}
 	
@@ -399,13 +399,13 @@ public class MyWorkspaceLocator
 	public static WebElement clickMyCompliance(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//*[@id='myWorkspacemenu']/ul/li[5]/a/span"));
+		Secreterial =driver.findElement(By.xpath("//span[@class='fly-out-top-item-name SubSmallMenunameStyle' and .='My Compliances']"));
 		return Secreterial;
 	}
 	public static WebElement clickMyComplianceEdit(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//a[@class='k-grid-edit k-grid-button']"));
+		Secreterial =driver.findElement(By.xpath("//img[contains(@src, 'NewUi_Images/edit.svg')]"));
 		return Secreterial;
 	}
 	public static WebElement clickCloseIcon9(WebDriver driver)
@@ -414,11 +414,17 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.xpath("/html[1]/body[1]/div[16]/div[1]/div[1]/a[1]"));
 		return Secreterial;
 	}
+	public static WebElement Remarks(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.id("Remarks"));
+		return Secreterial;
+	}
 	
 	public static WebElement clickMyTask(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//*[@id='myWorkspacemenu']/ul/li[6]/a/span"));
+		Secreterial =driver.findElement(By.xpath("//span[@class='fly-out-top-item-name SubSmallMenunameStyle' and .='My Tasks']"));
 		return Secreterial;
 	}
 	public static WebElement clickNewTask(WebDriver driver)
@@ -433,6 +439,14 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.xpath("(//span[@class='k-dropdown-wrap k-state-default'])[2]"));
 		return Secreterial;
 	}
+	public static WebElement EntityValue(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//ul[@id='EntityId_listbox']//li[1]"));
+		return Secreterial;
+	}
+	
+	
 	public static WebElement clickEntity(WebDriver driver)
 	{
 		
@@ -463,6 +477,19 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.linkText("31"));
 		return Secreterial;
 	}
+	public static WebElement SelectUser(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//span[@aria-owns='ddluser_listbox']//span[@class='k-select']"));
+		return Secreterial;
+	}
+	public static WebElement SelectUserValue(WebDriver driver)
+	{
+		
+		Secreterial =driver.findElement(By.xpath("//ul[@id='ddluser_listbox']//li[1]"));
+		return Secreterial;
+	}
+	
 	public static WebElement Save(WebDriver driver)
 	{
 		
@@ -595,7 +622,7 @@ public class MyWorkspaceLocator
 	public static WebElement MeetingCalender(WebDriver driver)
 	{
 		WebDriverWait wait= new WebDriverWait(driver,30);
-		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='myWorkspacemenu']/ul/li[7]/a/span")));
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='fly-out-top-item-name SubSmallMenunameStyle' and .='Meeting Calendar']")));
 		return Secreterial;
 	}
 	public static WebElement ValidMsg1(WebDriver driver)
@@ -613,7 +640,7 @@ public class MyWorkspaceLocator
 	public static WebElement AddBtn(WebDriver driver)
 	{
 		WebDriverWait wait= new WebDriverWait(driver,30);
-		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='btn btn-primary'])[2]")));
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[@class='btn btn-primary'])[1]")));
 		return Secreterial;
 	}
 	public static WebElement Entity(WebDriver driver)
@@ -648,10 +675,17 @@ public class MyWorkspaceLocator
 		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='FYID_listbox']/li[1]")));
 		return Secreterial;
 	}
+	
 	public static WebElement ClickMeetingType(WebDriver driver)
 	{
 		WebDriverWait wait= new WebDriverWait(driver,30);
-		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='gridADDAnnualMeeting_active_cell']/span[1]/span/span[1]")));
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//td[@class='editableFiled']")));
+		return Secreterial;
+	}
+	public static WebElement ClickMeetingType1(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@aria-owns='Id_listbox']//span[@class='k-select']")));
 		return Secreterial;
 	}
 	public static WebElement SelectMeetingType(WebDriver driver)
@@ -1725,6 +1759,417 @@ public class MyWorkspaceLocator
 		Secreterial =driver.findElement(By.xpath("(//span[@class='k-input'])[16]"));
 		return Secreterial;
 	}
+	
+	
+	public static WebElement Entitydashboard(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='divEntitiesCount']")));
+		return Secreterial;
+	}
+	
+	public static WebElement Directordashboard(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='divDirectorCount']")));
+		return Secreterial;
+	}
+	public static WebElement Meetingdashboard(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='divMeetingsCount']")));
+		return Secreterial;
+	}
+	public static WebElement Agendasdashboard(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='divAgendasCount']")));
+		return Secreterial;
+	}
+	public static WebElement DraftMinutesdashboard(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='divDraftMinutesCount']")));
+		return Secreterial;
+	}
+	
+	public static WebElement EntityGrid(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='k-pager-info k-label'] | //div[@id='gridComplianceDetails']//span[@class='k-pager-info k-label']")));
+		return Secreterial;
+	}
+	
+	public static WebElement ReadcountfromGrid(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='gridComplianceDetails']//span[@class='k-pager-info k-label']")));
+		return Secreterial;
+	}
+	public static WebElement CompanyAllDropdown(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='Company - All']/ancestor::div[contains(@class, 'k-multiselect-wrap')]")));
+		return Secreterial;
+	}
+	public static WebElement CompanyAllDropdownValue(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='ddlEntityComplianceDetails-list' and @class='k-list-container k-popup k-group k-reset k-state-border-up']//li[1]")));
+		return Secreterial;
+	}
+	public static WebElement FinancialYear(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@aria-owns='ddlFYtoDateComplianceDetails_listbox']//span[@class='k-select']")));
+		return Secreterial;
+	}
+	
+	public static WebElement FinancialYearValue(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//ul[@id='ddlFYtoDateComplianceDetails_listbox']//li[2]")));
+		return Secreterial;
+	}
+	public static WebElement Statusongraph(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@aria-owns='ddlStatusComplianceDetails_listbox']//span[@class='k-select']")));
+		return Secreterial;
+	}
+	public static WebElement StatusongraphValue(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//ul[@id='ddlStatusComplianceDetails_listbox']//li[3]")));
+		return Secreterial;
+	}
+	
+	public static WebElement RiskAll(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@aria-owns='ddlRiskComplianceDetails_listbox']//span[@class='k-select']")));
+		return Secreterial;
+	}
+	
+	public static WebElement RiskAllValue(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//ul[@id='ddlRiskComplianceDetails_listbox']//li[2]")));
+		return Secreterial;
+	}
+	public static WebElement ClearBtn(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@id='btnClearFilterComplianceDetails']")));
+		return Secreterial;
+	}
+	public static WebElement ClosePopup(WebDriver driver)
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[@class='k-button k-bare k-button-icon k-window-action'])[2]")));
+		return Secreterial;
+	}
+	
+	public static WebElement OverallComStaOverdue(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@fill='#fff' and @d='M0 0 L 354 0 354 250 0 250Z']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement CBySumOverdueCount(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='k-tooltip k-chart-tooltip']")));
+		return Secreterial;
+		
+	}
+	public static WebElement MyCalender(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='myCalendar']")));
+		return Secreterial;
+		
+	}
+	public static WebElement Month(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("span[data-head-month]")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement Year(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("span[data-head-year]")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement CalenderOverdueCount(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='badge badge-overdue']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement compliOverdueCount(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@id='sp_Compliance_OverdueCount']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement compliOverdueCount1(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='day fri past active']//a")));
+		return Secreterial;
+		
+	}
+	
+	
+	public static WebElement ActionTakenReport(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='gridKendoTask']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement ShowAll(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='col-md-6 colpadding0 dashboadChartSytle dashboadChartSytleRight']//a[@class='show-all-text-button']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement MyTask(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//ul[@class='breadcrumbs']//li//a[.='My Tasks']")));
+		return Secreterial;
+		
+	}
+	public static WebElement UpcomingMeeting(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='upcommingMeetingGrid']")));
+		return Secreterial;
+		
+	}
+	public static WebElement UpcomingMeetingShowAll(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='col-md-6 colpadding0 dashboadChartSytle dashboadChartSytleLeft']//a[.='Show All']")));
+		return Secreterial;
+		
+	}
+	public static WebElement Meetings(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//ul[@class='breadcrumbs']//li//a[.='Meetings']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement Overview(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@class='SmallMenuLi']//span[@class='fly-out-top-item-name SubSmallMenunameStyle' and .='Overview']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement SelEntity(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@aria-owns='EntityID_listbox']//span[@class='k-select']")));
+		return Secreterial;
+		
+	}
+	public static WebElement SelEntityValue(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//ul[@id='EntityID_listbox']//li[1]")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement SelEntityValue1(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//ul[@id='EntityID_listbox']//li[6]")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement MasterTab(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@id='mytab1']")));
+		return Secreterial;
+		
+	}
+	public static WebElement BasicDetails(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@id='basicdtls']")));
+		return Secreterial;
+		
+	}
+	public static WebElement BusinessActivity(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@id='businessActivityDtls']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement DirectorTab(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@id='directordtls']")));
+		return Secreterial;
+		
+	}
+	public static WebElement Directorprofile(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='customer-photo textimage']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement Commitee(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@id='mytab3']")));
+		return Secreterial;
+		
+	}
+	public static WebElement CommiteeColumn(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//th[@class='k-header'] | //th[@data-title='Committee']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement CommiteeListExpand(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//td[@class='k-hierarchy-cell']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement Shareholding(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@id='mytab4']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement ShareholdingPattern(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[@title='Shareholding Patterns']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement ShareCategory(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@id='ShareCat']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement ShareHistory(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@id='ShareHist']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement ShareholdingCatTable(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@id='divLatestShareholdingPattern']//table")));
+		return Secreterial;
+		
+	}
+	  
+	
+	public static WebElement StartDate(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='k-widget k-datepicker k-header']//span[@class='k-select' and @aria-controls='dpshStartdate_dateview']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement EndDates(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='k-widget k-datepicker k-header']//span[@class='k-select' and @aria-controls='dpshEnddate_dateview']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement CurrentMonth(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//a[@class='k-link k-nav-fast'])[2]")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement Year2024(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space(text())='2024']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement Jan(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//a[normalize-space(text())='Jan']")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement FirstJan(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.linkText("1")));
+		return Secreterial;
+		
+	}
+	
+	public static WebElement EndDateValue(WebDriver driver)		//Method for closing Message Popup
+	{
+		WebDriverWait wait= new WebDriverWait(driver,30);
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//td[@class='k-today k-state-focused']")));
+		return Secreterial;
+		
+	}
+	
+	
+	
+	
+	
 	 static void selectOptionFromDropDown_bs(List<WebElement> options, String value) {
 			
 			for(WebElement option:options) {

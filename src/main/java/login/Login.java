@@ -81,10 +81,12 @@ public class Login
 		Thread.sleep(500);
 		LoginPOM.setPassword(driver).sendKeys(password);	//Sent password to input box
 		LoginPOM.clickSubmit(driver).click();				//Clicked on Sign-in button
-		Thread.sleep(500);
+		
+		
+	Thread.sleep(2000);
 		if(!username.equalsIgnoreCase("performer@avantis.info"))
 		{
-			try
+		/*	try
 			{
 				Thread.sleep(500);
 				wait1.until(ExpectedConditions.visibilityOf(LoginPOM.clickQALink(driver)));
@@ -99,6 +101,9 @@ public class Login
 			{
 				
 			}
+	*/
+
+		/*
 			
 			Thread.sleep(1000);
 			wait1.until(ExpectedConditions.visibilityOf(LoginPOM.Question1(driver)));
@@ -121,12 +126,12 @@ public class Login
 				ans1 = "123";						//Storing the answer in ans variable.
 			}
 			
-			else if(method.equalsIgnoreCase("company"))
+			else if(method.equalsIgnoreCase("Compnay Secretory"))
 			{
 				ans1 = "123";						//Storing the answer in ans variable.
 			}
 			
-			else if(method.equalsIgnoreCase("Compnay Secretory"))
+			else if(method.equalsIgnoreCase("company"))
 			{
 				ans1 = getAnswerSecreterial(que1);						//Storing the answer in ans variable.
 			}
@@ -155,7 +160,7 @@ public class Login
 			{
 				ans2 = getAnswerFE(que2);						//Storing the answer in ans variable.
 			}
-			else if(method.equalsIgnoreCase("Compnay Secretory"))
+			else if(method.equalsIgnoreCase("company"))
 			{
 				ans2 = getAnswerSecreterial(que2);						//Storing the answer in ans variable.
 			}
@@ -164,7 +169,7 @@ public class Login
 				ans2 = "123";						//Storing the answer in ans variable.
 			}
 			
-			else if(method.equalsIgnoreCase("company"))
+			else if(method.equalsIgnoreCase("Compnay Secretory"))
 			{
 				ans2 = "123";						//Storing the answer in ans variable.
 			}
@@ -203,13 +208,13 @@ public class Login
 			{
 				LoginPOM.ClickContract(driver).click();			//Clicking on Litigation Image.
 			}
-			else if(method.equalsIgnoreCase("Compnay Secretory"))
-			{
-				LoginPOM.clickSecreterial(driver).click();			//Clicking on Litigation Image.
-			}
+//			else if(method.equalsIgnoreCase("Compnay Secretory"))
+//			{
+//				LoginPOM.clickSecreterial(driver).click();			//Clicking on Litigation Image.
+//			}
 			else
 			{
-				LoginPOM.ClickLitigation(driver).click();	
+				//LoginPOM.ClickLitigation(driver).click();	
 			//	LoginPOM.clickComplicane(driver).click();			//Clicking on Compliance Image.
 			}
 			
