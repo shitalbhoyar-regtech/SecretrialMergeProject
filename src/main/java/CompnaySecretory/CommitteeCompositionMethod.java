@@ -46,8 +46,8 @@ private static List<WebElement> elementsList = null;
 	 {
 			Thread.sleep(2000);
 		    Locator.selectImg(driver).click();
-//		 Thread.sleep(2000);
-//		 Locator.ClickMaster(driver).click();
+		 Thread.sleep(2000);
+		 Locator.ClickMaster(driver).click();
 		 Thread.sleep(2000);
 		 Locator.ClickCommitteeCompistion(driver).click();
 		 Thread.sleep(2000);
@@ -59,21 +59,21 @@ private static List<WebElement> elementsList = null;
 		 Thread.sleep(2000);
 		 Locator.ClickCommittee(driver).click();
 		 Thread.sleep(2000);
-		 Locator.SelectCommittee(driver).get(1).click();
-//		 Thread.sleep(2000);
-//		 Locator.ClickCommittee(driver).click();
+		 Locator.SelectCommittee(driver).get(8).click();
+		 Thread.sleep(2000);
+		 Locator.ClickCommittee(driver).click();
 		 Thread.sleep(2000);
 		 Locator.ClickDirector(driver).click();
 		 Thread.sleep(4000);
-		 Locator.SelectDirector(driver).get(1).click();
+		 Locator.SelectDirector(driver).get(3).click();
 		 Thread.sleep(3000);
 		 Locator.ClickPostion(driver).click();
 		 Thread.sleep(3000);
 		 Locator.SelectPostion(driver).click();
-//		 Thread.sleep(3000);
-//		 Locator.DateOfAppoinment(driver).sendKeys("04/03/2023");
-//		 Thread.sleep(3000);
-//		 Locator.DateofCessation(driver).sendKeys("02/04/2023");
+		 Thread.sleep(3000);
+		 Locator.DateOfAppoinment(driver).sendKeys("04/03/2023");
+		 Thread.sleep(3000);
+		 Locator.DateofCessation(driver).sendKeys("02/04/2023");
 		 Thread.sleep(3000);
 		 Locator.SaveBtn1(driver).click();
 		 
@@ -101,9 +101,9 @@ private static List<WebElement> elementsList = null;
 			 
 		 Thread.sleep(2000);
 		    Locator.selectImg(driver).click();
-//		 Thread.sleep(2000);
-//		 Locator.ClickMaster(driver).click();
-		 Thread.sleep(200);
+		 Thread.sleep(2000);
+		 Locator.ClickMaster(driver).click();
+		 Thread.sleep(2000);
 		 Locator.ClickCommitteeCompistion(driver).click();
 			 Thread.sleep(2000);
 			 Locator.ClickNewBtn(driver).click();
@@ -113,7 +113,7 @@ private static List<WebElement> elementsList = null;
 			 
 			 Thread.sleep(3000);
 			 String msg1 = Locator.ValidationMsgCommittee1(driver).getText();
-				if(msg1.contains("Enter all the Mandatory Fields"))
+				if(msg1.contains("Please Select Committee."))
 				{
 					test.log(LogStatus.PASS, "Without entering data =" +msg1);
 				}
@@ -132,15 +132,15 @@ private static List<WebElement> elementsList = null;
 			//Close Button working or not
 		 Thread.sleep(2000);
 		    Locator.selectImg(driver).click();
-//		 Thread.sleep(2000);
-//		 Locator.ClickMaster(driver).click();
+		 Thread.sleep(2000);
+		 Locator.ClickMaster(driver).click();
 		 Thread.sleep(2000);
 		 Locator.ClickCommitteeCompistion(driver).click();
 				 Thread.sleep(2000);
 				 Locator.ClickNewBtn(driver).click();
 				 
 					Thread.sleep(4000);
-					WebElement text=driver.findElement(By.xpath("//*[@id='btnclose']"));
+					WebElement text=driver.findElement(By.xpath("//*[@id='btnclose1']"));
 					 
 					 
 					 if(text.isEnabled())
@@ -158,8 +158,8 @@ private static List<WebElement> elementsList = null;
 			 //Date format dd/mm/yyyy accept or not
 		 Thread.sleep(2000);
 		    Locator.selectImg(driver).click();
-//		 Thread.sleep(2000);
-//		 Locator.ClickMaster(driver).click();
+		 Thread.sleep(2000);
+		 Locator.ClickMaster(driver).click();
 		 Thread.sleep(2000);
 		 Locator.ClickCommitteeCompistion(driver).click();
 					 Thread.sleep(2000);
@@ -209,9 +209,9 @@ private static List<WebElement> elementsList = null;
 	  { 
 		 Thread.sleep(2000);
 		    Locator.selectImg(driver).click();
-//		 Thread.sleep(2000);
-//		 Locator.ClickMaster(driver).click();
-		 Thread.sleep(200);
+		 Thread.sleep(2000);
+		 Locator.ClickMaster(driver).click();
+		 Thread.sleep(2000);
 		 Locator.ClickCommitteeCompistion(driver).click();	
 
 		     Thread.sleep(3000);
@@ -221,13 +221,11 @@ private static List<WebElement> elementsList = null;
 		     Thread.sleep(3000);
 			 Locator.clickediticon(driver).click();
 			 Thread.sleep(3000);
-			 Locator.ClickPostionedit(driver).click();
+			 Locator.ClickPostion(driver).click();
 			 Thread.sleep(3000);
 			 Locator.SelectPostion1(driver).click();
 			 Thread.sleep(3000);
-			 Locator.SaveBtnedit(driver).click();
-			 
-			 test.log(LogStatus.FAIL, "Unexpected Alert Open");
+			 Locator.SaveBtn1(driver).click();
 			 
 			 Thread.sleep(3000);
 			 String msg2 = Locator.ValidationMsgCommittee(driver).getText();
@@ -240,7 +238,6 @@ private static List<WebElement> elementsList = null;
 					test.log(LogStatus.FAIL, "Message Dispalyed =" +msg2);
 				} 
 				
-				
 				Thread.sleep(3000);
 				 Locator.CloseBtn(driver).click(); 
 				 
@@ -252,8 +249,8 @@ private static List<WebElement> elementsList = null;
 	  { 		 
 		 Thread.sleep(2000);
 		    Locator.selectImg(driver).click();
-//		 Thread.sleep(2000);
-//		 Locator.ClickMaster(driver).click();
+		 Thread.sleep(2000);
+		 Locator.ClickMaster(driver).click();
 		 Thread.sleep(2000);
 		 Locator.ClickCommitteeCompistion(driver).click();
 				 Locator.clickdropdown(driver).click();
@@ -288,17 +285,17 @@ private static List<WebElement> elementsList = null;
 		 
 		 Thread.sleep(2000);
 		    Locator.selectImg(driver).click();
-//		 Thread.sleep(2000);
-//		 Locator.ClickMaster(driver).click();
+		 Thread.sleep(2000);
+		 Locator.ClickMaster(driver).click();
 		 Thread.sleep(2000);
 		 Locator.ClickCommitteeCompistion(driver).click();
 			            Thread.sleep(100);
-						File dir = new File("C:\\Users\\snehalp\\Downloads");
+						File dir = new File("C://Users//Admin//Downloads");
 						File[] dirContents = dir.listFiles();							//Counting number of files in directory before download 
 						Thread.sleep(250);
 						Locator.clickExportToPdf(driver).click();					//Clicking on 'Excel Report' image.
 						Thread.sleep(5500);
-						File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+						File dir1 = new File("C://Users//Admin//Downloads");
 						File[] allFilesNew = dir1.listFiles();							//Counting number of files in directory after download
 						
 						if(dirContents.length < allFilesNew.length)

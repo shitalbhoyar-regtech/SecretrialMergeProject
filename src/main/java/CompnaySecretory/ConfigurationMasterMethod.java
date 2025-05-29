@@ -44,39 +44,27 @@ private static List<WebElement> elementsList = null;
 		//Add Configuration
 	Thread.sleep(2000);
     Locator.selectImg(driver).click();
-//    Thread.sleep(2000);
-//    Locator.ClickMaster(driver).click();
+    Thread.sleep(2000);
+    Locator.ClickMaster(driver).click();
     Thread.sleep(2000);
     Locator.ClickConfiguration(driver).click();
-    
-    
-    
+    Thread.sleep(2000);
+    Locator.ClickNewBtn1(driver).click();
     Thread.sleep(2000);
     Locator.ClickEntity1(driver).click();
     Thread.sleep(2000);
-    selectOptionFromDropDown_bs( Locator.SelectEntity1(driver), "Financial Year Configuration");
-    Thread.sleep(2000);
-    Locator.ClickNewBtn1(driver).click();
-    
-    Thread.sleep(2000);
-    Locator.ClickEntity2(driver).click();
-    Thread.sleep(2000);
-    selectOptionFromDropDown_bs( Locator.SelectEntity2(driver), "AAA SERVICE LLP");
-    
+    selectOptionFromDropDown_bs( Locator.SelectEntity1(driver), "A LIMITED");
     
     Thread.sleep(3000);
     Locator.ClickMeetingType(driver).click();
     Thread.sleep(2000);
     selectOptionFromDropDown_bs( Locator.SelectMeetingType(driver), "Board");
     Thread.sleep(2000);
-    Locator.clickMeetingDate(driver).click();
-    
-    Thread.sleep(2000);
-    Locator.selectMeetingDate(driver).click();
+    Locator.clickMeetingDate(driver).sendKeys("13/04/2023");
     Thread.sleep(2000);
     Locator.clickMeetingNumberingPattern(driver).click();
     Thread.sleep(2000);
-    selectOptionFromDropDown_bs( Locator.clickMeetingNumberingPatternDP(driver), "FY Wise");
+    Locator.clickMeetingNumberingPatternDP(driver).click();
     Thread.sleep(2000);
     Locator.ClickPreviousNumber(driver).sendKeys("2");
     Thread.sleep(2000);
@@ -110,9 +98,9 @@ private static List<WebElement> elementsList = null;
 		 Thread.sleep(2000);
 		   Locator.ClickNewBtn1(driver).click();
 		   Thread.sleep(2000);
-		   Locator.ClickEntity2(driver).click();
+		   Locator.ClickEntity1(driver).click();
 		   Thread.sleep(2000);
-		   selectOptionFromDropDown_bs(Locator.SelectEntity2(driver), "AAA SERVICE LLP");
+		   selectOptionFromDropDown_bs(Locator.SelectEntity1(driver), "A LIMITED");
 		  
 		   Thread.sleep(2000);
 		   Locator.ClickMeetingType(driver).click();
@@ -122,7 +110,7 @@ private static List<WebElement> elementsList = null;
 //		    Thread.sleep(4000);
 //		    Locator.clickdetailsofcircular(driver).click();
 		    
-		    By locator2 = By.xpath("//label[@for='IsCircular_True']");
+		    By locator2 = By.xpath("//*[@id='frmUpdateMeetings']/div[3]/div/fieldset/div[2]/div/div/div[2]/label[1]");
             wait.until(ExpectedConditions.presenceOfElementLocated(locator2));
 			Thread.sleep(4000);
 			WebElement ViewButton2 = driver.findElement(locator2);	
@@ -131,17 +119,11 @@ private static List<WebElement> elementsList = null;
 		    Thread.sleep(2000);
 		    jse2.executeScript("arguments[0].click();", ViewButton2);
 		    
-		    Thread.sleep(2000);
-		    Locator.clickMeetingNumberingPattern(driver).click();
-		    Thread.sleep(2000);
-		    selectOptionFromDropDown_bs( Locator.clickMeetingNumberingPatternDP(driver), "Continuous");
+		    
 		    
 		    
 		    Thread.sleep(2000);
-		    Locator.Clickpreviouscirculardate(driver).click();
-		    
-		    Thread.sleep(2000);
-		    Locator. selectPreviouscirculardate(driver).click();
+		    Locator.Clickpreviouscirculardate(driver).sendKeys("04-04-2023");
 		    Thread.sleep(2000);
 		    Locator.clickcircularNumberingpattern(driver).click();
 		    selectOptionFromDropDown_bs( Locator.clickcircularNumberingpatternDP(driver), "Continuous");
@@ -172,21 +154,10 @@ private static List<WebElement> elementsList = null;
 		    //Update Configuration
 		Thread.sleep(2000);
 	    Locator.selectImg(driver).click();
-//	    Thread.sleep(2000);
-//	    Locator.ClickMaster(driver).click();
+	    Thread.sleep(2000);
+	    Locator.ClickMaster(driver).click();
 	    Thread.sleep(2000);
 	    Locator.ClickConfiguration(driver).click();
-	    
-	    Thread.sleep(2000);
-	    Locator.ClickEntity1(driver).click();
-	    Thread.sleep(2000);
-	    selectOptionFromDropDown_bs( Locator.SelectEntity1(driver), "Financial Year Configuration");
-	    
-	    
-	    Thread.sleep(2000);
-	    Locator.ClickEntity3(driver).click();
-	    Thread.sleep(2000);
-	    selectOptionFromDropDown_bs( Locator.selectEntity3(driver), "AAA SERVICE LLP");
 				   Thread.sleep(2000);
 				    Locator.clickEditIcon(driver).click();
 				    Thread.sleep(2000);
@@ -217,30 +188,20 @@ private static List<WebElement> elementsList = null;
         {
 				    
            //Date Pattern DD//MM//YYYY
+        	WebDriverWait wait=new WebDriverWait(driver,20);
         	Thread.sleep(2000);
-            Locator.selectImg(driver).click();
-//            Thread.sleep(2000);
-//            Locator.ClickMaster(driver).click();
-            Thread.sleep(2000);
-            Locator.ClickConfiguration(driver).click();
-            
-            
-            
-            Thread.sleep(2000);
-            Locator.ClickEntity1(driver).click();
-            Thread.sleep(2000);
-            selectOptionFromDropDown_bs( Locator.SelectEntity1(driver), "Financial Year Configuration");
-            Thread.sleep(2000);
-            Locator.ClickNewBtn1(driver).click();
-            
-            Thread.sleep(2000);
-            Locator.ClickEntity2(driver).click();
-            Thread.sleep(2000);
-            selectOptionFromDropDown_bs( Locator.SelectEntity2(driver), "AAA SERVICE LLP");
-            
-            
-            Thread.sleep(2000);
-					    WebDriverWait wait=new WebDriverWait(driver, 20);
+    	    Locator.selectImg(driver).click();
+    	    Thread.sleep(2000);
+    	    Locator.ClickMaster(driver).click();
+    	    Thread.sleep(2000);
+    	    Locator.ClickConfiguration(driver).click();
+					    
+					    Thread.sleep(2000);
+					    Locator.ClickNewBtn1(driver).click();
+					    
+					    //Thread.sleep(2000);
+					   // Locator.clickCalender(driver).click();
+					    
 					    By locator1 = By.xpath("//span[@class='k-icon k-i-calendar']");
 			            wait.until(ExpectedConditions.presenceOfElementLocated(locator1));
 						Thread.sleep(4000);
@@ -252,7 +213,7 @@ private static List<WebElement> elementsList = null;
 					    
 					    
 					    
-					    Thread.sleep(2000);
+					    
 					    if(Locator.clickDate(driver).isEnabled())
 					    {
 					    	Thread.sleep(2000);
@@ -277,26 +238,15 @@ private static List<WebElement> elementsList = null;
 					    //Meeting Numbering pattern
         	
         	Thread.sleep(2000);
-            Locator.selectImg(driver).click();
-//            Thread.sleep(2000);
-//            Locator.ClickMaster(driver).click();
-            Thread.sleep(2000);
-            Locator.ClickConfiguration(driver).click();
-            
-            
-            
-            Thread.sleep(2000);
-            Locator.ClickEntity1(driver).click();
-            Thread.sleep(2000);
-            selectOptionFromDropDown_bs( Locator.SelectEntity1(driver), "Financial Year Configuration");
-            Thread.sleep(2000);
-            Locator.ClickNewBtn1(driver).click();
-            
-            Thread.sleep(2000);
-            Locator.ClickEntity2(driver).click();
-            Thread.sleep(2000);
-            selectOptionFromDropDown_bs( Locator.SelectEntity2(driver), "AAA SERVICE LLP");
-            
+    	    Locator.selectImg(driver).click();
+    	    Thread.sleep(2000);
+    	    Locator.ClickMaster(driver).click();
+    	    Thread.sleep(2000);
+    	    Locator.ClickConfiguration(driver).click();
+					    
+					    Thread.sleep(2000);
+					    Locator.ClickNewBtn1(driver).click();
+					    
 					    Thread.sleep(2000);
 					    Locator.clickMeetingNumberingPattern(driver).click();
 					   
@@ -327,15 +277,10 @@ private static List<WebElement> elementsList = null;
 
                      Thread.sleep(2000);
                      Locator.selectImg(driver).click();
-//                     Thread.sleep(2000);
-//                     Locator.ClickMaster(driver).click();
+                     Thread.sleep(2000);
+                     Locator.ClickMaster(driver).click();
                      Thread.sleep(2000);
                      Locator.ClickConfiguration(driver).click();
-                     
-                     Thread.sleep(2000);
-                     Locator.ClickEntity1(driver).click();
-                     Thread.sleep(2000);
-                     selectOptionFromDropDown_bs( Locator.SelectEntity1(driver), "Financial Year Configuration");
 					    Thread.sleep(4000);
 		                Locator.ClickNewBtn1(driver).click();
 						

@@ -16,7 +16,7 @@ public class MyDocumentLocator {
 	public static WebElement MyDocumentimg(WebDriver driver)
 	{
 		WebDriverWait wait= new WebDriverWait(driver,30);
-		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//img[@class='SmallMenuIcon'])[5]")));
+		Secreterial =wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//*[@id='lefthomemenu']/a/i)[8]")));
 		return Secreterial;
 	}
 	public static WebElement StatutoryRegisters(WebDriver driver)
@@ -198,7 +198,7 @@ public class MyDocumentLocator {
 	public static WebElement HistiricalDoc(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//span[@class='fly-out-top-item-name SubSmallMenunameStyle'][normalize-space()='Historical Documents']"));
+		Secreterial =driver.findElement(By.xpath("(//*[@id='lefthomemenu']/ul/li[5]/a/span)[5]"));
 		return Secreterial;
 	}
 	public static WebElement HistiricalDocNew(WebDriver driver)
@@ -280,12 +280,6 @@ public class MyDocumentLocator {
 		Secreterial =driver.findElement(By.xpath("(//a[@class='k-button k-bare k-button-icon k-window-action'])[3]"));
 		return Secreterial;
 	}
-	public static WebElement clickclosePopupDoc(WebDriver driver)
-	{
-		
-		Secreterial =driver.findElement(By.xpath("(//a[@aria-label='Close'])[7]"));
-		return Secreterial;
-	}
 	public static WebElement clickSaveInValidMsg(WebDriver driver)
 	{
 		
@@ -301,7 +295,7 @@ public class MyDocumentLocator {
 	public static WebElement ClickEdtIcon(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//*[@class='k-button-icontext k-grid-Edit k-grid-edit']"));
+		Secreterial =driver.findElement(By.xpath("//a[@class='k-grid-Edit k-grid-edit hoverCircle k-grid-button']"));
 		return Secreterial;
 	}
 	public static WebElement ClickFiles(WebDriver driver)
@@ -310,48 +304,7 @@ public class MyDocumentLocator {
 		Secreterial =driver.findElement(By.xpath("//input[@id='files']"));
 		return Secreterial;
 	}
-	public static WebElement ClickAgendaNotice(WebDriver driver)
-	{
-		
-		Secreterial =driver.findElement(By.xpath("(//*[@class='checkmark1'])[5]"));
-		return Secreterial;
-	}
-	public static WebElement ClickCompliance(WebDriver driver)
-	{
-		
-		Secreterial =driver.findElement(By.xpath("(//*[@class='checkmark1'])[6]"));
-		return Secreterial;
-	}
-	public static WebElement ClickDownloadDoc(WebDriver driver)
-	{
-		
-		Secreterial =driver.findElement(By.xpath("//*[@class=\"k-button-icontext k-grid-Download k-grid-download\"]"));
-		return Secreterial;
-	}
-	public static WebElement ClickViewDoc(WebDriver driver)
-	{
-		
-		Secreterial =driver.findElement(By.xpath("//*[@class=\"k-button-icontext k-grid-View k-grid-view\"]"));
-		return Secreterial;
-	}
-	public static WebElement ClickDeleteDoc(WebDriver driver)
-	{
-		
-		Secreterial =driver.findElement(By.xpath("(//*[@class='k-button-icontext k-grid-Delete k-grid-delete'])[2]"));
-		return Secreterial;
-	}
-	public static WebElement ClickViewDoc1(WebDriver driver)
-	{
-		
-		Secreterial =driver.findElement(By.xpath("//*[@class='sdk-HeaderFileInfoView-breadcrumbs']"));
-		return Secreterial;
-	}
-	public static WebElement frame(WebDriver driver)
-	{
-		
-		Secreterial =driver.findElement(By.xpath("//*[@id='iframe-adobe-dc-view']"));
-		return Secreterial;
-	}
+	
 	public static WebElement ClickAgendaItems(WebDriver driver)
 	{
 		
@@ -361,7 +314,7 @@ public class MyDocumentLocator {
 	public static WebElement ClickHistoricalDocDelete(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//*[@class=\"k-button-icontext k-grid-Delete k-grid-delete\"]"));
+		Secreterial =driver.findElement(By.xpath("//a[@class='k-grid-Delete k-grid-delete k-grid-button']"));
 		return Secreterial;
 	}
 	public static WebElement ClickYesButton(WebDriver driver)
@@ -397,7 +350,7 @@ public class MyDocumentLocator {
 	public static WebElement SelectEntityFilter(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//*[@id='ddlEntityFilter_listbox']/li[8]"));
+		Secreterial =driver.findElement(By.xpath("(//li[@class='k-item'])[4]"));
 		return Secreterial;
 	}
 	public static WebElement ClickFYFilter(WebDriver driver)
@@ -427,19 +380,13 @@ public class MyDocumentLocator {
 	public static WebElement EFormRepositorytab(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//span[@class='fly-out-top-item-name SubSmallMenunameStyle'][normalize-space()='E-form Repository']"));
-		return Secreterial;
-	}
-	public static WebElement ComplianceDoctab(WebDriver driver)
-	{
-		
-		Secreterial =driver.findElement(By.xpath("//span[@class='fly-out-top-item-name SubSmallMenunameStyle'][normalize-space()='Compliance Documents']"));
+		Secreterial =driver.findElement(By.xpath("(//*[@id='lefthomemenu']/ul/li[6]/a/span)[4]"));
 		return Secreterial;
 	}
 	public static WebElement UploadButton(WebDriver driver)
 	{
 		
-		Secreterial =driver.findElement(By.xpath("//*[@title='Upload']"));
+		Secreterial =driver.findElement(By.xpath("//input[@id='btnUplaodSH2']"));
 		return Secreterial;
 	}
 	public static WebElement clickFromName(WebDriver driver)

@@ -34,14 +34,12 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
 		Thread.sleep(1000);
 		
-		if(MyReportsLocators.MyReportsMenu(driver).isEnabled())
-		{
-			Thread.sleep(1000);
+		if(MyReportsLocators.MyReportsMenu(driver).isEnabled()) {
 			MyReportsLocators.MyReportsMenu(driver).click();
-			
+			Thread.sleep(1000);
 			test.log(LogStatus.PASS, "'My Reports' tab is clickable ");
 		}else {
 			test.log(LogStatus.FAIL, " 'My Reports' tab is not clickable");
@@ -56,7 +54,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
 		Thread.sleep(1000);
 		
 		
@@ -70,8 +68,8 @@ public class MyReportsMethods {
 			test.log(LogStatus.FAIL, " User should not redirected to the Compliance Status Report page.");
 			
 		}
-		//Thread.sleep(3000);
-		//DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
 		
 	}
@@ -81,7 +79,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -96,8 +94,8 @@ public class MyReportsMethods {
 			test.log(LogStatus.FAIL, " Type-All  dropdown is not working .");
 			
 		}
-		//Thread.sleep(3000);
-		//DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
 		
 	}
@@ -107,7 +105,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -123,8 +121,8 @@ public class MyReportsMethods {
 			test.log(LogStatus.FAIL, " 'Status-All' dropdown is not working .");
 			
 		}
-		//Thread.sleep(3000);
-		//DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
 		
 	}
@@ -134,7 +132,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -144,7 +142,7 @@ public class MyReportsMethods {
 		
 			MyReportsLocators.StatusAll(driver).click();
 			Thread.sleep(3000);
-			String cattext=	MyReportsLocators.Overdue(driver).getText();
+		String cattext=	MyReportsLocators.Overdue(driver).getText();
 			Thread.sleep(3000);
 			MyReportsLocators.Overdue(driver).click();
 			Thread.sleep(3000);
@@ -163,7 +161,7 @@ public class MyReportsMethods {
 			
 				filter.add("Status");	
 			
-				 List<WebElement> Statuscol=driver.findElements(By.xpath("//*[@id='gridStatusReport']/div[2]/table/tbody/tr[1]/td[24]")); //column list
+				 List<WebElement> Statuscol=driver.findElements(By.xpath("//*[@id='gridStatusReport']/div[2]/table/tbody/tr/td[22]")); //column list
 
 				
 				
@@ -223,8 +221,8 @@ public class MyReportsMethods {
 				
 				}
 			
-//		Thread.sleep(3000);
-//		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
 		
 	}
@@ -234,7 +232,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -250,8 +248,8 @@ public class MyReportsMethods {
 			test.log(LogStatus.FAIL, " 'Company - All' dropdown is not Clickable .");
 			
 		}
-		//Thread.sleep(3000);
-		//DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
 		
 	}
@@ -261,7 +259,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -271,7 +269,7 @@ public class MyReportsMethods {
 		
 			MyReportsLocators.CompanyAllClick(driver).click();
 			Thread.sleep(3000);
-			String cattext=	MyReportsLocators.AGDL(driver).getText();
+		String cattext=	MyReportsLocators.AGDL(driver).getText();
 			Thread.sleep(3000);
 			MyReportsLocators.AGDL(driver).click();
 			Thread.sleep(4000);
@@ -354,8 +352,8 @@ public class MyReportsMethods {
 			test.log(LogStatus.PASS, "No items to display ");	
 		}
 			
-//		Thread.sleep(3000);
-//		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
 		
 	}
@@ -365,9 +363,9 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
 		Thread.sleep(1000);
-	
+		
 			MyReportsLocators.MyReportsMenu(driver).click();
 			Thread.sleep(1000);
 			MyReportsLocators.ComplianceStatusReport(driver).click();
@@ -375,7 +373,7 @@ public class MyReportsMethods {
 		
 			MyReportsLocators.StatusAll(driver).click();
 			Thread.sleep(3000);
-			String cattext=	MyReportsLocators.Overdue(driver).getText();
+		String cattext=	MyReportsLocators.Overdue(driver).getText();
 			Thread.sleep(3000);
 			MyReportsLocators.Overdue(driver).click();
 			Thread.sleep(3000);
@@ -402,21 +400,21 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
 			Thread.sleep(1000);
 			MyReportsLocators.ComplianceStatusReport(driver).click();
 			Thread.sleep(3000);
-			File dir = new File("C:\\Users\\snehalp\\Downloads");
+			File dir = new File("C:\\Users\\Mayuri\\Downloads");
 			File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 			
 			Thread.sleep(4000);
 			MyReportsLocators.Export(driver).click();		//Exporting (Downloading) file
 			
 			Thread.sleep(4000);//C://Users//jiya//Downloads//
-			File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+			File dir1 = new File("C:\\Users\\Mayuri\\Downloads");
 			File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 			
 			Thread.sleep(3000);
@@ -425,8 +423,8 @@ public class MyReportsMethods {
 			} else {
 				test.log(LogStatus.FAIL, "File does not downloaded.");
 			}
-//		Thread.sleep(3000);
-//		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
 		
 	}
@@ -436,24 +434,22 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
 		Thread.sleep(1000);
 		
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
 			Thread.sleep(1000);
-		if(MyReportsLocators.AttendanceReport(driver).isEnabled()) 
-		{
-			Thread.sleep(3000);
+		if(MyReportsLocators.AttendanceReport(driver).isEnabled()) {
 			MyReportsLocators.AttendanceReport(driver).click();
-			
+			Thread.sleep(3000);
 			test.log(LogStatus.PASS, "User should be redirected to the Attendance Report page.");
 		}else {
 			test.log(LogStatus.FAIL, " User should not redirected to the Attendance Report page.");
 			
 		}
-//		Thread.sleep(3000);
-//		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
 		
 	}
@@ -463,7 +459,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -479,8 +475,8 @@ public class MyReportsMethods {
 			test.log(LogStatus.FAIL, " 'Financial Year-All' dropdown is not Clickable .");
 			
 		}
-//		Thread.sleep(3000);
-//		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
 		
 	}
@@ -490,7 +486,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -572,8 +568,8 @@ public class MyReportsMethods {
 				
 				}
 			
-//		Thread.sleep(3000);
-//		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
 		
 	}
@@ -583,7 +579,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -599,8 +595,8 @@ public class MyReportsMethods {
 			test.log(LogStatus.FAIL, " 'Company - All' dropdown is not Clickable .");
 			
 		}
-//		Thread.sleep(3000);
-//		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
 		
 	}
@@ -610,7 +606,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -620,7 +616,7 @@ public class MyReportsMethods {
 		
 			MyReportsLocators.CompanyAllClick(driver).click();
 			Thread.sleep(3000);
-			String cattext=	MyReportsLocators.AGDL(driver).getText();
+		String cattext=	MyReportsLocators.AGDL(driver).getText();
 			Thread.sleep(3000);
 			MyReportsLocators.AGDL(driver).click();
 			Thread.sleep(4000);
@@ -628,7 +624,7 @@ public class MyReportsMethods {
 			Thread.sleep(4000);
 			String GridText =	MyReportsLocators.Noitemstodisplay(driver).getText();
 			Thread.sleep(3000);
-			if(!GridText.equalsIgnoreCase("No items to display")) {
+		if(!GridText.equalsIgnoreCase("No items to display")) {
 		
 		        List<String> li=new ArrayList<String>();
 		        
@@ -711,7 +707,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click();
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -722,14 +718,14 @@ public class MyReportsMethods {
 			Thread.sleep(3000);
 			MyReportsLocators.AGDL(driver).click();
 			Thread.sleep(4000);
-			File dir = new File("C:\\Users\\snehalp\\Downloads");
+			File dir = new File("C:\\Users\\Mayuri\\Downloads");
 			File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 			
 			Thread.sleep(4000);
 			MyReportsLocators.Export(driver).click();		//Exporting (Downloading) file
 			
 			Thread.sleep(4000);//C://Users//jiya//Downloads//
-			File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+			File dir1 = new File("C:\\Users\\Mayuri\\Downloads");
 			File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 			
 			Thread.sleep(3000);
@@ -738,8 +734,8 @@ public class MyReportsMethods {
 			} else {
 				test.log(LogStatus.FAIL, "File does not downloaded.");
 			}
-//		Thread.sleep(3000);
-//		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
 		
 	}
@@ -749,7 +745,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -774,7 +770,7 @@ public class MyReportsMethods {
 			
 			String GridText =	MyReportsLocators.Noitemstodisplay(driver).getText();
 			Thread.sleep(3000);
-			if(!GridText.equalsIgnoreCase("No items to display")) {
+		if(!GridText.equalsIgnoreCase("No items to display")) {
 		
 		        List<String> li=new ArrayList<String>();
 		        
@@ -862,7 +858,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -870,20 +866,13 @@ public class MyReportsMethods {
 			MyReportsLocators.AttendanceReport(driver).click();
 			Thread.sleep(3000);
 			
-			if(MyReportsLocators.View(driver).isEnabled())
-			{
-				MyReportsLocators.View(driver).click();
-				test.log(LogStatus.PASS, "'View' functionality is working ");
-				Thread.sleep(5000);
-				MyReportsLocators.ViewClose(driver).click();
-			}
-			else
-			{
+			MyReportsLocators.View(driver).click();
+			Thread.sleep(5000);
+			MyReportsLocators.ViewClose(driver).click();
 			Thread.sleep(3000);
-			test.log(LogStatus.PASS, "'View' functionality is not working ");
-			}
-//		Thread.sleep(3000);
-//		DirectorLocator.ClickDashboard(driver).click();
+			test.log(LogStatus.PASS, "'View' functionality is working ");
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
 		
 	}
@@ -893,7 +882,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (60));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -902,17 +891,17 @@ public class MyReportsMethods {
 			Thread.sleep(3000);
 			
 			MyReportsLocators.View(driver).click();
-			//Thread.sleep(5000);
-			//driver.switchTo().frame(MyReportsLocators.Frame(driver));
 			Thread.sleep(5000);
-			File dir = new File("C:\\Users\\snehalp\\Downloads");
+			driver.switchTo().frame(MyReportsLocators.Frame(driver));
+			Thread.sleep(5000);
+			File dir = new File("C:\\Users\\Mayuri\\Downloads");
 			File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 			
 			Thread.sleep(4000);
 			MyReportsLocators.ViewDownload(driver).click();		//Exporting (Downloading) file
 			
 			Thread.sleep(4000);
-			File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+			File dir1 = new File("C:\\Users\\Mayuri\\Downloads");
 			File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 			
 			Thread.sleep(3000);
@@ -922,12 +911,12 @@ public class MyReportsMethods {
 				test.log(LogStatus.FAIL, "File does not downloaded.");
 			}
 			
-			//driver.switchTo().defaultContent();
+			driver.switchTo().defaultContent();
 			MyReportsLocators.ViewClose(driver).click();
 			Thread.sleep(3000);
 			
-//		Thread.sleep(3000);
-//		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
 		
 	}
@@ -937,7 +926,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (60));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();
@@ -946,14 +935,14 @@ public class MyReportsMethods {
 			Thread.sleep(3000);
 			
 			
-			File dir = new File("C:\\Users\\snehalp\\Downloads");
+			File dir = new File("C:\\Users\\Mayuri\\Downloads");
 			File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 			
 			Thread.sleep(4000);
 			MyReportsLocators.Download(driver).click();		//Exporting (Downloading) file
 			
 			Thread.sleep(4000);
-			File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+			File dir1 = new File("C:\\Users\\Mayuri\\Downloads");
 			File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 			
 			Thread.sleep(3000);
@@ -964,8 +953,8 @@ public class MyReportsMethods {
 			}
 			
 			
-//		Thread.sleep(3000);
-//		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
 		
 	}
@@ -975,7 +964,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
 		Thread.sleep(1000);
 		
 		
@@ -989,8 +978,8 @@ public class MyReportsMethods {
 			test.log(LogStatus.FAIL, " User should not redirected to the  Auditor Details page.");
 			
 		}
-//		Thread.sleep(3000);
-//		DirectorLocator.ClickDashboard(driver).click();
+		Thread.sleep(3000);
+		DirectorLocator.ClickDashboard(driver).click();
 		Thread.sleep(2000);
 		
 	}
@@ -1000,7 +989,7 @@ public class MyReportsMethods {
 		WebDriverWait wait = new WebDriverWait(driver, (40));
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//img[@class='SmallMenuIcon'])[6]"))).click(); 
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='myReportMenu']/a/img"))); 
 		Thread.sleep(1000);
 		
 			MyReportsLocators.MyReportsMenu(driver).click();

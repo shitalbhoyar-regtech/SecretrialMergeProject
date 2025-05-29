@@ -25,7 +25,7 @@
       <span class="top-banner-title-font">Test results</span>
       <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -39,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Default_suite" class="navigator-link">
-              <span class="suite-name border-failed">Default suite</span>
+              <span class="suite-name border-passed">Default suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -50,7 +50,7 @@
               <ul>
                 <li>
                   <a href="#" panel-name="test-xml-Default_suite" class="navigator-link ">
-                    <span>C:\Users\snehalp\AppData\Local\Temp\testng-eclipse-1494429556\testng-customsuite.xml</span>
+                    <span>C:\Users\mayurig\AppData\Local\Temp\testng-eclipse-21828308\testng-customsuite.xml</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -92,21 +92,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Default_suite" class="hide-methods failed suite-Default_suite"> (hide)</a> <!-- hide-methods failed suite-Default_suite -->
-                      <a href="#" panel-name="suite-Default_suite" class="show-methods failed suite-Default_suite"> (show)</a> <!-- show-methods failed suite-Default_suite -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Default_suite" class="hide-methods passed suite-Default_suite"> (hide)</a> <!-- hide-methods passed suite-Default_suite -->
+                      <a href="#" panel-name="suite-Default_suite" class="show-methods passed suite-Default_suite"> (show)</a> <!-- show-methods passed suite-Default_suite -->
                     </span>
-                    <div class="method-list-content failed suite-Default_suite">
+                    <div class="method-list-content passed suite-Default_suite">
                       <span>
-                        <img src="failed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Default_suite" title="secretrialTestCase.MyReportsTest" class="method navigator-link" hash-for-method="CompanyAllClickAD">CompanyAllClickAD</a> <!-- method navigator-link -->
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Default_suite" title="CompanySecretoryTest.EntityTestCase1" class="method navigator-link" hash-for-method="SRSH2Upload">SRSH2Upload</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Default_suite -->
+                    </div> <!-- method-list-content passed suite-Default_suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -118,78 +118,25 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Default_suite" class="panel Default_suite">
-          <div class="suite-Default_suite-class-failed">
+          <div class="suite-Default_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
-              <span class="class-name">secretrialTestCase.MyReportsTest</span>
+              <img src="passed.png"/>
+              <span class="class-name">CompanySecretoryTest.EntityTestCase1</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="CompanyAllClickAD">
-                  </a> <!-- CompanyAllClickAD -->
-                  <span class="method-name">CompanyAllClickAD</span>
-                  <div class="stack-trace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//*[@id=&apos;childrow&apos;]/div/div[1]/div/div/div[1]/span/span/span[2]&quot;}
-  (Session info: chrome=136.0.7103.114)
-For documentation on this error, please visit: http://seleniumhq.org/exceptions/no_such_element.html
-Build info: version: &apos;3.141.0&apos;, revision: &apos;2ecb7d9a&apos;, time: &apos;2018-10-31T20:09:30&apos;
-System info: host: &apos;TRPL-PUN-0115&apos;, ip: &apos;192.168.0.110&apos;, os.name: &apos;Windows 10&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;23.0.2&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 136.0.7103.114, chrome: {chromedriverVersion: 136.0.7103.113 (76fa3c17824..., userDataDir: C:\Users\snehalp\AppData\Lo...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60299}, javascriptEnabled: true, networkConnectionEnabled: false, pageLoadStrategy: normal, platform: WINDOWS, platformName: WINDOWS, proxy: Proxy(), setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 67d2ee046e3c291f426010f54419c008
-*** Element info: {Using=xpath, value=//*[@id=&apos;childrow&apos;]/div/div[1]/div/div/div[1]/span/span/span[2]}
-	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:501)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:485)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:187)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:122)
-	at org.openqa.selenium.remote.http.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:49)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:158)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:83)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:552)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:323)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElementByXPath(RemoteWebDriver.java:428)
-	at org.openqa.selenium.By$ByXPath.findElement(By.java:353)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:315)
-	at secretrial.MyReportsLocators.CompanyAllClickAD(MyReportsLocators.java:179)
-	at secretrial.MyReportsMethods.CompanyAllClickAD(MyReportsMethods.java:1011)
-	at secretrialTestCase.MyReportsTest.CompanyAllClickAD(MyReportsTest.java:310)
-	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
-	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
-	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
-	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
-	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
-	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
-	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
-	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
-	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
-	at java.base/java.util.ArrayList.forEach(ArrayList.java:1597)
-	at org.testng.TestRunner.privateRun(TestRunner.java:739)
-	at org.testng.TestRunner.run(TestRunner.java:614)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:413)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:373)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:312)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1274)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1208)
-	at org.testng.TestNG.runSuites(TestNG.java:1112)
-	at org.testng.TestNG.run(TestNG.java:1079)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:293)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:91)
-
-</div> <!-- stack-trace -->
+                  <a name="SRSH2Upload">
+                  </a> <!-- SRSH2Upload -->
+                  <span class="method-name">SRSH2Upload</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Default_suite-class-failed -->
+          </div> <!-- suite-Default_suite-class-passed -->
         </div> <!-- panel Default_suite -->
         <div panel-name="test-xml-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">C:\Users\snehalp\AppData\Local\Temp\testng-eclipse-1494429556\testng-customsuite.xml</span>
+            <span class="header-content">C:\Users\mayurig\AppData\Local\Temp\testng-eclipse-21828308\testng-customsuite.xml</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <pre>
@@ -198,11 +145,11 @@ Session ID: 67d2ee046e3c291f426010f54419c008
 &lt;suite name=&quot;Default suite&quot; guice-stage=&quot;DEVELOPMENT&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Default test&quot; verbose=&quot;2&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;secretrialTestCase.MyReportsTest&quot;&gt;
+      &lt;class name=&quot;CompanySecretoryTest.EntityTestCase1&quot;&gt;
         &lt;methods&gt;
-          &lt;include name=&quot;CompanyAllClickAD&quot;/&gt;
+          &lt;include name=&quot;SRSH2Upload&quot;/&gt;
         &lt;/methods&gt;
-      &lt;/class&gt; &lt;!-- secretrialTestCase.MyReportsTest --&gt;
+      &lt;/class&gt; &lt;!-- CompanySecretoryTest.EntityTestCase1 --&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Default test --&gt;
 &lt;/suite&gt; &lt;!-- Default suite --&gt;
@@ -244,14 +191,14 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'CompanyAllClickAD')
-data.setCell(0, 2, 'secretrialTestCase.MyReportsTest')
-data.setCell(0, 3, 10646);
+data.setCell(0, 1, 'SRSH2Upload')
+data.setCell(0, 2, 'CompanySecretoryTest.EntityTestCase1')
+data.setCell(0, 3, 58148);
 window.suiteTableData['Default_suite']= { tableData: data, tableDiv: 'times-div-Default_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 10 seconds</span>
+              <span class="suite-total-time">Total running time: 58 seconds</span>
               <div id="times-div-Default_suite">
               </div> <!-- times-div-Default_suite -->
             </div> <!-- times-div -->
@@ -266,49 +213,1073 @@ return data;
         </div> <!-- panel -->
         <div panel-name="ignored-methods-Default_suite" class="panel">
           <div class="main-panel-header rounded-window-top">
-            <span class="header-content">19 ignored methods</span>
+            <span class="header-content">531 ignored methods</span>
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="ignored-class-div">
-              <span class="ignored-class-name">secretrialTestCase.MyReportsTest</span>
+              <span class="ignored-class-name">CompanySecretoryTest.EntityTestCase1</span>
               <div class="ignored-methods-div">
-                <span class="ignored-method-name">CompanyAllFilterCS</span>
+                <span class="ignored-method-name">LCWithoutDocumentPolicy</span>
                 <br/>
-                <span class="ignored-method-name">ComplianceStatusReportTypeAll</span>
+                <span class="ignored-method-name">WithoutEnteringLicenseRegistrationDocument</span>
                 <br/>
-                <span class="ignored-method-name">ViewAR</span>
+                <span class="ignored-method-name">DownloadMOA</span>
                 <br/>
-                <span class="ignored-method-name">CompanyAllClick</span>
+                <span class="ignored-method-name">ClassAllDS</span>
                 <br/>
-                <span class="ignored-method-name">ExportAR</span>
+                <span class="ignored-method-name">DHDAddNew</span>
                 <br/>
-                <span class="ignored-method-name">AllFilters</span>
+                <span class="ignored-method-name">ListedCompanyEditClose</span>
                 <br/>
-                <span class="ignored-method-name">CompanyAllClickCS</span>
+                <span class="ignored-method-name">PublicLimitedEditInvalid</span>
                 <br/>
-                <span class="ignored-method-name">StatusAllFilter</span>
+                <span class="ignored-method-name">InvalidDataUploadFileShareHoldingDeatils</span>
                 <br/>
-                <span class="ignored-method-name">ARDownload</span>
+                <span class="ignored-method-name">ClickAuditor</span>
                 <br/>
-                <span class="ignored-method-name">ReportsClick</span>
+                <span class="ignored-method-name">CloseBtnUpdateStatutoryAuditor</span>
                 <br/>
-                <span class="ignored-method-name">AuditorDetails</span>
+                <span class="ignored-method-name">DHEditE</span>
                 <br/>
-                <span class="ignored-method-name">FinancialYearAllFilter</span>
+                <span class="ignored-method-name">PLViewMOA</span>
                 <br/>
-                <span class="ignored-method-name">ComplianceStatusReport</span>
+                <span class="ignored-method-name">PLCheckInvaliddata</span>
                 <br/>
-                <span class="ignored-method-name">CompanyAllFilter</span>
+                <span class="ignored-method-name">PLWithoutDocumentPolicy</span>
                 <br/>
-                <span class="ignored-method-name">FinancialYearAllClick</span>
+                <span class="ignored-method-name">SRMBP2AddGuraNewEmpty</span>
                 <br/>
-                <span class="ignored-method-name">ExportCSR</span>
+                <span class="ignored-method-name">LCBankDetailEdit</span>
                 <br/>
-                <span class="ignored-method-name">StatusAll</span>
+                <span class="ignored-method-name">DHDUploadInvalidEx</span>
                 <br/>
-                <span class="ignored-method-name">ViewARDownload</span>
+                <span class="ignored-method-name">SRCHG7AddnewEmptyFields</span>
                 <br/>
-                <span class="ignored-method-name">AttendanceReport</span>
+                <span class="ignored-method-name">PLUploadBranchDetailsInvalid</span>
+                <br/>
+                <span class="ignored-method-name">WithoutEnterignAOADocument</span>
+                <br/>
+                <span class="ignored-method-name">PLDeleteCOI</span>
+                <br/>
+                <span class="ignored-method-name">PLAddNewBranchDetailsClose</span>
+                <br/>
+                <span class="ignored-method-name">PLBankDetailEdit</span>
+                <br/>
+                <span class="ignored-method-name">InvalidMultipleFileUploadDocBranchDetailesLLP</span>
+                <br/>
+                <span class="ignored-method-name">InvaliddBranchDetailes</span>
+                <br/>
+                <span class="ignored-method-name">ClickShareHoldingPattern</span>
+                <br/>
+                <span class="ignored-method-name">ClickViewExisitingRegisterOfMBP4</span>
+                <br/>
+                <span class="ignored-method-name">MGT7ExcelUploadFile</span>
+                <br/>
+                <span class="ignored-method-name">ListedCompanyAddWithoutdata</span>
+                <br/>
+                <span class="ignored-method-name">PublicLimitedAddClose</span>
+                <br/>
+                <span class="ignored-method-name">ClickUploadExistingRegistorInvalidFileFormat</span>
+                <br/>
+                <span class="ignored-method-name">EnterInvalidData</span>
+                <br/>
+                <span class="ignored-method-name">SRMB2UploadInvalidformate</span>
+                <br/>
+                <span class="ignored-method-name">ListedCompanyEdit</span>
+                <br/>
+                <span class="ignored-method-name">SAAddNewClose</span>
+                <br/>
+                <span class="ignored-method-name">Capital</span>
+                <br/>
+                <span class="ignored-method-name">UploadBranchDetailsMulvalid</span>
+                <br/>
+                <span class="ignored-method-name">EnterInvalidDataPrivateLtd</span>
+                <br/>
+                <span class="ignored-method-name">PlDeleteLicenseRegi</span>
+                <br/>
+                <span class="ignored-method-name">SRSh6DwonGR</span>
+                <br/>
+                <span class="ignored-method-name">LCBankDetailsClick</span>
+                <br/>
+                <span class="ignored-method-name">AddNewDH</span>
+                <br/>
+                <span class="ignored-method-name">MultipleFileUploadDocBranchDetailes</span>
+                <br/>
+                <span class="ignored-method-name">ClickCommitte</span>
+                <br/>
+                <span class="ignored-method-name">NoDataFound</span>
+                <br/>
+                <span class="ignored-method-name">clickPASTRODwithDuplicateData</span>
+                <br/>
+                <span class="ignored-method-name">clickPASTRODwithValidData</span>
+                <br/>
+                <span class="ignored-method-name">ClickUploadOldRegistorWithoutData</span>
+                <br/>
+                <span class="ignored-method-name">ClickAmountInINR</span>
+                <br/>
+                <span class="ignored-method-name">DHEdit</span>
+                <br/>
+                <span class="ignored-method-name">SRSH6UploadInvalid</span>
+                <br/>
+                <span class="ignored-method-name">SRSH6</span>
+                <br/>
+                <span class="ignored-method-name">PLDeleteAOA</span>
+                <br/>
+                <span class="ignored-method-name">ClickInternalAuditor</span>
+                <br/>
+                <span class="ignored-method-name">LCAddNewBranchDetailsinvalidData</span>
+                <br/>
+                <span class="ignored-method-name">clickPASTRODGenerateRegistorDownload</span>
+                <br/>
+                <span class="ignored-method-name">SRMB3UploadWithOutData</span>
+                <br/>
+                <span class="ignored-method-name">EnterInvaliddataFoliooftransferor</span>
+                <br/>
+                <span class="ignored-method-name">SRMBP2AddNew</span>
+                <br/>
+                <span class="ignored-method-name">Managementpersonnel</span>
+                <br/>
+                <span class="ignored-method-name">WithoutEnteringField</span>
+                <br/>
+                <span class="ignored-method-name">DeleteBankDetailes1LLP</span>
+                <br/>
+                <span class="ignored-method-name">PublicLimitedSelect</span>
+                <br/>
+                <span class="ignored-method-name">DocumentsADDCOIExisting</span>
+                <br/>
+                <span class="ignored-method-name">SRDEPOSITDwonGR</span>
+                <br/>
+                <span class="ignored-method-name">EmptyFiledStatutoryAuditor</span>
+                <br/>
+                <span class="ignored-method-name">LCDocumentsADDAnnualReportED</span>
+                <br/>
+                <span class="ignored-method-name">DeleteAnnualReport</span>
+                <br/>
+                <span class="ignored-method-name">DHDUploadEmpty</span>
+                <br/>
+                <span class="ignored-method-name">SRSH3EditInvalid</span>
+                <br/>
+                <span class="ignored-method-name">EnterInvalidLLPExcelUploadFile</span>
+                <br/>
+                <span class="ignored-method-name">DownloadAOA</span>
+                <br/>
+                <span class="ignored-method-name">LCDocumentsADDLicenseRegi</span>
+                <br/>
+                <span class="ignored-method-name">UploadBranchDetails</span>
+                <br/>
+                <span class="ignored-method-name">LCViewAOA</span>
+                <br/>
+                <span class="ignored-method-name">AddNewDHEmpty</span>
+                <br/>
+                <span class="ignored-method-name">DocumentsADDClose</span>
+                <br/>
+                <span class="ignored-method-name">PLWithoutDocumentLicense</span>
+                <br/>
+                <span class="ignored-method-name">PLDownloadLicenseRegi</span>
+                <br/>
+                <span class="ignored-method-name">PLDocumentsADDAnnualReport</span>
+                <br/>
+                <span class="ignored-method-name">ListedCompanyAdd</span>
+                <br/>
+                <span class="ignored-method-name">PLDocumentsADD</span>
+                <br/>
+                <span class="ignored-method-name">clickPASTRODGenerateRegistorview</span>
+                <br/>
+                <span class="ignored-method-name">ViewCOI</span>
+                <br/>
+                <span class="ignored-method-name">ClickGenerateRegistor</span>
+                <br/>
+                <span class="ignored-method-name">DHUploadInvalidData</span>
+                <br/>
+                <span class="ignored-method-name">LCDownloadCOI</span>
+                <br/>
+                <span class="ignored-method-name">AddDocument</span>
+                <br/>
+                <span class="ignored-method-name">SRMBP3Edit</span>
+                <br/>
+                <span class="ignored-method-name">PLDocumentsADDPolicy</span>
+                <br/>
+                <span class="ignored-method-name">EntityTab</span>
+                <br/>
+                <span class="ignored-method-name">BankDetailes</span>
+                <br/>
+                <span class="ignored-method-name">WithoutselectingfileEntityExcelUploadFile</span>
+                <br/>
+                <span class="ignored-method-name">ManagementpersonnelExportToPDF</span>
+                <br/>
+                <span class="ignored-method-name">PLDownloadAOA</span>
+                <br/>
+                <span class="ignored-method-name">WithoutDocumentLicense</span>
+                <br/>
+                <span class="ignored-method-name">InvalidUploadFileShareholdingCategoryMaster</span>
+                <br/>
+                <span class="ignored-method-name">LCDocumentsADDMOAAE</span>
+                <br/>
+                <span class="ignored-method-name">SRSH3AddNew</span>
+                <br/>
+                <span class="ignored-method-name">BADeleteIcon</span>
+                <br/>
+                <span class="ignored-method-name">AddBuisnessActivity</span>
+                <br/>
+                <span class="ignored-method-name">ClickShareHoldingOption</span>
+                <br/>
+                <span class="ignored-method-name">LCWithoutDocumentCOI</span>
+                <br/>
+                <span class="ignored-method-name">SRDEPOSITUploadInvalid</span>
+                <br/>
+                <span class="ignored-method-name">PublicLimitedAddWith2man</span>
+                <br/>
+                <span class="ignored-method-name">DeleteNoIconShareHolding</span>
+                <br/>
+                <span class="ignored-method-name">UploadExistingFileShareHoldingDetailes</span>
+                <br/>
+                <span class="ignored-method-name">UploadBranchDetailsWF</span>
+                <br/>
+                <span class="ignored-method-name">SRMB3DwonGR</span>
+                <br/>
+                <span class="ignored-method-name">SRSH6Upload</span>
+                <br/>
+                <span class="ignored-method-name">LCDocumentsADDCOIExisting</span>
+                <br/>
+                <span class="ignored-method-name">DHDAddNewInvalidData</span>
+                <br/>
+                <span class="ignored-method-name">DeleteBusinessActivity</span>
+                <br/>
+                <span class="ignored-method-name">PLDocumentsADDCOIExisting</span>
+                <br/>
+                <span class="ignored-method-name">LCDocumentsADDCOI</span>
+                <br/>
+                <span class="ignored-method-name">PLBankDetailDelete</span>
+                <br/>
+                <span class="ignored-method-name">BankDetailInvalid</span>
+                <br/>
+                <span class="ignored-method-name">SRMB2DocViewActionTab</span>
+                <br/>
+                <span class="ignored-method-name">SRMBP2AddNewSecuTwoMan</span>
+                <br/>
+                <span class="ignored-method-name">PLDeletePolicy</span>
+                <br/>
+                <span class="ignored-method-name">YesRadioBtnApplicability</span>
+                <br/>
+                <span class="ignored-method-name">SRMBP2AddNewSecurity</span>
+                <br/>
+                <span class="ignored-method-name">ListedCompanyAddClose</span>
+                <br/>
+                <span class="ignored-method-name">BankDetailEdit</span>
+                <br/>
+                <span class="ignored-method-name">SRDEPOSITAddnew</span>
+                <br/>
+                <span class="ignored-method-name">EditInternalAuditor</span>
+                <br/>
+                <span class="ignored-method-name">WithoutEnterDataInSahreHoldingDetailes</span>
+                <br/>
+                <span class="ignored-method-name">SRMBP2Edit</span>
+                <br/>
+                <span class="ignored-method-name">DeleteDocument</span>
+                <br/>
+                <span class="ignored-method-name">LCDocumentClick</span>
+                <br/>
+                <span class="ignored-method-name">PLUploadBranchDetailsMulvalid</span>
+                <br/>
+                <span class="ignored-method-name">UpdateShareHolding</span>
+                <br/>
+                <span class="ignored-method-name">RCSharesHeld</span>
+                <br/>
+                <span class="ignored-method-name">WithoutselectingfileMGT7ExcelUploadFile</span>
+                <br/>
+                <span class="ignored-method-name">EntityMoreOption</span>
+                <br/>
+                <span class="ignored-method-name">DownloadDocument</span>
+                <br/>
+                <span class="ignored-method-name">SRMB2GR</span>
+                <br/>
+                <span class="ignored-method-name">UpdateStatutoryAuditor</span>
+                <br/>
+                <span class="ignored-method-name">PLWithoutDocumentCOI</span>
+                <br/>
+                <span class="ignored-method-name">SRSH6AddNew</span>
+                <br/>
+                <span class="ignored-method-name">PLAddNewBranchDetailsinvalidData</span>
+                <br/>
+                <span class="ignored-method-name">SRMB3UploadInvalid</span>
+                <br/>
+                <span class="ignored-method-name">AddShareCertificate</span>
+                <br/>
+                <span class="ignored-method-name">ClickCloseBtnOfCommitte</span>
+                <br/>
+                <span class="ignored-method-name">EmptyFileUploadShareHolding</span>
+                <br/>
+                <span class="ignored-method-name">SRSH3</span>
+                <br/>
+                <span class="ignored-method-name">LCBusinessActivity</span>
+                <br/>
+                <span class="ignored-method-name">AddCOI</span>
+                <br/>
+                <span class="ignored-method-name">DHUpload</span>
+                <br/>
+                <span class="ignored-method-name">WithoutSelectingFileUploadShareHolding</span>
+                <br/>
+                <span class="ignored-method-name">LCBusinessActivityClick</span>
+                <br/>
+                <span class="ignored-method-name">AddNewBranchDetails</span>
+                <br/>
+                <span class="ignored-method-name">LCDownloadPolicy</span>
+                <br/>
+                <span class="ignored-method-name">ClickApplicabilty</span>
+                <br/>
+                <span class="ignored-method-name">ClickShareHoldingHistorical</span>
+                <br/>
+                <span class="ignored-method-name">SAEditClose</span>
+                <br/>
+                <span class="ignored-method-name">AddPolicyDoc</span>
+                <br/>
+                <span class="ignored-method-name">SRSH3AddNewInvalid</span>
+                <br/>
+                <span class="ignored-method-name">SRSH2UploadInvalid</span>
+                <br/>
+                <span class="ignored-method-name">CostAuditor</span>
+                <br/>
+                <span class="ignored-method-name">SRMB2DocActionTab</span>
+                <br/>
+                <span class="ignored-method-name">LCBankDetailAddnew</span>
+                <br/>
+                <span class="ignored-method-name">PLAddNewBranchDetailsMandatoryfield</span>
+                <br/>
+                <span class="ignored-method-name">SRSH6UploadInValidEx</span>
+                <br/>
+                <span class="ignored-method-name">LCAddNewBranchDetailsMandatoryfield</span>
+                <br/>
+                <span class="ignored-method-name">ResignationofAuditorCloseCA</span>
+                <br/>
+                <span class="ignored-method-name">EnterExistingDataInvalidDataLLPExcelUploadFile</span>
+                <br/>
+                <span class="ignored-method-name">DownloadButtonShareHoldingHistorical</span>
+                <br/>
+                <span class="ignored-method-name">PublicLimitedAddInvalid</span>
+                <br/>
+                <span class="ignored-method-name">PLViewPolicy</span>
+                <br/>
+                <span class="ignored-method-name">DocumentsADDLicenseRegi</span>
+                <br/>
+                <span class="ignored-method-name">SRSH3UploadWithoutData</span>
+                <br/>
+                <span class="ignored-method-name">WithoutEnteringDataEntityExcelUpload</span>
+                <br/>
+                <span class="ignored-method-name">DHUploadED</span>
+                <br/>
+                <span class="ignored-method-name">BankDetailAddnew</span>
+                <br/>
+                <span class="ignored-method-name">ClassAllPCD</span>
+                <br/>
+                <span class="ignored-method-name">ClickShareHoldingDeatils</span>
+                <br/>
+                <span class="ignored-method-name">SRCHG7UploadwithOutFile</span>
+                <br/>
+                <span class="ignored-method-name">DocumentsADDExisting</span>
+                <br/>
+                <span class="ignored-method-name">SRSH6Edit</span>
+                <br/>
+                <span class="ignored-method-name">LCBusinessActivityADDNewClose</span>
+                <br/>
+                <span class="ignored-method-name">SRMBP2</span>
+                <br/>
+                <span class="ignored-method-name">LCBranchDetailsClick</span>
+                <br/>
+                <span class="ignored-method-name">ViewPolicy</span>
+                <br/>
+                <span class="ignored-method-name">PLViewAnnualReport</span>
+                <br/>
+                <span class="ignored-method-name">ViewMOA</span>
+                <br/>
+                <span class="ignored-method-name">SRSh2Edit</span>
+                <br/>
+                <span class="ignored-method-name">WithoutUploadDocBranchDetailes</span>
+                <br/>
+                <span class="ignored-method-name">LCWithoutDocumentLicense</span>
+                <br/>
+                <span class="ignored-method-name">UploadDocBranchDetailesLLP</span>
+                <br/>
+                <span class="ignored-method-name">ClearBtnStatutoryAuditor</span>
+                <br/>
+                <span class="ignored-method-name">SRDEPOSIT</span>
+                <br/>
+                <span class="ignored-method-name">LCAddNewBranchDetailsClose</span>
+                <br/>
+                <span class="ignored-method-name">DHUploadWithOutFile</span>
+                <br/>
+                <span class="ignored-method-name">AddStatutoryAuditor</span>
+                <br/>
+                <span class="ignored-method-name">DownloadPolicy</span>
+                <br/>
+                <span class="ignored-method-name">UploadShareholdingCategoryMaster</span>
+                <br/>
+                <span class="ignored-method-name">SRMBP3</span>
+                <br/>
+                <span class="ignored-method-name">clickPASTRODwithInValidData</span>
+                <br/>
+                <span class="ignored-method-name">LCBusinessActivityValidation</span>
+                <br/>
+                <span class="ignored-method-name">PLBankDetailAddnew</span>
+                <br/>
+                <span class="ignored-method-name">ClickUploadExistingRegistorWithoutSelectingFile</span>
+                <br/>
+                <span class="ignored-method-name">AddBranchDetailesLLP</span>
+                <br/>
+                <span class="ignored-method-name">BankDetailDeleteCan</span>
+                <br/>
+                <span class="ignored-method-name">EnterInvalidDataUploadShareholdingCategoryMaster</span>
+                <br/>
+                <span class="ignored-method-name">SRMB2UploadwithoutFileActionTab</span>
+                <br/>
+                <span class="ignored-method-name">DeletePolicy</span>
+                <br/>
+                <span class="ignored-method-name">DeleteLicenseRegi</span>
+                <br/>
+                <span class="ignored-method-name">DeleteAOADocument</span>
+                <br/>
+                <span class="ignored-method-name">LCDocumentsADDPolicy</span>
+                <br/>
+                <span class="ignored-method-name">SRMB2UploadWithoutData</span>
+                <br/>
+                <span class="ignored-method-name">DeleteBankDetailes</span>
+                <br/>
+                <span class="ignored-method-name">lCDocumentsADDAnnualReportWD</span>
+                <br/>
+                <span class="ignored-method-name">CloseBtnInternalAuditoredit</span>
+                <br/>
+                <span class="ignored-method-name">PLViewAOA</span>
+                <br/>
+                <span class="ignored-method-name">InvalidUploadShareHolding</span>
+                <br/>
+                <span class="ignored-method-name">WithoutEnterignPolicyDocument</span>
+                <br/>
+                <span class="ignored-method-name">PublicLimitedAdd</span>
+                <br/>
+                <span class="ignored-method-name">AddAnnualReport</span>
+                <br/>
+                <span class="ignored-method-name">SRCHG7ViewDocument</span>
+                <br/>
+                <span class="ignored-method-name">SRMBP2AddNewGuraTwoMan</span>
+                <br/>
+                <span class="ignored-method-name">ExistingPolicyDoc</span>
+                <br/>
+                <span class="ignored-method-name">DHD</span>
+                <br/>
+                <span class="ignored-method-name">WithOutEnterData</span>
+                <br/>
+                <span class="ignored-method-name">DocumentTab</span>
+                <br/>
+                <span class="ignored-method-name">PLViewLicenseRegi</span>
+                <br/>
+                <span class="ignored-method-name">TwoMandatoryFieldsPrivateLtd</span>
+                <br/>
+                <span class="ignored-method-name">ClickUploadOldRegistorWithDuplicateData</span>
+                <br/>
+                <span class="ignored-method-name">ClearButtonShareHoldingHistorical</span>
+                <br/>
+                <span class="ignored-method-name">UploadFileSahreHolding</span>
+                <br/>
+                <span class="ignored-method-name">DHDUploadInvalidData</span>
+                <br/>
+                <span class="ignored-method-name">SRSH2AddNewEmpty</span>
+                <br/>
+                <span class="ignored-method-name">PLWithoutDocument</span>
+                <br/>
+                <span class="ignored-method-name">CloseBtnStatutoryAuditor</span>
+                <br/>
+                <span class="ignored-method-name">TwoMandatoryFieldsBranchDetailes</span>
+                <br/>
+                <span class="ignored-method-name">DHDAddNewEmpty</span>
+                <br/>
+                <span class="ignored-method-name">SecretarialAuditor</span>
+                <br/>
+                <span class="ignored-method-name">DocumentsADDCOI</span>
+                <br/>
+                <span class="ignored-method-name">SRCHG7ViewUploadWF</span>
+                <br/>
+                <span class="ignored-method-name">WithoutselectingfileLLPExcelUploadFile</span>
+                <br/>
+                <span class="ignored-method-name">ClickUploadExistingRegistorInvalidData</span>
+                <br/>
+                <span class="ignored-method-name">DownloadAnnualReport</span>
+                <br/>
+                <span class="ignored-method-name">MGT7ExcelExistingUploadFile</span>
+                <br/>
+                <span class="ignored-method-name">LCvalidationofedit</span>
+                <br/>
+                <span class="ignored-method-name">BankDetailDelete</span>
+                <br/>
+                <span class="ignored-method-name">SRSH3UploadInValidEx</span>
+                <br/>
+                <span class="ignored-method-name">DHDUploadwithoutFile</span>
+                <br/>
+                <span class="ignored-method-name">SRMBP2AddNewEmpty</span>
+                <br/>
+                <span class="ignored-method-name">BusinessActivityValidation</span>
+                <br/>
+                <span class="ignored-method-name">DeleteMOA</span>
+                <br/>
+                <span class="ignored-method-name">BankDetailDeleteCan1</span>
+                <br/>
+                <span class="ignored-method-name">ClickDownloadAllRegisterOfMBP4</span>
+                <br/>
+                <span class="ignored-method-name">MGT7ExcelDiffInvalidUploadFile</span>
+                <br/>
+                <span class="ignored-method-name">SRDEPOSITUploadInvalidEx</span>
+                <br/>
+                <span class="ignored-method-name">DHUploadEmptyFile</span>
+                <br/>
+                <span class="ignored-method-name">LCDocumentsADD</span>
+                <br/>
+                <span class="ignored-method-name">DeleteBankDetailesLLP</span>
+                <br/>
+                <span class="ignored-method-name">CloseBtnPrivateLtd</span>
+                <br/>
+                <span class="ignored-method-name">clickPASTRODGenerateRegistor</span>
+                <br/>
+                <span class="ignored-method-name">SRMBP2AddNewLoanTwoMan</span>
+                <br/>
+                <span class="ignored-method-name">PLvalidationofedit</span>
+                <br/>
+                <span class="ignored-method-name">WithoutEnterignCOIDocument</span>
+                <br/>
+                <span class="ignored-method-name">SRSH2</span>
+                <br/>
+                <span class="ignored-method-name">SRSH2UploadEmptyFile</span>
+                <br/>
+                <span class="ignored-method-name">DeleteBankDetailes1</span>
+                <br/>
+                <span class="ignored-method-name">SRSH3Edit</span>
+                <br/>
+                <span class="ignored-method-name">PLUploadBranchDetailsMulInvalid</span>
+                <br/>
+                <span class="ignored-method-name">EditCloseBtn</span>
+                <br/>
+                <span class="ignored-method-name">LCDocumentsADDExisting</span>
+                <br/>
+                <span class="ignored-method-name">PLBankDetailDeleteCan</span>
+                <br/>
+                <span class="ignored-method-name">SRMB2UploadInvalid</span>
+                <br/>
+                <span class="ignored-method-name">WithoutUploadFileShareholdingCategoryMaster</span>
+                <br/>
+                <span class="ignored-method-name">EnterExistingDataInternalAuditor</span>
+                <br/>
+                <span class="ignored-method-name">CostAuditorAddNewED</span>
+                <br/>
+                <span class="ignored-method-name">ExistingCOIDocument</span>
+                <br/>
+                <span class="ignored-method-name">PLUploadBranchDetailsWF</span>
+                <br/>
+                <span class="ignored-method-name">WithoutDocumentPolicy</span>
+                <br/>
+                <span class="ignored-method-name">clickPASTRODwithoutData</span>
+                <br/>
+                <span class="ignored-method-name">LCDownloadAnnualReport</span>
+                <br/>
+                <span class="ignored-method-name">InvalidEditIconPrivateLtd</span>
+                <br/>
+                <span class="ignored-method-name">DownloadShareCertificateAfterSaving</span>
+                <br/>
+                <span class="ignored-method-name">EnterTwoMandatoryFiledStatutoryAuditor</span>
+                <br/>
+                <span class="ignored-method-name">InvalidIFSC</span>
+                <br/>
+                <span class="ignored-method-name">DHEditClose</span>
+                <br/>
+                <span class="ignored-method-name">CloseBtnInternalAuditor</span>
+                <br/>
+                <span class="ignored-method-name">PrivateLimitedCompany</span>
+                <br/>
+                <span class="ignored-method-name">PLBankDetailsClick</span>
+                <br/>
+                <span class="ignored-method-name">EmptyFiledsCloseBtnResignationofInternalAuditor</span>
+                <br/>
+                <span class="ignored-method-name">LCDeleteAnnualReport</span>
+                <br/>
+                <span class="ignored-method-name">TwoMandatoryFieldsBranchDetailesLLP</span>
+                <br/>
+                <span class="ignored-method-name">PLBusinessActivityClick</span>
+                <br/>
+                <span class="ignored-method-name">PublicLimitedEditClose</span>
+                <br/>
+                <span class="ignored-method-name">ClickUploadExistingRegistor</span>
+                <br/>
+                <span class="ignored-method-name">RCClose</span>
+                <br/>
+                <span class="ignored-method-name">SRCHG7UploadInvalidFormat</span>
+                <br/>
+                <span class="ignored-method-name">DocumentsADDMOAAE</span>
+                <br/>
+                <span class="ignored-method-name">ClickViewAllRegisterOfMBP4</span>
+                <br/>
+                <span class="ignored-method-name">AddExistingDataAnnualReport</span>
+                <br/>
+                <span class="ignored-method-name">DHDUpload</span>
+                <br/>
+                <span class="ignored-method-name">PLDocumentsADDAnnualReportED</span>
+                <br/>
+                <span class="ignored-method-name">DocumentDelete</span>
+                <br/>
+                <span class="ignored-method-name">PLDownloadMOA</span>
+                <br/>
+                <span class="ignored-method-name">PLBusinessActivityADDNewClose</span>
+                <br/>
+                <span class="ignored-method-name">ExistingAOADocument</span>
+                <br/>
+                <span class="ignored-method-name">PLWithoutDocumentAOA</span>
+                <br/>
+                <span class="ignored-method-name">LCDeleteCOI</span>
+                <br/>
+                <span class="ignored-method-name">SRSH6AddNewEmpty</span>
+                <br/>
+                <span class="ignored-method-name">AddNewDHTwoMan</span>
+                <br/>
+                <span class="ignored-method-name">LimitedLiabilityPartnership</span>
+                <br/>
+                <span class="ignored-method-name">LCAddNewBranchDetailsWithOutData</span>
+                <br/>
+                <span class="ignored-method-name">SAClearFilter</span>
+                <br/>
+                <span class="ignored-method-name">ViewButtonShareHoldingHistorical</span>
+                <br/>
+                <span class="ignored-method-name">DocumentClick</span>
+                <br/>
+                <span class="ignored-method-name">LCViewMOA</span>
+                <br/>
+                <span class="ignored-method-name">LCDeleteBusinessActivity</span>
+                <br/>
+                <span class="ignored-method-name">DHDeleteCan</span>
+                <br/>
+                <span class="ignored-method-name">LCUploadBranchDetails</span>
+                <br/>
+                <span class="ignored-method-name">SRMBP3AddNew</span>
+                <br/>
+                <span class="ignored-method-name">LCViewPolicy</span>
+                <br/>
+                <span class="ignored-method-name">CAClearFilter</span>
+                <br/>
+                <span class="ignored-method-name">ListedCompanyAddWith2man</span>
+                <br/>
+                <span class="ignored-method-name">LCBankDetailDeleteCan</span>
+                <br/>
+                <span class="ignored-method-name">DHDAddNewClose</span>
+                <br/>
+                <span class="ignored-method-name">AddBranchDetailes</span>
+                <br/>
+                <span class="ignored-method-name">ValidDataEntityExcelUpload</span>
+                <br/>
+                <span class="ignored-method-name">SAAddNew</span>
+                <br/>
+                <span class="ignored-method-name">CloseApplicability</span>
+                <br/>
+                <span class="ignored-method-name">SRCHG7ViewDoc</span>
+                <br/>
+                <span class="ignored-method-name">InvalidDataEntityExcelUpload</span>
+                <br/>
+                <span class="ignored-method-name">EnterEmptyDataUploadShareholdingCategoryMaster</span>
+                <br/>
+                <span class="ignored-method-name">PLEditBranchDetails</span>
+                <br/>
+                <span class="ignored-method-name">ClickShareCertificateBtn</span>
+                <br/>
+                <span class="ignored-method-name">ListedCompanyAddInvalid</span>
+                <br/>
+                <span class="ignored-method-name">WithoutEnteringDataShareCertificate</span>
+                <br/>
+                <span class="ignored-method-name">DocumentsADDPolicyAE</span>
+                <br/>
+                <span class="ignored-method-name">ClassAllNCD</span>
+                <br/>
+                <span class="ignored-method-name">SRCHG7AddNew</span>
+                <br/>
+                <span class="ignored-method-name">DocumentsADDAnnualReportED</span>
+                <br/>
+                <span class="ignored-method-name">EditBranchDetailes</span>
+                <br/>
+                <span class="ignored-method-name">PLDocumentsADDMOA</span>
+                <br/>
+                <span class="ignored-method-name">DocumentsADDAnnualReportWD</span>
+                <br/>
+                <span class="ignored-method-name">PLDocumentsADDExisting</span>
+                <br/>
+                <span class="ignored-method-name">BankDetailsClick</span>
+                <br/>
+                <span class="ignored-method-name">ClickUploadExistingRegistorWithoutData</span>
+                <br/>
+                <span class="ignored-method-name">EntityType</span>
+                <br/>
+                <span class="ignored-method-name">PLUploadBranchDetails</span>
+                <br/>
+                <span class="ignored-method-name">PLAddNewBranchDetails</span>
+                <br/>
+                <span class="ignored-method-name">LCDownloadMOA</span>
+                <br/>
+                <span class="ignored-method-name">BACloseBtn</span>
+                <br/>
+                <span class="ignored-method-name">SRCHG7UploadInvalid</span>
+                <br/>
+                <span class="ignored-method-name">LCDeletePolicy</span>
+                <br/>
+                <span class="ignored-method-name">WithoutDocumentAOA</span>
+                <br/>
+                <span class="ignored-method-name">SRCHG7UploadEmpty</span>
+                <br/>
+                <span class="ignored-method-name">UploadBranchDetailsInvalid</span>
+                <br/>
+                <span class="ignored-method-name">DownloadLicenseRegi</span>
+                <br/>
+                <span class="ignored-method-name">LCUploadBranchDetailsWF</span>
+                <br/>
+                <span class="ignored-method-name">SRSh2DwonGR</span>
+                <br/>
+                <span class="ignored-method-name">ResignationofAuditorCA</span>
+                <br/>
+                <span class="ignored-method-name">AddCategoryMaster</span>
+                <br/>
+                <span class="ignored-method-name">SRCHG7Upload</span>
+                <br/>
+                <span class="ignored-method-name">AddBankDetailesLLP</span>
+                <br/>
+                <span class="ignored-method-name">PLBusinessActivityValidation</span>
+                <br/>
+                <span class="ignored-method-name">WithoutUploadDocBranchDetailesLLP</span>
+                <br/>
+                <span class="ignored-method-name">DocumentsADDMOA</span>
+                <br/>
+                <span class="ignored-method-name">EmptyDataUploadshareHoldingDeatils</span>
+                <br/>
+                <span class="ignored-method-name">SRMB2DocDwonActionTab</span>
+                <br/>
+                <span class="ignored-method-name">LCAddNewBranchDetails</span>
+                <br/>
+                <span class="ignored-method-name">ViewShareCertificate</span>
+                <br/>
+                <span class="ignored-method-name">RCDelete</span>
+                <br/>
+                <span class="ignored-method-name">AddNewBranchDetailsinvalidData</span>
+                <br/>
+                <span class="ignored-method-name">MGT7ExcelInvalidUploadFile</span>
+                <br/>
+                <span class="ignored-method-name">DownloadShareCertificate</span>
+                <br/>
+                <span class="ignored-method-name">ClickUploadOldRegistorInvalidFile</span>
+                <br/>
+                <span class="ignored-method-name">CloseBtnShareHolding</span>
+                <br/>
+                <span class="ignored-method-name">EditIconPrivateLtd</span>
+                <br/>
+                <span class="ignored-method-name">ViewAOA</span>
+                <br/>
+                <span class="ignored-method-name">AddAOA</span>
+                <br/>
+                <span class="ignored-method-name">PLDocumentsADDLicenseRegi</span>
+                <br/>
+                <span class="ignored-method-name">DownloadCOI</span>
+                <br/>
+                <span class="ignored-method-name">AddNewClose</span>
+                <br/>
+                <span class="ignored-method-name">ClickCommitteeMatrix</span>
+                <br/>
+                <span class="ignored-method-name">WithoutUploadFileAnnualReport</span>
+                <br/>
+                <span class="ignored-method-name">PLDocumentsADDMOAAE</span>
+                <br/>
+                <span class="ignored-method-name">SRMB2Upload</span>
+                <br/>
+                <span class="ignored-method-name">WithoutDocument</span>
+                <br/>
+                <span class="ignored-method-name">SRMBP2AddLoanNewEmpty</span>
+                <br/>
+                <span class="ignored-method-name">AddNewDocuments</span>
+                <br/>
+                <span class="ignored-method-name">ClearFilter</span>
+                <br/>
+                <span class="ignored-method-name">UploadFileShareHoldingDetailes</span>
+                <br/>
+                <span class="ignored-method-name">PLDocumentClick</span>
+                <br/>
+                <span class="ignored-method-name">PublicLimitedAddWithoutdata</span>
+                <br/>
+                <span class="ignored-method-name">SRSh3DwonGR</span>
+                <br/>
+                <span class="ignored-method-name">AddNew</span>
+                <br/>
+                <span class="ignored-method-name">PLDownloadCOI</span>
+                <br/>
+                <span class="ignored-method-name">ClickMBP4</span>
+                <br/>
+                <span class="ignored-method-name">validationofedit</span>
+                <br/>
+                <span class="ignored-method-name">PLAddNewBranchDetailsWithOutData</span>
+                <br/>
+                <span class="ignored-method-name">LLPExcelUploadFile</span>
+                <br/>
+                <span class="ignored-method-name">LCWithoutDocumentAOA</span>
+                <br/>
+                <span class="ignored-method-name">PLDownloadAnnualReport</span>
+                <br/>
+                <span class="ignored-method-name">InvalidDataLLPExcelUploadFile</span>
+                <br/>
+                <span class="ignored-method-name">LCDeleteAOA</span>
+                <br/>
+                <span class="ignored-method-name">SRDEPOSITUploadEmpty</span>
+                <br/>
+                <span class="ignored-method-name">ClickDownloadExisitingRegisterOfMBP4</span>
+                <br/>
+                <span class="ignored-method-name">PLDeleteMOA</span>
+                <br/>
+                <span class="ignored-method-name">SRSH3Upload</span>
+                <br/>
+                <span class="ignored-method-name">BusinessActivityClick</span>
+                <br/>
+                <span class="ignored-method-name">LCViewCOI</span>
+                <br/>
+                <span class="ignored-method-name">ListedCompanyEditInvalid</span>
+                <br/>
+                <span class="ignored-method-name">LCDownloadAOA</span>
+                <br/>
+                <span class="ignored-method-name">EntityMoreOption1</span>
+                <br/>
+                <span class="ignored-method-name">EditBranchDetailesLLP</span>
+                <br/>
+                <span class="ignored-method-name">AlreadyExistDocument</span>
+                <br/>
+                <span class="ignored-method-name">SRDEPOSITEdit</span>
+                <br/>
+                <span class="ignored-method-name">MultipleFileUploadDocBranchDetailesLLP</span>
+                <br/>
+                <span class="ignored-method-name">PLBranchDetailsClick</span>
+                <br/>
+                <span class="ignored-method-name">AddInternalAuditor</span>
+                <br/>
+                <span class="ignored-method-name">DHMaster</span>
+                <br/>
+                <span class="ignored-method-name">StatutoryRegisters</span>
+                <br/>
+                <span class="ignored-method-name">PLDownloadPolicy</span>
+                <br/>
+                <span class="ignored-method-name">LCDocumentsADDAnnualReport</span>
+                <br/>
+                <span class="ignored-method-name">PLDocumentsADDLicenseRegiED</span>
+                <br/>
+                <span class="ignored-method-name">ExistingUploadFileSahreHolding</span>
+                <br/>
+                <span class="ignored-method-name">AddShareHoldingDetailes</span>
+                <br/>
+                <span class="ignored-method-name">AddExistingLicenseRegistration</span>
+                <br/>
+                <span class="ignored-method-name">DeleteCOI</span>
+                <br/>
+                <span class="ignored-method-name">SRCHG7</span>
+                <br/>
+                <span class="ignored-method-name">UploadBranchDetailsMulInvalid</span>
+                <br/>
+                <span class="ignored-method-name">SRMBP2AddNewGurantee</span>
+                <br/>
+                <span class="ignored-method-name">BranchDetailes</span>
+                <br/>
+                <span class="ignored-method-name">CostAuditorAddNew</span>
+                <br/>
+                <span class="ignored-method-name">ResignationofInternalAuditor</span>
+                <br/>
+                <span class="ignored-method-name">SRMB2UploadActionTab</span>
+                <br/>
+                <span class="ignored-method-name">AddLicenseRegistration</span>
+                <br/>
+                <span class="ignored-method-name">SRSH2UploadInValidEx</span>
+                <br/>
+                <span class="ignored-method-name">LCUploadBranchDetailsMulvalid</span>
+                <br/>
+                <span class="ignored-method-name">PLDeleteBusinessActivity</span>
+                <br/>
+                <span class="ignored-method-name">DocumentsADDPolicy</span>
+                <br/>
+                <span class="ignored-method-name">AddEntity</span>
+                <br/>
+                <span class="ignored-method-name">ClickUploadOldRegistorWithoutSelectFile</span>
+                <br/>
+                <span class="ignored-method-name">ClickDownloadOldRegisterOfMBP4</span>
+                <br/>
+                <span class="ignored-method-name">ViewAnnualReport</span>
+                <br/>
+                <span class="ignored-method-name">SRCHG7ViewUpload</span>
+                <br/>
+                <span class="ignored-method-name">LCDownloadLicenseRegi</span>
+                <br/>
+                <span class="ignored-method-name">UploadDocBranchDetailes</span>
+                <br/>
+                <span class="ignored-method-name">InvalidFileUploadShareHolding</span>
+                <br/>
+                <span class="ignored-method-name">PLBusinessActivity</span>
+                <br/>
+                <span class="ignored-method-name">ClickUploadOldRegistorWithValidFile</span>
+                <br/>
+                <span class="ignored-method-name">CAEditClose</span>
+                <br/>
+                <span class="ignored-method-name">PLDocumentsADDPolicyAE</span>
+                <br/>
+                <span class="ignored-method-name">DuplicateBankDetailesLLP</span>
+                <br/>
+                <span class="ignored-method-name">EnterInvalidEntityExcelUploadFile</span>
+                <br/>
+                <span class="ignored-method-name">PLDocumentsADDCOI</span>
+                <br/>
+                <span class="ignored-method-name">LCDocumentsADDLicenseRegiED</span>
+                <br/>
+                <span class="ignored-method-name">DHUploadinvalidExten</span>
+                <br/>
+                <span class="ignored-method-name">BankDetailesLLP</span>
+                <br/>
+                <span class="ignored-method-name">ClassAllFCD</span>
+                <br/>
+                <span class="ignored-method-name">DHDelete</span>
+                <br/>
+                <span class="ignored-method-name">WithoutDocumentCOI</span>
+                <br/>
+                <span class="ignored-method-name">CloseBranchDetailesLLP</span>
+                <br/>
+                <span class="ignored-method-name">LCDocumentsADDPolicyAE</span>
+                <br/>
+                <span class="ignored-method-name">SRSH3UploadInvalid</span>
+                <br/>
+                <span class="ignored-method-name">clickPASTRODInvalidFile</span>
+                <br/>
+                <span class="ignored-method-name">CloseBtnSahreHoldingDetailes</span>
+                <br/>
+                <span class="ignored-method-name">EditBA</span>
+                <br/>
+                <span class="ignored-method-name">CloseBtn</span>
+                <br/>
+                <span class="ignored-method-name">DocumentsADDAnnualReport</span>
+                <br/>
+                <span class="ignored-method-name">ViewLicenseRegi</span>
+                <br/>
+                <span class="ignored-method-name">DebentureHoldingSearch</span>
+                <br/>
+                <span class="ignored-method-name">LCWithoutDocument</span>
+                <br/>
+                <span class="ignored-method-name">ChargeDetailsEdit</span>
+                <br/>
+                <span class="ignored-method-name">CAAddNewClose</span>
+                <br/>
+                <span class="ignored-method-name">EnterInvalidDateUploadShareholdingCategoryMaster</span>
+                <br/>
+                <span class="ignored-method-name">SRMB3UploadInvalidFormate</span>
+                <br/>
+                <span class="ignored-method-name">SRDEPOSITUpload</span>
+                <br/>
+                <span class="ignored-method-name">BuisnessActivity</span>
+                <br/>
+                <span class="ignored-method-name">LCDocumentsADDMOA</span>
+                <br/>
+                <span class="ignored-method-name">TwoMandatoryFields</span>
+                <br/>
+                <span class="ignored-method-name">LCUploadBranchDetailsMulInvalid</span>
+                <br/>
+                <span class="ignored-method-name">SRDEPOSITAddnewEmpty</span>
+                <br/>
+                <span class="ignored-method-name">SRMB3Upload</span>
+                <br/>
+                <span class="ignored-method-name">BranchDetailesLLP</span>
+                <br/>
+                <span class="ignored-method-name">SRSH2AddNew</span>
+                <br/>
+                <span class="ignored-method-name">ClickViewOldRegisterOfMBP4</span>
+                <br/>
+                <span class="ignored-method-name">BranchDetailsClick</span>
+                <br/>
+                <span class="ignored-method-name">UpdateEnterEmptyFieldsStatutoryAuditor</span>
+                <br/>
+                <span class="ignored-method-name">DownloadAOADocument</span>
+                <br/>
+                <span class="ignored-method-name">DocumentsADDLicenseRegiED</span>
+                <br/>
+                <span class="ignored-method-name">DuplicateBankDetailes</span>
+                <br/>
+                <span class="ignored-method-name">DeleteYesShareHolding</span>
+                <br/>
+                <span class="ignored-method-name">InvalidBankName</span>
+                <br/>
+                <span class="ignored-method-name">ListedCompanySelect</span>
+                <br/>
+                <span class="ignored-method-name">ChargeDetailsAddNew</span>
+                <br/>
+                <span class="ignored-method-name">InvalidUploadDocBranchDetailes</span>
+                <br/>
+                <span class="ignored-method-name">lCDeleteLicenseRegi</span>
+                <br/>
+                <span class="ignored-method-name">AddBankDetailes</span>
+                <br/>
+                <span class="ignored-method-name">CloseBranchDetailes</span>
+                <br/>
+                <span class="ignored-method-name">Shareholding</span>
+                <br/>
+                <span class="ignored-method-name">InvaliddBranchDetailesLLP</span>
+                <br/>
+                <span class="ignored-method-name">RCSearchField</span>
+                <br/>
+                <span class="ignored-method-name">DHDUploadED</span>
+                <br/>
+                <span class="ignored-method-name">InvalidAccountNo</span>
+                <br/>
+                <span class="ignored-method-name">InvalidUploadDocBranchDetailesLLP</span>
+                <br/>
+                <span class="ignored-method-name">AddShareHolding</span>
+                <br/>
+                <span class="ignored-method-name">SRMBP2AddSecuNewEmpty</span>
+                <br/>
+                <span class="ignored-method-name">LCUploadBranchDetailsInvalid</span>
+                <br/>
+                <span class="ignored-method-name">ClickUploadOldRegistorWithInValidData</span>
+                <br/>
+                <span class="ignored-method-name">PlDocumentsADDAnnualReportWD</span>
+                <br/>
+                <span class="ignored-method-name">LCDeleteMOA</span>
+                <br/>
+                <span class="ignored-method-name">ExistingDataEntityExcelUpload</span>
+                <br/>
+                <span class="ignored-method-name">clickPASTROD</span>
+                <br/>
+                <span class="ignored-method-name">PublicLimitedEdit</span>
+                <br/>
+                <span class="ignored-method-name">PLViewCOI</span>
+                <br/>
+                <span class="ignored-method-name">WithoutSelectingFileUploadShareHoldingDetailes</span>
+                <br/>
+                <span class="ignored-method-name">NoRadioBtnApplicability</span>
+                <br/>
+                <span class="ignored-method-name">SRSH3AddNewEmpty</span>
+                <br/>
+                <span class="ignored-method-name">DebentureHolding</span>
+                <br/>
+                <span class="ignored-method-name">SRMBP2AddNewLoan</span>
+                <br/>
+                <span class="ignored-method-name">LCBankDetailDelete</span>
+                <br/>
+                <span class="ignored-method-name">WithoutEnteringDataLLPExcelUpload</span>
+                <br/>
+                <span class="ignored-method-name">EditIcon</span>
+                <br/>
+                <span class="ignored-method-name">PLDeleteAnnualReport</span>
+                <br/>
+                <span class="ignored-method-name">SRCHG7AddnewTwoman</span>
+                <br/>
+                <span class="ignored-method-name">InvalidEditIcon</span>
+                <br/>
+                <span class="ignored-method-name">WithoutEnteringDoc</span>
+                <br/>
+                <span class="ignored-method-name">EditBtnShareHolding</span>
+                <br/>
+                <span class="ignored-method-name">BankDetailDelete1</span>
+                <br/>
+                <span class="ignored-method-name">ClearBtnInternalAuditor</span>
+                <br/>
+                <span class="ignored-method-name">SRCHG7View2Document</span>
+                <br/>
+                <span class="ignored-method-name">SRCHG7DwonGR</span>
+                <br/>
+                <span class="ignored-method-name">InvalidFileUploadShareHoldingDetailes</span>
                 <br/>
               </div> <!-- ignored-methods-div -->
             </div> <!-- ignored-class-div -->
@@ -320,29 +1291,19 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">secretrialTestCase.MyReportsTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">CompanySecretoryTest.EntityTestCase1</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">setBrowser</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-method before">
                 <span class="method-name">Login</span>
-                <span class="method-start">1308 ms</span>
+                <span class="method-start">854 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">CompanyAllClickAD</span>
-                <span class="method-start">15929 ms</span>
+                <span class="method-name">SRSH2Upload</span>
+                <span class="method-start">11714 ms</span>
               </div> <!-- test-method -->
-              <div class="configuration-method after">
-                <span class="method-name">browserClosing</span>
-                <span class="method-start">26588 ms</span>
-              </div> <!-- configuration-method after -->
-              <div class="configuration-test after">
-                <span class="method-name">Closing</span>
-                <span class="method-start">27823 ms</span>
-              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->

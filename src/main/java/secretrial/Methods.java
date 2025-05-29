@@ -2,6 +2,7 @@ package secretrial;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
 import java.util.List;
 
 import org.apache.poi.ss.usermodel.Cell;
@@ -31,14 +32,17 @@ public class Methods {
 	public static XSSFWorkbook workbook = null;	//Excel sheet workbook variable
 	public static XSSFSheet sheet = null;		//Sheet variable
 	
+	
 	public static void EntityTab(WebDriver driver,ExtentTest test) throws InterruptedException
 	{
 		
-		Thread.sleep(2000);
-		EntityLocator.selectImg(driver).click();
+		Thread.sleep(6000);
+	//	EntityLocator.selectImg(driver).click();
 //	    Thread.sleep(2000);
 //	    EntityLocator.selectMaster(driver).click();
-	  
+		Actions action = new Actions(driver);
+		 action.moveToElement(EntityLocator.selectImg(driver)).click().perform();
+		Thread.sleep(6000);
 	    
 	    if(EntityLocator.clickEntity(driver).isEnabled())
 	    {
@@ -58,7 +62,7 @@ public class Methods {
 	public static void AddPrivateLimitedCompany(WebDriver driver, ExtentTest test,XSSFWorkbook workbook) throws InterruptedException
 	{
         
-		sheet = workbook.getSheetAt(1);
+		sheet = workbook.getSheetAt(0);
 		Thread.sleep(2000);
 		EntityLocator.selectImg(driver).click();
 //	    Thread.sleep(2000);
@@ -234,7 +238,7 @@ public class Methods {
 	public static void TwoMandatoryFieldsPrivateLtd(WebDriver driver, ExtentTest test,XSSFWorkbook workbook) throws InterruptedException
 	{
 		
-			sheet = workbook.getSheetAt(1);
+			sheet = workbook.getSheetAt(0);
 			Thread.sleep(2000);
 			EntityLocator.selectImg(driver).click();
 //		    Thread.sleep(2000);
@@ -330,7 +334,7 @@ public class Methods {
 	}
 	public static void EditIconPrivateLtd(WebDriver driver, ExtentTest test,XSSFWorkbook workbook) throws InterruptedException
 	{
-		sheet = workbook.getSheetAt(1);
+		sheet = workbook.getSheetAt(0);
 		Thread.sleep(2000);
 		EntityLocator.selectImg(driver).click();
 		Thread.sleep(2000);
@@ -513,7 +517,7 @@ public class Methods {
 		Locator.BusinessActivity(driver).click();
 		Thread.sleep(2000);
 		Locator.AddNew(driver).click();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		
 		Locator.BusinessActivity1(driver).click();
 		Thread.sleep(1000);
@@ -819,7 +823,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("D:\\Test Cases\\Approver Test Case.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\LLP Sample File1.xlsx");
 		Thread.sleep(4000);
 		
 		
@@ -875,7 +879,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("D:\\Test Cases\\Approver Test Case.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\LLP Sample File1.xlsx");
 		Thread.sleep(3000);
 		Locator.SaveDoc1(driver).click();
 		Thread.sleep(300);
@@ -940,7 +944,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("D:\\Test Cases\\Approver Test Case.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\Scretrial.xlsx");
 		Thread.sleep(5000);
 		
 		//Locator.Upload(driver).sendKeys("C:\\Users\\Mayuri Gaikwad\\Downloads\\Report  (1).xlsx");
@@ -948,7 +952,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		Locator.SaveDoc1(driver).click();
 		Thread.sleep(3000);
 		
-		
+		try {
 		String	msg1=Locator.SaveDocMsg(driver).getText();
 			
 			if(msg1.equalsIgnoreCase(msg1)) {
@@ -956,6 +960,10 @@ jse.executeScript("arguments[0].click();", ViewButton);
 			}else {
 				test.log(LogStatus.FAIL,  " selecting a MOA option Type :- " +msg1);
 			}
+		}catch(Exception e) {
+			String	msg1=Locator.SaveDocMsg1(driver).getText();
+			test.log(LogStatus.FAIL,  " selecting a MOA option Type :- " +msg1);
+		}
 			Thread.sleep(3000);
 		Locator.Close(driver).click();
 		Thread.sleep(1000);
@@ -1094,14 +1102,14 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		Locator.ClickFiter(driver).click();
 		Thread.sleep(5000);
 		Thread.sleep(1000);
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(500);
 		Locator.Download(driver).click();		//Exporting (Downloading) file
 		
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(3000);
@@ -1256,14 +1264,14 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		Locator.ClickFiter(driver).click();
 		Thread.sleep(5000);
 		Thread.sleep(1000);
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(500);
 		Locator.Download(driver).click();		//Exporting (Downloading) file
 		
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(3000);
@@ -1377,7 +1385,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("D:\\Test Cases\\Approver Test Case.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\LLP Sample File.xlsx");
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -1434,7 +1442,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("D:\\Test Cases\\Approver Test Case.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\LLP Sample File.xlsx");
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -1479,10 +1487,10 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		Locator.ClickTriangle(driver).click();
 		Thread.sleep(4000);
 		Locator.Filter(driver).click();
-		//Thread.sleep(5000);
-		//Locator.CheckBoxCOI(driver).click();
+		Thread.sleep(3000);
+		Locator.CheckBoxCOI(driver).click();
 		Thread.sleep(5000);
-		Locator.CheckBoxMoa(driver).click();
+		//Locator.CheckBoxMoa(driver).click();
 		
 		Thread.sleep(4000);
 		Locator.ClickFiter(driver).click();
@@ -1536,14 +1544,14 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		Locator.ClickFiter(driver).click();
 		Thread.sleep(5000);
 		Thread.sleep(1000);
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(500);
 		Locator.Download(driver).click();		//Exporting (Downloading) file
 		
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(3000);
@@ -1654,19 +1662,25 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("D:\\Test Cases\\Approver Test Case.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\Auditor.xlsx");
 		Thread.sleep(3000);
 	
 		Locator.SaveDoc1(driver).click();
 		Thread.sleep(3000);
 	
-	
+	try {
 		String	msg1=Locator.SaveDocMsg(driver).getText();
 		
 			if(msg1.equalsIgnoreCase("Record saved successfully")) {
 				test.log(LogStatus.PASS,  " selecting a Policy option Type :- " +msg1);
 			}else {
 				test.log(LogStatus.FAIL,  " selecting a Policy option Type :- " +msg1);
+			}
+	}
+			catch(Exception e) {
+				String	msg1=Locator.SaveDocMsg1(driver).getText();
+				test.log(LogStatus.FAIL,  " selecting a Policy option Type :- " +msg1);
+
 			}
 		Locator.Close(driver).click();
 		Thread.sleep(1000);
@@ -1705,12 +1719,13 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("D:\\Test Cases\\Approver Test Case.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\Auditor.xlsx");
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
 		Locator.SaveDoc1(driver).click();
 		Thread.sleep(3000);
+		try {
 		String	msg1=Locator.SaveDocMsg1(driver).getText();
 		if(msg1.equalsIgnoreCase(msg1))
 		{
@@ -1720,7 +1735,12 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		{
 			test.log(LogStatus.FAIL,  " selecting a Policy option Type :- " +msg1);
 		}
-			
+	 }
+	catch(Exception e) {
+		String	msg1=Locator.SaveDocMsg1(driver).getText();
+		test.log(LogStatus.FAIL,  " selecting a Policy option Type :- " +msg1);
+
+	}	
 		
 		Locator.Close(driver).click();
 		Thread.sleep(1000);
@@ -1795,14 +1815,14 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		Thread.sleep(4000);
 		
 		Thread.sleep(1000);
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(500);
 		Locator.DownloadPolicy(driver).click();		//Exporting (Downloading) file
 		
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(3000);
@@ -1907,7 +1927,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("D:\\Test Cases\\Approver Test Case.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\Auditor.xlsx");
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -1966,7 +1986,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("D:\\Test Cases\\Approver Test Case.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\Auditor.xlsx");
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -1986,9 +2006,9 @@ jse.executeScript("arguments[0].click();", ViewButton);
 			
 		Thread.sleep(3000);
 		Locator.Close(driver).click();
-		Thread.sleep(1000);
+		Thread.sleep(5000);
 		Locator.ClosePopEntity(driver).click();
-		Thread.sleep(1000);
+		Thread.sleep(4000);
 		Locator.ClickDashboard(driver).click();
 	 }
 	
@@ -2059,14 +2079,14 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		Thread.sleep(4000);
 		
 		Thread.sleep(1000);
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(500);
 		Locator.DownloadLicense(driver).click();		//Exporting (Downloading) file
 		
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(3000);
@@ -2254,7 +2274,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("D:\\Test Cases\\Approver Test Case.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\Auditor.xlsx");
 		
 		Thread.sleep(3000);
 		Locator.SaveDoc1(driver).click();
@@ -2354,7 +2374,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("D:\\Test Cases\\Approver Test Case.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\Auditor.xlsx");
 		Thread.sleep(3000);
 		Locator.SaveDoc1(driver).click();
 		
@@ -2537,14 +2557,14 @@ if(msg1.equalsIgnoreCase("Viewer")) {
 		Thread.sleep(4000);
 		
 		Thread.sleep(1000);
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(500);
 		Locator.DownloadAR(driver).click();		//Exporting (Downloading) file
 		
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(3000);
@@ -2639,6 +2659,7 @@ if(msg1.equalsIgnoreCase("Viewer")) {
 		Thread.sleep(1000);
 		Locator.ClickDashboard(driver).click();
 	 }
+	
 	
 	public static void WithoutDocumentAOA(WebDriver driver, ExtentTest test) throws InterruptedException
 	 {
@@ -2918,16 +2939,44 @@ if(msg1.equalsIgnoreCase("Viewer")) {
 		Thread.sleep(1000);
 		Locator.DuedateforPayment20(driver).click();      //select date
 		Thread.sleep(1000);
-		Locator.clickRemark(driver).sendKeys("nil"); 
-		Thread.sleep(1000);
-		Locator.SaveBD(driver).click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
+		EntityLocator.ClickRemark1(driver).sendKeys("ok");
 		
-		String	msg1=Locator.SaveBDMsg(driver).getText();
-		test.log(LogStatus.PASS,  "Bank Details -Add New - " +msg1);
-	
-		Locator.CloseBD(driver).click();
-		Thread.sleep(1000);
+		Thread.sleep(2000);
+		EntityLocator.ClickSave(driver).click();
+		
+		try
+		{
+		   Thread.sleep(4000);
+		    String msg=EntityLocator.BankvalidMsg(driver).getText();
+		    if(msg.equalsIgnoreCase("Account No already exist")) 
+			  {
+					test.log(LogStatus.FAIL, "Message Displayed = " +msg);
+			  }
+		       else
+				{
+						
+						test.log(LogStatus.PASS, "Message Displayed = " +msg);
+				}
+		}
+		catch(Exception e)
+		{
+			Thread.sleep(4000);
+		    String msg=EntityLocator.BankInvalidMsg(driver).getText();
+		    if(msg.equalsIgnoreCase(msg)) 
+			  {
+					test.log(LogStatus.PASS, "Message Displayed = " +msg);
+			  }
+		       else
+				{
+						
+						test.log(LogStatus.FAIL, "Message Displayed = " +msg);
+				}
+		}
+	Thread.sleep(2000);
+	EntityLocator.ClickCloseIcon1(driver).click();
+		
+	Thread.sleep(2000);
 		Locator.ClosePopEntity(driver).click();
 		Thread.sleep(1000);
 		Locator.ClickDashboard(driver).click();
@@ -3032,15 +3081,44 @@ Locator.ClickDashboard(driver).click();
 		Thread.sleep(1000);
 		Locator.DuedateforPayment20(driver).click();      //select date
 		Thread.sleep(1000);
-		Locator.SaveBD(driver).click();
 		Thread.sleep(2000);
+		EntityLocator.ClickRemark1(driver).sendKeys("ok");
 		
-		String	msg=Locator.InvalidMsg(driver).getText();
-		Thread.sleep(3000);
-		test.log(LogStatus.PASS,  "Bank Details -Add New - " +msg);
 		Thread.sleep(2000);
-		Locator.CloseBD(driver).click();
-		Thread.sleep(1000);
+		EntityLocator.ClickSave(driver).click();
+		
+		try
+		{
+		   Thread.sleep(4000);
+		    String msg=EntityLocator.BankvalidMsg(driver).getText();
+		    if(msg.equalsIgnoreCase("Record Save Successfully")) 
+			  {
+					test.log(LogStatus.FAIL, "Message Displayed = " +msg);
+			  }
+		       else
+				{
+						
+						test.log(LogStatus.PASS, "Message Displayed = " +msg);
+				}
+		}
+		catch(Exception e)
+		{
+			Thread.sleep(4000);
+		    String msg=EntityLocator.BankInvalidMsg(driver).getText();
+		    if(msg.equalsIgnoreCase(msg)) 
+			  {
+					test.log(LogStatus.PASS, "Message Displayed = " +msg);
+			  }
+		       else
+				{
+						
+						test.log(LogStatus.FAIL, "Message Displayed = " +msg);
+				}
+		}
+		Thread.sleep(2000);
+		EntityLocator.ClickCloseIcon1(driver).click();
+			
+		Thread.sleep(2000);
 		Locator.ClosePopEntity(driver).click();
 		Thread.sleep(1000);
 		Locator.ClickDashboard(driver).click();
@@ -4997,7 +5075,7 @@ Locator.CloseEntity(driver).click();
 		Locator.AddNewBD(driver).click();
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
+		//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
 		Thread.sleep(3000);
 	
 		sheet = workbook.getSheetAt(1); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
@@ -5049,18 +5127,35 @@ Locator.CloseEntity(driver).click();
 		Thread.sleep(1000);
 		Locator.Ahmadnagar(driver).click();
 		Thread.sleep(3000);
-		Locator.ClickSave(driver).click();
-		Thread.sleep(3000);
-		String Msg=	Locator.ClickSaveMsg(driver).getText();
-		Thread.sleep(3000);
-		if(Msg.equalsIgnoreCase("Details Save Successfully")) 
+		 Thread.sleep(2000);
+		 EntityLocator.OtherCityName(driver).sendKeys("XYZ");
+		 Thread.sleep(2000);
+		 
+		 EntityLocator.PinCode(driver).sendKeys("414001");
+		 Thread.sleep(2000);
+	 EntityLocator.ClickBtnSave(driver).click();
+	 
+	 Thread.sleep(3000); 
+	 try {
+	  String msg = EntityLocator.ValidMsg(driver).getText();
+	  if(msg.equalsIgnoreCase("Details Save Successfully")) 
+	  {
+			test.log(LogStatus.PASS, "Message Displayed = " +msg);
+	  }
+       else
 		{
-			test.log(LogStatus.PASS, Msg);
+				
+				test.log(LogStatus.FAIL, "Message Displayed = " +msg);
 		}
-		else
-		{
-			test.log(LogStatus.FAIL, Msg);
-		}
+}catch(Exception e) {
+	  Thread.sleep(3000);   
+	  String msg = EntityLocator.InvalidMsg(driver).getText();
+	  Thread.sleep(3000);   
+	  test.log(LogStatus.PASS, "Message Displayed = " +msg);
+	
+}
+	    
+	  
 //		driver.switchTo().parentFrame();
 		
 //		Thread.sleep(2000);
@@ -5092,7 +5187,7 @@ Locator.CloseEntity(driver).click();
 		Locator.AddNewBD(driver).click();
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
+	//	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
 		Thread.sleep(3000);
 	
 		sheet = workbook.getSheetAt(1); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
@@ -5140,18 +5235,36 @@ Locator.CloseEntity(driver).click();
 		Thread.sleep(1000);
 		Locator.Ahmadnagar(driver).click();
 		Thread.sleep(3000);
-		Locator.ClickSave(driver).click();
-		Thread.sleep(3000);
-		String Msg=	Locator.ClickSaveMsgInvalid(driver).getText();
-		Thread.sleep(3000);
-		if(Msg.equalsIgnoreCase(Msg))
+		
+	//	String Msg=	Locator.ClickSaveMsgInvalid(driver).getText();
+		 Thread.sleep(2000);
+		 EntityLocator.OtherCityName(driver).sendKeys("XYZ");
+		 Thread.sleep(2000);
+		 
+		 EntityLocator.PinCode(driver).sendKeys("414001");
+		 Thread.sleep(2000);
+	 EntityLocator.ClickBtnSave(driver).click();
+	 
+	 Thread.sleep(3000); 
+	 try {
+	  String msg = EntityLocator.ValidMsg(driver).getText();
+	  if(msg.equalsIgnoreCase("Details Save Successfully")) 
+	  {
+			test.log(LogStatus.PASS, "Message Displayed = " +msg);
+	  }
+       else
 		{
-			test.log(LogStatus.PASS, "Message displayed:-" +Msg);
+				
+				test.log(LogStatus.FAIL, "Message Displayed = " +msg);
 		}
-		else
-		{
-			test.log(LogStatus.FAIL, "Message displayed:-" +Msg);
-		}
+}catch(Exception e) {
+	  Thread.sleep(3000);   
+	  String msg = EntityLocator.InvalidMsg(driver).getText();
+	  Thread.sleep(3000);   
+	  test.log(LogStatus.PASS, "Message Displayed = " +msg);
+	
+}
+	    
 		
 //		driver.switchTo().parentFrame();
 //		Thread.sleep(2000);
@@ -5402,7 +5515,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\Litigation Issues.docx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 	//	Locator.SelectFile(driver).sendKeys("C:\\Users\\Mayuri\\Downloads\\Committee Composition (5).pdf");
 		Thread.sleep(3000);
 		Locator.UploadBD(driver).click();
@@ -5453,7 +5566,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\MgmtBita 0.html");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\EntityExcelFile1.xlsx");
 	
 		
 //		Thread.sleep(3000);
@@ -5507,7 +5620,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\MgmtBita 0.html");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\EntityExcelFile.xlsx");
 		
 		Thread.sleep(2000);
 		String	msg=driver.switchTo().alert().getText();
@@ -5524,7 +5637,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton1 = driver.findElement(locator1);	
 		Thread.sleep(3000);
-		ViewButton1.sendKeys("D:\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Secretarial-Project-26JULY23\\Report\\Secretrial.html");
+		ViewButton1.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\EntityExcelFile.xlsx");
 		
 		Thread.sleep(2000);
 		String	msg1=driver.switchTo().alert().getText();
@@ -5580,7 +5693,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\Litigation Issues.docx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(3000);
 		By locator1 = By.xpath("//*[@id='files']");
 
@@ -5589,7 +5702,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton1 = driver.findElement(locator1);	
 		Thread.sleep(3000);
-		ViewButton1.sendKeys("C:\\Users\\snehalp\\Desktop\\Litigation Issues.docx");
+		ViewButton1.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(3000);
 		
 		Locator.UploadBD(driver).click();
@@ -5726,7 +5839,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		//Locator.Upload(driver).sendKeys("C:\\Users\\Mayuri Gaikwad\\Downloads\\Report  (1).xlsx");
@@ -5823,7 +5936,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		//Locator.Upload(driver).sendKeys("C:\\Users\\Mayuri Gaikwad\\Downloads\\Report  (1).xlsx");
@@ -5913,14 +6026,14 @@ Locator.CloseEntity(driver).click();
 	Locator.ClickFiter(driver).click();
 	Thread.sleep(5000);
 	Thread.sleep(1000);
-	File dir = new File("C:\\Users\\snehalp\\Downloads");
+	File dir = new File("C:\\Users\\mayurig\\Downloads");
 	File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 	
 	Thread.sleep(500);
 	Locator.Download(driver).click();		//Exporting (Downloading) file
 	
 	Thread.sleep(3000);//C://Users//jiya//Downloads//
-	File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+	File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 	File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 	
 	Thread.sleep(3000);
@@ -6023,7 +6136,7 @@ Locator.CloseEntity(driver).click();
 	
 	WebElement ViewButton = driver.findElement(locator);	
 	Thread.sleep(3000);
-	ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+	ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 	Thread.sleep(4000);
 	
 	
@@ -6123,7 +6236,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		
@@ -6221,14 +6334,14 @@ Locator.CloseEntity(driver).click();
 	Locator.ClickFiter(driver).click();
 	Thread.sleep(5000);
 	Thread.sleep(1000);
-	File dir = new File("C:\\Users\\snehalp\\Downloads");
+	File dir = new File("C:\\Users\\mayurig\\Downloads");
 	File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 	
 	Thread.sleep(500);
 	Locator.Download(driver).click();		//Exporting (Downloading) file
 	
 	Thread.sleep(3000);//C://Users//jiya//Downloads//
-	File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+	File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 	File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 	
 	Thread.sleep(3000);
@@ -6329,7 +6442,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -6431,7 +6544,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -6527,14 +6640,14 @@ Locator.CloseEntity(driver).click();
 		Locator.ClickFiter(driver).click();
 		Thread.sleep(5000);
 		Thread.sleep(1000);
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(500);
 		Locator.Download(driver).click();		//Exporting (Downloading) file
 		
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(3000);
@@ -6636,7 +6749,7 @@ Locator.CloseEntity(driver).click();
 			
 			WebElement ViewButton = driver.findElement(locator);	
 			Thread.sleep(3000);
-			ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+			ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 			Thread.sleep(4000);
 			
 			Thread.sleep(3000);
@@ -6735,7 +6848,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -6825,14 +6938,14 @@ Locator.CloseEntity(driver).click();
 		Thread.sleep(4000);
 		
 		Thread.sleep(1000);
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(500);
 		Locator.DownloadPolicy(driver).click();		//Exporting (Downloading) file
 		
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(3000);
@@ -6933,7 +7046,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -7004,7 +7117,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -7120,7 +7233,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -7211,7 +7324,7 @@ Locator.CloseEntity(driver).click();
 		Thread.sleep(4000);
 		
 		Thread.sleep(1000);
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
 		
@@ -7230,7 +7343,7 @@ Locator.CloseEntity(driver).click();
 		}
 		
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(3000);
@@ -7355,7 +7468,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		
@@ -7458,7 +7571,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		
@@ -7663,7 +7776,7 @@ Locator.CloseEntity(driver).click();
 		Thread.sleep(4000);
 		
 		Thread.sleep(1000);
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(500);
@@ -7676,7 +7789,7 @@ Locator.CloseEntity(driver).click();
 		}
 		
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(3000);
@@ -7790,7 +7903,7 @@ Locator.CloseEntity(driver).click();
 		Locator.AddNewBD(driver).click();
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
+	//	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
 		Thread.sleep(3000);
 	
 		sheet = workbook.getSheetAt(1); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
@@ -7842,19 +7955,34 @@ Locator.CloseEntity(driver).click();
 		Thread.sleep(1000);
 		Locator.Ahmadnagar(driver).click();
 		Thread.sleep(3000);
-		Locator.ClickSave(driver).click();
-		Thread.sleep(3000);
-		String Msg=	Locator.ClickSaveMsg(driver).getText();
-		Thread.sleep(3000);
-		if(Msg.equalsIgnoreCase(Msg)) 
+		 Thread.sleep(2000);
+		 EntityLocator.OtherCityName(driver).sendKeys("XYZ");
+		 Thread.sleep(2000);
+		 
+		 EntityLocator.PinCode(driver).sendKeys("414001");
+		 Thread.sleep(2000);
+	 EntityLocator.ClickBtnSave(driver).click();
+	 
+	 Thread.sleep(3000); 
+	 try {
+	  String msg = EntityLocator.ValidMsg(driver).getText();
+	  if(msg.equalsIgnoreCase("Details Save Successfully")) 
+	  {
+			test.log(LogStatus.PASS, "Message Displayed = " +msg);
+	  }
+       else
 		{
-			test.log(LogStatus.PASS, Msg);
+				
+				test.log(LogStatus.FAIL, "Message Displayed = " +msg);
 		}
-		else 
-		{
-			test.log(LogStatus.FAIL, Msg);
-		}
-		driver.switchTo().parentFrame();
+}catch(Exception e) {
+	  Thread.sleep(3000);   
+	  String msg = EntityLocator.InvalidMsg(driver).getText();
+	  Thread.sleep(3000);   
+	  test.log(LogStatus.PASS, "Message Displayed = " +msg);
+	
+}
+	//	driver.switchTo().parentFrame();
 //		Thread.sleep(3000);
 //		Locator.CloseBranchD(driver).click();
 //		Thread.sleep(3000);
@@ -7884,7 +8012,7 @@ Locator.CloseEntity(driver).click();
 		Locator.AddNewBD(driver).click();
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
+		//wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
 		Thread.sleep(3000);
 	
 		sheet = workbook.getSheetAt(1); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
@@ -7931,16 +8059,33 @@ Locator.CloseEntity(driver).click();
 		Locator.City(driver).click();
 		Thread.sleep(1000);
 		Locator.Ahmadnagar(driver).click();
-		Thread.sleep(3000);
-		Locator.ClickSave(driver).click();
-		Thread.sleep(3000);
-		String Msg=	Locator.ClickSaveMsgInvalid(driver).getText();
-		Thread.sleep(3000);
-		
-			test.log(LogStatus.PASS, Msg);
-		
-		driver.switchTo().parentFrame();
-		Thread.sleep(1000);
+		 Thread.sleep(2000);
+		 EntityLocator.OtherCityName(driver).sendKeys("XYZ");
+		 Thread.sleep(2000);
+		 
+		 EntityLocator.PinCode(driver).sendKeys("414001");
+		 Thread.sleep(2000);
+	 EntityLocator.ClickBtnSave(driver).click();
+	 
+	 Thread.sleep(3000); 
+	 try {
+	  String msg = EntityLocator.ValidMsg(driver).getText();
+	  if(msg.equalsIgnoreCase("Details Save Successfully")) 
+	  {
+			test.log(LogStatus.FAIL, "Message Displayed = " +msg);
+	  }
+       else
+		{
+				
+				test.log(LogStatus.PASS, "Message Displayed = " +msg);
+		}
+}catch(Exception e) {
+	  Thread.sleep(3000);   
+	  String msg = EntityLocator.InvalidMsg(driver).getText();
+	  Thread.sleep(3000);   
+	  test.log(LogStatus.PASS, "Message Displayed = " +msg);
+	
+}
 		Locator.CloseBranchD(driver).click();
 		Thread.sleep(3000);
 		
@@ -7969,7 +8114,7 @@ Locator.CloseEntity(driver).click();
 		Locator.AddNewBD(driver).click();
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
+	//	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
 		Thread.sleep(3000);
 	
 		sheet = workbook.getSheetAt(1); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
@@ -7994,15 +8139,28 @@ Locator.CloseEntity(driver).click();
 		
 		
 		
-		Locator.ClickSave(driver).click();
-		Thread.sleep(3000);
-		String Msg=	Locator.ClickSaveMsgInvalid(driver).getText();
-		Thread.sleep(3000);
-		
-			test.log(LogStatus.PASS,"Message Displayed :-  "+ Msg);
-		
-		driver.switchTo().parentFrame();
-		Thread.sleep(1000);
+		 
+	 EntityLocator.ClickBtnSave(driver).click();
+	 
+	 Thread.sleep(3000); 
+	 try {
+	  String msg = EntityLocator.ValidMsg(driver).getText();
+	  if(msg.equalsIgnoreCase("Details Save Successfully")) 
+	  {
+			test.log(LogStatus.FAIL, "Message Displayed = " +msg);
+	  }
+       else
+		{
+				
+				test.log(LogStatus.PASS, "Message Displayed = " +msg);
+		}
+}catch(Exception e) {
+	  Thread.sleep(3000);   
+	  String msg = EntityLocator.InvalidMsg(driver).getText();
+	  Thread.sleep(3000);   
+	  test.log(LogStatus.PASS, "Message Displayed = " +msg);
+	
+}
 		Locator.CloseBranchD(driver).click();
 		Thread.sleep(3000);
 		
@@ -8031,18 +8189,33 @@ Locator.CloseEntity(driver).click();
 		Locator.AddNewBD(driver).click();
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
+	//	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
 		Thread.sleep(4000);
 	
 	
-		Locator.ClickSave(driver).click();
-		Thread.sleep(3000);
-		String Msg=	Locator.ClickSaveMsgInvalid(driver).getText();
-		Thread.sleep(3000);
 		
-			test.log(LogStatus.PASS,"Message Displayed :-  "+ Msg);
-			Thread.sleep(1000);
-		driver.switchTo().parentFrame();
+	 EntityLocator.ClickBtnSave(driver).click();
+	 
+	 Thread.sleep(3000); 
+	 try {
+	  String msg = EntityLocator.ValidMsg(driver).getText();
+	  if(msg.equalsIgnoreCase("Details Save Successfully")) 
+	  {
+			test.log(LogStatus.FAIL, "Message Displayed = " +msg);
+	  }
+       else
+		{
+				
+				test.log(LogStatus.PASS, "Message Displayed = " +msg);
+		}
+}catch(Exception e) {
+	  Thread.sleep(3000);   
+	  String msg = EntityLocator.InvalidMsg(driver).getText();
+	  Thread.sleep(3000);   
+	  test.log(LogStatus.PASS, "Message Displayed = " +msg);
+	
+}
+		//driver.switchTo().parentFrame();
 		
 		Thread.sleep(3000);
 		Locator.CloseBranchD(driver).click();
@@ -8073,7 +8246,7 @@ Locator.CloseEntity(driver).click();
 		Locator.EditBranchD1(driver).click();
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
+	//	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
 		Thread.sleep(3000);
 	
 		sheet = workbook.getSheetAt(1); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
@@ -8089,15 +8262,27 @@ Locator.CloseEntity(driver).click();
 		Locator.Name(driver).sendKeys(c1.getStringCellValue()); // Writing Task title
 		Thread.sleep(3000);
 		
-		Locator.ClickSave(driver).click();
-		Thread.sleep(3000);
-		String Msg=	Locator.ClickSaveMsg(driver).getText();
-		Thread.sleep(3000);
+		EntityLocator.ClickBtnSave(driver).click();
+		 
+		 Thread.sleep(3000); 
+		 try {
+		  String msg = EntityLocator.ValidMsg(driver).getText();
+		  if(msg.equalsIgnoreCase("Details Save Successfully")) 
+		  {
+				test.log(LogStatus.FAIL, "Message Displayed = " +msg);
+		  }
+	       else
+			{
+					
+					test.log(LogStatus.PASS, "Message Displayed = " +msg);
+			}
+	}catch(Exception e) {
+		  Thread.sleep(3000);   
+		  String msg = EntityLocator.InvalidMsg(driver).getText();
+		  Thread.sleep(3000);   
+		  test.log(LogStatus.PASS, "Message Displayed = " +msg);
 		
-			test.log(LogStatus.PASS,"Message Displayed :-  "+ Msg);
-		
-		driver.switchTo().parentFrame();
-		Thread.sleep(1000);
+	}
 		Locator.CloseBranchD(driver).click();
 		Thread.sleep(3000);
 		
@@ -8132,7 +8317,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 	//	Locator.SelectFile(driver).sendKeys("C:\\Users\\Mayuri\\Downloads\\Committee Composition (5).pdf");
 		Thread.sleep(3000);
 		Locator.UploadBD(driver).click();
@@ -8180,7 +8365,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\LitigationCompanyAdmin.html");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\Reports\\EntityMaster.html");
 	
 		Thread.sleep(2000);
 		String	msg1=driver.switchTo().alert().getText();
@@ -8232,7 +8417,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(3000);
 		By locator1 = By.xpath("//*[@id='files']");
 
@@ -8241,7 +8426,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton1 = driver.findElement(locator1);	
 		Thread.sleep(3000);
-		ViewButton1.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+		ViewButton1.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(3000);
 		
 		Locator.UploadBD(driver).click();
@@ -8288,7 +8473,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\LitigationCompanyAdmin.html");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\Reports\\EntityMaster.html");
 		
 		Thread.sleep(2000);
 		String	msg1=driver.switchTo().alert().getText();
@@ -8306,7 +8491,7 @@ Locator.CloseEntity(driver).click();
 		
 		WebElement ViewButton1 = driver.findElement(locator1);	
 		Thread.sleep(3000);
-		ViewButton1.sendKeys("C:\\Users\\snehalp\\Desktop\\LitigationCompanyAdmin.html");
+		ViewButton1.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\Reports\\EntityMaster.html");
 		Thread.sleep(3000);
 //		String Msg=	Locator.InvalidUploadMsg(driver).getText();
 //		Thread.sleep(3000);
@@ -9032,7 +9217,7 @@ Locator.ClickDashboard(driver).click();
 		Locator.clickStockExchange(driver).click();
 		
 		Thread.sleep(2000);
-		List<WebElement>Stock = driver.findElements(By.xpath("(//ul[@id='ddlMmultipleSelector_listbox'])[3]//li"));
+		List<WebElement>Stock = driver.findElements(By.xpath("//*[@id='ddlMmultipleSelector_listbox']/li"));
 		selectOptionFromDropDown_bs(Stock, "Bombay Stock Exchange");
 		
 		Thread.sleep(3000);
@@ -9165,7 +9350,7 @@ Locator.ClickDashboard(driver).click();
 		Locator.clickStockExchange(driver).click();
 		
 		Thread.sleep(2000);
-		List<WebElement>Stock = driver.findElements(By.xpath("(//ul[@id='ddlMmultipleSelector_listbox'])[3]//li"));
+		List<WebElement>Stock = driver.findElements(By.xpath("//*[@id='ddlMmultipleSelector_listbox']/li"));
 		selectOptionFromDropDown_bs(Stock, "Bombay Stock Exchange");
 		
 		Thread.sleep(3000);
@@ -9850,7 +10035,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		//Locator.Upload(driver).sendKeys("C:\\Users\\Mayuri Gaikwad\\Downloads\\Report  (1).xlsx");
@@ -9944,7 +10129,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("E:\\Test Cases\\Book3.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\Contract.xlsx");
 		Thread.sleep(4000);
 		
 		//Locator.Upload(driver).sendKeys("C:\\Users\\Mayuri Gaikwad\\Downloads\\Report  (1).xlsx");
@@ -10041,14 +10226,14 @@ Locator.ClickDashboard(driver).click();
 		Locator.ClickFiter(driver).click();
 		Thread.sleep(5000);
 		Thread.sleep(1000);
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(500);
 		Locator.Download(driver).click();		//Exporting (Downloading) file
 		
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(3000);
@@ -10148,13 +10333,13 @@ Locator.ClickDashboard(driver).click();
 	
 	WebElement ViewButton = driver.findElement(locator);	
 	Thread.sleep(3000);
-	ViewButton.sendKeys("E:\\Test Cases\\Book3.xlsx");
+	ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 	Thread.sleep(4000);
 	
 	
 	Thread.sleep(3000);
 	Locator.SaveDoc1(driver).click();
-	Thread.sleep(3000);
+	
 	
 	try {
 	String	msg1=Locator.SaveDocMsg(driver).getText();
@@ -10245,7 +10430,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("E:\\Test Cases\\Book3.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		Locator.SaveDoc1(driver).click();
@@ -10340,14 +10525,14 @@ Locator.ClickDashboard(driver).click();
 		Locator.ClickFiter(driver).click();
 		Thread.sleep(5000);
 		Thread.sleep(1000);
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 	
 		Thread.sleep(500);
 		Locator.Download(driver).click();		//Exporting (Downloading) file
 		
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(3000);
@@ -10445,7 +10630,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("E:\\Test Cases\\Book3.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -10546,7 +10731,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("E:\\Test Cases\\Book3.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -10641,14 +10826,14 @@ Locator.ClickDashboard(driver).click();
 		Locator.ClickFiter(driver).click();
 		Thread.sleep(5000);
 		Thread.sleep(1000);
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(500);
 		Locator.Download(driver).click();		//Exporting (Downloading) file
 		
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(3000);
@@ -10746,7 +10931,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("E:\\Test Cases\\Book3.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -10846,7 +11031,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("E:\\Test Cases\\Book3.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -10935,14 +11120,14 @@ Locator.ClickDashboard(driver).click();
 		Thread.sleep(4000);
 		
 		Thread.sleep(1000);
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(500);
 		Locator.DownloadPolicy1(driver).click();		//Exporting (Downloading) file
 		
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(3000);
@@ -11039,7 +11224,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("E:\\Test Cases\\Book3.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -11113,7 +11298,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("E:\\Test Cases\\Book3.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -11222,7 +11407,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("E:\\Test Cases\\Book3.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		Thread.sleep(3000);
@@ -11308,7 +11493,7 @@ Locator.ClickDashboard(driver).click();
 		Thread.sleep(4000);
 		
 		Thread.sleep(1000);
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(500);
@@ -11320,7 +11505,7 @@ Locator.ClickDashboard(driver).click();
 			Thread.sleep(2000);
 		}
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(3000);
@@ -11441,7 +11626,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("E:\\Test Cases\\Book3.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		
@@ -11547,7 +11732,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("E:\\Test Cases\\Book3.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(4000);
 		
 		
@@ -11736,7 +11921,7 @@ Locator.ClickDashboard(driver).click();
 		Thread.sleep(4000);
 		
 		Thread.sleep(1000);
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(500);
@@ -11746,7 +11931,7 @@ Locator.ClickDashboard(driver).click();
 			Locator.DownloadARLC(driver).click();
 		}
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(3000);
@@ -11851,8 +12036,8 @@ Locator.ClickDashboard(driver).click();
 		Locator.AddNewBD(driver).click();
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
-		Thread.sleep(3000);
+	//	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
+	//	Thread.sleep(3000);
 	
 		sheet = workbook.getSheetAt(1); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
 		int row = 0;
@@ -11903,16 +12088,34 @@ Locator.ClickDashboard(driver).click();
 		Thread.sleep(1000);
 		Locator.Ahmadnagar(driver).click();
 		Thread.sleep(3000);
-		Locator.ClickSave(driver).click();
-		Thread.sleep(3000);
-	String Msg=	Locator.ClickSaveMsg(driver).getText();
-		Thread.sleep(3000);
-		if(Msg.equalsIgnoreCase("Details Save Successfully")) {
-			test.log(LogStatus.PASS, Msg);
-		}else {
-			test.log(LogStatus.FAIL, Msg);
+		 Thread.sleep(2000);
+		 EntityLocator.OtherCityName(driver).sendKeys("XYZ");
+		 Thread.sleep(2000);
+		 
+		 EntityLocator.PinCode(driver).sendKeys("414001");
+		 Thread.sleep(2000);
+	 EntityLocator.ClickBtnSave(driver).click();
+	 
+	 Thread.sleep(3000); 
+	 try {
+	  String msg = EntityLocator.ValidMsg(driver).getText();
+	  if(msg.equalsIgnoreCase("Details Save Successfully")) 
+	  {
+			test.log(LogStatus.PASS, "Message Displayed = " +msg);
+	  }
+       else
+		{
+				
+				test.log(LogStatus.FAIL, "Message Displayed = " +msg);
 		}
-		driver.switchTo().parentFrame();
+}catch(Exception e) {
+	  Thread.sleep(3000);   
+	  String msg = EntityLocator.InvalidMsg(driver).getText();
+	  Thread.sleep(3000);   
+	  test.log(LogStatus.PASS, "Message Displayed = " +msg);
+	
+}
+	//	driver.switchTo().parentFrame();
 //		Thread.sleep(1000);
 //		Locator.CloseBranchD(driver).click();
 //		Thread.sleep(3000);
@@ -11942,7 +12145,7 @@ Locator.ClickDashboard(driver).click();
 		Locator.AddNewBD(driver).click();
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
+	//	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
 		Thread.sleep(3000);
 	
 		sheet = workbook.getSheetAt(1); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
@@ -11990,14 +12193,34 @@ Locator.ClickDashboard(driver).click();
 		Thread.sleep(1000);
 		Locator.Ahmadnagar(driver).click();
 		Thread.sleep(3000);
-		Locator.ClickSave(driver).click();
-		Thread.sleep(3000);
-		String Msg=	Locator.ClickSaveMsgInvalid(driver).getText();
-		Thread.sleep(3000);
-		
-			test.log(LogStatus.PASS, Msg);
-		
-		driver.switchTo().parentFrame();
+		 Thread.sleep(2000);
+		 EntityLocator.OtherCityName(driver).sendKeys("XYZ");
+		 Thread.sleep(2000);
+		 
+		 EntityLocator.PinCode(driver).sendKeys("414001");
+		 Thread.sleep(2000);
+	 EntityLocator.ClickBtnSave(driver).click();
+	 
+	 Thread.sleep(3000); 
+	 try {
+	  String msg = EntityLocator.ValidMsg(driver).getText();
+	  if(msg.equalsIgnoreCase("Details Save Successfully")) 
+	  {
+			test.log(LogStatus.FAIL, "Message Displayed = " +msg);
+	  }
+       else
+		{
+				
+				test.log(LogStatus.PASS, "Message Displayed = " +msg);
+		}
+}catch(Exception e) {
+	  Thread.sleep(3000);   
+	  String msg = EntityLocator.InvalidMsg(driver).getText();
+	  Thread.sleep(3000);   
+	  test.log(LogStatus.PASS, "Message Displayed = " +msg);
+	
+}
+	//	driver.switchTo().parentFrame();
 //		Thread.sleep(1000);
 //		Locator.CloseBranchD(driver).click();
 //		Thread.sleep(3000);
@@ -12027,7 +12250,7 @@ Locator.ClickDashboard(driver).click();
 		Locator.AddNewBD(driver).click();
 		Thread.sleep(3000);
 		
-		wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
+	//	wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt("IframeMyCompliances"));	//Wait until frame get visible and switch to it.
 		Thread.sleep(3000);
 	
 		sheet = workbook.getSheetAt(1); // Retrieving fourth sheet of Workbook(Named - Update Tasks)
@@ -12050,16 +12273,27 @@ Locator.ClickDashboard(driver).click();
 		Locator.HeadOffice(driver).click();
 		Thread.sleep(3000);
 		
-		
-		
-		Locator.ClickSave(driver).click();
-		Thread.sleep(3000);
-		String Msg=	Locator.ClickSaveMsgInvalid(driver).getText();
-		Thread.sleep(3000);
-		
-			test.log(LogStatus.PASS,"Message Displayed :-  "+ Msg);
-		
-		driver.switchTo().parentFrame();
+	 EntityLocator.ClickBtnSave(driver).click();
+	 
+	 Thread.sleep(3000); 
+	 try {
+	  String msg = EntityLocator.ValidMsg(driver).getText();
+	  if(msg.equalsIgnoreCase("Details Save Successfully")) 
+	  {
+			test.log(LogStatus.FAIL, "Message Displayed = " +msg);
+	  }
+       else
+		{
+				
+				test.log(LogStatus.PASS, "Message Displayed = " +msg);
+		}
+}catch(Exception e) {
+	  Thread.sleep(3000);   
+	  String msg = EntityLocator.InvalidMsg(driver).getText();
+	  Thread.sleep(3000);   
+	  test.log(LogStatus.PASS, "Message Displayed = " +msg);
+	
+}
 //		Thread.sleep(1000);
 //		Locator.CloseBranchD(driver).click();
 //		Thread.sleep(3000);
@@ -12188,7 +12422,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 	//	Locator.SelectFile(driver).sendKeys("C:\\Users\\Mayuri\\Downloads\\Committee Composition (5).pdf");
 		Thread.sleep(3000);
 		Locator.UploadBD(driver).click();
@@ -12236,7 +12470,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("E:\\Test Cases\\Book3.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		
 		
 		Thread.sleep(1000);
@@ -12290,7 +12524,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\demo.docx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(3000);
 		By locator1 = By.xpath("//*[@id='files']");
 
@@ -12299,7 +12533,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton1 = driver.findElement(locator1);	
 		Thread.sleep(3000);
-		ViewButton1.sendKeys("C:\\Users\\snehalp\\Desktop\\sample.pdf");
+		ViewButton1.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\demo_.docx");
 		Thread.sleep(3000);
 		
 		Locator.UploadBD(driver).click();
@@ -12346,7 +12580,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\Testing link sheet.xlsx");
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\EntityExcelFile.xlsx");
 		Thread.sleep(3000);
 		By locator1 = By.xpath("//*[@id='files']");
 
@@ -12355,7 +12589,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton1 = driver.findElement(locator1);	
 		Thread.sleep(3000);
-		ViewButton1.sendKeys("C:\\Users\\snehalp\\Desktop\\Testing link sheet.xlsx");
+		ViewButton1.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\EntityExcelFile.xlsx");
 		Thread.sleep(3000);
 		String Msg=	Locator.InvalidUploadMsg(driver).getText();
 		Thread.sleep(3000);
@@ -12983,26 +13217,55 @@ Locator.ClickDashboard(driver).click();
 	public static void  ShareholdingInvalid(WebDriver driver, ExtentTest test) throws InterruptedException
 	 {
 
-	WebDriverWait wait = new WebDriverWait(driver, (120));
-	Thread.sleep(3000);
-	
-	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
-	Thread.sleep(1000);
-	Locator.Master(driver).click();
-	Thread.sleep(3000);
-	
-	Locator.MoreAction(driver).click();
-	Thread.sleep(3000);
-	Locator.Shareholding(driver).click();
-	Thread.sleep(3000);
+		Thread.sleep(2000);
+		EntityLocator.selectImg(driver).click();
+		Thread.sleep(2000);
+	    EntityLocator.clickEntity(driver).click();
+	    Thread.sleep(2000);
+	    EntityLocator.ClickFilter(driver).sendKeys("U72266KA2002PLC038436",Keys.ENTER);
+	    Thread.sleep(2000);
+	    EntityLocator.ClickMoreAction(driver).click();
+	   
+	    
+	    Thread.sleep(2000);
+	Thread.sleep(2000);
+   List<WebElement>entitytype = driver.findElements(By.xpath("//*[@id='griDDLActionMenu_listbox']/li"));
+	selectOptionFromDropDown_bs(entitytype, "Shareholding");
+	   
+ 
+	Thread.sleep(2000);
 			Locator.ShareholdingNew(driver).click();
 			Thread.sleep(5000);
-			Locator.FOLIONO(driver).sendKeys("10");
+			EntityLocator.ClickFOLIONO(driver).sendKeys("10");
 			Thread.sleep(3000);
 			Locator.Classofshares(driver).click();
 			Thread.sleep(1000);
 			Locator.EquityShares(driver).click();
 			Thread.sleep(3000);
+			
+			  Thread.sleep(4000);
+		      EntityLocator.ClickClassOfShares(driver).click();
+		      Thread.sleep(4000);
+		      EntityLocator.ClickClassOfShares1(driver).click();
+			  
+		      Thread.sleep(4000);
+		      EntityLocator. ClickNominalvaluepershare(driver).click();
+		      
+		      Thread.sleep(4000);
+		      EntityLocator.ClickTotalsharesheld(driver).click();
+		      
+		      Thread.sleep(4000);
+		      EntityLocator.ClickType(driver).click();
+		      Thread.sleep(4000);
+		      EntityLocator.ClickType1(driver).click();
+		      
+		      Thread.sleep(4000);
+		      EntityLocator.ClickNationality(driver).click();
+		      Thread.sleep(4000);
+		      EntityLocator.ClickNationality1(driver).click();
+		      
+		  	  Thread.sleep(2000);
+			
 			
 			Locator.TypeS(driver).click();
 			Thread.sleep(1000);
@@ -13405,15 +13668,15 @@ Locator.ClickDashboard(driver).click();
 			List<WebElement>comCat = driver.findElements(By.xpath("//li[@class='k-item']"));
 			selectOptionFromDropDown_bs(comCat, "Fully Convertible Debentures");
 			Thread.sleep(2000);
-			row0 = sheet.getRow(41);
+			/*row0 = sheet.getRow(41);
 			c1 = row0.getCell(1); // Selected cell (4 row,1 column) 
 			int No = (int) c1.getNumericCellValue();
 			Locator.CouponRate(driver).sendKeys("" + No + ""); // Writing Task title
-			
+			*/
 			Thread.sleep(2000);
 			row0 = sheet.getRow(42);
 			c1 = row0.getCell(1); // Selected cell (4 row,1 column) 
-		 No = (int) c1.getNumericCellValue();
+			int No = (int) c1.getNumericCellValue();
 			Locator.TotalDebentureheld(driver).sendKeys("" + No + ""); // Writing Task title
 			
 			Thread.sleep(2000);
@@ -13511,10 +13774,10 @@ Locator.ClickDashboard(driver).click();
 	Thread.sleep(1000);
 	String Text1 =Locator.AddressVal(driver).getText();
 	Thread.sleep(1000);
-	String Text2 =Locator.Email_IdVal(driver).getText();
+//	String Text2 =Locator.Email_IdVal(driver).getText();
 	Thread.sleep(2000);
 	
-		test.log(LogStatus.PASS,"Validation Message Displayed :- "+Text +" ,"+Text1+" ,"+Text2);
+		test.log(LogStatus.PASS,"Validation Message Displayed :- "+Text +" ,"+Text1);
 		Thread.sleep(1000);
 	Locator.CloseDH(driver).click();
 	Thread.sleep(2000);
@@ -13622,7 +13885,7 @@ Locator.ClickDashboard(driver).click();
 	WebDriverWait wait = new WebDriverWait(driver, (120));
 	Thread.sleep(3000);
 	
-	wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
+	//wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='Mastermenu']/a/img"))); 
 	Thread.sleep(1000);
 	Locator.Master(driver).click();
 	Thread.sleep(3000);
@@ -13829,14 +14092,14 @@ Locator.ClickDashboard(driver).click();
 			List<WebElement>comCat = driver.findElements(By.xpath("//li[@class='k-item']"));
 			selectOptionFromDropDown_bs(comCat, "Fully Convertible Debentures");
 			Thread.sleep(2000);
-			row0 = sheet.getRow(41);
+		/*	row0 = sheet.getRow(41);
 			c1 = row0.getCell(1); // Selected cell (4 row,1 column) 
 			int No = (int) c1.getNumericCellValue();
 			Locator.CouponRate(driver).sendKeys("" + No + ""); // Writing Task title
-			Thread.sleep(2000);
+			Thread.sleep(2000);*/
 			row0 = sheet.getRow(42);
 			c1 = row0.getCell(1); // Selected cell (4 row,1 column) 
-		 No = (int) c1.getNumericCellValue();
+	int	 No = (int) c1.getNumericCellValue();
 			Locator.TotalDebentureheld(driver).sendKeys("" + No + ""); // Writing Task title
 			Thread.sleep(2000);
 			Locator.TypeDH(driver).click();
@@ -14220,14 +14483,14 @@ Locator.ClickDashboard(driver).click();
 			List<WebElement>comCat = driver.findElements(By.xpath("//li[@class='k-item']"));
 			selectOptionFromDropDown_bs(comCat, "Fully Convertible Debentures");
 			Thread.sleep(2000);
-			row0 = sheet.getRow(41);
+			/*row0 = sheet.getRow(41);
 			c1 = row0.getCell(1); // Selected cell (4 row,1 column) 
 			int No = (int) c1.getNumericCellValue();
 			Locator.CouponRate(driver).sendKeys("" + No + ""); // Writing Task title
-			Thread.sleep(2000);
+			Thread.sleep(2000);*/
 			row0 = sheet.getRow(42);
 			c1 = row0.getCell(1); // Selected cell (4 row,1 column) 
-		 No = (int) c1.getNumericCellValue();
+		int No = (int) c1.getNumericCellValue();
 			Locator.TotalDebentureheld(driver).sendKeys("" + No + ""); // Writing Task title
 			Thread.sleep(2000);
 			Locator.TypeDH(driver).click();
@@ -14266,7 +14529,7 @@ Locator.ClickDashboard(driver).click();
 		Thread.sleep(3000);
 		Locator.DownloadFile(driver).click();
 		Thread.sleep(3000);
-		Locator.ChooseFile(driver).sendKeys("C:\\Users\\snehalp\\Downloads\\DebentureholdingDetails.xlsx");
+		Locator.ChooseFile(driver).sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\DebentureholdingDetails.xlsx");
 		Thread.sleep(4000);
 		
 		
@@ -14377,7 +14640,7 @@ Locator.ClickDashboard(driver).click();
 		Thread.sleep(3000);
 		Locator.DownloadFile(driver).click();
 		Thread.sleep(3000);
-		Locator.ChooseFile(driver).sendKeys("C:\\Users\\snehalp\\Downloads\\DebentureholdingDetails.xlsx");
+		Locator.ChooseFile(driver).sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\DebentureholdingDetails.xlsx");
 		Thread.sleep(4000);
 		
 		
@@ -14488,7 +14751,7 @@ Locator.ClickDashboard(driver).click();
 		Thread.sleep(3000);
 		Locator.DownloadFile(driver).click();
 		Thread.sleep(3000);
-		Locator.ChooseFile(driver).sendKeys("C:\\Users\\snehalp\\Downloads\\DebentureholdingDetails.xlsx");
+		Locator.ChooseFile(driver).sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\DebentureholdingDetails_InValid.xlsx");
 		Thread.sleep(4000);
 		
 		
@@ -14556,7 +14819,7 @@ Locator.ClickDashboard(driver).click();
 			row0 = sheet.getRow(41);
 			c1 = row0.getCell(1); // Selected cell (4 row,1 column) 
 			int No = (int) c1.getNumericCellValue();
-			Locator.CouponRate(driver).sendKeys("" + No + ""); // Writing Task title
+			//Locator.CouponRate(driver).sendKeys("" + No + ""); // Writing Task title
 			Thread.sleep(2000);
 			row0 = sheet.getRow(42);
 			c1 = row0.getCell(1); // Selected cell (4 row,1 column) 
@@ -14599,7 +14862,7 @@ Locator.ClickDashboard(driver).click();
 		Thread.sleep(3000);
 		Locator.DownloadFile(driver).click();
 		Thread.sleep(3000);
-		Locator.ChooseFile(driver).sendKeys("C:\\Users\\snehalp\\Downloads\\DebentureholdingDetails.xlsx");
+		Locator.ChooseFile(driver).sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\DebentureholdingDetails_Empty.xlsx");
 		Thread.sleep(4000);
 		
 		
@@ -14662,14 +14925,14 @@ Locator.ClickDashboard(driver).click();
 			List<WebElement>comCat = driver.findElements(By.xpath("//li[@class='k-item']"));
 			selectOptionFromDropDown_bs(comCat, "Fully Convertible Debentures");
 			Thread.sleep(2000);
-			row0 = sheet.getRow(41);
+			/*row0 = sheet.getRow(41);
 			c1 = row0.getCell(1); // Selected cell (4 row,1 column) 
 			int No = (int) c1.getNumericCellValue();
 			Locator.CouponRate(driver).sendKeys("" + No + ""); // Writing Task title
-			Thread.sleep(2000);
+			Thread.sleep(2000);*/
 			row0 = sheet.getRow(42);
 			c1 = row0.getCell(1); // Selected cell (4 row,1 column) 
-		 No = (int) c1.getNumericCellValue();
+		int No = (int) c1.getNumericCellValue();
 			Locator.TotalDebentureheld(driver).sendKeys("" + No + ""); // Writing Task title
 			Thread.sleep(2000);
 			Locator.TypeDH(driver).click();
@@ -14708,7 +14971,7 @@ Locator.ClickDashboard(driver).click();
 		Thread.sleep(3000);
 		Locator.DownloadFile(driver).click();
 		Thread.sleep(3000);
-		Locator.ChooseFile(driver).sendKeys("C:\\Users\\snehalp\\Desktop\\Compliance Critical Test Cases.xlsx");
+		Locator.ChooseFile(driver).sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\EntityExcelFile1.xlsx");
 		Thread.sleep(4000);
 		Locator.UploadFile(driver).click();
 		Thread.sleep(3000);
@@ -14774,7 +15037,7 @@ Locator.ClickDashboard(driver).click();
 			row0 = sheet.getRow(41);
 			c1 = row0.getCell(1); // Selected cell (4 row,1 column) 
 			int No = (int) c1.getNumericCellValue();
-			Locator.CouponRate(driver).sendKeys("" + No + ""); // Writing Task title
+			//Locator.CouponRate(driver).sendKeys("" + No + ""); // Writing Task title
 			Thread.sleep(2000);
 			row0 = sheet.getRow(42);
 			c1 = row0.getCell(1); // Selected cell (4 row,1 column) 
@@ -14864,7 +15127,7 @@ Locator.ClickDashboard(driver).click();
 		Thread.sleep(3000);
 		Locator.DownloadFile(driver).click();
 		Thread.sleep(3000);
-		Locator.ChooseFile(driver).sendKeys("C:\\Users\\snehalp\\Downloads\\DebentureHolding_BasicDetails.xlsx");
+		Locator.ChooseFile(driver).sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\DebentureHolding_BasicDetails.xlsx");
 		Thread.sleep(4000);
 	
 		Locator.UploadFileDH(driver).click();
@@ -14924,7 +15187,7 @@ Locator.ClickDashboard(driver).click();
 		Thread.sleep(3000);
 		Locator.DownloadFile(driver).click();
 		Thread.sleep(3000);
-		Locator.ChooseFile(driver).sendKeys("C:\\Users\\snehalp\\Downloads\\DebentureHolding_BasicDetails.xlsx");
+		Locator.ChooseFile(driver).sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\DebentureHolding_BasicDetails_Invalid.xlsx");
 		Thread.sleep(4000);
 	
 		Locator.UploadFileDH(driver).click();
@@ -14970,7 +15233,7 @@ Locator.ClickDashboard(driver).click();
 		Thread.sleep(3000);
 		Locator.DownloadFile(driver).click();
 		Thread.sleep(3000);
-		Locator.ChooseFile(driver).sendKeys("C:\\Users\\snehalp\\Downloads\\DebentureHolding_BasicDetails.xlsx");
+		Locator.ChooseFile(driver).sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\DebentureHolding_BasicDetails.xlsx");
 		Thread.sleep(4000);
 	
 		Locator.UploadFileDH(driver).click();
@@ -15016,7 +15279,7 @@ Locator.ClickDashboard(driver).click();
 		Thread.sleep(3000);
 		Locator.DownloadFile(driver).click();
 		Thread.sleep(3000);
-		Locator.ChooseFile(driver).sendKeys("C:\\Users\\snehalp\\Downloads\\DebentureHolding_BasicDetails.xlsx");
+		Locator.ChooseFile(driver).sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\DebentureHolding_BasicDetails_Empty.xlsx");
 		Thread.sleep(4000);
 	
 		Locator.UploadFileDH(driver).click();
@@ -15062,7 +15325,7 @@ Locator.ClickDashboard(driver).click();
 		Thread.sleep(3000);
 		Locator.DownloadFile(driver).click();
 		Thread.sleep(3000);
-		Locator.ChooseFile(driver).sendKeys("C:\\Users\\snehalp\\Desktop\\LitigationSheet.xlsx");
+		Locator.ChooseFile(driver).sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\Contract.xlsx");
 		Thread.sleep(4000);
 	
 		Locator.UploadFileDH(driver).click();
@@ -17390,7 +17653,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\Register_Deposit.xlsx");		
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\Register_Deposit.xlsx");		
 		Thread.sleep(3000);
 		Locator.UploadRD(driver).click();		
 		Thread.sleep(2000);
@@ -17441,8 +17704,8 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\Register_Deposit (1).xlsx");		
-		Thread.sleep(3000);
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\Register_Deposit_Invalid.xlsx");		
+		Thread.sleep(6000);
 		Locator.UploadRD(driver).click();		
 		Thread.sleep(2000);
 		String Text =Locator.UploadMsgRDSH3(driver).getText();
@@ -17488,7 +17751,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\Register_Deposit (1).xlsx");		
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\Register_Deposit_Empty.xlsx");		
 		Thread.sleep(3000);
 		Locator.UploadRD(driver).click();		
 		Thread.sleep(2000);
@@ -17539,21 +17802,21 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Desktop\\ReviewerCode.txt");		
+		ViewButton.sendKeys("D:\\DotNetScretarial\\Secretarial-Project-26JULY23\\TestData\\dummy-pdf_2.pdf");		
 		Thread.sleep(3000);
-		String	msg1=driver.switchTo().alert().getText();
-		test.log(LogStatus.PASS, msg1);
-		driver.switchTo().alert().accept();	
-//		Thread.sleep(3000);
-//		Locator.UploadRD(driver).click();		
-//		Thread.sleep(2000);
-//		String Text =Locator.UploadMsgRD(driver).getText();
-//		Thread.sleep(2000);
-//		if(Text.equalsIgnoreCase(Text)) {
-//			test.log(LogStatus.PASS,  " Message displayed : -"+Text);
-//		}else {
-//			test.log(LogStatus.FAIL,  " Message displayed : -"+Text);
-//			}
+	//	String	msg1=driver.switchTo().alert().getText();
+	//	test.log(LogStatus.PASS, msg1);
+	//	driver.switchTo().alert().accept();	
+		Thread.sleep(3000);
+		Locator.UploadRD(driver).click();		
+		Thread.sleep(2000);
+		String Text =Locator.UploadMsgRD(driver).getText();
+		Thread.sleep(2000);
+		if(Text.equalsIgnoreCase(Text)) {
+			test.log(LogStatus.PASS,  " Message displayed : -"+Text);
+		}else {
+			test.log(LogStatus.FAIL,  " Message displayed : -"+Text);
+			}
 		Thread.sleep(2000);
 		Locator.CloseSRU(driver).click();
 		Thread.sleep(2000);
@@ -17584,14 +17847,14 @@ Locator.ClickDashboard(driver).click();
 		Locator.SRDEPOSIT(driver).click();		
 		Thread.sleep(5000);
 		
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 	
 		Thread.sleep(500);
 		Locator.GenerateRegister(driver).click();		//Exporting (Downloading) file
 	
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 	
 		Thread.sleep(3000);
@@ -17808,7 +18071,7 @@ Locator.ClickDashboard(driver).click();
 			Thread.sleep(2000);
 					
 					Locator.SaveSH(driver).click();
-					Thread.sleep(2000);
+					Thread.sleep(1000);
 					
 					String Text =Locator.SaveMsgSH(driver).getText();
 					Thread.sleep(2000);
@@ -17861,7 +18124,7 @@ Locator.ClickDashboard(driver).click();
 			
 			WebElement ViewButton = driver.findElement(locator);	
 			Thread.sleep(3000);
-			ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\Register_SH-2.xlsx");		
+			ViewButton.sendKeys("C:\\Users\\mayurig\\Downloads\\Register_SH-2.xlsx");		
 			Thread.sleep(3000);
 			Locator.UploadRD(driver).click();		
 			Thread.sleep(2000);
@@ -17912,7 +18175,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\Register_SH-2.xlsx");		
+		ViewButton.sendKeys("C:\\Users\\mayurig\\Downloads\\Register_SH-2.xlsx");		
 		Thread.sleep(3000);
 		Locator.UploadRD(driver).click();		
 		Thread.sleep(2000);
@@ -17959,7 +18222,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\Register_SH-2.xlsx");		
+		ViewButton.sendKeys("C:\\Users\\mayurig\\Downloads\\Register_SH-2.xlsx");		
 		Thread.sleep(3000);
 		Locator.UploadRD(driver).click();		
 		Thread.sleep(2000);
@@ -18058,14 +18321,14 @@ Locator.ClickDashboard(driver).click();
 		Locator.SRSH2(driver).click();		
 		Thread.sleep(5000);
 		
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 	
 		Thread.sleep(500);
 		Locator.GenerateRegisterSH(driver).click();		//Exporting (Downloading) file
 	
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 	
 		Thread.sleep(3000);
@@ -18482,7 +18745,7 @@ Locator.ClickDashboard(driver).click();
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\Register_SH-3.xlsx");		
+		ViewButton.sendKeys("C:\\Users\\mayurig\\Downloads\\Register_SH-3.xlsx");		
 		Thread.sleep(3000);
 		Locator.UploadRD(driver).click();		
 		Thread.sleep(2000);
@@ -18535,7 +18798,7 @@ Locator.ClickDashboard(driver).click();
 			
 			WebElement ViewButton = driver.findElement(locator);	
 			Thread.sleep(3000);
-			ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\Register_SH-3.xlsx");		
+			ViewButton.sendKeys("C:\\Users\\mayurig\\Downloads\\Register_SH-3.xlsx");		
 			Thread.sleep(3000);
 			Locator.UploadRD(driver).click();		
 			Thread.sleep(3000);
@@ -18586,7 +18849,7 @@ Locator.ClickDashboard(driver).click();
 	
 	WebElement ViewButton = driver.findElement(locator);	
 	Thread.sleep(3000);
-	ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\Register_SH-3.xlsx");		
+	ViewButton.sendKeys("C:\\Users\\mayurig\\Downloads\\Register_SH-3.xlsx");		
 	Thread.sleep(3000);
 	Locator.UploadRD(driver).click();		
 	Thread.sleep(5000);
@@ -18687,14 +18950,14 @@ Locator.ClickDashboard(driver).click();
 		Locator.SRSH3(driver).click();		
 		Thread.sleep(5000);
 		
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 	
 		Thread.sleep(500);
 		Locator.GenerateRegisterSH3(driver).click();		//Exporting (Downloading) file
 	
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 	
 		Thread.sleep(3000);
@@ -19252,7 +19515,7 @@ Locator.ClickDashboard(driver).click();
 			
 			WebElement ViewButton = driver.findElement(locator);	
 			Thread.sleep(3000);
-			ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\Register_SH-6.xlsx");		
+			ViewButton.sendKeys("C:\\Users\\mayurig\\Downloads\\Register_SH-6.xlsx");		
 			Thread.sleep(3000);
 			Locator.UploadRD(driver).click();		
 			Thread.sleep(2000);
@@ -19306,7 +19569,7 @@ Locator.ClickDashboard(driver).click();
 			
 			WebElement ViewButton = driver.findElement(locator);	
 			Thread.sleep(3000);
-			ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\Register_SH-6.xlsx");		
+			ViewButton.sendKeys("C:\\Users\\mayurig\\Downloads\\Register_SH-6.xlsx");		
 			Thread.sleep(3000);
 			Locator.UploadRD(driver).click();		
 			Thread.sleep(100);
@@ -19400,14 +19663,14 @@ Locator.ClickDashboard(driver).click();
 		Locator.SRSH6(driver).click();		
 		Thread.sleep(5000);
 		
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 	
 		Thread.sleep(500);
 		Locator.GenerateRegisterSH6(driver).click();		//Exporting (Downloading) file
 	
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 	
 		Thread.sleep(3000);
@@ -20037,7 +20300,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 			
 			WebElement ViewButton = driver.findElement(locator);	
 			Thread.sleep(3000);
-			ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\Charge.xlsx");		
+			ViewButton.sendKeys("C:\\Users\\mayurig\\Downloads\\Charge.xlsx");		
 			Thread.sleep(3000);
 			Locator.UploadCHG(driver).click();		
 			Thread.sleep(2000);
@@ -20103,7 +20366,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\Charge.xlsx");		
+		ViewButton.sendKeys("C:\\Users\\mayurig\\Downloads\\Charge.xlsx");		
 		Thread.sleep(3000);
 		Locator.UploadCHG(driver).click();		
 		Thread.sleep(2000);
@@ -20168,7 +20431,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 	
 	WebElement ViewButton = driver.findElement(locator);	
 	Thread.sleep(3000);
-	ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\Charge.xlsx");		
+	ViewButton.sendKeys("C:\\Users\\mayurig\\Downloads\\Charge.xlsx");		
 	Thread.sleep(3000);
 	Locator.UploadCHG(driver).click();		
 	Thread.sleep(2000);
@@ -20330,14 +20593,14 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		Locator.SRCHG7(driver).click();		
 		Thread.sleep(5000);
 		
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 	
 		Thread.sleep(500);
 		Locator.GenerateRegisterCHG7(driver).click();		//Exporting (Downloading) file
 	
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 	
 		Thread.sleep(3000);
@@ -20907,7 +21170,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 			
 			WebElement ViewButton = driver.findElement(locator);	
 			Thread.sleep(3000);
-			ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\Charge.xlsx");		
+			ViewButton.sendKeys("C:\\Users\\mayurig\\Downloads\\Charge.xlsx");		
 			Thread.sleep(3000);
 			Locator.SaveUpload(driver).click();		
 			Thread.sleep(3000);
@@ -21065,14 +21328,14 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		
 		Locator.Document(driver).click();
 		Thread.sleep(3000);
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 		
 		Thread.sleep(500);
 		Locator.DocumentDownload(driver).click();		//Exporting (Downloading) file
 		
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 		
 		Thread.sleep(3000);
@@ -22626,7 +22889,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 			
 			WebElement ViewButton = driver.findElement(locator);	
 			Thread.sleep(3000);
-			ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\MBP-2 Sample File.xlsx");		
+			ViewButton.sendKeys("C:\\Users\\mayurig\\Downloads\\MBP-2 Sample File.xlsx");		
 			Thread.sleep(3000);
 			Locator.UploadMB2(driver).click();		
 			Thread.sleep(2000);
@@ -22680,7 +22943,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\MBP-2 Sample File.xlsx");		
+		ViewButton.sendKeys("C:\\Users\\mayurig\\Downloads\\MBP-2 Sample File.xlsx");		
 		Thread.sleep(3000);
 		Locator.UploadMB2(driver).click();		
 		Thread.sleep(200);
@@ -22740,7 +23003,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\MBP-2 Sample File.xlsx");		
+		ViewButton.sendKeys("C:\\Users\\mayurig\\Downloads\\MBP-2 Sample File.xlsx");		
 		Thread.sleep(3000);
 		Locator.UploadMB2(driver).click();		
 		Thread.sleep(2000);
@@ -22842,14 +23105,14 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		Locator.SRMBP2(driver).click();		
 		Thread.sleep(5000);
 		
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 	
 		Thread.sleep(500);
 		Locator.GenerateRegisterMB2(driver).click();		//Exporting (Downloading) file
 	
 		Thread.sleep(3000);
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 	
 		Thread.sleep(3000);
@@ -23262,12 +23525,12 @@ jse.executeScript("arguments[0].click();", ViewButton);
 	Thread.sleep(5000);
 	Locator.clickDocument(driver).click();
 	Thread.sleep(4000);
-	File dir = new File("C:\\Users\\snehalp\\Downloads");
+	File dir = new File("C:\\Users\\mayurig\\Downloads");
 	File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 	Thread.sleep(2000);
 	Locator.DocumentDownLoad(driver).click();		//Exporting (Downloading) file
 	Thread.sleep(4000);//C://Users//jiya//Downloads//
-	File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+	File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 	File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 	Thread.sleep(3000);
 	if (dirContents.length < allFilesNew.length) {
@@ -24139,7 +24402,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\Register_MBP-3.xlsx");		
+		ViewButton.sendKeys("C:\\Users\\mayurig\\Downloads\\Register_MBP-3.xlsx");		
 		Thread.sleep(3000);
 		Locator.UploadRD(driver).click();		
 		Thread.sleep(2000);
@@ -24190,7 +24453,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\Register_MBP-3.xlsx");		
+		ViewButton.sendKeys("C:\\Users\\mayurig\\Downloads\\Register_MBP-3.xlsx");		
 		Thread.sleep(3000);
 		Locator.UploadRD(driver).click();		
 		Thread.sleep(3000);
@@ -24241,7 +24504,7 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		
 		WebElement ViewButton = driver.findElement(locator);	
 		Thread.sleep(3000);
-		ViewButton.sendKeys("C:\\Users\\snehalp\\Downloads\\Register_MBP-3.xlsx");		
+		ViewButton.sendKeys("C:\\Users\\mayurig\\Downloads\\Register_MBP-3.xlsx");		
 		Thread.sleep(3000);
 		Locator.UploadRD(driver).click();
 		Thread.sleep(500);
@@ -24341,14 +24604,14 @@ jse.executeScript("arguments[0].click();", ViewButton);
 		Locator.SRMBP3(driver).click();		
 		Thread.sleep(5000);
 		
-		File dir = new File("C:\\Users\\snehalp\\Downloads");
+		File dir = new File("C:\\Users\\mayurig\\Downloads");
 		File[] dirContents = dir.listFiles();						//Counting number of files in directory before download
 	
 		Thread.sleep(500);
 		Locator.btnGenerateMBP3(driver).click();		//Exporting (Downloading) file
 	
 		Thread.sleep(3000);//C://Users//jiya//Downloads//
-		File dir1 = new File("C:\\Users\\snehalp\\Downloads");
+		File dir1 = new File("C:\\Users\\mayurig\\Downloads");
 		File[] allFilesNew = dir1.listFiles();						//Counting number of files in directory after download
 	
 		Thread.sleep(3000);

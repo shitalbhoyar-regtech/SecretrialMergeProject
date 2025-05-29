@@ -30,7 +30,7 @@ private static List<WebElement> elementsList = null;
 	public static XSSFSheet ReadExcel() throws IOException
 	{
 		//String workingDir = System.getProperty("user.dir");
-		fis = new FileInputStream("D:\\dotNetSecreterial\\Secretarial-Project-26JULY23\\TestData\\SecreterialSheet3.xlsx");
+		fis = new FileInputStream("C:\\Users\\Admin\\Desktop\\Snehal\\ComplianceLatest\\Secreterial\\TestData\\SecreterialSheet3.xlsx");
 		
 		workbook = new XSSFWorkbook(fis);
 		sheet = workbook.getSheetAt(0);					//Retrieving second sheet of Workbook
@@ -43,8 +43,8 @@ private static List<WebElement> elementsList = null;
 		//JavascriptExecutor js = (JavascriptExecutor) driver;
 		Thread.sleep(2000);
 	    Locator.selectImg(driver).click();
-//		Thread.sleep(2000);
-//	     Locator.ClickMaster(driver).click();
+		Thread.sleep(2000);
+	     Locator.ClickMaster(driver).click();
 	    
 		//js.executeScript("window.scrollBy(0,500)");
 		//js.executeScript("document.querySelector("div[id='ascrail2001'] div").scrollLeft=5000");
@@ -113,8 +113,8 @@ private static List<WebElement> elementsList = null;
 		
 		Thread.sleep(2000);
 	    Locator.selectImg(driver).click();
-//		Thread.sleep(2000);
-//	     Locator.ClickMaster(driver).click();
+		Thread.sleep(2000);
+	     Locator.ClickMaster(driver).click();
 	    
 		//js.executeScript("window.scrollBy(0,500)");
 		//js.executeScript("document.querySelector("div[id='ascrail2001'] div").scrollLeft=5000");
@@ -128,8 +128,7 @@ private static List<WebElement> elementsList = null;
 			Thread.sleep(2000);
 			Locator.clickFirstName(driver).clear();
 			Thread.sleep(2000);
-			 Thread.sleep(2000);
-			    XSSFSheet sheet = ReadExcel();
+		    
 			Row row4 = sheet.getRow(13);						//Selected 1st index row (Second row)
 			Cell c4 = row4.getCell(1);						//Selected cell (1 row,1 column)
 			String Firstname1 = c4.getStringCellValue();			//Got the URL stored at position 1,1
@@ -160,8 +159,8 @@ private static List<WebElement> elementsList = null;
 		
 		Thread.sleep(2000);
 	    Locator.selectImg(driver).click();
-//		Thread.sleep(2000);
-//	     Locator.ClickMaster(driver).click();
+		Thread.sleep(2000);
+	     Locator.ClickMaster(driver).click();
 	    
 		//js.executeScript("window.scrollBy(0,500)");
 		//js.executeScript("document.querySelector("div[id='ascrail2001'] div").scrollLeft=5000");
@@ -169,9 +168,9 @@ private static List<WebElement> elementsList = null;
 		Thread.sleep(3000);
 	    Locator.clickUser(driver).click();		
 		Thread.sleep(2000);
-		Locator.ClickFilter(driver).sendKeys("rohit.korde@tlregtech.com");
+		Locator.ClickFilter(driver).sendKeys("Director");
 				
-		String msg="rohit.korde@tlregtech.com";
+		String msg="Director";
 				
 		if(msg.equalsIgnoreCase(msg))
 		{
@@ -189,8 +188,8 @@ private static List<WebElement> elementsList = null;
 				//Without Entering data 
 		Thread.sleep(2000);
 	    Locator.selectImg(driver).click();
-//		Thread.sleep(2000);
-//	     Locator.ClickMaster(driver).click();
+		Thread.sleep(2000);
+	     Locator.ClickMaster(driver).click();
 	    
 		//js.executeScript("window.scrollBy(0,500)");
 		//js.executeScript("document.querySelector("div[id='ascrail2001'] div").scrollLeft=5000");
@@ -222,8 +221,8 @@ private static List<WebElement> elementsList = null;
 					//Enter invalid data
 	               Thread.sleep(2000);
                     Locator.selectImg(driver).click();
-//	               Thread.sleep(2000);
-//                   Locator.ClickMaster(driver).click();
+	               Thread.sleep(2000);
+                   Locator.ClickMaster(driver).click();
     
 	
   

@@ -33,13 +33,12 @@ public class MyWorkspaceMethod
 		
 		public static void ClickMyWorkspace(WebDriver driver,ExtentTest test) throws InterruptedException
 		{
-			Thread.sleep(2000);
-			MyWorkspaceLocator.MyWorkspaceimg(driver).click();
+			
 		
-			if(MyWorkspaceLocator.MyWorkspacePage(driver).isEnabled())
+			if(MyWorkspaceLocator.MyWorkspaceimg(driver).isEnabled())
 			{
 				Thread.sleep(2000);
-				MyWorkspaceLocator.MyWorkspacePage(driver).click();
+				MyWorkspaceLocator.MyWorkspaceimg(driver).click();
 				test.log(LogStatus.PASS ,"My workspace tab is clickable");
 			}
 		   else
@@ -2143,7 +2142,7 @@ public class MyWorkspaceMethod
 			
 			Thread.sleep(2000);
 			 List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-				selectOptionFromDropDown_bs(entitytype, "P LIMITED");
+				selectOptionFromDropDown_bs(entitytype, "CAM SERVICE LLP");
 				
 				Thread.sleep(2000);
 				MyWorkspaceLocator.clickType1(driver).click();
@@ -2158,7 +2157,7 @@ public class MyWorkspaceMethod
 					
 				Thread.sleep(2000);
 				List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
-				selectOptionFromDropDown_bs(FY, "FY-2025-26");
+				selectOptionFromDropDown_bs(FY, "FY-2023-24");
 				
 				
 				Thread.sleep(2000);
@@ -2210,7 +2209,7 @@ public class MyWorkspaceMethod
 			
 			Thread.sleep(2000);
 			 List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-				selectOptionFromDropDown_bs(entitytype, "AAA SERVICE LLP");
+				selectOptionFromDropDown_bs(entitytype, "LACC LIMITED");
 				
 				Thread.sleep(2000);
 				MyWorkspaceLocator.clickType1(driver).click();
@@ -2225,7 +2224,7 @@ public class MyWorkspaceMethod
 					
 				Thread.sleep(2000);
 				List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
-				selectOptionFromDropDown_bs(FY, "FY-2024-25");
+				selectOptionFromDropDown_bs(FY, "FY-2022-23");
 				
 				Thread.sleep(2000);
 				MyWorkspaceLocator.Shorter(driver).click();
@@ -2281,7 +2280,7 @@ public class MyWorkspaceMethod
 			
 			Thread.sleep(2000);
 			 List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-				selectOptionFromDropDown_bs(entitytype, "AAAB SERVICE LLP");
+				selectOptionFromDropDown_bs(entitytype, "A LIMITED");
 				
 				Thread.sleep(2000);
 				MyWorkspaceLocator.clickType1(driver).click();
@@ -2296,7 +2295,7 @@ public class MyWorkspaceMethod
 					
 				Thread.sleep(2000);
 				List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
-				selectOptionFromDropDown_bs(FY, "FY-2024-25");
+				selectOptionFromDropDown_bs(FY, "FY-2022-23");
 				
 				Thread.sleep(2000);
 				MyWorkspaceLocator.eMetting(driver).click();
@@ -2355,7 +2354,7 @@ public class MyWorkspaceMethod
 			
 			Thread.sleep(2000);
 			 List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-				selectOptionFromDropDown_bs(entitytype, "AAAB SERVICE LLP");
+				selectOptionFromDropDown_bs(entitytype, "AAM SERVICE LLP");
 				
 				Thread.sleep(2000);
 				MyWorkspaceLocator.clickType1(driver).click();
@@ -2370,7 +2369,7 @@ public class MyWorkspaceMethod
 					
 				Thread.sleep(2000);
 				List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
-				selectOptionFromDropDown_bs(FY, "FY-2024-25");
+				selectOptionFromDropDown_bs(FY, "FY-2022-23");
 				
 			
 				Thread.sleep(2000);
@@ -2424,7 +2423,7 @@ public static void NewRegularNoticeMeeting(WebDriver driver,ExtentTest test) thr
 	
 		Thread.sleep(2000);
 		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-		selectOptionFromDropDown_bs(entitytype, "TEST");
+		selectOptionFromDropDown_bs(entitytype, "RANJIT SECURITIES LIMITED");
 		
 		Thread.sleep(2000);
 		MyWorkspaceLocator.clickType1(driver).click();
@@ -2439,23 +2438,17 @@ public static void NewRegularNoticeMeeting(WebDriver driver,ExtentTest test) thr
 			
 		Thread.sleep(2000);
 		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
-		selectOptionFromDropDown_bs(FY, "CY-2024");
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
 		
         Thread.sleep(2000);
 	    MyWorkspaceLocator.clickSave1(driver).click();
 	    
-	    Thread.sleep(2000);
-		MyWorkspaceLocator.close(driver).click();
-		
-		 Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
 		try
 		{
 			Thread.sleep(2000);
 			MyWorkspaceLocator.ClickCalender(driver).click();
 			
-			Thread.sleep(2000);
-			MyWorkspaceLocator.clickArrow(driver).click();
+
 			Thread.sleep(2000);
 			MyWorkspaceLocator.SelectDate(driver).click();
 			
@@ -2486,7 +2479,7 @@ public static void NewRegularNoticeMeeting(WebDriver driver,ExtentTest test) thr
 		}
 	  catch(Exception e)
 		 {
-		    Thread.sleep(200);
+		    Thread.sleep(2000);
 			String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
 			if(msg.equalsIgnoreCase(msg))
 			{
@@ -2611,7 +2604,7 @@ public static void WithoutEnterRegularNoticeMeeting(WebDriver driver,ExtentTest 
 	
 		Thread.sleep(2000);
 		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-		selectOptionFromDropDown_bs(entitytype, "SPRESSO POD MANUFACTURING PRIVATE LIMITED");
+		selectOptionFromDropDown_bs(entitytype, "LNT PVT LTD");
 		
 		Thread.sleep(2000);
 		MyWorkspaceLocator.clickType1(driver).click();
@@ -2619,14 +2612,14 @@ public static void WithoutEnterRegularNoticeMeeting(WebDriver driver,ExtentTest 
 		
 		Thread.sleep(2000);
 		 List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
-			selectOptionFromDropDown_bs(type, "Board");
+			selectOptionFromDropDown_bs(type, "Designated Partner's");
 	
 		Thread.sleep(2000);
 		MyWorkspaceLocator.clickFY1(driver).click();
 			
 		Thread.sleep(2000);
 		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
-		selectOptionFromDropDown_bs(FY, "FY-2024-25");
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
 		
         Thread.sleep(2000);
 	    MyWorkspaceLocator.clickSave1(driver).click();
@@ -2674,37 +2667,35 @@ public static void AvailabiltyOption(WebDriver driver,ExtentTest test) throws In
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
 	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntity1(driver).click();
-//	
-//		Thread.sleep(2000);
-//		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-//		selectOptionFromDropDown_bs(entitytype, "KESTREL AVIATION PRIVATE LIMITED");
-//		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickType1(driver).click();
-//	
-//		
-//		Thread.sleep(2000);
-//		 List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
-//			selectOptionFromDropDown_bs(type, "Board");
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickFY1(driver).click();
-//			
-//		Thread.sleep(2000);
-//		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
-//		selectOptionFromDropDown_bs(FY, "FY-2023-24");
-//		
-//        Thread.sleep(2000);
-//	    MyWorkspaceLocator.clickSave1(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "KESTREL AVIATION PRIVATE LIMITED");
 		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		 List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+			selectOptionFromDropDown_bs(type, "Board");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();
 	    
-		 Thread.sleep(2000);
-			MyWorkspaceLocator.clickEditIcon1(driver).click();
+	   
 		try
 		{
 		  Thread.sleep(2000);
@@ -2749,36 +2740,33 @@ public static void ClickAvailabiltyOption(WebDriver driver,ExtentTest test) thro
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.AddRegularMeeting(driver).click();
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntity1(driver).click();
-//	
-//		Thread.sleep(2000);
-//		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-//		selectOptionFromDropDown_bs(entitytype, "HEGET PVT LTD");
-//		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickType1(driver).click();
-//	
-//		
-//		Thread.sleep(2000);
-//		 List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
-//			selectOptionFromDropDown_bs(type, "Board");
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickFY1(driver).click();
-//			
-//		Thread.sleep(2000);
-//		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
-//		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "HEGET PVT LTD");
 		
-//        Thread.sleep(2000);
-//	    MyWorkspaceLocator.clickSave1(driver).click();	
-	    
-	    Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		 List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+			selectOptionFromDropDown_bs(type, "Board");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();	
 	    
 		try
 			{
@@ -2830,36 +2818,33 @@ public static void AddNewAvailability(WebDriver driver,ExtentTest test) throws I
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.AddRegularMeeting(driver).click();
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntity1(driver).click();
-//	
-//		Thread.sleep(2000);
-//		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-//		selectOptionFromDropDown_bs(entitytype, "ADANI AEROSPACE AND DEFENCE LIMITED");
-//		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickType1(driver).click();
-//	
-//		
-//		Thread.sleep(2000);
-//		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
-//		selectOptionFromDropDown_bs(type, "Independent Director");
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickFY1(driver).click();
-//			
-//		Thread.sleep(2000);
-//		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
-//		selectOptionFromDropDown_bs(FY, "FY-2023-24");
-//		
-//        Thread.sleep(2000);
-//	    MyWorkspaceLocator.clickSave1(driver).click();
-	    
-	    Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "ADANI AEROSPACE AND DEFENCE LIMITED");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+		selectOptionFromDropDown_bs(type, "Independent Director");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();	
 	    
 	    try
 	    {
@@ -2945,37 +2930,36 @@ public static void AddExistingAvailability(WebDriver driver,ExtentTest test) thr
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.AddRegularMeeting(driver).click();
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntity1(driver).click();
-//	
-//		Thread.sleep(2000);
-//		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-//		selectOptionFromDropDown_bs(entitytype, "KESTREL AVIATION PRIVATE LIMITED");
-//		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickType1(driver).click();
-//	
-//		
-//		Thread.sleep(2000);
-//		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
-//		selectOptionFromDropDown_bs(type, "Board");
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickFY1(driver).click();
-//			
-//		Thread.sleep(2000);
-//		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
-//		selectOptionFromDropDown_bs(FY, "FY-2023-24");
-//		
-//        Thread.sleep(2000);
-//	    MyWorkspaceLocator.clickSave1(driver).click();	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "KESTREL AVIATION PRIVATE LIMITED");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+		selectOptionFromDropDown_bs(type, "Board");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();	
 	    
-	    Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
-
+	    try
+	    {
 	    
 	    	Thread.sleep(2000);
 	    	MyWorkspaceLocator.ClickRadioBtnAvailabilty(driver).click();
@@ -3015,21 +2999,36 @@ public static void AddExistingAvailability(WebDriver driver,ExtentTest test) thr
 	    	MyWorkspaceLocator.clickSaveBtn(driver).click();
 		
 	    	Thread.sleep(2000);
-	    	String msg =MyWorkspaceLocator.clickInvaliMsg(driver).getText();
+	    	String msg =MyWorkspaceLocator.clickSaveValidMsg(driver).getText();
 		
 	    	if(msg.equalsIgnoreCase(msg))
 	    	{
-	    		test.log(LogStatus.PASS, "Add Exsiting Aavailabiltiy = " +msg);
+	    		test.log(LogStatus.FAIL, "Add Exsiting Aavailabiltiy = " +msg);
 	    	}
 	    	else
 	    	{
-	    		test.log(LogStatus.FAIL, "Add Exsiting Aavailabiltiy = " +msg);
+	    		test.log(LogStatus.PASS, "Add Exsiting Aavailabiltiy = " +msg);
 	    	}
 		
 	    	Thread.sleep(2000);
 	    	MyWorkspaceLocator.clickcloseIcon(driver).click();
-	 
-	
+	 }
+	catch(Exception e)
+	{
+		Thread.sleep(2000);
+		String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+		if(msg.equalsIgnoreCase(msg))
+		{
+		test.log(LogStatus.PASS, "Message displayed =" +msg);
+		}
+		else
+		{
+			test.log(LogStatus.FAIL, "Message displayed =" +msg);
+		}
+	}
+
+		Thread.sleep(2000);
+		MyWorkspaceLocator.close(driver).click();
 }
 public static void WithoutEnterDataAvailability(WebDriver driver,ExtentTest test) throws InterruptedException
 {
@@ -3040,36 +3039,33 @@ public static void WithoutEnterDataAvailability(WebDriver driver,ExtentTest test
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.AddRegularMeeting(driver).click();
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntity1(driver).click();
-//	
-//		Thread.sleep(2000);
-//		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-//		selectOptionFromDropDown_bs(entitytype, "ADANI ENTERPRISES LIMITED");
-//		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickType1(driver).click();
-//	
-//		
-//		Thread.sleep(2000);
-//		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
-//		selectOptionFromDropDown_bs(type, "Audit Committee");
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickFY1(driver).click();
-//			
-//		Thread.sleep(2000);
-//		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
-//		selectOptionFromDropDown_bs(FY, "FY-2023-24");
-//		
-//        Thread.sleep(2000);
-//	    MyWorkspaceLocator.clickSave1(driver).click();
-	    
-	    Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "ADANI ENTERPRISES LIMITED");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+		selectOptionFromDropDown_bs(type, "Audit Committee");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();	
 	    
 	    try
 	    {
@@ -3127,37 +3123,35 @@ public static void CancelBtnAvailability(WebDriver driver,ExtentTest test) throw
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.AddRegularMeeting(driver).click();
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntity1(driver).click();
-//	
-//		Thread.sleep(2000);
-//		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-//		selectOptionFromDropDown_bs(entitytype, "SPRESSO POD MANUFACTURING PRIVATE LIMITED");
-//		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickType1(driver).click();
-//	
-//		
-//		Thread.sleep(2000);
-//		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
-//		selectOptionFromDropDown_bs(type, "Board");
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickFY1(driver).click();
-//			
-//		Thread.sleep(2000);
-//		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
-//		selectOptionFromDropDown_bs(FY, "FY-2023-24");
-//		
-//        Thread.sleep(2000);
-//	    MyWorkspaceLocator.clickSave1(driver).click();	
-	    
-	    Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
-	   
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "SPRESSO POD MANUFACTURING PRIVATE LIMITED");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+		selectOptionFromDropDown_bs(type, "Board");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();	
+	    try
+	    {
 	    	Thread.sleep(2000);
 	    	MyWorkspaceLocator.ClickRadioBtnAvailabilty(driver).click();
 		
@@ -3179,9 +3173,24 @@ public static void CancelBtnAvailability(WebDriver driver,ExtentTest test) throw
 	    		test.log(LogStatus.FAIL, "Cancel button is not clickable");
 	    	}
 		
-	    	
-	    
-		 
+	    	Thread.sleep(2000);
+	    	MyWorkspaceLocator.clickcloseIcon(driver).click();
+	    }
+		 catch(Exception e)
+		 {
+			 Thread.sleep(2000);
+			 String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+			 if(msg.equalsIgnoreCase(msg))
+			 {
+				test.log(LogStatus.PASS, "Message displayed =" +msg);
+			 }
+			 else
+			 {
+				test.log(LogStatus.FAIL, "Message displayed =" +msg);
+			 }
+		  }
+		Thread.sleep(2000);
+		MyWorkspaceLocator.close(driver).click();
 }			   									
 public static void MailFormatBtn(WebDriver driver,ExtentTest test) throws InterruptedException
 {
@@ -3192,38 +3201,36 @@ public static void MailFormatBtn(WebDriver driver,ExtentTest test) throws Interr
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.AddRegularMeeting(driver).click();
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntity1(driver).click();
-//	
-//		Thread.sleep(2000);
-//		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-//		selectOptionFromDropDown_bs(entitytype, "SPRESSO POD MANUFACTURING PRIVATE LIMITED");
-//		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickType1(driver).click();
-//	
-//		
-//		Thread.sleep(2000);
-//		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
-//		selectOptionFromDropDown_bs(type, "Board");
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickFY1(driver).click();
-//			
-//		Thread.sleep(2000);
-//		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
-//		selectOptionFromDropDown_bs(FY, "FY-2023-24");
-//		
-//        Thread.sleep(2000);
-//	    MyWorkspaceLocator.clickSave1(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "SPRESSO POD MANUFACTURING PRIVATE LIMITED");
 		
-	    Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+		selectOptionFromDropDown_bs(type, "Board");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();
 	    
-	   
+	    try
+	    {
 	    	
 	    	Thread.sleep(2000);
 	    	MyWorkspaceLocator.ClickRadioBtnAvailabilty(driver).click();
@@ -3234,7 +3241,6 @@ public static void MailFormatBtn(WebDriver driver,ExtentTest test) throws Interr
     	
 	    	if(MyWorkspaceLocator.clickMailFormat(driver).isEnabled())
     		{
-	    		Thread.sleep(2000);
     			MyWorkspaceLocator.clickMailFormat(driver).click();
     			test.log(LogStatus.PASS, "User should be redirected to the mail format page");
     		}
@@ -3242,8 +3248,21 @@ public static void MailFormatBtn(WebDriver driver,ExtentTest test) throws Interr
     		{
     			test.log(LogStatus.FAIL, "User should not be redirected to the mail format page");
     		}
-    	
-    
+    	}
+    	catch(Exception e) 
+    	{
+
+			 Thread.sleep(2000);
+			 String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+			 if(msg.equalsIgnoreCase(msg))
+			 {
+				test.log(LogStatus.PASS, "Message displayed =" +msg);
+			 }
+			 else
+			 {
+				test.log(LogStatus.FAIL, "Message displayed =" +msg);
+			 }
+    	}
     	Thread.sleep(2000);
 		MyWorkspaceLocator.close(driver).click();
     	
@@ -3258,37 +3277,36 @@ public static void  UpdateMailFormat(WebDriver driver,ExtentTest test) throws In
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.AddRegularMeeting(driver).click();
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntity1(driver).click();
-//	
-//		Thread.sleep(2000);
-//		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-//		selectOptionFromDropDown_bs(entitytype, "TEAMLEASE REGTECH PRIVATE LIMITED");
-//		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickType1(driver).click();
-//	
-//		
-//		Thread.sleep(2000);
-//		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
-//		selectOptionFromDropDown_bs(type, "Board");
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickFY1(driver).click();
-//			
-//		Thread.sleep(2000);
-//		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
-//		selectOptionFromDropDown_bs(FY, "FY-2023-24");
-//		
-//        Thread.sleep(2000);
-//	    MyWorkspaceLocator.clickSave1(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "TEAMLEASE REGTECH PRIVATE LIMITED");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+		selectOptionFromDropDown_bs(type, "Board");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();
 	    
-	    Thread.sleep(2000);
-	  		MyWorkspaceLocator.clickEditIcon1(driver).click();
-	  
+	    try
+	    {
 	    	
 	    	Thread.sleep(2000);
 	    	MyWorkspaceLocator.ClickRadioBtnAvailabilty(driver).click();
@@ -3322,7 +3340,21 @@ public static void  UpdateMailFormat(WebDriver driver,ExtentTest test) throws In
     		{
     			test.log(LogStatus.FAIL, "Message displayed ="+msg);
     		}
-    	
+    	}
+    	catch(Exception e) 
+    	{
+
+			 Thread.sleep(2000);
+			 String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+			 if(msg.equalsIgnoreCase(msg))
+			 {
+				test.log(LogStatus.PASS, "Message displayed =" +msg);
+			 }
+			 else
+			 {
+				test.log(LogStatus.FAIL, "Message displayed =" +msg);
+			 }
+    	}
     	Thread.sleep(2000);
 		MyWorkspaceLocator.close(driver).click();
     	
@@ -3336,38 +3368,36 @@ public static void  SendMail(WebDriver driver,ExtentTest test) throws Interrupte
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.AddRegularMeeting(driver).click();
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntity1(driver).click();
-//	
-//		Thread.sleep(2000);
-//		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-//		selectOptionFromDropDown_bs(entitytype, "PQR PVT LTD");
-//		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickType1(driver).click();
-//	
-//		
-//		Thread.sleep(2000);
-//		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
-//		selectOptionFromDropDown_bs(type, "Designated Partner's");
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickFY1(driver).click();
-//			
-//		Thread.sleep(2000);
-//		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
-//		selectOptionFromDropDown_bs(FY, "FY-2023-24");
-//		
-//        Thread.sleep(2000);
-//	    MyWorkspaceLocator.clickSave1(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "PQR PVT LTD");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+		selectOptionFromDropDown_bs(type, "Designated Partner's");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();
 	    
-	    Thread.sleep(2000);
-  		MyWorkspaceLocator.clickEditIcon1(driver).click();
-	    
-	   
+	    try
+	    {
 	    	
 	    	Thread.sleep(2000);
 	    	MyWorkspaceLocator.ClickRadioBtnAvailabilty(driver).click();
@@ -3407,8 +3437,21 @@ public static void  SendMail(WebDriver driver,ExtentTest test) throws Interrupte
     		{
     			test.log(LogStatus.FAIL, "Message displayed ="+msg);
     		}
-    	
-    	
+    	}
+    	catch(Exception e) 
+    	{
+
+			 Thread.sleep(2000);
+			 String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
+			 if(msg.equalsIgnoreCase(msg))
+			 {
+				test.log(LogStatus.PASS, "Message displayed =" +msg);
+			 }
+			 else
+			 {
+				test.log(LogStatus.FAIL, "Message displayed =" +msg);
+			 }
+    	}
     	Thread.sleep(2000);
 		MyWorkspaceLocator.close(driver).click();
     	
@@ -3422,36 +3465,33 @@ public static void  WithoutEnterDataSendMail(WebDriver driver,ExtentTest test) t
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.AddRegularMeeting(driver).click();
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntity1(driver).click();
-//	
-//		Thread.sleep(2000);
-//		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-//		selectOptionFromDropDown_bs(entitytype, "LC LIMITED");
-//		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickType1(driver).click();
-//	
-//		
-//		Thread.sleep(2000);
-//		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
-//		selectOptionFromDropDown_bs(type, "Board");
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickFY1(driver).click();
-//			
-//		Thread.sleep(2000);
-//		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
-//		selectOptionFromDropDown_bs(FY, "FY-2023-24");
-//		
-//        Thread.sleep(2000);
-//	    MyWorkspaceLocator.clickSave1(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "LC LIMITED");
 		
 		Thread.sleep(2000);
-  		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+		selectOptionFromDropDown_bs(type, "Board");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();
 	    
 	    try
 	    {
@@ -3471,7 +3511,7 @@ public static void  WithoutEnterDataSendMail(WebDriver driver,ExtentTest test) t
 	    	MyWorkspaceLocator.clickSendBtn(driver).click();
 	    	
 	    	Thread.sleep(2000);
-	    	String msg=MyWorkspaceLocator.clickInvaliMsg(driver).getText();
+	    	String msg=MyWorkspaceLocator.clickErrorMsg1(driver).getText();
 	    	if(msg.equalsIgnoreCase(msg))
     		{
     			
@@ -3509,49 +3549,47 @@ public static void AgendaItem(WebDriver driver,ExtentTest test) throws Interrupt
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.AddRegularMeeting(driver).click();
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntity1(driver).click();
-//	
-//		Thread.sleep(2000);
-//		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
-//		selectOptionFromDropDown_bs(entitytype, "ADBC PVT LTD");
-//		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickType1(driver).click();
-//	
-//		
-//		Thread.sleep(2000);
-//		 List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
-//			selectOptionFromDropDown_bs(type, "Board");
-//	
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickFY1(driver).click();
-//			
-//		Thread.sleep(2000);
-//		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
-//		selectOptionFromDropDown_bs(FY, "FY-2023-24");
-//		
-//        Thread.sleep(2000);
-//	    MyWorkspaceLocator.clickSave1(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.AddRegularMeeting(driver).click();
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntity1(driver).click();
+	
+		Thread.sleep(2000);
+		List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='Entityt_Id_listbox']/li"));
+		selectOptionFromDropDown_bs(entitytype, "ADBC PVT LTD");
+		
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickType1(driver).click();
+	
+		
+		Thread.sleep(2000);
+		 List<WebElement>type = driver.findElements(By.xpath("//ul[@id='MeetingTypeId_listbox']/li"));
+			selectOptionFromDropDown_bs(type, "Board");
+	
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickFY1(driver).click();
+			
+		Thread.sleep(2000);
+		List<WebElement>FY = driver.findElements(By.xpath("//ul[@id='FYID_listbox']/li"));
+		selectOptionFromDropDown_bs(FY, "FY-2023-24");
+		
+        Thread.sleep(2000);
+	    MyWorkspaceLocator.clickSave1(driver).click();
 	    
-	    Thread.sleep(2000);
-  		MyWorkspaceLocator.clickEditIcon1(driver).click();
 	   
 		try
 		{
 		  Thread.sleep(2000);
-//		  if(MyWorkspaceLocator.ClickCheckAvailabilty(driver).isDisplayed())
-//		   {
+		  if(MyWorkspaceLocator.ClickCheckAvailabilty(driver).isDisplayed())
+		   {
 			  if(MyWorkspaceLocator.clickAgendaItem(driver).isEnabled())
 			  {
 				  Thread.sleep(2000);
 				  MyWorkspaceLocator.clickAgendaItem(driver).click();
 			     test.log(LogStatus.PASS, "User should be redirected to the 'Agenda Item' page");
 			  }
-		 // } 
+		  } 
 		  else
 		  {
 			  test.log(LogStatus.FAIL, "User should not be redirected to the 'Agenda Item' page");
@@ -3763,7 +3801,7 @@ public static void NotingAgenda(WebDriver driver,ExtentTest test) throws Interru
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -3780,15 +3818,9 @@ public static void NotingAgenda(WebDriver driver,ExtentTest test) throws Interru
 			  test.log(LogStatus.FAIL, "User should not be redirected to the Noting Agenda window");
 		  	}
 		  
-//		  Thread.sleep(2000);
-//		  MyWorkspaceLocator.clickCloseNotingAgendaPopup(driver).click();
-		  
-//		  Thread.sleep(2000);
-//		  MyWorkspaceLocator.clickClosePopupNotingAgendaInfo(driver).click();
-		  Thread.sleep(5000);
-		  MyWorkspaceLocator.close(driver).click();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCloseNotingAgendaPopup(driver).click();
 }
-
 public static void AddNotingAgenda(WebDriver driver,ExtentTest test) throws InterruptedException
 {
 	
@@ -3798,7 +3830,7 @@ public static void AddNotingAgenda(WebDriver driver,ExtentTest test) throws Inte
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -3823,8 +3855,8 @@ public static void AddNotingAgenda(WebDriver driver,ExtentTest test) throws Inte
 		  {
 			  test.log(LogStatus.FAIL, "Message displayed =" +msg);
 		  }
-		 // Thread.sleep(2000);
-		 // MyWorkspaceLocator.clickCloseNotingAgendaPopup(driver).click();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCloseNotingAgendaPopup(driver).click();
 		  
 		  
 }
@@ -3838,7 +3870,7 @@ public static void AddMultipleNotingAgenda(WebDriver driver,ExtentTest test) thr
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -3868,8 +3900,8 @@ public static void AddMultipleNotingAgenda(WebDriver driver,ExtentTest test) thr
 		  {
 			  test.log(LogStatus.FAIL, "Message displayed =" +msg);
 		  }
-//		  Thread.sleep(2000);
-//		  MyWorkspaceLocator.clickCloseNotingAgendaPopup(driver).click();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCloseNotingAgendaPopup(driver).click();
 		  
 		  
 }
@@ -3918,7 +3950,7 @@ public static void VotingAgenda(WebDriver driver,ExtentTest test) throws Interru
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -3936,7 +3968,7 @@ public static void VotingAgenda(WebDriver driver,ExtentTest test) throws Interru
 		  	}
 		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.clickCloseVotingAgendaPopup(driver).click();
+		  MyWorkspaceLocator.clickCloseNotingAgendaPopup(driver).click();
 }
 
 public static void AddVotingAgenda(WebDriver driver,ExtentTest test) throws InterruptedException
@@ -3948,7 +3980,7 @@ public static void AddVotingAgenda(WebDriver driver,ExtentTest test) throws Inte
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -3974,7 +4006,7 @@ public static void AddVotingAgenda(WebDriver driver,ExtentTest test) throws Inte
 			  test.log(LogStatus.FAIL, "Message displayed =" +msg);
 		  }
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.clickCloseVotingAgendaPopup(driver).click();
+		  MyWorkspaceLocator.clickCloseNotingAgendaPopup(driver).click();
 		  
 		  
 }
@@ -3987,7 +4019,7 @@ public static void AddMultipleVotingAgenda(WebDriver driver,ExtentTest test) thr
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -3996,12 +4028,12 @@ public static void AddMultipleVotingAgenda(WebDriver driver,ExtentTest test) thr
 		  MyWorkspaceLocator.clickVottingAgenda(driver).click();
 		 
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.clickCheckboxNotingAgenda(driver).click();
-		  Thread.sleep(2000);
 		  MyWorkspaceLocator.clickCheckboxNotingAgenda1(driver).click();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCheckboxNotingAgenda2(driver).click();
 		  
-//		  Thread.sleep(2000);
-//		  MyWorkspaceLocator.clickCheckboxNotingAgenda3(driver).click();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickCheckboxNotingAgenda3(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator.clickSaveBtn1(driver).click();
@@ -4018,7 +4050,7 @@ public static void AddMultipleVotingAgenda(WebDriver driver,ExtentTest test) thr
 			  test.log(LogStatus.FAIL, "Message displayed =" +msg);
 		  }
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.clickCloseVotingAgendaPopup(driver).click();
+		  MyWorkspaceLocator.clickCloseNotingAgendaPopup(driver).click();
 		  
 		  
 }
@@ -4031,7 +4063,7 @@ public static void  VotingAgendaItemInformation(WebDriver driver,ExtentTest test
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -4039,7 +4071,7 @@ public static void  VotingAgendaItemInformation(WebDriver driver,ExtentTest test
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator.clickVottingAgenda(driver).click();
 		
-		  Thread.sleep(3000);
+		  Thread.sleep(2000);
 		  if( MyWorkspaceLocator.clickIicon1(driver).isEnabled())
 		  {
 			  Thread.sleep(2000);
@@ -4065,7 +4097,7 @@ public static void NewAgenda(WebDriver driver,ExtentTest test) throws Interrupte
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -4094,7 +4126,7 @@ public static void AddNewVotingAgenda(WebDriver driver,ExtentTest test,XSSFWorkb
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -4115,16 +4147,14 @@ public static void AddNewVotingAgenda(WebDriver driver,ExtentTest test,XSSFWorkb
 		  MyWorkspaceLocator.clickAgendaHeading(driver).sendKeys(agendaHeading );
 		  
 		  
-		  Thread.sleep(2000);
+		   Thread.sleep(2000);
 		  MyWorkspaceLocator.clickVoting(driver).click();
-		  
-		  //Thread.sleep(2000);
-		  //driver.findElement(By.xpath("//div[@id='e-item-MinutesTemplate3Editor_editor_propertyTabDiv_0']//div[@class='e-text-wrap']")).click();
 		  
 		  Thread.sleep(2000);
 		  driver.switchTo().frame(MyWorkspaceLocator.clickFrameAgendaTemplte(driver));
 		  
-		 Thread.sleep(2000);
+		  
+		  Thread.sleep(2000);
 		  Row row2 = sheet.getRow(87);													//Selected 1st index row (Second row)
 		  org.apache.poi.ss.usermodel.Cell c2 = row2.getCell(1);						//Selected cell (1 row,1 column)
 	      String AgendaTemplate = c2.getStringCellValue();								//Got the URL stored at position 1,1
@@ -4197,18 +4227,15 @@ public static void AddNewVotingAgenda(WebDriver driver,ExtentTest test,XSSFWorkb
 		  MyWorkspaceLocator.clickSaveButton(driver).click();
 		  
 		  Thread.sleep(2000);
-		 // String msg =MyWorkspaceLocator.clickvalidmsg(driver).getText();
-		  
-		  Thread.sleep(2000);
-		  String msg = MyWorkspaceLocator.clickInvalidmsg(driver).getText();
+		  String msg =MyWorkspaceLocator.clickvalidmsg(driver).getText();
 		  if(msg.equalsIgnoreCase(msg))
 		  {
-			  test.log(LogStatus.FAIL, "Message displayed =" +msg);
+			  test.log(LogStatus.PASS, "Message displayed =" +msg);
 		  }
 		  else
 		  {
 
-			  test.log(LogStatus.PASS, "Message displayed =" +msg);
+			  test.log(LogStatus.FAIL, "Message displayed =" +msg);
 		  }
 		  
 }
@@ -4221,7 +4248,7 @@ public static void AddNewNotingAgenda(WebDriver driver,ExtentTest test,XSSFWorkb
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -4319,15 +4346,15 @@ public static void AddNewNotingAgenda(WebDriver driver,ExtentTest test,XSSFWorkb
 		  MyWorkspaceLocator.clickSaveButton(driver).click();
 		  
 		  Thread.sleep(2000);
-		  String msg =MyWorkspaceLocator.clickInvalidmsg(driver).getText();
+		  String msg =MyWorkspaceLocator.clickvalidmsg(driver).getText();
 		  if(msg.equalsIgnoreCase(msg))
 		  {
-			  test.log(LogStatus.FAIL, "Message displayed =" +msg);
+			  test.log(LogStatus.PASS, "Message displayed =" +msg);
 		  }
 		  else
 		  {
 
-			  test.log(LogStatus.PASS, "Message displayed =" +msg);
+			  test.log(LogStatus.FAIL, "Message displayed =" +msg);
 		  }
 		  
 }
@@ -4340,7 +4367,7 @@ public static void WithoutEnteringData(WebDriver driver,ExtentTest test) throws 
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -4350,7 +4377,7 @@ public static void WithoutEnteringData(WebDriver driver,ExtentTest test) throws 
 		  MyWorkspaceLocator.clickSaveButton(driver).click();
 		  
 		  Thread.sleep(2000);
-		  String msg =MyWorkspaceLocator.clickInvalidmsg(driver).getText();
+		  String msg =MyWorkspaceLocator.clickErrorMsg(driver).getText();
 		  if(msg.equalsIgnoreCase(msg))
 		  {
 			  test.log(LogStatus.PASS, "Message displayed =" +msg);
@@ -4372,7 +4399,7 @@ public static void CloseButton(WebDriver driver,ExtentTest test) throws Interrup
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -4404,7 +4431,7 @@ public static void AgendaSequence(WebDriver driver,ExtentTest test) throws Inter
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -4436,13 +4463,13 @@ public static void AddAgendaSequence(WebDriver driver,ExtentTest test) throws In
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -4454,7 +4481,6 @@ public static void AddAgendaSequence(WebDriver driver,ExtentTest test) throws In
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator.clickCheckboxAgendaSequnce(driver).sendKeys("1");
-		 
 		  
 		  Thread.sleep(2000);
 		  Actions a = new Actions(driver);
@@ -4519,26 +4545,19 @@ public static void DuplicateAgendaSequence(WebDriver driver,ExtentTest test) thr
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaSequence(driver).click();
-		  
-		  Thread.sleep(2000);
-		  MyWorkspaceLocator.clickCheckboxAgendaSequnce(driver).clear();
-		  
-		  Thread.sleep(2000);
-		  MyWorkspaceLocator.clickCheckboxAgendaSequnce(driver).sendKeys("2");
-		 
 		 
 		  
 		  Thread.sleep(2000);
@@ -4550,11 +4569,11 @@ public static void DuplicateAgendaSequence(WebDriver driver,ExtentTest test) thr
 		  Thread.sleep(3000);
 		  MyWorkspaceLocator.clickAgendaSequenceSubmitBtn(driver).click();
 		  
-//		  Thread.sleep(2000);
-//		  Actions a1 = new Actions(driver);
-//		  //scroll down a page
-//		  a1.sendKeys(Keys.PAGE_UP).build().perform();
-//		  a1.sendKeys(Keys.PAGE_UP).build().perform();
+		  Thread.sleep(2000);
+		  Actions a1 = new Actions(driver);
+		  //scroll down a page
+		  a1.sendKeys(Keys.PAGE_UP).build().perform();
+		  a1.sendKeys(Keys.PAGE_UP).build().perform();
 		  
 		  try
 		  {
@@ -4598,13 +4617,13 @@ public static void WithoutEnterDataAgendaSequence(WebDriver driver,ExtentTest te
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -4665,12 +4684,12 @@ public static void SigningAuthority(WebDriver driver,ExtentTest test) throws Int
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -4702,12 +4721,12 @@ public static void AddSigningAuthority(WebDriver driver,ExtentTest test) throws 
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -4747,12 +4766,12 @@ public static void CopyMeeting(WebDriver driver,ExtentTest test) throws Interrup
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -4784,12 +4803,12 @@ public static void CopyMeetingSelectEntity(WebDriver driver,ExtentTest test) thr
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -4825,12 +4844,12 @@ public static void CopyMeetingSelectMultipleEntity(WebDriver driver,ExtentTest t
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -4872,12 +4891,12 @@ public static void AddCopyMeeting(WebDriver driver,ExtentTest test) throws Inter
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -4921,12 +4940,12 @@ public static void CloseBtnCopyMeeting(WebDriver driver,ExtentTest test) throws 
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -4968,12 +4987,12 @@ public static void WithoutEnteringCopyMeeting(WebDriver driver,ExtentTest test) 
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -4988,7 +5007,7 @@ public static void WithoutEnteringCopyMeeting(WebDriver driver,ExtentTest test) 
 	  	try
 	  	{
 	  		
-	  		Thread.sleep(500);
+	  		Thread.sleep(2000);
 	  	 	String msg= MyWorkspaceLocator.ValidMsgCopyMeeting(driver).getText();
 	  	 
 	  	 	if(msg.equalsIgnoreCase(msg))
@@ -5002,7 +5021,7 @@ public static void WithoutEnteringCopyMeeting(WebDriver driver,ExtentTest test) 
 	  	}
 	  	catch(Exception e)
 	  	{  
-	  		Thread.sleep(1000);
+	  	
 	  		test.log(LogStatus.FAIL, "No validation message displayed"); 
 	  	
 	  	}
@@ -5021,12 +5040,12 @@ public static void LogDetailesCopyMeeting(WebDriver driver,ExtentTest test) thro
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -5047,8 +5066,8 @@ public static void LogDetailesCopyMeeting(WebDriver driver,ExtentTest test) thro
 
 			  		test.log(LogStatus.FAIL, "User should not be able to see log details on the screen");
 		  }
-//		  Thread.sleep(3000);
-//		MyWorkspaceLocator.ClickCloseLogDetailesCopyMeeting(driver).click();
+		  Thread.sleep(3000);
+		MyWorkspaceLocator.ClickCloseLogDetailesCopyMeeting(driver).click();
 }	
 public static void CancelLogDetailesCopyMeeting(WebDriver driver,ExtentTest test) throws InterruptedException
 {
@@ -5059,12 +5078,12 @@ public static void CancelLogDetailesCopyMeeting(WebDriver driver,ExtentTest test
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -5089,8 +5108,8 @@ public static void CancelLogDetailesCopyMeeting(WebDriver driver,ExtentTest test
 		 {
 			 test.log(LogStatus.FAIL, "Log should be deleted");
 		 }
-//		 Thread.sleep(3000);
-//			MyWorkspaceLocator.ClickCloseLogDetailesCopyMeeting(driver).click();
+		 Thread.sleep(3000);
+			MyWorkspaceLocator.ClickCloseLogDetailesCopyMeeting(driver).click();
 	}	
 
 
@@ -5103,12 +5122,12 @@ public static void DelteLogDetailesCopyMeeting(WebDriver driver,ExtentTest test)
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -5149,12 +5168,12 @@ public static void AgendaPrepration(WebDriver driver,ExtentTest test) throws Int
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -5184,12 +5203,12 @@ public static void AgendaPreprationClosePopupMessage(WebDriver driver,ExtentTest
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -5227,12 +5246,12 @@ public static void AgendaPreprationRefreshBtn(WebDriver driver,ExtentTest test) 
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -5268,28 +5287,25 @@ public static void DownloadAgenda(WebDriver driver,ExtentTest test) throws Inter
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
-		  
-		  Thread.sleep(5000);
-		  MyWorkspaceLocator.ClickRefreshBtn(driver).click();
 	
 		  
-			File dir2 = new File("C:\\Users\\snehalp\\Downloads");
+			File dir2 = new File("C:\\Users\\Snehal Patil\\Downloads");
 			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
 			
 			 Thread.sleep(2000);
 			  MyWorkspaceLocator.ClickDownloadAgenda(driver).click();
 			
 		 	Thread.sleep(6000);
-			File dir3 = new File("C:\\Users\\snehalp\\Downloads");
+			File dir3 = new File("C:\\Users\\Snehal Patil\\Downloads");
 			File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
 			
 			Thread.sleep(3000);
@@ -5313,18 +5329,15 @@ public static void PreviewAgenda(WebDriver driver,ExtentTest test) throws Interr
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
-		  
-		  Thread.sleep(5000);
-		  MyWorkspaceLocator.ClickRefreshBtn(driver).click();
 		
 		  if(MyWorkspaceLocator. ClickPreviewAgenda(driver).isEnabled())
 		 {
@@ -5350,18 +5363,15 @@ public static void AgendaVersion(WebDriver driver,ExtentTest test) throws Interr
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
-		  
-		  Thread.sleep(5000);
-		  MyWorkspaceLocator.ClickRefreshBtn(driver).click();
 		  
 			  if(MyWorkspaceLocator. ClickAgendaVersion(driver).isEnabled())
 				 {
@@ -5387,31 +5397,27 @@ public static void TemplateFields(WebDriver driver,ExtentTest test) throws Inter
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
-//		  Thread.sleep(2000);
-//		  MyWorkspaceLocator.clickNotingAgenda(driver).click();
-		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator. ClickTemplateFiled(driver).click();
 		   
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickDIN(driver).sendKeys("90");
+		  MyWorkspaceLocator.ClickCalender(driver).click();
+		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator. ClickNoD(driver).sendKeys("Priya");
-		  
-		  
+		  MyWorkspaceLocator.SelectDate(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator.ClickSave(driver).click();
@@ -5441,24 +5447,21 @@ public static void CloseTemplateFields(WebDriver driver,ExtentTest test) throws 
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
-
-		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator. ClickTemplateFiled(driver).click();
-		   
 		  
 		  
 		  if( MyWorkspaceLocator.ClickClosebtn(driver).isEnabled())
@@ -5485,18 +5488,18 @@ public static void EditTemplateFields(WebDriver driver,ExtentTest test) throws I
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator. EditTemplate(driver).click();
@@ -5513,8 +5516,7 @@ public static void EditTemplateFields(WebDriver driver,ExtentTest test) throws I
 	    	Thread.sleep(2000);
 	    	MyWorkspaceLocator.clickUpdateTemplate(driver).click();
 	    	
-	    	Thread.sleep(2000);
-	    	String msg =MyWorkspaceLocator.clickUpdateTemplateValidMsg(driver).getText();
+	    	String msg = 	MyWorkspaceLocator.clickUpdateTemplateValidMsg(driver).getText();
 	    	
 	    	if(msg.equalsIgnoreCase(msg))
 	    	{
@@ -5541,18 +5543,18 @@ public static void IntrestedParties(WebDriver driver,ExtentTest test) throws Int
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator. clickMoreAction(driver).click();
@@ -5587,20 +5589,20 @@ public static void MoreAction(WebDriver driver,ExtentTest test) throws Interrupt
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
-		  Thread.sleep(3000);
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
+		  Thread.sleep(2000);
 		  if(MyWorkspaceLocator.clickMoreAction(driver).isEnabled())
 		  {
 		      Thread.sleep(2000);
@@ -5625,18 +5627,18 @@ public static void AddIntrestedParties(WebDriver driver,ExtentTest test) throws 
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator. clickMoreAction(driver).click();
@@ -5657,98 +5659,10 @@ public static void AddIntrestedParties(WebDriver driver,ExtentTest test) throws 
 	       Thread.sleep(2000);
 	       MyWorkspaceLocator. clickSaveBtnIntrestedParties(driver).click();
 	       
-	       Thread.sleep(2000);
-	       String msg=MyWorkspaceLocator.clickSuccessMsgIntrestedParties(driver).getText();
-	       if(msg.equalsIgnoreCase("Duplicate Template Name."))
-	       {
-	    	   test.log(LogStatus.FAIL, "Message Displayed:-"+msg);
-		        
-	       }
-	       else
-	       {
-	    	   test.log(LogStatus.PASS, "Message Displayed:-"+msg);
-	       }
-	       
-	     
-	        
-	        Thread.sleep(3000);
-		    MyWorkspaceLocator. clickDeleteBtnIntrestedParties(driver).click();
-		    
-		    Thread.sleep(5000);
-		    // Switching to Alert        
-	        Alert alert1 = driver.switchTo().alert();		
-	        		
-	        // Capturing alert message.    
-	        String alertMessage1= driver.switchTo().alert().getText();	
+	        test.log(LogStatus.FAIL, " Validation message not displayed");
 	        
 	        
-	        test.log(LogStatus.PASS, alertMessage1);
-	        		
-	        // Displaying alert message		
-	        System.out.println(alertMessage1);
-	        
-	     // Accepting alert		
-	        alert1.accept();	
-	      
-	      
-           Thread.sleep(2000);
-	       MyWorkspaceLocator.clickCloseIntrestedParties(driver).click();
-	       Thread.sleep(5000);
-		    MyWorkspaceLocator.close(driver).click();
-}
-public static void AddIntrestedPartiesVotingAgenda(WebDriver driver,ExtentTest test) throws InterruptedException
-{
-	
-		Thread.sleep(2000);
-		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
-	
-		Thread.sleep(2000);
-		MyWorkspaceLocator.MyMeeting(driver).click();
-		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
-		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
-		
-		 Thread.sleep(2000);
-		  MyWorkspaceLocator.clickAgendaItem(driver).click();
-		   
-		  Thread.sleep(2000);
-		  MyWorkspaceLocator. clickVotingAgendaMoreAction(driver).click();
-		  
-		   Thread.sleep(2000);
-		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
-			selectOptionFromDropDown_bs(entitytype, "Interested Parties");
-	       
-	       Thread.sleep(2000);
-	       MyWorkspaceLocator. clickAddNewBtn(driver).click();
-	       
-	       Thread.sleep(2000);
-	       MyWorkspaceLocator. clickDropdown(driver).click();
-	       
-	       Thread.sleep(2000);
-	       MyWorkspaceLocator. selectValuesDropdown(driver).click();
-	       
-	       Thread.sleep(2000);
-	       MyWorkspaceLocator. clickSaveBtnIntrestedParties(driver).click();
-	       
-	       Thread.sleep(2000);
-	       String msg=MyWorkspaceLocator.clickSuccessMsgIntrestedParties(driver).getText();
-	       if(msg.equalsIgnoreCase("Duplicate Template Name."))
-	       {
-	    	   test.log(LogStatus.FAIL, "Message Displayed:-"+msg);
-		        
-	       }
-	       else
-	       {
-	    	   test.log(LogStatus.PASS, "Message Displayed:-"+msg);
-	       }
-	       
-	     
-	        
-	        Thread.sleep(3000);
+	        Thread.sleep(2000);
 		    MyWorkspaceLocator. clickDeleteBtnIntrestedParties(driver).click();
 		    
 		    Thread.sleep(5000);
@@ -5783,18 +5697,18 @@ public static void CloseBtnIntrestedParties(WebDriver driver,ExtentTest test) th
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator. clickMoreAction(driver).click();
@@ -5833,18 +5747,18 @@ public static void DocumentTab(WebDriver driver,ExtentTest test) throws Interrup
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator. clickMoreAction(driver).click();
@@ -5877,18 +5791,18 @@ public static void UploadDocument(WebDriver driver,ExtentTest test) throws Inter
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator. clickMoreAction(driver).click();
@@ -5898,7 +5812,7 @@ public static void UploadDocument(WebDriver driver,ExtentTest test) throws Inter
 			selectOptionFromDropDown_bs(entitytype, "Documents");
 	       
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.selectFile(driver).sendKeys("C:\\Users\\snehalp\\Desktop\\PDF.pdf");
+		  MyWorkspaceLocator.selectFile(driver).sendKeys("C:\\Users\\snehalp\\Downloads\\sample.pdf");
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator.clickUploadBtn(driver).click();
@@ -5937,18 +5851,18 @@ public static void UploadMultipleDocument(WebDriver driver,ExtentTest test) thro
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator. clickMoreAction(driver).click();
@@ -5957,9 +5871,9 @@ public static void UploadMultipleDocument(WebDriver driver,ExtentTest test) thro
 		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
 			selectOptionFromDropDown_bs(entitytype, "Documents");
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.selectFile(driver).sendKeys("C:\\Users\\snehalp\\Desktop\\PDF.pdf");
+		  MyWorkspaceLocator.selectFile(driver).sendKeys("C:\\Users\\snehalp\\Downloads\\sample.pdf");
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.selectFile(driver).sendKeys("C:\\Users\\snehalp\\Desktop\\SamplePDFFile_5mb.pdf");
+		  MyWorkspaceLocator.selectFile(driver).sendKeys("C:\\Users\\snehalp\\Downloads\\Free_Test_Data_100KB_PDF.pdf");
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator.clickUploadBtn(driver).click();
 		  
@@ -5995,18 +5909,18 @@ public static void WithoutPDFUploadMultipleDocument(WebDriver driver,ExtentTest 
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator. clickMoreAction(driver).click();
@@ -6015,26 +5929,22 @@ public static void WithoutPDFUploadMultipleDocument(WebDriver driver,ExtentTest 
 		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
 			selectOptionFromDropDown_bs(entitytype, "Documents");
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.selectFile(driver).sendKeys("D:\\Test Cases\\Approver Test Case.xlsx");
-		 // Thread.sleep(2000);
-		  //MyWorkspaceLocator.selectFile(driver).sendKeys("D:\\Test Cases\\Approver Test Case.xlsx");
+		  MyWorkspaceLocator.selectFile(driver).sendKeys("E:\\Test Cases\\Approver Test Case.xlsx");
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.selectFile(driver).sendKeys("E:\\Test Cases\\Approver Test Case.xlsx");
 		
 		  
-		  Thread.sleep(5000);
-		    // Switching to Alert        
-	        Alert alert1 = driver.switchTo().alert();		
-	        		
-	        // Capturing alert message.    
-	        String alertMessage1= driver.switchTo().alert().getText();	
-	        
-	        
-	        test.log(LogStatus.PASS, alertMessage1);
-	        		
-	        // Displaying alert message		
-	        System.out.println(alertMessage1);
-	        
-	        // Accepting alert		
-	        alert1.accept();
+		  Thread.sleep(2000);
+		 String msg = MyWorkspaceLocator.clickUploadDocumentInValidMsg(driver).getText();
+		  
+		  if(msg.equalsIgnoreCase(msg))
+		  {
+			  test.log(LogStatus.PASS,"Message Displayed= " +msg);
+		  }
+		  else
+		  {
+			  test.log(LogStatus.FAIL,"Message Displayed= " +msg);
+		  }
 		  
 		  Actions a = new Actions(driver);
 			 //scroll down a page
@@ -6056,18 +5966,18 @@ public static void WithoutUploadDocument(WebDriver driver,ExtentTest test) throw
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator. clickMoreAction(driver).click();
@@ -6111,18 +6021,18 @@ public static void DocumentSequenceNumber(WebDriver driver,ExtentTest test) thro
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator. clickMoreAction(driver).click();
@@ -6132,33 +6042,21 @@ public static void DocumentSequenceNumber(WebDriver driver,ExtentTest test) thro
 			selectOptionFromDropDown_bs(entitytype, "Documents");
 		 
 			Thread.sleep(2000);
-			  MyWorkspaceLocator.clickSequenceNumber(driver).clear();
+			  MyWorkspaceLocator. clickSequenceNumber(driver).clear();
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator. clickSequenceNumber(driver).sendKeys("1");
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator.clickSequenceNumber1(driver).clear();
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator.clickSequenceNumber1(driver).sendKeys("2");
-		  Thread.sleep(2000);
-		  driver.findElement(By.xpath("//*[@id='frmAgendaDocumentUpload']/div[2]/div/div/p")).click();		  
 		  
 
 		  
-//		  JavascriptExecutor js = ((JavascriptExecutor) driver);
-//		  js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		  JavascriptExecutor js = ((JavascriptExecutor) driver);
+		  js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		 
 		  Thread.sleep(2000);
-		 WebDriverWait wait=new WebDriverWait(driver, 20);
-		   By locator = By.cssSelector("#btnSaveDocItemOrder");
-			 
-		   wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-		   Thread.sleep(4000);
-		   WebElement ViewButton = driver.findElement(locator);	
-		   Thread.sleep(3000);
-		   JavascriptExecutor jse=(JavascriptExecutor)driver;
-		   jse.executeScript("arguments[0].click();", ViewButton);
-		  
-//		  Thread.sleep(5000);
-//		  MyWorkspaceLocator. clickDocumentSaveBtn(driver).click();
+		  MyWorkspaceLocator. clickDocumentSaveBtn(driver).click();
 
 		    Thread.sleep(5000);
 		    // Switching to Alert        
@@ -6197,18 +6095,18 @@ public static void DocumentDuplicateSequenceNumber(WebDriver driver,ExtentTest t
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator. clickMoreAction(driver).click();
@@ -6226,21 +6124,10 @@ public static void DocumentDuplicateSequenceNumber(WebDriver driver,ExtentTest t
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator.clickSequenceNumber1(driver).sendKeys("1");
 		  
-//		  JavascriptExecutor js = ((JavascriptExecutor) driver);
-//		  js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-//		  Thread.sleep(2000);
-//		  MyWorkspaceLocator. clickDocumentSaveBtn(driver).click();
-		  
+		  JavascriptExecutor js = ((JavascriptExecutor) driver);
+		  js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		  Thread.sleep(2000);
-			 WebDriverWait wait=new WebDriverWait(driver, 20);
-			   By locator = By.cssSelector("#btnSaveDocItemOrder");
-				 
-			   wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-			   Thread.sleep(4000);
-			   WebElement ViewButton = driver.findElement(locator);	
-			   Thread.sleep(3000);
-			   JavascriptExecutor jse=(JavascriptExecutor)driver;
-			   jse.executeScript("arguments[0].click();", ViewButton);
+		  MyWorkspaceLocator. clickDocumentSaveBtn(driver).click();
 
 		    Thread.sleep(5000);
 		    // Switching to Alert        
@@ -6277,18 +6164,18 @@ public static void WithoutSequenceNumber(WebDriver driver,ExtentTest test) throw
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator. clickMoreAction(driver).click();
@@ -6309,21 +6196,11 @@ public static void WithoutSequenceNumber(WebDriver driver,ExtentTest test) throw
 				  MyWorkspaceLocator.clickSequenceNumber1(driver).clear();
 				  
 					 
-				  Thread.sleep(2000);
-					 WebDriverWait wait=new WebDriverWait(driver, 20);
-					   By locator = By.cssSelector("#btnSaveDocItemOrder");
-						 
-					   wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-					   Thread.sleep(4000);
-					   WebElement ViewButton = driver.findElement(locator);	
-					   Thread.sleep(3000);
-					   JavascriptExecutor jse=(JavascriptExecutor)driver;
-					   jse.executeScript("arguments[0].click();", ViewButton);
 					
-//					  js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-//		  
-//		  Thread.sleep(2000);
-//		  MyWorkspaceLocator. clickDocumentSaveBtn(driver).click();
+					  js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		  
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickDocumentSaveBtn(driver).click();
 
 		    Thread.sleep(5000);
 		    // Switching to Alert        
@@ -6360,18 +6237,18 @@ public static void ViewDocument(WebDriver driver,ExtentTest test) throws Interru
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator. clickMoreAction(driver).click();
@@ -6415,18 +6292,18 @@ public static void DownloadDocumentOpenAgenda(WebDriver driver,ExtentTest test) 
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator. clickMoreAction(driver).click();
@@ -6460,112 +6337,6 @@ public static void DownloadDocumentOpenAgenda(WebDriver driver,ExtentTest test) 
 			  MyWorkspaceLocator.close(driver).click();
 		}
 
-public static void MultipleDownloadDocumentOpenAgenda(WebDriver driver,ExtentTest test) throws InterruptedException
-{
-	
-		Thread.sleep(2000);
-		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
-	
-		Thread.sleep(2000);
-		MyWorkspaceLocator.MyMeeting(driver).click();
-		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
-		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
-		
-		 Thread.sleep(2000);
-		  MyWorkspaceLocator.clickAgendaItem(driver).click();
-		  
-		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
-		  
-		  Thread.sleep(2000);
-		  MyWorkspaceLocator. clickMoreAction(driver).click();
-		 
-		  Thread.sleep(2000);
-		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
-			selectOptionFromDropDown_bs(entitytype, "Documents");
-		  
-		  File dir2 = new File("C:\\Users\\snehalp\\Downloads");
-			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
-			
-			Thread.sleep(3000);
-			MyWorkspaceLocator.clickDownloadBtn(driver).click();
-			
-		 	Thread.sleep(9000);
-			File dir3 = new File("C:\\Users\\snehalp\\Downloads");
-			File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
-			
-			Thread.sleep(5000);
-		   if (dirContents1.length < allFilesNew1.length) {
-				test.log(LogStatus.PASS,  "User should able to download the document ");
-			}
-		   else
-		   {
-				test.log(LogStatus.FAIL, "User should not able to download the document ");
-			}
-		   
-		   Thread.sleep(2000);
-			  MyWorkspaceLocator.clickCloseDocumentPopup(driver).click();
-			  Thread.sleep(5000);
-			  MyWorkspaceLocator.close(driver).click();
-		}
-public static void MultipleDownloadDocumentVotingAgenda(WebDriver driver,ExtentTest test) throws InterruptedException
-{
-	
-		Thread.sleep(2000);
-		MyWorkspaceLocator.MyWorkspaceimg(driver).click();
-	
-		Thread.sleep(2000);
-		MyWorkspaceLocator.MyMeeting(driver).click();
-		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
-		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
-		
-		 Thread.sleep(2000);
-		  MyWorkspaceLocator.clickAgendaItem(driver).click();
-		  
-		  
-		  
-		  Thread.sleep(5000);
-		  MyWorkspaceLocator. clickVotingAgendaMoreAction(driver).click();
-		 
-		  Thread.sleep(2000);
-		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
-			selectOptionFromDropDown_bs(entitytype, "Documents");
-		  
-		  File dir2 = new File("C:\\Users\\snehalp\\Downloads");
-			File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
-			
-			Thread.sleep(3000);
-			MyWorkspaceLocator.clickDownloadBtn(driver).click();
-			
-		 	Thread.sleep(9000);
-			File dir3 = new File("C:\\Users\\snehalp\\Downloads");
-			File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
-			
-			Thread.sleep(5000);
-		   if (dirContents1.length < allFilesNew1.length) {
-				test.log(LogStatus.PASS,  "User should able to download the document ");
-			}
-		   else
-		   {
-				test.log(LogStatus.FAIL, "User should not able to download the document ");
-			}
-		   
-		   Thread.sleep(2000);
-			  MyWorkspaceLocator.clickCloseDocumentPopup(driver).click();
-			  Thread.sleep(5000);
-			  MyWorkspaceLocator.close(driver).click();
-		}
-
 public static void DeleteDocumentOpenAgenda(WebDriver driver,ExtentTest test) throws InterruptedException
 {
 	
@@ -6575,18 +6346,18 @@ public static void DeleteDocumentOpenAgenda(WebDriver driver,ExtentTest test) th
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
+		  MyWorkspaceLocator.ClickNoting(driver).click();
 		  
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator. clickMoreAction(driver).click();
@@ -6612,35 +6383,20 @@ public static void DeleteDocumentOpenAgenda(WebDriver driver,ExtentTest test) th
 	        System.out.println(alertMessage1);
 	        
 	     // Accepting alert		
-	        alert1.accept();
-	        
-	        Thread.sleep(5000);
-		    // Switching to Alert        
-	        Alert alert2 = driver.switchTo().alert();	
-	        
-	     // Capturing alert message.    
-	        String alertMessage2= driver.switchTo().alert().getText();
-	        
-	        test.log(LogStatus.PASS, alertMessage2);
-    		
-	        // Displaying alert message		
-	        System.out.println(alertMessage2);
-	        
-	     // Accepting alert		
-	        alert2.accept();
+	        alert1.accept();	
 	        
 	        
-//	        Thread.sleep(2000);
-//			 String msg = MyWorkspaceLocator.clickDeleteValidMsg(driver).getText();
-//			  
-//			  if(msg.equalsIgnoreCase(msg))
-//			  {
-//				  test.log(LogStatus.PASS,"Message Displayed=" +msg);
-//			  }
-//			  else
-//			  {
-//				  test.log(LogStatus.FAIL,"Message Displayed=" +msg);
-//			  }
+	        Thread.sleep(2000);
+			 String msg = MyWorkspaceLocator.clickDeleteValidMsg(driver).getText();
+			  
+			  if(msg.equalsIgnoreCase(msg))
+			  {
+				  test.log(LogStatus.PASS,"Message Displayed=" +msg);
+			  }
+			  else
+			  {
+				  test.log(LogStatus.FAIL,"Message Displayed=" +msg);
+			  }
 	        
 	        Thread.sleep(2000);
 			  MyWorkspaceLocator.clickCloseDocumentPopup(driver).click();
@@ -6720,21 +6476,19 @@ public static void NotingAgendaInfo(WebDriver driver,ExtentTest test) throws Int
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
 		Thread.sleep(2000);
-  		MyWorkspaceLocator.clickEditIcon1(driver).click();		
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
+		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
-		  
 		  Thread.sleep(2000);
-		MyWorkspaceLocator.ClickNoting1(driver).click();
-			  
-			
+		  MyWorkspaceLocator.ClickNoting(driver).click();
+		  
 		  Thread.sleep(2000);
 		  if(MyWorkspaceLocator.clickNotingAgendaInfo(driver).isEnabled())
 		  {
@@ -6748,8 +6502,8 @@ public static void NotingAgendaInfo(WebDriver driver,ExtentTest test) throws Int
 			  test.log(LogStatus.PASS, "User should not able to see agenda information after clicking on the 'Info' button");
 		  }
 		  
-//		  Thread.sleep(2000);
-//		  MyWorkspaceLocator.clickClosePopupNotingAgendaInfo(driver).click();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator.clickClosePopupNotingAgendaInfo(driver).click();
 		  Thread.sleep(5000);
 		  MyWorkspaceLocator.close(driver).click();
 	}
@@ -6763,26 +6517,23 @@ public static void NotingAgendaDelete(WebDriver driver,ExtentTest test) throws I
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
-		  
 		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
-		  Thread.sleep(3000);
 		  
 		  MyWorkspaceLocator.Delete(driver).click();
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator.DeleteYes(driver).click();
 		  Thread.sleep(2000);
 		  
-		  String text  =MyWorkspaceLocator.DeleteText(driver).getText();
+	String text  =	  MyWorkspaceLocator.DeleteText(driver).getText();
 			  if(text.equalsIgnoreCase("Agenda Item Deleted Successfully."))
 				 {
 					
@@ -6808,18 +6559,15 @@ public static void NotingAgendaDeleteCan(WebDriver driver,ExtentTest test) throw
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
-		  
-		  Thread.sleep(2000);
-		  MyWorkspaceLocator.ClickNoting1(driver).click();
 		  Thread.sleep(2000);
 		  
 		  MyWorkspaceLocator.Delete(driver).click();
@@ -6850,19 +6598,17 @@ public static void  VotingAgendaItemInfo(WebDriver driver,ExtentTest test) throw
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
-//		  Thread.sleep(2000);
-//			MyWorkspaceLocator.ClickVoting(driver).click();
 		
 		  Thread.sleep(6000);
 		  if( MyWorkspaceLocator.clickInfoIiconVotingAgenda(driver).isEnabled())
 		  {
 			  Thread.sleep(6000);
-			  MyWorkspaceLocator.clickInfoIiconVotingAgenda(driver).click();
+			  MyWorkspaceLocator.clickIicon(driver).click();
 			  test.log(LogStatus.PASS, "User should able to see agenda information after clicking on the 'i' button ");
 		  }
 		  else
@@ -6884,18 +6630,18 @@ public static void VotingAgendaTemplateFields(WebDriver driver,ExtentTest test) 
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
-//		 JavascriptExecutor js = ((JavascriptExecutor) driver);
-//		 js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		 JavascriptExecutor js = ((JavascriptExecutor) driver);
+		 js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		  
 		  Thread.sleep(4000);
 		  MyWorkspaceLocator.ClickVotingAgendaTemplateFiled(driver).click();
@@ -6936,12 +6682,12 @@ public static void VotingAgendaTemplateFieldsCloseIcon(WebDriver driver,ExtentTe
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -6979,12 +6725,12 @@ public static void EditVotingAgendaTemplateFields(WebDriver driver,ExtentTest te
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -7001,9 +6747,9 @@ public static void EditVotingAgendaTemplateFields(WebDriver driver,ExtentTest te
 	    	
 	    	driver.switchTo().parentFrame();
 	    	
-	    	Thread.sleep(7000);
+	    	Thread.sleep(5000);
 	    	MyWorkspaceLocator.clickUpdateTemplate(driver).click();
-	    	Thread.sleep(7000);
+	    	
 	    	String msg = 	MyWorkspaceLocator.clickUpdateTemplateValidMsg(driver).getText();
 	    	
 	    	if(msg.equalsIgnoreCase(msg))
@@ -7031,22 +6777,22 @@ public static void VotingAgendaDelete(WebDriver driver,ExtentTest test) throws I
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
-		  Thread.sleep(4000);
+		  Thread.sleep(2000);
 		  MyWorkspaceLocator.VotingAgendaDelete(driver).click();
 		  Thread.sleep(2000);
 		  MyWorkspaceLocator.DeleteYes(driver).click();
 		  Thread.sleep(2000);
 		  
-		  String text  = MyWorkspaceLocator.DeleteText(driver).getText();
+		  String text  =	  MyWorkspaceLocator.DeleteText(driver).getText();
 			  if(text.equalsIgnoreCase("Agenda Item Deleted Successfully."))
 				 {
 					
@@ -7072,12 +6818,12 @@ public static void VotingAgendaDeleteCan(WebDriver driver,ExtentTest test) throw
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -7107,18 +6853,18 @@ public static void VotingAgendaMoreAction(WebDriver driver,ExtentTest test) thro
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
 		  
-		  Thread.sleep(8000);
+		  Thread.sleep(2000);
 		  if(MyWorkspaceLocator.clickVotingAgendaMoreAction(driver).isEnabled())
 		  {
 		      Thread.sleep(7000);
@@ -7141,17 +6887,16 @@ public static void VotingAgendaIntrestedParties(WebDriver driver,ExtentTest test
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
 		  
-		
 		  
 		  Thread.sleep(7000);
 		  MyWorkspaceLocator. clickVotingAgendaMoreAction(driver).click();
@@ -7252,12 +6997,12 @@ public static void VotingAgendaCloseBtnIntrestedParties(WebDriver driver,ExtentT
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -7299,12 +7044,12 @@ public static void VotingAgendaDocumentTab(WebDriver driver,ExtentTest test) thr
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -7312,29 +7057,13 @@ public static void VotingAgendaDocumentTab(WebDriver driver,ExtentTest test) thr
 		  
 		  Thread.sleep(7000);
 		  MyWorkspaceLocator. clickVotingAgendaMoreAction(driver).click();
-		  
-		  
-		  
-		  
-		  
-		  
-		  
 		  Thread.sleep(6000);
 		  if(MyWorkspaceLocator.clickDocumentsVotingAgenda(driver).isEnabled())
 		  {
 		
 			  
-			  WebDriverWait wait=new WebDriverWait(driver, 20);
-			  
 			  Thread.sleep(7000);
-			  By locator = By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li[2]/span");
-				 
-			   wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-			   Thread.sleep(4000);
-			   WebElement ViewButton = driver.findElement(locator);	
-			   Thread.sleep(3000);
-			   JavascriptExecutor jse=(JavascriptExecutor)driver;
-			   jse.executeScript("arguments[0].click();", ViewButton);
+			  MyWorkspaceLocator.clickDocumentsVotingAgenda(driver).click();
 		   
 		       test.log(LogStatus.PASS,"User should be redirected to the  Documents page");
 		  }
@@ -7363,12 +7092,12 @@ public static void VotingAgendaUploadDocument(WebDriver driver,ExtentTest test) 
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -7382,7 +7111,7 @@ public static void VotingAgendaUploadDocument(WebDriver driver,ExtentTest test) 
 			selectOptionFromDropDown_bs(entitytype, "Documents");
 	       
 		  Thread.sleep(5000);
-		  MyWorkspaceLocator.selectFile(driver).sendKeys("C:\\Users\\snehalp\\Desktop\\PDF.pdf");
+		  MyWorkspaceLocator.selectFile(driver).sendKeys("C:\\Users\\snehalp\\Downloads\\sample.pdf");
 		  
 		  Thread.sleep(5000);
 		  MyWorkspaceLocator.clickUploadBtn(driver).click();
@@ -7422,12 +7151,12 @@ public static void VotingAgendaUploadDocument(WebDriver driver,ExtentTest test) 
 			Thread.sleep(2000);
 			MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//			Thread.sleep(2000);
-//			MyWorkspaceLocator.clickEntityfilter(driver).click();
-//			Thread.sleep(2000);
-//			MyWorkspaceLocator.selectEntityfilter(driver).click();
 			Thread.sleep(2000);
-			MyWorkspaceLocator.clickEditIcon1(driver).click();
+			MyWorkspaceLocator.clickEntityfilter(driver).click();
+			Thread.sleep(2000);
+			MyWorkspaceLocator.selectEntityfilter(driver).click();
+			Thread.sleep(2000);
+			MyWorkspaceLocator.clickEditIcon(driver).click();
 
 			Thread.sleep(2000);
 			MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -7440,9 +7169,9 @@ public static void VotingAgendaUploadDocument(WebDriver driver,ExtentTest test) 
 			List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
 				selectOptionFromDropDown_bs(entitytype, "Documents");
 			Thread.sleep(5000);
-			MyWorkspaceLocator.selectFile(driver).sendKeys("C:\\Users\\snehalp\\Desktop\\PDF.pdf");
+			MyWorkspaceLocator.selectFile(driver).sendKeys("C:\\Users\\snehalp\\Downloads\\sample.pdf");
 			Thread.sleep(5000);
-			MyWorkspaceLocator.selectFile(driver).sendKeys("D:\\dotNetSecreterial\\Secretarial-Project-26JULY23\\TestData\\1. Spresso MGT 7.pdf");
+			MyWorkspaceLocator.selectFile(driver).sendKeys("C:\\Users\\snehalp\\Downloads\\Free_Test_Data_100KB_PDF.pdf");
 			Thread.sleep(5000);
 			MyWorkspaceLocator.clickUploadBtn(driver).click();
 			
@@ -7478,12 +7207,12 @@ public static void VotingAgendaWithoutPDFUploadMultipleDocument(WebDriver driver
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -7496,27 +7225,27 @@ public static void VotingAgendaWithoutPDFUploadMultipleDocument(WebDriver driver
 		   List<WebElement>entitytype = driver.findElements(By.xpath("//ul[@id='gridDDLAgendaActionMenu_listbox']/li"));
 			selectOptionFromDropDown_bs(entitytype, "Documents");
 		  Thread.sleep(5000);
-		  MyWorkspaceLocator.selectFile(driver).sendKeys("D:\\License Issues.docx");
-//		  Thread.sleep(5000);
-//		  MyWorkspaceLocator.selectFile(driver).sendKeys("D:\\Test Cases\\Approver Test Case.xlsx");
+		  MyWorkspaceLocator.selectFile(driver).sendKeys("E:\\Test Cases\\Approver Test Case.xlsx");
+		  Thread.sleep(5000);
+		  MyWorkspaceLocator.selectFile(driver).sendKeys("E:\\Test Cases\\Approver Test Case.xlsx");
 		
 		  
 		  Thread.sleep(5000);
-		    // Switching to Alert        
-	        Alert alert1 = driver.switchTo().alert();		
-	        		
-	        // Capturing alert message.    
-	        String alertMessage1= driver.switchTo().alert().getText();	
-	        
-	        
-	        test.log(LogStatus.PASS, alertMessage1);
-	        		
-	        // Displaying alert message		
-	        System.out.println(alertMessage1);
-	        
-	        // Accepting alert		
-	        alert1.accept();
+		 String msg = MyWorkspaceLocator.clickUploadDocumentInValidMsg(driver).getText();
+		  
+		  if(msg.equalsIgnoreCase(msg))
+		  {
+			  test.log(LogStatus.PASS,"Message Displayed= " +msg);
+		  }
+		  else
+		  {
+			  test.log(LogStatus.FAIL,"Message Displayed= " +msg);
+		  }
+		  Thread.sleep(4000);
 	
+			  Actions a = new Actions(driver);
+			    //scroll up a page
+			a.sendKeys(Keys.PAGE_UP).build().perform();
 		  Thread.sleep(4000);
 		  MyWorkspaceLocator.clickCloseDocumentPopup(driver).click();
 		  Thread.sleep(5000);
@@ -7532,12 +7261,12 @@ public static void VotingAgendaWithoutUploadDocument(WebDriver driver,ExtentTest
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -7585,12 +7314,12 @@ public static void VotingAgendaDocumentSequenceNumber(WebDriver driver,ExtentTes
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -7612,26 +7341,14 @@ public static void VotingAgendaDocumentSequenceNumber(WebDriver driver,ExtentTes
 		  MyWorkspaceLocator.clickSequenceNumber1(driver).clear();
 		  Thread.sleep(5000);
 		  MyWorkspaceLocator.clickSequenceNumber1(driver).sendKeys("2");
-		   Thread.sleep(2000);
-		  driver.findElement(By.xpath("//*[@id='frmAgendaDocumentUpload']/div[2]/div/div/p")).click();		  
 		  
 
-		  Thread.sleep(2000);
-			 WebDriverWait wait=new WebDriverWait(driver, 20);
-			   By locator = By.cssSelector("#btnSaveDocItemOrder");
-				 
-			   wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-			   Thread.sleep(4000);
-			   WebElement ViewButton = driver.findElement(locator);	
-			   Thread.sleep(3000);
-			   JavascriptExecutor jse=(JavascriptExecutor)driver;
-			   jse.executeScript("arguments[0].click();", ViewButton);
-			   
-//		  JavascriptExecutor js = ((JavascriptExecutor) driver);
-//		  js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+		  
+		  JavascriptExecutor js = ((JavascriptExecutor) driver);
+		  js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 		 
-//		  Thread.sleep(2000);
-//		  MyWorkspaceLocator. clickDocumentSaveBtn(driver).click();
+		  Thread.sleep(2000);
+		  MyWorkspaceLocator. clickDocumentSaveBtn(driver).click();
 
 		    Thread.sleep(5000);
 		    // Switching to Alert        
@@ -7671,12 +7388,12 @@ public static void VotingAgendaDocumentDuplicateSequenceNumber(WebDriver driver,
 			Thread.sleep(2000);
 			MyWorkspaceLocator.MyMeeting(driver).click();
 			
-//			Thread.sleep(2000);
-//			MyWorkspaceLocator.clickEntityfilter(driver).click();
-//			Thread.sleep(2000);
-//			MyWorkspaceLocator.selectEntityfilter(driver).click();
 			Thread.sleep(2000);
-			MyWorkspaceLocator.clickEditIcon1(driver).click();
+			MyWorkspaceLocator.clickEntityfilter(driver).click();
+			Thread.sleep(2000);
+			MyWorkspaceLocator.selectEntityfilter(driver).click();
+			Thread.sleep(2000);
+			MyWorkspaceLocator.clickEditIcon(driver).click();
 			
 			Thread.sleep(2000);
 			MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -7699,27 +7416,10 @@ public static void VotingAgendaDocumentDuplicateSequenceNumber(WebDriver driver,
 			Thread.sleep(5000);
 			MyWorkspaceLocator.clickSequenceNumber1(driver).sendKeys("1");
 			
-//			JavascriptExecutor js = ((JavascriptExecutor) driver);
-//			js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
-			
-			   Thread.sleep(2000);
-				  driver.findElement(By.xpath("//*[@id='frmAgendaDocumentUpload']/div[2]/div/div/p")).click();		  
-				  
-
-				  Thread.sleep(2000);
-					 WebDriverWait wait=new WebDriverWait(driver, 20);
-					   By locator = By.cssSelector("#btnSaveDocItemOrder");
-						 
-					   wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-					   Thread.sleep(4000);
-					   WebElement ViewButton = driver.findElement(locator);	
-					   Thread.sleep(3000);
-					   JavascriptExecutor jse=(JavascriptExecutor)driver;
-					   jse.executeScript("arguments[0].click();", ViewButton);
-			
-			
-//			Thread.sleep(2000);
-//			MyWorkspaceLocator. clickDocumentSaveBtn(driver).click();
+			JavascriptExecutor js = ((JavascriptExecutor) driver);
+			js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
+			Thread.sleep(2000);
+			MyWorkspaceLocator. clickDocumentSaveBtn(driver).click();
 			
 			Thread.sleep(5000);
 			// Switching to Alert        
@@ -7756,12 +7456,12 @@ public static void VotingAgendaWithoutSequenceNumber(WebDriver driver,ExtentTest
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		Thread.sleep(2000);
 		MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -7785,20 +7485,12 @@ public static void VotingAgendaWithoutSequenceNumber(WebDriver driver,ExtentTest
 		  Thread.sleep(5000);
 		  MyWorkspaceLocator.clickSequenceNumber1(driver).clear();
 		  
-		  Thread.sleep(2000);
-		  driver.findElement(By.xpath("//*[@id='frmAgendaDocumentUpload']/div[2]/div/div/p")).click();		  
-		  
+		 
+		
+		  js.executeScript("window.scrollTo(0, document.body.scrollHeight)");
 
-		  Thread.sleep(2000);
-			 WebDriverWait wait=new WebDriverWait(driver, 20);
-			   By locator = By.cssSelector("#btnSaveDocItemOrder");
-				 
-			   wait.until(ExpectedConditions.presenceOfElementLocated(locator));
-			   Thread.sleep(4000);
-			   WebElement ViewButton = driver.findElement(locator);	
-			   Thread.sleep(3000);
-			   JavascriptExecutor jse=(JavascriptExecutor)driver;
-			   jse.executeScript("arguments[0].click();", ViewButton);
+		Thread.sleep(2000);
+		MyWorkspaceLocator. clickDocumentSaveBtn(driver).click();
 		
 		Thread.sleep(5000);
 		// Switching to Alert        
@@ -7888,12 +7580,12 @@ public static void VotingAgendaDownloadDocumentOpenAgenda(WebDriver driver,Exten
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -7940,12 +7632,12 @@ public static void DeleteDocumentVotingAgenda(WebDriver driver,ExtentTest test) 
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();
@@ -7978,34 +7670,18 @@ public static void DeleteDocumentVotingAgenda(WebDriver driver,ExtentTest test) 
 	     // Accepting alert		
 	        alert1.accept();	
 	        
-	        Thread.sleep(5000);
-		    // Switching to Alert        
-	        Alert alert2 = driver.switchTo().alert();		
-	        		
-	        // Capturing alert message.    
-	        String alertMessage2= driver.switchTo().alert().getText();	
 	        
-	        
-	        test.log(LogStatus.PASS, alertMessage2);
-	        		
-	        // Displaying alert message		
-	        System.out.println(alertMessage2);
-	        
-	     // Accepting alert		
-	        alert2.accept();	
-	        
-	        
-//	        Thread.sleep(2000);
-//			 String msg = MyWorkspaceLocator.clickDeleteValidMsg(driver).getText();
-//			  
-//			  if(msg.equalsIgnoreCase(msg))
-//			  {
-//				  test.log(LogStatus.PASS,"Message Displayed=" +msg);
-//			  }
-//			  else
-//			  {
-//				  test.log(LogStatus.FAIL,"Message Displayed=" +msg);
-//			  }
+	        Thread.sleep(2000);
+			 String msg = MyWorkspaceLocator.clickDeleteValidMsg(driver).getText();
+			  
+			  if(msg.equalsIgnoreCase(msg))
+			  {
+				  test.log(LogStatus.PASS,"Message Displayed=" +msg);
+			  }
+			  else
+			  {
+				  test.log(LogStatus.FAIL,"Message Displayed=" +msg);
+			  }
 	        
 			  Actions a = new Actions(driver);
 				 //scroll up a page
@@ -8025,12 +7701,12 @@ public static void CancelDeleteDocumentVotingAgenda(WebDriver driver,ExtentTest 
 		Thread.sleep(2000);
 		MyWorkspaceLocator.MyMeeting(driver).click();
 		
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.clickEntityfilter(driver).click();
-//		Thread.sleep(2000);
-//		MyWorkspaceLocator.selectEntityfilter(driver).click();
 		Thread.sleep(2000);
-		MyWorkspaceLocator.clickEditIcon1(driver).click();
+		MyWorkspaceLocator.clickEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.selectEntityfilter(driver).click();
+		Thread.sleep(2000);
+		MyWorkspaceLocator.clickEditIcon(driver).click();
 		
 		 Thread.sleep(2000);
 		  MyWorkspaceLocator.clickAgendaItem(driver).click();

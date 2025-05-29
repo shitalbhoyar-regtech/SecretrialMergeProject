@@ -1692,17 +1692,6 @@ public class EntittyTest {
 			extent.flush();
 		}
 		
-			//@Test(priority = 0)
-			void PLBankDetailEditInvalid() throws InterruptedException, IOException
-			{
-				test = extent.startTest("Entity -Public Limited - Edit - Bank Details -Edit - Invalid Data");
-				
-				Methods.PLBankDetailEditInvalid(driver,test,workbook);
-				
-				extent.endTest(test);
-				extent.flush();
-			}
-		
 		@Test(priority = 147)
 		void PLBankDetailDeleteCan() throws InterruptedException, IOException
 		{

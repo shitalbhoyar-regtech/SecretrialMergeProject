@@ -37,7 +37,7 @@ public class MyDocumentTestCases {
 	public static XSSFSheet ReadExcel() throws IOException
 	{
 
-		fis = new FileInputStream("D:\\dotNetSecreterial\\Secretarial-Project-26JULY23\\TestData\\SecreterialSheet3.xlsx");
+		fis = new FileInputStream("E:\\Secreterial Project Git Folder\\Avasec Merge\\Secreterial Project 26JULY23\\Secretarial-Project-26JULY23\\TestData\\SecreterialSheet3.xlsx");
 		
 		workbook = new XSSFWorkbook(fis);
 		sheet = workbook.getSheetAt(0);					//Retrieving second sheet of Workbook
@@ -80,7 +80,7 @@ public class MyDocumentTestCases {
 
 	}
 	
-   @Test(priority=1)
+ //  @Test(priority=1)
 
 	  void MyDocument() throws InterruptedException, IOException
 	  {
@@ -337,7 +337,7 @@ void ViewButtonWithoutSelectingData() throws InterruptedException, IOException
 		extent.endTest(test);
 		extent.flush();
 }
- @Test(priority=23)
+ //@Test(priority=23)
 
 void ClickHistoricalRegistor() throws InterruptedException, IOException
 {
@@ -348,7 +348,7 @@ void ClickHistoricalRegistor() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 }
- @Test(priority=24)
+// @Test(priority=24)
 
  void AddHistoricalRegistor() throws InterruptedException, IOException
  {
@@ -359,7 +359,7 @@ void ClickHistoricalRegistor() throws InterruptedException, IOException
  	extent.endTest(test);
  	extent.flush();
  }
- @Test(priority=25)
+// @Test(priority=25)
 
  void WithoutEnterDataHistoricalRegistor() throws InterruptedException, IOException
  {
@@ -370,7 +370,7 @@ void ClickHistoricalRegistor() throws InterruptedException, IOException
  	extent.endTest(test);
  	extent.flush();
  }
- @Test(priority=26)
+// @Test(priority=26)
 
  void AddDocumentHistoricalRegistor() throws InterruptedException, IOException
  {
@@ -381,7 +381,7 @@ void ClickHistoricalRegistor() throws InterruptedException, IOException
  	extent.endTest(test);
  	extent.flush();
  }
-@Test(priority=27)
+// @Test(priority=27)
 
  void AddMultipleDocumentHistoricalRegistor() throws InterruptedException, IOException
  {
@@ -392,44 +392,7 @@ void ClickHistoricalRegistor() throws InterruptedException, IOException
  	extent.endTest(test);
  	extent.flush();
  }
-@Test(priority=28)
-
-void DownloadDoc1() throws InterruptedException, IOException
-{
-	test = extent.startTest(" Historical Document -Download Document   Verification");
-	
-	MyDocumentMethod.DownloadDoc1(driver, test);
-	
-	extent.endTest(test);
-	extent.flush();
-}
-@Test(priority=29)//not run
-
-void ViewDoc() throws InterruptedException, IOException
-{
-	test = extent.startTest(" Historical Document -Viewed Document   Verification");
-	
-	MyDocumentMethod.ViewDoc(driver, test);
-	
-	extent.endTest(test);
-	extent.flush();
-}
-
-@Test(priority=30)
-
-void DeleteDoc1() throws InterruptedException, IOException
-{
-	test = extent.startTest(" Historical Document -Delete Document   Verification");
-	
-	MyDocumentMethod.DeleteDoc1(driver, test);
-	
-	extent.endTest(test);
-	extent.flush();
-}
-
-
-
- @Test(priority=31)
+// @Test(priority=28)
 
  void AgendaItems() throws InterruptedException, IOException
  {
@@ -440,7 +403,7 @@ void DeleteDoc1() throws InterruptedException, IOException
  	extent.endTest(test);
  	extent.flush();
  }
-@Test(priority=29)
+//@Test(priority=29)
 
 void EditHistoricalRegistor() throws InterruptedException, IOException
 {
@@ -451,7 +414,7 @@ void EditHistoricalRegistor() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 }
-@Test(priority=30)
+//@Test(priority=30)
 
 void UpdateHistoricalRegistor() throws InterruptedException, IOException
 {
@@ -462,7 +425,7 @@ void UpdateHistoricalRegistor() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 } 
-@Test(priority=31)
+//@Test(priority=31)
 
 void DeleteRegisterDoc() throws InterruptedException, IOException
 {
@@ -473,7 +436,7 @@ void DeleteRegisterDoc() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 } 
-@Test(priority=32)
+//@Test(priority=32)
 
 void DeleteRegisterDoc1() throws InterruptedException, IOException
 {
@@ -484,7 +447,7 @@ void DeleteRegisterDoc1() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 } 
-@Test(priority=33)
+//@Test(priority=33)
 
 void HistoricalDocTypeFilter() throws InterruptedException, IOException
 {
@@ -495,7 +458,7 @@ void HistoricalDocTypeFilter() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 } 
-@Test(priority=34)
+//@Test(priority=34)
 
 void HistoricalDocFilter() throws InterruptedException, IOException
 {
@@ -506,7 +469,7 @@ void HistoricalDocFilter() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 } 
-@Test(priority=35)
+//@Test(priority=35)
 
 void HistoricalDocClearButton() throws InterruptedException, IOException
 {
@@ -517,7 +480,7 @@ void HistoricalDocClearButton() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 }
-@Test(priority=36)
+//@Test(priority=36)
 
 void EFormRepositorytab() throws InterruptedException, IOException
 {
@@ -528,7 +491,7 @@ void EFormRepositorytab() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 }
-@Test(priority=37)
+//@Test(priority=37)
 
 void UploadEFormRepository() throws InterruptedException, IOException
 {
@@ -615,28 +578,6 @@ void EFormClearBtn() throws InterruptedException, IOException
 	extent.endTest(test);
 	extent.flush();
 }
-
-@Test(priority=45)
-void ComplianceDoc() throws InterruptedException, IOException
-{
-	test = extent.startTest("My Document -  Compliance Document Verification");
-	
-	MyDocumentMethod.ComplianceDoc(driver, test);
-	
-	extent.endTest(test);
-	extent.flush();
-}
-@Test(priority=46)
-
-void ComplianceDocTypeFilter() throws InterruptedException, IOException
-{
-	test = extent.startTest(" Type Filter Historical Document Verification");
-	
-	MyDocumentMethod.ComplianceDocTypeFilter(driver, test);
-	
-	extent.endTest(test);
-	extent.flush();
-} 
 
 //@AfterMethod
  

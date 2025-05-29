@@ -14,13 +14,13 @@ private static WebElement secretrial = null;				//WebElement variable created fo
 	
 	public static WebElement MyReportsMenu(WebDriver driver)		//Method for closing Message Popup
 	{
-		secretrial = driver.findElement(By.xpath("//span[@class='fly-out-top-item-name SmallMenunameStyle'][normalize-space()='My Reports']"));
+		secretrial = driver.findElement(By.xpath("(//*[@id='lefthomemenu']/a/i)[9]"));
 		return secretrial;
 	}
 	
 	public static WebElement ComplianceStatusReport(WebDriver driver)		//Method for closing Message Popup
 	{
-		secretrial = driver.findElement(By.xpath("//span[@class='fly-out-top-item-name SubSmallMenunameStyle'][normalize-space()='Compliance Status Report']"));
+		secretrial = driver.findElement(By.xpath("(//*[@id='lefthomemenu']/ul/li[3]/a/span)[7]"));
 		return secretrial;
 	}
 	
@@ -38,7 +38,7 @@ private static WebElement secretrial = null;				//WebElement variable created fo
 	
 	public static WebElement Overdue (WebDriver driver)		//Method for closing Message Popup
 	{
-		secretrial = driver.findElement(By.xpath("//span[normalize-space()='Overdue']"));
+		secretrial = driver.findElement(By.xpath("(//*[@class='k-in'])[57]"));
 		return secretrial;
 	}
 	
@@ -62,7 +62,7 @@ private static WebElement secretrial = null;				//WebElement variable created fo
 	
 	public static WebElement AttendanceReport(WebDriver driver)		//Method for closing Message Popup
 	{
-		secretrial = driver.findElement(By.xpath("//span[@class='fly-out-top-item-name SubSmallMenunameStyle'][normalize-space()='Attendance Report']"));
+		secretrial = driver.findElement(By.xpath("//*[@id='myReportMenu']/ul/li[4]/a/span"));
 		return secretrial;
 	}
 	
@@ -122,7 +122,7 @@ private static WebElement secretrial = null;				//WebElement variable created fo
 	
 	public static WebElement AGDL(WebDriver driver)		//Method for closing Message Popup
 	{
-		secretrial = driver.findElement(By.xpath("(//*[@class='k-in'])[10]"));
+		secretrial = driver.findElement(By.xpath("(//*[@class='k-in'])[11]"));
 		return secretrial;
 	}
 	
@@ -152,7 +152,7 @@ private static WebElement secretrial = null;				//WebElement variable created fo
 	
 	public static WebElement ViewDownload(WebDriver driver)		//Method for closing Message Popup
 	{
-		secretrial = driver.findElement(By.xpath("(//a[normalize-space()='Download'])[1]"));
+		secretrial = driver.findElement(By.xpath("//*[@id='downloadButton']"));
 		return secretrial;
 	}
 	

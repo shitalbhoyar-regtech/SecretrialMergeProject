@@ -19,19 +19,19 @@ public class LoginPOM
 	
 	public static WebElement setUname(WebDriver driver)		//Method for searching Username input
 	{
-		uname = driver.findElement(By.xpath("//*[@type=\"email\"]"));
+		uname = driver.findElement(By.xpath("//*[@name='username']"));
 		return uname;
 	}
 	
 	public static WebElement setPassword(WebDriver driver)	//Method for searching Password input
 	{
-		pass =driver.findElement(By.xpath("//*[@type=\"password\"]"));
+		pass =driver.findElement(By.xpath("//input[@placeholder='Password']"));
 		return pass;
 	}
 	
 	public static WebElement clickSubmit(WebDriver driver)	//Method for searching button for Save/Sign-in
 	{
-		submit = driver.findElement(By.xpath("//*[@type=\"submit\"]"));
+		submit = driver.findElement(By.xpath("//button[normalize-space()='Sign in']"));
 		return submit;
 	}
 	
@@ -43,33 +43,30 @@ public class LoginPOM
 	
 	public static WebElement Answer1(WebDriver driver)		//Method for searching input box of first answer
 	{
-		ans1 = driver.findElement(By.xpath("//*[@id=\"Answer1\"]"));
+		ans1 = driver.findElement(By.xpath("//*[@id='Answer1']"));
 		return ans1;
 	}
 	
 	public static WebElement Answer2(WebDriver driver)		//Method for searching input box of second answer
 	{
-		ans2 = driver.findElement(By.xpath("//*[@id=\"Answer2\"]"));
+		ans2 = driver.findElement(By.xpath("//*[@id='Answer2']"));
 		return ans2;
 	}
 	public static WebElement Question1(WebDriver driver)	//Method for searching first Question 
 	{
-		question1 = driver.findElement(By.xpath("/html/body/div[1]/form/div[2]/div/h3[1]"));
-		//span[@id='lblQuestion1']
-		
+		question1 = driver.findElement(By.xpath("//*[@id='Answer1']"));
 		return question1;
 	}
 	
 	public static WebElement Question2(WebDriver driver)	//Method for searching second Question
 	{
-		question2 = driver.findElement(By.xpath("/html/body/div[1]/form/div[2]/div/h3[2]"));
-		//span[@id='lblQuestion2']
+		question2 = driver.findElement(By.xpath("//*[@id='Answer2']"));
 		return question2;
 	}
 	
 	public static WebElement SubmitAnswer(WebDriver driver)	//Method for searching button to submit answers
 	{
-		validate = driver.findElement(By.xpath("//*[@id=\"validateButton\"]"));
+		validate = driver.findElement(By.xpath("//*[@id='validateButton']"));
 		return validate;
 	}
 	

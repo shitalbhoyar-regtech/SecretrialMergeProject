@@ -1,7 +1,6 @@
 package CompnaySecretory;
 
 import java.awt.RenderingHints.Key;
-import java.io.File;
 import java.io.FileInputStream;
 import java.util.List;
 
@@ -19,9 +18,6 @@ import com.relevantcodes.extentreports.ExtentTest;
 import com.relevantcodes.extentreports.LogStatus;
 
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
@@ -1026,11 +1022,8 @@ public class MyDocumentMethod {
 				Thread.sleep(2000);
 				MyDocumentLocator.ClickEdtIcon(driver).click();
 				
-				Thread.sleep(2000);
-				MyDocumentLocator.ClickAgendaNotice(driver).click();
-				
 		     	Thread.sleep(2000);
-				MyDocumentLocator.ClickFiles(driver).sendKeys("D:\\dotNetSecreterial\\Secretarial-Project-26JULY23\\TestData\\SecreterialSheet3.xlsx");
+				MyDocumentLocator.ClickFiles(driver).sendKeys("E:\\Secreterial Project Git Folder\\Avasec Merge\\Secreterial Project 26JULY23\\Secretarial-Project-26JULY23\\TestData\\SecreterialSheet3.xlsx");
 				
 				
 				Actions a =new Actions(driver);
@@ -1070,13 +1063,10 @@ public class MyDocumentMethod {
 				Thread.sleep(2000);
 				MyDocumentLocator.ClickEdtIcon(driver).click();
 				
-				Thread.sleep(2000);
-				MyDocumentLocator.ClickCompliance(driver).click();
-				
 		     	Thread.sleep(2000);
-				MyDocumentLocator.ClickFiles(driver).sendKeys("D:\\dotNetSecreterial\\Secretarial-Project-26JULY23\\TestData\\SecreterialSheet3.xlsx");
+				MyDocumentLocator.ClickFiles(driver).sendKeys("E:\\Secreterial Project Git Folder\\Avasec Merge\\Secreterial Project 26JULY23\\Secretarial-Project-26JULY23\\TestData\\SecreterialSheet3.xlsx");
 				Thread.sleep(2000);
-				MyDocumentLocator.ClickFiles(driver).sendKeys("D:\\dotNetSecreterial\\Secretarial-Project-26JULY23\\TestData\\Scretrial.xlsx");
+				MyDocumentLocator.ClickFiles(driver).sendKeys("E:\\Secreterial Project Git Folder\\Avasec Merge\\Secreterial Project 26JULY23\\Secretarial-Project-26JULY23\\TestData\\1. Spresso MGT 7.pdf");
 				
 				Actions a =new Actions(driver);
 				a.sendKeys(Keys.PAGE_DOWN).build().perform();
@@ -1104,144 +1094,6 @@ public class MyDocumentMethod {
 				Thread.sleep(2000);
 				MyDocumentLocator.clickclosePopup(driver).click();
 			}
-			public static void DownloadDoc1(WebDriver driver,ExtentTest test) throws InterruptedException
-			{
-				
-				Thread.sleep(2000);
-				MyDocumentLocator.MyDocumentimg(driver).click();
-				Thread.sleep(2000);
-				MyDocumentLocator.HistiricalDoc(driver).click();
-				Thread.sleep(2000);
-				MyDocumentLocator.ClickEdtIcon(driver).click();
-				
-
-				Thread.sleep(2000);
-				MyDocumentLocator.ClickCompliance(driver).click();
-				
-				
-				
-				Actions a =new Actions(driver);
-				a.sendKeys(Keys.PAGE_DOWN).build().perform();
-				
-				
-				
-				
-				 File dir2 = new File("C:\\Users\\snehalp\\Downloads");
-					File[] dirContents1 = dir2.listFiles();						//Counting number of files in directory before download
-					
-					Thread.sleep(2000);
-					MyDocumentLocator.ClickDownloadDoc(driver).click();
-				 	Thread.sleep(6000);
-					File dir3 = new File("C:\\Users\\snehalp\\Downloads");
-					File[] allFilesNew1 = dir3.listFiles();						//Counting number of files in directory after download
-					
-					Thread.sleep(3000);
-				   if (dirContents1.length < allFilesNew1.length) {
-						test.log(LogStatus.PASS,  "User should able to download the document ");
-					}
-				   else
-				   {
-						test.log(LogStatus.FAIL, "User should not able to download the document ");
-					}
-				
-				
-				  
-				
-				Thread.sleep(2000);
-				MyDocumentLocator.clickclosePopup(driver).click();
-			}
-			
-			public static void ViewDoc(WebDriver driver,ExtentTest test) throws InterruptedException
-			{
-				
-				Thread.sleep(2000);
-				MyDocumentLocator.MyDocumentimg(driver).click();
-				Thread.sleep(2000);
-				MyDocumentLocator.HistiricalDoc(driver).click();
-				Thread.sleep(2000);
-				MyDocumentLocator.ClickEdtIcon(driver).click();
-				
-
-				Thread.sleep(2000);
-				MyDocumentLocator.ClickCompliance(driver).click();
-				
-				
-				
-				Actions a =new Actions(driver);
-				a.sendKeys(Keys.PAGE_DOWN).build().perform();
-			
-					
-					Thread.sleep(2000);
-					MyDocumentLocator.ClickViewDoc(driver).click();
-					 WebDriverWait wait=new WebDriverWait(driver,20);	
-					 Thread.sleep(8000);
-					wait.until(ExpectedConditions.frameToBeAvailableAndSwitchToIt(0));
-					
-					Thread.sleep(8000);
-					  //driver.switchTo().frame(MyDocumentLocator.frame(driver));
-					  
-					 				
-					String msg=  wait.until(ExpectedConditions.visibilityOf(MyDocumentLocator.ClickViewDoc1(driver))).getText();;
-					
-//					Thread.sleep(9000);
-//					String msg=MyDocumentLocator.ClickViewDoc1(driver).getText();
-					if(msg.equalsIgnoreCase("Document"))
-					{
-						test.log(LogStatus.PASS, "Document viewed suuccessfully:-"+msg);
-					}
-					else
-					{
-						test.log(LogStatus.FAIL, "Document does not viewed suuccessfully:-"+msg);
-					}
-					Thread.sleep(2000);
-					driver.switchTo().parentFrame();
-					
-					Thread.sleep(2000);
-					MyDocumentLocator.clickclosePopupDoc(driver).click();
-				Thread.sleep(2000);
-				MyDocumentLocator.clickclosePopup(driver).click();
-			}
-			
-			public static void DeleteDoc1(WebDriver driver,ExtentTest test) throws InterruptedException
-			{
-				
-				Thread.sleep(2000);
-				MyDocumentLocator.MyDocumentimg(driver).click();
-				
-				Thread.sleep(2000);
-				MyDocumentLocator.HistiricalDoc(driver).click();
-				
-				Thread.sleep(2000);
-				MyDocumentLocator.ClickEdtIcon(driver).click();
-				
-
-				Thread.sleep(2000);
-				MyDocumentLocator.ClickCompliance(driver).click();
-				
-				Thread.sleep(2000);
-				MyDocumentLocator.ClickDeleteDoc(driver).click();
-				Thread.sleep(2000);
-				MyDocumentLocator.ClickYesButton(driver).click();
-				
-				   Thread.sleep(5000);
-				    // Switching to Alert        
-			        Alert alert1 = driver.switchTo().alert();		
-			        		
-			        // Capturing alert message.    
-			        String alertMessage1= driver.switchTo().alert().getText();	
-			        
-			        
-			        test.log(LogStatus.PASS, alertMessage1);
-			        		
-			        // Displaying alert message		
-			        System.out.println(alertMessage1);
-			        
-			     // Accepting alert		
-			        alert1.accept();	
-			       
-				
-				
-			}
 			public static void AgendaItems(WebDriver driver,ExtentTest test) throws InterruptedException
 			{
 				
@@ -1267,13 +1119,13 @@ public class MyDocumentMethod {
 				Thread.sleep(2000);
 				MyDocumentLocator.SelectFY(driver).click();
 				Thread.sleep(2000);
-				MyDocumentLocator.ClickNoOfMeeting(driver).sendKeys("2");
+				MyDocumentLocator.ClickNoOfMeeting(driver).sendKeys("1");
 				Thread.sleep(2000);
 				MyDocumentLocator.ClickCalender(driver).click();
 				Thread.sleep(2000);
 				MyDocumentLocator.SelectDate(driver).click();
-//				Thread.sleep(5000);
-//				MyDocumentLocator.clickSrNo(driver).sendKeys("3");
+				Thread.sleep(2000);
+				MyDocumentLocator.clickSrNo(driver).sendKeys("2");
 				Thread.sleep(2000);
 				MyDocumentLocator.clickSave(driver).click();
 				
@@ -1303,7 +1155,7 @@ public class MyDocumentMethod {
 				MyDocumentLocator.HistiricalDoc(driver).click();
 				
 				
-				Thread.sleep(2000);
+			
 				
 				if(MyDocumentLocator.ClickEdtIcon(driver).isEnabled())
 				{
@@ -1497,10 +1349,10 @@ public class MyDocumentMethod {
 				if(!s.equalsIgnoreCase("No items to display")) {
 				Thread.sleep(5000);
 			
-				List<WebElement> entitycol=driver.findElements(By.xpath("//*[@id='gridHistoricalData']/div[2]/table/tbody/tr[1]/td[1]"));
+				List<WebElement> entitycol=driver.findElements(By.xpath("//*[@id='gridHistoricalData']/table/tbody/tr/td[1]"));
 				
 				//List<WebElement> Typecol=driver.findElements(By.xpath("//*[@id='gridHistoricalData']/table/tbody/tr/td[2]"));
-				List<WebElement> FYcol=driver.findElements(By.xpath("//*[@id='gridHistoricalData']/div[2]/table/tbody/tr[1]/td[7]"));
+				List<WebElement> FYcol=driver.findElements(By.xpath("//*[@id='gridHistoricalData']/table/tbody/tr/td[5]"));
 				Thread.sleep(2000);
 
 				for(int i=0; i<li.size(); i++){
@@ -1638,11 +1490,6 @@ public class MyDocumentMethod {
 				
 				Thread.sleep(2000);
 				MyDocumentLocator.EFormRepositorytab(driver).click();
-				Thread.sleep(2000);
-				driver.findElement(By.xpath("//span[@class='k-input']")).click();
-				Thread.sleep(2000);
-				driver.findElement(By.xpath("//*[@class='k-list k-reset']/li")).click();
-				
 				
 				Thread.sleep(2000);
 				MyDocumentLocator.UploadButton(driver).click();
@@ -1658,7 +1505,7 @@ public class MyDocumentMethod {
 				Thread.sleep(2000);
 				MyDocumentLocator.clickFromDescription(driver).sendKeys("ABC");
 				Thread.sleep(2000);
-				MyDocumentLocator.clickUploadFile(driver).sendKeys("D:\\dotNetSecreterial\\Secretarial-Project-26JULY23\\TestData\\SecreterialSheet3.xlsx");
+				MyDocumentLocator.clickUploadFile(driver).sendKeys("E:\\Secreterial Project Git Folder\\Avasec Merge\\Secreterial Project 26JULY23\\Secretarial-Project-26JULY23\\TestData\\SecreterialSheet3.xlsx");
 			
 				Thread.sleep(2000);
 				MyDocumentLocator.clickSavebtn(driver).click();
@@ -1981,52 +1828,9 @@ public class MyDocumentMethod {
 			     EntityLocator.ClickDashboard(driver).click();
 			}
 				
-			public static void ComplianceDoc (WebDriver driver,ExtentTest test) throws InterruptedException
-			{
+			
 				
-				Thread.sleep(2000);
-				MyDocumentLocator.MyDocumentimg(driver).click();
-				Thread.sleep(2000);
-				if(MyDocumentLocator.ComplianceDoctab(driver).isEnabled())
-				{
-					Thread.sleep(2000);
-					MyDocumentLocator.ComplianceDoctab(driver).click();
-					test.log(LogStatus.PASS ,"Compliance Document tab is clickable.");
-				}
-			   else
-				{
-				    	 test.log(LogStatus.FAIL, "Compliance Document tab is not clickable.");
-			    }    
-				Thread.sleep(2000);
-			     EntityLocator.ClickDashboard(driver).click();
-			}
 				
-			public static void ComplianceDocTypeFilter(WebDriver driver,ExtentTest test) throws InterruptedException
-			{
-				
-				Thread.sleep(2000);
-				MyDocumentLocator.MyDocumentimg(driver).click();
-				
-				Thread.sleep(2000);
-				MyDocumentLocator.ComplianceDoctab(driver).click();
-				Thread.sleep(2000);
-				MyDocumentLocator.ClickTypeFilter(driver).click();
-				
-		        Thread.sleep(2000);
-		          if(MyDocumentLocator.SelectTypeFilter(driver).isEnabled())
-					{
-						Thread.sleep(2000);
-						MyDocumentLocator.SelectTypeFilter(driver).click();
-						test.log(LogStatus.PASS ,"Type Dropdown working properly.");
-					}
-				   else
-					{
-					    	 test.log(LogStatus.FAIL, "Type Dropdown  working not properly.");
-				    }    
-					Thread.sleep(2000);
-				     EntityLocator.ClickDashboard(driver).click();
-		       
-			}
 				
 			
 		
